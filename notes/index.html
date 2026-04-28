@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>発信一覧 | 前田薫</title>
+  <style>
+    :root {
+      --bg: #f7f2ea;
+      --paper: #fffdf9;
+      --ink: #1f1a16;
+      --soft: #685d54;
+      --line: rgba(31, 26, 22, 0.12);
+      --gold: #ab7a3d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(171, 122, 61, 0.16), transparent 28%),
+        linear-gradient(180deg, #fcf8f2 0%, var(--bg) 100%);
+    }
+    main {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 72px 0 90px;
+    }
+    .eyebrow {
+      color: var(--gold);
+      font-size: 0.8rem;
+      letter-spacing: 0.3em;
+      margin-bottom: 16px;
+    }
+    h1 {
+      margin: 0;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      font-weight: 500;
+      line-height: 1.3;
+    }
+    .lead {
+      max-width: 720px;
+      margin-top: 18px;
+      color: var(--soft);
+      line-height: 1.9;
+    }
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin: 28px 0 34px;
+    }
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.7);
+    }
+    .note-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .note-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 18px;
+      background: rgba(255,255,255,0.88);
+      box-shadow: 0 16px 36px rgba(31, 26, 22, 0.05);
+    }
+    .note-card-link {
+      text-decoration: none;
+      color: inherit;
+    }
+    .note-thumb {
+      aspect-ratio: 1.72;
+      border-radius: 18px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(171, 122, 61, 0.14), rgba(111, 138, 116, 0.16));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .note-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .thumb-fallback {
+      font-size: 0.84rem;
+      letter-spacing: 0.38em;
+      color: var(--gold);
+    }
+    .note-meta {
+      margin-top: 14px;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      color: var(--gold);
+    }
+    .note-card h3 {
+      margin: 0 0 12px;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-size: 1.26rem;
+      line-height: 1.52;
+      font-weight: 500;
+    }
+    .note-card p {
+      margin: 0;
+      color: var(--soft);
+      line-height: 1.8;
+    }
+    .note-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .note-tags span {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(111, 138, 116, 0.1);
+      color: #5c6e59;
+      font-size: 0.8rem;
+    }
+    .note-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+    .mini-link {
+      text-decoration: none;
+      color: #7f4f35;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 1024px) {
+      .note-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 760px) {
+      main { width: min(100% - 28px, 100%); }
+      .note-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">NOTES</div>
+    <h1>思想の積み上がりを、<br>ここから辿れます。</h1>
+    <p class="lead">
+      前田薫が日々の出来事の中で見つけた問いや、思想の深まりをここに積み上げています。
+      気になる記事から読んでも、カテゴリから辿っても、このホーム全体の世界観につながるように並べています。
+    </p>
+    <div class="actions">
+      <a class="button" href="../">ホームへ戻る</a>
+      <a class="button" href="categories/">カテゴリから探す</a>
+      <a class="button" href="https://note.com/nanbodemo" target="_blank" rel="noopener noreferrer">noteプロフィール</a>
+    </div>
+    <div class="note-grid">
+      
+      <article class="note-card">
+        <a class="note-card-link" href="2026-04-26_人間交差点_ひみにチームを渡した日/">
+          <div class="note-thumb"><div class="thumb-fallback">NOTE</div></div>
+          <div class="note-meta">人間交差点 / 2026-04-26</div>
+          <h3>ひみに、チームを渡した日。</h3>
+          <p>今日は一日、ひみに役割を渡してた。 ひみはもともと、私の「なんでも秘書」だった。 記事も、経理も、議事録も、サイト更新も、全部ひみ一人にやらせてた。 でもある時気づいた。 これ、私の「一人でやりすぎ」をひみに移しただけやなって。 今日やったのは、それを分解すること。 note記事を書く部門。 経理・会計を担う部門。 会議の記録を整理する部…</p>
+        </a>
+        <div class="note-tags"></div>
+        <div class="note-actions">
+          <a class="mini-link" href="2026-04-26_人間交差点_ひみにチームを渡した日/">サイトで読む</a>
+          <a class="mini-link" href="https://note.com/nanbodemo/n/n62e1b2f18434" target="_blank" rel="noopener noreferrer">noteで読む</a>
+        </div>
+      </article>
+    
+
+      <article class="note-card">
+        <a class="note-card-link" href="2026-04-25_人間交差点_AIと会議した1日言葉を自分のものに戻すまで/">
+          <div class="note-thumb"><div class="thumb-fallback">NOTE</div></div>
+          <div class="note-meta">人間交差点 / 2026-04-25</div>
+          <h3>AIと会議した1日。言葉を自分のものに戻すまで。</h3>
+          <p>たぶん、普通に考えたら 数週間とか、下手したら数ヶ月かかるようなことを、 1日で一気にやってしまった感じがある。 でもこれ、 「頑張った」とか「気合い」とかじゃなくて、 ただシンプルに AIとの関係性が変わってきた結果やなって感じてる。 朝から何をしてたかというと、 ホームページの設計を GPTとClaudeで行ったり来たりしながら、 ひ…</p>
+        </a>
+        <div class="note-tags"><span>#AI</span><span>#経営者</span><span>#リーダー</span></div>
+        <div class="note-actions">
+          <a class="mini-link" href="2026-04-25_人間交差点_AIと会議した1日言葉を自分のものに戻すまで/">サイトで読む</a>
+          <a class="mini-link" href="https://note.com/nanbodemo/n/n03eb7f7bdcf4" target="_blank" rel="noopener noreferrer">noteで読む</a>
+        </div>
+      </article>
+    
+
+      <article class="note-card">
+        <a class="note-card-link" href="2026-04-25_人間交差点_「コンテンツより、あなたがやるから行く」/">
+          <div class="note-thumb"><div class="thumb-fallback">NOTE</div></div>
+          <div class="note-meta">人間交差点 / 2026-04-25</div>
+          <h3>「コンテンツより、あなたがやるから行く」</h3>
+          <p></p>
+        </a>
+        <div class="note-tags"></div>
+        <div class="note-actions">
+          <a class="mini-link" href="2026-04-25_人間交差点_「コンテンツより、あなたがやるから行く」/">サイトで読む</a>
+          <a class="mini-link" href="https://note.com/nanbodemo/n/n074fc548f98a" target="_blank" rel="noopener noreferrer">noteで読む</a>
+        </div>
+      </article>
+    
+
+      <article class="note-card">
+        <a class="note-card-link" href="2026-04-23_人間交差点_幸せホルモン全部入りの日/">
+          <div class="note-thumb"><div class="thumb-fallback">NOTE</div></div>
+          <div class="note-meta">人間交差点 / 2026-04-23</div>
+          <h3>幸せホルモン全部入りの日。</h3>
+          <p>今日は天川村から2時間かけて、大阪・西田辺までキックボクササイズに行ってきた。 月に1回、わざわざ通ってしまう理由は、インストラクターの存在がやばいから。 開始5分で「もう無理」が来る。 でもそこから55分、なぜかどんどんエネルギーが上がっていく。 あの人は、人の限界を突破させる天才やと思う。 終わった後の爽快感、達成感、疲労感。 その後…</p>
+        </a>
+        <div class="note-tags"></div>
+        <div class="note-actions">
+          <a class="mini-link" href="2026-04-23_人間交差点_幸せホルモン全部入りの日/">サイトで読む</a>
+          <a class="mini-link" href="https://note.com/nanbodemo/n/ne547b6c5b008" target="_blank" rel="noopener noreferrer">noteで読む</a>
+        </div>
+      </article>
+    
+
+      <article class="note-card">
+        <a class="note-card-link" href="2026-04-22_人間交差点_AIが進化するほど何のために使うかが問われる/">
+          <div class="note-thumb"><div class="thumb-fallback">NOTE</div></div>
+          <div class="note-meta">人間交差点 / 2026-04-22</div>
+          <h3>AIが進化するほど、何のために使うかが問われる。</h3>
+          <p>今日はCloud Codeへの理解が深まった一日でした。 仕組みが見えてくるほど、人間の中心が問われるんやなと思った。 触れば触るほど思う。 AIが進化するほど大事になるのは、性能より、生き方やあり方やビジョンや、「何のために使うのか」やと思う。 今日は息子のAI秘書づくりも手伝った。 息子は、サッカーを通じて幸せになる人を増やしたいと、…</p>
+        </a>
+        <div class="note-tags"></div>
+        <div class="note-actions">
+          <a class="mini-link" href="2026-04-22_人間交差点_AIが進化するほど何のために使うかが問われる/">サイトで読む</a>
+          <a class="mini-link" href="https://note.com/nanbodemo/n/n569a145dfd8d" target="_blank" rel="noopener noreferrer">noteで読む</a>
+        </div>
+      </article>
+    
+
+      <article class="note-card">
+        <a class="note-card-link" href="2026-04-21_人間交差点_息子に渡せたのはZIPじゃなかった/">
+          <div class="note-thumb"><div class="thumb-fallback">NOTE</div></div>
+          <div class="note-meta">人間交差点 / 2026-04-21</div>
+          <h3>息子にAIを教えようとして、気づいたこと。</h3>
+          <p>息子に渡せたのは、ZIPじゃなかった。 今日、息子のためにAI秘書をセットアップしようとした。 息子はWindows。僕はMac。 同じClaude Codeを使うのに、画面が違う。操作が違う。コマンドが違う。 「ここをこうすれば」と説明しながら、僕はだんだん気づいた。 これ、全部違う話をしてる。 結局、僕がやったことはシンプルだった…</p>
+        </a>
+        <div class="note-tags"></div>
+        <div class="note-actions">
+          <a class="mini-link" href="2026-04-21_人間交差点_息子に渡せたのはZIPじゃなかった/">サイトで読む</a>
+          <a class="mini-link" href="https://note.com/nanbodemo/n/n383a49f45ace" target="_blank" rel="noopener noreferrer">noteで読む</a>
+        </div>
+      </article>
+    
+
+      <article class="note-card">
+        <a class="note-card-link" href="2026-04-18_人間交差点_感謝したら受け取りすぎてる件/">
+          <div class="note-thumb"><div class="thumb-fallback">NOTE</div></div>
+          <div class="note-meta">人間交差点 / 2026-04-18</div>
+          <h3>感情が揺れた時、人は片側しか見えなくなる</h3>
+          <p>感謝したら、なぜか受け取りすぎてる件。そして全てが愛だった話。 さあや先生に感謝記事を書いた。 ありがとうが溢れたから、それだけで書いた。 そしたら翌朝、さあや先生からメッセージが届いた。 「うるっときました」「コーチングページもよくできてる」「沢山の方が薫ちゃんのコーチングを受けてくれること、先取り感謝します」 読んだ瞬間、思った。 受…</p>
+        </a>
+        <div class="note-tags"></div>
+        <div class="note-actions">
+          <a class="mini-link" href="2026-04-18_人間交差点_感謝したら受け取りすぎてる件/">サイトで読む</a>
+          <a class="mini-link" href="https://note.com/nanbodemo/n/n4b0511ea6486" target="_blank" rel="noopener noreferrer">noteで読む</a>
+        </div>
+      </article>
+    
+
+      <article class="note-card">
+        <a class="note-card-link" href="2026-04-17_人間交差点_整えるとは本物だけを残すことだ/">
+          <div class="note-thumb"><div class="thumb-fallback">NOTE</div></div>
+          <div class="note-meta">人間交差点 / 2026-04-17</div>
+          <h3>整えるとは、本物だけを残すことだ。</h3>
+          <p>整えるとは、消すことじゃない。本物だけを残すことだ。 今週、コーチングのホームページをようやく完成させた。 天川村の写真を使って。 護摩の火、冬の滝、光差す渓谷、雪の中で手を合わせ</p>
+        </a>
+        <div class="note-tags"><span>#自分らしく生きる</span><span>#人生デザイン</span><span>#コーチング</span></div>
+        <div class="note-actions">
+          <a class="mini-link" href="2026-04-17_人間交差点_整えるとは本物だけを残すことだ/">サイトで読む</a>
+          <a class="mini-link" href="https://note.com/nanbodemo/n/n54ad81df409b" target="_blank" rel="noopener noreferrer">noteで読む</a>
+        </div>
+      </article>
+    
+
+      <article class="note-card">
+        <a class="note-card-link" href="2026-04-17_自我くん観察日記_AIが進化して一番はしゃいでるのは自我くんかもしれない/">
+          <div class="note-thumb"><div class="thumb-fallback">NOTE</div></div>
+          <div class="note-meta">愛しの自我くん観察日記 / 2026-04-17</div>
+          <h3>AIが進化して、一番はしゃいでるのは「自我くん」かもしれない</h3>
+          <p>最近、AIをかなり使っています。 ChatGPTもそうやし、Claude Codeも触</p>
+        </a>
+        <div class="note-tags"><span>#自分らしく生きる</span><span>#人生デザイン</span><span>#問い</span></div>
+        <div class="note-actions">
+          <a class="mini-link" href="2026-04-17_自我くん観察日記_AIが進化して一番はしゃいでるのは自我くんかもしれない/">サイトで読む</a>
+          <a class="mini-link" href="https://note.com/nanbodemo/n/n24285e8ea2e3" target="_blank" rel="noopener noreferrer">noteで読む</a>
+        </div>
+      </article>
+    
+
+      <article class="note-card">
+        <a class="note-card-link" href="2026-04-08_自我くん観察日記_しょんぼりしてたらジガ君が急に正論マンになってた件/">
+          <div class="note-thumb"><div class="thumb-fallback">NOTE</div></div>
+          <div class="note-meta">愛しの自我くん観察日記 / 2026-04-08</div>
+          <h3>しょんぼりしてたら、ジガ君が急に正論マンになってた件</h3>
+          <p>コーチングのセッション中に、クライアントがぽつりと言った。 「さっきまで落ち込んでたのに、気づいたら『でも私は悪くない』ってなってました」 あ、そのやつ。 僕もよく知ってる。 何かが起きた直後、感情がぐっと動く。 その感情は本物やと思う。感じることは大事。 でも「傷ついた」という言葉にした瞬間、それはもう認知になってる。 実は人は傷つかへ…</p>
+        </a>
+        <div class="note-tags"></div>
+        <div class="note-actions">
+          <a class="mini-link" href="2026-04-08_自我くん観察日記_しょんぼりしてたらジガ君が急に正論マンになってた件/">サイトで読む</a>
+          <a class="mini-link" href="https://note.com/nanbodemo/n/n6e4b5f122394" target="_blank" rel="noopener noreferrer">noteで読む</a>
+        </div>
+      </article>
+    
+    </div>
+  </main>
+</body>
+</html>

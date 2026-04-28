@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>半年間の伴走型コーチング ― 前田薫</title>
+<meta name="description" content="6ヶ月間、かおるちゃんと二人三脚で。事実と認知を分けながら、本来の自分の在り方と生き方を設計する伴走型コーチング。">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+  :root {
+    --ink:    #1c1714;
+    --deep:   #1a1208;
+    --ash:    #6f655d;
+    --mist:   #f8f5f0;
+    --cream:  #fffdf9;
+    --line:   rgba(28, 23, 20, 0.1);
+    --gold:   #a5793e;
+    --earth:  #7b5b44;
+    --warm:   #d4a96a;
+    --char:   #2a2218;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--char);
+    font-family: 'Noto Serif JP', serif;
+    line-height: 1.9;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background:
+      radial-gradient(circle at top, rgba(165,121,62,0.18), transparent 50%),
+      linear-gradient(180deg, #1c1714 0%, #2a1f14 100%);
+    color: #fff;
+    padding: 96px 24px 80px;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--warm);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    font-size: clamp(26px, 5vw, 42px);
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--warm);
+  }
+  .hero-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.65);
+    max-width: 500px;
+    margin: 0 auto 40px;
+    line-height: 2;
+  }
+  .hero-badge {
+    display: inline-flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .badge {
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.7);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    padding: 6px 18px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 64px 24px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section:last-of-type { border-bottom: none; }
+  .section-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  h2 {
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 28px;
+    color: var(--ink);
+  }
+  p {
+    font-size: 15px;
+    line-height: 2;
+    margin-bottom: 18px;
+    color: #3a3028;
+  }
+  p:last-child { margin-bottom: 0; }
+
+  /* ── QUOTE ── */
+  .big-quote {
+    font-size: 19px;
+    font-weight: 300;
+    line-height: 1.75;
+    padding: 28px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin: 28px 0;
+    text-align: center;
+    color: var(--ink);
+  }
+
+  /* ── HL ── */
+  .hl-gold {
+    background: #fdf5e0;
+    border-left: 3px solid var(--gold);
+    padding: 18px 22px;
+    border-radius: 0 8px 8px 0;
+    margin: 20px 0;
+  }
+  .hl-gold p { font-size: 14px; color: #5a3e0e; margin: 0; }
+
+  .hl-dark {
+    background: var(--ink);
+    color: #fff;
+    padding: 24px 28px;
+    border-radius: 8px;
+    margin: 24px 0;
+    font-size: 15px;
+    line-height: 1.9;
+  }
+
+  /* ── FLOW ── */
+  .flow { margin: 24px 0; }
+  .flow-row {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 0;
+  }
+  .flow-key {
+    min-width: 70px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ash);
+    text-align: right;
+    padding-top: 4px;
+    flex-shrink: 0;
+  }
+  .flow-val {
+    flex: 1;
+    font-size: 14px;
+    color: #3a3028;
+    line-height: 1.85;
+    border-left: 1px solid var(--line);
+    padding: 10px 0 10px 16px;
+  }
+  .flow-arrow {
+    font-size: 14px;
+    color: var(--gold);
+    margin: 0 0 0 86px;
+    padding-left: 16px;
+    line-height: 1.4;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  /* ── CHECK LIST ── */
+  .check-list { list-style: none; margin: 20px 0; }
+  .check-list li {
+    padding: 10px 0 10px 28px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+    color: #3a3028;
+    line-height: 1.8;
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .check-list li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 10px;
+    top: 14px;
+  }
+
+  /* ── PRICE BLOCK ── */
+  .price-block {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 40px 32px;
+    text-align: center;
+    margin: 24px 0;
+    box-shadow: 0 8px 32px rgba(28,23,20,0.06);
+  }
+  .price-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--ash);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .price-main {
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+  .price-main span { font-size: 20px; font-weight: 300; }
+  .price-note {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    color: var(--ash);
+    margin-bottom: 28px;
+  }
+  .price-divider {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 24px 0;
+  }
+  .price-includes {
+    list-style: none;
+    text-align: left;
+    margin: 0 0 28px;
+  }
+  .price-includes li {
+    font-size: 14px;
+    padding: 8px 0 8px 20px;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    color: #3a3028;
+  }
+  .price-includes li:last-child { border-bottom: none; }
+  .price-includes li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+
+  /* ── CTA BTN ── */
+  .cta-btn {
+    display: inline-block;
+    background: var(--ink);
+    color: #fff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    padding: 18px 48px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .cta-btn:hover { opacity: 0.8; }
+  .cta-sub {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    color: var(--ash);
+    margin-top: 12px !important;
+  }
+
+  /* ── PROFILE ── */
+  .profile-text h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 36px 24px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    line-height: 2;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">半年間の伴走型コーチング</div>
+  <h1>頑張っているのに、<br>なぜか<em>ズレる</em>。<br>その正体を、一緒に見にいく。</h1>
+  <p class="hero-sub">
+    目標の前に、その目標が本当に自分の魂と一致しているか。<br>
+    6ヶ月間、かおるちゃんが伴走しながら<br>本来の在り方と生き方を設計します。
+  </p>
+  <div class="hero-badge">
+    <span class="badge">期間 6ヶ月</span>
+    <span class="badge">500,000円（税込）</span>
+    <span class="badge">完全個別</span>
+  </div>
+</div>
+
+<!-- こんな方へ -->
+<div class="section">
+  <div class="section-label">For</div>
+  <h2>こんな方のためのコーチングです</h2>
+
+  <ul class="check-list">
+    <li>頑張っているのに、どこかズレている感覚がずっとある</li>
+    <li>自分の価値観や使命を言葉にできていない</li>
+    <li>感情に振り回されて、本当の選択ができていない</li>
+    <li>経営・仕事・人間関係で「なんかしんどい」が続いている</li>
+    <li>自分らしい人生の設計図を、一から作り直したい</li>
+    <li>誰かと深く対話しながら、自分の問いを掘り下げたい</li>
+  </ul>
+
+  <div class="big-quote">
+    「自分らしく生きられない人をゼロにする。<br>そのために、一人ひとりの本来の在り方を<br>一緒に見にいきます。」
+  </div>
+</div>
+
+<!-- このコーチングでやること -->
+<div class="section">
+  <div class="section-label">What</div>
+  <h2>6ヶ月間でやること</h2>
+
+  <p>「目標を達成させる」コーチングではありません。<br>まず、その目標が本当に自分の魂と一致しているかを確かめます。</p>
+  <p>天中道（事実と認知の分離・中庸思考）をベースに、感情・価値観・使命・在り方を丁寧に掘り下げながら、本来の自分に還る伴走をします。</p>
+
+  <div class="flow">
+    <div class="flow-row">
+      <div class="flow-key">Month 1–2</div>
+      <div class="flow-val">現状把握。事実と認知を分けながら、今の自分の状態を正確に見る</div>
+    </div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-row">
+      <div class="flow-key">Month 3–4</div>
+      <div class="flow-val">価値観・使命・才能を言語化。「本当に大切にしているもの」を掘り起こす</div>
+    </div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-row">
+      <div class="flow-key">Month 5–6</div>
+      <div class="flow-val">人生の設計図を作る。仕事・関係・暮らし・お金の在り方を再設計する</div>
+    </div>
+  </div>
+
+  <div class="hl-gold">
+    <p>「答え」を渡すのではなく、あなた自身が答えを見つけられる問いを届け続けます。<br>
+    6ヶ月後、自分で問い続けられる人になることがゴールです。</p>
+  </div>
+</div>
+
+<!-- 料金 -->
+<div class="section">
+  <div class="section-label">Investment</div>
+  <h2>料金・プログラム内容</h2>
+
+  <div class="price-block">
+    <div class="price-label">Half-Year Coaching Program</div>
+    <div class="price-main">500,000<span>円</span></div>
+    <div class="price-note">税込 / 6ヶ月間の完全個別伴走</div>
+    <hr class="price-divider">
+    <ul class="price-includes">
+      <li>毎週1回の個別コーチングセッション（計24回）</li>
+      <li>セッション間のメッセージサポート</li>
+      <li>価値観・使命・才能の言語化ワーク</li>
+      <li>人生設計図の作成サポート</li>
+      <li>振り返り教材・オリジナルワークシート</li>
+    </ul>
+    <a href="#" class="cta-btn">まず話を聞いてみる</a>
+    <p class="cta-sub">※ 申込みフォームは近日公開予定です</p>
+  </div>
+
+  <div class="hl-dark">
+    まず無料相談（30分）でお話を聞かせてください。<br>
+    このコーチングがあなたに合うかどうか、一緒に確認します。
+  </div>
+</div>
+
+<!-- 主宰者 -->
+<div class="section">
+  <div class="section-label">Coach</div>
+  <h2>担当コーチ：前田薫（かおるちゃん）</h2>
+
+  <div class="profile-text">
+    <h3>人生デザインコーチ® / 天中道コーチ</h3>
+    <p>奈良県天川村 × 大阪今里を拠点に活動。師匠である高衣紗彩（たかごろもさあや）先生の中庸思考をベースに、「事実と認知を分け、出来事に含まれる支援を観ながら、本来の自分に還る伴走」をするコーチ。</p>
+    <p>グループコーチング（かおる塾）・個人コーチング・天川村テラコヤ事業を展開。「自分らしく生きられない人をゼロにする」をミッションに活動している。</p>
+    <p>相手の価値観・才能を瞬時に把握し、本音を引き出す対話力が強み。構造と感性を両立した伴走スタイルで、経営者・リーダー・使命に生きる人たちを支援している。</p>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="section" style="text-align:center;">
+  <div class="section-label">Next Step</div>
+  <h2>まず、30分話しませんか</h2>
+  <p>「受けようか迷っている」という段階で大丈夫です。<br>今の状況を聞かせてもらいながら、このコーチングが合うかどうかを一緒に確認します。</p>
+  <br>
+  <a href="#" class="cta-btn">無料相談に申し込む</a>
+  <p class="cta-sub">※ 申込みフォームは近日公開予定です</p>
+</div>
+
+<footer>
+  <p>半年間の伴走型コーチング / 前田薫（人生デザインコーチ® / 天中道コーチ）</p>
+  <p>奈良県天川村 × 大阪今里</p>
+</footer>
+
+</body>
+</html>

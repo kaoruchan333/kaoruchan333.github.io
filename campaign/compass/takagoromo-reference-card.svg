@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" fill="none">
+  <rect width="1280" height="720" fill="#FAF7F2"/>
+  <path d="M86 168C226 116 402 92 566 126C682 150 766 214 914 236C1038 254 1154 226 1226 188L1238 246C1158 292 1048 322 900 314C758 306 650 254 534 238C382 216 238 244 96 320Z" fill="#111111" opacity="0.14"/>
+  <path d="M966 112C1048 68 1148 84 1210 148C1260 198 1266 292 1218 350C1162 420 1068 456 974 438C878 420 820 346 830 254C838 190 886 142 966 112Z" fill="#111111" opacity="0.08"/>
+  <text x="92" y="92" fill="#A5793E" font-size="22" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif" letter-spacing="8">REFERENCE NOTE</text>
+  <text x="92" y="220" fill="#171311" font-size="84" font-weight="700" font-family="'Hiragino Mincho ProN', 'Yu Mincho', serif">
+    <tspan x="92" dy="0">高衣紗彩先生の</tspan>
+    <tspan x="92" dy="76">記事を読む</tspan>
+  </text>
+  <text x="92" y="424" fill="#3A312B" font-size="30" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif" letter-spacing="2">
+    人生デザイン構築学校の源流に触れるための参考記事
+  </text>
+  <text x="92" y="498" fill="#6B5A4C" font-size="24" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif" letter-spacing="2">
+    中庸・成長・真実を見る視点の土台
+  </text>
+  <text x="92" y="628" fill="#6B5A4C" font-size="20" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif" letter-spacing="4">高衣紗彩（たかごろもさあや） / note</text>
+  <rect x="1114" y="546" width="92" height="92" rx="10" fill="#8D2B20"/>
+  <text x="1160" y="607" text-anchor="middle" fill="#F7F3EE" font-size="42" font-weight="700" font-family="'Hiragino Mincho ProN', 'Yu Mincho', serif">師</text>
+</svg>

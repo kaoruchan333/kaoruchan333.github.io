@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>かおる塾 ― 問い続ける人たちのグループコーチング</title>
+<meta name="description" content="毎月、事実と認知を分けながら自分の在り方を問い続ける。前田薫（かおるちゃん）主宰のグループコーチングコミュニティ。">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+  :root {
+    --ink:    #1a1a2e;
+    --deep:   #16213e;
+    --mid:    #2c3e6a;
+    --ash:    #4a4a5a;
+    --mist:   #f0eff5;
+    --cream:  #faf9fc;
+    --silver: #c8c8d8;
+    --earth:  #8b6b4a;
+    --warm:   #b8956a;
+    --char:   #2a2a3a;
+    --gold:   #a5793e;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--char);
+    font-family: 'Noto Serif JP', serif;
+    line-height: 1.9;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, var(--deep) 0%, var(--mid) 100%);
+    color: #fff;
+    padding: 80px 24px 72px;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--silver);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--warm);
+  }
+  .hero-sub {
+    font-size: 15px;
+    color: var(--silver);
+    max-width: 480px;
+    margin: 0 auto 36px;
+    line-height: 1.9;
+  }
+  .hero-price {
+    display: inline-block;
+    border: 1px solid var(--warm);
+    color: var(--warm);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    padding: 8px 24px;
+    border-radius: 24px;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+  }
+  .section:last-of-type { border-bottom: none; }
+  .section-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+  p {
+    font-size: 15px;
+    line-height: 2;
+    margin-bottom: 16px;
+    color: #3a3a4a;
+  }
+  p:last-child { margin-bottom: 0; }
+
+  /* ── HIGHLIGHT BOX ── */
+  .hl {
+    background: #f0f0f8;
+    border-left: 3px solid var(--mid);
+    padding: 20px 24px;
+    border-radius: 0 8px 8px 0;
+    margin: 24px 0;
+  }
+  .hl p { font-size: 14px; color: var(--ink); margin: 0; }
+
+  /* ── CARD GRID ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 24px 0;
+  }
+  @media(max-width: 480px) { .card-grid { grid-template-columns: 1fr; } }
+  .card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .card-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--ash);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .card p { font-size: 14px; margin: 0; line-height: 1.8; }
+
+  /* ── LIST ── */
+  .check-list {
+    list-style: none;
+    margin: 20px 0;
+  }
+  .check-list li {
+    padding: 10px 0 10px 28px;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    font-size: 15px;
+    color: #3a3a4a;
+    line-height: 1.8;
+  }
+  .check-list li:last-child { border-bottom: none; }
+  .check-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 14px;
+  }
+
+  /* ── PLAN TABLE ── */
+  .plan {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 12px;
+    padding: 32px;
+    margin: 24px 0;
+    text-align: center;
+  }
+  .plan-name {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--ash);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .plan-price {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .plan-price span {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--ash);
+  }
+  .plan-note {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    color: var(--ash);
+    margin-bottom: 24px;
+  }
+  .plan hr {
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    margin: 20px 0;
+  }
+  .plan ul {
+    list-style: none;
+    text-align: left;
+    margin: 0 0 24px;
+  }
+  .plan ul li {
+    font-size: 14px;
+    padding: 8px 0 8px 20px;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    color: #3a3a4a;
+  }
+  .plan ul li:last-child { border-bottom: none; }
+  .plan ul li::before { content: '—'; position: absolute; left: 0; color: var(--silver); }
+
+  /* ── CTA ── */
+  .cta-btn {
+    display: inline-block;
+    background: var(--ink);
+    color: #fff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    padding: 16px 40px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .cta-btn:hover { opacity: 0.8; }
+
+  /* ── PROFILE ── */
+  .profile {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    margin: 24px 0;
+  }
+  @media(max-width: 480px) { .profile { flex-direction: column; } }
+  .profile-text { flex: 1; }
+  .profile-text h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .profile-text p { font-size: 14px; margin-bottom: 8px; }
+
+  /* ── QUOTE ── */
+  .big-quote {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.7;
+    padding: 24px 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin: 24px 0;
+    text-align: center;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: var(--silver);
+    text-align: center;
+    padding: 32px 24px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    line-height: 2;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Kaoru-Juku · Group Coaching</div>
+  <h1>問い続ける人たちの場、<br><em>かおる塾</em>。</h1>
+  <p class="hero-sub">
+    答えを出す場所ではありません。<br>
+    毎月、自分の事実と認知を分けながら、<br>本来の在り方に還っていく対話の場です。
+  </p>
+  <div class="hero-price">月額 22,000円 / グループコーチング</div>
+</div>
+
+<!-- こんな人へ -->
+<div class="section">
+  <div class="section-label">For</div>
+  <h2>こんな方が集まっています</h2>
+
+  <ul class="check-list">
+    <li>個人セッションやコーチングを経験して、もっと問い続けたい</li>
+    <li>「頑張っているのに、なんかズレる」という感覚がある</li>
+    <li>感情に振り回されず、自分の軸で判断できるようになりたい</li>
+    <li>同じ問いを持つ仲間と、定期的に深い対話をしたい</li>
+    <li>事実と認知の分離を、日常で使えるようにしたい</li>
+  </ul>
+</div>
+
+<!-- かおる塾でやること -->
+<div class="section">
+  <div class="section-label">What</div>
+  <h2>かおる塾でやること</h2>
+
+  <p>毎月テーマを決めて、グループで問いを深めます。</p>
+  <p>「正しい答え」を教える場ではありません。<br>自分の出来事に天中道（事実と認知の分離）を当てはめながら、一緒に掘り下げていく対話の場です。</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-label">毎月のテーマ</div>
+      <p>感情・認知・在り方・使命・関係性など、生きることに直結したテーマを扱います</p>
+    </div>
+    <div class="card">
+      <div class="card-label">対話の形式</div>
+      <p>グループセッション形式。かおるちゃんがファシリテートしながら、一人ひとりの問いを扱います</p>
+    </div>
+    <div class="card">
+      <div class="card-label">場の文化</div>
+      <p>評価しない。比べない。「そういうことあるよね」と受け取り合える安全な場</p>
+    </div>
+    <div class="card">
+      <div class="card-label">蓄積されるもの</div>
+      <p>自分の認知パターンへの気づき。問い続ける習慣。本音で話せる仲間</p>
+    </div>
+  </div>
+
+  <div class="big-quote">
+    「問いに答えが出なくていい。<br>問い続けること自体が、本来の在り方に戻る道。」
+  </div>
+</div>
+
+<!-- 料金 -->
+<div class="section">
+  <div class="section-label">Plan</div>
+  <h2>参加プラン</h2>
+
+  <div class="plan">
+    <div class="plan-name">Monthly Membership</div>
+    <div class="plan-price">22,000<span>円 / 月（税込）</span></div>
+    <div class="plan-note">※ 月単位で継続。いつでも退会可能</div>
+    <hr>
+    <ul>
+      <li>毎週1回のグループコーチングセッション（オンライン）</li>
+      <li>月1回の個人セッション（1対1）</li>
+      <li>セッション録画の共有</li>
+      <li>毎月の振り返り教材（かおる塾オリジナル）</li>
+      <li>メンバー限定コミュニティへのアクセス</li>
+    </ul>
+    <a href="#" class="cta-btn">申し込む</a>
+    <p style="font-size:12px; color:#888; margin-top:16px; font-family:'Noto Sans JP',sans-serif;">
+      ※ フォームURLは近日公開予定です
+    </p>
+  </div>
+
+  <div class="hl">
+    <p>かおる塾は、個人セッションや伴走型コーチングを経験した方の継続の場として設計しています。<br>
+    まずコーチングを体験してみたい方は、個別セッションからどうぞ。</p>
+  </div>
+</div>
+
+<!-- 主宰者紹介 -->
+<div class="section">
+  <div class="section-label">Host</div>
+  <h2>主宰：前田薫（かおるちゃん）</h2>
+
+  <div class="profile">
+    <div class="profile-text">
+      <h3>人生デザインコーチ® / 天中道コーチ</h3>
+      <p>奈良県天川村 × 大阪今里を拠点に活動。師匠である高衣紗彩（たかごろもさあや）先生の中庸思考をベースに、事実と認知を分けながら「本来の自分に還る伴走」をするコーチ。</p>
+      <p>「自分らしく生きられない人をゼロにする」をミッションに、個人コーチング・グループコーチング・天川村でのテラコヤ事業を展開。</p>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="section" style="text-align:center;">
+  <div class="section-label">Apply</div>
+  <h2>まず、話を聞いてみませんか</h2>
+  <p>かおる塾への参加を検討している方は、まず個別セッション（体験）からお申し込みください。</p>
+  <br>
+  <a href="#" class="cta-btn">申し込む</a>
+</div>
+
+<footer>
+  <p>かおる塾 / 前田薫（人生デザインコーチ® / 天中道コーチ）</p>
+  <p>奈良県天川村 × 大阪今里</p>
+</footer>
+
+</body>
+</html>

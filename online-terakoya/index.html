@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>オンライン寺子屋 ― 本来の自分に還る対話の場</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+  :root {
+    --ink:    #1a1a2e;
+    --deep:   #16213e;
+    --moon:   #e2c97e;
+    --sage:   #7a9e8a;
+    --mist:   #f0ede8;
+    --cream:  #faf8f5;
+    --stone:  #6b6b6b;
+    --warm:   #c4952a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Serif JP', serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.9;
+  }
+
+  /* Hero */
+  .hero {
+    background: var(--ink);
+    color: var(--mist);
+    text-align: center;
+    padding: 100px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 60%, rgba(226,201,126,0.08) 0%, transparent 70%);
+  }
+  .hero-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: var(--moon);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+    margin-bottom: 24px;
+  }
+  .hero h1 span { color: var(--moon); }
+  .hero-sub {
+    font-size: 1rem;
+    color: rgba(240,237,232,0.75);
+    max-width: 480px;
+    margin: 0 auto 40px;
+    line-height: 1.9;
+  }
+  .badge {
+    display: inline-block;
+    border: 1px solid var(--moon);
+    color: var(--moon);
+    font-size: 0.8rem;
+    padding: 6px 20px;
+    letter-spacing: 0.15em;
+    border-radius: 2px;
+  }
+
+  /* Section */
+  section {
+    padding: 80px 24px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.35em;
+    color: var(--sage);
+    margin-bottom: 16px;
+  }
+  h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 400;
+    margin-bottom: 32px;
+    line-height: 1.5;
+  }
+  p { margin-bottom: 20px; color: #333; font-size: 1rem; }
+
+  /* What */
+  .what-block {
+    background: var(--ink);
+    color: var(--mist);
+    border-radius: 4px;
+    padding: 48px 40px;
+    margin: 40px 0;
+    text-align: center;
+  }
+  .what-block p {
+    color: rgba(240,237,232,0.85);
+    font-size: 1.05rem;
+    line-height: 2;
+    margin-bottom: 0;
+  }
+  .what-block .highlight {
+    font-size: 1.3rem;
+    color: var(--moon);
+    display: block;
+    margin: 16px 0;
+    font-weight: 600;
+  }
+
+  /* For whom */
+  .for-list {
+    list-style: none;
+    margin: 24px 0;
+  }
+  .for-list li {
+    padding: 14px 0;
+    border-bottom: 1px solid #e8e4df;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.98rem;
+    color: #333;
+  }
+  .for-list li::before {
+    content: '✦';
+    color: var(--sage);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* Program */
+  .program-grid {
+    display: grid;
+    gap: 16px;
+    margin: 32px 0;
+  }
+  .program-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e8e4df;
+    align-items: start;
+  }
+  .program-time {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.8rem;
+    color: var(--sage);
+    font-weight: 500;
+    padding-top: 2px;
+  }
+  .program-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .program-desc {
+    font-size: 0.88rem;
+    color: var(--stone);
+    line-height: 1.7;
+  }
+
+  /* Divider */
+  .divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 0;
+  }
+
+  /* Info table */
+  .info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+  }
+  .info-table tr { border-bottom: 1px solid #e8e4df; }
+  .info-table th {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    font-size: 0.82rem;
+    color: var(--stone);
+    padding: 16px 0;
+    text-align: left;
+    width: 100px;
+    vertical-align: top;
+  }
+  .info-table td {
+    padding: 16px 0;
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  /* Zoom box */
+  .zoom-box {
+    background: #f0f4f8;
+    border-left: 3px solid var(--sage);
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .zoom-box .zoom-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    color: var(--sage);
+    margin-bottom: 12px;
+  }
+  .zoom-box a {
+    color: var(--ink);
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .zoom-box .zoom-meta {
+    font-size: 0.85rem;
+    color: var(--stone);
+    margin-top: 8px;
+  }
+
+  /* Host */
+  .host-section {
+    background: var(--mist);
+    padding: 80px 24px;
+  }
+  .host-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .host-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .host-role {
+    font-size: 0.85rem;
+    color: var(--stone);
+    margin-bottom: 20px;
+  }
+
+  /* Form */
+  .form-section {
+    background: var(--ink);
+    padding: 80px 24px;
+    text-align: center;
+  }
+  .form-section h2 { color: var(--mist); margin-bottom: 12px; }
+  .form-section p { color: rgba(240,237,232,0.7); }
+  .form-embed {
+    max-width: 680px;
+    margin: 40px auto 0;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .form-embed iframe {
+    width: 100%;
+    min-height: 700px;
+    border: none;
+    display: block;
+  }
+
+  /* Footer */
+  footer {
+    background: #111;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 40px 24px;
+    font-size: 0.82rem;
+    line-height: 2;
+  }
+  footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 72px 20px 60px; }
+    .what-block { padding: 32px 20px; }
+    section { padding: 56px 20px; }
+    .program-item { grid-template-columns: 60px 1fr; gap: 10px; }
+    .info-table th { width: 80px; font-size: 0.78rem; }
+    .info-table td { font-size: 0.88rem; }
+    .zoom-box { padding: 20px; }
+    .zoom-box a { font-size: 0.82rem; word-break: break-all; }
+    .form-embed iframe { min-height: 800px; }
+    .host-section { padding: 56px 20px; }
+    .form-section { padding: 56px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <p class="hero-label">ONLINE TERAKOYA — 毎月開催</p>
+  <h1>本来の<span>自分</span>に<br>還る対話の場</h1>
+  <p class="hero-sub">
+    講座でもセミナーでもありません。<br>
+    経営者やリーダーが、正解探しをやめて、<br>
+    「ほんまは何を生きたいのか」を取り戻す90分。
+  </p>
+  <span class="badge">参加費 無料</span>
+</div>
+
+<!-- What -->
+<section>
+  <p class="section-label">WHAT IS TERAKOYA</p>
+  <h2>寺子屋とは何か</h2>
+  <p>
+    私たちは社会の中で生きているうちに、比較・評価・こうしなきゃいけない・不安や恐れ——
+    そういうものを知らないうちに身につけて、気づけば自分の声より外のノイズで選ぶようになります。
+  </p>
+  <p>
+    寺子屋は、それを増やす場所ではなく、少しずつ削ぎ落としていく場所（アンラーニング）です。
+  </p>
+  <div class="what-block">
+    <p>
+      だから寺子屋では、答えを教えることよりも
+      <span class="highlight">「自分の問いを取り戻すこと」</span>
+      を大切にしています。
+    </p>
+  </div>
+  <p>
+    オンライン寺子屋では、なぜ問いが大切なのか、なぜ答えを急がないのか、
+    なぜ沈黙が生まれるのか——そんな寺子屋の考え方を通して、自分の人生と事業の源を見直していきます。
+  </p>
+</section>
+
+<hr class="divider">
+
+<!-- For whom -->
+<section>
+  <p class="section-label">FOR WHOM</p>
+  <h2>こんな人に来てほしい</h2>
+  <ul class="for-list">
+    <li>事業は回っているのに、まだ本当の使命に触れきれていない経営者・個人事業主</li>
+    <li>コミュニティやチームを率いる中で、自分の源を整えたいリーダー</li>
+    <li>自分らしく生きたいけれど、今の延長では違うと感じている人</li>
+    <li>子どもたちの未来や教育の在り方に本気で関わりたい人</li>
+    <li>本音で対話できる、密度の高い場を探している人</li>
+  </ul>
+  <p style="color: var(--stone); font-size: 0.9rem;">
+    ※ 正解を教えてほしい方・ノウハウを学びたい方には向いていないかもしれません。
+  </p>
+</section>
+
+<hr class="divider">
+
+<!-- Program -->
+<section>
+  <p class="section-label">PROGRAM — 90 min</p>
+  <h2>当日の流れ</h2>
+  <div class="program-grid">
+    <div class="program-item">
+      <div class="program-time">10分</div>
+      <div>
+        <div class="program-title">① 場をひらく</div>
+        <div class="program-desc">肩書きや役割を一度外して、今感じていることを一言ずつ共有します。ここで場の空気が一気に変わります。</div>
+      </div>
+    </div>
+    <div class="program-item">
+      <div class="program-time">20分</div>
+      <div>
+        <div class="program-title">② 源（ソース）の語り</div>
+        <div class="program-desc">なぜ寺子屋をやろうとしているのか。社会に感じている違和感。天川でやろうとしていること。表面的な成功の先にあるテーマを開きます。</div>
+      </div>
+    </div>
+    <div class="program-item">
+      <div class="program-time">10分</div>
+      <div>
+        <div class="program-title">③ 沈黙の時間</div>
+        <div class="program-desc">語られたことを内側に沈める時間。考えるというより「感じる時間」です。</div>
+      </div>
+    </div>
+    <div class="program-item">
+      <div class="program-time">40分</div>
+      <div>
+        <div class="program-title">④ 対話</div>
+        <div class="program-desc">テーマは「今感じている違和感」。アドバイスや正解を出すのではなく、感じていることをそのまま話します。話しているうちに、使命や本音の輪郭が見えてきます。</div>
+      </div>
+    </div>
+    <div class="program-item">
+      <div class="program-time">10分</div>
+      <div>
+        <div class="program-title">⑤ 問いを持ち帰る</div>
+        <div class="program-desc">「今日の寺子屋で自分の中に生まれた問い」を一言ずつ共有して終わります。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Info -->
+<section>
+  <p class="section-label">INFORMATION</p>
+  <h2>開催概要</h2>
+  <table class="info-table">
+    <tr><th>開催</th><td>毎月開催（Zoom）</td></tr>
+    <tr><th>時間</th><td>90分</td></tr>
+    <tr><th>参加費</th><td>無料（最初の数回）</td></tr>
+    <tr><th>定員</th><td>少人数（本音の対話ができる人数）</td></tr>
+    <tr><th>テーマ</th><td>今、あなたが感じている違和感は何ですか？<br><small>違和感の奥にある使命や本音に触れにいく対話です</small></td></tr>
+  </table>
+
+  <div class="zoom-box">
+    <div class="zoom-label">ZOOM MEETING ROOM</div>
+    <a href="https://us02web.zoom.us/j/3545433037?pwd=bDYwY3Jha2ZwVGpUc2lIbC8ydHNzQT09">
+      https://us02web.zoom.us/j/3545433037
+    </a>
+    <div class="zoom-meta">
+      ミーティングID: 354 543 3037 ／ パスコード: nanbodemo<br>
+      ※ 申込み後にZoomリンクをお送りします
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- Host -->
+<div class="host-section">
+  <div class="host-inner">
+    <p class="section-label">HOST</p>
+    <div class="host-name">前田 薫（まえだ かおる）</div>
+    <div class="host-role">株式会社なんぼでも 代表取締役社長 / 人生デザイン構築学校 認定コーチ / 認定講師</div>
+    <p>
+      20年以上、人の本音・才能・その人だけの本当の幸せを言語化するコーチングに伴走。数多くの経営者やコミュニティリーダーの意思決定と言語化を支えてきた。
+      人生デザインコーチとして個人と場の両方を整えながら、「面白いのに核心を突かれる」対話の場を全国でひらいている。<br><br>
+      奈良県天川村では地域おこし協力隊として行政や教育委員会と連携し、廃校を活用した寺子屋づくりやサッカー教室を推進。
+      元ラジオ局の局長・プロデューサーとして培った場づくりの感覚と、宝塚JCから講演依頼を受ける教育視点をあわせ持つ。<br><br>
+      オンライン寺子屋では、肩書きの外側にある「ほんまの自分の声」を、安心して言葉にできる時間を届けている。終わる頃には、多くの人が「自分の問いを生きてみよう」と少し姿勢が変わる。
+    </p>
+  </div>
+</div>
+
+<!-- Form -->
+<div class="form-section">
+  <p class="section-label" style="color: var(--moon);">APPLY</p>
+  <h2>参加申込み</h2>
+  <p>以下のフォームよりお申し込みください。</p>
+  <div class="form-embed">
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdmesSF5yY-jpSWsW7w4N5goeIEhm6rj7kI9DENoeo9byvbNQ/viewform?embedded=true"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0">
+      読み込み中...
+    </iframe>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>オンライン寺子屋 ／ 前田 薫</p>
+  <p style="margin-top: 12px;">
+    <a href="https://pagedrop.dev/s/98LnAcgH/">🌿 天川村 自然農体験</a>
+    <a href="https://pagedrop.dev/s/JLUJVpNv/zazen/">🧘 坐禅会</a>
+    <a href="https://pagedrop.dev/s/JLUJVpNv/terakoya/">🌙 夜の寺子屋</a>
+  </p>
+</footer>
+
+</body>
+</html>

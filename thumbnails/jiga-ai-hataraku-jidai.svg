@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="670" viewBox="0 0 1280 670" fill="none">
+  <defs>
+    <filter id="paperNoise" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="11" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.06" />
+      </feComponentTransfer>
+    </filter>
+    <filter id="inkBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="0.9" />
+    </filter>
+  </defs>
+  <rect width="1280" height="670" fill="#FAF7F2"/>
+  <rect width="1280" height="670" fill="#000" filter="url(#paperNoise)"/>
+  <path d="M132 210C240 156 356 132 498 136C612 140 704 188 824 206C954 224 1074 194 1180 150L1194 198C1098 242 980 272 838 268C704 264 604 218 482 208C356 198 248 220 142 284Z" fill="#101010" opacity="0.18" filter="url(#inkBlur)"/>
+  <path d="M976 96C1058 70 1151 90 1207 154C1248 200 1248 276 1200 330C1139 400 1038 432 946 404C846 372 812 256 860 178C886 136 924 110 976 96Z" fill="#111111" opacity="0.08"/>
+  
+  <path d="M76 84L194 84" stroke="#1F1B18" stroke-width="5" stroke-linecap="round"/>
+  <path d="M76 84L76 198" stroke="#1F1B18" stroke-width="5" stroke-linecap="round"/>
+  <path d="M1206 586L1088 586" stroke="#1F1B18" stroke-width="5" stroke-linecap="round"/>
+  <path d="M1206 586L1206 470" stroke="#1F1B18" stroke-width="5" stroke-linecap="round"/>
+
+  <text x="124" y="116" fill="#1F1B18" font-size="22" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif" letter-spacing="6" transform="rotate(0 124 116)">愛しの自我くん観察日記</text>
+  <text x="126" y="226" fill="#171311" font-size="94" font-weight="700" font-family="'Hiragino Mincho ProN', 'Yu Mincho', serif"><tspan x="126" dy="0">AIと働く時代</tspan></text>
+  <text x="132" y="350" fill="#433A34" font-size="22" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif"><tspan x="132" dy="0">自我がざわつく時代に、自分の中心をどこへ置くか。</tspan></text>
+  <text x="116" y="590" fill="#6B5A4C" font-size="20" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif" letter-spacing="3">JIGA OBSERVATION</text>
+  <rect x="1116" y="530" width="88" height="88" rx="8" fill="#1F1B18"/>
+  <text x="1160" y="588" text-anchor="middle" fill="#F7F3EE" font-size="48" font-weight="700" font-family="'Hiragino Mincho ProN', 'Yu Mincho', serif">自</text>
+</svg>

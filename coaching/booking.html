@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>予約ページ | 前田薫 人生デザインコーチング</title>
+  <style>
+    :root {
+      --bg: #f7f0e7;
+      --paper: #fffdfa;
+      --ink: #201913;
+      --soft: #6e645b;
+      --gold: #a5793e;
+      --line: rgba(32, 25, 19, 0.1);
+      --accent: #1f1a17;
+      --shadow: 0 18px 50px rgba(32, 25, 19, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top, rgba(165, 121, 62, 0.15), transparent 28%),
+        linear-gradient(180deg, #faf6ef 0%, var(--bg) 100%);
+      line-height: 1.85;
+    }
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 76px 24px 88px;
+    }
+    .eyebrow {
+      margin-bottom: 16px;
+      color: var(--gold);
+      font-size: 0.8rem;
+      letter-spacing: 0.3em;
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      line-height: 1.3;
+      font-weight: 500;
+    }
+    .lead {
+      max-width: 760px;
+      color: var(--soft);
+      margin-bottom: 30px;
+    }
+    .panel {
+      padding: 28px 26px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      margin-bottom: 22px;
+    }
+    .panel h2 {
+      margin: 0 0 12px;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-size: 1.7rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .slots {
+      display: grid;
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .slot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--paper);
+      border: 1px solid rgba(32, 25, 19, 0.08);
+    }
+    .slot strong {
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+    }
+    .slot span {
+      color: var(--soft);
+      font-size: 0.92rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 28px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      box-shadow: 0 16px 40px rgba(32, 25, 19, 0.18);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .card {
+      padding: 20px 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(32, 25, 19, 0.08);
+    }
+    .card small {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--gold);
+      letter-spacing: 0.2em;
+      font-size: 0.72rem;
+    }
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+    }
+    .card p {
+      margin: 0;
+      color: var(--soft);
+      font-size: 0.95rem;
+    }
+    @media (max-width: 760px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .slot {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="eyebrow">BOOKING PAGE</div>
+    <h1>空いている枠から、<br>そのまま予約できます。</h1>
+    <p class="lead">
+      下の候補枠は、現在の予定を見たうえで出している予約候補です。
+      フォームで希望枠を選んで送ってもらえれば、こちらで確認しながら日程を確定していきます。
+    </p>
+
+    <section class="panel">
+      <h2>現在の予約候補</h2>
+      <div class="slots">
+        <div class="slot"><div><strong>4/21(火) 10:00〜13:00</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>4/21(火) 14:00〜17:00</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>4/21(火) 19:30〜22:30</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>4/23(木) 10:00〜13:00</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>4/23(木) 14:00〜17:00</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>4/23(木) 19:30〜22:30</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>4/28(火) 10:00〜13:00</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>4/28(火) 14:00〜17:00</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>4/28(火) 19:30〜22:30</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>4/30(木) 10:00〜13:00</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>4/30(木) 14:00〜17:00</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>4/30(木) 19:30〜22:30</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>5/5(火) 10:00〜13:00</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>5/5(火) 14:00〜17:00</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>5/5(火) 19:30〜22:30</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>5/7(木) 10:00〜13:00</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>5/7(木) 14:00〜17:00</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>5/7(木) 19:30〜22:30</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>5/12(火) 10:00〜13:00</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>5/12(火) 14:00〜17:00</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>5/12(火) 19:30〜22:30</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>5/14(木) 10:00〜13:00</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>5/14(木) 14:00〜17:00</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+<div class="slot"><div><strong>5/14(木) 19:30〜22:30</strong><br><span>3時間セッションも入れられる予約候補枠です</span></div></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>料金</h2>
+      <div class="grid">
+        <div class="card">
+          <small>TRIAL</small>
+          <strong>11,000円</strong>
+          <p>体験セッション。1回のみ。</p>
+        </div>
+        <div class="card">
+          <small>STANDARD</small>
+          <strong>33,000円</strong>
+          <p>90分セッション。</p>
+        </div>
+        <div class="card">
+          <small>IMMERSION</small>
+          <strong>55,000円</strong>
+          <p>3時間セッション。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>申込みフォーム</h2>
+      <p class="lead" style="margin-bottom:18px;">
+        希望枠とメニューを選んでお送りください。受付後、自動返信メールが届きます。
+      </p>
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdztlwDfgOXDBL67H5KLA8EN-vmm1dFv9tBe9lsCDHHTIgJjQ/viewform" target="_blank" rel="noopener">フォームを開く</a>
+    </section>
+  </main>
+</body>
+</html>

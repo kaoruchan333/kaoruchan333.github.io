@@ -1,0 +1,20 @@
+{
+  "siteId": "pZqUgzz4",
+  "url": "https://pagedrop.dev/s/pZqUgzz4",
+  "expiresAt": null,
+  "files": [
+    "index.html",
+    "booking.html",
+    "photos/tenkawa-waterfall-winter.jpg",
+    "photos/kaoru-lecture-smile.jpg",
+    "photos/goma-fire.jpg",
+    "photos/kaoru-lecture-fist.jpg",
+    "photos/kaoru-pray-snow.jpg",
+    "photos/soccer-gym.jpg",
+    "photos/tenkawa-light.jpg"
+  ],
+  "totalSizeBytes": 2077213,
+  "updatedAt": "2026-04-16T12:16:26.273Z",
+  "passwordProtected": false,
+  "deleteToken": "dlt_2e9df9f80d1faaf1075dd49003249a63299ba2596d739777"
+}

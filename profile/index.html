@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プロフィール | 前田薫</title>
+  <meta name="description" content="前田薫の背景、使命、天川村との関係、中庸思考とのつながりを伝えるページ。">
+  <style>
+    :root {
+      --bg: #f7f2e9;
+      --paper: rgba(255, 252, 247, 0.88);
+      --ink: #1d1814;
+      --soft: #685d54;
+      --line: rgba(29, 24, 20, 0.12);
+      --gold: #a9793d;
+      --moss: #667864;
+      --shadow: 0 20px 42px rgba(29, 24, 20, 0.06);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(169, 121, 61, 0.14), transparent 26%),
+        linear-gradient(180deg, #fcf8f2 0%, var(--bg) 100%);
+      line-height: 1.9;
+    }
+    a { color: inherit; }
+    .shell {
+      width: min(1100px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 18px 0 0;
+    }
+    .brand {
+      font-size: 0.82rem;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+    }
+    .nav {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 0.92rem;
+      color: var(--soft);
+    }
+    .nav a {
+      text-decoration: none;
+      padding-bottom: 2px;
+    }
+    .nav a[aria-current="page"] {
+      color: var(--ink);
+      border-bottom: 1px solid rgba(29, 24, 20, 0.2);
+    }
+    .hero {
+      padding: 34px 0 18px;
+    }
+    .hero-split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+    .eyebrow {
+      color: var(--gold);
+      font-size: 0.8rem;
+      letter-spacing: 0.28em;
+      margin-bottom: 14px;
+    }
+    h1 {
+      margin: 0;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-size: clamp(2.4rem, 5vw, 4.6rem);
+      line-height: 1.28;
+      font-weight: 500;
+    }
+    .lead {
+      max-width: 760px;
+      margin-top: 18px;
+      color: var(--soft);
+    }
+    .hero-panel {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 34px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+    .hero-visual,
+    .visual-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 320px;
+      border-radius: 34px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .hero-visual::after,
+    .visual-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(18, 20, 18, 0.04), rgba(18, 20, 18, 0.18));
+      pointer-events: none;
+    }
+    .visual-river {
+      background-image:
+        linear-gradient(180deg, rgba(18, 22, 24, 0.04), rgba(18, 22, 24, 0.18)),
+        url("../site-assets/home/river-light.jpg");
+    }
+    .visual-meditation {
+      background-image:
+        linear-gradient(180deg, rgba(18, 22, 24, 0.04), rgba(18, 22, 24, 0.18)),
+        url("../site-assets/home/meditation-window.jpg");
+      background-position: 60% center;
+    }
+    .visual-goma {
+      background-image:
+        linear-gradient(180deg, rgba(20, 12, 8, 0.06), rgba(20, 12, 8, 0.24)),
+        url("../site-assets/home/goma-fire.jpg");
+    }
+    .visual-lecture {
+      background-image:
+        linear-gradient(180deg, rgba(18, 22, 24, 0.03), rgba(18, 22, 24, 0.14)),
+        url("../site-assets/home/lecture-room.jpg");
+      background-position: 78% center;
+    }
+    .visual-shrine {
+      background-image:
+        linear-gradient(180deg, rgba(18, 22, 24, 0.05), rgba(18, 22, 24, 0.16)),
+        url("../site-assets/home/IMG_7362.jpg");
+    }
+    .visual-bridge {
+      background-image:
+        linear-gradient(180deg, rgba(18, 22, 24, 0.04), rgba(18, 22, 24, 0.16)),
+        url("../site-assets/home/IMG_5307.jpg");
+    }
+    .section {
+      padding: 24px 0;
+    }
+    .panel, .grid-card {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+    .grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .grid-3 {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      font-weight: 500;
+      line-height: 1.42;
+    }
+    h3 {
+      margin: 0 0 10px;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    p { margin: 0; color: var(--soft); }
+    .stack { display: grid; gap: 16px; }
+    .mini {
+      color: var(--gold);
+      font-size: 0.76rem;
+      letter-spacing: 0.24em;
+      margin-bottom: 10px;
+    }
+    .note-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 16px;
+    }
+    .note-card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 18px;
+      background: rgba(255,255,255,0.75);
+    }
+    .note-card a {
+      text-decoration: none;
+    }
+    .note-card .meta {
+      font-size: 0.78rem;
+      color: var(--gold);
+      letter-spacing: 0.14em;
+    }
+    .chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .chips span {
+      font-size: 0.8rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(102, 120, 100, 0.1);
+      color: var(--moss);
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--line);
+      margin-top: 16px;
+    }
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .button-row .button {
+      margin-top: 0;
+    }
+    .plain-list {
+      display: grid;
+      gap: 10px;
+      color: var(--soft);
+    }
+    .plain-list div {
+      padding-left: 16px;
+      position: relative;
+    }
+    .plain-list div::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.9em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(102, 120, 100, 0.62);
+      transform: translateY(-50%);
+    }
+    .cta-band {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,252,247,0.9));
+      border-radius: 32px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+    .footer {
+      padding: 24px 0 56px;
+      color: var(--soft);
+      font-size: 0.92rem;
+    }
+    @media (max-width: 900px) {
+      .hero-split,
+      .grid,
+      .grid-3,
+      .note-grid { grid-template-columns: 1fr; }
+      .hero-visual,
+      .visual-card { min-height: 260px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="topbar">
+      <div class="brand">KAORU MAEDA</div>
+      <nav class="nav"><a href="../">ホーム</a><a href="../thought/">思想</a><a href="../activities/">活動</a><a href="../services/">サービス</a><a href="../profile/" aria-current="page">プロフィール</a><a href="../notes/">発信</a><a href="../hub/">イベント</a></nav>
+    </div>
+    
+    <section class="hero hero-split">
+      <div class="hero-panel">
+        <div class="eyebrow">PROFILE</div>
+        <h1>前田薫という人間の背景と、<br>この活動をしている理由。</h1>
+        <p class="lead">奈良県天川村を拠点に、問いと対話の文化を育てながら、一人ひとりが本来に戻っていく伴走をしています。</p>
+        <div class="button-row">
+          <a class="button" href="https://note.com/nanbodemo" target="_blank" rel="noopener noreferrer">noteプロフィール</a>
+          <a class="button" href="https://pagedrop.dev/s/pZqUgzz4/">個別コーチングを見る</a>
+        </div>
+      </div>
+      <figure class="hero-visual visual-lecture" aria-label="人前で話している前田薫の様子"></figure>
+    </section>
+    <section class="section grid">
+      <article class="panel stack">
+        <h2>なぜこの活動をしているのか</h2>
+        <p>ビジョンは「自分らしく生きれない人をゼロにする」。個人の苦しさの背景にある認知や場の空気まで見つめ、本来へ戻る流れを作りたいと思っています。</p>
+      </article>
+      <article class="panel stack">
+        <h2>天川村との関係</h2>
+        <p>天川村の自然と静けさは、思想ではなく体感として人を本来へ戻してくれる場所です。寺子屋構想も、この土地の力とつながっています。</p>
+      </article>
+    </section>
+    <section class="section grid">
+      <article class="panel stack">
+        <h2>中庸思考との出会い</h2>
+        <p>良い悪いを急いで決めるのではなく、事実と認知を分けて見ていく。その視点が、自分自身にも他者にも、ジャッジを減らしてくれました。</p>
+      </article>
+      <article class="panel stack">
+        <h2>今のビジョン</h2>
+        <p>個人だけでなく、コミュニティや組織も本来に戻していく。使命と経営を分けず、混ぜず、つなぎ直していくホームを育てています。</p>
+      </article>
+    </section>
+    <section class="section hero-split">
+      <article class="panel stack">
+        <div class="mini">PERSON / PATH / PLACE</div>
+        <h2>人、道、場が重なったところから、今の活動ができています。</h2>
+        <div class="plain-list">
+          <div>人としての前田薫: 問いと対話の中で、その人の本来性を見つめる</div>
+          <div>道としての天中道: 価値観の言語化と中庸思考と身体実践をつなぐ</div>
+          <div>場としての天川村: 思考ではなく体感で本来に戻る理由になる</div>
+        </div>
+      </article>
+      <figure class="visual-card visual-shrine" aria-label="天河大弁財天社の鳥居と静かな参道"></figure>
+    </section>
+    <section class="section grid">
+      <article class="panel stack">
+        <div class="mini">MISSION</div>
+        <h2>届けたい相手</h2>
+        <p>すでに社会的にも経済的にも循環している。でもどこかで、納得感や幸せ感や使命感をもう一段深く見つめたい。そんな経営者やリーダー、場を持つ人へ届けたいと思っています。</p>
+      </article>
+      <article class="panel stack">
+        <div class="mini">CHANGE</div>
+        <h2>関わると起きていくこと</h2>
+        <p>ジャッジがほどけ、自己理解と他者理解が深まり、ビジョンが明確になる。結果として、本当にやりたいことへ自然に集中できるようになっていく。その変化を大切にしています。</p>
+      </article>
+    </section>
+    <section class="section">
+      <div class="mini">RELATED NOTES</div>
+      <h2>プロフィールに近い記事</h2>
+      <div class="note-grid">
+            <article class="note-card">
+              <a href="../notes/2026-04-26_人間交差点_ひみにチームを渡した日/">
+                <div class="meta">人間交差点 / 2026-04-26</div>
+                <h3>ひみに、チームを渡した日。</h3>
+                <p>今日は一日、ひみに役割を渡してた。 ひみはもともと、私の「なんでも秘書」だった。 記事も、経理も、議事録も、サイト更新も、全部ひみ一人にやらせてた。 でもある時気づいた。 これ、私の「一人でやりすぎ」をひみに移しただけやなって。 今日やったのは、それを分解すること。 note記事を書く部門。 経理・会計を担う部門。 会議の記録を整理する部…</p>
+              </a>
+              <div class="chips"><span>経営者・リーダー向け</span><span>自分らしく生きる</span></div>
+            </article>
+            
+
+            <article class="note-card">
+              <a href="../notes/2026-04-25_人間交差点_AIと会議した1日言葉を自分のものに戻すまで/">
+                <div class="meta">人間交差点 / 2026-04-25</div>
+                <h3>AIと会議した1日。言葉を自分のものに戻すまで。</h3>
+                <p>たぶん、普通に考えたら 数週間とか、下手したら数ヶ月かかるようなことを、 1日で一気にやってしまった感じがある。 でもこれ、 「頑張った」とか「気合い」とかじゃなくて、 ただシンプルに AIとの関係性が変わってきた結果やなって感じてる。 朝から何をしてたかというと、 ホームページの設計を GPTとClaudeで行ったり来たりしながら、 ひ…</p>
+              </a>
+              <div class="chips"><span>天川村</span></div>
+            </article>
+            
+
+            <article class="note-card">
+              <a href="../notes/2026-04-25_人間交差点_「コンテンツより、あなたがやるから行く」/">
+                <div class="meta">人間交差点 / 2026-04-25</div>
+                <h3>「コンテンツより、あなたがやるから行く」</h3>
+                <p></p>
+              </a>
+              <div class="chips"><span>自分らしく生きる</span></div>
+            </article>
+            </div>
+    </section>
+    
+    <div class="footer">必要な人が、自分のタイミングで選べるように。静かに、でも届く形で置いていくためのホームです。</div>
+  </div>
+</body>
+</html>

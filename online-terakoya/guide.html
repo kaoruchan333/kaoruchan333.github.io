@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>オンライン寺子屋｜今夜の参加案内</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Hiragino Mincho ProN', 'Yu Mincho', Georgia, serif;
+    background: #0e1117;
+    color: #f0ece4;
+    min-height: 100vh;
+  }
+
+  .slides {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+
+  .slide {
+    scroll-snap-align: start;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 32px;
+    position: relative;
+    text-align: center;
+  }
+
+  .slide-num {
+    position: absolute;
+    bottom: 28px;
+    right: 28px;
+    font-size: 12px;
+    color: rgba(240,236,228,0.25);
+    font-family: sans-serif;
+    letter-spacing: 2px;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    color: rgba(240,236,228,0.25);
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%       { transform: translateX(-50%) translateY(6px); }
+  }
+
+  .slide-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #5a6a8a;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+  }
+
+  .slide-heading {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 28px;
+    color: #c4b8a0;
+    line-height: 1.6;
+  }
+
+  /* スライドバー非表示 */
+  .slides::-webkit-scrollbar { display: none; }
+  .slides { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* ─── 01 表紙 ─── */
+  .s-cover {
+    background: radial-gradient(ellipse at 50% 40%, #1c2440 0%, #0e1117 65%);
+  }
+  .moon { font-size: 44px; margin-bottom: 20px; }
+  .cover-date {
+    font-size: 12px; letter-spacing: 4px; color: #8a8070;
+    margin-bottom: 16px; font-family: sans-serif;
+  }
+  .cover-title {
+    font-size: 30px; font-weight: 400; line-height: 1.55;
+    margin-bottom: 24px; color: #f0ece4;
+  }
+  .cover-sub { font-size: 13px; color: #b0a090; letter-spacing: 3px; }
+
+  /* ─── 02 今夜の情報 ─── */
+  .s-info { background: linear-gradient(180deg, #111620 0%, #0e1117 100%); }
+  .info-table { width: 100%; max-width: 320px; border-collapse: collapse; }
+  .info-table tr { border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .info-table td { padding: 15px 10px; font-size: 15px; line-height: 1.6; }
+  .info-table td:first-child {
+    color: #5a6a8a; font-family: sans-serif; font-size: 11px;
+    letter-spacing: 2px; width: 72px; text-align: left;
+    vertical-align: top; padding-top: 18px;
+  }
+  .info-table td:last-child { text-align: left; color: #e8e0d0; }
+
+  /* ─── 03 今夜のテーマ（メインスライド） ─── */
+  .s-theme {
+    background: radial-gradient(ellipse at 50% 60%, #1a1030 0%, #0e1117 65%);
+  }
+  .theme-kagi {
+    font-size: 13px; letter-spacing: 3px; color: #7a60b0;
+    margin-bottom: 28px; font-family: sans-serif;
+  }
+  .theme-question {
+    font-size: 22px; line-height: 1.9; color: #e0d8f4;
+    max-width: 340px; margin-bottom: 32px;
+  }
+  .theme-question em {
+    font-style: normal;
+    display: block;
+    font-size: 26px;
+    color: #c8b8f4;
+    margin: 8px 0 16px;
+    line-height: 1.5;
+  }
+  .theme-sub {
+    font-size: 13px; color: #6a5a7a; line-height: 1.8; max-width: 300px;
+  }
+
+  /* ─── 04 問いの核心 ─── */
+  .s-core {
+    background: radial-gradient(ellipse at 50% 50%, #101830 0%, #0e1117 70%);
+  }
+  .core-blocks {
+    max-width: 340px; width: 100%; margin-top: 8px;
+    display: flex; flex-direction: column; gap: 18px;
+  }
+  .core-block {
+    background: rgba(255,255,255,0.04);
+    border-left: 2px solid #4a3a7a;
+    padding: 16px 20px;
+    text-align: left;
+    border-radius: 0 8px 8px 0;
+  }
+  .core-block .q {
+    font-size: 11px; letter-spacing: 3px; color: #6a5a8a;
+    font-family: sans-serif; margin-bottom: 8px;
+  }
+  .core-block .a {
+    font-size: 16px; color: #d4c8e8; line-height: 1.7;
+  }
+
+  /* ─── 05 Zoom ─── */
+  .s-zoom { background: linear-gradient(180deg, #0f1a10 0%, #0e1117 100%); }
+  .zoom-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 16px; padding: 26px 28px;
+    max-width: 340px; width: 100%; margin-top: 20px;
+  }
+  .zoom-lbl { font-size: 11px; letter-spacing: 3px; color: #5aaa6a; font-family: sans-serif; margin-bottom: 14px; }
+  .zoom-url { font-size: 13px; color: #7ab87a; word-break: break-all; line-height: 1.6; margin-bottom: 18px; font-family: monospace; }
+  .zoom-url a { color: #7ab87a; text-decoration: underline; text-underline-offset: 3px; }
+  .zoom-row { display: flex; justify-content: space-between; padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.06); font-size: 13px; }
+  .zoom-row span:first-child { color: #5a7a5a; font-family: sans-serif; font-size: 11px; letter-spacing: 2px; }
+  .zoom-row span:last-child { color: #c0d0c0; letter-spacing: 2px; }
+  .zoom-note { font-size: 12px; color: #5a7a5a; margin-top: 18px; line-height: 1.6; }
+
+  /* ─── 06 今夜のながれ ─── */
+  .s-flow { background: linear-gradient(180deg, #141820 0%, #0e1117 100%); }
+  .flow-list { list-style: none; max-width: 320px; width: 100%; margin-top: 20px; }
+  .flow-list li {
+    display: flex; align-items: flex-start;
+    padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+    text-align: left; gap: 16px;
+  }
+  .flow-time { font-family: sans-serif; font-size: 12px; color: #6a58a0; letter-spacing: 1px; min-width: 48px; margin-top: 2px; }
+  .flow-text { font-size: 14px; color: #c8c0d8; line-height: 1.5; }
+  .flow-text small { display: block; font-size: 11px; color: #6a5a80; margin-top: 3px; }
+
+  /* ─── 07 かおるから ─── */
+  .s-msg { background: radial-gradient(ellipse at 50% 80%, #1a1428 0%, #0e1117 60%); }
+  .msg-box { max-width: 340px; text-align: left; }
+  .msg-text { font-size: 17px; line-height: 2.1; color: #d4c8c0; margin-bottom: 28px; }
+  .msg-text strong { color: #d0c4e8; font-weight: 400; }
+  .msg-sign { font-size: 14px; color: #7a6a60; text-align: right; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div class="slides">
+
+  <!-- 01 表紙 -->
+  <div class="slide s-cover">
+    <div class="moon">🌙</div>
+    <div class="cover-date">2026年4月13日（月）</div>
+    <div class="cover-title">オンライン寺子屋<br>へようこそ</div>
+    <div class="cover-sub">前田 薫</div>
+    <div class="scroll-hint">↓ scroll</div>
+    <div class="slide-num">01 / 07</div>
+  </div>
+
+  <!-- 02 今夜の情報 -->
+  <div class="slide s-info">
+    <div class="slide-label">Tonight</div>
+    <div class="slide-heading">今夜の開催情報</div>
+    <table class="info-table">
+      <tr>
+        <td>日時</td>
+        <td>2026年4月13日（月）<br>21:30〜23:00</td>
+      </tr>
+      <tr>
+        <td>形式</td>
+        <td>オンライン（Zoom）<br>少人数・対話形式</td>
+      </tr>
+      <tr>
+        <td>準備</td>
+        <td>静かな場所<br>お気に入りの飲み物</td>
+      </tr>
+    </table>
+    <div class="slide-num">02 / 07</div>
+  </div>
+
+  <!-- 03 今夜のテーマ -->
+  <div class="slide s-theme">
+    <div class="theme-kagi">今夜のテーマ</div>
+    <div class="theme-question">
+      AIとパートナーシップを組んだとき——
+      <em>あなたは、本当は<br>何がしたかった？</em>
+      ブロックが外れたとき、<br>あなたの中から何が出てくる？
+    </div>
+    <div class="theme-sub">
+      これはAIの話ではなく、<br>
+      あなた自身の可能性の話です。
+    </div>
+    <div class="slide-num">03 / 07</div>
+  </div>
+
+  <!-- 04 問いの核心 -->
+  <div class="slide s-core">
+    <div class="slide-label">The Questions</div>
+    <div class="slide-heading">今夜、自分に問いかけること</div>
+    <div class="core-blocks">
+      <div class="core-block">
+        <div class="q">QUESTION 01</div>
+        <div class="a">制限を外したとき、<br>本当は何がしたい？</div>
+      </div>
+      <div class="core-block">
+        <div class="q">QUESTION 02</div>
+        <div class="a">どんな欲望・願望を<br>ずっと押し込めてきた？</div>
+      </div>
+      <div class="core-block">
+        <div class="q">QUESTION 03</div>
+        <div class="a">AIという鏡で見たとき、<br>この人生をどう開きたい？</div>
+      </div>
+    </div>
+    <div class="slide-num">04 / 07</div>
+  </div>
+
+  <!-- 05 Zoom接続情報 -->
+  <div class="slide s-zoom">
+    <div class="slide-label">Zoom</div>
+    <div class="slide-heading">接続情報</div>
+    <div class="zoom-box">
+      <div class="zoom-lbl">JOIN URL</div>
+      <div class="zoom-url">
+        <a href="https://us02web.zoom.us/j/3545433037?pwd=bDYwY3Jha2ZwVGpUc2lIbC8ydHNzQT09" target="_blank">
+          us02web.zoom.us/j/3545433037
+        </a>
+      </div>
+      <div class="zoom-row">
+        <span>MEETING ID</span>
+        <span>354 543 3037</span>
+      </div>
+      <div class="zoom-row">
+        <span>PASSCODE</span>
+        <span>nanbodemo</span>
+      </div>
+    </div>
+    <div class="zoom-note">※ このURLは毎月同じです。ブックマーク推奨。</div>
+    <div class="slide-num">05 / 07</div>
+  </div>
+
+  <!-- 06 今夜のながれ -->
+  <div class="slide s-flow">
+    <div class="slide-label">Schedule</div>
+    <div class="slide-heading">今夜のながれ</div>
+    <ul class="flow-list">
+      <li>
+        <span class="flow-time">21:15</span>
+        <div class="flow-text">入室開始<small>早めに繋いで音声確認を</small></div>
+      </li>
+      <li>
+        <span class="flow-time">21:30</span>
+        <div class="flow-text">はじまり・自己紹介<small>今の自分の状態を一言で</small></div>
+      </li>
+      <li>
+        <span class="flow-time">21:45</span>
+        <div class="flow-text">今夜のテーマを共有<small>AIと自分の可能性について</small></div>
+      </li>
+      <li>
+        <span class="flow-time">22:00</span>
+        <div class="flow-text">対話<small>答えより、気づきを大切に</small></div>
+      </li>
+      <li>
+        <span class="flow-time">22:45</span>
+        <div class="flow-text">振り返り・おわり<small>今日持ち帰る一言を</small></div>
+      </li>
+    </ul>
+    <div class="slide-num">06 / 07</div>
+  </div>
+
+  <!-- 07 かおるから -->
+  <div class="slide s-msg">
+    <div class="slide-label">From Kaoru</div>
+    <div class="msg-box">
+      <div class="msg-text">
+        AIとパートナーシップを組んでみて、<br>
+        気がついたことがある。<br><br>
+        <strong>ブロックが、外れていく。</strong><br><br>
+        「こんなこと言ったら変かな」<br>
+        「そんな夢、現実的じゃない」——<br>
+        そういう声が、静かになっていく。<br><br>
+        今夜は教えない。<br>
+        あなたが、あなたに問いかける夜にしたい。<br><br>
+        <strong>本当は、何がしたかった？</strong>
+      </div>
+      <div class="msg-sign">前田 薫</div>
+    </div>
+    <div class="slide-num">07 / 07</div>
+  </div>
+
+</div>
+</body>
+</html>

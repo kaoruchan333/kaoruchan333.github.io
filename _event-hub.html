@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>天川イベント案内ハブ</title>
+  <style>
+    :root {
+      --bg: #f6f1e8;
+      --paper: #fffdf8;
+      --ink: #1f2933;
+      --soft: #52606d;
+      --line: rgba(31, 41, 51, 0.12);
+      --sage: #6d8a72;
+      --gold: #b58a4a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(181, 138, 74, 0.14), transparent 30%),
+        linear-gradient(180deg, #f8f4ec 0%, var(--bg) 100%);
+      color: var(--ink);
+    }
+
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 72px 24px 96px;
+    }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.28em;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 1.35;
+      font-weight: 500;
+    }
+
+    .lead {
+      max-width: 680px;
+      font-size: 1rem;
+      line-height: 1.9;
+      color: var(--soft);
+      margin-bottom: 36px;
+    }
+
+    .status {
+      background: rgba(181, 138, 74, 0.08);
+      border: 1px solid rgba(181, 138, 74, 0.25);
+      padding: 18px 20px;
+      border-radius: 16px;
+      line-height: 1.8;
+      margin-bottom: 36px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-bottom: 44px;
+    }
+
+    .card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px 20px 24px;
+      box-shadow: 0 18px 48px rgba(31, 41, 51, 0.06);
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 56px rgba(31, 41, 51, 0.1);
+    }
+
+    .card-label {
+      font-size: 0.76rem;
+      letter-spacing: 0.22em;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-size: 1.35rem;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--soft);
+      line-height: 1.8;
+      font-size: 0.96rem;
+    }
+
+    .note {
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      color: var(--soft);
+      line-height: 1.8;
+      font-size: 0.95rem;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      background: rgba(31, 41, 51, 0.06);
+      padding: 0.15em 0.4em;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">TENKAWA EVENT HUB</div>
+    <h1>イベント案内ページを<br>ここからまとめて開けます。</h1>
+    <p class="lead">
+      体験会・坐禅会・寺子屋・ワークショップ・コーチングまで、
+      前田薫のリアルな入口を1つの場所から選べるようにまとめています。
+    </p>
+
+    <div class="status">
+      トップページは思想と発信のホームへ更新しました。
+      イベントだけ見たい人は、このハブからそのまま各案内ページへ進めます。
+    </div>
+
+    <div class="grid">
+      <a class="card" href="https://pagedrop.dev/s/StrwYBXZ/">
+        <div class="card-label">NATURE EVENT</div>
+        <h2>自然の体験会</h2>
+        <p>自然農イベントの案内ページです。身体と自然で、自分の感覚を取り戻す時間。</p>
+      </a>
+      <a class="card" href="zazen/">
+        <div class="card-label">ZAZEN</div>
+        <h2>坐禅会</h2>
+        <p>天川村の場で、自分の内側を静かに整える体験です。</p>
+      </a>
+      <a class="card" href="terakoya/">
+        <div class="card-label">TERAKOYA</div>
+        <h2>夜の寺子屋</h2>
+        <p>問いと対話を通して、自分の言葉に戻っていく少人数の場です。</p>
+      </a>
+      <a class="card" href="compass/">
+        <div class="card-label">WORKSHOP</div>
+        <h2>魂の羅針盤ワークショップ</h2>
+        <p>使命と言葉をつなぎ、人生の軸を静かに整えるワークショップです。</p>
+      </a>
+      <a class="card" href="coaching/">
+        <div class="card-label">COACHING</div>
+        <h2>人生デザインコーチング</h2>
+        <p>経営者・リーダー・支援者向けの個人セッション案内ページです。</p>
+      </a>
+      <a class="card" href="online-terakoya/">
+        <div class="card-label">ONLINE</div>
+        <h2>オンライン寺子屋</h2>
+        <p>Zoomで参加できる、問いと対話の入口です。</p>
+      </a>
+    </div>
+
+    <div class="note">
+      ホームページ本体は <code>event-site/index.html</code>、
+      発信一覧は <code>event-site/notes/</code> に自動生成しています。
+    </div>
+  </main>
+</body>
+</html>

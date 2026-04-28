@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>魂の羅針盤ワークショップ | 今里寺子屋</title>
+  <style>
+    :root {
+      --bg: #f6f1e8;
+      --paper: #fffdfa;
+      --ink: #1f1a17;
+      --soft: #6d6256;
+      --line: rgba(31, 26, 23, 0.12);
+      --gold: #a5793e;
+      --earth: #7d5c46;
+      --accent: #b98b4a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top, rgba(169, 121, 62, 0.18), transparent 32%),
+        linear-gradient(180deg, #faf5ee 0%, var(--bg) 100%);
+      color: var(--ink);
+      font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.8;
+    }
+    .hero {
+      padding: 110px 24px 92px;
+      text-align: center;
+    }
+    .hero-label {
+      letter-spacing: 0.35em;
+      font-size: 0.8rem;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    .hero-en {
+      font-size: 0.8rem;
+      letter-spacing: 0.28em;
+      color: rgba(31, 26, 23, 0.5);
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      margin: 0;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-size: clamp(2.5rem, 6vw, 4.8rem);
+      line-height: 1.3;
+      font-weight: 500;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--earth);
+    }
+    .hero-desc {
+      max-width: 820px;
+      margin: 24px auto 0;
+      font-size: 1rem;
+      color: var(--soft);
+    }
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .pill {
+      padding: 10px 16px;
+      border: 1px solid rgba(31, 26, 23, 0.12);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.7);
+      font-size: 0.92rem;
+    }
+    .pill span {
+      color: var(--gold);
+      margin-right: 8px;
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+    }
+    .hero-cta {
+      display: inline-block;
+      margin-top: 34px;
+      padding: 16px 36px;
+      background: #1f1a17;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.12em;
+      border-radius: 999px;
+    }
+    .div {
+      height: 72px;
+      width: 1px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, transparent, rgba(31,26,23,0.18), transparent);
+    }
+    .sec, .sec-bg {
+      padding: 0 24px 12px;
+    }
+    .sec-bg .inner, .sec > .inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 56px 48px;
+      border-radius: 28px;
+    }
+    .sec .inner { background: transparent; padding: 0; }
+    .sec-bg .inner {
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(31,26,23,0.08);
+      box-shadow: 0 28px 60px rgba(31,26,23,0.06);
+    }
+    .content-wrap {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .sec-num {
+      color: var(--gold);
+      letter-spacing: 0.28em;
+      font-size: 0.78rem;
+      margin-bottom: 14px;
+    }
+    h2 {
+      margin: 0 0 22px;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-size: clamp(1.8rem, 3.4vw, 3rem);
+      font-weight: 500;
+      line-height: 1.45;
+    }
+    .message, .text {
+      font-size: 1rem;
+      color: var(--ink);
+    }
+    .highlight {
+      margin-top: 28px;
+      padding: 28px;
+      background: rgba(169,121,62,0.08);
+      border: 1px solid rgba(169,121,62,0.18);
+      border-radius: 20px;
+    }
+    .hl-label {
+      letter-spacing: 0.24em;
+      font-size: 0.76rem;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .hl-main {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    }
+    .grid2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .card {
+      padding: 24px 22px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+    }
+    .clabel {
+      color: var(--gold);
+      letter-spacing: 0.24em;
+      font-size: 0.74rem;
+      margin-bottom: 12px;
+    }
+    .card h4 {
+      margin: 0 0 10px;
+      font-size: 1.18rem;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-weight: 500;
+    }
+    .card p, .card ul {
+      margin: 0;
+      color: var(--soft);
+      font-size: 0.96rem;
+    }
+    .card ul {
+      padding-left: 1.2rem;
+    }
+    .schedule-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(31,26,23,0.08);
+    }
+    .s-time {
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      font-size: 1rem;
+      padding-top: 2px;
+    }
+    .s-content h4 {
+      margin: 0 0 6px;
+      font-size: 1.12rem;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-weight: 500;
+    }
+    .s-content p {
+      margin: 0;
+      color: var(--soft);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255,255,255,0.8);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(31,26,23,0.08);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      width: 140px;
+      color: var(--gold);
+      font-size: 0.88rem;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+      background: rgba(169,121,62,0.05);
+    }
+    .host-card {
+      padding: 28px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(31,26,23,0.08);
+      border-radius: 24px;
+    }
+    .host-role {
+      color: var(--gold);
+      letter-spacing: 0.24em;
+      font-size: 0.74rem;
+      margin-bottom: 10px;
+    }
+    .host-name {
+      margin-bottom: 14px;
+      font-size: 1.4rem;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    }
+    .host-desc {
+      color: var(--soft);
+      font-size: 0.97rem;
+    }
+    .apply {
+      max-width: 980px;
+      margin: 0 auto 80px;
+      padding: 64px 32px 0;
+      text-align: center;
+    }
+    .a-tag {
+      color: var(--gold);
+      letter-spacing: 0.26em;
+      font-size: 0.76rem;
+      margin-bottom: 14px;
+    }
+    .a-text {
+      color: var(--soft);
+      margin: 0 0 30px;
+    }
+    .form-embed {
+      margin-top: 22px;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(31,26,23,0.1);
+      background: rgba(255,255,255,0.8);
+      box-shadow: 0 24px 50px rgba(31,26,23,0.08);
+    }
+    .form-embed iframe {
+      width: 100%;
+      min-height: 1180px;
+      border: 0;
+      background: #fff;
+    }
+    .footer {
+      padding: 0 24px 60px;
+      text-align: center;
+      color: rgba(31,26,23,0.5);
+      font-size: 0.86rem;
+      letter-spacing: 0.08em;
+    }
+    @media (max-width: 720px) {
+      .hero { padding: 88px 20px 74px; }
+      .grid2 { grid-template-columns: 1fr; }
+      .schedule-item { grid-template-columns: 1fr; gap: 8px; }
+      .sec-bg .inner { padding: 36px 22px; }
+      th, td { display: block; width: 100%; }
+      th { padding-bottom: 8px; }
+      td { padding-top: 0; }
+      .apply { padding: 44px 18px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-label">IMAZATO TERAKOYA</div>
+  <div class="hero-en">SOUL COMPASS · LANGUAGE · ALIGNMENT</div>
+  <h1>魂の羅針盤を、<br><em>言葉にして持ち帰る</em>。</h1>
+  <p class="hero-desc">
+    毎月第1火曜日に今里寺子屋でひらく、3時間の少人数ワークショップ。<br>
+    自分の本当の価値観、使命、選択の基準を「考えて作る」のではなく、<br>
+    すでに生きている事実から見つけて、戻れる言葉として持ち帰ります。
+  </p>
+
+  <div class="hero-pills">
+    <div class="pill"><span>開催</span>毎月第1火曜日</div>
+    <div class="pill"><span>時間</span>14:00〜17:00</div>
+    <div class="pill"><span>場所</span>大阪・今里</div>
+    <div class="pill"><span>参加費</span>5,000円</div>
+  </div>
+
+  <a href="#form" class="hero-cta">参加を申し込む</a>
+</section>
+
+<div class="div"></div>
+
+<section class="sec">
+  <div class="content-wrap">
+    <div class="sec-num">01 · MESSAGE</div>
+    <h2>これからの時代、<br>いちばん失ったらあかんもの</h2>
+
+    <div class="message">
+      情報は増え続ける。AIはますます賢くなる。<br>
+      選べる道も、正しそうに見える答えも、これからさらに増えます。<br><br>
+      そのとき、いちばん大事になるのは、<br>
+      <strong>「自分は何を大切にして、何に命を使いたい人間なのか」</strong>を自覚していること。<br><br>
+      それが曖昧なままだと、優秀な情報も、便利なAIも、結局は自分を散らす方向に働く。<br>
+      逆に、魂の羅針盤が言語化されていると、揺れても戻れます。迷っても選べます。<br>
+      どんだけ時代が変わっても、自分の人生のハンドルを自分で握れる。<br><br>
+      このワークショップは、理想を考える場ではありません。<br>
+      すでにやっていること、すでに使っている時間やお金、すでに身近にあるもの。<br>
+      そこに現れている「本当の自分」を見逃さず、言葉にして持ち帰る場です。<br><br>
+      参加費の10倍以上の価値を感じてもらえると断言できるのは、<br>
+      持ち帰るのが単なる気づきではなく、この先の人生で戻り続けられる基準だからです。
+    </div>
+
+    <div class="highlight">
+      <div class="hl-label">CORE</div>
+      <div class="hl-main">
+        魂の羅針盤とは、揺れたときに戻れる「自分の住所」。<br>
+        考えた言葉ではなく、すでに生きていた言葉として持ち帰る。<br>
+        それが、これからの人生と事業の土台になります。
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<section class="sec-bg">
+  <div class="inner">
+    <div class="sec-num">02 · FOR WHOM</div>
+    <h2>こんな人に、ど真ん中です</h2>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="clabel">THIS IS FOR YOU</div>
+        <h4>来てほしい人</h4>
+        <ul>
+          <li>経営やリーダーシップの判断軸を、もっと自分の深いところに戻したい人</li>
+          <li>事業は進んでいるのに、ほんまの使命がまだ言葉になっていない人</li>
+          <li>自分らしさを感覚だけでなく、再現性を持って生きたい人</li>
+          <li>AI時代だからこそ、自分の本音と基準を明確にしておきたい人</li>
+          <li>人生の転機にいて、何を選ぶかより「誰として選ぶか」を定めたい人</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="clabel">YOU TAKE HOME</div>
+        <h4>持ち帰るもの</h4>
+        <ul>
+          <li>魂の羅針盤となる短く強い言葉</li>
+          <li>迷ったときに戻れる、自分の選択基準</li>
+          <li>本当の価値観がどこに現れているかを見る視点</li>
+          <li>感情や他人軸ではなく、自分軸で選ぶ感覚</li>
+          <li>これからの事業・人生・人間関係を見直すための起点</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<section class="sec">
+  <div class="content-wrap">
+    <div class="sec-num">03 · PROGRAM</div>
+    <h2>ワークショップでやること</h2>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="clabel">STEP 1</div>
+        <h4>事実を出す</h4>
+        <p>時間を使っていること、お金を使っていること、身近にあるもの、ついやってしまうこと。意味づけせず、実際の行動だけを出します。</p>
+      </div>
+      <div class="card">
+        <div class="clabel">STEP 2</div>
+        <h4>並べて、つなぐ</h4>
+        <p>分析せず、眺める。似ているもの、引き寄せ合うものを線でつなぐ。思考ではなく、引力で見つけます。</p>
+      </div>
+      <div class="card">
+        <div class="clabel">STEP 3</div>
+        <h4>一言にする</h4>
+        <p>「このまとまり、何をしている人ですか？」を動詞で一言にする。短く、体感が伴う言葉だけを残します。</p>
+      </div>
+      <div class="card">
+        <div class="clabel">STEP 4</div>
+        <h4>体感で確かめる</h4>
+        <p>頭で正しい言葉ではなく、身体が「そうそう」と言う言葉を選ぶ。少し恥ずかしいくらいが、本物に近いサインです。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<section class="sec-bg">
+  <div class="inner">
+    <div class="sec-num">04 · SCHEDULE</div>
+    <h2>当日のながれ</h2>
+
+    <div class="schedule-item">
+      <div class="s-time">14:00</div>
+      <div class="s-content">
+        <h4>はじまり・前提共有</h4>
+        <p>良く見せない、理想を書かない、実際にやっていることだけ。この場で大切にする前提を整えます。</p>
+      </div>
+    </div>
+    <div class="schedule-item">
+      <div class="s-time">14:15</div>
+      <div class="s-content">
+        <h4>事実を出すワーク</h4>
+        <p>行動ベースで素材を出していきます。ここで出るものに、すでにあなたの本質が現れています。</p>
+      </div>
+    </div>
+    <div class="schedule-item">
+      <div class="s-time">15:00</div>
+      <div class="s-content">
+        <h4>並べる・つなぐ</h4>
+        <p>似ているもの、引き寄せ合うものを見つけながら、自分の行動の奥に流れている一貫性を見ます。</p>
+      </div>
+    </div>
+    <div class="schedule-item">
+      <div class="s-time">15:50</div>
+      <div class="s-content">
+        <h4>魂の羅針盤を一言にする</h4>
+        <p>「何を、どうする人なのか」を短く言葉にする。考えた言葉ではなく、すでに生きていた言葉を拾います。</p>
+      </div>
+    </div>
+    <div class="schedule-item">
+      <div class="s-time">16:30</div>
+      <div class="s-content">
+        <h4>日常への接続</h4>
+        <p>仕事、人生、人間関係、AIとの付き合い方。その羅針盤をどう使うかを言語化して、戻れる基準として持ち帰ります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<section class="sec">
+  <div class="content-wrap">
+    <div class="sec-num">05 · DETAILS</div>
+    <h2>開催概要</h2>
+
+    <table>
+      <tr><th>開催</th><td>毎月第1火曜日 14:00〜17:00<br><small style="color:#888">直近開催: 2026年5月5日（火） / 6月2日（火） / 7月7日（火）</small></td></tr>
+      <tr><th>場所</th><td>大阪・今里<br><a href="https://maps.app.goo.gl/JgfCyH4dZHiWM3F47?g_st=ic" target="_blank" rel="noopener noreferrer" style="color:#7d5c46;text-decoration:underline;">Googleマップで場所を見る</a><br><small style="color:#888">大阪府大阪市東成区大今里1丁目2-24 / 今里駅3番出口から徒歩7分</small></td></tr>
+      <tr><th>定員</th><td>少人数制</td></tr>
+      <tr><th>参加費</th><td>ワークショップ 5,000円<br><small style="color:#888">この先の人生と事業の基準になる言葉を持ち帰る、3時間の本質ワークです。</small></td></tr>
+      <tr><th>午前整体</th><td>希望者のみ 9:30〜12:30で対応 / 限定3名<br><small style="color:#888">インパルス波動調整の整体。インナーマッスルと自律神経にアプローチし、自然体・自然免疫・自然治癒力・自己免疫力の底上げをサポートします。</small></td></tr>
+      <tr><th>セット料金</th><td>午前整体＋ワークショップ 10,000円 / 整体のみ 6,000円</td></tr>
+    </table>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<section class="sec-bg">
+  <div class="inner">
+    <div class="sec-num">06 · FACILITATOR</div>
+    <h2>案内人</h2>
+
+    <div class="host-card">
+      <div class="host-role">FACILITATOR / COACH</div>
+      <div class="host-name">前田 薫（まえだ かおる）</div>
+      <div class="host-desc">
+        株式会社なんぼでも 代表取締役社長 · 人生デザインコーチ®︎ · 天中道コーチ · 人生デザイン構築学校 認定コーチ / 認定講師 · 奈良県天川村 地域おこし協力隊<br><br>
+        20年以上、人の本音・才能・「その人だけの本当の幸せ」を言語化するコーチングに伴走。数多くの経営者やコミュニティリーダーの意思決定を支えながら、本当の価値観・使命・在り方を言葉にして生きる伴走を続けてきた。<br><br>
+        奈良県天川村では行政や教育委員会と連携し、廃校を活用した寺子屋づくりやサッカー教室を推進。元ラジオ局の局長・プロデューサーとして培った編集力を活かし、「その人の中に、もうすでにあるもの」を見抜いて言葉にすることを得意とする。<br><br>
+        面白いのに、気づけば核心に触れている。そんな問いかけで、参加者が自分の魂の羅針盤に出会い直す場をひらいている。
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<section class="apply" id="form">
+  <div class="a-tag">APPLICATION</div>
+  <h2>参加を申し込む</h2>
+  <p class="a-text">
+    ワークショップのみ、午前整体とのセット、整体のみでもお申し込みいただけます。<br>
+    午前整体は限定3名です。ピンときた方は、そのまま押さえてください。
+  </p>
+
+  <div class="form-embed">
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSftWXgFnrVmT6o6uZif3TGW7lJdAXBWIw4VDGzSIvvaT-T-0A/viewform?embedded=true"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0">
+      読み込み中...
+    </iframe>
+  </div>
+</section>
+
+<footer class="footer">
+  今里寺子屋 · 魂の羅針盤ワークショップ · 前田薫 · © 2026
+</footer>
+
+</body>
+</html>

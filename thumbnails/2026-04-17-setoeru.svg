@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="670" viewBox="0 0 1280 670" fill="none">
+  <defs>
+    <filter id="paperNoise" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.06" />
+      </feComponentTransfer>
+    </filter>
+    <filter id="inkBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="0.6" />
+    </filter>
+  </defs>
+  <rect width="1280" height="670" fill="#FAF7F2"/>
+  <rect width="1280" height="670" fill="#000" filter="url(#paperNoise)"/>
+  <path d="M120 180C240 110 420 92 562 120C646 136 736 170 872 182C980 190 1086 166 1194 120L1208 170C1098 214 990 240 856 236C726 232 640 194 556 182C394 160 262 176 130 246Z" fill="#101010" opacity="0.22" filter="url(#inkBlur)"/>
+  <path d="M1022 198C1070 154 1133 142 1185 164C1228 182 1247 228 1238 274C1228 326 1184 370 1128 386C1073 402 1017 384 982 344C936 292 956 226 1022 198Z" fill="#111111" opacity="0.08"/>
+  
+  <text x="1035" y="116" fill="#8D2B20" font-size="22" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif" letter-spacing="6" transform="rotate(-90 1035 116)">人間交差点</text>
+  <text x="110" y="210" fill="#171311" font-size="108" font-weight="700" font-family="'Hiragino Mincho ProN', 'Yu Mincho', serif"><tspan x="110" dy="0">整えるとは、本物だけを残</tspan><tspan x="110" dy="100">すことだ。</tspan></text>
+  <text x="116" y="454" fill="#433A34" font-size="24" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif"><tspan x="116" dy="0">天川村・修験道の霊場から、コーチングを届けています</tspan></text>
+  <text x="116" y="590" fill="#6B5A4C" font-size="20" font-family="'Hiragino Sans', 'Yu Gothic', sans-serif" letter-spacing="3">人間交差点</text>
+  <rect x="1116" y="530" width="88" height="88" rx="8" fill="#8D2B20"/>
+  <text x="1160" y="588" text-anchor="middle" fill="#F7F3EE" font-size="48" font-weight="700" font-family="'Hiragino Mincho ProN', 'Yu Mincho', serif">交</text>
+</svg>
