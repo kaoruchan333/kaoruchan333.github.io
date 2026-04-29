@@ -43,16 +43,23 @@
     overflow: hidden;
   }
 
-  .hero::before {
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('images/zazen-hakui.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+  }
+
+  .hero::after {
     content: '';
     position: absolute;
     inset: 0;
-    background:
-      radial-gradient(ellipse at 30% 70%, rgba(122,158,138,0.18) 0%, transparent 55%),
-      radial-gradient(ellipse at 70% 30%, rgba(15,52,96,0.5) 0%, transparent 55%);
+    background: linear-gradient(to bottom, rgba(26,26,46,0.5) 0%, rgba(26,26,46,0.7) 100%);
   }
 
-  .hero * { position: relative; }
+  .hero * { position: relative; z-index: 1; }
 
   .hero-label {
     font-family: 'Noto Sans JP', sans-serif;
@@ -125,6 +132,61 @@
     text-decoration: none;
   }
 
+  /* FULL WIDTH PHOTO */
+  .photo-banner {
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    position: relative;
+  }
+  .photo-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  .photo-banner .caption {
+    position: absolute;
+    bottom: 20px;
+    right: 24px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.7);
+    background: rgba(0,0,0,0.35);
+    padding: 6px 14px;
+  }
+
+  /* PHOTO GRID */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    margin: 0;
+  }
+  .photo-grid img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s;
+  }
+  .photo-grid img:hover { opacity: 0.88; }
+
+  .photo-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    margin: 32px 0;
+  }
+  .photo-2col img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+  }
+
   /* SECTIONS */
   .sec { padding: 72px 40px; max-width: 820px; margin: 0 auto; }
   .sec-bg { background: var(--mist); padding: 72px 40px; }
@@ -182,14 +244,6 @@
   }
 
   .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 28px 0; }
-  @media(max-width:600px){
-    .grid2{ grid-template-columns:1fr; }
-    .hero { padding: 72px 20px 60px; }
-    section, .form-section, .host-section { padding: 56px 20px; }
-    .detail-table th { width: 72px; font-size: 0.78rem; }
-    .detail-table td { font-size: 0.88rem; }
-    .form-embed iframe { min-height: 800px; }
-  }
 
   .card { border: 1px solid rgba(26,26,46,0.15); padding: 28px; background: white; }
   .card .clabel {
@@ -215,6 +269,7 @@
     gap: 24px;
     padding: 22px 0;
     border-bottom: 1px solid rgba(26,26,46,0.1);
+    align-items: start;
   }
 
   .s-time {
@@ -234,12 +289,19 @@
     color: var(--ash);
     line-height: 1.9;
   }
+  .s-content img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    margin-top: 14px;
+    display: block;
+  }
 
   /* TABLE */
-  table { width: 100%; border-collapse: collapse; margin: 24px 0; font-family: 'Noto Sans JP', sans-serif; font-size: 14px; }
-  th { background: var(--mid); color: white; padding: 12px 16px; font-weight: 500; text-align: left; }
-  td { padding: 14px 16px; border-bottom: 1px solid rgba(26,26,46,0.1); vertical-align: top; line-height: 1.9; }
-  tr:nth-child(even) td { background: rgba(26,26,46,0.03); }
+  .detail-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-family: 'Noto Sans JP', sans-serif; font-size: 14px; }
+  .detail-table th { background: var(--mid); color: white; padding: 12px 16px; font-weight: 500; text-align: left; width: 100px; }
+  .detail-table td { padding: 14px 16px; border-bottom: 1px solid rgba(26,26,46,0.1); vertical-align: top; line-height: 1.9; }
+  .detail-table tr:nth-child(even) td { background: rgba(26,26,46,0.03); }
 
   /* HOST */
   .host-card { background: white; border: 1px solid rgba(26,26,46,0.15); padding: 32px; }
@@ -283,7 +345,6 @@
     max-width: 660px;
     margin: 0 auto;
     background: white;
-    border-radius: 0;
   }
 
   .form-embed iframe {
@@ -302,12 +363,28 @@
     color: rgba(255,255,255,0.3);
     letter-spacing: 2px;
   }
+
+  @media(max-width:600px){
+    .grid2 { grid-template-columns: 1fr; }
+    .photo-grid { grid-template-columns: 1fr 1fr; }
+    .photo-grid img { height: 160px; }
+    .photo-2col img { height: 200px; }
+    .photo-banner { height: 260px; }
+    .hero { padding: 72px 20px 60px; }
+    .sec { padding: 56px 20px; }
+    .sec-bg { padding: 56px 20px; }
+    .apply { padding: 56px 20px; }
+    .schedule-item { grid-template-columns: 80px 1fr; }
+    .detail-table th { width: 72px; font-size: 0.78rem; }
+    .detail-table td { font-size: 0.88rem; }
+  }
 </style>
 </head>
 <body>
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-label">天川村 寺子屋</div>
   <div class="hero-en">ZAZEN · SILENCE · RETURN</div>
   <h1 class="hero-title">静けさの中で、<br><em>自分に還る</em>。</h1>
@@ -322,6 +399,12 @@
 
   <a href="#form" class="hero-cta">参加を申し込む</a>
 </section>
+
+<!-- PHOTO BANNER 1: 天川の自然 -->
+<div class="photo-banner">
+  <img src="images/tenkawa-nature.jpg" alt="天川村の自然">
+  <div class="caption">奈良県 天川村</div>
+</div>
 
 <div class="div"></div>
 
@@ -347,6 +430,12 @@
   <div class="highlight">
     <div class="hl-label">CONCEPT</div>
     <div class="hl-main">「整えることが、自由にすることだ」<br>天川の坐禅会は、思考過多の経営者やリーダーが、自分の源流に還るための本物の修行体験。</div>
+  </div>
+
+  <!-- 川と神社の写真 -->
+  <div class="photo-2col" style="margin-top:36px;">
+    <img src="images/tenkawa-river.jpg" alt="天川村の清流">
+    <img src="images/tenkawa-shrine.jpg" alt="天川村の神社">
   </div>
 </section>
 
@@ -383,6 +472,13 @@
   </div>
 </section>
 
+<!-- PHOTO GRID: 坐禅・滝行の様子 -->
+<div class="photo-grid">
+  <img src="images/zazen-sitting.jpg" alt="坐禅の様子">
+  <img src="images/zazen-group.jpg" alt="グループ坐禅">
+  <img src="images/hakui-solo.jpg" alt="白衣での坐禅">
+</div>
+
 <div class="div"></div>
 
 <!-- SCHEDULE -->
@@ -409,6 +505,7 @@
     <div class="s-content">
       <h4>龍泉寺での坐禅と滝行</h4>
       <p>午前は龍泉寺で坐禅。希望者は滝行にも参加できます。身体ごと場に入ることで、頭では届かない静けさが立ち上がります。</p>
+      <img src="images/takigyo.jpg" alt="滝行の様子">
     </div>
   </div>
   <div class="schedule-item">
@@ -427,6 +524,12 @@
   </div>
 </section>
 
+<!-- PHOTO BANNER 2: 滝行グループ -->
+<div class="photo-banner">
+  <img src="images/takigyo-group.jpg" alt="滝行グループ">
+  <div class="caption">灯籠の岩屋 · 天川村 洞川</div>
+</div>
+
 <div class="div"></div>
 
 <!-- DETAILS -->
@@ -435,12 +538,12 @@
     <div class="sec-num">04 · DETAILS</div>
     <h2>参加概要</h2>
 
-    <table>
+    <table class="detail-table">
       <tr><th>日時</th><td>開催日程は申込み後にご案内<br><small style="color:#888">基本時間 10:30〜17:00</small></td></tr>
       <tr><th>場所</th><td>奈良県吉野郡天川村 洞川エリア<br><a href="https://www.vill.tenkawa.nara.jp/tourism/spot/4869/" target="_blank" rel="noopener noreferrer" style="color:#7d5c46;text-decoration:underline;">龍泉寺について見る</a><br><small style="color:#888">アクセス方法は申し込み後にお知らせします</small></td></tr>
       <tr><th>定員</th><td>少人数制（ご縁ある方のみ）</td></tr>
       <tr><th>参加費</th><td>5,000円<br><small style="color:#888">洞窟使用料 / ご住職へのお布施 / 食材費 / 備品 / 移動燃料費等</small></td></tr>
-      <tr><th>持ち物</th><td>タオル / <strong>座布団（必須）</strong> / 歩きやすい靴 / 飲み物 / 防寒用の上着<br><small style="color:#888">※洞窟の床は固いため、長時間座るには座布団が必要です。心地よく座るためにぜひご持参ください。</small></td></tr>
+      <tr><th>持ち物</th><td><strong>座布団（必須）</strong> / タオル / 歩きやすい靴 / 飲み物 / 防寒用の上着<br><small style="color:#888">※洞窟の床は固いため、長時間座るには座布団が必要です。心地よく座るためにぜひご持参ください。</small></td></tr>
       <tr><th>こんな人に</th><td>大きな意思決定を抱える経営者 / 人を導く立場のリーダー / 情報ではなく感覚を整えたい人 / 本物の修行場に身を置いてみたい人 / 自分の使命の輪郭を静けさの中で確かめたい人</td></tr>
     </table>
   </div>
@@ -470,6 +573,11 @@
       京都・臨済宗 興聖寺のご住職。禅を日常として生きている僧侶として、形だけではない本来の坐禅を静かに伴走してくださいます。<br><br>
       この会では「うまく坐ること」よりも、「静けさの中で何が起きるか」に開かれていくことを大切に、場全体の深さを支えてくださる存在です。
     </div>
+  </div>
+
+  <!-- 白衣グループ写真 -->
+  <div style="margin-top:32px;">
+    <img src="images/zazen-hakui.jpg" alt="白衣での坐禅" style="width:100%;max-height:360px;object-fit:cover;display:block;">
   </div>
 </section>
 
