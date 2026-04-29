@@ -485,7 +485,8 @@
     <p class="section-tag">VOICES — 参加者の声</p>
     <h2 style="font-size:22px;margin-bottom:32px;">来てくれた人たちの言葉</h2>
 
-    <div class="voices-grid">
+    <!-- 最初の3件：常に表示 -->
+    <div class="voices-grid" id="voices-visible">
       <div class="voice-card">
         <p class="voice-text">なんか、凄く深い学びをした気持ちです。それでいて、肩の力が抜けたような。皆さんとのお話しも楽しくて、時間を忘れてしまいそうでした。今後もどうぞ宜しくお願いします💖</p>
         <p class="voice-name">安川真紀子 さん</p>
@@ -499,9 +500,52 @@
         <p class="voice-name">うらら さん</p>
       </div>
     </div>
+
+    <!-- 4件目以降：折りたたまれている（声が増えたらここに追加） -->
+    <div class="voices-grid" id="voices-hidden" style="display:none;margin-top:16px;">
+      <!-- ここに4件目以降を追加していく -->
+    </div>
+
+    <!-- もっと見るボタン（4件以上になったら自動で表示） -->
+    <div id="voices-toggle-wrap" style="text-align:center;margin-top:32px;display:none;">
+      <button id="voices-toggle-btn" onclick="toggleVoices()" style="
+        background:none;
+        border:1px solid var(--sage);
+        color:var(--moss);
+        font-family:'Noto Sans JP',sans-serif;
+        font-size:13px;
+        letter-spacing:2px;
+        padding:14px 40px;
+        cursor:pointer;
+      ">みんなの声をもっと見る ↓</button>
+    </div>
+
     <p style="font-family:'Noto Sans JP',sans-serif;font-size:12px;color:var(--stone);text-align:center;margin-top:32px;">
       あなたの声もぜひ聞かせてください → LINEオープンチャットへ
     </p>
+
+    <script>
+      (function(){
+        var hidden = document.getElementById('voices-hidden');
+        var wrap   = document.getElementById('voices-toggle-btn') && document.getElementById('voices-toggle-wrap');
+        // 折りたたみエリアに中身があればボタンを表示
+        if(hidden && hidden.children.length > 0){
+          document.getElementById('voices-toggle-wrap').style.display = 'block';
+        }
+      })();
+
+      function toggleVoices(){
+        var hidden = document.getElementById('voices-hidden');
+        var btn    = document.getElementById('voices-toggle-btn');
+        if(hidden.style.display === 'none'){
+          hidden.style.display = 'grid';
+          btn.textContent = '閉じる ↑';
+        } else {
+          hidden.style.display = 'none';
+          btn.textContent = 'みんなの声をもっと見る ↓';
+        }
+      }
+    </script>
   </div>
 </section>
 
