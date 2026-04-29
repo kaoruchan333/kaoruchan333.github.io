@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ほったらかし自然農 コミュニティ | 天川村</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+  :root {
+    --soil:    #3d2b1f;
+    --moss:    #4a5e3a;
+    --sage:    #7a8c6a;
+    --leaf:    #9aad7a;
+    --mist:    #f0ede6;
+    --cream:   #faf7f2;
+    --gold:    #c4952a;
+    --stone:   #8a8070;
+    --charcoal:#2a2a2a;
+    --warm:    #8b5e3c;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: 'Noto Serif JP', serif;
+    line-height: 1.9;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background: var(--soil);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 32px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('photos/field-01.png') center/cover no-repeat;
+    opacity: 0.30;
+  }
+
+  .hero-eyebrow {
+    position: relative;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: var(--leaf);
+    margin-bottom: 28px;
+    text-transform: uppercase;
+  }
+
+  .hero-title {
+    position: relative;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.5;
+    margin-bottom: 28px;
+    letter-spacing: 3px;
+  }
+
+  .hero-title span {
+    display: block;
+    font-size: 0.65em;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 2px;
+    margin-top: 12px;
+  }
+
+  .hero-sub {
+    position: relative;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    max-width: 480px;
+    line-height: 2;
+    margin-bottom: 56px;
+  }
+
+  .hero-line {
+    position: relative;
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--leaf), transparent);
+    margin: 0 auto;
+  }
+
+  /* ─── LINE CTA（大） ─── */
+  .line-cta-block {
+    background: var(--moss);
+    padding: 72px 32px;
+    text-align: center;
+  }
+
+  .line-cta-block .tag {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--leaf);
+    margin-bottom: 20px;
+  }
+
+  .line-cta-block h2 {
+    font-size: clamp(20px, 3.5vw, 30px);
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .line-cta-block p {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    max-width: 420px;
+    margin: 0 auto 40px;
+    line-height: 2;
+  }
+
+  .btn-line {
+    display: inline-block;
+    background: #fff;
+    color: var(--moss);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 18px 52px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-line:hover {
+    background: var(--leaf);
+    color: #fff;
+  }
+
+  .btn-line-sub {
+    display: block;
+    margin-top: 16px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 1px;
+  }
+
+  /* ─── SECTION 共通 ─── */
+  .section {
+    padding: 88px 32px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .section-tag {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--sage);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .section h2 {
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 400;
+    color: var(--soil);
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: var(--sage);
+    margin: 0 0 40px;
+  }
+
+  /* ─── 第1回 記録 ─── */
+  .event-record {
+    background: var(--mist);
+    padding: 88px 32px;
+  }
+
+  .event-record-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .event-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .meta-item {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    color: var(--stone);
+  }
+
+  .meta-item strong {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--sage);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+
+  /* 写真グリッド */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 56px;
+  }
+
+  .photo-grid img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+  }
+
+  .photo-grid .photo-main {
+    grid-column: 1 / 3;
+    aspect-ratio: 16/9;
+  }
+
+  /* ─── 参加者の声 ─── */
+  .voices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .voice-card {
+    background: #fff;
+    border-left: 3px solid var(--leaf);
+    padding: 28px 24px;
+  }
+
+  .voice-text {
+    font-size: 14px;
+    line-height: 2;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+  }
+
+  .voice-text::before {
+    content: '「';
+    color: var(--sage);
+  }
+  .voice-text::after {
+    content: '」';
+    color: var(--sage);
+  }
+
+  .voice-name {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--stone);
+  }
+
+  .voice-placeholder {
+    background: #fff;
+    border: 1px dashed var(--leaf);
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .voice-placeholder p {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    color: var(--stone);
+    line-height: 2;
+  }
+
+  /* ─── 実践レポート ─── */
+  .report-section {
+    background: var(--soil);
+    padding: 88px 32px;
+    color: #fff;
+  }
+
+  .report-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .report-section .section-tag { color: var(--leaf); }
+  .report-section h2 {
+    color: #fff;
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 300;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .report-section .lead {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    line-height: 2.2;
+    max-width: 560px;
+    margin-bottom: 48px;
+  }
+
+  .report-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 56px;
+  }
+
+  .report-step {
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 28px 24px;
+  }
+
+  .report-step .num {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--leaf);
+    margin-bottom: 12px;
+  }
+
+  .report-step h4 {
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  .report-step p {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.9;
+  }
+
+  /* ─── 次回予告 ─── */
+  .next-section {
+    background: var(--mist);
+    padding: 88px 32px;
+    text-align: center;
+  }
+
+  .next-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .next-section h2 {
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 300;
+    color: var(--soil);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .next-section p {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    color: var(--stone);
+    line-height: 2.2;
+    margin-bottom: 40px;
+  }
+
+  .btn-apply {
+    display: inline-block;
+    background: var(--soil);
+    color: #fff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 18px 52px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .btn-apply:hover { background: var(--moss); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--soil);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 40px 32px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  footer a {
+    color: var(--leaf);
+    text-decoration: none;
+  }
+
+  @media (max-width: 600px) {
+    .photo-grid { grid-template-columns: 1fr 1fr; }
+    .photo-grid .photo-main { grid-column: 1 / -1; }
+    .report-steps { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Tenkawamurea Natural Farming Community</p>
+  <h1 class="hero-title">
+    自然の循環の中に<br>戻っていく仲間たちへ
+    <span>奈良県天川村 ほったらかし自然農 コミュニティ</span>
+  </h1>
+  <p class="hero-sub">
+    土を触り、空気を吸い、自分の手で何かを育てる。<br>
+    その小さな体験が、人生の土台を自分の手に取り戻す<br>
+    最初の一歩になると、わたしたちは信じています。
+  </p>
+  <div class="hero-line"></div>
+</section>
+
+<!-- LINE CTA（最重要：一番目立つ場所に） -->
+<section class="line-cta-block">
+  <p class="tag">COMMUNITY — 仲間に入る</p>
+  <h2>まず、このグループに入ってください。</h2>
+  <p>
+    参加者の実践レポート、次回イベント情報、<br>
+    日々の自然農のやりとりは全てここに集まります。<br>
+    参加無料・匿名OK・いつでも抜けられます。
+  </p>
+  <a href="https://line.me/ti/g2/acRZgNke8HU28j5NyopKRjT649JNVQVg-V2Epg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+     target="_blank" class="btn-line">
+    💬 LINEオープンチャットに参加する
+  </a>
+  <span class="btn-line-sub">※ LINEアプリが必要です</span>
+</section>
+
+<!-- 第1回 イベント記録 -->
+<section class="event-record">
+  <div class="event-record-inner">
+    <p class="section-tag">Vol.01 — 2026.04.28</p>
+    <h2>第1回「ほったらかし自然農 体験イベント」<br>無事に終わりました。</h2>
+    <div class="divider"></div>
+
+    <div class="event-meta">
+      <div class="meta-item"><strong>開催日</strong>2026年4月28日（月）</div>
+      <div class="meta-item"><strong>場所</strong>奈良県天川村洞川 耕作放棄地 200坪</div>
+      <div class="meta-item"><strong>時間</strong>13:00〜17:00</div>
+      <div class="meta-item"><strong>参加者</strong>お持ち帰りBちゃん、全員配布済み</div>
+    </div>
+
+    <div class="photo-grid">
+      <img src="photos/field-01.png" alt="天川村のフィールド" class="photo-main">
+      <img src="photos/field-02.png" alt="自然農の現場">
+      <img src="photos/field-03.png" alt="ほったらかし農法の土">
+      <!-- 当日写真が届いたらここに追加 -->
+    </div>
+
+    <p style="font-family:'Noto Sans JP',sans-serif;font-size:13px;color:var(--stone);text-align:center;margin-top:-8px;margin-bottom:48px;">
+      ※ 当日の写真が届き次第、追加していきます
+    </p>
+
+    <!-- 参加者の声 -->
+    <p class="section-tag">VOICES — 参加者の声</p>
+    <h2 style="font-size:22px;margin-bottom:32px;">来てくれた人たちの言葉</h2>
+
+    <div class="voices-grid">
+      <!-- 声が届いたらここに追加していく -->
+      <div class="voice-placeholder">
+        <p>参加者の声を集めています。<br>オープンチャットに感想を投稿してください。<br>ここに掲載させてください。</p>
+      </div>
+      <div class="voice-placeholder">
+        <p>「Bちゃんを持ち帰ったその後」も<br>ぜひ教えてください。<br>実践レポートとしてここに残します。</p>
+      </div>
+      <div class="voice-placeholder">
+        <p>あなたの一言が、<br>次に来る誰かの背中を<br>押すことになります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 実践レポート -->
+<section class="report-section">
+  <div class="report-inner">
+    <p class="section-tag">PRACTICE — 実践レポート</p>
+    <h2>持ち帰ったBちゃん、<br>どうなりましたか？</h2>
+    <p class="lead">
+      全員にお渡しした「Bちゃん（ボカシ肥）」の使い方と、<br>
+      その後の変化を教えてください。<br>
+      プランター1坪でも、庭でも、畑でも。<br>
+      どんな小さな報告でも、ここに積み重ねていきます。
+    </p>
+
+    <div class="report-steps">
+      <div class="report-step">
+        <p class="num">STEP 01</p>
+        <h4>LINEオープンチャットに入る</h4>
+        <p>まだの方はこのページ上部のボタンから</p>
+      </div>
+      <div class="report-step">
+        <p class="num">STEP 02</p>
+        <h4>写真と一言を投稿する</h4>
+        <p>「今日やってみた」「こうなった」それだけでOK</p>
+      </div>
+      <div class="report-step">
+        <p class="num">STEP 03</p>
+        <h4>このページに掲載される</h4>
+        <p>投稿された実践レポートをここにまとめていきます</p>
+      </div>
+    </div>
+
+    <!-- 実践レポートが届いたらここに追加 -->
+    <div style="border:1px solid rgba(255,255,255,0.1);padding:32px;text-align:center;">
+      <p style="font-family:'Noto Sans JP',sans-serif;font-size:13px;color:rgba(255,255,255,0.4);line-height:2;">
+        最初の実践レポートを待っています。<br>
+        あなたの報告がここに積み重なっていきます。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 次回イベント -->
+<section class="next-section">
+  <div class="next-inner">
+    <p class="section-tag" style="margin-bottom:16px;">NEXT — 次回イベント</p>
+    <h2>また、天川村で会いましょう。</h2>
+    <p>
+      次回の開催日程はLINEオープンチャットで<br>
+      いち早くお知らせします。<br>
+      まだ参加していない方は、ぜひ入っておいてください。<br><br>
+      前回参加した方は、大切な人を連れてきてください。<br>
+      この体験が広がっていくことが、<br>わたしたちの願いです。
+    </p>
+    <a href="https://line.me/ti/g2/acRZgNke8HU28j5NyopKRjT649JNVQVg-V2Epg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+       target="_blank" class="btn-apply">
+      💬 オープンチャットで次回情報を受け取る
+    </a>
+    <p style="margin-top:32px;font-size:13px;">
+      <a href="../nature-event/" style="color:var(--stone);font-family:'Noto Sans JP',sans-serif;font-size:12px;letter-spacing:1px;">
+        ▶ イベント申し込みページはこちら
+      </a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p style="margin-bottom:8px;">
+    <a href="https://kaoruchan333.github.io/">前田薫 ホームページ</a>
+    　｜
+    <a href="../nature-event/">自然農イベント申し込み</a>
+  </p>
+  <p>© 2026 前田薫・今西トム　天川村ほったらかし自然農コミュニティ</p>
+</footer>
+
+</body>
+</html>
