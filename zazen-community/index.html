@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>座禅会コミュニティ | 参加者の皆さんへ</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:   #1a1a2e;
+    --deep:  #2d4a3e;
+    --earth: #7a6248;
+    --cream: #f7f4ef;
+    --mist:  #ede9e2;
+    --sand:  #d4c4a8;
+    --white: #ffffff;
+    --serif: 'Noto Serif JP', serif;
+    --sans:  'Noto Sans JP', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--cream);
+    font-size: 16px;
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 100svh;
+    min-height: 600px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: url('images/hero.jpg') center 30% / cover no-repeat;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(10,10,20,0.1) 0%,
+      rgba(10,10,20,0.0) 35%,
+      rgba(10,10,20,0.65) 100%
+    );
+  }
+  .hero-text {
+    position: relative;
+    z-index: 1;
+    padding: 0 28px 56px;
+    max-width: 600px;
+    color: #fff;
+  }
+  .hero-label {
+    font-family: var(--serif);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    opacity: 0.65;
+    margin-bottom: 16px;
+  }
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(24px, 6vw, 36px);
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+    margin-bottom: 18px;
+  }
+  .hero-sub {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    opacity: 0.75;
+    font-weight: 300;
+  }
+
+  /* ── LAYOUT ── */
+  section { padding: 72px 28px; }
+  .container { max-width: 680px; margin: 0 auto; }
+
+  .sec-label {
+    font-family: var(--serif);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    color: var(--earth);
+    margin-bottom: 18px;
+    display: block;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(20px, 5vw, 26px);
+    line-height: 1.75;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+  p {
+    font-size: 15px;
+    line-height: 2.05;
+    color: #2a2a3a;
+    margin-bottom: 18px;
+  }
+  p:last-child { margin-bottom: 0; }
+
+  .divider      { width: 40px; height: 1px; background: var(--sand); margin: 44px auto; }
+  .divider-full { height: 1px; background: linear-gradient(to right, transparent, var(--sand), transparent); }
+
+  /* ── SECTION BG ── */
+  .bg-white { background: var(--white); }
+  .bg-cream { background: var(--cream); }
+  .bg-mist  { background: var(--mist); }
+  .bg-deep  { background: var(--deep); }
+  .bg-ink   { background: var(--ink); }
+
+  /* ── PHOTOS ── */
+  .photo-full {
+    width: 100%;
+    max-height: 520px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    image-orientation: from-image;
+  }
+  .photo-accent {
+    width: 100%;
+    max-height: 340px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    border-radius: 3px;
+    margin: 32px 0;
+    image-orientation: from-image;
+  }
+  .photo-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 32px 0;
+  }
+  .photo-pair img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 3px;
+    image-orientation: from-image;
+  }
+
+  /* ── QUOTE ── */
+  .quote {
+    border-left: 2px solid var(--earth);
+    padding: 4px 0 4px 20px;
+    margin: 24px 0;
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 2.05;
+    color: var(--ink);
+  }
+
+  /* ── EXP CARDS ── */
+  .exp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 28px 0;
+  }
+  .exp-item {
+    font-family: var(--serif);
+    font-size: 14px;
+    line-height: 1.9;
+    padding: 16px 18px;
+    background: rgba(255,255,255,0.65);
+    border: 1px solid rgba(122,98,72,0.15);
+    border-radius: 2px;
+  }
+
+  /* ── VOICE CARDS ── */
+  .voice-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 28px 0;
+  }
+  .voice-card {
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(122,98,72,0.14);
+    border-radius: 2px;
+    padding: 20px 22px;
+    font-size: 14px;
+    line-height: 1.95;
+    color: #2a2a3a;
+  }
+
+  /* ── WRITE BOX ── */
+  .write-box {
+    background: var(--white);
+    border: 1px solid var(--sand);
+    border-radius: 3px;
+    padding: 32px 24px;
+    margin: 28px 0;
+  }
+  .write-item { margin-bottom: 32px; }
+  .write-item:last-child { margin-bottom: 0; }
+  .write-q {
+    display: block;
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--earth);
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+  }
+  .write-line {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--sand);
+    padding: 8px 0;
+    font-size: 15px;
+    font-family: var(--sans);
+    background: transparent;
+    color: var(--ink);
+    outline: none;
+    margin-bottom: 8px;
+    line-height: 1.8;
+  }
+  .write-line::placeholder { color: #c8bba8; font-size: 13px; }
+
+  /* ── OFFERINGS (dark bg) ── */
+  .offer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin: 28px 0;
+  }
+  .offer-item {
+    padding: 20px 22px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 2px;
+  }
+  .offer-item h3 {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 5px;
+    letter-spacing: 0.06em;
+  }
+  .offer-item p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin: 0 0 6px;
+    line-height: 1.75;
+  }
+  .offer-item a {
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* ── STEP LIST ── */
+  .step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 28px 0;
+  }
+  .step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 20px;
+    background: var(--white);
+    border: 1px solid var(--sand);
+    border-radius: 2px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.15s;
+  }
+  .step-item:hover { background: var(--mist); }
+  .step-num {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--earth);
+    min-width: 22px;
+    margin-top: 2px;
+  }
+  .step-body strong {
+    display: block;
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 3px;
+  }
+  .step-body { font-size: 13px; line-height: 1.8; color: #444; }
+
+  /* ── LINE BTN ── */
+  .line-btn {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 32px auto 0;
+    padding: 15px 24px;
+    background: #06c755;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+
+  /* ── CLOSING ── */
+  .closing-body {
+    font-family: var(--serif);
+    font-size: clamp(15px, 4vw, 18px);
+    line-height: 2.3;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 0.05em;
+    margin-bottom: 48px;
+  }
+  .closing-sig {
+    text-align: center;
+    font-family: var(--serif);
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.1em;
+  }
+
+  @media (min-width: 600px) {
+    section { padding: 92px 40px; }
+    .hero-text { padding: 0 52px 68px; }
+    .exp-list { display: grid; grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════ HERO ════ -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <p class="hero-label">ZAZEN COMMUNITY — 第6回</p>
+    <h1 class="hero-title">静けさの中に<br>あなたの使命がある</h1>
+    <p class="hero-sub">座禅会に参加してくださった皆さんへ</p>
+  </div>
+</div>
+
+<div class="divider-full"></div>
+
+<!-- ════ 1. 冒頭 ════ -->
+<section class="bg-cream">
+  <div class="container">
+    <span class="sec-label">01</span>
+    <h2>体験してくださった皆さんへ</h2>
+    <p>第6回天川村座禅会、ありがとうございました。</p>
+    <p>
+      気づけば、ご縁はもう20名を超えています。
+      雨の中、白衣を着て、池に入り、洞窟で目を閉じた仲間が、これだけ集まりました。
+    </p>
+    <p>
+      このページは、あの日の体験を終わらせないための場所です。
+    </p>
+    <p>
+      体験したことを日常に持ち帰り、育てていく。
+      そのためのご縁をつなぎ続けるために、つくりました。
+    </p>
+    <div class="divider"></div>
+    <p style="font-family: var(--serif); font-size: 14px; color: var(--earth); letter-spacing: 0.06em;">前田 薫</p>
+  </div>
+</section>
+
+<img src="images/shrine-building.jpg" alt="天川大弁財天" class="photo-full">
+
+<!-- ════ 2. 座禅会はイベントではない ════ -->
+<section class="bg-white">
+  <div class="container">
+    <span class="sec-label">02</span>
+    <h2>座禅会は、イベントではありません</h2>
+    <p>
+      使命に生きる日本の精神性を、身体で学ぶ場です。
+    </p>
+    <div class="quote">
+      同志が集まり、自分に還り、社会へ戻っていく場所。
+    </div>
+    <p>
+      天川村には、言葉より先に「場」が整えてくれる力があります。
+      修験道の聖地として、何百年もの修行が積み重なった土地です。
+    </p>
+    <p>
+      毎回そこにいる人の「今」が重なり、何かが生まれていきます。
+    </p>
+    <img src="images/lanterns.jpg" alt="天川の参道" class="photo-accent">
+  </div>
+</section>
+
+<!-- ════ 3. 座禅会で起きていること ════ -->
+<section class="bg-cream">
+  <div class="container">
+    <span class="sec-label">03</span>
+    <h2>静かになると、<br>余分なものが剥がれていく</h2>
+    <p>うまく説明できないけれど、何かが変わる。座禅会では、そういうことが起きています。</p>
+
+    <div class="exp-list">
+      <div class="exp-item">「あ、これは判断だったな」<br>と気づく瞬間</div>
+      <div class="exp-item">「こっちが本音だったんだ」<br>と感じる静けさ</div>
+      <div class="exp-item">「ずっと外の基準で動いていた」<br>という発見</div>
+      <div class="exp-item">自分が選んでいた、<br>ということへの気づき</div>
+    </div>
+
+    <p>
+      認知がほどける。内側の基準に触れる。
+      説明では伝わらない何かが、そこで起きています。
+    </p>
+  </div>
+</section>
+
+<img src="images/misogi-pond.jpg" alt="弁財天の池での禊" class="photo-full" style="max-height: 620px; object-position: center 30%;">
+
+<!-- ════ 4. 禊・水行 ════ -->
+<section class="bg-white">
+  <div class="container">
+    <span class="sec-label">04 — 禊</span>
+    <h2>弁財天の池に、<br>白衣のまま入っていく</h2>
+    <p>
+      雨の中、裸足で境内に立つ。
+      白衣を着て、池の水に入っていく。
+    </p>
+    <p>
+      冷たい。でも、どこかで「ああ、これだ」と思う感覚がある。
+      身体が洗われながら、何かがリセットされていく。
+    </p>
+    <div class="quote">
+      自然の水に全身で触れるとき、<br>
+      頭の中のノイズが静かになる。
+    </div>
+    <img src="images/hakui-group.jpg" alt="白衣で禊を行う参加者" class="photo-accent" style="object-position: center top;">
+  </div>
+</section>
+
+<div class="divider-full"></div>
+
+<!-- ════ 5. 洞窟での坐禅 ════ -->
+<section class="bg-mist">
+  <div class="container">
+    <span class="sec-label">05 — 洞窟</span>
+    <h2>役行者が修行した洞窟で、<br>目を閉じる</h2>
+    <p>
+      天川大弁財天の境内には、修験道の開祖・役行者が修行した洞窟があります。
+    </p>
+    <p>
+      何百年もの修行の気が積み重なった場所。
+      その洞窟の中で、みなさんと坐禅をします。
+    </p>
+    <p>
+      場に染み込んだ時間の重みが、言葉より先に働きます。
+      頭で理解する前に、身体が何かを受け取っています。
+    </p>
+    <img src="images/cave.jpg" alt="洞窟の前で" class="photo-accent">
+
+    <p style="font-size: 14px; color: var(--earth); margin-bottom: 20px;">あの洞窟の中で、何を感じましたか？</p>
+    <div class="write-box">
+      <div class="write-item">
+        <span class="write-q">洞窟の空気や、場の感じは？ —</span>
+        <input class="write-line" type="text" placeholder="あなたが感じたまま...">
+        <input class="write-line" type="text" placeholder="">
+      </div>
+      <div class="write-item">
+        <span class="write-q">その場で、何かが動いたことがあれば —</span>
+        <input class="write-line" type="text" placeholder="気づいたこと、浮かんだこと...">
+        <input class="write-line" type="text" placeholder="">
+      </div>
+      <div class="write-item">
+        <span class="write-q">日本の精神性や、先人の修行と、どんなふうに触れた感じがしましたか？ —</span>
+        <input class="write-line" type="text" placeholder="あなたの言葉で...">
+      </div>
+    </div>
+    <p style="font-size: 12px; color: #aaa; text-align: center; margin-top: 8px;">
+      ※ 入力内容は保存されません。書くことで、自分の中で整える余白です。
+    </p>
+  </div>
+</section>
+
+<!-- ════ 6. 参加者の声 ════ -->
+<section class="bg-white">
+  <div class="container">
+    <span class="sec-label">06</span>
+    <h2>参加された方々から<br>こんな声を聞きます</h2>
+
+    <div class="voice-list">
+      <div class="voice-card">「意思決定の質が変わりました。何かを決めるとき、以前とは別の場所から選べるようになった気がします」</div>
+      <div class="voice-card">「人間関係の見え方が変わりました。相手への反応が、少しゆっくりになりました」</div>
+      <div class="voice-card">「使命という言葉が、急に身近になりました。自分にもそういうものがあると感じはじめています」</div>
+      <div class="voice-card">「本音との距離が縮まった感じがします。ごまかしていたものが、少し見えるようになりました」</div>
+      <div class="voice-card">「日本の精神性と、はじめてちゃんとつながれた気がしました。自分のルーツを感じた感覚です」</div>
+    </div>
+  </div>
+</section>
+
+<img src="images/ceremony.jpg" alt="天川大弁財天での儀式" class="photo-full" style="object-position: center 20%;">
+
+<!-- ════ 7. 自分の言葉で ════ -->
+<section class="bg-cream">
+  <div class="container">
+    <span class="sec-label">07</span>
+    <h2>「座禅会って何がいいの？」<br>と聞かれたとき</h2>
+    <p>
+      誰かにそう聞かれたとき、あなた自身の言葉で答えられますか？
+    </p>
+    <p>
+      理屈ではなく、体験として。
+      説明ではなく、あなたが感じたこととして。
+    </p>
+
+    <div class="write-box">
+      <div class="write-item">
+        <span class="write-q">この場で起きていたこと —</span>
+        <input class="write-line" type="text" placeholder="あなたの言葉で...">
+        <input class="write-line" type="text" placeholder="">
+      </div>
+      <div class="write-item">
+        <span class="write-q">自分が受け取ったもの —</span>
+        <input class="write-line" type="text" placeholder="あなたの言葉で...">
+        <input class="write-line" type="text" placeholder="">
+      </div>
+      <div class="write-item">
+        <span class="write-q">紹介したくなる理由 —</span>
+        <input class="write-line" type="text" placeholder="あなたの言葉で...">
+        <input class="write-line" type="text" placeholder="">
+      </div>
+      <div class="write-item">
+        <span class="write-q">また来たくなる理由 —</span>
+        <input class="write-line" type="text" placeholder="あなたの言葉で...">
+        <input class="write-line" type="text" placeholder="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-full"></div>
+
+<!-- ════ 8. 坐禅後の食事 ════ -->
+<section class="bg-white">
+  <div class="container">
+    <span class="sec-label">08 — 食事</span>
+    <h2>禊が終わり、坐禅が終わり、<br>豚汁と玄米をいただく</h2>
+    <p>
+      不思議なんですが、この一杯が言葉では言い表せないほど深くおいしい。
+    </p>
+    <p>
+      五感が研ぎ澄まされた状態で食べるから、素朴な玄米と豚汁が、そのままぜんぶ体に入ってくる。
+      お腹が満たされていくのと一緒に、どこかがほっとして、自然に笑顔になっている。
+    </p>
+    <div class="quote">
+      ご住職を囲んで、みんなで箸を動かす時間。
+      あの温かさが、座禅会をちゃんと締めてくれます。
+    </div>
+    <img src="images/food-gathering.jpg" alt="坐禅後の食事" class="photo-accent" style="object-position: center;">
+  </div>
+</section>
+
+<!-- ════ 9. コミュニティの意味 ════ -->
+<section class="bg-cream">
+  <div class="container">
+    <span class="sec-label">09</span>
+    <h2>ご縁が次のご縁を<br>連れてくる場所</h2>
+    <p>
+      座禅会で出会った人は、同じ体験を持っています。
+      それだけで、ちゃんと話が通じます。
+    </p>
+    <div class="quote">
+      先行案内が届く。日常の気づきを共有できる。<br>
+      また会えたとき、続きから話せる。<br>
+      紹介が生まれ、応援が生まれる。
+    </div>
+    <p>
+      ここに集まるご縁が、それぞれの道を照らし合っていく。
+      そういう場所になっていくと思っています。
+    </p>
+    <img src="images/group.jpg" alt="第6回座禅会 集合写真" class="photo-accent" style="object-position: center top;">
+  </div>
+</section>
+
+<!-- ════ 10. 今動く理由 ════ -->
+<section class="bg-mist">
+  <div class="container">
+    <span class="sec-label">10</span>
+    <h2>今の状態のまま、<br>つながっておくことに意味がある</h2>
+    <p>
+      座禅会で感じたことは、時間とともに薄れていきます。
+      日常に戻ると、元の判断のクセに引っ張られます。
+    </p>
+    <div class="quote">
+      今の状態で、つながっておく。<br>
+      今の感覚を、言葉にしておく。<br>
+      今の自分を、忘れないでおく。
+    </div>
+    <p>
+      それがこのコミュニティの、いちばんシンプルな意味です。
+    </p>
+  </div>
+</section>
+
+<div class="divider-full"></div>
+
+<!-- ════ 11. 次のご縁のかたち ════ -->
+<section class="bg-deep">
+  <div class="container">
+    <span class="sec-label" style="color: rgba(255,255,255,0.45);">11</span>
+    <h2 style="color: #fff;">次のご縁のかたち</h2>
+
+    <div class="offer-list">
+      <div class="offer-item">
+        <h3>次回 座禅会</h3>
+        <p>「また行きたい」という感覚があるなら、今が動くタイミングです。<br>
+        誰かを連れてくるのも、このタイミングが一番自然です。</p>
+        <a href="https://kaoruchan333.github.io/zazen/" target="_blank">日程・詳細を見る →</a>
+      </div>
+      <div class="offer-item">
+        <h3>合宿型 座禅会</h3>
+        <p>一泊二日以上で、天川村に深く入る。<br>日常から完全に離れたいときに。</p>
+      </div>
+      <div class="offer-item">
+        <h3>食事会・オフ会</h3>
+        <p>場を離れても、続きが話せる仲間と。<br>日常の中で、つながりを温める。</p>
+      </div>
+      <div class="offer-item">
+        <h3>個別 座禅</h3>
+        <p>グループではなく、一対一で深めたいときに。<br>自分のペースで、静けさと向き合う。</p>
+      </div>
+      <div class="offer-item">
+        <h3>個別コーチング</h3>
+        <p>座禅会で触れた何かを、日常に落とし込みたいときに。<br>使命・判断・人間関係・キャリア。</p>
+        <a href="https://kaoruchan333.github.io/coaching/" target="_blank">詳細を見る →</a>
+      </div>
+      <div class="offer-item">
+        <h3>魂の羅針盤 言語化ワークショップ</h3>
+        <p>自分の使命・価値観・生き方を言葉にする場。<br>「何のために生きるか」を整えたいときに。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ 12. 軽い一歩 ════ -->
+<section class="bg-cream">
+  <div class="container">
+    <span class="sec-label">12</span>
+    <h2>次の一歩は、<br>小さくていい</h2>
+    <p>どれか一つだけ。今できそうなことを一つ選んでください。</p>
+
+    <div class="step-list">
+      <a href="https://kaoruchan333.github.io/zazen/" target="_blank" class="step-item">
+        <span class="step-num">一</span>
+        <div class="step-body">
+          <strong>次回座禅会の日程を見てみる</strong>
+          「また行きたい」と思っているなら、今が動くタイミングです。
+        </div>
+      </a>
+      <a href="https://line.me/ti/g/XYJUA_sTAt" target="_blank" class="step-item">
+        <span class="step-num">二</span>
+        <div class="step-body">
+          <strong>LINEで一言、今日の感想を書いてみる</strong>
+          長くなくていい。感じたことをそのまま。
+        </div>
+      </a>
+      <div class="step-item">
+        <span class="step-num">三</span>
+        <div class="step-body">
+          <strong>紹介したい人を、一人だけ思い浮かべてみる</strong>
+          「あの人に合うかも」という直感を、大切に。
+        </div>
+      </div>
+    </div>
+
+    <a href="https://line.me/ti/g/XYJUA_sTAt" target="_blank" class="line-btn">
+      LINEコミュニティに参加する
+    </a>
+  </div>
+</section>
+
+<img src="images/wildflower.jpg" alt="天川村の野草の花" class="photo-full">
+
+<!-- ════ 13. クロージング ════ -->
+<section class="bg-ink" style="padding: 100px 28px 80px;">
+  <div class="container">
+    <p class="closing-body">
+      また会いましょう。<br><br>
+      あの静けさの向こうに、<br>
+      あなたの使命があります。<br><br>
+      ここに集まるご縁が、<br>
+      それぞれの道を照らし合っていきますように。<br><br>
+      天川村が、あなたの「還る場所」に<br>なっていくことを願っています。
+    </p>
+    <p class="closing-sig">前田 薫</p>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer style="background:#0f0f1c; padding:24px; text-align:center;">
+  <p style="font-size:12px; color:rgba(255,255,255,0.25); letter-spacing:0.1em; margin:0;">
+    © 2026 前田薫 座禅会コミュニティ — このページは参加者限定です
+  </p>
+</footer>
+
+</body>
+</html>
