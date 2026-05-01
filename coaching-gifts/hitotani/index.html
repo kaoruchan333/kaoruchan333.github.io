@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ひとたんへ｜セッションの振り返りギフト</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 15px;
+      line-height: 1.9;
+      color: #2a2a28;
+      background: #faf9f6;
+    }
+
+    /* ── COVER ── */
+    .cover {
+      background: linear-gradient(160deg, #2a2a28 0%, #3d3430 100%);
+      color: #f0ede6;
+      padding: 64px 32px 52px;
+      text-align: center;
+    }
+    .cover .label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: #c4a96e;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+    .cover h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(26px, 5vw, 38px);
+      font-weight: 400;
+      line-height: 1.6;
+      margin-bottom: 14px;
+      color: #f0ede6;
+    }
+    .cover .sub {
+      font-size: 14px;
+      color: #9a8e80;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.9;
+    }
+    .cover .note {
+      margin-top: 28px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(196,169,110,0.25);
+      border-radius: 12px;
+      padding: 18px 22px;
+      font-size: 13px;
+      color: #b0a494;
+      line-height: 1.85;
+      text-align: left;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: #f0ede6;
+      padding: 26px 32px;
+      border-bottom: 1px solid #e0ddd6;
+    }
+    .toc-inner { max-width: 720px; margin: 0 auto; }
+    .toc-title {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: #aaa;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .toc a {
+      display: block;
+      font-size: 13px;
+      color: #555;
+      text-decoration: none;
+      padding: 5px 0;
+      border-bottom: 0.5px solid #e0ddd6;
+    }
+    .toc a:last-child { border-bottom: none; }
+    .toc a:hover { color: #2a2a28; }
+    .toc .num { color: #c4a96e; margin-right: 8px; }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 52px 32px;
+      border-bottom: 1px solid #e8e5de;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .section-num {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: #c4a96e;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: #2a2a28;
+      margin-bottom: 28px;
+      line-height: 1.55;
+    }
+    h3 {
+      font-size: 14px;
+      font-weight: 500;
+      color: #2a2a28;
+      margin: 32px 0 12px;
+      padding-left: 14px;
+      border-left: 3px solid #c4a96e;
+    }
+    p {
+      font-size: 14px;
+      color: #4a4640;
+      margin-bottom: 14px;
+      line-height: 1.95;
+    }
+
+    /* ── QUOTE ── */
+    .quote {
+      font-size: 15px;
+      color: #2a2a28;
+      font-style: normal;
+      padding: 16px 20px;
+      border-left: 3px solid #c4a96e;
+      margin: 16px 0;
+      background: #f5f0e8;
+      border-radius: 0 8px 8px 0;
+      line-height: 1.85;
+    }
+    .quote .speaker {
+      font-size: 11px;
+      color: #9a8e80;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight {
+      background: #2a2a28;
+      color: #f0ede6;
+      padding: 22px 26px;
+      border-radius: 10px;
+      margin: 20px 0;
+      font-size: 15px;
+      line-height: 1.85;
+    }
+    .highlight strong { color: #c4a96e; }
+
+    /* ── WARM BOX ── */
+    .warm {
+      background: #fdf8f2;
+      border-left: 3px solid #d4a96e;
+      padding: 16px 20px;
+      margin: 16px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .warm p { margin: 0; font-size: 14px; color: #5a4e3a; }
+
+    /* ── CARDS 2-col ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 16px 0;
+    }
+    @media (max-width: 540px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: #fff;
+      border: 0.5px solid #ddd9d0;
+      border-radius: 10px;
+      padding: 18px;
+    }
+    .card-title {
+      font-size: 11px;
+      font-weight: 500;
+      color: #9a8e80;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .card p { margin: 0; font-size: 14px; color: #3a3835; line-height: 1.8; }
+
+    /* ── FLOW ── */
+    .flow { margin: 20px 0; }
+    .flow-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 2px;
+    }
+    .flow-label {
+      min-width: 72px;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      color: #aaa;
+      text-transform: uppercase;
+      padding-top: 4px;
+      text-align: right;
+    }
+    .flow-text {
+      flex: 1;
+      font-size: 14px;
+      color: #3a3835;
+      line-height: 1.8;
+      border-left: 1px solid #ddd;
+      padding-left: 14px;
+    }
+    .flow-arrow {
+      text-align: center;
+      color: #ccc;
+      font-size: 16px;
+      margin: 2px 0 2px 72px;
+      padding-left: 27px;
+    }
+
+    /* ── GIFT BOX (resources) ── */
+    .gift-box {
+      background: #fff;
+      border: 0.5px solid #e0ddd6;
+      border-radius: 14px;
+      padding: 22px 22px;
+      margin: 14px 0;
+    }
+    .gift-box a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .gift-box:hover {
+      border-color: #c4a96e;
+      background: #fdf8f2;
+    }
+    .gift-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: #2a2a28;
+      margin-bottom: 6px;
+    }
+    .gift-desc { font-size: 13px; color: #7a7068; line-height: 1.75; margin: 0; }
+
+    /* ── MESSAGE ── */
+    .message-section {
+      background: linear-gradient(160deg, #faf7f2, #fdf9f6);
+      border-top: 1px solid #e8e5de;
+      padding: 52px 32px;
+    }
+    .message-inner { max-width: 720px; margin: 0 auto; }
+    .message-body {
+      font-size: 15px;
+      line-height: 2.15;
+      color: #2a2a28;
+      white-space: pre-line;
+      margin-bottom: 24px;
+    }
+    .signature {
+      font-size: 14px;
+      color: #c4a96e;
+      font-weight: 500;
+    }
+
+    /* ── DIVIDER ── */
+    hr { border: none; border-top: 1px solid #e8e5de; margin: 24px 0; }
+
+    /* ── QUESTION BOX ── */
+    .q-box {
+      background: #eef4fb;
+      border-left: 3px solid #6a9ad4;
+      padding: 16px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .q-box p { margin: 0; font-size: 14px; color: #2a4a70; }
+
+    /* ── FINAL DEF ── */
+    .def-box {
+      background: #2a2a28;
+      color: #f0ede6;
+      border-radius: 12px;
+      padding: 28px 26px;
+      margin: 16px 0;
+    }
+    .def-label {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: #9a8e80;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .def-text {
+      font-size: 16px;
+      line-height: 1.85;
+      color: #f0ede6;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      .cover { padding: 48px 20px 40px; }
+      .section { padding: 40px 20px; }
+      .toc { padding: 22px 20px; }
+      .message-section { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="label">Session Gift — For Hitotani</div>
+  <h1>ひとたんへ<br>4月12日のセッション振り返りギフト</h1>
+  <p class="sub">今回のセッションで見えてきたことを、あとから何度でも手元に戻れるように、ひとつのギフトとしてまとめました。</p>
+  <div class="note">
+    これはひとたんを決めつけるためのものではなく、「自分の中で何が起きているのかを、自分で見えるようにするための地図」として使ってもらうための教材です。
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-inner">
+    <div class="toc-title">Contents</div>
+    <a href="#s1"><span class="num">01</span> セッションキーワード</a>
+    <a href="#s2"><span class="num">02</span> 「寝るために起きる」から見えたこと</a>
+    <a href="#s3"><span class="num">03</span> メルカリの話が見せてくれたもの</a>
+    <a href="#s4"><span class="num">04</span> ひとたんの価値観</a>
+    <a href="#s5"><span class="num">05</span> 認知のパターン（心の癖）</a>
+    <a href="#s6"><span class="num">06</span> ひとたんの才能と資質</a>
+    <a href="#s7"><span class="num">07</span> 次に使ってほしい問い</a>
+    <a href="#s8"><span class="num">08</span> 一緒に受け取ってほしいもの</a>
+  </div>
+</div>
+
+
+<!-- SECTION 1 -->
+<div class="section" id="s1">
+  <div class="section-num">Section 01</div>
+  <h2>セッションキーワード</h2>
+
+  <div class="def-box">
+    <div class="def-label">今回のセッションの核</div>
+    <div class="def-text">「寝るために起きる」「死ぬために生きる」<br><br>これはひとたんが自分の中から出してきた、<br>人生の目的と手段を問い直す視点。</div>
+  </div>
+
+  <div class="def-box" style="margin-top:12px;">
+    <div class="def-label">今回見えてきた心のパターン</div>
+    <div class="def-text">自分のリズムで動くときは軽い。<br>でも「やらされている」と感じた瞬間、全身で抵抗が起きる。</div>
+  </div>
+
+  <div class="def-box" style="margin-top:12px;">
+    <div class="def-label">今回の最重要発見</div>
+    <div class="def-text">「させられてるっていうのは事実ですか？」<br>「いや、事実じゃない。<strong>私がそう思ってる。</strong>」</div>
+  </div>
+</div>
+
+
+<!-- SECTION 2 -->
+<div class="section" id="s2">
+  <div class="section-num">Section 02</div>
+  <h2>「寝るために起きる」から見えたこと</h2>
+
+  <p>薫ちゃんが「寝るために起きている、それの俺の知り得る限りの実践者が一タンやってん」と言ったとき、ひとたんはすぐに言いました。</p>
+
+  <div class="quote">
+    <span class="speaker">ひとたん（00:28:12）</span>
+    「やっと気づいてくれて（笑）」
+  </div>
+
+  <p>これは「そうかもしれない」じゃない。「それが私の真実だ」という、<strong>確認</strong>だった。</p>
+
+  <h3>ずっとそうやって生きてきた</h3>
+
+  <p>「そうやって生きてきてるからさ。ずっと。」という言葉が出た後、こんな言葉も続きました。</p>
+
+  <div class="quote">
+    <span class="speaker">ひとたん（00:37:19）</span>
+    「怠けてない。怠けてないねん。一生懸命生きてんねんけど。」
+  </div>
+
+  <div class="quote">
+    <span class="speaker">ひとたん（00:37:30）</span>
+    「なんで悪いことしてへんのにすっごい悪いことしてるみたいに思われるねん。なんかそういう風に思われがちやねん。」
+  </div>
+
+  <p>これは弁明ではない。本心から言っている真実だ。<br>ひとたんにとって「寝ること」は怠けではなく、生きること。でも外から見ると「怠け」に見える。このズレが、長年の傷になっている。</p>
+
+  <h3>「省いていく」という本能</h3>
+
+  <div class="quote">
+    <span class="speaker">ひとたん（00:44:14）</span>
+    「めちゃくちゃ省いていくねんね。あたし。もうこれいいやん。これいいやん。これいいやんみたいな。でも眠たくなったら寝るっていうやつだから。そしたらめちゃくちゃやらんでいいことっていっぱいあるでって思うん。」
+  </div>
+
+  <p>これは怠けているのではなく、<strong>「寝る」という目的から逆算して行動を最適化している</strong>。薫ちゃんが外から理論として語ったことを、ひとたんはすでに何十年も実践として生きていた。</p>
+
+  <h3>「死ぬために生きる」のしっくり感</h3>
+
+  <p>「死ぬために生きるか、生きるために死ぬか」という問いに対して。</p>
+
+  <div class="quote">
+    <span class="speaker">ひとたん（00:50:06）</span>
+    「寝るために起きてるんや。寝るために起きてんねん。あたし。」
+  </div>
+
+  <p>「死ぬために生きる」という考えに自然に共鳴できること自体が、ひとたんの哲学の深さを示している。多くの人はこの問いの意味が分からないか、怖くて向き合えない。</p>
+
+  <div class="warm">
+    <p>「今は何言われようがねんねんけど私。」という言葉も出た。意識の上では超えた。でも後半のコーチングで見えてきたように、無意識ではまだ「怒られるかも」という感覚が生きている。この両方が今のひとたんの中に同時にある。</p>
+  </div>
+</div>
+
+
+<!-- SECTION 3 -->
+<div class="section" id="s3">
+  <div class="section-num">Section 03</div>
+  <h2>メルカリの話が見せてくれたもの</h2>
+
+  <p>今回の出来事：旦那さんが選んだ商品を、ひとたんのメルカリアカウントで購入。商品に不備があり、返品やり取りをひとたんが間に入って全て対応した。</p>
+
+  <h3>事実と認知を分けると</h3>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">事実</div>
+      <p>間に入って、やり取りをした。</p>
+    </div>
+    <div class="card">
+      <div class="card-title">認知（ひとたんの受け取り方）</div>
+      <p>「やらされた」「割り込まれた」「させられた」</p>
+    </div>
+  </div>
+
+  <div class="highlight">
+    「させられた」は事実ではない。それが自分の中で起きていた<strong>認知</strong>だった。<br><br>
+    ひとたん自身が、コーチングの最後に言いました。<br>「させられてへんねんけど、させられたみたいな感じがあった。」
+  </div>
+
+  <h3>何がムカついていたか — 心の流れ</h3>
+
+  <div class="flow">
+    <div class="flow-item">
+      <div class="flow-label">スタート</div>
+      <div class="flow-text">自分のスケジュールを組んでいた</div>
+    </div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-item">
+      <div class="flow-label">出来事</div>
+      <div class="flow-text">予定外のやり取りが必要になった</div>
+    </div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-item">
+      <div class="flow-label">認知</div>
+      <div class="flow-text">「もう完全になんか割り込んできやがった」</div>
+    </div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-item">
+      <div class="flow-label">感情</div>
+      <div class="flow-text">「なんで私がやり取りせなあかんねん」でムカつく</div>
+    </div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-item">
+      <div class="flow-label">核心</div>
+      <div class="flow-text">「寝るのが遅くなった。一番むかついたのは寝るのが遅くなった。」</div>
+    </div>
+  </div>
+
+  <div class="quote">
+    <span class="speaker">ひとたん（01:13:43）</span>
+    「はなんで私がやり取りせなあかんねんっていう。のでムカついた。」
+  </div>
+
+  <div class="quote">
+    <span class="speaker">ひとたん（01:18:29）</span>
+    「もう完全になんか割り込んできやがった。もともとないスケジュールやもん。あたしの中には、それが。」
+  </div>
+
+  <p>「他にやりたいことあるし寝るのが遅くなったし、一番むかついたのは寝るのが遅くなった」という言葉が核心だった。スケジュールが崩れること＝<strong>寝るための時間が守れなくなること</strong>が、ひとたんにとって最も大きな侵害だった。</p>
+
+  <h3>最後に自分で気づいた</h3>
+
+  <div class="quote">
+    <span class="speaker">薫ちゃん（01:38:04）</span>
+    「させられてるっていうのは事実ですか？」
+  </div>
+  <div class="quote">
+    <span class="speaker">ひとたん（01:38:08）</span>
+    「いや、事実じゃない。私がそう思ってる。」
+  </div>
+  <div class="quote">
+    <span class="speaker">ひとたん（01:39:13）</span>
+    「させられてへんねんけど、させられたみたいな。勝手にそこを思ってたから、ここまでムカついたのかな。」
+  </div>
+
+  <p>この気づきは大きい。「させられた」は出来事ではなく、自分の中で生まれた解釈だった。</p>
+</div>
+
+
+<!-- SECTION 4 -->
+<div class="section" id="s4">
+  <div class="section-num">Section 04</div>
+  <h2>ひとたんの価値観</h2>
+
+  <div class="quote">
+    <span class="speaker">薫ちゃん（01:44:02）</span>
+    「何に対してジャッジ感情が大きく動くのか。」
+  </div>
+  <div class="quote">
+    <span class="speaker">ひとたん（01:44:02）</span>
+    「時間。」
+  </div>
+
+  <p>一言で答えが出た。ひとたんにとって、一番大切なのは<strong>時間</strong>だ。</p>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">自律性</div>
+      <p>「自分から進んでやる」こと以外は、やらされている感じになる。主導権を他者に取られることへの強い抵抗感がある。</p>
+    </div>
+    <div class="card">
+      <div class="card-title">時間の主権</div>
+      <p>自分のスケジュールとリズムを乱されることへの強い嫌悪。「寝る」という目的に向かって設計した時間を守ること。</p>
+    </div>
+    <div class="card">
+      <div class="card-title">自然なリズム</div>
+      <p>「めちゃくちゃ省いていく」という本能。眠くなったら寝る、やらんでいいことはやらない。これがひとたんの根本原則。</p>
+    </div>
+    <div class="card">
+      <div class="card-title">シンプルさ</div>
+      <p>余分なものを削ぎ落とすことへの自然な動き。「これいいやん、これいいやん」というフィルタリングが無意識に走っている。</p>
+    </div>
+  </div>
+
+  <h3>何が乱れると、しんどくなるか</h3>
+  <ul style="padding-left:0;list-style:none;">
+    <li style="padding:7px 0 7px 18px;position:relative;border-bottom:0.5px solid #f0ede6;font-size:14px;color:#3a3835;line-height:1.8;"><span style="position:absolute;left:0;color:#c4a96e;">—</span> 自分のリズム・スケジュールへの割り込み（最も大きい）</li>
+    <li style="padding:7px 0 7px 18px;position:relative;border-bottom:0.5px solid #f0ede6;font-size:14px;color:#3a3835;line-height:1.8;"><span style="position:absolute;left:0;color:#c4a96e;">—</span> 自分が進んでやっていないことをやること</li>
+    <li style="padding:7px 0 7px 18px;position:relative;border-bottom:0.5px solid #f0ede6;font-size:14px;color:#3a3835;line-height:1.8;"><span style="position:absolute;left:0;color:#c4a96e;">—</span> 悪くないのに悪く見られること</li>
+    <li style="padding:7px 0 7px 18px;position:relative;font-size:14px;color:#3a3835;line-height:1.8;"><span style="position:absolute;left:0;color:#c4a96e;">—</span> 怒られること（意識では超えても、無意識ではまだ反応している）</li>
+  </ul>
+</div>
+
+
+<!-- SECTION 5 -->
+<div class="section" id="s5">
+  <div class="section-num">Section 05</div>
+  <h2>認知のパターン（心の癖）</h2>
+
+  <p>「認知の癖」というのは、悪いことではない。誰でも持っている、心の反応パターンだ。自分の癖を知っておくと、出来事に振り回されにくくなる。</p>
+
+  <div class="quote">
+    <span class="speaker">薫ちゃん（01:43:52）</span>
+    「ここに気づけたのは大きいですね。ひとたんだから癖です。認知の。」
+  </div>
+
+  <hr>
+
+  <h3>① 「させられている」認知</h3>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">事実</div>
+      <p>間に入って、やり取りをした。</p>
+    </div>
+    <div class="card">
+      <div class="card-title">認知</div>
+      <p>「強制されてやった。させられた。」</p>
+    </div>
+  </div>
+  <p style="margin-top:12px;">事実と認知の間には、「断れたけど断らなかった」という自分の選択がある。</p>
+
+  <h3>② 「時間を奪われた」認知</h3>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">事実</div>
+      <p>予想外の対応が必要になった。</p>
+    </div>
+    <div class="card">
+      <div class="card-title">認知</div>
+      <p>「割り込まれた。スケジュールをぐちゃぐちゃにされた。」</p>
+    </div>
+  </div>
+  <p style="margin-top:12px;">スケジュールが変わったのは事実。でも「奪われた」「割り込まれた」は認知だ。</p>
+
+  <h3>③ 「怒られる」予期</h3>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">事実</div>
+      <p>旦那さんは責めなかった。</p>
+    </div>
+    <div class="card">
+      <div class="card-title">認知</div>
+      <p>「怒られるかもしれない。」</p>
+    </div>
+  </div>
+  <p style="margin-top:12px;">この「怒られる」感覚は、今から来ていない。「何寝てんねん」と何度も言われ続けてきた体験から来ている。</p>
+  <div class="warm">
+    <p>「ずっと何回も言われると、あ、これは悪いことなんだみたいな。思ってもなかったのに思い込んでいった。」というのが、この認知の根っこにある。</p>
+  </div>
+</div>
+
+
+<!-- SECTION 6 -->
+<div class="section" id="s6">
+  <div class="section-num">Section 06</div>
+  <h2>ひとたんの才能と資質</h2>
+
+  <h3>本質を問い続ける力</h3>
+  <p>表面的な答えで止まらず、もっと深いところまで掘り続ける。「寝るために起きる」「死ぬために生きる」という問いに自然に共鳴できること自体が、すでに希少な哲学的直観だ。</p>
+
+  <h3>不要なものを削ぎ落とす直観力</h3>
+  <p>「やらんでいいことがどんどん見えてくる」という力。これは怠けではない。目的から逆算して行動を最適化する、本能的な才能だ。</p>
+
+  <h3>自律性への強い感覚</h3>
+  <p>「自分のリズム・自分の選択」を大切にする力。50年かけて「怠け者」と言われ続けても、「怠けてない。一生懸命生きてんねんけど」という確信を手放さなかった。これは外部評価に屈しない、価値観の強度だ。</p>
+
+  <h3>無意識のパターンに気づける感受性</h3>
+  <p>「させられた」と強く感じた瞬間を言語化できること自体がすでに才能。今回のコーチングで「させられていない、私がそう思ってた」と自分で気づいたのは、この感受性があるからこそだ。</p>
+
+  <h3>感情の正直さ</h3>
+  <p>「私すぐ態度に出るからさ」という言葉。自己批評として言っているけど、これは感情を偽らない人だということ。感情を身体で正直に表現することは、コミュニケーションの誠実さだ。</p>
+
+  <div class="warm">
+    <p>薫ちゃんの「寝るために起きる」理論にすぐに乗れたのは、すでにそれを実践として生きてきたから。「新しい概念を学んだ」ではなく、「自分の生き方に名前がついた」体験だった。</p>
+  </div>
+</div>
+
+
+<!-- SECTION 7 -->
+<div class="section" id="s7">
+  <div class="section-num">Section 07</div>
+  <h2>次に使ってほしい問い</h2>
+
+  <p>「押し付けられた」「強制された」と感じた瞬間に、一つだけ聞いてみてほしいことがある。</p>
+
+  <div class="highlight">
+    「今、事実は何か。<strong>認知は何か。</strong>」<br><br>
+    そこが分かれるだけで、反応のパターンが少しずつ変わっていきます。
+  </div>
+
+  <p>さらに深めたいときには。</p>
+
+  <div class="q-box">
+    <p>今のイライラは、何が「させられた」と感じているから？<br>本当は、断ることができたはずじゃなかったか？</p>
+  </div>
+
+  <div class="q-box">
+    <p>今「時間を奪われた」と感じるとき、何が守りたかったのか？<br>スケジュールの向こうにある「寝る」という目的のことを、ちゃんと自分に伝えてあげているか？</p>
+  </div>
+</div>
+
+
+<!-- SECTION 8 -->
+<div class="section" id="s8">
+  <div class="section-num">Section 08</div>
+  <h2>一緒に受け取ってほしいもの</h2>
+
+  <p>このギフトと一緒に渡す教材が2つあります。</p>
+
+  <div class="gift-box">
+    <div class="gift-title">① 振り返り教材 本編</div>
+    <p class="gift-desc">今回のセッションで見えてきた心の構造を、ひとたん専用のテキスト教材としてまとめた本編です。（準備中）</p>
+  </div>
+
+  <div class="gift-box">
+    <div class="gift-title">② 補助音声教材</div>
+    <p class="gift-desc">AIで別角度から考察した音声です。例え話や別視点から理解しやすくすることを目的にしています。違和感がある表現はスルーして大丈夫です。（準備中）</p>
+  </div>
+</div>
+
+
+<!-- MESSAGE -->
+<div class="message-section">
+  <div class="message-inner">
+    <div class="section-num">Message</div>
+    <h2>薫ちゃんからひとたんへ</h2>
+    <div class="message-body">今回見えてきたことは、
+ひとたんがおかしいから起きている話じゃないです。
+
+「強制された」「押し付けられた」って強く感じるのは、
+それだけ自分の時間と人生の主導権を
+大切にしている人やから出てくる感覚です。
+
+そして「寝るために起きる」「死ぬために生きる」という問いに
+自然に共鳴できるっていうのは、
+表面的な話で満足せずに、
+もっと本質のところまで問い続けられる人やということ。
+
+それはすごくまれな力やと思う。
+
+「押し付けられた」と感じた瞬間に、
+次回は一つだけ聞いてみてほしいことがあって。
+
+「今、事実は何か。認知は何か。」
+
+そこが分かれるだけで、
+反応のパターンが少しずつ変わっていきます。
+
+何度でも戻ってきてください。</div>
+    <div class="signature">薫ちゃんより</div>
+  </div>
+</div>
+
+</body>
+</html>
