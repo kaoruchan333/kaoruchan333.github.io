@@ -9,672 +9,1080 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --ink:   #1a1a2e;
-    --deep:  #2d4a3e;
-    --earth: #7a6248;
-    --cream: #f7f4ef;
-    --mist:  #ede9e2;
-    --sand:  #d4c4a8;
-    --white: #ffffff;
-    --serif: 'Noto Serif JP', serif;
-    --sans:  'Noto Sans JP', sans-serif;
-  }
+:root {
+  --ink:    #141418;
+  --deep:   #1e2d24;
+  --earth:  #6b5040;
+  --stone:  #3a3530;
+  --sand:   #c8b89a;
+  --cream:  #f5f1eb;
+  --mist:   #eae5dd;
+  --white:  #faf8f5;
+  --gold:   #a88950;
+  --serif:  'Noto Serif JP', serif;
+  --sans:   'Noto Sans JP', sans-serif;
+}
 
-  html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
 
-  body {
-    font-family: var(--sans);
-    color: var(--ink);
-    background: var(--cream);
-    font-size: 16px;
-    line-height: 1.9;
-    -webkit-font-smoothing: antialiased;
-  }
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
 
-  /* ── HERO ── */
-  .hero {
-    position: relative;
-    height: 100svh;
-    min-height: 600px;
-    display: flex;
-    align-items: flex-end;
-    overflow: hidden;
-  }
-  .hero-bg {
-    position: absolute; inset: 0;
-    background: url('images/hero.jpg') center 30% / cover no-repeat;
-  }
-  .hero-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(10,10,20,0.1) 0%,
-      rgba(10,10,20,0.0) 35%,
-      rgba(10,10,20,0.65) 100%
-    );
-  }
-  .hero-text {
-    position: relative;
-    z-index: 1;
-    padding: 0 28px 56px;
-    max-width: 600px;
-    color: #fff;
-  }
-  .hero-label {
-    font-family: var(--serif);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    opacity: 0.65;
-    margin-bottom: 16px;
-  }
-  .hero-title {
-    font-family: var(--serif);
-    font-size: clamp(24px, 6vw, 36px);
-    font-weight: 400;
-    line-height: 1.6;
-    letter-spacing: 0.04em;
-    margin-bottom: 18px;
-  }
-  .hero-sub {
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    opacity: 0.75;
-    font-weight: 300;
-  }
+/* ━━ HERO ━━ */
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 640px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: #0a0a10;
+}
+.hero-img {
+  position: absolute; inset: 0;
+  background: url('images/hero.jpg') center 35% / cover no-repeat;
+  animation: kenburns 10s ease-out forwards;
+  will-change: transform;
+  filter: brightness(1.08) contrast(0.98);
+}
+@keyframes kenburns {
+  from { transform: scale(1.1); }
+  to   { transform: scale(1.0); }
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(10,10,16,0.05) 0%,
+    rgba(10,10,16,0.0) 30%,
+    rgba(10,10,16,0.58) 100%
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 32px 64px;
+  max-width: 660px;
+}
+.hero-eyebrow {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(26px, 6.5vw, 42px);
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.65;
+  letter-spacing: 0.06em;
+  margin-bottom: 24px;
+}
+.hero-sub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.15em;
+  font-weight: 300;
+}
+.hero-scroll {
+  position: absolute;
+  bottom: 28px;
+  right: 32px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.45;
+}
+.hero-scroll span {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: #fff;
+  writing-mode: vertical-rl;
+}
+.hero-scroll::after {
+  content: '';
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, #fff, transparent);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine {
+  0%,100% { transform: scaleY(1); opacity: 0.45; }
+  50%      { transform: scaleY(0.6); opacity: 0.2; }
+}
 
-  /* ── LAYOUT ── */
-  section { padding: 72px 28px; }
-  .container { max-width: 680px; margin: 0 auto; }
+/* ━━ SHARED ━━ */
+.wrap    { max-width: 680px; margin: 0 auto; }
+.pad     { padding: 88px 32px; }
+.pad-sm  { padding: 64px 32px; }
 
-  .sec-label {
-    font-family: var(--serif);
-    font-size: 10px;
-    letter-spacing: 0.28em;
-    color: var(--earth);
-    margin-bottom: 18px;
-    display: block;
-  }
-  h2 {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: clamp(20px, 5vw, 26px);
-    line-height: 1.75;
-    letter-spacing: 0.04em;
-    color: var(--ink);
-    margin-bottom: 28px;
-  }
-  p {
-    font-size: 15px;
-    line-height: 2.05;
-    color: #2a2a3a;
-    margin-bottom: 18px;
-  }
-  p:last-child { margin-bottom: 0; }
+.eyebrow {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  color: var(--gold);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.eyebrow-light {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
 
-  .divider      { width: 40px; height: 1px; background: var(--sand); margin: 44px auto; }
-  .divider-full { height: 1px; background: linear-gradient(to right, transparent, var(--sand), transparent); }
+h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(20px, 5vw, 28px);
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  margin-bottom: 32px;
+}
+h2.light { color: #fff; }
 
-  /* ── SECTION BG ── */
-  .bg-white { background: var(--white); }
-  .bg-cream { background: var(--cream); }
-  .bg-mist  { background: var(--mist); }
-  .bg-deep  { background: var(--deep); }
-  .bg-ink   { background: var(--ink); }
+p {
+  font-size: 15px;
+  line-height: 2.1;
+  color: #363230;
+  margin-bottom: 20px;
+}
+p:last-child { margin-bottom: 0; }
+p.light { color: rgba(255,255,255,0.82); }
 
-  /* ── PHOTOS ── */
-  .photo-full {
-    width: 100%;
-    max-height: 520px;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    image-orientation: from-image;
-  }
-  .photo-accent {
-    width: 100%;
-    max-height: 340px;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
-    border-radius: 3px;
-    margin: 32px 0;
-    image-orientation: from-image;
-  }
-  .photo-pair {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin: 32px 0;
-  }
-  .photo-pair img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 3px;
-    image-orientation: from-image;
-  }
+.rule {
+  width: 32px; height: 1px;
+  background: var(--sand);
+  margin: 40px auto;
+}
+.rule-gold {
+  width: 32px; height: 1px;
+  background: var(--gold);
+  margin: 40px 0;
+}
 
-  /* ── QUOTE ── */
-  .quote {
-    border-left: 2px solid var(--earth);
-    padding: 4px 0 4px 20px;
-    margin: 24px 0;
-    font-family: var(--serif);
-    font-size: 15px;
-    line-height: 2.05;
-    color: var(--ink);
-  }
+/* ━━ PHOTO DIVIDERS ━━ */
+.photo-full {
+  width: 100%;
+  display: block;
+  image-orientation: from-image;
+}
+.photo-full img {
+  width: 100%;
+  max-height: 580px;
+  object-fit: cover;
+  display: block;
+  image-orientation: from-image;
+}
+.photo-full--quiet {
+  padding: 3px 0;
+  background: var(--cream);
+}
+.photo-full--quiet img {
+  max-height: 520px;
+  opacity: 0.94;
+}
+.photo-full--gathering img {
+  max-height: 620px;
+}
+.photo-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+.photo-pair img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  image-orientation: from-image;
+}
 
-  /* ── EXP CARDS ── */
-  .exp-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin: 28px 0;
-  }
-  .exp-item {
-    font-family: var(--serif);
-    font-size: 14px;
-    line-height: 1.9;
-    padding: 16px 18px;
-    background: rgba(255,255,255,0.65);
-    border: 1px solid rgba(122,98,72,0.15);
-    border-radius: 2px;
-  }
+/* ━━ BG-OVERLAY SECTIONS ━━ */
+.bg-overlay {
+  position: relative;
+  overflow: hidden;
+}
+.bg-overlay::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.12;
+  z-index: 0;
+}
+.bg-overlay > * { position: relative; z-index: 1; }
 
-  /* ── VOICE CARDS ── */
-  .voice-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin: 28px 0;
-  }
-  .voice-card {
-    background: rgba(255,255,255,0.6);
-    border: 1px solid rgba(122,98,72,0.14);
-    border-radius: 2px;
-    padding: 20px 22px;
-    font-size: 14px;
-    line-height: 1.95;
-    color: #2a2a3a;
-  }
+.bg-lanterns::before    { background-image: url('images/lanterns.jpg'); }
+.bg-ceremony::before    { background-image: url('images/ceremony.jpg'); opacity: 0.08; }
+.bg-bell::before        { background-image: url('images/tenkawa-carving.jpg'); opacity: 0.08; }
+.bg-wildflower::before  { background-image: url('images/wildflower.jpg'); }
 
-  /* ── WRITE BOX ── */
-  .write-box {
-    background: var(--white);
-    border: 1px solid var(--sand);
-    border-radius: 3px;
-    padding: 32px 24px;
-    margin: 28px 0;
-  }
-  .write-item { margin-bottom: 32px; }
-  .write-item:last-child { margin-bottom: 0; }
-  .write-q {
-    display: block;
-    font-family: var(--serif);
-    font-size: 13px;
-    color: var(--earth);
-    letter-spacing: 0.1em;
-    margin-bottom: 10px;
-  }
-  .write-line {
-    display: block;
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid var(--sand);
-    padding: 8px 0;
-    font-size: 15px;
-    font-family: var(--sans);
-    background: transparent;
-    color: var(--ink);
-    outline: none;
-    margin-bottom: 8px;
-    line-height: 1.8;
-  }
-  .write-line::placeholder { color: #c8bba8; font-size: 13px; }
+/* ━━ DARK SECTIONS ━━ */
+.dark-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--ink);
+}
+.dark-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.32;
+  z-index: 0;
+}
+.dark-section > * { position: relative; z-index: 1; }
 
-  /* ── OFFERINGS (dark bg) ── */
-  .offer-list {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    margin: 28px 0;
-  }
-  .offer-item {
-    padding: 20px 22px;
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 2px;
-  }
-  .offer-item h3 {
-    font-family: var(--serif);
-    font-size: 16px;
-    font-weight: 400;
-    color: #fff;
-    margin-bottom: 5px;
-    letter-spacing: 0.06em;
-  }
-  .offer-item p {
-    font-size: 13px;
-    color: rgba(255,255,255,0.6);
-    margin: 0 0 6px;
-    line-height: 1.75;
-  }
-  .offer-item a {
-    font-size: 12px;
-    color: rgba(255,255,255,0.8);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
+.dark-cave::before      { background-image: url('images/cave-approach-rain.jpg'); background-position: center 52%; opacity: 0.34; }
+.dark-misogi::before    { background-image: url('images/ryusenji-misogi-wide.jpg'); opacity: 0.36; }
+.dark-forest::before    { background-image: url('images/shrine-stairs.jpg'); opacity: 0.24; }
 
-  /* ── STEP LIST ── */
-  .step-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin: 28px 0;
-  }
-  .step-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 18px 20px;
-    background: var(--white);
-    border: 1px solid var(--sand);
-    border-radius: 2px;
-    text-decoration: none;
-    color: inherit;
-    transition: background 0.15s;
-  }
-  .step-item:hover { background: var(--mist); }
-  .step-num {
-    font-family: var(--serif);
-    font-size: 18px;
-    color: var(--earth);
-    min-width: 22px;
-    margin-top: 2px;
-  }
-  .step-body strong {
-    display: block;
-    font-weight: 500;
-    font-size: 15px;
-    margin-bottom: 3px;
-  }
-  .step-body { font-size: 13px; line-height: 1.8; color: #444; }
+/* ━━ QUOTE ━━ */
+.quote {
+  padding: 20px 0 20px 24px;
+  border-left: 2px solid var(--gold);
+  margin: 28px 0;
+  font-family: var(--serif);
+  font-size: 15px;
+  line-height: 2.1;
+  color: var(--stone);
+}
+.quote.light {
+  border-color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.8);
+}
 
-  /* ── LINE BTN ── */
-  .line-btn {
-    display: block;
-    width: 100%;
-    max-width: 320px;
-    margin: 32px auto 0;
-    padding: 15px 24px;
-    background: #06c755;
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
-    font-size: 15px;
-    letter-spacing: 0.06em;
-    border-radius: 3px;
-    font-weight: 500;
-  }
+/* ━━ EXPERIENCE CARDS ━━ */
+.exp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 28px 0;
+}
+.exp-card {
+  padding: 20px 18px;
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(168,137,80,0.15);
+  font-family: var(--serif);
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--stone);
+}
 
-  /* ── CLOSING ── */
-  .closing-body {
-    font-family: var(--serif);
-    font-size: clamp(15px, 4vw, 18px);
-    line-height: 2.3;
-    text-align: center;
-    color: #fff;
-    letter-spacing: 0.05em;
-    margin-bottom: 48px;
-  }
-  .closing-sig {
-    text-align: center;
-    font-family: var(--serif);
-    font-size: 14px;
-    color: rgba(255,255,255,0.55);
-    letter-spacing: 0.1em;
-  }
+/* ━━ VOICE CARDS ━━ */
+.voice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 28px 0;
+}
+.voice-card {
+  padding: 22px 24px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-size: 14px;
+  line-height: 2.0;
+  color: rgba(255,255,255,0.75);
+  font-style: italic;
+}
+.voice-more {
+  margin-top: 18px;
+}
+.voice-more summary {
+  cursor: pointer;
+  list-style: none;
+  display: inline-block;
+  padding: 12px 18px;
+  border: 1px solid rgba(168,137,80,0.45);
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+.voice-more summary::-webkit-details-marker { display: none; }
+.voice-more[open] summary { margin-bottom: 14px; }
+.social-thread-note {
+  margin-top: 18px;
+  padding: 20px 22px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(168,137,80,0.2);
+}
+.social-thread-note h3 {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.86);
+  margin-bottom: 8px;
+}
+.social-thread-note p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.62);
+  line-height: 1.9;
+}
+.social-post-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+.social-post-card {
+  display: block;
+  padding: 16px 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  text-decoration: none;
+  color: rgba(255,255,255,0.78);
+  transition: background 0.2s, border-color 0.2s;
+}
+.social-post-card:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(168,137,80,0.28);
+}
+.social-post-card strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 4px;
+}
+.social-post-card span {
+  display: block;
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+}
+.voice-action-note {
+  margin-top: 28px;
+  padding: 18px 20px;
+  background: rgba(255,255,255,0.05);
+  border-left: 2px solid rgba(168,137,80,0.62);
+}
+.voice-action-note p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 2;
+  color: rgba(255,255,255,0.68);
+}
 
-  @media (min-width: 600px) {
-    section { padding: 92px 40px; }
-    .hero-text { padding: 0 52px 68px; }
-    .exp-list { display: grid; grid-template-columns: 1fr 1fr; }
-  }
+/* ━━ MEMORY GALLERY ━━ */
+.memory-gallery {
+  background: var(--cream);
+}
+.memory-intro {
+  margin-bottom: 30px;
+}
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+.memory-tile {
+  position: relative;
+  min-height: 230px;
+  overflow: hidden;
+  background: var(--mist);
+}
+.memory-tile--wide {
+  grid-column: span 2;
+}
+.memory-tile img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  image-orientation: from-image;
+}
+.memory-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 28px 18px 16px;
+  font-family: var(--serif);
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.86);
+  background: linear-gradient(to top, rgba(12,12,18,0.72), rgba(12,12,18,0));
+}
+.gallery-link {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 13px 18px;
+  color: var(--gold);
+  border: 1px solid rgba(168,137,80,0.35);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  background: rgba(255,255,255,0.36);
+}
+.gallery-link:hover {
+  background: rgba(255,255,255,0.62);
+}
+
+/* ━━ WRITE BOX ━━ */
+.write-box {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 32px 28px;
+  margin: 28px 0;
+}
+.write-item { margin-bottom: 28px; }
+.write-item:last-child { margin-bottom: 0; }
+.write-q {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 10px;
+  font-family: var(--serif);
+}
+.write-line {
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  padding: 8px 0;
+  font-size: 15px;
+  font-family: var(--sans);
+  background: transparent;
+  color: rgba(255,255,255,0.85);
+  outline: none;
+  margin-bottom: 8px;
+  line-height: 1.8;
+}
+.write-line::placeholder { color: rgba(255,255,255,0.2); font-size: 13px; }
+
+/* ━━ OFFER LIST ━━ */
+.offer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: 28px 0;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.offer-item {
+  padding: 22px 24px;
+  background: rgba(255,255,255,0.03);
+  transition: background 0.2s;
+}
+.offer-item:hover { background: rgba(255,255,255,0.06); }
+.offer-item h3 {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 6px;
+  letter-spacing: 0.06em;
+}
+.offer-item p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin: 0 0 6px;
+  line-height: 1.75;
+  font-style: normal;
+}
+.offer-item a {
+  font-size: 12px;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid rgba(168,137,80,0.35);
+  padding-bottom: 1px;
+}
+.path-panel {
+  margin: 34px 0;
+  padding: 30px 28px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(168,137,80,0.22);
+  backdrop-filter: blur(10px);
+}
+.path-panel h3 {
+  font-family: var(--serif);
+  font-size: clamp(18px, 4vw, 23px);
+  font-weight: 400;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 14px;
+}
+.path-panel p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  line-height: 2.0;
+}
+.quiet-link {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 13px 18px;
+  color: rgba(255,255,255,0.9);
+  border: 1px solid rgba(168,137,80,0.48);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  background: rgba(168,137,80,0.12);
+}
+.quiet-link:hover {
+  background: rgba(168,137,80,0.2);
+}
+.temple-card {
+  margin: 34px 0 0;
+  padding: 28px 26px;
+  background: rgba(255,255,255,0.52);
+  border: 1px solid rgba(168,137,80,0.18);
+  backdrop-filter: blur(8px);
+}
+.temple-card h3 {
+  font-family: var(--serif);
+  font-size: clamp(18px, 4vw, 22px);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--stone);
+  margin-bottom: 12px;
+}
+.temple-card p {
+  font-size: 14px;
+  line-height: 2.05;
+  color: #514a43;
+}
+.temple-card a {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--gold);
+  border-bottom: 1px solid rgba(168,137,80,0.38);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+/* ━━ STEPS ━━ */
+.step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 28px 0;
+}
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 22px;
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(168,137,80,0.12);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+}
+.step-item:hover { background: rgba(255,255,255,0.72); }
+.step-num {
+  font-family: var(--serif);
+  font-size: 20px;
+  color: var(--gold);
+  min-width: 24px;
+  margin-top: 1px;
+  line-height: 1;
+}
+.step-body strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--stone);
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+.step-body {
+  font-size: 13px;
+  line-height: 1.85;
+  color: #666;
+}
+
+/* ━━ LINE BTN ━━ */
+.line-btn {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 36px auto 0;
+  padding: 16px 24px;
+  background: #06c755;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+.share-note {
+  margin-top: 30px;
+  padding: 24px 22px;
+  background: rgba(255,255,255,0.46);
+  border: 1px solid rgba(168,137,80,0.14);
+}
+.share-note p {
+  font-size: 13px;
+  line-height: 2;
+  color: #514a43;
+}
+
+/* ━━ CLOSING ━━ */
+.closing-text {
+  font-family: var(--serif);
+  font-size: clamp(15px, 4vw, 19px);
+  color: rgba(255,255,255,0.85);
+  line-height: 2.5;
+  text-align: center;
+  letter-spacing: 0.06em;
+  margin-bottom: 52px;
+}
+.closing-sig {
+  text-align: center;
+  font-family: var(--serif);
+  font-size: 13px;
+  color: rgba(255,255,255,0.38);
+  letter-spacing: 0.14em;
+}
+
+/* ━━ FOOD LAYOUT ━━ */
+.food-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3px;
+  margin: 32px 0;
+}
+.food-grid img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  image-orientation: from-image;
+}
+.reflection-photo {
+  margin: 34px 0 0;
+  background: #efe6da;
+  border: 1px solid rgba(168,137,80,0.18);
+}
+.reflection-photo img {
+  width: 100%;
+  max-height: 560px;
+  object-fit: cover;
+  object-position: center 48%;
+  display: block;
+}
+.reflection-caption {
+  padding: 16px 18px 18px;
+  font-size: 13px;
+  line-height: 1.9;
+  color: #5b5148;
+  font-family: var(--serif);
+}
+
+@media (max-width: 480px) {
+  .exp-grid { grid-template-columns: 1fr; }
+  .photo-pair { grid-template-columns: 1fr; }
+  .food-grid  { grid-template-columns: 1fr; }
+  .memory-grid { grid-template-columns: 1fr; }
+  .memory-tile,
+  .memory-tile--wide { grid-column: auto; }
+  .memory-tile { min-height: 270px; }
+  .pad  { padding: 72px 24px; }
+  .pad-sm { padding: 52px 24px; }
+  .hero-content { padding: 0 24px 56px; }
+  .photo-full img { max-height: 520px; }
+  .path-panel { padding: 26px 22px; }
+  .reflection-photo img { max-height: 480px; }
+}
+@media (min-width: 700px) {
+  .pad    { padding: 108px 48px; }
+  .pad-sm { padding: 80px 48px; }
+  .hero-content { padding: 0 64px 80px; }
+}
 </style>
 </head>
 <body>
 
-<!-- ════ HERO ════ -->
-<div class="hero">
-  <div class="hero-bg"></div>
+<!-- ══════════════════════════════════
+     HERO
+══════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-img"></div>
   <div class="hero-overlay"></div>
-  <div class="hero-text">
-    <p class="hero-label">ZAZEN COMMUNITY — 第6回</p>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Zazen Community</p>
     <h1 class="hero-title">静けさの中に<br>あなたの使命がある</h1>
-    <p class="hero-sub">座禅会に参加してくださった皆さんへ</p>
+    <p class="hero-sub">座禅会へ参加してくださった皆さまへ</p>
   </div>
-</div>
+  <div class="hero-scroll"><span>scroll</span></div>
+</section>
 
-<div class="divider-full"></div>
-
-<!-- ════ 1. 冒頭 ════ -->
-<section class="bg-cream">
-  <div class="container">
-    <span class="sec-label">01</span>
-    <h2>体験してくださった皆さんへ</h2>
-    <p>第6回天川村座禅会、ありがとうございました。</p>
-    <p>
-      気づけば、ご縁はもう20名を超えています。
-      雨の中、白衣を着て、池に入り、洞窟で目を閉じた仲間が、これだけ集まりました。
-    </p>
-    <p>
-      このページは、あの日の体験を終わらせないための場所です。
-    </p>
-    <p>
-      体験したことを日常に持ち帰り、育てていく。
-      そのためのご縁をつなぎ続けるために、つくりました。
-    </p>
-    <div class="divider"></div>
+<!-- ══════════════════════════════════
+     01. 冒頭メッセージ
+══════════════════════════════════ -->
+<section class="bg-overlay bg-lanterns">
+  <div class="wrap pad">
+    <span class="eyebrow">01 — Message</span>
+    <h2>体験してくださった<br>皆さんへ</h2>
+    <p>龍泉寺での座禅会へ参加してくださり、ありがとうございました。</p>
+    <p>雨の音、行衣（白衣）の感触、池の水の冷たさ、洞窟で目を閉じた時間。日常へ戻ると薄れていくあの感覚を、もう一度、身体の奥から思い出してもらえたらと思っています。</p>
+    <p>このページは、あの日の体験を終わらせないための場所です。写真と言葉をたどりながら、自分が何を受け取り、何を感じていたのかを、今の自分の言葉で受け取り直すためにつくりました。</p>
+    <div class="rule-gold"></div>
     <p style="font-family: var(--serif); font-size: 14px; color: var(--earth); letter-spacing: 0.06em;">前田 薫</p>
   </div>
 </section>
 
-<img src="images/shrine-building.jpg" alt="天川大弁財天" class="photo-full">
+<!-- ══════════════════════════════════
+     PHOTO: 龍泉寺
+══════════════════════════════════ -->
+<div class="photo-full">
+  <img src="images/shrine-building.jpg" alt="龍泉寺の境内に立つ朱色の社">
+</div>
 
-<!-- ════ 2. 座禅会はイベントではない ════ -->
-<section class="bg-white">
-  <div class="container">
-    <span class="sec-label">02</span>
-    <h2>座禅会は、イベントではありません</h2>
-    <p>
-      使命に生きる日本の精神性を、身体で学ぶ場です。
-    </p>
+<!-- ══════════════════════════════════
+     02. 座禅会はイベントではない
+══════════════════════════════════ -->
+<section class="bg-overlay bg-ceremony" style="background: var(--white);">
+  <div class="wrap pad">
+    <span class="eyebrow">02 — What It Is</span>
+    <h2>座禅会は、<br>イベントではありません</h2>
+    <p>使命に生きる日本の精神性を、身体で学ぶ場です。</p>
     <div class="quote">
       同志が集まり、自分に還り、社会へ戻っていく場所。
     </div>
-    <p>
-      天川村には、言葉より先に「場」が整えてくれる力があります。
-      修験道の聖地として、何百年もの修行が積み重なった土地です。
-    </p>
-    <p>
-      毎回そこにいる人の「今」が重なり、何かが生まれていきます。
-    </p>
-    <img src="images/lanterns.jpg" alt="天川の参道" class="photo-accent">
+    <p>龍泉寺には、言葉より先に「場」が整えてくれる力があります。修験道の開祖・役行者が修行を積んだ、特別な霊地です。弁財天信仰の源流にも触れる大元の聖地として、毎回そこにいる人の「今」が重なり、何かが生まれていきます。</p>
   </div>
 </section>
 
-<!-- ════ 3. 座禅会で起きていること ════ -->
-<section class="bg-cream">
-  <div class="container">
-    <span class="sec-label">03</span>
+<!-- ══════════════════════════════════
+     PHOTO: 龍泉寺の石段
+══════════════════════════════════ -->
+<div class="photo-full">
+  <img src="images/shrine-stairs.jpg" alt="龍泉寺の境内へ続く石段と五色の幡" style="max-height:500px; object-fit:cover; object-position:center 40%;">
+</div>
+
+<!-- ══════════════════════════════════
+     03. 座禅会で起きていること
+══════════════════════════════════ -->
+<section class="bg-overlay bg-bell" style="background: var(--cream);">
+  <div class="wrap pad">
+    <span class="eyebrow">03 — What Happens</span>
     <h2>静かになると、<br>余分なものが剥がれていく</h2>
     <p>うまく説明できないけれど、何かが変わる。座禅会では、そういうことが起きています。</p>
-
-    <div class="exp-list">
-      <div class="exp-item">「あ、これは判断だったな」<br>と気づく瞬間</div>
-      <div class="exp-item">「こっちが本音だったんだ」<br>と感じる静けさ</div>
-      <div class="exp-item">「ずっと外の基準で動いていた」<br>という発見</div>
-      <div class="exp-item">自分が選んでいた、<br>ということへの気づき</div>
+    <div class="exp-grid">
+      <div class="exp-card">「あ、これは判断だったな」<br>と気づく瞬間</div>
+      <div class="exp-card">「こっちが本音だったんだ」<br>と感じる静けさ</div>
+      <div class="exp-card">「ずっと外の基準で動いていた」<br>という発見</div>
+      <div class="exp-card">自分が選んでいた、<br>ということへの気づき</div>
     </div>
-
-    <p>
-      認知がほどける。内側の基準に触れる。
-      説明では伝わらない何かが、そこで起きています。
-    </p>
+    <p>認知がほどける。内側の基準に触れる。説明では伝わらない何かが、そこで起きています。</p>
   </div>
 </section>
 
-<img src="images/misogi-pond.jpg" alt="弁財天の池での禊" class="photo-full" style="max-height: 620px; object-position: center 30%;">
+<!-- ══════════════════════════════════
+     04. 禊・水行（行衣で池の前）
+══════════════════════════════════ -->
+<div class="photo-full photo-full--gathering">
+  <img src="images/ryusenji-misogi-standing.jpg" alt="行衣をまとい龍泉寺の池へ入る参加者たち" style="max-height:620px; object-fit:cover; object-position:center 40%;">
+</div>
 
-<!-- ════ 4. 禊・水行 ════ -->
-<section class="bg-white">
-  <div class="container">
-    <span class="sec-label">04 — 禊</span>
-    <h2>弁財天の池に、<br>白衣のまま入っていく</h2>
-    <p>
-      雨の中、裸足で境内に立つ。
-      白衣を着て、池の水に入っていく。
-    </p>
-    <p>
-      冷たい。でも、どこかで「ああ、これだ」と思う感覚がある。
-      身体が洗われながら、何かがリセットされていく。
-    </p>
-    <div class="quote">
-      自然の水に全身で触れるとき、<br>
-      頭の中のノイズが静かになる。
+<section class="dark-section dark-misogi">
+  <div class="wrap pad">
+    <span class="eyebrow-light">04 — 禊</span>
+    <h2 class="light">龍泉寺の池に、<br>行衣のまま入っていく</h2>
+    <p class="light">裸足で境内に立ち、行衣をまとい、池の水に入っていく。冷たい。でも、どこかで「ああ、これだ」と思う感覚がある。</p>
+    <div class="quote light">
+      身体が洗われながら、何かがリセットされていく。<br>
+      頭の中のノイズが、静かになる。
     </div>
-    <img src="images/hakui-group.jpg" alt="白衣で禊を行う参加者" class="photo-accent" style="object-position: center top;">
+    <p class="light">役行者像を前に、みんなで水に入る。雨が降っていても、寒くても、不思議と清々しい気持ちになっていきます。</p>
   </div>
 </section>
 
-<div class="divider-full"></div>
+<!-- ══════════════════════════════════
+     PHOTO: 池の中（全員）
+══════════════════════════════════ -->
+<div class="photo-full">
+  <img src="images/ryusenji-misogi-close.jpg" alt="龍泉寺の池で手を合わせる禊の時間" style="max-height:640px; object-fit:cover; object-position:center 34%;">
+</div>
 
-<!-- ════ 5. 洞窟での坐禅 ════ -->
-<section class="bg-mist">
-  <div class="container">
-    <span class="sec-label">05 — 洞窟</span>
-    <h2>役行者が修行した洞窟で、<br>目を閉じる</h2>
-    <p>
-      天川大弁財天の境内には、修験道の開祖・役行者が修行した洞窟があります。
-    </p>
-    <p>
-      何百年もの修行の気が積み重なった場所。
-      その洞窟の中で、みなさんと坐禅をします。
-    </p>
-    <p>
-      場に染み込んだ時間の重みが、言葉より先に働きます。
-      頭で理解する前に、身体が何かを受け取っています。
-    </p>
-    <img src="images/cave.jpg" alt="洞窟の前で" class="photo-accent">
+<!-- ══════════════════════════════════
+     05. 洞窟での座禅
+══════════════════════════════════ -->
+<div class="photo-full">
+  <img src="images/cave-approach-rain.jpg" alt="雨の森と岩場の前で静かに立つ時間" style="max-height:520px; object-fit:cover; object-position:center 58%;">
+</div>
 
-    <p style="font-size: 14px; color: var(--earth); margin-bottom: 20px;">あの洞窟の中で、何を感じましたか？</p>
+<section class="dark-section dark-cave">
+  <div class="wrap pad">
+    <span class="eyebrow-light">05 — 洞窟</span>
+    <h2 class="light">役行者が修行した洞窟で、<br>目を閉じる</h2>
+    <p class="light">修験道の開祖が、何百年も前に座った場所。その洞窟の中で、みなさんと座禅をします。</p>
+    <p class="light">場に染み込んだ時間の重みが、言葉より先に働きます。頭で理解する前に、身体が何かを受け取っています。</p>
     <div class="write-box">
       <div class="write-item">
-        <span class="write-q">洞窟の空気や、場の感じは？ —</span>
+        <span class="write-q">洞窟の中で感じた空気や、場の感じは？ ——</span>
         <input class="write-line" type="text" placeholder="あなたが感じたまま...">
         <input class="write-line" type="text" placeholder="">
       </div>
       <div class="write-item">
-        <span class="write-q">その場で、何かが動いたことがあれば —</span>
-        <input class="write-line" type="text" placeholder="気づいたこと、浮かんだこと...">
+        <span class="write-q">日本の精神性や、先人の修行と触れた感じは？ ——</span>
+        <input class="write-line" type="text" placeholder="あなたの言葉で...">
         <input class="write-line" type="text" placeholder="">
       </div>
-      <div class="write-item">
-        <span class="write-q">日本の精神性や、先人の修行と、どんなふうに触れた感じがしましたか？ —</span>
-        <input class="write-line" type="text" placeholder="あなたの言葉で...">
-      </div>
     </div>
-    <p style="font-size: 12px; color: #aaa; text-align: center; margin-top: 8px;">
-      ※ 入力内容は保存されません。書くことで、自分の中で整える余白です。
-    </p>
+    <p style="font-size:12px; color:rgba(255,255,255,0.25); text-align:center; margin-top:8px;">入力内容は保存されません。書くことで、自分の中で整えるための余白です。</p>
   </div>
 </section>
 
-<!-- ════ 6. 参加者の声 ════ -->
-<section class="bg-white">
-  <div class="container">
-    <span class="sec-label">06</span>
-    <h2>参加された方々から<br>こんな声を聞きます</h2>
+<div class="photo-full photo-full--quiet">
+  <img src="images/zazen-hondo.jpg" alt="本堂で座禅を深める参加者たち" style="max-height:560px; object-fit:cover; object-position:center 45%;">
+</div>
 
+<!-- ══════════════════════════════════
+     06. 参加者が受け取っているもの
+══════════════════════════════════ -->
+<section style="background: var(--stone);">
+  <div class="wrap pad">
+    <span class="eyebrow-light">06 — Voices</span>
+    <h2 class="light">参加された方々の声が、<br>ここに重なっていきます</h2>
     <div class="voice-list">
       <div class="voice-card">「意思決定の質が変わりました。何かを決めるとき、以前とは別の場所から選べるようになった気がします」</div>
       <div class="voice-card">「人間関係の見え方が変わりました。相手への反応が、少しゆっくりになりました」</div>
       <div class="voice-card">「使命という言葉が、急に身近になりました。自分にもそういうものがあると感じはじめています」</div>
-      <div class="voice-card">「本音との距離が縮まった感じがします。ごまかしていたものが、少し見えるようになりました」</div>
-      <div class="voice-card">「日本の精神性と、はじめてちゃんとつながれた気がしました。自分のルーツを感じた感覚です」</div>
+      <div class="voice-card">「本音との距離が縮まった気がします。ごまかしていたものが、少し見えるようになりました」</div>
+    </div>
+    <details class="voice-more">
+      <summary>みなさんの感想をもっと見る</summary>
+      <div class="voice-list">
+        <div class="voice-card">「日本の精神性と、はじめてちゃんとつながれた気がしました。自分のルーツを感じた感覚です」</div>
+        <div class="voice-card">「雨の音、水の冷たさ、洞窟の暗さが、今も身体に残っています」</div>
+        <div class="voice-card">「言葉にする前の感覚を、もう少し大切にしてみたいと思いました」</div>
+      </div>
+      <div class="social-thread-note">
+        <h3>感想や投稿から、ゆるやかにつながる</h3>
+        <p>Facebook、Instagram、noteなどに投稿された座禅会の感想も、参加者限定の場としてここに集めていきます。もし将来、外向きに紹介する場合や言葉を引用する場合は、あらためて本人に確認します。</p>
+        <div class="social-post-list">
+          <a class="social-post-card" href="https://www.facebook.com/stories/1797111757030519/UzpfSVNDOjEzNzI2OTMxODQ3MjAxMjg=/?view_single=1" target="_blank" rel="noopener noreferrer">
+            <strong>座禅会の感想投稿</strong>
+            <span>Facebookストーリーズを見る →</span>
+          </a>
+          <a class="social-post-card" href="https://www.facebook.com/stories/10157346273982950/UzpfSVNDOjI1NjA5MzgzMTA5NzAwMjI=/?view_single=1" target="_blank" rel="noopener noreferrer">
+            <strong>座禅会の感想投稿</strong>
+            <span>Facebookストーリーズを見る →</span>
+          </a>
+          <a class="social-post-card" href="https://www.facebook.com/stories/10157346273982950/UzpfSVNDOjc5NzM0NTYwMzIyNTcyNQ==/?view_single=1" target="_blank" rel="noopener noreferrer">
+            <strong>座禅会の感想投稿</strong>
+            <span>Facebookストーリーズを見る →</span>
+          </a>
+          <a class="social-post-card" href="https://www.facebook.com/share/r/1DduQM4jq5/" target="_blank" rel="noopener noreferrer">
+            <strong>座禅会の振り返り投稿</strong>
+            <span>Facebook投稿を見る →</span>
+          </a>
+        </div>
+      </div>
+    </details>
+    <div class="voice-action-note">
+      <p>あなたの一言が、次に読む誰かの記憶を呼び起こします。写真、感想、SNS投稿があればLINEグループに送ってください。いただいた声は、少しずつこのページに重ねていきます。</p>
     </div>
   </div>
 </section>
 
-<img src="images/ceremony.jpg" alt="天川大弁財天での儀式" class="photo-full" style="object-position: center 20%;">
+<!-- ══════════════════════════════════
+     06.5 みんなが見ていた景色
+══════════════════════════════════ -->
+<section class="memory-gallery">
+  <div class="wrap pad-sm">
+    <span class="eyebrow">06.5 — Memories</span>
+    <h2>みんなが見ていた景色</h2>
+    <p class="memory-intro">同じ一日を過ごしていても、残っている景色は一人ひとり少しずつ違います。LINEグループに届いた写真や、みなさんが見ていた瞬間も、ここに少しずつ加えていきます。</p>
+    <div class="memory-grid">
+      <figure class="memory-tile memory-tile--wide">
+        <img src="images/ryusenji-misogi-standing.jpg" alt="龍泉寺の池で行衣をまとい立つ参加者たち">
+        <figcaption class="memory-caption">池の水に入る前、身体が静かに整っていく時間</figcaption>
+      </figure>
+      <figure class="memory-tile">
+        <img src="images/cave-approach-rain.jpg" alt="雨の森と岩場の前で静かに立つ参加者">
+        <figcaption class="memory-caption">洞窟へ向かう前の、雨と森の気配</figcaption>
+      </figure>
+      <figure class="memory-tile">
+        <img src="images/zazen-hondo.jpg" alt="本堂で座禅を深める参加者たち">
+        <figcaption class="memory-caption">本堂で座り、呼吸が深くなっていく時間</figcaption>
+      </figure>
+      <figure class="memory-tile">
+        <img src="images/himi-reflection.jpg" alt="振り返りの輪にそっといる猫のひみ">
+        <figcaption class="memory-caption">振り返りの輪に、ひみもそっと参加していた時間</figcaption>
+      </figure>
+      <figure class="memory-tile memory-tile--wide">
+        <img src="images/group.jpg" alt="龍泉寺座禅会に集まった仲間たちの集合写真">
+        <figcaption class="memory-caption">同じ体験を持つ仲間として、またここからつながっていく</figcaption>
+      </figure>
+    </div>
+    <a class="gallery-link" href="gallery.html">写真をもっと見る →</a>
+  </div>
+</section>
 
-<!-- ════ 7. 自分の言葉で ════ -->
-<section class="bg-cream">
-  <div class="container">
-    <span class="sec-label">07</span>
+<!-- ══════════════════════════════════
+     07. 自分の言葉で
+══════════════════════════════════ -->
+<section class="bg-overlay bg-lanterns" style="background: var(--cream);">
+  <div class="wrap pad">
+    <span class="eyebrow">07 — Your Words</span>
     <h2>「座禅会って何がいいの？」<br>と聞かれたとき</h2>
-    <p>
-      誰かにそう聞かれたとき、あなた自身の言葉で答えられますか？
-    </p>
-    <p>
-      理屈ではなく、体験として。
-      説明ではなく、あなたが感じたこととして。
-    </p>
-
-    <div class="write-box">
-      <div class="write-item">
-        <span class="write-q">この場で起きていたこと —</span>
-        <input class="write-line" type="text" placeholder="あなたの言葉で...">
-        <input class="write-line" type="text" placeholder="">
+    <p>理屈ではなく、体験として。説明ではなく、あなたが感じたこととして。</p>
+    <div class="step-list" style="margin-top:28px;">
+      <div class="step-item" style="flex-direction:column; gap:12px;">
+        <span class="eyebrow" style="margin:0;">この場で起きていたこと —</span>
+        <input style="width:100%; border:none; border-bottom:1px solid var(--sand); background:transparent; padding:6px 0; font-size:15px; font-family:var(--sans); outline:none; color:var(--stone);" type="text" placeholder="あなたの言葉で...">
       </div>
-      <div class="write-item">
-        <span class="write-q">自分が受け取ったもの —</span>
-        <input class="write-line" type="text" placeholder="あなたの言葉で...">
-        <input class="write-line" type="text" placeholder="">
+      <div class="step-item" style="flex-direction:column; gap:12px;">
+        <span class="eyebrow" style="margin:0;">自分が受け取ったもの —</span>
+        <input style="width:100%; border:none; border-bottom:1px solid var(--sand); background:transparent; padding:6px 0; font-size:15px; font-family:var(--sans); outline:none; color:var(--stone);" type="text" placeholder="あなたの言葉で...">
       </div>
-      <div class="write-item">
-        <span class="write-q">紹介したくなる理由 —</span>
-        <input class="write-line" type="text" placeholder="あなたの言葉で...">
-        <input class="write-line" type="text" placeholder="">
+      <div class="step-item" style="flex-direction:column; gap:12px;">
+        <span class="eyebrow" style="margin:0;">紹介したくなる理由 —</span>
+        <input style="width:100%; border:none; border-bottom:1px solid var(--sand); background:transparent; padding:6px 0; font-size:15px; font-family:var(--sans); outline:none; color:var(--stone);" type="text" placeholder="あなたの言葉で...">
       </div>
-      <div class="write-item">
-        <span class="write-q">また来たくなる理由 —</span>
-        <input class="write-line" type="text" placeholder="あなたの言葉で...">
-        <input class="write-line" type="text" placeholder="">
+      <div class="step-item" style="flex-direction:column; gap:12px;">
+        <span class="eyebrow" style="margin:0;">また来たくなる理由 —</span>
+        <input style="width:100%; border:none; border-bottom:1px solid var(--sand); background:transparent; padding:6px 0; font-size:15px; font-family:var(--sans); outline:none; color:var(--stone);" type="text" placeholder="あなたの言葉で...">
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider-full"></div>
-
-<!-- ════ 8. 坐禅後の食事 ════ -->
-<section class="bg-white">
-  <div class="container">
-    <span class="sec-label">08 — 食事</span>
-    <h2>禊が終わり、坐禅が終わり、<br>豚汁と玄米をいただく</h2>
-    <p>
-      不思議なんですが、この一杯が言葉では言い表せないほど深くおいしい。
-    </p>
-    <p>
-      五感が研ぎ澄まされた状態で食べるから、素朴な玄米と豚汁が、そのままぜんぶ体に入ってくる。
-      お腹が満たされていくのと一緒に、どこかがほっとして、自然に笑顔になっている。
-    </p>
+<!-- ══════════════════════════════════
+     08. 座禅後の食事
+══════════════════════════════════ -->
+<section style="background: var(--white);">
+  <div class="wrap pad">
+    <span class="eyebrow">08 — 食事</span>
+    <h2>禊が終わり、座禅が終わり、<br>豚汁と玄米をいただく</h2>
+    <p>不思議なんですが、この一杯が言葉では言い表せないほど深くおいしい。</p>
+    <p>五感が研ぎ澄まされた状態で食べるから、素朴な玄米と豚汁が、そのままぜんぶ体に入ってくる。ご住職を囲んで、みんなで箸を動かす。猫が庭から入ってくる。笑い声が混じる。</p>
     <div class="quote">
-      ご住職を囲んで、みんなで箸を動かす時間。
       あの温かさが、座禅会をちゃんと締めてくれます。
     </div>
-    <img src="images/food-gathering.jpg" alt="坐禅後の食事" class="photo-accent" style="object-position: center;">
+    <div class="food-grid">
+      <img src="images/food-gathering.jpg" alt="みんなで食事" style="object-position:center;">
+      <img src="images/food-pot.jpg" alt="座禅後にいただいた豚汁" style="object-position:center top;">
+    </div>
+    <div class="reflection-photo">
+      <img src="images/himi-reflection.jpg" alt="豚汁をいただきながら振り返る参加者と猫のひみ">
+      <p class="reflection-caption">豚汁をいただきながら、今日感じたことをぽつぽつ話す時間。ひみもそこにいて、場の空気をふっとやわらかくしてくれました。</p>
+    </div>
   </div>
 </section>
 
-<!-- ════ 9. コミュニティの意味 ════ -->
-<section class="bg-cream">
-  <div class="container">
-    <span class="sec-label">09</span>
+<!-- ══════════════════════════════════
+     PHOTO: 集合写真
+══════════════════════════════════ -->
+<div class="photo-full">
+  <img src="images/group.jpg" alt="龍泉寺座禅会に集まった仲間たち" style="max-height:620px; object-fit:cover; object-position:center 20%;">
+</div>
+
+<!-- ══════════════════════════════════
+     09. コミュニティの意味
+══════════════════════════════════ -->
+<section class="bg-overlay bg-ceremony" style="background: var(--cream);">
+  <div class="wrap pad">
+    <span class="eyebrow">09 — Community</span>
     <h2>ご縁が次のご縁を<br>連れてくる場所</h2>
-    <p>
-      座禅会で出会った人は、同じ体験を持っています。
-      それだけで、ちゃんと話が通じます。
-    </p>
+    <p>座禅会で出会った人は、同じ体験を持っています。それだけで、ちゃんと話が通じます。</p>
     <div class="quote">
       先行案内が届く。日常の気づきを共有できる。<br>
       また会えたとき、続きから話せる。<br>
       紹介が生まれ、応援が生まれる。
     </div>
-    <p>
-      ここに集まるご縁が、それぞれの道を照らし合っていく。
-      そういう場所になっていくと思っています。
-    </p>
-    <img src="images/group.jpg" alt="第6回座禅会 集合写真" class="photo-accent" style="object-position: center top;">
+    <p>ここに集まるご縁が、それぞれの道を照らし合っていく。そういう場所になっていくと思っています。</p>
+    <div class="temple-card">
+      <h3>ご住職に、またふれる</h3>
+      <p>この座禅会で出会った静けさの奥には、望月ご住職が日々大切にされている坐る時間、祈り、法話、そして開かれたお寺のあり方があります。</p>
+      <p>薫ちゃんにとって、望月ご住職は世界一の座禅の伴奏者です。あの日の体験を思い出したいとき、日常の中でもう一度手を合わせたいとき、いつでもご住職と興聖寺の空気にふれられるように、ここに入口を置いておきます。</p>
+      <a href="https://www.ko-sho-ji.jp/" target="_blank" rel="noopener noreferrer">興聖寺 公式ホームページを見る →</a>
+    </div>
   </div>
 </section>
 
-<!-- ════ 10. 今動く理由 ════ -->
-<section class="bg-mist">
-  <div class="container">
-    <span class="sec-label">10</span>
+<!-- ══════════════════════════════════
+     10. 今動く理由
+══════════════════════════════════ -->
+<section style="background: var(--mist);">
+  <div class="wrap pad-sm">
+    <span class="eyebrow">10 — Why Now</span>
     <h2>今の状態のまま、<br>つながっておくことに意味がある</h2>
-    <p>
-      座禅会で感じたことは、時間とともに薄れていきます。
-      日常に戻ると、元の判断のクセに引っ張られます。
-    </p>
+    <p>座禅会で感じたことは、時間とともに薄れていきます。日常に戻ると、元の判断のクセに引っ張られます。</p>
     <div class="quote">
       今の状態で、つながっておく。<br>
       今の感覚を、言葉にしておく。<br>
       今の自分を、忘れないでおく。
     </div>
-    <p>
-      それがこのコミュニティの、いちばんシンプルな意味です。
-    </p>
   </div>
 </section>
 
-<div class="divider-full"></div>
+<!-- ══════════════════════════════════
+     11. 次のご縁のかたち
+══════════════════════════════════ -->
+<section class="dark-section dark-forest">
+  <div class="wrap pad">
+    <span class="eyebrow-light">11 — Next Step</span>
+    <h2 class="light">次のご縁のかたち</h2>
 
-<!-- ════ 11. 次のご縁のかたち ════ -->
-<section class="bg-deep">
-  <div class="container">
-    <span class="sec-label" style="color: rgba(255,255,255,0.45);">11</span>
-    <h2 style="color: #fff;">次のご縁のかたち</h2>
+    <div class="path-panel">
+      <h3>座禅会で触れたものを、<br>日常の意思決定へ</h3>
+      <p>洞窟で目を閉じたとき、池の水に入ったとき、ふっと静かになった内側に、言葉になる前の本音や使命の感覚があったかもしれません。</p>
+      <p>その感覚を一度きりの体験で終わらせず、仕事、経営、人間関係、これからの選択に落とし込んでいきたい方へ。前田薫は、魂の羅針盤の言語化と個別コーチングを通して、その人の使命、本当の才能、人生の判断軸が日常で使える形になるまで伴走しています。</p>
+      <a href="https://kaoruchan333.github.io/coaching/" target="_blank" rel="noopener noreferrer" class="quiet-link">自分の使命と言葉を整えたい方へ</a>
+    </div>
 
     <div class="offer-list">
       <div class="offer-item">
         <h3>次回 座禅会</h3>
-        <p>「また行きたい」という感覚があるなら、今が動くタイミングです。<br>
-        誰かを連れてくるのも、このタイミングが一番自然です。</p>
-        <a href="https://kaoruchan333.github.io/zazen/" target="_blank">日程・詳細を見る →</a>
+        <p>「また行きたい」という感覚があるなら、今が動くタイミングです。</p>
+        <a href="https://kaoruchan333.github.io/zazen/" target="_blank" rel="noopener noreferrer">日程・詳細を見る →</a>
       </div>
       <div class="offer-item">
         <h3>合宿型 座禅会</h3>
-        <p>一泊二日以上で、天川村に深く入る。<br>日常から完全に離れたいときに。</p>
-      </div>
-      <div class="offer-item">
-        <h3>食事会・オフ会</h3>
-        <p>場を離れても、続きが話せる仲間と。<br>日常の中で、つながりを温める。</p>
-      </div>
-      <div class="offer-item">
-        <h3>個別 座禅</h3>
-        <p>グループではなく、一対一で深めたいときに。<br>自分のペースで、静けさと向き合う。</p>
-      </div>
-      <div class="offer-item">
-        <h3>個別コーチング</h3>
-        <p>座禅会で触れた何かを、日常に落とし込みたいときに。<br>使命・判断・人間関係・キャリア。</p>
-        <a href="https://kaoruchan333.github.io/coaching/" target="_blank">詳細を見る →</a>
-      </div>
-      <div class="offer-item">
-        <h3>魂の羅針盤 言語化ワークショップ</h3>
-        <p>自分の使命・価値観・生き方を言葉にする場。<br>「何のために生きるか」を整えたいときに。</p>
+        <p>準備中です。詳細が決まり次第、このページでお知らせします。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════ 12. 軽い一歩 ════ -->
-<section class="bg-cream">
-  <div class="container">
-    <span class="sec-label">12</span>
+<!-- ══════════════════════════════════
+     12. 軽い一歩
+══════════════════════════════════ -->
+<section class="bg-overlay bg-wildflower" style="background: var(--cream);">
+  <div class="wrap pad">
+    <span class="eyebrow">12 — First Step</span>
     <h2>次の一歩は、<br>小さくていい</h2>
-    <p>どれか一つだけ。今できそうなことを一つ選んでください。</p>
-
+    <p>どれか一つだけで大丈夫です。あの日の感覚が薄れる前に、少しだけ言葉にしておいてください。</p>
     <div class="step-list">
-      <a href="https://kaoruchan333.github.io/zazen/" target="_blank" class="step-item">
+      <a href="https://kaoruchan333.github.io/zazen/" target="_blank" rel="noopener noreferrer" class="step-item">
         <span class="step-num">一</span>
         <div class="step-body">
           <strong>次回座禅会の日程を見てみる</strong>
           「また行きたい」と思っているなら、今が動くタイミングです。
         </div>
       </a>
-      <a href="https://line.me/ti/g/XYJUA_sTAt" target="_blank" class="step-item">
+      <a href="https://line.me/ti/g/XYJUA_sTAt" target="_blank" rel="noopener noreferrer" class="step-item">
         <span class="step-num">二</span>
         <div class="step-body">
-          <strong>LINEで一言、今日の感想を書いてみる</strong>
-          長くなくていい。感じたことをそのまま。
+          <strong>LINEに写真や感想を送ってみる</strong>
+          長くなくていい。感じたこと、残っている景色、紹介したい一枚をそのまま。
         </div>
       </a>
       <div class="step-item">
@@ -685,19 +1093,28 @@
         </div>
       </div>
     </div>
-
-    <a href="https://line.me/ti/g/XYJUA_sTAt" target="_blank" class="line-btn">
-      LINEコミュニティに参加する
+    <div class="share-note">
+      <p>このページは、参加者のみなさんの声や写真が少しずつ重なっていく場所です。LINEグループに送っていただいた一言や一枚が、次に読む誰かの「あの日」を呼び戻します。SNS投稿も、参加者限定の記録としてこちらに反映していきます。</p>
+    </div>
+    <a href="https://line.me/ti/g/XYJUA_sTAt" target="_blank" rel="noopener noreferrer" class="line-btn">
+      LINEに写真や感想を送る
     </a>
   </div>
 </section>
 
-<img src="images/wildflower.jpg" alt="天川村の野草の花" class="photo-full">
+<!-- ══════════════════════════════════
+     PHOTO: 野草の花
+══════════════════════════════════ -->
+<div class="photo-full">
+  <img src="images/wildflower.jpg" alt="龍泉寺のまわりに咲いていた小さな野草" style="max-height:500px; object-fit:cover; object-position:center 60%;">
+</div>
 
-<!-- ════ 13. クロージング ════ -->
-<section class="bg-ink" style="padding: 100px 28px 80px;">
-  <div class="container">
-    <p class="closing-body">
+<!-- ══════════════════════════════════
+     13. クロージング
+══════════════════════════════════ -->
+<section style="background: var(--ink); padding: 112px 32px 88px;">
+  <div class="wrap">
+    <p class="closing-text">
       また会いましょう。<br><br>
       あの静けさの向こうに、<br>
       あなたの使命があります。<br><br>
@@ -709,9 +1126,12 @@
   </div>
 </section>
 
-<!-- ════ FOOTER ════ -->
-<footer style="background:#0f0f1c; padding:24px; text-align:center;">
-  <p style="font-size:12px; color:rgba(255,255,255,0.25); letter-spacing:0.1em; margin:0;">
+<footer style="background:#0c0c12; padding:24px; text-align:center;">
+  <p style="font-size:11px; color:rgba(255,255,255,0.28); letter-spacing:0.1em; margin:0 0 8px; line-height:1.9;">
+    最終更新: 2026年5月1日<br>
+    参加者の声と写真は、少しずつ追加していきます
+  </p>
+  <p style="font-size:11px; color:rgba(255,255,255,0.2); letter-spacing:0.12em; margin:0;">
     © 2026 前田薫 座禅会コミュニティ — このページは参加者限定です
   </p>
 </footer>
