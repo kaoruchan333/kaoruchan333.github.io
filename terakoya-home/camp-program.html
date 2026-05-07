@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天川サマーキャンプ — 組織・団体向けプログラム</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400&display=swap');
+
+  :root {
+    --forest:  #2d4a3e;
+    --moss:    #4a7c6f;
+    --water:   #7ba7bc;
+    --sky:     #c8dde8;
+    --ink:     #2a2a2a;
+    --stone:   #6b6b6b;
+    --paper:   #f8f6f2;
+    --white:   #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Serif JP', serif;
+    line-height: 2;
+  }
+
+  /* ── HERO ─────────────────────────────── */
+
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 32px;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('photos/camp2025/IMG_3621.JPG');
+    background-size: cover;
+    background-position: center 40%;
+    filter: brightness(0.45);
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+  }
+
+  .hero-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 48px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.5rem, 5vw, 2.6rem);
+    font-weight: 300;
+    color: var(--white);
+    letter-spacing: 0.05em;
+    line-height: 1.9;
+    margin-bottom: 40px;
+  }
+
+  .hero h1 strong {
+    font-weight: 600;
+    display: block;
+  }
+
+  .hero-sub {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    line-height: 2.2;
+    margin-bottom: 56px;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    padding: 16px 48px;
+    border: 1px solid rgba(255,255,255,0.45);
+    color: var(--white);
+    text-decoration: none;
+    transition: background 0.25s, color 0.25s;
+  }
+
+  .hero-cta:hover {
+    background: rgba(255,255,255,0.12);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.22);
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .hero-scroll::after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: rgba(255,255,255,0.15);
+    display: block;
+  }
+
+  /* ── SECTION BASE ─────────────────────── */
+
+  .section-wrap {
+    padding: 120px 32px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    color: var(--moss);
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--moss);
+    opacity: 0.25;
+  }
+
+  h2 {
+    font-size: clamp(1.3rem, 4vw, 2rem);
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: var(--ink);
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--stone);
+    margin-bottom: 24px;
+    line-height: 2.2;
+  }
+
+  /* ── UNIQUENESS ───────────────────────── */
+
+  .unique-wrap { background: var(--white); }
+  .unique-wrap .section-wrap { max-width: 100%; }
+  .unique-inner { max-width: 800px; margin: 0 auto; }
+
+  .unique-quote {
+    border-left: 2px solid var(--moss);
+    padding: 20px 28px;
+    margin: 40px 0;
+    background: var(--paper);
+  }
+  .unique-quote p {
+    font-size: 1.02rem;
+    color: var(--ink);
+    margin: 0;
+    line-height: 2;
+  }
+
+  /* ── FLOW ─────────────────────────────── */
+
+  .flow-steps {
+    margin: 56px 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .flow-step {
+    display: flex;
+    gap: 0;
+    position: relative;
+  }
+
+  .flow-step + .flow-step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 40px;
+    width: 1px;
+    height: 100%;
+    background: rgba(74,124,111,0.18);
+    z-index: 0;
+  }
+
+  .flow-num {
+    width: 80px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 28px;
+  }
+
+  .flow-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--moss);
+    opacity: 0.7;
+    position: relative;
+    z-index: 1;
+  }
+
+  .flow-body {
+    flex: 1;
+    padding: 24px 0 32px 24px;
+    border-bottom: 1px solid rgba(74,124,111,0.1);
+  }
+
+  .flow-step:last-child .flow-body { border-bottom: none; }
+
+  .flow-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .flow-body p {
+    font-size: 0.875rem;
+    color: var(--stone);
+    margin: 0;
+    line-height: 2;
+  }
+
+  /* ── TWO GIFTS ────────────────────────── */
+
+  .gifts-wrap { background: var(--forest); }
+  .gifts-wrap .section-wrap { max-width: 100%; padding: 120px 32px; }
+  .gifts-inner { max-width: 800px; margin: 0 auto; }
+
+  .gifts-wrap .section-label { color: rgba(255,255,255,0.3); }
+  .gifts-wrap .section-label::after { background: rgba(255,255,255,0.12); }
+  .gifts-wrap h2 { color: var(--white); }
+  .gifts-wrap p { color: rgba(255,255,255,0.5); }
+
+  .gifts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 56px;
+  }
+
+  .gift-card {
+    padding: 40px 32px;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .gift-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    color: var(--water);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .gift-card h3 {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+
+  .gift-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .gift-list li {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 2;
+    padding-left: 1.2em;
+    position: relative;
+  }
+
+  .gift-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: rgba(74,124,111,0.5);
+  }
+
+  /* ── RESULTS ──────────────────────────── */
+
+  .numbers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin: 56px 0;
+    background: rgba(74,124,111,0.08);
+  }
+
+  .number-box {
+    background: var(--white);
+    padding: 36px 28px;
+    text-align: center;
+  }
+
+  .number-big {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: var(--forest);
+    line-height: 1;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .number-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    color: var(--stone);
+    line-height: 1.8;
+  }
+
+  .voices {
+    margin-top: 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .voice {
+    background: var(--white);
+    padding: 32px 36px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .voice-mark {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2rem;
+    color: var(--moss);
+    opacity: 0.3;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: -4px;
+  }
+
+  .voice-text {
+    font-size: 0.9rem;
+    color: var(--ink);
+    line-height: 2;
+    margin: 0;
+  }
+
+  .voice-from {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.7rem;
+    color: var(--stone);
+    margin-top: 8px;
+    display: block;
+  }
+
+  .media-tag {
+    display: inline-block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.64rem;
+    letter-spacing: 0.1em;
+    color: var(--moss);
+    border: 1px solid rgba(74,124,111,0.3);
+    padding: 3px 12px;
+    margin-top: 32px;
+  }
+
+  /* ── FOR WHO ──────────────────────────── */
+
+  .forwho-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2px;
+    margin-top: 56px;
+    background: rgba(74,124,111,0.08);
+  }
+
+  .forwho-item {
+    background: var(--white);
+    padding: 32px 24px;
+    text-align: center;
+  }
+
+  .forwho-icon {
+    font-size: 1.6rem;
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  .forwho-item h4 {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 8px;
+    letter-spacing: 0.04em;
+  }
+
+  .forwho-item p {
+    font-size: 0.76rem;
+    color: var(--stone);
+    margin: 0;
+    line-height: 1.8;
+  }
+
+  /* ── CUSTOM ───────────────────────────── */
+
+  .custom-wrap { background: var(--white); }
+  .custom-wrap .section-wrap { max-width: 100%; }
+  .custom-inner { max-width: 800px; margin: 0 auto; }
+
+  .custom-flow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 56px;
+    background: rgba(74,124,111,0.06);
+  }
+
+  .custom-step {
+    padding: 32px 20px;
+    text-align: center;
+    background: var(--paper);
+    border-right: 1px solid rgba(74,124,111,0.1);
+    position: relative;
+  }
+
+  .custom-step:last-child { border-right: none; }
+
+  .custom-step-num {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    color: var(--moss);
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .custom-step h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 8px;
+  }
+
+  .custom-step p {
+    font-size: 0.74rem;
+    color: var(--stone);
+    margin: 0;
+    line-height: 1.8;
+  }
+
+  /* ── FORM SECTION ─────────────────────── */
+
+  .form-wrap { background: var(--forest); }
+  .form-wrap .section-wrap { max-width: 100%; padding: 100px 32px; }
+  .form-inner { max-width: 720px; margin: 0 auto; }
+
+  .form-wrap .section-label { color: rgba(255,255,255,0.3); }
+  .form-wrap .section-label::after { background: rgba(255,255,255,0.12); }
+  .form-wrap h2 { color: var(--white); font-size: clamp(1.2rem, 3vw, 1.7rem); }
+  .form-wrap p { color: rgba(255,255,255,0.5); font-size: 0.88rem; }
+
+  .form-frame {
+    margin-top: 48px;
+    background: var(--white);
+    border-radius: 0;
+  }
+
+  .form-frame iframe {
+    display: block;
+    width: 100%;
+    min-height: 780px;
+    border: none;
+  }
+
+  /* ── BACK NAV ─────────────────────────── */
+
+  .back-nav {
+    padding: 40px 32px;
+    text-align: center;
+    border-top: 1px solid rgba(74,124,111,0.1);
+  }
+
+  .back-link {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--moss);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  .back-link:hover { opacity: 1; }
+
+  footer {
+    padding: 48px 32px;
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.7rem;
+    color: rgba(107,107,107,0.4);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── RESPONSIVE ───────────────────────── */
+
+  @media (max-width: 600px) {
+    .section-wrap { padding: 80px 24px; }
+    .gifts-grid { grid-template-columns: 1fr; }
+    .numbers { grid-template-columns: 1fr; }
+    .custom-flow { grid-template-columns: 1fr 1fr; }
+    .form-wrap .section-wrap { padding: 80px 20px; }
+    .form-frame iframe { min-height: 900px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ① HERO -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <p class="hero-label">TENKAWA SUMMER CAMP — 奈良県天川村</p>
+    <h1>
+      答えを教えない。<br>
+      <strong>子供たちが、自分の言葉に出会う夏。</strong>
+    </h1>
+    <p class="hero-sub">
+      体験 → 静けさ → 振り返り → 問い → 気づき。<br>
+      このプロセス設計を持つサマーキャンプは、他にない。<br>
+      学校・自治体・JC・スポーツチームと、一緒に作ります。
+    </p>
+    <a href="#contact" class="hero-cta">お問い合わせ・参加申し込み</a>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</header>
+
+<!-- ② UNIQUENESS -->
+<div class="unique-wrap">
+  <div class="section-wrap">
+    <div class="unique-inner">
+      <p class="section-label">CONCEPT</p>
+      <h2>ただの思い出作りではない。<br>子供の内側から、何かが動き出す。</h2>
+      <p>
+        天川サマーキャンプは、「楽しい夏の体験」としても設計されているが、
+        本質はそこではない。
+      </p>
+      <p>
+        コーチングの核にある問いが、
+        自然体験・焚き火・川遊びという身体的な体験と組み合わさったとき、
+        子供たちは自分でも気づいていなかった感覚に出会う。
+      </p>
+      <div class="unique-quote">
+        <p>
+          「答えを渡さない。問いを差し出す。<br>
+          セッションが渡せるのは問いだけ、場が渡せるのは気配。<br>
+          子供たちは、その気配の中で、自分の言葉に出会っていく。」<br>
+          <small style="font-size:0.82em; color:#8a8a8a; margin-top: 8px; display: block;">― 前田薫</small>
+        </p>
+      </div>
+      <p>
+        スポーツのコーチングスキルを子供に教える場でもなく、
+        自己啓発的なワークショップでもない。<br>
+        天川村という「言葉より先に、場が存在している」空間が、
+        すべての体験をひとつにつなぐ。
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ③ PROGRAM FLOW -->
+<div class="section-wrap">
+  <p class="section-label">PROGRAM DESIGN</p>
+  <h2>このプログラムが設計していること。</h2>
+  <p>
+    体験から気づきへ至る流れを、意図的に設計している。
+    偶然の感動に頼らず、問いの構造があるから、毎回再現できる。
+  </p>
+
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="flow-num"><div class="flow-dot"></div></div>
+      <div class="flow-body">
+        <span class="flow-title">体験 — 身体で動く</span>
+        <p>川遊び・魚のつかみ取り・洞窟探検・焚き火・サッカー。<br>
+        頭より先に、身体が動く。理由も目的もいらない時間が最初にある。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num"><div class="flow-dot"></div></div>
+      <div class="flow-body">
+        <span class="flow-title">静けさ・内観 — 座禅・夜の対話</span>
+        <p>2日目の朝、自然の中で座禅。夜は焚き火を囲んで語り合う。<br>
+        動いた身体が静まるとき、自分の内側に何かが浮かびはじめる。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num"><div class="flow-dot"></div></div>
+      <div class="flow-body">
+        <span class="flow-title">振り返り — 体験を言葉にする</span>
+        <p>「今日、自分はどんな瞬間に動いていたか」を問い直す時間。<br>
+        感じたことを言語化しようとすることで、体験が初めて自分のものになる。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num"><div class="flow-dot"></div></div>
+      <div class="flow-body">
+        <span class="flow-title">問い — 「それは事実か、認知か」</span>
+        <p>コーチングの核にある問いを、子供たちに合った言葉で差し出す。<br>
+        「本当はどうしたかった？」「何があれば動けた？」<br>
+        答えを求めない。問いを持って立つ力を育てる。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num"><div class="flow-dot"></div></div>
+      <div class="flow-body">
+        <span class="flow-title">自分の言葉に出会う — 気づき</span>
+        <p>最終日の振り返り対話で、子供たちが自分の言葉を口にする。<br>
+        それは誰かに教えてもらった答えではなく、この2日間の体験から生まれた言葉。<br>
+        この瞬間が、キャンプの目的地。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ④ TWO GIFTS -->
+<div class="gifts-wrap">
+  <div class="section-wrap">
+    <div class="gifts-inner">
+      <p class="section-label">TWO GIFTS</p>
+      <h2>子供たちへ。<br>そして、大人スタッフへ。</h2>
+      <p>このキャンプが届けるのは、参加する子供たちだけではない。</p>
+      <div class="gifts-grid">
+        <div class="gift-card">
+          <span class="gift-label">FOR CHILDREN</span>
+          <h3>子供たちへのギフト</h3>
+          <ul class="gift-list">
+            <li>自分の内側に問いを持つ力</li>
+            <li>「正解」より「自分の感覚」を信頼する経験</li>
+            <li>自然の中で身体を使い、感じる力</li>
+            <li>異なるバックグラウンドを持つ人と話す体験</li>
+            <li>「来年もここに来たい」という場所との関係</li>
+          </ul>
+        </div>
+        <div class="gift-card">
+          <span class="gift-label">FOR ADULT STAFF</span>
+          <h3>大人スタッフへのギフト</h3>
+          <ul class="gift-list">
+            <li>コーチングの本質を「現場」で体感する</li>
+            <li>答えを与えずに子供を支える在り方</li>
+            <li>子供の変化を「証人」として立ち会う経験</li>
+            <li>自分自身が場に触れ、内側が動く2日間</li>
+            <li>組織として関わることで深まるチームの対話</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ⑤ RESULTS -->
+<div class="section-wrap">
+  <p class="section-label">RESULTS 2025</p>
+  <h2>2025年度 実績。</h2>
+  <p>宝塚青年会議所との共催で実施した天川サマーキャンプの記録。</p>
+
+  <div class="numbers">
+    <div class="number-box">
+      <span class="number-big">29名</span>
+      <span class="number-label">参加児童全員が<br>「来年も参加したい」</span>
+    </div>
+    <div class="number-box">
+      <span class="number-big">50名</span>
+      <span class="number-label">総参加者数<br>（子供・スタッフ含む）</span>
+    </div>
+    <div class="number-box">
+      <span class="number-big">+22,294</span>
+      <span class="number-label">収支差引（円）<br>行政補助金30万円含む</span>
+    </div>
+  </div>
+
+  <div class="voices">
+    <div class="voice">
+      <span class="voice-mark">"</span>
+      <div>
+        <p class="voice-text">
+          「来年も参加したい」——これが全員だった、ということ。<br>
+          楽しかっただけではなく、何かが残ったのだと思う。
+        </p>
+        <span class="voice-from">2025年参加アンケートより</span>
+      </div>
+    </div>
+    <div class="voice">
+      <span class="voice-mark">"</span>
+      <div>
+        <p class="voice-text">
+          大人スタッフとして関わったJCメンバーから、「子供たちを見ていて、
+          自分が変わった気がする」という感想が複数あがった。
+        </p>
+        <span class="voice-from">宝塚青年会議所メンバー / 2025年</span>
+      </div>
+    </div>
+  </div>
+
+  <span class="media-tag">奈良新聞デジタル版 掲載</span>
+
+  <p style="margin-top: 16px; font-size: 0.82rem;">
+    <a href="activities/2025-summer-camp.html" style="color: var(--moss); text-decoration: none;">
+      2025年サマーキャンプ 実績詳細を見る →
+    </a>
+  </p>
+</div>
+
+<!-- ⑥ FOR WHO -->
+<div class="unique-wrap">
+  <div class="section-wrap">
+    <div class="unique-inner">
+      <p class="section-label">FOR WHO</p>
+      <h2>こんな組織と、一緒に作ってきた。</h2>
+      <p>
+        特定の形はない。組織の目的・子供たちの状況・日程に合わせて、
+        プログラムをゼロから設計する。
+      </p>
+      <div class="forwho-grid">
+        <div class="forwho-item">
+          <span class="forwho-icon">🏛️</span>
+          <h4>青年会議所・JC</h4>
+          <p>メンバー自身が成長できる場として。子供支援事業の新しいかたち。</p>
+        </div>
+        <div class="forwho-item">
+          <span class="forwho-icon">🏫</span>
+          <h4>学校・教育委員会</h4>
+          <p>教科書では届かない、主体性の育ち方を体験する場として。</p>
+        </div>
+        <div class="forwho-item">
+          <span class="forwho-icon">🏢</span>
+          <h4>自治体・地域団体</h4>
+          <p>都市と地方の子供を繋ぐ交流事業として。補助金活用も相談可。</p>
+        </div>
+        <div class="forwho-item">
+          <span class="forwho-icon">⚽</span>
+          <h4>スポーツチーム</h4>
+          <p>技術だけでなく、自分の「なぜ」に気づく選手を育てる場として。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ⑦ CUSTOM -->
+<div class="custom-wrap">
+  <div class="section-wrap">
+    <div class="custom-inner">
+      <p class="section-label">HOW TO JOIN</p>
+      <h2>「一緒に作る」という設計。</h2>
+      <p>
+        既製品のキャンププログラムを購入するのではない。
+        組織の目的・子供たちの状況・スタッフの想いを聞いた上で、
+        内容・日程・関わり方をオーダーメイドで組み立てる。
+      </p>
+      <p>
+        まず話を聞かせてください。
+        「こういうことがしたい」という感覚でいい。
+      </p>
+      <div class="custom-flow">
+        <div class="custom-step">
+          <span class="custom-step-num">STEP 01</span>
+          <h4>お問い合わせ</h4>
+          <p>気になること・やってみたいことを送ってください</p>
+        </div>
+        <div class="custom-step">
+          <span class="custom-step-num">STEP 02</span>
+          <h4>対話・ヒアリング</h4>
+          <p>Zoomで1時間。目的・参加者・日程を一緒に整理</p>
+        </div>
+        <div class="custom-step">
+          <span class="custom-step-num">STEP 03</span>
+          <h4>プログラム設計</h4>
+          <p>組織に合わせた内容・日程・体制を提案</p>
+        </div>
+        <div class="custom-step">
+          <span class="custom-step-num">STEP 04</span>
+          <h4>天川村で実施</h4>
+          <p>当日まで一緒に準備。現地でも共に動く</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ⑧ FORM -->
+<div class="form-wrap" id="contact">
+  <div class="section-wrap">
+    <div class="form-inner">
+      <p class="section-label">CONTACT</p>
+      <h2>まず、話を聞かせてください。</h2>
+      <p>
+        「こういうことをしたい」という感覚だけで構いません。<br>
+        フォームに送っていただければ、前田薫から直接ご連絡します。
+      </p>
+      <div class="form-frame">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSd8YghBmjyW9vcSOvaT6AXmA5KgK0uKTfYPvIjBYtkSdiJ7LA/viewform?embedded=true"
+          title="天川サマーキャンプ お問い合わせフォーム"
+          loading="lazy">
+          読み込んでいます…
+        </iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BACK / FOOTER -->
+<div class="back-nav">
+  <a href="index.html" class="back-link">← 天川寺子屋プロジェクトに戻る</a>
+</div>
+
+<footer>
+  <p>天川寺子屋プロジェクト — 奈良県吉野郡天川村</p>
+  <p style="margin-top: 6px;">前田薫 / Kaoru Maeda</p>
+</footer>
+
+</body>
+</html>
