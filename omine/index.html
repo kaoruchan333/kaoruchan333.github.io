@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大峰山 修験道プログラム — 経営者・投資家のための本格修行体験</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400&display=swap');
+
+  :root {
+    --deep:    #0e1a14;
+    --forest:  #1e3028;
+    --moss:    #3d6b5c;
+    --gold:    #b8975a;
+    --mist:    #8aa89e;
+    --stone:   #7a7a72;
+    --paper:   #f4f2ee;
+    --white:   #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--deep);
+    color: var(--white);
+    font-family: 'Noto Serif JP', serif;
+    line-height: 2;
+  }
+
+  /* ── HERO ─────────────────────────────── */
+
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 32px;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    /* 写真差し替え用：src属性を photos/hero.jpg などに変更してください */
+    background: linear-gradient(160deg, #0e1a14 0%, #1e3028 40%, #0a1008 100%);
+  }
+
+  /* 写真がある場合はこのスタイルをhero-bgに適用
+  .hero-bg {
+    background-image: url('photos/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.35);
+  }
+  */
+
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 60%, rgba(184,151,90,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(61,107,92,0.12) 0%, transparent 50%);
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+  }
+
+  .hero-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.32em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 56px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.6rem, 5vw, 2.8rem);
+    font-weight: 300;
+    color: var(--white);
+    letter-spacing: 0.08em;
+    line-height: 2;
+    margin-bottom: 40px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    display: block;
+    font-size: 0.72em;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.04em;
+    margin-top: 8px;
+  }
+
+  .hero-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.4;
+    margin: 0 auto 40px;
+  }
+
+  .hero-sub {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.38);
+    font-weight: 300;
+    line-height: 2.4;
+    margin-bottom: 64px;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.76rem;
+    letter-spacing: 0.16em;
+    padding: 16px 52px;
+    border: 1px solid rgba(184,151,90,0.5);
+    color: var(--gold);
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .hero-cta:hover {
+    background: rgba(184,151,90,0.1);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.18);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .hero-scroll::after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    display: block;
+  }
+
+  /* ── SECTION BASE ─────────────────────── */
+
+  .section-wrap {
+    padding: 120px 32px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.32em;
+    color: var(--gold);
+    opacity: 0.6;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.18;
+  }
+
+  h2 {
+    font-size: clamp(1.3rem, 4vw, 1.9rem);
+    font-weight: 300;
+    line-height: 1.9;
+    margin-bottom: 40px;
+    color: var(--white);
+    letter-spacing: 0.04em;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 24px;
+    line-height: 2.4;
+  }
+
+  /* ── CONCEPT ──────────────────────────── */
+
+  .concept-wrap { background: var(--forest); }
+  .concept-wrap .section-wrap { max-width: 100%; }
+  .concept-inner { max-width: 760px; margin: 0 auto; }
+
+  .concept-quote {
+    border-left: 1px solid var(--gold);
+    padding: 24px 32px;
+    margin: 48px 0;
+    opacity: 0.85;
+  }
+  .concept-quote p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 2.2;
+    margin: 0;
+  }
+
+  /* ── FOR WHO ──────────────────────────── */
+
+  .who-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 56px;
+  }
+
+  .who-item {
+    padding: 36px 28px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(184,151,90,0.1);
+  }
+
+  .who-item h4 {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 14px;
+    letter-spacing: 0.06em;
+    opacity: 0.85;
+  }
+
+  .who-item p { font-size: 0.82rem; margin: 0; line-height: 2; }
+
+  /* ── PROGRAM ──────────────────────────── */
+
+  .program-wrap { background: var(--forest); }
+  .program-wrap .section-wrap { max-width: 100%; }
+  .program-inner { max-width: 760px; margin: 0 auto; }
+
+  .program-list {
+    margin-top: 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .program-item {
+    display: flex;
+    gap: 32px;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(184,151,90,0.1);
+    align-items: flex-start;
+  }
+
+  .program-item:last-child { border-bottom: none; }
+
+  .program-icon {
+    font-size: 1.2rem;
+    opacity: 0.7;
+    flex-shrink: 0;
+    width: 28px;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .program-body h4 {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 8px;
+    letter-spacing: 0.04em;
+  }
+
+  .program-body p { font-size: 0.82rem; margin: 0; line-height: 2; }
+
+  /* ── FIRST SESSION ────────────────────── */
+
+  .first-session-wrap {
+    border-top: 1px solid rgba(184,151,90,0.15);
+    border-bottom: 1px solid rgba(184,151,90,0.15);
+    background: rgba(255,255,255,0.015);
+  }
+
+  .first-session-inner { max-width: 760px; margin: 0 auto; padding: 80px 32px; }
+
+  .session-tag {
+    display: inline-block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    border: 1px solid rgba(184,151,90,0.4);
+    padding: 4px 16px;
+    margin-bottom: 32px;
+    opacity: 0.8;
+  }
+
+  .session-date {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  .session-title {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 24px;
+    line-height: 1.8;
+  }
+
+  /* 写真グリッド（7/7-8の写真が揃ったら使う） */
+  .session-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    margin-top: 40px;
+  }
+
+  .session-photo-slot {
+    aspect-ratio: 4/3;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(184,151,90,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.62rem;
+    color: rgba(255,255,255,0.15);
+    letter-spacing: 0.1em;
+  }
+
+  /* 写真が入ったら img タグに差し替え */
+  .session-photo-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .session-note {
+    margin-top: 32px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.76rem;
+    color: rgba(255,255,255,0.22);
+    line-height: 2;
+    font-style: italic;
+  }
+
+  /* ── GUIDE ────────────────────────────── */
+
+  .guides {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 56px;
+  }
+
+  .guide-card {
+    padding: 40px 32px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(184,151,90,0.1);
+  }
+
+  .guide-role {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    opacity: 0.6;
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  .guide-card h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 20px;
+    letter-spacing: 0.06em;
+  }
+
+  .guide-card p { font-size: 0.82rem; margin: 0; line-height: 2.2; }
+
+  /* ── WHAT NEXT ────────────────────────── */
+
+  .next-wrap { background: var(--forest); }
+  .next-wrap .section-wrap { max-width: 100%; }
+  .next-inner { max-width: 760px; margin: 0 auto; }
+
+  .next-items {
+    margin-top: 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .next-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 28px 32px;
+    background: rgba(255,255,255,0.03);
+  }
+
+  .next-num {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    opacity: 0.5;
+    min-width: 28px;
+    padding-top: 4px;
+  }
+
+  .next-body h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 8px;
+  }
+
+  .next-body p { font-size: 0.82rem; margin: 0; line-height: 2; }
+
+  /* ── FORM ─────────────────────────────── */
+
+  .form-wrap { background: var(--deep); }
+  .form-inner { max-width: 680px; margin: 0 auto; padding: 100px 32px; }
+
+  .form-frame {
+    margin-top: 48px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(184,151,90,0.15);
+  }
+
+  .form-frame iframe {
+    display: block;
+    width: 100%;
+    min-height: 760px;
+    border: none;
+  }
+
+  /* ── FOOTER ───────────────────────────── */
+
+  footer {
+    padding: 60px 32px;
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.66rem;
+    color: rgba(255,255,255,0.15);
+    letter-spacing: 0.1em;
+    border-top: 1px solid rgba(184,151,90,0.08);
+  }
+
+  footer a {
+    color: rgba(184,151,90,0.45);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  footer a:hover { opacity: 0.7; }
+
+  /* ── RESPONSIVE ───────────────────────── */
+
+  @media (max-width: 640px) {
+    .who-grid { grid-template-columns: 1fr; }
+    .guides { grid-template-columns: 1fr; }
+    .session-photos { grid-template-columns: repeat(2, 1fr); }
+    .section-wrap { padding: 80px 24px; }
+    .first-session-inner { padding: 64px 24px; }
+    .form-inner { padding: 80px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ① HERO -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <p class="hero-label">OMINE SHUGENDO PROGRAM — 奈良県天川村 / 大峰山</p>
+    <h1>
+      山に入る前と、後では、<br>人が変わる。
+      <em>大峰山 修験道プログラム</em>
+    </h1>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">
+      体験ツアーではない。<br>
+      修験道の本場で、実際に修行をする。<br>
+      経営者・投資家・精神探求者のために設計された場。
+    </p>
+    <a href="#contact" class="hero-cta">お問い合わせ・参加申し込み</a>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</header>
+
+<!-- ② CONCEPT -->
+<div class="concept-wrap">
+  <div class="section-wrap">
+    <div class="concept-inner">
+      <p class="section-label">CONCEPT</p>
+      <h2>「体験」ではなく、「修行」を。</h2>
+      <p>
+        大峰山は、1300年以上にわたり修験者たちが命をかけて修行してきた霊場。
+        観光でも、非日常体験でもない。
+        山そのものが持つ力と向き合い、自分の内側にある何かを変容させる場所。
+      </p>
+      <div class="concept-quote">
+        <p>
+          事業を動かし、人を率いる立場に立つとき、<br>
+          「正しい判断」より先に「揺るがない自分の軸」が必要になる。<br>
+          その軸は、山の中にある。
+        </p>
+      </div>
+      <p>
+        このプログラムは、精神探求を本気で求める人たちのために設計されています。
+        修験道のつながり・天川村のつながりを持つ私たちだからこそ、
+        本場の修行の場に、本物の形でお連れすることができます。
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ③ FOR WHO -->
+<div class="section-wrap">
+  <p class="section-label">FOR WHO</p>
+  <h2>こんな人のために、<br>設計しています。</h2>
+  <p>
+    一般向けのツアーではありません。
+    日常の中に「答えのない問い」を持ち続けている人に届けたいプログラムです。
+  </p>
+  <div class="who-grid">
+    <div class="who-item">
+      <h4>経営者・オーナー</h4>
+      <p>事業の成長とともに、「何のためにやっているか」という問いが深くなっている人。正解のない決断を日々続けながら、自分の軸を確かめたい人。</p>
+    </div>
+    <div class="who-item">
+      <h4>投資家・精神探求者</h4>
+      <p>お金・情報・知識を超えた領域に本気で触れてみたい人。自分の人生の根底にあるものを問い直したい人。</p>
+    </div>
+    <div class="who-item">
+      <h4>若手起業家・リーダー</h4>
+      <p>スピードと成果を求められる日常の中で、「深さ」を取り戻したい人。人を率いる前に、自分と向き合う時間を持ちたい人。</p>
+    </div>
+    <div class="who-item">
+      <h4>チームを持つ組織リーダー</h4>
+      <p>リーダー自身が変わることで、組織が変わることを知っている人。従業員・チームへの次の一手を、この山の中で見つけたい人。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ④ PROGRAM -->
+<div class="program-wrap">
+  <div class="section-wrap">
+    <div class="program-inner">
+      <p class="section-label">PROGRAM</p>
+      <h2>大峰山が用意している、変容のプロセス。</h2>
+      <p>
+        プログラムの内容は、参加者の状況・目的・時期に合わせてオーダーメイドで設計します。
+        以下は、私たちが届けられるものの一例です。
+      </p>
+      <div class="program-list">
+        <div class="program-item">
+          <div class="program-icon">⛰️</div>
+          <div class="program-body">
+            <h4>大峰山 本格入山</h4>
+            <p>修験道の聖地・大峰山への本格的な登山。1300年の修行者たちが踏んできた道を、自らの足で歩く。山が問いを出してくる。</p>
+          </div>
+        </div>
+        <div class="program-item">
+          <div class="program-icon">💧</div>
+          <div class="program-body">
+            <h4>龍泉寺 水行</h4>
+            <p>天川村・龍泉寺での水行。身体の感覚が一瞬でリセットされる体験。「何かが変わった」という感覚が、言葉より先に来る。</p>
+          </div>
+        </div>
+        <div class="program-item">
+          <div class="program-icon">🪨</div>
+          <div class="program-body">
+            <h4>西の覗き</h4>
+            <p>崖の縁から身を乗り出す修験道の行。生死の境に立つことで、本当に大切なものが見えてくる。</p>
+          </div>
+        </div>
+        <div class="program-item">
+          <div class="program-icon">🔥</div>
+          <div class="program-body">
+            <h4>護摩行・坐禅</h4>
+            <p>炎の前で、静けさの中で、自分と向き合う時間。日常の雑音が消えたとき、何が残るかを知る。</p>
+          </div>
+        </div>
+        <div class="program-item">
+          <div class="program-icon">🗣️</div>
+          <div class="program-body">
+            <h4>コーチング・対話の時間</h4>
+            <p>山の体験を、自分の言葉にする時間。前田薫によるコーチングセッション。ここで初めて、体験が自分のものになる。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ⑤ FIRST SESSION -->
+<div class="first-session-wrap">
+  <div class="first-session-inner">
+    <span class="session-tag">FIRST SESSION</span>
+    <p class="session-date">2026年 7月 7日（火）〜 8日（水）</p>
+    <p class="session-title">
+      第1回を実施します。<br>
+      ここから、この場所の記録が始まります。
+    </p>
+    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.38); line-height: 2.4; margin-bottom: 0;">
+      2026年7月7-8日、天川村・大峰山にて第1回を実施します。
+      芦田北斗が仲間とともに訪れ、修験道の入口となる体験を届けます。
+      このプログラムの最初の記録を、ここに刻んでいきます。
+    </p>
+
+    <!-- 写真が揃ったら以下のスロットを実際の img タグに差し替えてください -->
+    <div class="session-photos">
+      <div class="session-photo-slot">PHOTO</div>
+      <div class="session-photo-slot">PHOTO</div>
+      <div class="session-photo-slot">PHOTO</div>
+      <div class="session-photo-slot">PHOTO</div>
+      <div class="session-photo-slot">PHOTO</div>
+      <div class="session-photo-slot">PHOTO</div>
+    </div>
+    <p class="session-note">
+      ※ 写真・記録は実施後に更新されます。
+    </p>
+  </div>
+</div>
+
+<!-- ⑥ GUIDE -->
+<div class="section-wrap">
+  <p class="section-label">GUIDE</p>
+  <h2>この場所と人たちが、<br>一緒に動きます。</h2>
+  <p>
+    天川村のつながり・修験道のつながり・コーチングのプロフェッショナルが組み合わさることで、
+    ここにしかないプログラムが生まれます。
+  </p>
+  <div class="guides">
+    <div class="guide-card">
+      <span class="guide-role">COACHING / TERAKOYA</span>
+      <h3>前田 薫</h3>
+      <p>
+        天川村地域おこし協力隊。コーチ・寺子屋プロジェクト主宰。
+        修験道・龍泉寺・天川村の地域とのつながりを持ち、
+        「本来の自分として存在すること」を問い続けてきた。
+        経営者・スポーツチーム・子供たちへのコーチングを通じて、
+        内側から変容するプロセスを設計してきた。
+      </p>
+    </div>
+    <div class="guide-card">
+      <span class="guide-role">WORKING HOLIDAY / ADVENTURE</span>
+      <h3>芦田 北斗</h3>
+      <p>
+        株式会社フルホライズン代表。ワーキャリー（ワーホリ事業）主宰。
+        自立・挑戦・海外という文脈で若者の人生設計を支援してきた。
+        精神探求・修験道への深い関心を持ち、
+        天川ツアーを主催するなど実際に動いてきた人物。
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ⑦ WHAT NEXT -->
+<div class="next-wrap">
+  <div class="section-wrap">
+    <div class="next-inner">
+      <p class="section-label">WHAT NEXT</p>
+      <h2>参加は、始まりです。</h2>
+      <p>
+        このプログラムは、2日間で終わらない。
+        参加した経営者・投資家との関係が、ここから始まります。
+      </p>
+      <div class="next-items">
+        <div class="next-item">
+          <div class="next-num">01</div>
+          <div class="next-body">
+            <h4>会社・チームへの還元</h4>
+            <p>参加したリーダーが変わると、組織が変わる。従業員向けのコーチング研修・修験道研修として、このプログラムをチームに届けることができます。</p>
+          </div>
+        </div>
+        <div class="next-item">
+          <div class="next-num">02</div>
+          <div class="next-body">
+            <h4>寺子屋プロジェクトへの参画</h4>
+            <p>天川村に「問いと対話の場」をつくるプロジェクト。私たちの取り組みを知ってもらい、投資家・スポンサーとして関わることができます。</p>
+          </div>
+        </div>
+        <div class="next-item">
+          <div class="next-num">03</div>
+          <div class="next-body">
+            <h4>ワーキングホリデーへの導線</h4>
+            <p>子供・若者への修行プログラムと北斗さんのワーホリ事業が繋がることで、自立・海外・精神探求という一本の流れが生まれます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ⑧ FORM -->
+<div class="form-wrap" id="contact">
+  <div class="form-inner">
+    <p class="section-label">CONTACT</p>
+    <h2>まず、話を聞かせてください。</h2>
+    <p>
+      「こういうことをやってみたい」という感覚だけで構いません。<br>
+      フォームに送っていただければ、前田薫から直接ご連絡します。
+    </p>
+    <div class="form-frame">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSf3hHDMVQRp4cJBICmmgugBugjhWvKPbW3C7kVQNh6_JdSbpA/viewform?embedded=true"
+        title="大峰山修験道プログラム お問い合わせフォーム"
+        loading="lazy">
+        読み込んでいます…
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p style="margin-bottom: 12px;">
+    <a href="https://kaoruchan333.github.io/terakoya-home/">← 天川寺子屋プロジェクトへ</a>
+  </p>
+  <p>天川寺子屋プロジェクト × フルホライズン — 奈良県吉野郡天川村</p>
+  <p style="margin-top: 6px;">前田薫 / 芦田北斗</p>
+</footer>
+
+</body>
+</html>
