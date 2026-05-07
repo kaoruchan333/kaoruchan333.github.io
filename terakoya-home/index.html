@@ -275,6 +275,17 @@
 
   .card p { font-size: 0.875rem; line-height: 2; color: var(--stone); margin: 0; }
 
+  .card-link {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--moss);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+  .card-link:hover { opacity: 1; }
+
   /* ── VISION ───────────────────────────── */
 
   .vision-wrap { background: var(--forest); }
@@ -629,7 +640,10 @@
         天川村の子供と都市の子供がサッカーやサマーキャンプを通じて出会う。
         自然の中で身体を動かすことが、最初の「問い」になる。
       </p>
-      <a href="activities/2025-summer-camp.html" style="font-family:'Noto Sans JP',sans-serif; font-size:0.72rem; letter-spacing:0.1em; color:#4a7c6f; text-decoration:none; opacity:0.8;">2025年 実績を見る →</a>
+      <div style="margin-top:16px; display:flex; flex-direction:column; gap:8px;">
+        <a href="activities/2025-summer-camp.html" class="card-link">サマーキャンプ 2025 実績 →</a>
+        <a href="https://kaoruchan333.github.io/nature-event/" class="card-link">自然の体験会 →</a>
+      </div>
     </div>
     <div class="card">
       <span class="card-icon">🪷</span>
@@ -638,6 +652,10 @@
         坐禅会と対話の場。結論を出す場所ではなく、内側に降りる時間。
         誰かに立ち会ってもらうことで、自分の出来事が少し違って見えてくる。
       </p>
+      <div style="margin-top:16px; display:flex; flex-direction:column; gap:8px;">
+        <a href="https://kaoruchan333.github.io/zazen/" class="card-link">座禅会のページ →</a>
+        <a href="https://kaoruchan333.github.io/terakoya/" class="card-link">夜の寺子屋（大阪・今里）→</a>
+      </div>
     </div>
     <div class="card">
       <span class="card-icon">🏫</span>
