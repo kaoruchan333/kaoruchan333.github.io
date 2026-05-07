@@ -44,18 +44,11 @@
   .hero-bg {
     position: absolute;
     inset: 0;
-    /* 写真差し替え用：src属性を photos/hero.jpg などに変更してください */
-    background: linear-gradient(160deg, #0e1a14 0%, #1e3028 40%, #0a1008 100%);
-  }
-
-  /* 写真がある場合はこのスタイルをhero-bgに適用
-  .hero-bg {
     background-image: url('photos/hero.jpg');
     background-size: cover;
-    background-position: center;
-    filter: brightness(0.35);
+    background-position: center 40%;
+    filter: brightness(0.32);
   }
-  */
 
   .hero-bg::after {
     content: '';
@@ -283,6 +276,38 @@
   }
 
   .program-body p { font-size: 0.82rem; margin: 0; line-height: 2; }
+
+  /* ── PHOTO GRID ──────────────────────── */
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+  }
+
+  .photo-grid a {
+    display: block;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+  }
+
+  .photo-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: brightness(0.88);
+  }
+
+  .photo-grid a:hover img {
+    transform: scale(1.04);
+    filter: brightness(1);
+  }
+
+  @media (max-width: 640px) {
+    .photo-grid { grid-template-columns: repeat(2, 1fr); }
+  }
 
   /* ── FIRST SESSION ────────────────────── */
 
@@ -609,6 +634,27 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="photo-grid">
+    <a href="photos/suigyo.jpg" target="_blank">
+      <img src="photos/suigyo.jpg" alt="龍泉寺 水行">
+    </a>
+    <a href="photos/gate.jpg" target="_blank">
+      <img src="photos/gate.jpg" alt="大峰山寺 山門">
+    </a>
+    <a href="photos/goma.jpg" target="_blank">
+      <img src="photos/goma.jpg" alt="護摩行">
+    </a>
+    <a href="photos/zazen.jpg" target="_blank">
+      <img src="photos/zazen.jpg" alt="坐禅・対話">
+    </a>
+    <a href="photos/nozoki.jpg" target="_blank">
+      <img src="photos/nozoki.jpg" alt="西の覗き">
+    </a>
+    <a href="photos/hero.jpg" target="_blank">
+      <img src="photos/hero.jpg" alt="大峰山 山頂からの眺望">
+    </a>
   </div>
 </div>
 
