@@ -246,17 +246,87 @@
 
   /* ── ACTIVITIES ───────────────────────── */
 
+  .act-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    margin-top: 56px;
+  }
+
+  .act-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    display: block;
+    text-decoration: none;
+    background: var(--forest);
+  }
+
+  .act-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+
+  .act-card:hover img {
+    transform: scale(1.06);
+    opacity: 0.85;
+  }
+
+  .act-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 32px 24px 24px;
+    background: linear-gradient(to top, rgba(15,30,22,0.88) 0%, rgba(15,30,22,0.2) 60%, transparent 100%);
+    transition: padding 0.3s ease;
+  }
+
+  .act-card:hover .act-overlay { padding-bottom: 28px; }
+
+  .act-overlay h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 6px;
+    letter-spacing: 0.06em;
+  }
+
+  .act-overlay p {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .act-overlay .act-arrow {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.4);
+    font-family: 'Noto Sans JP', sans-serif;
+    transition: color 0.2s;
+  }
+
+  .act-card:hover .act-arrow { color: rgba(255,255,255,0.85); }
+
   .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 2px;
-    margin-top: 56px;
+    margin-top: 4px;
     background: rgba(74,124,111,0.08);
   }
 
   .card {
     background: var(--paper);
-    padding: 48px 32px;
+    padding: 40px 32px;
   }
 
   .card-icon {
@@ -274,17 +344,6 @@
   }
 
   .card p { font-size: 0.875rem; line-height: 2; color: var(--stone); margin: 0; }
-
-  .card-link {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    color: var(--moss);
-    text-decoration: none;
-    opacity: 0.8;
-    transition: opacity 0.2s;
-  }
-  .card-link:hover { opacity: 1; }
 
   /* ── VISION ───────────────────────────── */
 
@@ -522,6 +581,11 @@
 
   /* ── RESPONSIVE ───────────────────────── */
 
+  @media (max-width: 700px) {
+    .act-cards { grid-template-columns: 1fr; }
+    .act-card { aspect-ratio: 16/9; }
+  }
+
   @media (max-width: 600px) {
     .section-wrap { padding: 80px 24px; }
     .philosophy .section-wrap,
@@ -631,32 +695,33 @@
     どれも「正しい答え」を探す場ではなく、
     自分の中にあるものに気づくための時間として設計されている。
   </p>
+  <div class="act-cards">
+    <a href="activities/2025-summer-camp.html" class="act-card">
+      <img src="photos/camp2025/IMG_3621.JPG" alt="サマーキャンプ 2025">
+      <div class="act-overlay">
+        <h3>サマーキャンプ 2025</h3>
+        <p>天川村の大自然と、子供たちが出会う夏</p>
+        <span class="act-arrow">実績を見る →</span>
+      </div>
+    </a>
+    <a href="https://kaoruchan333.github.io/zazen-community/" class="act-card">
+      <img src="https://kaoruchan333.github.io/zazen-community/images/hero.jpg" alt="座禅会">
+      <div class="act-overlay">
+        <h3>座禅会</h3>
+        <p>静かに自分と向き合う時間</p>
+        <span class="act-arrow">活動を見る →</span>
+      </div>
+    </a>
+    <a href="https://kaoruchan333.github.io/nature-community/" class="act-card">
+      <img src="https://kaoruchan333.github.io/nature-community/photos/hero.jpg" alt="ほったらかし自然農">
+      <div class="act-overlay">
+        <h3>ほったらかし自然農</h3>
+        <p>土に触れ、自然のリズムと生きる</p>
+        <span class="act-arrow">活動を見る →</span>
+      </div>
+    </a>
+  </div>
   <div class="cards">
-    <div class="card">
-      <span class="card-icon">⚽</span>
-      <h3>教育・自然体験</h3>
-      <p>
-        地域の教育委員会と共に育む、子供たちのための場。
-        天川村の子供と都市の子供がサッカーやサマーキャンプを通じて出会う。
-        自然の中で身体を動かすことが、最初の「問い」になる。
-      </p>
-      <div style="margin-top:16px; display:flex; flex-direction:column; gap:8px;">
-        <a href="activities/2025-summer-camp.html" class="card-link">サマーキャンプ 2025 実績 →</a>
-        <a href="https://kaoruchan333.github.io/nature-community/" class="card-link">ほったらかし自然農 実績 →</a>
-      </div>
-    </div>
-    <div class="card">
-      <span class="card-icon">🪷</span>
-      <h3>内省・対話</h3>
-      <p>
-        坐禅会と対話の場。結論を出す場所ではなく、内側に降りる時間。
-        誰かに立ち会ってもらうことで、自分の出来事が少し違って見えてくる。
-      </p>
-      <div style="margin-top:16px; display:flex; flex-direction:column; gap:8px;">
-        <a href="https://kaoruchan333.github.io/zazen-community/" class="card-link">座禅会 活動レポート →</a>
-        <a href="https://kaoruchan333.github.io/terakoya/" class="card-link">夜の寺子屋（大阪・今里）→</a>
-      </div>
-    </div>
     <div class="card">
       <span class="card-icon">🏫</span>
       <h3>廃校利活用</h3>
