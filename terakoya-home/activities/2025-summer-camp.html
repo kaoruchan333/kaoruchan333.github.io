@@ -393,6 +393,39 @@
     margin-bottom: 0;
   }
 
+  /* 次回案内 */
+  .next-camp {
+    margin-top: 2px;
+    padding: 40px;
+    border-top: 1px solid rgba(74,124,111,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .next-camp p {
+    font-size: 0.9rem;
+    color: var(--stone);
+    line-height: 1.9;
+    margin: 0;
+  }
+
+  .next-camp a {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.76rem;
+    letter-spacing: 0.1em;
+    color: var(--moss);
+    text-decoration: none;
+    white-space: nowrap;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    flex-shrink: 0;
+  }
+
+  .next-camp a:hover { opacity: 1; }
+
   /* フッター */
   .page-footer {
     text-align: center;
@@ -647,6 +680,14 @@
         安全性・教育性を高め、村内外の子どもたちに継続的な体験を届けます。
       </p>
     </div>
+  </div>
+
+  <div class="next-camp">
+    <p>
+      このキャンプのプログラムを、<br>
+      あなたの組織と一緒に作りませんか。
+    </p>
+    <a href="../camp-program.html">どんなことができるか、聞いてみる →</a>
   </div>
 
 </main>
