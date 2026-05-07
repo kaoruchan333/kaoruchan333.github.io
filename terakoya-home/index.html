@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天川寺子屋 — 問いと対話が、日常になる場所</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400&display=swap');
+
+  :root {
+    --forest:  #2d4a3e;
+    --moss:    #4a7c6f;
+    --water:   #7ba7bc;
+    --sky:     #c8dde8;
+    --ink:     #2a2a2a;
+    --stone:   #6b6b6b;
+    --paper:   #f8f6f2;
+    --white:   #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Serif JP', serif;
+    line-height: 2;
+  }
+
+  /* ── HERO ─────────────────────────────── */
+
+  .hero {
+    min-height: 100vh;
+    background: var(--forest);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 60%, rgba(123,167,188,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 30%, rgba(74,124,111,0.2)  0%, transparent 50%);
+  }
+
+  .hero-inner { position: relative; z-index: 1; max-width: 680px; }
+
+  .hero-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 48px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.6rem, 5vw, 2.6rem);
+    font-weight: 300;
+    color: var(--white);
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    display: block;
+    font-size: 0.85em;
+    color: rgba(255,255,255,0.6);
+    margin-top: 12px;
+  }
+
+  .hero-sub {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+    line-height: 2.2;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.25);
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .hero-scroll::after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: rgba(255,255,255,0.15);
+    display: block;
+  }
+
+  /* ── SECTION BASE ─────────────────────── */
+
+  .section-wrap {
+    padding: 120px 32px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    color: var(--moss);
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--moss);
+    opacity: 0.25;
+  }
+
+  h2 {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: var(--ink);
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--stone);
+    margin-bottom: 24px;
+    line-height: 2.2;
+  }
+
+  /* ── PHILOSOPHY ───────────────────────── */
+
+  .philosophy { background: var(--white); }
+  .philosophy .section-wrap { padding: 120px 32px; max-width: 100%; }
+  .philosophy-inner { max-width: 800px; margin: 0 auto; }
+
+  .concept-quote {
+    border-left: 2px solid var(--moss);
+    padding: 24px 32px;
+    margin: 48px 0;
+    background: var(--paper);
+  }
+  .concept-quote p {
+    font-size: 1.05rem;
+    color: var(--ink);
+    line-height: 2.2;
+    margin: 0;
+  }
+
+  /* 循環フロー図 */
+  .cycle-flow {
+    margin: 56px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .cycle-row {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .cycle-node {
+    flex: 1;
+    text-align: center;
+    padding: 28px 16px;
+    background: var(--paper);
+    border: 1px solid rgba(74,124,111,0.12);
+    position: relative;
+  }
+
+  .cycle-node-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.8rem;
+    color: var(--forest);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .cycle-node-desc {
+    font-size: 0.78rem;
+    color: var(--stone);
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  .cycle-arrow-down {
+    text-align: center;
+    padding: 8px 0;
+    color: rgba(74,124,111,0.4);
+    font-size: 1rem;
+    letter-spacing: 0;
+  }
+
+  .cycle-arrow-right {
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    color: rgba(74,124,111,0.4);
+    font-size: 0.9rem;
+  }
+
+  /* 祈りフロー（小） */
+  .mini-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 48px 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.82rem;
+  }
+  .mini-flow-item {
+    background: var(--forest);
+    color: var(--white);
+    padding: 7px 18px;
+    border-radius: 20px;
+    white-space: nowrap;
+    opacity: 0.85;
+  }
+  .mini-flow-arrow { color: var(--moss); font-size: 0.9rem; }
+
+  /* ── ACTIVITIES ───────────────────────── */
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2px;
+    margin-top: 56px;
+    background: rgba(74,124,111,0.08);
+  }
+
+  .card {
+    background: var(--paper);
+    padding: 48px 32px;
+  }
+
+  .card-icon {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .card h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 16px;
+    letter-spacing: 0.04em;
+  }
+
+  .card p { font-size: 0.875rem; line-height: 2; color: var(--stone); margin: 0; }
+
+  /* ── VISION ───────────────────────────── */
+
+  .vision-wrap { background: var(--forest); }
+  .vision-wrap .section-wrap { max-width: 100%; padding: 120px 32px; }
+  .vision-inner { max-width: 800px; margin: 0 auto; }
+
+  .vision-wrap .section-label { color: rgba(255,255,255,0.35); }
+  .vision-wrap .section-label::after { background: rgba(255,255,255,0.15); }
+  .vision-wrap h2 { color: var(--white); }
+  .vision-wrap p { color: rgba(255,255,255,0.55); }
+
+  .steps {
+    margin: 56px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 28px 32px;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .step-num {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.68rem;
+    color: var(--water);
+    letter-spacing: 0.1em;
+    min-width: 32px;
+    padding-top: 5px;
+  }
+
+  .step-body { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 2; }
+  .step-body strong {
+    color: var(--white);
+    font-weight: 400;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .tamashii-box {
+    margin-top: 64px;
+    padding: 40px 32px;
+    background: rgba(123,167,188,0.08);
+    border: 1px solid rgba(123,167,188,0.18);
+  }
+
+  .tamashii-box h3 {
+    color: var(--sky);
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  .tamashii-box p { font-size: 0.875rem; color: rgba(255,255,255,0.45); line-height: 2; margin: 0; }
+
+  /* ── LOG ──────────────────────────────── */
+
+  .log-list { margin-top: 56px; }
+
+  .log-item {
+    border-top: 1px solid rgba(74,124,111,0.15);
+  }
+
+  .log-header {
+    display: grid;
+    grid-template-columns: 120px 1fr auto 32px;
+    gap: 24px;
+    padding: 32px 0;
+    cursor: pointer;
+    align-items: start;
+    transition: opacity 0.2s;
+  }
+
+  .log-header:hover { opacity: 0.7; }
+
+  .log-date {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    color: var(--moss);
+    letter-spacing: 0.05em;
+    padding-top: 4px;
+  }
+
+  .log-summary h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .log-summary p {
+    font-size: 0.82rem;
+    color: var(--stone);
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  .log-tag {
+    display: inline-block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    color: var(--moss);
+    border: 1px solid rgba(74,124,111,0.3);
+    padding: 2px 10px;
+    margin-bottom: 10px;
+  }
+
+  .log-read {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--moss);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    align-self: center;
+    white-space: nowrap;
+  }
+  .log-read:hover { opacity: 1; }
+
+  .log-toggle {
+    font-size: 1.1rem;
+    color: var(--moss);
+    opacity: 0.6;
+    font-family: sans-serif;
+    font-weight: 300;
+    padding-top: 2px;
+    transition: transform 0.3s;
+    user-select: none;
+  }
+
+  .log-detail {
+    display: none;
+    padding: 0 0 40px 144px;
+    border-top: 1px solid rgba(74,124,111,0.08);
+  }
+
+  .log-detail.open { display: block; }
+
+  .log-detail p {
+    font-size: 0.88rem;
+    line-height: 2.2;
+    color: var(--stone);
+    margin-bottom: 20px;
+  }
+
+  .log-detail h5 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin: 28px 0 10px;
+  }
+
+  .log-detail ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .log-detail ul li {
+    font-size: 0.85rem;
+    color: var(--stone);
+    line-height: 2;
+    padding-left: 1.2em;
+    position: relative;
+  }
+
+  .log-detail ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: rgba(74,124,111,0.4);
+  }
+
+  /* ── JOIN ─────────────────────────────── */
+
+  .join-wrap { background: var(--white); }
+  .join-wrap .section-wrap { text-align: center; }
+  .join-inner { max-width: 560px; margin: 0 auto; }
+
+  .join-wrap h2 {
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+    font-weight: 300;
+    margin-bottom: 32px;
+    line-height: 1.9;
+  }
+
+  .join-wrap p { font-size: 0.9rem; margin-bottom: 0; }
+
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 56px;
+  }
+
+  .btn {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    padding: 14px 40px;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.2s;
+    min-width: 280px;
+    text-align: center;
+  }
+
+  .btn:hover { opacity: 0.6; }
+
+  .btn-outline {
+    border: 1px solid rgba(45,74,62,0.35);
+    color: var(--stone);
+  }
+
+  /* ── FOOTER ───────────────────────────── */
+
+  footer {
+    padding: 60px 32px;
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    color: rgba(107,107,107,0.45);
+    letter-spacing: 0.1em;
+    border-top: 1px solid rgba(74,124,111,0.1);
+  }
+
+  /* ── RESPONSIVE ───────────────────────── */
+
+  @media (max-width: 600px) {
+    .section-wrap { padding: 80px 24px; }
+    .philosophy .section-wrap,
+    .vision-wrap .section-wrap,
+    .join-wrap .section-wrap { padding: 80px 24px; }
+    .log-header { grid-template-columns: 80px 1fr 24px; gap: 12px; }
+    .log-detail { padding: 0 0 32px 92px; }
+    .cycle-row { flex-direction: column; }
+    .cycle-arrow-right { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ① HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <p class="hero-label">TENKAWA TERAKOYA — 奈良県天川村</p>
+    <h1>
+      言葉より先に、<br>場が存在している。
+      <em>
+        感じようとしなくても、感じてしまう。<br>
+        それが寺子屋であり、天川村です。
+      </em>
+    </h1>
+    <p class="hero-sub">
+      問いと対話が、日常になる場所。<br>
+      社会で働き、テラコヤで還り、また社会へ戻る。
+    </p>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</header>
+
+<!-- ② PHILOSOPHY -->
+<div class="philosophy">
+  <div class="section-wrap">
+    <div class="philosophy-inner">
+      <p class="section-label">PHILOSOPHY</p>
+      <h2>寺子屋とは、<br>「生成の場」である。</h2>
+      <p>
+        生産の場でも、消費の場でも、回復の場でもない。<br>
+        ここに来た人の中から、その人固有のものが生まれ出てくる場所。
+      </p>
+      <p>
+        答えを与えない。問いを届ける。<br>
+        変えようとしない。還れる場をつくる。<br>
+        <span style="font-size:0.88em; color:#9a9a9a;">——役割や正しさから一度離れて、ただの自分に戻る時間。</span>
+      </p>
+
+      <div class="concept-quote">
+        <p>
+          「廃校を使うことが目的ではない。<br>
+          寺子屋が膨らんでいったら、学校が必要になる。<br>
+          その順序が正しい。」<br>
+          <small style="font-size:0.8em; color:#8a8a8a;">― 前田薫</small>
+        </p>
+      </div>
+
+      <p>人生の循環として、こんな流れを描いている。</p>
+
+      <!-- 人生の循環 図解 -->
+      <div class="cycle-flow">
+        <div class="cycle-row">
+          <div class="cycle-node">
+            <span class="cycle-node-title">社会で働く</span>
+            <p class="cycle-node-desc">役割を持ち、<br>関係の中に生きる</p>
+          </div>
+          <div class="cycle-arrow-right">→</div>
+          <div class="cycle-node">
+            <span class="cycle-node-title">テラコヤで還る</span>
+            <p class="cycle-node-desc">問いを持ち、<br>自分の内側を見る</p>
+          </div>
+          <div class="cycle-arrow-right">→</div>
+          <div class="cycle-node">
+            <span class="cycle-node-title">社会へ戻る</span>
+            <p class="cycle-node-desc">少し変わった自分で、<br>また関係の中へ</p>
+          </div>
+        </div>
+      </div>
+
+      <p>そして、場を通る人の体験はこう積み重なっていく。</p>
+      <div class="mini-flow">
+        <span class="mini-flow-item">祈り</span>
+        <span class="mini-flow-arrow">→</span>
+        <span class="mini-flow-item">問い</span>
+        <span class="mini-flow-arrow">→</span>
+        <span class="mini-flow-item">出会い</span>
+        <span class="mini-flow-arrow">→</span>
+        <span class="mini-flow-item">出来事</span>
+        <span class="mini-flow-arrow">→</span>
+        <span class="mini-flow-item">魂ポイント</span>
+      </div>
+      <p>
+        人が通るたびに、場に気配が積み重なっていく。<br>
+        次に来た人は、その気配の中に立ち、また自分の問いを見つける。
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ③ ACTIVITIES -->
+<div class="section-wrap">
+  <p class="section-label">ACTIVITIES</p>
+  <h2>今、ここで起きていること。</h2>
+  <p>
+    天川村と大阪・今里で、いくつかの動きが同時に進んでいる。
+    どれも「正しい答え」を探す場ではなく、
+    自分の中にあるものに気づくための時間として設計されている。
+  </p>
+  <div class="cards">
+    <div class="card">
+      <span class="card-icon">⚽</span>
+      <h3>教育・自然体験</h3>
+      <p>
+        地域の教育委員会と共に育む、子供たちのための場。
+        天川村の子供と都市の子供がサッカーやサマーキャンプを通じて出会う。
+        自然の中で身体を動かすことが、最初の「問い」になる。
+      </p>
+      <a href="activities/2025-summer-camp.html" style="font-family:'Noto Sans JP',sans-serif; font-size:0.72rem; letter-spacing:0.1em; color:#4a7c6f; text-decoration:none; opacity:0.8;">2025年 実績を見る →</a>
+    </div>
+    <div class="card">
+      <span class="card-icon">🪷</span>
+      <h3>内省・対話</h3>
+      <p>
+        坐禅会と対話の場。結論を出す場所ではなく、内側に降りる時間。
+        誰かに立ち会ってもらうことで、自分の出来事が少し違って見えてくる。
+      </p>
+    </div>
+    <div class="card">
+      <span class="card-icon">🏫</span>
+      <h3>廃校利活用</h3>
+      <p>
+        眠っている校舎に、問いと対話の文化の息吹を宿らせる。
+        補助金の時効を待ちながら、実績をひとつずつ積み上げている。
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ④ VISION -->
+<div class="vision-wrap">
+  <div class="section-wrap">
+    <div class="vision-inner">
+      <p class="section-label">VISION</p>
+      <h2>循環の設計。</h2>
+      <p>
+        寺子屋は、点ではなく流れとして設計されている。
+        コーチング、ワーホリ、坐禅会、そして学校。
+        それぞれが長い時間をかけて人が還ってくる循環をつくる。
+      </p>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <div class="step-body">
+            <strong>問い × 対話</strong>
+            答えを渡さない。問いを差し出す。セッションが渡せるのは問いだけ、場が渡せるのは気配。
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <div class="step-body">
+            <strong>ワーホリ × 自立</strong>
+            海外で働き、生きる。自分の足で立つ経験が、天川村へ還る理由になる。
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <div class="step-body">
+            <strong>坐禅会 × 天川村</strong>
+            修験道の霊場・天川村で、静かに自分と向き合う時間。感じようとしなくても、感じてしまう場所。
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">04</span>
+          <div class="step-body">
+            <strong>寺子屋 × 次の世代</strong>
+            自立した魂が天川に還り、次の世代を育む学校になる。廃校が、問いと対話の文化の発信地になる。
+          </div>
+        </div>
+      </div>
+      <div class="tamashii-box">
+        <h3>魂の経済圏とは</h3>
+        <p>
+          お金で測れない人間の貢献——ケア、感情労働、対話、場づくり——を
+          「魂ポイント」として可視化し、コミュニティ内で循環させる仕組み。
+          お金で測れない関係性や、心が動いた瞬間を大切にする。
+          そんな新しい価値の循環を、この場所から実験していきます。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ⑤ LOG -->
+<div class="section-wrap">
+  <p class="section-label">LOG</p>
+  <h2>問いのタイムライン。</h2>
+  <p>
+    寺子屋は、生き物のように変化し続けている。
+    以下は、その変化の記録。
+    どのタイミングで関わっても、ここから全体の流れを把握できる。
+  </p>
+
+  <div class="log-list">
+
+    <!-- ログ #01 -->
+    <div class="log-item">
+      <div class="log-header" onclick="toggleLog(this)">
+        <div class="log-date">2026.05.06</div>
+        <div class="log-summary">
+          <span class="log-tag">戦略会議 #01</span>
+          <h4>廃校利活用の前提と、循環設計の第一歩</h4>
+          <p>前田薫 × 芦田北斗。補助金時効まであと約5年。「廃校を使うことが目的ではない」という基本方針を確認。</p>
+        </div>
+        <a href="meetings/2026-05-06.html" class="log-read" onclick="event.stopPropagation()">全文を読む →</a>
+      </div>
+      <div class="log-detail">
+        <p>
+          2026年5月6日、第1回の戦略会議が行われた。
+          参加者は前田薫と芦田北斗（フルホライズン）。
+          Zoomで約1時間、廃校利活用の現状から循環設計の全体像まで、幅広く議論した。
+        </p>
+        <h5>立てられた問い</h5>
+        <ul>
+          <li>廃校の補助金時効まであと約5年。それまでの間、何を積み上げるべきか。</li>
+          <li>寺子屋の資金源を、国・投資家・自分たちの事業売上でどう組み合わせるか。</li>
+          <li>コーチング・ワーホリ・坐禅会・学校という循環を、どう設計するか。</li>
+        </ul>
+        <h5>確認された事実</h5>
+        <ul>
+          <li>今年の実績：サマーキャンプ（8/1〜2）・サッカー（8/3〜4）・行政予算30万円。</li>
+          <li>次の一手：防災訓練の企画書を書く（平野区ボランティア団体と連携）。</li>
+          <li>7月7〜8日に北斗さん主催の天川ツアー（10名・龍泉寺・水行・大峰山）。</li>
+        </ul>
+        <h5>蒸留ポイント</h5>
+        <ul>
+          <li>「廃校を使うことが目的ではない。寺子屋が膨らんだら学校が必要になる、という順序が正しい。」</li>
+          <li>実績が次の扉を開く。30万円の行政予算は去年のサマーキャンプがあったから。</li>
+          <li>北斗さんの天川案内も浦さんの民泊も、適正価格を設定することで「関わる人みんなが良くなる循環」が生まれる。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 以下、会議が増えるたびに同じ形式で追加してください -->
+    <!-- コピー用テンプレート:
+    <div class="log-item">
+      <div class="log-header" onclick="toggleLog(this)">
+        <div class="log-date">YYYY.MM.DD</div>
+        <div class="log-summary">
+          <span class="log-tag">戦略会議 #XX</span>
+          <h4>タイトル</h4>
+          <p>一行サマリー</p>
+        </div>
+        <span class="log-toggle">＋</span>
+      </div>
+      <div class="log-detail">
+        <p>詳細...</p>
+      </div>
+    </div>
+    -->
+
+  </div>
+</div>
+
+<!-- ⑥ JOIN -->
+<div class="join-wrap">
+  <div class="section-wrap">
+    <div class="join-inner">
+      <p class="section-label" style="justify-content:center;">JOIN</p>
+      <h2>
+        どこからでも、<br>入ってきてください。
+      </h2>
+      <p>
+        答えを探しに来なくていい。<br>
+        ただ、その感覚を一緒に見にいく場所があります。
+      </p>
+      <div class="btn-group">
+        <a href="https://kaoruchan333.github.io/terakoya/" class="btn btn-outline">
+          夜の寺子屋（大阪・今里）
+        </a>
+        <a href="https://kaoruchan333.github.io/online-terakoya/" class="btn btn-outline">
+          オンライン寺子屋（無料・誰でも参加可）
+        </a>
+        <a href="https://kaoruchan333.github.io/activities/" class="btn btn-outline">
+          活動一覧（今里 × 天川村）
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>天川寺子屋プロジェクト — 奈良県吉野郡天川村</p>
+  <p style="margin-top: 8px;">前田薫 / Kaoru Maeda</p>
+</footer>
+
+<script>
+  function toggleLog(header) {
+    const detail = header.nextElementSibling;
+    const toggle = header.querySelector('.log-toggle');
+    const isOpen = detail.classList.contains('open');
+    detail.classList.toggle('open', !isOpen);
+    toggle.textContent = isOpen ? '＋' : '－';
+  }
+</script>
+
+</body>
+</html>

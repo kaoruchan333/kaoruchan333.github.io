@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>戦略会議 #01 — 廃校利活用の前提と、循環設計の第一歩</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400&display=swap');
+
+  :root {
+    --forest: #2d4a3e;
+    --moss:   #4a7c6f;
+    --ink:    #2a2a2a;
+    --stone:  #6b6b6b;
+    --paper:  #f8f6f2;
+    --white:  #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Serif JP', serif;
+    line-height: 2;
+  }
+
+  /* ── HEADER ── */
+  .page-header {
+    background: var(--forest);
+    padding: 80px 32px 60px;
+  }
+
+  .page-header-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    margin-bottom: 40px;
+    transition: opacity 0.2s;
+  }
+  .back-link:hover { opacity: 0.7; }
+
+  .meta {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 16px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .page-header h1 {
+    font-size: clamp(1.3rem, 4vw, 1.9rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .page-header .subtitle {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+  }
+
+  /* ── BODY ── */
+  .page-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 80px 32px 120px;
+  }
+
+  /* セクション */
+  .section {
+    margin-bottom: 72px;
+  }
+
+  .section-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    color: var(--moss);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--moss);
+    opacity: 0.2;
+  }
+
+  h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: var(--stone);
+    line-height: 2.3;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 24px;
+  }
+
+  ul li {
+    font-size: 0.92rem;
+    color: var(--stone);
+    line-height: 2.1;
+    padding-left: 1.4em;
+    position: relative;
+    margin-bottom: 4px;
+  }
+
+  ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: rgba(74,124,111,0.5);
+  }
+
+  /* 重要な発言・引用 */
+  .quote {
+    border-left: 2px solid var(--moss);
+    padding: 20px 28px;
+    margin: 32px 0;
+    background: var(--white);
+  }
+
+  .quote p {
+    font-size: 1rem;
+    color: var(--ink);
+    line-height: 2.2;
+    margin: 0;
+  }
+
+  .quote cite {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--stone);
+    margin-top: 12px;
+    font-style: normal;
+  }
+
+  /* テーブル */
+  .table-wrap { overflow-x: auto; margin: 24px 0; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+
+  th {
+    background: var(--forest);
+    color: rgba(255,255,255,0.85);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    padding: 12px 16px;
+    text-align: left;
+  }
+
+  td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(74,124,111,0.1);
+    color: var(--stone);
+    line-height: 1.8;
+    vertical-align: top;
+  }
+
+  tr:nth-child(even) td { background: var(--white); }
+
+  /* アクションリスト */
+  .action-list { margin-bottom: 24px; }
+
+  .action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(74,124,111,0.1);
+    font-size: 0.9rem;
+  }
+
+  .action-who {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--moss);
+    background: rgba(74,124,111,0.08);
+    padding: 3px 10px;
+    white-space: nowrap;
+    min-width: 80px;
+    text-align: center;
+    margin-top: 2px;
+  }
+
+  .action-text { color: var(--stone); line-height: 1.8; }
+
+  /* 蒸留ポイント */
+  .distill {
+    background: var(--white);
+    padding: 40px 32px;
+    margin-top: 40px;
+    border: 1px solid rgba(74,124,111,0.12);
+  }
+
+  .distill h3 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--moss);
+    margin-bottom: 24px;
+  }
+
+  .distill ol {
+    list-style: none;
+    counter-reset: distill;
+    padding: 0;
+  }
+
+  .distill ol li {
+    counter-increment: distill;
+    padding: 16px 0 16px 40px;
+    position: relative;
+    border-bottom: 1px solid rgba(74,124,111,0.08);
+    font-size: 0.9rem;
+    color: var(--stone);
+    line-height: 2;
+  }
+
+  .distill ol li:last-child { border-bottom: none; }
+
+  .distill ol li::before {
+    content: counter(distill, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 18px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.68rem;
+    color: var(--moss);
+    letter-spacing: 0.05em;
+  }
+
+  .distill ol li strong {
+    display: block;
+    color: var(--ink);
+    font-size: 0.92rem;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+
+  /* フッター */
+  .page-footer {
+    text-align: center;
+    padding: 60px 32px;
+    border-top: 1px solid rgba(74,124,111,0.1);
+  }
+
+  .page-footer a {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: var(--moss);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .page-footer a:hover { opacity: 0.6; }
+
+  @media (max-width: 600px) {
+    .page-header { padding: 60px 24px 48px; }
+    .page-body { padding: 60px 24px 80px; }
+    .distill { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <a href="../index.html" class="back-link">← 問いのタイムラインへ戻る</a>
+    <div class="meta">
+      <span>2026.05.06</span>
+      <span>戦略会議 #01</span>
+      <span>前田薫 × 芦田北斗</span>
+      <span>Zoom</span>
+    </div>
+    <h1>廃校利活用の前提と、<br>循環設計の第一歩</h1>
+    <p class="subtitle">「廃校を使うことが目的ではない。寺子屋が膨らんだら学校が必要になる。」</p>
+  </div>
+</header>
+
+<main class="page-body">
+
+  <!-- 1. 廃校利活用の現状 -->
+  <div class="section">
+    <p class="section-title">01 — 廃校利活用の現状と前提</p>
+
+    <h2>補助金の時効という現実</h2>
+    <p>
+      国の補助金で建てた学校を廃校にして別目的で使う場合、補助金の相当額を返済する必要がある。
+      ただし「補助金の時効」のようなものが存在し、それがあと約5年で来る見込みだ。
+      時効を過ぎれば返済不要で自由に活用できる可能性が高い。
+    </p>
+    <p>
+      現状、かおるちゃんの隣の廃校はまだ誰も手を挙げていない。
+      別の廃校は企業が検討中の段階。
+      金融資本主義の論理では天川村での施設運営はキャッシュフローが回らないため、
+      インバウンド事業も現実的ではないという見立て。
+    </p>
+
+    <div class="quote">
+      <p>「廃校を使うことが目的ではない。寺子屋が膨らんでいったら学校が必要になる、という順序が正しい。」</p>
+      <cite>— 前田薫</cite>
+    </div>
+  </div>
+
+  <!-- 2. 資金調達 -->
+  <div class="section">
+    <p class="section-title">02 — 資金調達の考え方</p>
+
+    <h2>一本に依存しない構造をつくる</h2>
+    <p>北斗さんの方針：複数の資金源を組み合わせる。</p>
+    <ul>
+      <li>国・自治体の予算：一時的なショットとして活用するが依存しない</li>
+      <li>投資家：「ニューテラコヤ」関係者（財団法人を設立しようとしている方）との関係構築中</li>
+      <li>自分の事業（フルホライズン）の売上・利益を学校運営に充てる</li>
+      <li>奈良・吉野のお金持ちの方（北斗さんの友人の社長経由）と対面予定</li>
+    </ul>
+    <p>かおるちゃんの方針：国の予算と民間（投資家・事業収益）の両方を組み合わせる。どちらか一方に依存しない構造を目指す。</p>
+  </div>
+
+  <!-- 3. 実績作り -->
+  <div class="section">
+    <p class="section-title">03 — 実績作りのロードマップ</p>
+
+    <h2>今年の夏が、次の扉を開く</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>日程</th>
+            <th>内容</th>
+            <th>備考</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>8月1〜2日</td>
+            <td>宝塚JC青少年セミナー（サマーキャンプ）</td>
+            <td>かおるちゃんが有料でプログラム企画・運営。行政予算30万円</td>
+          </tr>
+          <tr>
+            <td>8月3〜4日</td>
+            <td>サッカーチームの合宿</td>
+            <td>昨年に続く継続実績</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>次の一手：防災訓練</h2>
+    <p>
+      大阪・平野区のボランティア団体（学校を使った子供向けイベント企画が得意）との繋がりを活かし、
+      廃校を避難所として使った「避難所生活体験」を企画する。
+      天川村×都市部の子供たちの交流にもなり、自治体にとっても魅力的な実績になる。
+    </p>
+    <p>過去のサマーキャンプの実績があるため、企画書を書けば教育委員会・行政を通せるという確信がある。</p>
+  </div>
+
+  <!-- 4. 北斗さんのビジネスモデル -->
+  <div class="section">
+    <p class="section-title">04 — 循環設計：ワーキャリーモデル</p>
+
+    <h2>ワーホリから天川村の学校へ</h2>
+    <p>北斗さんが運営するフルホライズンのコアモデル：ワーホリを目指す20代へのコーチングサービス。</p>
+    <ul>
+      <li>コーチング料：約20万円</li>
+      <li>渡航後も関係が続く（コーチングがあるから）</li>
+      <li>年間300人÷10名のコーチ＝1人30人担当がマックス</li>
+    </ul>
+
+    <p>長期循環の設計：</p>
+    <div class="quote">
+      <p>ワーホリ → 海外経験 → 自立・就職サポート → コミュニティ参加<br>→ 子供を持つ → 天川村の学校へ → 大きくなったら海外へ</p>
+    </div>
+
+    <h2>かおるちゃんとの連携</h2>
+    <ul>
+      <li>北斗さんのクライアントをかおるちゃんのコーチングに案内</li>
+      <li>かおるちゃんのクライアントが海外に行きたくなったら北斗さんへ紹介</li>
+      <li>コーチング研修（チームのスキルアップ）を共同開発する可能性</li>
+    </ul>
+  </div>
+
+  <!-- 5. 7月ツアー -->
+  <div class="section">
+    <p class="section-title">05 — 7月7〜8日 天川村ツアー</p>
+
+    <h2>北斗さん主催・10名の天川体験</h2>
+    <ul>
+      <li>参加費：5万円程度</li>
+      <li>参加者：男性8名前後、女性2〜3名（計10名予定）</li>
+      <li>瞑想ファシリ：まきちゃん</li>
+    </ul>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>日程</th><th>内容</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>7月7日（火）</td>
+            <td>天川村観光案内（龍泉寺・星まつりの日）/ かおるちゃんのゲストハウス宿泊（3,000円/人）</td>
+          </tr>
+          <tr>
+            <td>7月8日（水）早朝</td>
+            <td>龍泉寺の川で水行 → 大峰山登山（男性）/ 蛇之倉七尾山（女性）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>先達は大ちゃん（地域おこし協力隊・天川7年目・先達資格あり）に依頼予定。7月7日は星まつりと重なるため先達依頼が難しい可能性あり→要確認。</p>
+  </div>
+
+  <!-- 6. 座禅会連携 -->
+  <div class="section">
+    <p class="section-title">06 — 座禅会と天川観光の事業化</p>
+
+    <h2>自腹を適正価格に変える</h2>
+    <p>
+      現状、座禅会は利益ゼロで運営。北斗さんの天川案内も自腹（持ち出し）状態。
+      浦さん（天川在住・民泊経営）が天川案内をすでにコンテンツ化している（半日5,000円程度）。
+    </p>
+    <p>設計案：座禅会（5,000円）＋ 前泊/後泊（浦さん宅 or ゲストハウス）＋ 天川案内（浦さん）を組み合わせたプランを設計。北斗さんの案内料も適正価格化する。</p>
+
+    <div class="quote">
+      <p>コーチング ＋ ワーホリ ＋ 座禅会 → 寺子屋<br>という循環設計をつくる。</p>
+    </div>
+  </div>
+
+  <!-- 7. 慎太郎くんチーム -->
+  <div class="section">
+    <p class="section-title">07 — 慎太郎くんチームとの連携</p>
+
+    <h2>チャラコ屋との協力関係</h2>
+    <p>
+      慎太郎くん（前回座禅会参加）の4名グループ「チャラコ屋」も寺子屋を建てようとしている。
+      教育をビジョンに持ち、かおるちゃんと共鳴。
+      今後は慎太郎くんのZoom会議にかおるちゃんが参加する方向で話が進んでいる。
+    </p>
+    <p>注意：慎太郎くんの会社のビジョン・事業と「混ぜない」。協力関係として関わる。</p>
+  </div>
+
+  <!-- 次のアクション -->
+  <div class="section">
+    <p class="section-title">NEXT ACTIONS</p>
+
+    <h2>次にやること</h2>
+    <div class="action-list">
+      <div class="action-item">
+        <span class="action-who">かおるちゃん</span>
+        <span class="action-text">龍泉寺へ：8月・西の覗き予約、護摩焚き可否・料金を確認（来週中）</span>
+      </div>
+      <div class="action-item">
+        <span class="action-who">かおるちゃん</span>
+        <span class="action-text">宝塚JC打ち合わせ（5月16日）で「天川村の子供たちとの交流プログラム」を提案</span>
+      </div>
+      <div class="action-item">
+        <span class="action-who">かおるちゃん</span>
+        <span class="action-text">防災訓練の企画書を書く（平野区ボランティア団体と連携して天川村に招致）</span>
+      </div>
+      <div class="action-item">
+        <span class="action-who">かおるちゃん</span>
+        <span class="action-text">慎太郎くんのZoom会議に参加させてもらうよう打診</span>
+      </div>
+      <div class="action-item">
+        <span class="action-who">北斗さん</span>
+        <span class="action-text">7月7〜8日のスケジュール案を作成→参加者に告知</span>
+      </div>
+      <div class="action-item">
+        <span class="action-who">北斗さん</span>
+        <span class="action-text">奈良・吉野のお金持ちの方と対面（近日中）</span>
+      </div>
+      <div class="action-item">
+        <span class="action-who">共同</span>
+        <span class="action-text">座禅会前後の天川観光プランを設計（浦さんと連携）・北斗さんの案内料を適正価格化</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 蒸留ポイント -->
+  <div class="distill">
+    <h3>DISTILLATION — この会議から抽出した問い</h3>
+    <ol>
+      <li>
+        <strong>「廃校を使うことが目的ではない」</strong>
+        寺子屋が大きくなったら学校が必要になる、という順序が正しい。逆算ではなく積み上げ。
+      </li>
+      <li>
+        <strong>資金源の多角化</strong>
+        国の予算・投資家・事業売上のどれか一本に依存しない構造が安全。
+      </li>
+      <li>
+        <strong>実績が次の扉を開く</strong>
+        30万円の行政予算は「去年のサマーキャンプ」があったから。次の実績（防災訓練）が廃校利活用の扉を開く。
+      </li>
+      <li>
+        <strong>循環の設計</strong>
+        コーチング・ワーホリ・座禅会・寺子屋はバラバラではなく、長期的に人が循環する設計になっている。
+      </li>
+      <li>
+        <strong>自腹を適正価格に</strong>
+        北斗さんの天川案内も浦さんの民泊も、適正価格を設定することで「関わる人みんなが良くなる循環」が生まれる。
+      </li>
+    </ol>
+  </div>
+
+</main>
+
+<div class="page-footer">
+  <a href="../index.html">← 問いのタイムラインへ戻る</a>
+</div>
+
+</body>
+</html>
