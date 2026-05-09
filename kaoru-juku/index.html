@@ -3,23 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>かおる塾 ― 問い続ける人たちのグループコーチング</title>
-<meta name="description" content="毎月、事実と認知を分けながら自分の在り方を問い続ける。前田薫（かおるちゃん）主宰のグループコーチングコミュニティ。">
+<title>かおる塾 ― 本来の在り方に還るグループコーチング</title>
+<meta name="description" content="天川村での暮らし、坐禅、大峯の身体感覚を土台に、事実と認知を分けながら本来の在り方に還っていく。前田薫（かおるちゃん）主宰のグループコーチング。">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap');
 
   :root {
-    --ink:    #1a1a2e;
-    --deep:   #16213e;
-    --mid:    #2c3e6a;
-    --ash:    #4a4a5a;
-    --mist:   #f0eff5;
-    --cream:  #faf9fc;
-    --silver: #c8c8d8;
-    --earth:  #8b6b4a;
-    --warm:   #b8956a;
-    --char:   #2a2a3a;
-    --gold:   #a5793e;
+    --ink:    #17211d;
+    --deep:   #1e2b26;
+    --mid:    #39483d;
+    --ash:    #62675f;
+    --mist:   #eef0eb;
+    --cream:  #fbfaf6;
+    --silver: #d8d4c8;
+    --earth:  #76614a;
+    --warm:   #b08a5c;
+    --char:   #2f312d;
+    --gold:   #947243;
+    --moss:   #4f654f;
   }
 
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -33,9 +34,12 @@
 
   /* ── HERO ── */
   .hero {
-    background: linear-gradient(160deg, var(--deep) 0%, var(--mid) 100%);
+    position: relative;
+    background:
+      linear-gradient(180deg, rgba(23, 33, 29, 0.72) 0%, rgba(23, 33, 29, 0.88) 100%),
+      url("../zazen/images/tenkawa-river.jpg") center/cover;
     color: #fff;
-    padding: 80px 24px 72px;
+    padding: 92px 24px 86px;
     text-align: center;
   }
   .hero-eyebrow {
@@ -58,18 +62,18 @@
   }
   .hero-sub {
     font-size: 15px;
-    color: var(--silver);
-    max-width: 480px;
+    color: #eee9df;
+    max-width: 560px;
     margin: 0 auto 36px;
     line-height: 1.9;
   }
-  .hero-price {
+  .hero-note {
     display: inline-block;
-    border: 1px solid var(--warm);
-    color: var(--warm);
+    border: 1px solid rgba(238, 233, 223, 0.55);
+    color: #eee9df;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 13px;
-    padding: 8px 24px;
+    padding: 9px 24px;
     border-radius: 24px;
     letter-spacing: 0.08em;
   }
@@ -107,8 +111,8 @@
 
   /* ── HIGHLIGHT BOX ── */
   .hl {
-    background: #f0f0f8;
-    border-left: 3px solid var(--mid);
+    background: #f1efe7;
+    border-left: 3px solid var(--moss);
     padding: 20px 24px;
     border-radius: 0 8px 8px 0;
     margin: 24px 0;
@@ -138,6 +142,21 @@
     margin-bottom: 10px;
   }
   .card p { font-size: 14px; margin: 0; line-height: 1.8; }
+
+  .principle {
+    background: #fff;
+    border: 1px solid rgba(79,101,79,0.18);
+    border-radius: 8px;
+    padding: 24px;
+    margin: 28px 0;
+  }
+  .principle h3 {
+    color: var(--ink);
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .principle p { font-size: 14px; }
 
   /* ── LIST ── */
   .check-list {
@@ -229,6 +248,22 @@
     transition: opacity 0.2s;
   }
   .cta-btn:hover { opacity: 0.8; }
+  .cta-sub {
+    display: inline-block;
+    color: var(--ink);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    margin-top: 18px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .note-small {
+    color: var(--ash);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    line-height: 1.8;
+    margin-top: 16px;
+  }
 
   /* ── PROFILE ── */
   .profile {
@@ -276,27 +311,43 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-eyebrow">Kaoru-Juku · Group Coaching</div>
-  <h1>問い続ける人たちの場、<br><em>かおる塾</em>。</h1>
+  <div class="hero-eyebrow">Tenkawa · Zazen · Coaching</div>
+  <h1>本来の在り方に還る、<br><em>かおる塾</em>。</h1>
   <p class="hero-sub">
-    答えを出す場所ではありません。<br>
-    毎月、自分の事実と認知を分けながら、<br>本来の在り方に還っていく対話の場です。
+    天川村での暮らし、坐禅、大峯を歩く身体感覚。<br>
+    その静けさを土台に、日々の出来事から事実と認知を分け、<br>
+    自分の使命と才能に戻っていくグループコーチングです。
   </p>
-  <div class="hero-price">月額 22,000円 / グループコーチング</div>
+  <div class="hero-note">まずは30分、話してみるところから</div>
 </div>
 
 <!-- こんな人へ -->
 <div class="section">
   <div class="section-label">For</div>
-  <h2>こんな方が集まっています</h2>
+  <h2>こんな方へ</h2>
 
   <ul class="check-list">
-    <li>個人セッションやコーチングを経験して、もっと問い続けたい</li>
+    <li>自分の使命や才能を、もっと自分の言葉で掴みたい</li>
     <li>「頑張っているのに、なんかズレる」という感覚がある</li>
     <li>感情に振り回されず、自分の軸で判断できるようになりたい</li>
     <li>同じ問いを持つ仲間と、定期的に深い対話をしたい</li>
-    <li>事実と認知の分離を、日常で使えるようにしたい</li>
+    <li>頭だけではなく、身体感覚や在り方から人生を整えたい</li>
   </ul>
+</div>
+
+<!-- 土台 -->
+<div class="section">
+  <div class="section-label">Root</div>
+  <h2>天川村での暮らしから、生まれている場です</h2>
+
+  <p>かおる塾は、単なる知識を学ぶ講座ではありません。</p>
+  <p>天川村で暮らし、坐禅を組み、大峯を歩き、自然と向き合う日々の中から生まれている「問いの場」です。</p>
+  <p>頭で正解を探すよりも、まず静かに自分へ戻る。出来事に飲み込まれるのではなく、事実と認知を分けて、自分の本音と使命を見つめ直す。</p>
+
+  <div class="principle">
+    <h3>薫ちゃんのコーチングは、会話術ではなく在り方から始まります。</h3>
+    <p>天川村、坐禅、大峯、修験道的な身体感覚。そこに中庸思考と天中道が重なっています。</p>
+  </div>
 </div>
 
 <!-- かおる塾でやること -->
@@ -305,24 +356,24 @@
   <h2>かおる塾でやること</h2>
 
   <p>毎月テーマを決めて、グループで問いを深めます。</p>
-  <p>「正しい答え」を教える場ではありません。<br>自分の出来事に天中道（事実と認知の分離）を当てはめながら、一緒に掘り下げていく対話の場です。</p>
+  <p>「正しい答え」を教える場ではありません。自分の出来事に天中道（事実と認知の分離）を当てはめながら、感情の奥にある価値観や才能を一緒に見ていきます。</p>
 
   <div class="card-grid">
     <div class="card">
       <div class="card-label">毎月のテーマ</div>
-      <p>感情・認知・在り方・使命・関係性など、生きることに直結したテーマを扱います</p>
+      <p>感情・認知・在り方・使命・関係性など、生きることに直結したテーマを扱います。</p>
     </div>
     <div class="card">
       <div class="card-label">対話の形式</div>
-      <p>グループセッション形式。かおるちゃんがファシリテートしながら、一人ひとりの問いを扱います</p>
+      <p>グループセッション形式。かおるちゃんが場を見ながら、一人ひとりの問いを扱います。</p>
     </div>
     <div class="card">
       <div class="card-label">場の文化</div>
-      <p>評価しない。比べない。「そういうことあるよね」と受け取り合える安全な場</p>
+      <p>評価しない。比べない。表面的な正しさより、自分の内側にある本音を大切にします。</p>
     </div>
     <div class="card">
       <div class="card-label">蓄積されるもの</div>
-      <p>自分の認知パターンへの気づき。問い続ける習慣。本音で話せる仲間</p>
+      <p>認知パターンへの気づき。問い続ける習慣。本音で話せる仲間。自分に戻る感覚。</p>
     </div>
   </div>
 
@@ -331,10 +382,23 @@
   </div>
 </div>
 
+<!-- 相談 -->
+<div class="section" style="text-align:center;">
+  <div class="section-label">First Step</div>
+  <h2>まずは、30分だけ話してみてください</h2>
+  <p>かおる塾が合うかどうかは、文章だけでは分からないことがあります。</p>
+  <p>無料相談では、いま抱えているテーマや違和感を聞かせてもらいながら、かおる塾が合うのか、個人セッションが合うのか、今は別の形がよいのかを一緒に確認します。</p>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSf_YlfQdXEy9Sv8n0HZU2YT67MyM4YLF0WwTcTpk6LgAgByYA/viewform" target="_blank" class="cta-btn">まず話してみる（無料相談30分）</a>
+  <p class="note-small">無料相談を受けたからといって、入塾や継続を決める必要はありません。合うかどうかを確かめるための時間として使ってください。</p>
+</div>
+
 <!-- 料金 -->
 <div class="section">
   <div class="section-label">Plan</div>
-  <h2>参加プラン</h2>
+  <h2>参加費</h2>
+
+  <p>料金は、検討しやすいようにあえて明記しています。</p>
+  <p>ただし、いきなり申し込みを決めてもらうためではありません。まず無料相談で、今のタイミングに合っているかを確認してください。</p>
 
   <div class="plan">
     <div class="plan-name">Monthly Membership</div>
@@ -348,15 +412,13 @@
       <li>毎月の振り返り教材（かおる塾オリジナル）</li>
       <li>メンバー限定コミュニティへのアクセス</li>
     </ul>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc153db1KCXxBm_OKYzzqdPyoTrv8gd_1TFW3CUfzzLfVnofw/viewform" target="_blank" class="cta-btn">入塾を申し込む</a>
-    <p style="font-size:12px; color:#888; margin-top:16px; font-family:'Noto Sans JP',sans-serif;">
-      お申し込み後、2営業日以内にご連絡いたします
-    </p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf_YlfQdXEy9Sv8n0HZU2YT67MyM4YLF0WwTcTpk6LgAgByYA/viewform" target="_blank" class="cta-btn">無料相談で確認する</a>
+    <br>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc153db1KCXxBm_OKYzzqdPyoTrv8gd_1TFW3CUfzzLfVnofw/viewform" target="_blank" class="cta-sub">すでに参加を決めている方はこちら</a>
   </div>
 
   <div class="hl">
-    <p>かおる塾は、個人セッションや伴走型コーチングを経験した方の継続の場として設計しています。<br>
-    まずコーチングを体験してみたい方は、個別セッションからどうぞ。</p>
+    <p>かおる塾は、薫ちゃんの問いと場に継続的に触れながら、自分の人生を自分の言葉で取り戻していく場です。</p>
   </div>
 </div>
 
@@ -368,8 +430,8 @@
   <div class="profile">
     <div class="profile-text">
       <h3>人生デザインコーチ® / 天中道コーチ</h3>
-      <p>奈良県天川村 × 大阪今里を拠点に活動。師匠である高衣紗彩（たかごろもさあや）先生の中庸思考をベースに、事実と認知を分けながら「本来の自分に還る伴走」をするコーチ。</p>
-      <p>「自分らしく生きられない人をゼロにする」をミッションに、個人コーチング・グループコーチング・天川村でのテラコヤ事業を展開。</p>
+      <p>奈良県天川村 × 大阪今里を拠点に活動。天川村での暮らし、坐禅、大峯、修験道的な身体感覚を土台に、事実と認知を分けながら「本来の自分に還る伴走」をするコーチ。</p>
+      <p>中庸思考と天中道をベースに、「自分らしく生きられない人をゼロにする」をミッションとして、個人コーチング・グループコーチング・天川村でのテラコヤ事業を展開。</p>
     </div>
   </div>
 </div>
@@ -377,21 +439,21 @@
 <!-- CTA -->
 <div class="section" style="text-align:center;">
   <div class="section-label">Apply</div>
-  <h2>まず、話を聞いてみませんか</h2>
-  <p>かおる塾への参加を検討している方は、以下のフォームよりお申し込みください。</p>
+  <h2>迷っている方こそ、まず話してみてください</h2>
+  <p>入塾を決めるためではなく、今のあなたにどんな場が必要かを一緒に確認する時間です。</p>
   <br>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSc153db1KCXxBm_OKYzzqdPyoTrv8gd_1TFW3CUfzzLfVnofw/viewform" target="_blank" class="cta-btn">入塾を申し込む</a>
-  <p style="font-size:12px; color:#888; margin-top:16px; font-family:'Noto Sans JP',sans-serif;">お申し込み後、2営業日以内にご連絡いたします</p>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSf_YlfQdXEy9Sv8n0HZU2YT67MyM4YLF0WwTcTpk6LgAgByYA/viewform" target="_blank" class="cta-btn">無料相談に申し込む</a>
+  <p class="note-small">30分 / 無料。相談後に無理な案内はしません。</p>
 </div>
 
 <!-- フォーム埋め込み -->
 <div class="section" style="max-width:680px;">
-  <div class="section-label">Application</div>
-  <h2>お申し込みフォーム</h2>
-  <p style="margin-bottom:24px;">こちらから直接お申し込みいただけます。<br>内容確認後、2営業日以内にご連絡いたします。</p>
+  <div class="section-label">Free Consultation</div>
+  <h2>無料相談フォーム</h2>
+  <p style="margin-bottom:24px;">かおる塾・個人セッション・伴走のどれが合うか、まず30分で一緒に確認します。<br>内容確認後、2営業日以内に日程調整のご連絡をお送りします。</p>
   <div style="border:1px solid rgba(0,0,0,0.1); border-radius:4px; overflow:hidden;">
     <iframe
-      src="https://docs.google.com/forms/d/e/1FAIpQLSc153db1KCXxBm_OKYzzqdPyoTrv8gd_1TFW3CUfzzLfVnofw/viewform?embedded=true"
+      src="https://docs.google.com/forms/d/e/1FAIpQLSf_YlfQdXEy9Sv8n0HZU2YT67MyM4YLF0WwTcTpk6LgAgByYA/viewform?embedded=true"
       width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0"
       style="display:block;">読み込み中…</iframe>
   </div>
