@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>戦略会議 #02 — サマーキャンプ × ワーキングホリデー × 寺子屋</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400&display=swap');
+
+  :root {
+    --forest: #2d4a3e;
+    --moss:   #4a7c6f;
+    --ink:    #2a2a2a;
+    --stone:  #6b6b6b;
+    --paper:  #f8f6f2;
+    --white:  #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Serif JP', serif;
+    line-height: 2;
+  }
+
+  .page-header {
+    background: var(--forest);
+    padding: 80px 32px 60px;
+  }
+
+  .page-header-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    margin-bottom: 40px;
+    transition: opacity 0.2s;
+  }
+  .back-link:hover { opacity: 0.7; }
+
+  .meta {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 16px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .page-header h1 {
+    font-size: clamp(1.3rem, 4vw, 1.9rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .page-header .subtitle {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+  }
+
+  .page-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 80px 32px 120px;
+  }
+
+  .section { margin-bottom: 72px; }
+
+  .section-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    color: var(--moss);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--moss);
+    opacity: 0.2;
+  }
+
+  h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: var(--stone);
+    line-height: 2.3;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 24px;
+  }
+
+  ul li {
+    font-size: 0.92rem;
+    color: var(--stone);
+    line-height: 2.1;
+    padding-left: 1.4em;
+    position: relative;
+    margin-bottom: 4px;
+  }
+
+  ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: rgba(74,124,111,0.5);
+  }
+
+  .quote {
+    border-left: 2px solid var(--moss);
+    padding: 20px 28px;
+    margin: 32px 0;
+    background: var(--white);
+  }
+
+  .quote p {
+    font-size: 1rem;
+    color: var(--ink);
+    line-height: 2.2;
+    margin: 0;
+  }
+
+  .quote cite {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--stone);
+    margin-top: 12px;
+    font-style: normal;
+  }
+
+  .table-wrap { overflow-x: auto; margin: 24px 0; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+
+  th {
+    background: var(--forest);
+    color: rgba(255,255,255,0.85);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    padding: 12px 16px;
+    text-align: left;
+  }
+
+  td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(74,124,111,0.1);
+    color: var(--stone);
+    line-height: 1.8;
+    vertical-align: top;
+  }
+
+  tr:nth-child(even) td { background: var(--white); }
+
+  .action-list { margin-bottom: 24px; }
+
+  .action-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(74,124,111,0.1);
+    font-size: 0.9rem;
+  }
+
+  .action-who {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--moss);
+    background: rgba(74,124,111,0.08);
+    padding: 3px 10px;
+    white-space: nowrap;
+    min-width: 80px;
+    text-align: center;
+    margin-top: 2px;
+  }
+
+  .action-text { color: var(--stone); line-height: 1.8; }
+
+  /* AI会議セクション */
+  .ai-meeting {
+    background: var(--white);
+    border: 1px solid rgba(74,124,111,0.12);
+    padding: 48px 40px;
+    margin: 48px 0;
+  }
+
+  .ai-meeting-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    color: var(--moss);
+    margin-bottom: 8px;
+  }
+
+  .ai-meeting h2 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .ai-meeting .ai-sub {
+    font-size: 0.82rem;
+    color: var(--stone);
+    margin-bottom: 40px;
+  }
+
+  .ai-block {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(74,124,111,0.1);
+  }
+
+  .ai-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .ai-block-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    color: var(--moss);
+    margin-bottom: 16px;
+  }
+
+  .ai-q {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .ai-answers {
+    display: grid;
+    gap: 16px;
+  }
+
+  .ai-answer {
+    background: var(--paper);
+    padding: 20px 24px;
+    border-left: 3px solid rgba(74,124,111,0.3);
+  }
+
+  .ai-answer-name {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    color: var(--moss);
+    margin-bottom: 8px;
+  }
+
+  .ai-answer p {
+    font-size: 0.88rem;
+    margin: 0;
+    line-height: 2;
+  }
+
+  .ai-synthesis {
+    margin-top: 32px;
+    padding: 24px 28px;
+    background: rgba(45,74,62,0.05);
+    border-left: 3px solid var(--forest);
+  }
+
+  .ai-synthesis-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--forest);
+    margin-bottom: 12px;
+  }
+
+  .ai-synthesis p {
+    font-size: 0.9rem;
+    color: var(--ink);
+    margin: 0;
+    line-height: 2;
+  }
+
+  /* 蒸留 */
+  .distill {
+    background: var(--white);
+    padding: 40px 32px;
+    margin-top: 40px;
+    border: 1px solid rgba(74,124,111,0.12);
+  }
+
+  .distill h3 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--moss);
+    margin-bottom: 24px;
+  }
+
+  .distill ol {
+    list-style: none;
+    counter-reset: distill;
+    padding: 0;
+  }
+
+  .distill ol li {
+    counter-increment: distill;
+    padding: 16px 0 16px 40px;
+    position: relative;
+    border-bottom: 1px solid rgba(74,124,111,0.08);
+    font-size: 0.9rem;
+    color: var(--stone);
+    line-height: 2;
+  }
+
+  .distill ol li:last-child { border-bottom: none; }
+
+  .distill ol li::before {
+    content: counter(distill, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 18px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.68rem;
+    color: var(--moss);
+    letter-spacing: 0.05em;
+  }
+
+  .distill ol li strong {
+    display: block;
+    color: var(--ink);
+    font-size: 0.92rem;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+
+  .page-footer {
+    text-align: center;
+    padding: 60px 32px;
+    border-top: 1px solid rgba(74,124,111,0.1);
+  }
+
+  .page-footer a {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: var(--moss);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .page-footer a:hover { opacity: 0.6; }
+
+  @media (max-width: 600px) {
+    .page-header { padding: 60px 24px 48px; }
+    .page-body { padding: 60px 24px 80px; }
+    .distill { padding: 32px 24px; }
+    .ai-meeting { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <a href="../index.html" class="back-link">← 問いのタイムラインへ戻る</a>
+    <div class="meta">
+      <span>2026.05.09</span>
+      <span>戦略会議 #02</span>
+      <span>前田薫 × 芦田北斗</span>
+      <span>Zoom</span>
+    </div>
+    <h1>サマーキャンプ × ワーキングホリデー × 寺子屋<br>循環設計の具体化</h1>
+    <p class="subtitle">「これだけ合わさったら、唯一無二になりますね。」</p>
+  </div>
+</header>
+
+<main class="page-body">
+
+  <!-- 01 会議の核心 -->
+  <div class="section">
+    <p class="section-title">01 — この会議で見えてきたもの</p>
+
+    <h2>ビジョンが一致した瞬間</h2>
+    <p>
+      北斗さんが話した「大学に代わるもの」というビジョン。
+      コーチング・挑戦心・金融・IT・自己覚醒を、海外体験を通じて育てるプログラム。
+      それを聞いた薫ちゃんの言葉がこれだった。
+    </p>
+
+    <div class="quote">
+      <p>「海外、山修験道、呼吸、禅、スポーツ。これだけ合わさったら唯一無二になりますね。根本は日本人の精神性、魂の覚醒みたいなところかな。」</p>
+      <cite>— 前田薫</cite>
+    </div>
+
+    <p>
+      北斗さんのワーキングホリデーは「個の覚醒への仕掛け」。
+      薫ちゃんの禅・修験道は「個の覚醒そのもの」。
+      手段は違うが、目指す場所は同じだった。
+    </p>
+  </div>
+
+  <!-- 02 循環の設計 -->
+  <div class="section">
+    <p class="section-title">02 — 循環の設計</p>
+
+    <h2>双方向に流れる</h2>
+    <p>この事業は一方通行ではなく、双方向に人が流れる設計になっている。</p>
+
+    <div class="quote">
+      <p>
+        天川サマーキャンプ → 海外・ワーホリという選択肢を持つ<br>
+        ワーホリ帰国 → 天川村・修験道へ還る<br>
+        天川村の体験 → コーチングで自分の軸を言語化する
+      </p>
+    </div>
+
+    <h2>ターゲット別アプローチ</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>対象</th><th>入口</th><th>接続先</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>小中学生</td>
+            <td>天川サマーキャンプ</td>
+            <td>「いつか海外へ」という種を植える。留学・ワーホリの認知</td>
+          </tr>
+          <tr>
+            <td>保護者（経営者）</td>
+            <td>キャンプへの参加・北斗さんとの出会い</td>
+            <td>北斗さんのワーキャリープログラムへ。後払い制度が響く</td>
+          </tr>
+          <tr>
+            <td>20代（ワーホリ帰国後）</td>
+            <td>北斗さんのコーチング経由</td>
+            <td>天川村合宿・修験道体験・薫ちゃんのコーチングへ</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 03 今夏の接続 -->
+  <div class="section">
+    <p class="section-title">03 — 今夏の具体的な接続</p>
+
+    <h2>北斗さんがサマーキャンプに入る</h2>
+    <p>
+      2026年8月の宝塚JC青少年セミナー（サマーキャンプ）。
+      北斗さんがボランティアスタッフとして参加し、自己紹介の場で自然に話す。
+    </p>
+
+    <div class="quote">
+      <p>「北斗さん、何やってはるんですか？」<br>「ワーホリの事業をやってます。天川村と日本に還元したくて来ました。」</p>
+      <cite>— 会議でイメージした自然な流れ</cite>
+    </div>
+
+    <p>
+      子供たちに「海外という選択肢」の種が植わる。
+      保護者には北斗さんのワーキャリーの話が響く。
+      設計しなくても、空気で伝わる。
+    </p>
+
+    <h2>AI活用：子どもの気づきを言語化する</h2>
+    <p>
+      キャンプ中、子どもたちの一次情報（発言・気づき）をAIで記録・抽出する。
+      大人が介入しない。評価やジャッジを挟まない。
+      子ども自身の言葉をそのまま残すことで、保護者への「行かせてよかった」報告が生まれる。
+    </p>
+  </div>
+
+  <!-- 04 船越さんとの三者連携 -->
+  <div class="section">
+    <p class="section-title">04 — 新たに見えてきた連携</p>
+
+    <h2>船越さん：欠けていたピース</h2>
+    <p>
+      船越さんは、子どもたちをサッカーを通じて海外に送っている人物。
+      薫ちゃん・北斗さんとビジョンが重なりすぎるほど近い。
+      まだ北斗さんと個人的につながっていない。
+    </p>
+
+    <div class="quote">
+      <p>「似すぎてるぐらいですから。一度三人で話しましょう。」</p>
+      <cite>— 前田薫</cite>
+    </div>
+
+    <p>
+      薫ちゃん × 北斗さん × 船越さんの三者が揃ったとき、
+      「サッカー × 海外 × 天川村」の循環が一気に具体化する可能性がある。
+    </p>
+  </div>
+
+  <!-- 05 AI会議 -->
+  <div class="ai-meeting">
+    <p class="ai-meeting-title">AI MEETING — 2026.05.09</p>
+    <h2>Claude・GPT・Geminiによる設計レビュー</h2>
+    <p class="ai-sub">同じプロンプトを3つのAIに投げ、独立した視点で設計を検証した。</p>
+
+    <!-- Q1 -->
+    <div class="ai-block">
+      <p class="ai-block-label">Q1 — 核心の言語化</p>
+      <p class="ai-q">この事業連携の本質を一行で。なぜ今必要か。</p>
+      <div class="ai-answers">
+        <div class="ai-answer">
+          <p class="ai-answer-name">Gemini</p>
+          <p>日本人の精神性をOSに、世界をフィールドとして「個」を覚醒させる、自走型ライフデザイン・エコシステム。<br><small style="color:#9a9a9a;">既存教育が「正解」を教える役割を終えた今、静と動の統合体験が唯一無二の生存戦略になるから。</small></p>
+        </div>
+        <div class="ai-answer">
+          <p class="ai-answer-name">GPT</p>
+          <p>天川村と世界を往復しながら、若者が「自分の人生を自分で選べる力」を育てる、新しい寺子屋型キャリア教育。<br><small style="color:#9a9a9a;">学校・会社だけでは、自分の価値観で生きる力が育ちにくい時代だから。</small></p>
+        </div>
+        <div class="ai-answer">
+          <p class="ai-answer-name">Claude</p>
+          <p>日本人の「個の覚醒」を、自然・海外・精神修行の三重構造で育てる、大学に代わる人生設計装置。<br><small style="color:#9a9a9a;">偏差値と就職で設計された教育は「平均への適応」を育てる。自律した個として世界と渡り合う能力は体験・内省・実践の循環からしか生まれない。その設計図がまだ存在しない。</small></p>
+        </div>
+      </div>
+      <div class="ai-synthesis">
+        <p class="ai-synthesis-label">統合</p>
+        <p>3つ全員が「日本人の個の覚醒」を核心として指摘した。表現は違うが見ているものは同じ。この言語は北斗さんとの共通言語になれる。</p>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="ai-block">
+      <p class="ai-block-label">Q2 — 設計の穴（忖度なし）</p>
+      <p class="ai-q">循環モデルで弱い部分・リスク・解決されていない問いは何か。</p>
+      <div class="ai-answers">
+        <div class="ai-answer">
+          <p class="ai-answer-name">Gemini</p>
+          <p>① 帰国後の天川村での「食っていく手段」が未設計<br>② 小学生→20代の「中高生時代」の空白期間<br>③ 修験道・禅と現代の成功の翻訳精度（抽象概念の言語化不足）</p>
+        </div>
+        <div class="ai-answer">
+          <p class="ai-answer-name">GPT</p>
+          <p>① 天川に来る理由がまだ弱い（帰国後の動機が未言語化）<br>② 誰のための事業かが広すぎる（ターゲット絞り込み不足）<br>③ 感動で終わるリスク（体験後の継続導線がない）</p>
+        </div>
+        <div class="ai-answer">
+          <p class="ai-answer-name">Claude</p>
+          <p>① 20代が天川に戻ってくる動機と受け皿が未設計（縁だけでは動線が切れる）<br>② 薫ちゃん個人への依存リスク（薫ちゃんが倒れたら循環が止まる）<br>③ 「尖った子」と「挑戦志向の20代」は同一プログラムに乗るか（混濁リスク）</p>
+        </div>
+      </div>
+      <div class="ai-synthesis">
+        <p class="ai-synthesis-label">統合</p>
+        <p>3つ全員が一致した穴：「ワーホリ帰国後の20代が天川村に戻ってくる動機と受け皿が、まだ設計されていない」。Claudeだけが指摘した穴：薫ちゃん個人への依存リスク。中長期で向き合うべき問い。</p>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="ai-block">
+      <p class="ai-block-label">Q3 — 次の一手</p>
+      <p class="ai-q">今の段階で最もレバレッジが効く一手は何か。</p>
+      <div class="ai-answers">
+        <div class="ai-answer">
+          <p class="ai-answer-name">Gemini</p>
+          <p>ワーホリ帰国直後の若者を「メンター兼ストーリーテラー」として今夏のキャンプに1名送り込む。子供・若者・大人の三世代循環が実際に動く様子を現場で観察する。</p>
+        </div>
+        <div class="ai-answer">
+          <p class="ai-answer-name">GPT</p>
+          <p>北斗さんをサマーキャンプにスタッフ参加させ、循環が本当に起きるかを現場で確認・記録する。まず商品を作る前に、循環が生まれる現場をつくること。</p>
+        </div>
+        <div class="ai-answer">
+          <p class="ai-answer-name">Claude</p>
+          <p>今夏のサマーキャンプに北斗さんがスタッフとして入り、「ワーホリ説明会30分」を組み込む。一人でもキャンプ参加者がワーホリに進む事例が生まれれば、それがモデルの証明になる。</p>
+        </div>
+      </div>
+      <div class="ai-synthesis">
+        <p class="ai-synthesis-label">統合</p>
+        <p>3つ全員が一致：「今夏のサマーキャンプに北斗さんを入れる」が最初の一手。Geminiの提案（ワーホリ帰国者もメンターとして連れてくる）が最もレバレッジが効く。理念の精度を上げる前に、現場で循環が起きるか実証する。</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 次のアクション -->
+  <div class="section">
+    <p class="section-title">NEXT ACTIONS</p>
+    <h2>次にやること</h2>
+    <div class="action-list">
+      <div class="action-item">
+        <span class="action-who">かおるちゃん</span>
+        <span class="action-text">5/16 宝塚JC打ち合わせで北斗さん参加形式を提案・確認</span>
+      </div>
+      <div class="action-item">
+        <span class="action-who">かおるちゃん</span>
+        <span class="action-text">北斗さんに「ワーホリ帰国直後の若者を1名、8月キャンプに連れてきてほしい」と依頼する</span>
+      </div>
+      <div class="action-item">
+        <span class="action-who">かおるちゃん</span>
+        <span class="action-text">船越さん × 北斗さん × 薫ちゃんの三者会議の日程を動かし始める</span>
+      </div>
+      <div class="action-item">
+        <span class="action-who">かおるちゃん</span>
+        <span class="action-text">5月座禅会の場所を組み換える（洞窟→外・自然の中での開催）</span>
+      </div>
+      <div class="action-item">
+        <span class="action-who">共同</span>
+        <span class="action-text">7/7〜8 天川ツアーの設計を一緒に進める</span>
+      </div>
+      <div class="action-item">
+        <span class="action-who">中長期</span>
+        <span class="action-text">「ワーホリ帰国後の20代が天川村に戻ってくる受け皿」の設計を始める</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 蒸留ポイント -->
+  <div class="distill">
+    <h3>DISTILLATION — この会議から抽出した問い</h3>
+    <ol>
+      <li>
+        <strong>北斗さんのビジョンと薫ちゃんのビジョンは同じ場所を見ていた</strong>
+        ワーホリは「個の覚醒への仕掛け」。禅・修験道は「個の覚醒そのもの」。手段が違うだけで根本は同じ。2人の連携の核心はここにある。
+      </li>
+      <li>
+        <strong>理念を磨く前に、現場で循環を実証する</strong>
+        3つのAIが独立して同じ結論を出した。まず北斗さんを8月のキャンプに入れる。一人でも「天川→ワーホリ」が起きれば、それがモデルの証明になる。
+      </li>
+      <li>
+        <strong>「帰国後の受け皿」が循環の弱点</strong>
+        ワーホリ帰国後の20代が天川村に向かう動機は、現状「縁」だけで成立している。場所と仕組みへの依存に少しずつ移していく設計が必要。
+      </li>
+      <li>
+        <strong>船越さんが欠けていたピース</strong>
+        サッカー×海外×天川を繋ぐ人物がいた。三者会議で一気に加速できる可能性がある。
+      </li>
+      <li>
+        <strong>子どものAI言語化は差別化になる</strong>
+        大人が介入しない一次情報の抽出。これはキャンプの独自価値として、保護者への「行かせてよかった」報告になる。
+      </li>
+    </ol>
+  </div>
+
+</main>
+
+<div class="page-footer">
+  <a href="../index.html">← 問いのタイムラインへ戻る</a>
+</div>
+
+</body>
+</html>
