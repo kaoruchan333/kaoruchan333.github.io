@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コーチング力分析｜かおる塾ファシリテーション｜2026-05-10</title>
+  <style>
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      line-height: 2;
+      color: #2a2a28;
+      background: #f8f7f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 28px 100px;
+    }
+    .doc-label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: #aaa;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .doc-badge {
+      display: inline-block;
+      font-size: 12px;
+      background: #2a2a28;
+      color: #c4a96e;
+      border-radius: 4px;
+      padding: 3px 12px;
+      margin-bottom: 24px;
+      letter-spacing: 0.08em;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0 0 6px;
+      line-height: 1.5;
+    }
+    .doc-sub {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 40px;
+    }
+    .section {
+      margin-bottom: 52px;
+    }
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: #c4a96e;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0 0 16px;
+      color: #1a1a18;
+    }
+    p {
+      margin: 0 0 16px;
+      color: #3a3838;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #e0ddd8;
+      margin: 40px 0;
+    }
+    /* 概要テーブル */
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+    .info-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #ece9e4;
+      vertical-align: top;
+    }
+    .info-table td:first-child {
+      color: #aaa;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      width: 130px;
+      white-space: nowrap;
+    }
+    /* 評価バッジ */
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 3px;
+      letter-spacing: 0.04em;
+      margin-right: 4px;
+    }
+    .badge-good { background: #e8f5ec; color: #3a7a4a; }
+    .badge-delta { background: #fff3e0; color: #a06000; }
+    .badge-key { background: #2a2a28; color: #c4a96e; }
+    /* 問いのフロー */
+    .flow-row {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid #ece9e4;
+      padding: 12px 0;
+      align-items: flex-start;
+    }
+    .flow-row:last-child { border-bottom: none; }
+    .flow-num {
+      font-size: 11px;
+      color: #ccc;
+      width: 28px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+    .flow-content {
+      flex: 1;
+    }
+    .flow-q {
+      font-size: 14px;
+      font-weight: bold;
+      color: #2a2a28;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+    .flow-res {
+      font-size: 13px;
+      color: #777;
+      line-height: 1.6;
+    }
+    .flow-eval {
+      font-size: 12px;
+      margin-top: 4px;
+    }
+    /* ポイントカード */
+    .point-card {
+      background: #fff;
+      border: 0.5px solid #ddd9d0;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-bottom: 12px;
+    }
+    .point-title {
+      font-size: 15px;
+      font-weight: bold;
+      color: #2a2a28;
+      margin-bottom: 6px;
+    }
+    .point-desc {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.8;
+      margin: 0;
+    }
+    /* ハイライトブロック */
+    .highlight-box {
+      background: #2a2a28;
+      color: #f0e8d8;
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin: 24px 0;
+    }
+    .highlight-box .hl-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: #c4a96e;
+      margin-bottom: 8px;
+    }
+    .highlight-box .hl-text {
+      font-size: 17px;
+      font-weight: bold;
+      line-height: 1.7;
+      margin: 0;
+    }
+    /* 改善カード */
+    .delta-card {
+      background: #fffaf3;
+      border: 1px solid #f0e0c0;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .delta-title {
+      font-size: 15px;
+      font-weight: bold;
+      color: #a06000;
+      margin-bottom: 8px;
+    }
+    .delta-desc {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.8;
+      margin: 0;
+    }
+    /* 3軸分析 */
+    .axis-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    @media(max-width: 600px) { .axis-row { grid-template-columns: 1fr; } }
+    .axis-card {
+      background: #fff;
+      border: 1px solid #e0ddd8;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+    }
+    .axis-label {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: #c4a96e;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .axis-text {
+      font-size: 13px;
+      color: #2a2a28;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+    .axis-sub {
+      font-size: 11px;
+      color: #999;
+      margin-top: 4px;
+      line-height: 1.6;
+    }
+    /* 一行定義 */
+    .one-line {
+      font-size: 18px;
+      font-weight: bold;
+      color: #2a2a28;
+      text-align: center;
+      padding: 28px 20px;
+      border-top: 2px solid #e0ddd8;
+      border-bottom: 2px solid #e0ddd8;
+      margin: 32px 0;
+      line-height: 1.7;
+      letter-spacing: 0.04em;
+    }
+    .back-link {
+      display: inline-block;
+      font-size: 12px;
+      color: #aaa;
+      text-decoration: none;
+      margin-bottom: 32px;
+      letter-spacing: 0.04em;
+    }
+    .back-link:hover { color: #888; }
+    .footer-note {
+      font-size: 12px;
+      color: #bbb;
+      margin-top: 60px;
+      border-top: 1px solid #e8e5de;
+      padding-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <a class="back-link" href="index.html">← 訓練記録一覧へ</a>
+
+  <div class="doc-label">薫ちゃんのコーチング力向上 訓練記録</div>
+  <div class="doc-badge">COACHING SKILL LOG</div>
+  <h1>かおる塾ファシリテーション分析<br>よっちゃんセッション</h1>
+  <p class="doc-sub">2026年5月10日（夜）｜かおる塾グループコーチング｜参加：よっちゃん（1名）</p>
+
+  <hr>
+
+  <!-- Section 01: 概要 -->
+  <div class="section">
+    <div class="section-label">Section 01</div>
+    <h2>セッション概要</h2>
+
+    <table class="info-table">
+      <tr><td>クライアント</td><td>よっちゃん（派遣社員。ソフトウェア開発・ドキュメント作成が苦手）</td></tr>
+      <tr><td>セッション種別</td><td>かおる塾グループコーチング（この日は1名参加）</td></tr>
+      <tr><td>テーマ</td><td>誰かの認知の中で生きていませんか？</td></tr>
+      <tr><td>クライアントの状態</td><td>「特に気になることはない」「今日の振り返りもとくにない」から始まった</td></tr>
+      <tr><td>セッションの転換点</td><td>よっちゃんが「この動画って、みんなにためになる話の方がいいんじゃないか」と言った瞬間</td></tr>
+      <tr><td>今日の一歩</td><td>「なんかしなきゃ」= 誰かの認知の中にいるサイン。気づくだけでいい。</td></tr>
+    </table>
+  </div>
+
+  <!-- Section 02: 転換点 -->
+  <div class="section">
+    <div class="section-label">Section 02</div>
+    <h2>今日最大の転換点</h2>
+
+    <div class="highlight-box">
+      <div class="hl-label">The Moment</div>
+      <p class="hl-text">「この動画って、みんなにためになる話の方が<br>いいんじゃないかなとか」</p>
+    </div>
+
+    <p>よっちゃんが何気なく言ったこの一言を、かおるちゃんはすぐに拾った。</p>
+
+    <div class="flow-row">
+      <div class="flow-num">→</div>
+      <div class="flow-content">
+        <div class="flow-q">「そこが気になる」「今日のテーマ、そこですから」</div>
+        <div class="flow-res">仕事の話（資料作成で手が止まる→できない人と思われる）とセッションの沈黙への反応が、同じ構造だと見抜いた。</div>
+        <div class="flow-eval"><span class="badge badge-good">◎ 拾い方が見事</span></div>
+      </div>
+    </div>
+
+    <p>この瞬間にセッションが本物になった。「何もない」から始まったよっちゃんが、自分のテーマを持っているセッションに変わった。</p>
+  </div>
+
+  <!-- Section 03: 問いの流れ -->
+  <div class="section">
+    <div class="section-label">Section 03</div>
+    <h2>問いの流れ（評価付き）</h2>
+
+    <div class="flow-row">
+      <div class="flow-num">1</div>
+      <div class="flow-content">
+        <div class="flow-q">「仕事に行くのが嫌だっていう、それは何が嫌なんですか？」</div>
+        <div class="flow-res">→ 苦手なことが多い、特に資料作成で手が止まる</div>
+        <div class="flow-eval"><span class="badge badge-good">◎ 深さを引き出した</span></div>
+      </div>
+    </div>
+
+    <div class="flow-row">
+      <div class="flow-num">2</div>
+      <div class="flow-content">
+        <div class="flow-q">「その判断は、誰がすることに対しての恐れでしたかね。自分自身なのか、それとも相手なのか」</div>
+        <div class="flow-res">→「誰かに思われるのが怖い」</div>
+        <div class="flow-eval"><span class="badge badge-good">◎ 軸を特定する鋭い問い</span></div>
+      </div>
+    </div>
+
+    <div class="flow-row">
+      <div class="flow-num">3</div>
+      <div class="flow-content">
+        <div class="flow-q">「今よっちゃん自身がこの時間に、進みたい方向ありますか？」</div>
+        <div class="flow-res">→「ないです」「別にどっちでも」</div>
+        <div class="flow-eval"><span class="badge badge-good">◎ 押しつけず確認した</span></div>
+      </div>
+    </div>
+
+    <div class="flow-row">
+      <div class="flow-num">4</div>
+      <div class="flow-content">
+        <div class="flow-q">「大丈夫ですか？不快を感じてませんか？」</div>
+        <div class="flow-res">→「はい」「続けて大丈夫です」</div>
+        <div class="flow-eval"><span class="badge badge-good">◎ クライアント保護の確認。グループコーチングで特に重要</span></div>
+      </div>
+    </div>
+
+    <div class="flow-row">
+      <div class="flow-num">5</div>
+      <div class="flow-content">
+        <div class="flow-q">「その状態のとき、よっちゃんは体で感じていることってありますか？」</div>
+        <div class="flow-res">→「なんかしなきゃっていう感じになってる時」</div>
+        <div class="flow-eval"><span class="badge badge-good">◎ 身体感覚に降ろした問いかけ</span></div>
+      </div>
+    </div>
+
+    <div class="flow-row">
+      <div class="flow-num">6</div>
+      <div class="flow-content">
+        <div class="flow-q">「しつこいようですけど、よっちゃんにとってのそのサインは何でしたでしょうか？」</div>
+        <div class="flow-res">→「何かしないと」</div>
+        <div class="flow-eval"><span class="badge badge-good">◎ 繰り返し問い、よっちゃん自身の言葉で確認した</span></div>
+      </div>
+    </div>
+
+    <div class="flow-row">
+      <div class="flow-num">7</div>
+      <div class="flow-content">
+        <div class="flow-q">（終盤：花・ミツバチ・イチゴのたとえ話、プログラムの説明が長く続く）</div>
+        <div class="flow-res">→ よっちゃんの発言が激減</div>
+        <div class="flow-eval"><span class="badge badge-delta">△ ここが改善ポイント</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 04: 良かった点 -->
+  <div class="section">
+    <div class="section-label">Section 04</div>
+    <h2>良かった点</h2>
+
+    <div class="point-card">
+      <div class="point-title">「何もない」から始まったセッションを救った</div>
+      <p class="point-desc">よっちゃんが最初に「特にない」「変化もない」「振り返りも特になし」と言い続ける中で、折れずに丁寧に場を作り続けた。</p>
+    </div>
+
+    <div class="point-card">
+      <div class="point-title">よっちゃんの何気ない一言を逃さなかった</div>
+      <p class="point-desc">「この動画ってみんなの役に立ってないんじゃないか」という発言をすぐに拾い、「そこが今日のテーマです」と接続した。コーチとしての感度の高さ。</p>
+    </div>
+
+    <div class="point-card">
+      <div class="point-title">仕事の話とセッションの話を同じ構造として見た</div>
+      <p class="point-desc">資料作成で手が止まる（仕事）と、沈黙が気になる（セッション）──どちらも「誰かの認知の中で生きているサイン」だと、かおるちゃんが見抜いた。</p>
+    </div>
+
+    <div class="point-card">
+      <div class="point-title">「大丈夫ですか？」を途中で挟んだ</div>
+      <p class="point-desc">クライアントが重いテーマに入ったとき、進み続けるのではなく一度確認した。グループコーチングでは特に重要な安全確認。</p>
+    </div>
+
+    <div class="point-card">
+      <div class="point-title">「なんかしなきゃ」をよっちゃんの言葉で定着させた</div>
+      <p class="point-desc">サインをこちらが命名するのではなく、「しつこいようですけど」と繰り返し問いかけ、よっちゃん自身の言葉で答えさせた。これが記憶に残る。</p>
+    </div>
+
+    <div class="point-card">
+      <div class="point-title">よっちゃんが「ある」「証明しなきゃいけないものではない」と答えた</div>
+      <p class="point-desc">花とミツバチのたとえを使い、「存在には価値がある」「証明は不要」をよっちゃん自身に言わせた。コーチングの醍醐味。</p>
+    </div>
+  </div>
+
+  <!-- Section 05: 改善点 -->
+  <div class="section">
+    <div class="section-label">Section 05</div>
+    <h2>改善の核心</h2>
+
+    <div class="delta-card">
+      <div class="delta-title">終盤、説明が長すぎてよっちゃんが消えた</div>
+      <p class="delta-desc">
+        花・ミツバチ・イチゴ・プログラムの説明・反応と選択の話──これらが連続して続いた終盤、よっちゃんの発言はほぼゼロになった。<br>
+        良い概念を伝えようとしていたのは分かる。でも、よっちゃんがそこにいなくなっていた。<br><br>
+        <strong>セッションはよっちゃんのもの。説明はよっちゃんが聞きたいときに届く。</strong>
+      </p>
+    </div>
+
+    <div class="delta-card">
+      <div class="delta-title">「じゃあ、今この話を聞いてよっちゃんはどう感じてますか？」が抜けた</div>
+      <p class="delta-desc">
+        説明の途中・終わりに、よっちゃんに返す問いかけが少なかった。<br>
+        説明→問い→よっちゃんの言葉→また問い、というリズムをキープできると、よっちゃんが主役のまま最後まで進む。
+      </p>
+    </div>
+
+    <div class="delta-card">
+      <div class="delta-title">「特にない」を受け取りきったか？</div>
+      <p class="delta-desc">
+        よっちゃんが最初に「特にない」「変化もない」と繰り返したとき、かおるちゃんは「了解です」と流して次に進んだ。<br>
+        「特にない、とよっちゃんは言っているけど、どんな感じがして特にないと言ってますか？」という一歩が入ると、もっと早くよっちゃんのテーマに到達できたかもしれない。
+      </p>
+    </div>
+  </div>
+
+  <!-- Section 06: 3軸分析 -->
+  <div class="section">
+    <div class="section-label">Section 06</div>
+    <h2>3軸で見るファシリテーション</h2>
+
+    <div class="axis-row">
+      <div class="axis-card">
+        <div class="axis-label">拾う力</div>
+        <div class="axis-text">◎ 高い</div>
+        <div class="axis-sub">よっちゃんの何気ない言葉を逃さずテーマに接続した</div>
+      </div>
+      <div class="axis-card">
+        <div class="axis-label">返す力</div>
+        <div class="axis-text">△ 後半が薄い</div>
+        <div class="axis-sub">説明が続いた終盤、よっちゃんに返す問いが少なくなった</div>
+      </div>
+      <div class="axis-card">
+        <div class="axis-label">待つ力</div>
+        <div class="axis-text">○ 概ね良好</div>
+        <div class="axis-sub">「大丈夫ですか」「どっちでもいい」を尊重して進めた</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 07: 今日のファシリテーター定義 -->
+  <div class="section">
+    <div class="section-label">Section 07</div>
+    <h2>今日の一行定義</h2>
+
+    <div class="one-line">
+      コーチは、クライアントの言葉を<br>クライアントより先に見つけない。
+    </div>
+
+    <p>良い発見（「なんかしなきゃ＝サイン」）を、よっちゃん自身の言葉で確定させたことは完璧だった。<br>
+    次は、その先の説明も、よっちゃんに引き渡しながら進める練習を。</p>
+  </div>
+
+  <!-- Section 08: 次の練習テーマ -->
+  <div class="section">
+    <div class="section-label">Section 08</div>
+    <h2>次の練習テーマ</h2>
+
+    <div class="point-card">
+      <div class="point-title">「説明を切って、よっちゃんに戻す」を1回やる</div>
+      <p class="point-desc">概念の説明が2〜3文続いたら、「今この話を聞いてどう感じてますか？」「これって、よっちゃんの話でいうとどこに当てはまりそうですか？」と1回戻す。</p>
+    </div>
+
+    <div class="point-card">
+      <div class="point-title">「特にない」を掘る問い</div>
+      <p class="point-desc">「特になし」「変化もない」がクライアントから出たとき、「どんな感じがして特になしという感じがしてますか？」と一歩入ってみる。</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="footer-note">
+    このページは薫ちゃん自身のコーチング訓練記録です。<br>
+    次のセッション前に読み返して使ってください。
+  </div>
+
+</div>
+</body>
+</html>
