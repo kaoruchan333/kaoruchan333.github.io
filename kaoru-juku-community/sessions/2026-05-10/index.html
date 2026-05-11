@@ -15,7 +15,7 @@
       padding: 0;
     }
     .container {
-      max-width: 660px;
+      max-width: 680px;
       margin: 0 auto;
       padding: 60px 24px 120px;
     }
@@ -27,30 +27,21 @@
       margin-bottom: 6px;
     }
     .page-title {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: bold;
       color: #2a2a28;
-      margin-bottom: 6px;
-      line-height: 1.4;
+      margin-bottom: 8px;
+      line-height: 1.5;
     }
     .page-date {
       font-size: 13px;
       color: #aaa;
       margin-bottom: 56px;
-      letter-spacing: 0.04em;
     }
-    .core-message {
-      font-size: 19px;
-      font-weight: bold;
-      color: #2a2a28;
-      text-align: center;
-      padding: 32px 20px;
-      background: #fff;
-      border: 1px solid #e0ddd8;
-      border-radius: 12px;
-      margin-bottom: 56px;
-      line-height: 1.8;
-      letter-spacing: 0.04em;
+    hr {
+      border: none;
+      border-top: 1px solid #e0ddd8;
+      margin: 48px 0;
     }
     .section-label {
       font-size: 10px;
@@ -60,7 +51,7 @@
       margin-bottom: 8px;
     }
     h2 {
-      font-size: 19px;
+      font-size: 18px;
       font-weight: bold;
       color: #2a2a28;
       margin-bottom: 16px;
@@ -70,79 +61,32 @@
       margin: 0 0 20px;
       color: #3a3838;
     }
-    .quote-block {
-      border-left: 3px solid #c4a96e;
-      padding: 4px 20px;
-      margin: 24px 0;
-      color: #555;
-    }
-    .quote-block p {
-      margin: 0;
-    }
-    .step-box {
-      background: #fff;
-      border: 1px solid #e0ddd8;
-      border-radius: 10px;
-      padding: 24px 28px;
-      margin: 24px 0;
-    }
-    .step-box .step-num {
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      color: #b08a5c;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-    .step-box .step-text {
+    .lead {
       font-size: 17px;
       font-weight: bold;
       color: #2a2a28;
-      line-height: 1.6;
-      margin: 0;
-    }
-    .step-box .step-sub {
-      font-size: 13px;
-      color: #888;
-      margin: 8px 0 0;
-      line-height: 1.8;
-    }
-    .sign-box {
-      background: #2a2a28;
-      color: #c4a96e;
-      border-radius: 10px;
-      padding: 28px 32px;
-      margin: 32px 0;
       text-align: center;
-    }
-    .sign-box .sign-label {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      margin-bottom: 10px;
-      opacity: 0.7;
-    }
-    .sign-box .sign-text {
-      font-size: 21px;
-      font-weight: bold;
-      line-height: 1.6;
-    }
-    .sign-box .sign-sub {
-      font-size: 13px;
-      margin-top: 10px;
-      opacity: 0.75;
+      padding: 28px 20px;
+      background: #fff;
+      border: 1px solid #e0ddd8;
+      border-radius: 12px;
+      margin-bottom: 48px;
       line-height: 1.8;
     }
-    hr {
-      border: none;
-      border-top: 1px solid #e0ddd8;
-      margin: 48px 0;
+    .quote-block {
+      border-left: 3px solid #c4a96e;
+      padding: 6px 20px;
+      margin: 24px 0;
+      color: #555;
     }
+    .quote-block p { margin: 0; }
     .flow-list {
       list-style: none;
       padding: 0;
       margin: 20px 0;
     }
     .flow-list li {
-      padding: 14px 0 14px 36px;
+      padding: 10px 0 10px 28px;
       position: relative;
       border-bottom: 1px solid #ece9e4;
       font-size: 15px;
@@ -151,24 +95,156 @@
     }
     .flow-list li:last-child { border-bottom: none; }
     .flow-list li::before {
-      content: '→';
+      content: '↓';
       position: absolute;
       left: 0;
       color: #c4a96e;
-      font-size: 14px;
+      font-size: 13px;
     }
-    .truth-box {
+    .flow-list li:first-child::before { content: '→'; }
+    .sign-box {
+      background: #2a2a28;
+      color: #f0e8d8;
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin: 28px 0;
+      text-align: center;
+    }
+    .sign-box .label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: #c4a96e;
+      margin-bottom: 10px;
+    }
+    .sign-box .word {
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+    .sign-box .sub {
+      font-size: 13px;
+      margin-top: 10px;
+      opacity: 0.75;
+      line-height: 1.8;
+    }
+    .variation-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .variation-card {
+      background: #fff;
+      border: 1px solid #e0ddd8;
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 14px;
+      color: #3a3838;
+      line-height: 1.7;
+    }
+    .variation-card strong {
+      color: #2a2a28;
+    }
+    .truth-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 20px 0;
+    }
+    .truth-table th {
+      background: #f0ede8;
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: bold;
+      color: #2a2a28;
+      border-bottom: 2px solid #e0ddd8;
+    }
+    .truth-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #ece9e4;
+      vertical-align: top;
+      line-height: 1.7;
+    }
+    .truth-table td:first-child { color: #888; }
+    .fact-box {
       background: #f0ede8;
       border-radius: 8px;
-      padding: 24px 28px;
-      margin: 28px 0;
-      line-height: 2.1;
+      padding: 20px 24px;
+      margin: 20px 0;
     }
-    .truth-box p {
+    .fact-box p { margin: 0; font-size: 15px; }
+    .step-box {
+      background: #fff;
+      border: 1px solid #e0ddd8;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 16px 0;
+    }
+    .step-box .step-label {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      color: #b08a5c;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .step-box .step-text {
+      font-size: 16px;
+      font-weight: bold;
+      color: #2a2a28;
+      margin-bottom: 6px;
+    }
+    .step-box .step-sub {
+      font-size: 13px;
+      color: #888;
+      line-height: 1.8;
       margin: 0;
-      font-size: 15px;
-      color: #444;
     }
+    .question-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      counter-reset: q;
+    }
+    .question-list li {
+      counter-increment: q;
+      padding: 14px 0 14px 40px;
+      position: relative;
+      border-bottom: 1px solid #ece9e4;
+      font-size: 15px;
+      color: #3a3838;
+      line-height: 1.8;
+    }
+    .question-list li:last-child { border-bottom: none; }
+    .question-list li::before {
+      content: 'Q' counter(q);
+      position: absolute;
+      left: 0;
+      font-size: 11px;
+      font-weight: bold;
+      color: #c4a96e;
+      letter-spacing: 0.06em;
+      top: 17px;
+    }
+    .one-line {
+      font-size: 15px;
+      font-weight: bold;
+      color: #2a2a28;
+      text-align: center;
+      padding: 28px 20px;
+      border-top: 2px solid #e0ddd8;
+      border-bottom: 2px solid #e0ddd8;
+      margin: 32px 0;
+      line-height: 1.9;
+    }
+    .back-link {
+      display: inline-block;
+      font-size: 12px;
+      color: #aaa;
+      text-decoration: none;
+      margin-bottom: 40px;
+      letter-spacing: 0.06em;
+    }
+    .back-link:hover { color: #888; }
     .footer-note {
       margin-top: 80px;
       font-size: 12px;
@@ -176,15 +252,6 @@
       border-top: 1px solid #e8e5de;
       padding-top: 20px;
     }
-    .back-link {
-      display: inline-block;
-      font-size: 12px;
-      color: #aaa;
-      text-decoration: none;
-      letter-spacing: 0.06em;
-      margin-bottom: 40px;
-    }
-    .back-link:hover { color: #888; }
   </style>
 </head>
 <body>
@@ -193,104 +260,201 @@
   <a class="back-link" href="../../">← かおる塾コミュニティへ</a>
 
   <div class="page-eyebrow">Kaoru Juku · Session Archive</div>
-  <div class="page-title">誰かの認知の中で、<br>生きていませんか？</div>
-  <p class="page-date">2026年5月10日（夜）｜かおる塾 グループコーチング｜参加：よっちゃん</p>
+  <div class="page-title">「何かしなきゃ」と思ったとき、<br>それが気づくサインです。</div>
+  <p class="page-date">2026年5月10日（夜）｜かおる塾 グループコーチング</p>
 
-  <div class="core-message">
-    「なんかしなきゃ」と思ったとき、<br>
-    それが気づくサインです。
+  <div class="lead">
+    テーマがないところから、テーマが生まれる。<br>
+    沈黙の中に、本当の学びがある。
   </div>
 
   <hr>
 
-  <div class="section-label">Today's Flow</div>
-  <h2>今日の流れ</h2>
+  <!-- Section 01 -->
+  <div class="section-label">今日の場について</div>
+  <h2>「特にない」から始まったセッション</h2>
+
+  <p>今日の参加者は、最初にこう言いました。「特に気になることはない」「変化もとくにない」「振り返りも、特になし」。</p>
+  <p>テーマがない状態から始まったセッションでした。でも、その状態そのものが今日の最大の教材になりました。</p>
+
+  <div class="quote-block">
+    <p>「この動画を見ている人に、なんか変な時間になってるなと思って——みんなにためになる話の方がいいんじゃないかなとか」</p>
+  </div>
+
+  <p>この一言が、今日のすべての入口でした。</p>
+  <p>塾生さんの中にも、「コーチングの場に何かテーマを持ってこなきゃいけない」「何も思い浮かばない自分でいいのか」と感じたことがある人がいると思います。今日のセッションは、その答えをリアルに見せてくれるアーカイブです。</p>
+
+  <hr>
+
+  <!-- Section 02 -->
+  <div class="section-label">今日の流れ</div>
+  <h2>テーマが生まれるまでの道のり</h2>
 
   <ul class="flow-list">
-    <li>仕事に行きたくない。特に手が止まる日がある（苦手な資料作成）</li>
-    <li>「できない人」「いらない人」と思われるのが怖い</li>
-    <li>セッション中の沈黙が気になる→「見てる人の役に立ってないんじゃないか」</li>
-    <li>焦りが生まれるとき、よっちゃんの中で起きていること：「なんかしなきゃ」</li>
-    <li>これが今日のテーマの本丸だった──<strong>誰かの認知の中で生きているサイン</strong></li>
+    <li>ゴールデンウィーク最後の日、仕事が始まる前夜に眠れなかった</li>
+    <li>仕事に行くのが嫌だという感覚がある</li>
+    <li>資料作成になると手が止まる。一日何をしていたんだろうという感覚になる</li>
+    <li>「そんなに働けていない感じがする」「いらない存在かもしれない」</li>
+    <li>できない人・要らない人と思われるのが嫌</li>
+    <li>セッション中の沈黙が気になる→「見ている人に変な時間だと思われているのでは」</li>
+    <li>「何かしなきゃ」という焦りとむずむず感が出てくる</li>
+    <li>これが「誰かの認知の中で生きているサイン」だと気づく</li>
+  </ul>
+
+  <p>仕事の話とセッションの話は、別々に見えて同じ構造でした。<strong>誰かにどう見られるかを重要な基準として持ち、そこに自分の価値を置いている。</strong>それが「誰かの認知の中で生きている」ということです。</p>
+
+  <hr>
+
+  <!-- Section 03 -->
+  <div class="section-label">今日の核心</div>
+  <h2>「何かしなきゃ」が気づくサイン</h2>
+
+  <div class="sign-box">
+    <div class="label">Your Sign</div>
+    <div class="word">「何かしなきゃ」</div>
+    <div class="sub">この感覚が出たとき、それが気づくサイン。<br>気づいたら、それだけでいい。</div>
+  </div>
+
+  <p>「体でどんな感じがしますか」という問いに対して、「何かしなきゃというむずむずした感じ」という言葉が出てきました。これは、与えられた言葉ではなく、自分の内側から出てきた言葉です。</p>
+  <p>「何かしなきゃ」という感覚が出た瞬間が、「誰かの認知の中で、自分の価値を証明しようとしている」状態に入っていることを知らせてくれるサインになります。</p>
+
+  <hr>
+
+  <!-- Section 04 -->
+  <div class="section-label">あなたの反応サインは？</div>
+  <h2>「何かしなきゃ」はバリエーションがある</h2>
+
+  <p>「何かしなきゃ」は、人によって違う言葉や感覚で出てきます。自分の反応サインを見つけることが大切です。</p>
+
+  <div class="variation-grid">
+    <div class="variation-card"><strong>「早く答えなきゃ」</strong>→ ちゃんと答えられない自分は評価が下がる、というサイン</div>
+    <div class="variation-card"><strong>「ちゃんとしなきゃ」</strong>→ ちゃんとしていない自分はダメだと思われる、というサイン</div>
+    <div class="variation-card"><strong>「役に立たなきゃ」</strong>→ 役に立っていない自分は必要ないと思われる、というサイン</div>
+    <div class="variation-card"><strong>「迷惑をかけちゃいけない」</strong>→ 迷惑をかけている自分は嫌われる、というサイン</div>
+    <div class="variation-card"><strong>「黙っていたらダメ」</strong>→ 黙っている自分はやる気がないと思われる、というサイン</div>
+    <div class="variation-card"><strong>「成果を見せなきゃ」</strong>→ 成果がない自分には価値がないと思われる、というサイン</div>
+  </div>
+
+  <p>これらはすべて、「誰かの認知の中で、自分の価値を証明しようとしている」状態のバリエーションです。あなた自身の反応サインは何ですか？</p>
+
+  <hr>
+
+  <!-- Section 05 -->
+  <div class="section-label">事実と認知</div>
+  <h2>起きていることと、心の中で作っていることを分ける</h2>
+
+  <table class="truth-table">
+    <tr><th>事実</th><th>認知（心の中で作っていること）</th></tr>
+    <tr><td>手が止まっていた</td><td>働いていない時間だ</td></tr>
+    <tr><td>資料が進まなかった</td><td>意味がない一日だった</td></tr>
+    <tr><td>沈黙が続いていた</td><td>見ている人にとって無駄な時間だ</td></tr>
+    <tr><td>テーマがすぐ出なかった</td><td>参加する意味がなかったかもしれない</td></tr>
+    <tr><td>あまり発言できなかった</td><td>できない人だと思われた</td></tr>
+  </table>
+
+  <p>起きたことと、その出来事に対して心の中で作り上げたものは、別のことです。感情が動いているとき、多くの場合は「事実」ではなく「認知」に反応しています。</p>
+
+  <hr>
+
+  <!-- Section 06 -->
+  <div class="section-label">沈黙・停滞の価値</div>
+  <h2>止まっている時間は、何も起きていない時間じゃない</h2>
+
+  <p>今日のセッションで、沈黙を気にしているという発言がなければ、今日のテーマは生まれませんでした。「変な時間」に見えていたその沈黙が、今日の入口でした。</p>
+
+  <table class="truth-table">
+    <tr><th>見えていたマイナス</th><th>見えていなかったプラス</th></tr>
+    <tr><td>何も進んでいない時間に見える</td><td>内側で何かが動いている時間</td></tr>
+    <tr><td>見る人にとって不要に見える</td><td>リアルに内側を探している姿が教材になる</td></tr>
+    <tr><td>CMのように飛ばしたくなる</td><td>その沈黙がなければ今日のテーマは生まれなかった</td></tr>
+    <tr><td>価値がないように感じる</td><td>テーマが生まれる入口になる</td></tr>
+  </table>
+
+  <p>止まっている時間・言葉が出ない時間を「なくすべきもの」として処理しているとき、人はすでに「誰かの認知の中で、自分の時間の価値を測っている」状態にあります。</p>
+
+  <hr>
+
+  <!-- Section 07 -->
+  <div class="section-label">価値について</div>
+  <h2>花は、価値を証明するために咲かない</h2>
+
+  <p>「そもそも存在するものに、価値はあるか？」という問いに、「ある」と答えました。「では、それは証明しなきゃいけないものか？」という問いに、「証明しなきゃいけないものではない」と答えました。</p>
+  <p>その答えは、最初から自分の中にありました。</p>
+
+  <div class="fact-box">
+    <p>花は、自分の価値を証明するために咲くわけじゃない。<br>
+    ミツバチは、役に立とうとして花粉を運ぶわけじゃない。<br>
+    ただ存在して、ただ生きているだけで、結果として価値が生まれている。</p>
+  </div>
+
+  <p>人間だけが「価値がない前提」を持ち、そこからジャッジが入り、価値を証明しなければという衝動が働き、「何かしなきゃ」という焦りが生まれます。</p>
+  <p>でも価値は、証明しないと存在しないものではありません。存在しているものには、すでに価値があります。証明しようとすることで、かえって不自然になり、不自由になります。</p>
+
+  <hr>
+
+  <!-- Section 08 -->
+  <div class="section-label">反応から選択へ</div>
+  <h2>気づくことが、最初の一歩</h2>
+
+  <div class="step-box">
+    <div class="step-label">反応（気づかないとき）</div>
+    <div class="step-text">「何かしなきゃ」に動かされたまま</div>
+    <p class="step-sub">焦って動く、または止まり続ける。選択肢がない状態。不自然で、不自由。</p>
+  </div>
+
+  <div class="step-box">
+    <div class="step-label">選択（気づいたとき）</div>
+    <div class="step-text">「あ、今この状態だな」と気づいてから選ぶ</div>
+    <p class="step-sub">やってもいいし、やらなくてもいい。証明してもいいし、しなくてもいい。選べる状態。これが自然であり、自由。</p>
+  </div>
+
+  <p>気づいたからといって、すぐに何かを変えなくていい。気づくこと自体が、反応から選択への入口です。</p>
+  <p>「何かしなきゃ」という感覚に気づいた瞬間に、「今この状態だな」と思うだけでいい。それだけで、もう違います。</p>
+
+  <hr>
+
+  <!-- Section 09 -->
+  <div class="section-label">「何かしなきゃ」を悪者にしない</div>
+  <h2>この感覚は、入口になる</h2>
+
+  <p>「何かしなきゃ」という感覚が出ること自体は、問題ではありません。この感覚が出るからこそ、</p>
+  <ul class="flow-list">
+    <li>今「誰かの認知の中で価値を証明しようとしている」状態に気づける</li>
+    <li>自分が本当は何を怖れているかが見える</li>
+    <li>自分がどこに価値を置いているかが見える</li>
+    <li>自分だけの反応サインとして使えるようになる</li>
+  </ul>
+  <p>「何かしなきゃ」は、自分の内側を見る入口になる。敵ではなく、サインです。</p>
+
+  <hr>
+
+  <!-- Section 10 -->
+  <div class="section-label">あなた自身に問いかける</div>
+  <h2>今日の振り返り問い</h2>
+
+  <ul class="question-list">
+    <li>あなたの中の「何かしなきゃ」は、どんな場面で出てきますか？</li>
+    <li>沈黙や進まない時間を、あなたはどんなふうに受け取っていますか？</li>
+    <li>誰かにどう見られるかが気になって行動しようとしていることはありますか？</li>
+    <li>「役に立たなきゃ」「ちゃんとしなきゃ」「価値を出さなきゃ」——あなたの中で一番よく出てくる言葉はどれですか？</li>
+    <li>手が止まっている時間・言葉が出ない時間を、あなたはどんな言葉で評価していますか？</li>
+    <li>自分の価値を証明しようとしていると感じる場面はありますか？</li>
+    <li>「今この状態だな」と気づいた瞬間、あなたの中で何が変わりましたか？</li>
+    <li>本当は止まって感じたいのに、動かなければと思っていることはありますか？</li>
+    <li>あなた自身の「反応サイン」は何ですか？「何かしなきゃ」以外の言葉や感覚で、気づくきっかけになりそうなものを探してみてください。</li>
+    <li>反応ではなく選択するとしたら、今この場面で何を選びますか？</li>
   </ul>
 
   <hr>
 
-  <div class="section-label">Today's Core</div>
-  <h2>今日の一歩</h2>
-
-  <div class="sign-box">
-    <div class="sign-label">Your Sign</div>
-    <div class="sign-text">「なんかしなきゃ」</div>
-    <div class="sign-sub">この感覚が生まれたとき、それが気づくサイン。<br>気づいたら、それだけでいい。</div>
-  </div>
-
-  <p>気づくだけでいいんです。気づいたからどうにかしなきゃ、もう行かなくていい。</p>
-  <p>気づかなければ、そのプログラムに反応したままの生き方になる。でも気づけば、<strong>反応ではなく選択</strong>ができるようになる。</p>
-
-  <hr>
-
-  <div class="section-label">Structure</div>
-  <h2>反応と選択の違い</h2>
-
-  <div class="step-box">
-    <div class="step-num">反応（気づかないとき）</div>
-    <div class="step-text">誰かの認知の中で、自分の価値を証明しようとする</div>
-    <div class="step-sub">→ 焦り、萎縮、「なんかしなきゃ」のループ。不自然で、不自由。</div>
-  </div>
-
-  <div class="step-box">
-    <div class="step-num">選択（気づいたとき）</div>
-    <div class="step-text">やってもいいし、やらなくてもいい</div>
-    <div class="step-sub">→ 証明してもいいし、しなくてもいい。それを自分が選べる状態。これが自然であり、自由。</div>
-  </div>
-
-  <hr>
-
-  <div class="section-label">Metaphor</div>
-  <h2>花とミツバチの話</h2>
-
-  <p>花は、自分の価値を証明するために咲くわけじゃない。ミツバチは、存在意義を示すために花粉を運ぶわけじゃない。</p>
-  <p>ただ存在して、ただ生きているだけで、結果として価値が生まれている。</p>
-
-  <div class="quote-block">
-    <p>そもそも存在するものに価値はあるか？</p>
-    <p>「ある」</p>
-    <p>じゃあそれは、証明しなきゃいけないものか？</p>
-    <p>「証明しなきゃいけないものではない」</p>
-  </div>
-
-  <p>これはよっちゃん自身から出た言葉です。</p>
-
-  <hr>
-
-  <div class="section-label">Hidden Value</div>
-  <h2>沈黙には価値がある</h2>
-
-  <p>よっちゃんが「セッション中の沈黙が気になる」と言わなければ、今日のこの流れは生まれなかった。</p>
-  <p>沈黙を無意味に感じる人も半分いる。でも、その沈黙の中にこそ価値を感じる人も半分いる。</p>
-
-  <div class="truth-box">
-    <p>物事には、例外なく<strong>プラスとマイナスが半々、同時に存在</strong>している。<br>これはいついかなるときも、どのような状況でも、どのような人でも、常に真実。</p>
-  </div>
-
-  <hr>
-
-  <div class="section-label">Today's Summary</div>
-  <h2>今日のまとめ</h2>
-
-  <p>仕事の話、セッションの話、どちらも同じ構造だった。</p>
-  <p>相手の評価・視線・期待の中に、自分の価値を置きにいっているとき、「なんかしなきゃ」が生まれる。</p>
-  <p>その感覚が気づくサイン。気づいたら、それで十分。気づかなければ反応。気づけば選択。</p>
-
-  <div class="step-box">
-    <div class="step-num">よっちゃんへの宿題</div>
-    <div class="step-text">「なんかしなきゃ」を感じたとき、<br>「あ、今この状態だ」と気づくだけ。</div>
-    <div class="step-sub">どうにかしなくていい。変えようとしなくていい。<br>気づいた、それだけが今日の一歩です。</div>
+  <div class="one-line">
+    今回のかおる塾は、「何かしなきゃ」を入口に、<br>
+    誰かの認知の中で価値を証明しようとする反応に気づき、<br>
+    反応から選択へ戻るための時間でした。
   </div>
 
   <div class="footer-note">
-    このページは、かおる塾メンバー向けの振り返り教材です。<br>
+    このページはかおる塾メンバー向けの振り返り教材です。<br>
     前田薫（かおるちゃん）／2026年5月10日
   </div>
 
