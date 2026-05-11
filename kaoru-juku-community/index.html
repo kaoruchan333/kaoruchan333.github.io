@@ -71,13 +71,44 @@
       font-size: 14px;
       color: #777;
     }
+    .tag-new {
+      display: inline-block;
+      font-size: 10px;
+      background: #2a2a28;
+      color: #c4a96e;
+      border-radius: 3px;
+      padding: 1px 6px;
+      margin-left: 8px;
+      vertical-align: middle;
+      letter-spacing: 0.06em;
+    }
     .private-note {
-      margin-top: 60px;
+      margin-top: 24px;
       padding: 20px 24px;
       background: #f0ede4;
       border-radius: 8px;
       font-size: 14px;
       color: #888;
+    }
+    .skill-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      border: 1px solid #e0e0d8;
+      border-radius: 10px;
+      padding: 20px 24px;
+      transition: border-color 0.2s;
+    }
+    .skill-link:hover { border-color: #b0a890; }
+    .skill-title {
+      font-size: 17px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    .skill-desc {
+      font-size: 14px;
+      color: #777;
     }
   </style>
 </head>
@@ -88,7 +119,13 @@
     <h1>かおる塾</h1>
     <p class="subtitle">塾生専用｜振り返り教材・セッション記録</p>
 
-    <h2>振り返り教材</h2>
+    <h2>振り返り教材 SESSIONS</h2>
+
+    <a class="session-card" href="sessions/2026-05-10/">
+      <div class="session-date">2026年5月10日<span class="tag-new">NEW</span></div>
+      <div class="session-title">誰かの認知の中で、生きていませんか？</div>
+      <div class="session-desc">「なんかしなきゃ」が気づくサイン。気づいたら反応から選択へ。</div>
+    </a>
 
     <a class="session-card" href="sessions/2026-04-26/">
       <div class="session-date">2026年4月26日</div>
@@ -96,12 +133,19 @@
       <div class="session-desc">感情をキャッチするとは、「気になること」に気づくことから始まる。</div>
     </a>
 
-    <h2>塾生専用ページ</h2>
+    <h2>塾生専用ページ MEMBERS</h2>
 
     <div class="private-note">
       個人専用ページのURLは、かおるちゃんから各自に個別でお送りします。<br>
       URLは本人のみ有効です。他の方と共有しないでください。
     </div>
+
+    <h2>薫ちゃん コーチング力向上記録 COACHING SKILL</h2>
+
+    <a class="skill-link" href="coaching-skill/">
+      <div class="skill-title">セッション分析 訓練記録一覧</div>
+      <div class="skill-desc">ひとたん・みえちゃん・かおる塾ファシリテーションの分析記録。セッション前に見返す。</div>
+    </a>
 
   </div>
 </body>
