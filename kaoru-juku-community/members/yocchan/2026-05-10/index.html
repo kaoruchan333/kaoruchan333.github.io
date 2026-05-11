@@ -3,181 +3,517 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2026.5.10 よっちゃんへ｜かおる塾</title>
+  <title>よっちゃんへ｜2026.5.10 かおる塾</title>
   <style>
+    :root {
+      --ink: #2f2b26;
+      --muted: #766e64;
+      --paper: #fbfaf6;
+      --panel: #ffffff;
+      --line: #e4ded3;
+      --accent: #a87946;
+      --deep: #2e332d;
+      --soft: #f0e7d8;
+      --green: #5f7465;
+    }
+    * { box-sizing: border-box; }
     body {
-      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
-      font-size: 16px;
-      line-height: 1.9;
-      color: #333;
-      background: #faf9f6;
       margin: 0;
-      padding: 0;
+      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.9;
+      font-size: 16px;
+      letter-spacing: 0;
     }
-    .container {
-      max-width: 720px;
+    body.kj-auth-locked > *:not(#kj-auth-overlay) { display: none !important; }
+    a { color: inherit; }
+    .wrap {
+      width: min(880px, calc(100% - 36px));
       margin: 0 auto;
-      padding: 40px 24px 100px;
     }
-    .back-link {
-      font-size: 13px;
-      color: #aaa;
+    header {
+      padding: 42px 0 34px;
+      border-bottom: 1px solid var(--line);
+    }
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
       text-decoration: none;
-      margin-bottom: 40px;
-      display: inline-block;
+      font-size: 13px;
+      margin-bottom: 34px;
     }
-    .back-link:hover { color: #666; }
-    .section-title {
+    .eyebrow {
       font-size: 12px;
-      letter-spacing: 0.15em;
-      color: #aaa;
-      margin: 48px 0 16px;
-      border-bottom: 1px solid #e8e8e0;
-      padding-bottom: 8px;
+      color: var(--accent);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin: 0 0 12px;
     }
-    iframe {
-      width: 100%;
-      border: none;
-      border-radius: 10px;
-      min-height: 2400px;
+    h1 {
+      font-size: clamp(30px, 6vw, 54px);
+      line-height: 1.32;
+      margin: 0;
+      font-weight: 700;
+    }
+    .lead {
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 720px;
+    }
+    .date {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    main { padding: 34px 0 80px; }
+    section {
+      padding: 44px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    h2 {
+      font-size: clamp(24px, 4vw, 34px);
+      line-height: 1.45;
+      margin: 0 0 20px;
+    }
+    h3 {
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 0 0 10px;
+    }
+    p { margin: 0 0 18px; }
+    .note {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .key-box {
+      background: var(--deep);
+      color: #fff8e8;
+      padding: 28px;
+      border-radius: 8px;
+      margin: 26px 0;
+    }
+    .key-label {
+      color: #d4b783;
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .key-text {
+      font-size: clamp(24px, 5vw, 42px);
+      line-height: 1.35;
+      font-weight: 700;
+    }
+    .quote {
+      border-left: 4px solid var(--accent);
+      padding: 8px 0 8px 20px;
+      margin: 24px 0;
+      color: #4d463d;
+      font-size: 18px;
+      background: linear-gradient(90deg, rgba(168,121,70,.08), transparent);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+    }
+    .card-num {
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: .12em;
+      margin-bottom: 8px;
+    }
+    .flow {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+    .flow-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .flow-num {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--soft);
+      color: var(--accent);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+    }
+    .flow-body {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px 20px;
+    }
+    .practice {
+      background: #f4f0e8;
+      border: 1px solid #ded3c2;
+      border-radius: 8px;
+      padding: 24px;
+      margin-top: 22px;
+    }
+    .questions {
+      counter-reset: q;
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .questions li {
+      counter-increment: q;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px 18px 16px 52px;
+      position: relative;
+    }
+    .questions li::before {
+      content: counter(q);
+      position: absolute;
+      left: 18px;
+      top: 17px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .link-card {
+      display: block;
+      text-decoration: none;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+    .link-card strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+    .link-card span {
+      color: var(--muted);
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .signature {
+      margin-top: 30px;
+      color: var(--muted);
+    }
+    #kj-auth-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 2147483647;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f8f7f4;
+      color: #2a2a28;
+      padding: 24px;
+    }
+    #kj-auth-overlay .kj-auth-card {
+      width: min(420px, 100%);
       background: #fff;
+      border: 1px solid #e0ddd8;
+      border-radius: 14px;
+      padding: 30px 28px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.08);
+    }
+    #kj-auth-overlay .kj-auth-label {
+      font-size: 11px;
+      letter-spacing: .16em;
+      color: #b08a5c;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    #kj-auth-overlay h1 {
+      font-size: 22px;
+      line-height: 1.5;
+      margin: 0 0 10px;
+    }
+    #kj-auth-overlay p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #666;
+      margin: 0 0 18px;
+    }
+    #kj-auth-overlay input {
+      width: 100%;
+      border: 1px solid #d8d3c9;
+      border-radius: 8px;
+      padding: 13px 14px;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+    #kj-auth-overlay button {
+      width: 100%;
+      border: 0;
+      border-radius: 8px;
+      background: #2a2a28;
+      color: #f8f1df;
+      padding: 13px 16px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    #kj-auth-overlay .kj-auth-error {
+      min-height: 20px;
+      margin-top: 10px;
+      color: #9b3b2f;
+      font-size: 13px;
+    }
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 28px, 880px); }
+      header { padding-top: 30px; }
+      section { padding: 34px 0; }
+      .grid, .links { grid-template-columns: 1fr; }
+      .key-box { padding: 22px; }
+      .flow-item { grid-template-columns: 34px 1fr; }
+      .flow-num { width: 34px; height: 34px; }
+      .flow-body { padding: 16px; }
     }
   </style>
-<script>
-(function(){
-  var HASH='5ccc5274b688d517a2da7384ca2077c1b95451108b20e9456f0fd32c8e6e928e',KEY='kj_auth_v1';
-  async function sha256(s){
-    var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));
-    return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('');
-  }
-  if(localStorage.getItem(KEY)===HASH)return;
-  document.documentElement.style.visibility='hidden';
-  document.addEventListener('DOMContentLoaded',function(){
-    var o=document.createElement('div');
-    o.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:#2a2a28;z-index:9999;display:flex;align-items:center;justify-content:center;';
-    o.innerHTML='<div style="text-align:center;color:#f0e8d8;max-width:320px;padding:0 24px;width:100%;">'
-      +'<div style="font-size:11px;letter-spacing:0.2em;color:#c4a96e;margin-bottom:16px;">KAORU JUKU</div>'
-      +'<div style="font-size:22px;font-weight:bold;margin-bottom:8px;line-height:1.5;">かおる塾<br>コミュニティ</div>'
-      +'<div style="font-size:13px;color:#aaa;margin-bottom:32px;">会員限定ページです</div>'
-      +'<input id="kj-pw" type="password" placeholder="パスワードを入力" style="width:100%;box-sizing:border-box;padding:14px 16px;border:1px solid #555;border-radius:8px;background:#3a3a38;color:#f0e8d8;font-size:16px;outline:none;margin-bottom:12px;">'
-      +'<button id="kj-btn" style="width:100%;padding:14px;background:#c4a96e;color:#2a2a28;border:none;border-radius:8px;font-size:15px;font-weight:bold;cursor:pointer;">入る</button>'
-      +'<div id="kj-err" style="color:#e07070;font-size:13px;margin-top:12px;min-height:20px;"></div>'
-      +'</div>';
-    document.body.appendChild(o);
-    document.documentElement.style.visibility='visible';
-    var inp=document.getElementById('kj-pw');
-    var err=document.getElementById('kj-err');
-    async function check(){
-      var h=await sha256(inp.value);
-      if(h===HASH){localStorage.setItem(KEY,HASH);o.remove();}
-      else{err.textContent='パスワードが違います';inp.value='';inp.focus();}
-    }
-    document.getElementById('kj-btn').addEventListener('click',check);
-    inp.addEventListener('keydown',function(e){if(e.key==='Enter')check();});
-    inp.focus();
-  });
-})();
-</script>
-
-<style id="kaoru-juku-password-guard-v1-style">
-  body.kj-auth-locked > *:not(#kj-auth-overlay) { display: none !important; }
-  #kj-auth-overlay {
-    position: fixed; inset: 0; z-index: 2147483647;
-    display: flex; align-items: center; justify-content: center;
-    background: #f8f7f4; color: #2a2a28;
-    font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
-    padding: 24px;
-  }
-  #kj-auth-overlay .kj-auth-card {
-    width: min(420px, 100%); background: #fff; border: 1px solid #e0ddd8;
-    border-radius: 14px; padding: 30px 28px; box-shadow: 0 18px 50px rgba(0,0,0,0.08);
-  }
-  #kj-auth-overlay .kj-auth-label {
-    font-size: 11px; letter-spacing: 0.16em; color: #b08a5c; text-transform: uppercase; margin-bottom: 8px;
-  }
-  #kj-auth-overlay h1 { font-size: 22px; line-height: 1.5; margin: 0 0 10px; }
-  #kj-auth-overlay p { font-size: 14px; line-height: 1.8; color: #666; margin: 0 0 18px; }
-  #kj-auth-overlay input {
-    width: 100%; box-sizing: border-box; border: 1px solid #d8d3c9; border-radius: 8px;
-    padding: 13px 14px; font-size: 16px; margin-bottom: 12px;
-  }
-  #kj-auth-overlay button {
-    width: 100%; border: 0; border-radius: 8px; background: #2a2a28; color: #f8f1df;
-    padding: 13px 16px; font-size: 15px; cursor: pointer;
-  }
-  #kj-auth-overlay .kj-auth-error { min-height: 20px; margin-top: 10px; color: #9b3b2f; font-size: 13px; }
-</style>
 </head>
 <body class="kj-auth-locked">
-  <div class="container">
+  <header>
+    <div class="wrap">
+      <a class="back" href="../">← よっちゃん専用ページへ戻る</a>
+      <p class="eyebrow">Kaoru Juku / Personal Review</p>
+      <h1>よっちゃんへ。<br>「なんかしなきゃ」は、気づくためのサインです。</h1>
+      <p class="lead">
+        2026年5月10日のグループコーチングで見えてきたことを、よっちゃん自身があとから読み返せるようにまとめました。
+        正解を急ぐページではなく、「あ、今この状態かも」と気づくためのページです。
+      </p>
+      <p class="date">2026年5月10日 かおる塾グループコーチング</p>
+    </div>
+  </header>
 
-    <a class="back-link" href="../">← よっちゃんのページへ戻る</a>
+  <main class="wrap">
+    <section>
+      <h2>今回のセッションで起きたこと</h2>
+      <p>
+        最初は「特に何もない」「変化もない」から始まりました。
+        でも、話していくうちに、仕事で手が止まる場面と、グループコーチングの沈黙が気になる場面が、同じ構造でつながっていることが見えてきました。
+      </p>
+      <div class="quote">
+        「この動画って、みんなにためになる話の方がいいんじゃないかなとか」
+      </div>
+      <p>
+        この一言が、今回の入口でした。よっちゃんが「みんなにとって役に立つか」を気にした瞬間、
+        そこには「誰かの認知の中で、自分の価値を確かめようとする動き」がありました。
+      </p>
 
-    <div class="section-title">2026年5月10日 グループコーチング</div>
+      <div class="key-box">
+        <div class="key-label">Today's Key</div>
+        <div class="key-text">誰かにどう見られるかを気にしたとき、自分の価値を外に預けているかもしれない。</div>
+      </div>
+    </section>
 
-    <iframe src="gift.html" scrolling="no" onload="this.style.minHeight=(this.contentWindow.document.body.scrollHeight+40)+'px'"></iframe>
+    <section>
+      <h2>仕事の話と、沈黙の話はつながっていました</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="card-num">SCENE 01</div>
+          <h3>仕事で手が止まるとき</h3>
+          <p>
+            資料作成や苦手な作業で止まるとき、「できない人と思われるかもしれない」という怖さが出てくる。
+            作業そのものよりも、誰かの評価の中に入ってしまうことが重くなる。
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-num">SCENE 02</div>
+          <h3>セッションの沈黙が気になるとき</h3>
+          <p>
+            自分の話が「みんなの役に立っていないのでは」と感じる。
+            その瞬間、自分の体験を、自分のものとしてではなく、誰かのために正しくしようとしている。
+          </p>
+        </div>
+      </div>
+      <p>
+        別々の話に見えて、根っこは同じでした。
+        「誰かにどう見られるか」の中に入ると、自分の今の感じや本音よりも、外側の評価が先に立ってしまう。
+      </p>
+    </section>
 
-    <div class="section-title" style="margin-top:60px;">振り返り教材（全体共有版）</div>
+    <section>
+      <h2>よっちゃん自身が見つけたサイン</h2>
+      <p>今回いちばん大事だったのは、よっちゃん自身の言葉でサインが出てきたことです。</p>
+      <div class="key-box">
+        <div class="key-label">Your Sign</div>
+        <div class="key-text">「なんかしなきゃ」</div>
+      </div>
+      <p>
+        この感覚が出たとき、すぐに頑張らなくて大丈夫です。
+        変えようとしなくても大丈夫です。
+        まず「あ、今、誰かの認知の中に入っているかもしれない」と気づくだけでいい。
+      </p>
+      <div class="practice">
+        <h3>次までの小さな練習</h3>
+        <p>
+          「なんかしなきゃ」が出たら、心の中で一回だけこう言ってみてください。
+        </p>
+        <p><strong>「今、私は誰の目で自分を見ようとしているんだろう？」</strong></p>
+        <p class="note">答えが出なくても大丈夫です。問いを置けた時点で、反応から少し離れています。</p>
+      </div>
+    </section>
 
-    <iframe src="../../sessions/2026-05-10/" scrolling="no" onload="this.style.minHeight=(this.contentWindow.document.body.scrollHeight+40)+'px'"></iframe>
+    <section>
+      <h2>セッションの流れ</h2>
+      <div class="flow">
+        <div class="flow-item">
+          <div class="flow-num">1</div>
+          <div class="flow-body">
+            <h3>「特にない」から始まった</h3>
+            <p>大きなテーマがあるようには見えないところから、丁寧に今の状態を見ていきました。</p>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-num">2</div>
+          <div class="flow-body">
+            <h3>仕事で嫌になるポイントを見た</h3>
+            <p>苦手な作業そのものより、「できない人と思われる怖さ」が奥にあることが見えてきました。</p>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-num">3</div>
+          <div class="flow-body">
+            <h3>沈黙への反応とつながった</h3>
+            <p>「みんなの役に立つ話の方がいいのでは」という一言から、同じ構造が見えました。</p>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-num">4</div>
+          <div class="flow-body">
+            <h3>身体のサインが出てきた</h3>
+            <p>その状態のときに出る感覚として、「なんかしなきゃ」という言葉が出てきました。</p>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-num">5</div>
+          <div class="flow-body">
+            <h3>存在の価値に戻った</h3>
+            <p>花やミツバチの話を通じて、価値は証明しなければ存在しないものではない、という確認に戻りました。</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  </div>
+    <section>
+      <h2>読み返すときの問い</h2>
+      <p>このページは、落ち込んだときに正解を探すためではなく、自分の現在地に気づくために使ってください。</p>
+      <ol class="questions">
+        <li>最近「なんかしなきゃ」と感じた場面はどこでしたか？</li>
+        <li>そのとき、誰にどう見られることを気にしていましたか？</li>
+        <li>本当は、自分は何を感じていましたか？</li>
+        <li>その場で何かを変えなくても、「気づいた」と言える部分はありますか？</li>
+        <li>自分の価値を証明しようとしなくていいとしたら、今できる小さな選択は何ですか？</li>
+      </ol>
+    </section>
 
-<script id="kaoru-juku-password-guard-v1">
-(function() {
-  const PASS_HASH = '5ccc5274b688d517a2da7384ca2077c1b95451108b20e9456f0fd32c8e6e928e';
-  const STORAGE_KEY = 'kaoru_juku_auth_v1';
-  function unlock() {
-    document.body.classList.remove('kj-auth-locked');
-    const overlay = document.getElementById('kj-auth-overlay');
-    if (overlay) overlay.remove();
-  }
-  async function sha256(text) {
-    const data = new TextEncoder().encode(text);
-    const hash = await crypto.subtle.digest('SHA-256', data);
-    return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
-  }
-  async function checkSaved() {
-    if (localStorage.getItem(STORAGE_KEY) === PASS_HASH) unlock();
-  }
-  function render() {
-    if (!document.body.classList.contains('kj-auth-locked')) return;
-    const overlay = document.createElement('div');
-    overlay.id = 'kj-auth-overlay';
-    overlay.innerHTML = `
-      <div class="kj-auth-card">
-        <div class="kj-auth-label">Kaoru Juku Members</div>
-        <h1>かおる塾メンバー専用ページ</h1>
-        <p>このページを見るには、メンバー用パスワードを入力してください。</p>
-        <input type="password" id="kj-auth-password" autocomplete="current-password" placeholder="パスワード">
-        <button type="button" id="kj-auth-submit">表示する</button>
-        <div class="kj-auth-error" id="kj-auth-error"></div>
-      </div>`;
-    document.body.appendChild(overlay);
-    const input = document.getElementById('kj-auth-password');
-    const error = document.getElementById('kj-auth-error');
-    async function submit() {
-      const digest = await sha256(input.value || '');
-      if (digest === PASS_HASH) {
-        localStorage.setItem(STORAGE_KEY, PASS_HASH);
-        unlock();
-      } else {
-        error.textContent = 'パスワードが違います。';
-        input.value = '';
-        input.focus();
-      }
+    <section>
+      <h2>よっちゃんへのメッセージ</h2>
+      <p>
+        今回のセッションは、派手な答えが出た回ではありません。
+        でも、よっちゃんが日常で何度も出会っている「なんかしなきゃ」という感覚に名前がついた回でした。
+      </p>
+      <p>
+        名前がつくと、気づけます。
+        気づけると、反応だけではなく選択が生まれます。
+        だからまずは、次の2週間で「なんかしなきゃ」が出た瞬間を、ひとつ見つけてみてください。
+      </p>
+      <p>また次回、その場面を一緒に見ていきましょう。</p>
+      <p class="signature">前田薫</p>
+    </section>
+
+    <section>
+      <h2>関連ページ</h2>
+      <p class="note">同じパスワードで見られます。まずはこのページだけ読めば大丈夫です。</p>
+      <div class="links">
+        <a class="link-card" href="../../../sessions/2026-05-10/">
+          <strong>5/10 振り返り教材（全員向け）</strong>
+          <span>今回のテーマを塾生さん全体向けに整理した教材です。</span>
+        </a>
+        <a class="link-card" href="../">
+          <strong>よっちゃん専用トップ</strong>
+          <span>過去分の個人ページもここから見られます。</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script id="kaoru-juku-password-guard-v1">
+  (function() {
+    const PASS_HASH = '5ccc5274b688d517a2da7384ca2077c1b95451108b20e9456f0fd32c8e6e928e';
+    const STORAGE_KEY = 'kaoru_juku_auth_v1';
+    function unlock() {
+      document.body.classList.remove('kj-auth-locked');
+      const overlay = document.getElementById('kj-auth-overlay');
+      if (overlay) overlay.remove();
     }
-    document.getElementById('kj-auth-submit').addEventListener('click', submit);
-    input.addEventListener('keydown', function(e) { if (e.key === 'Enter') submit(); });
-    setTimeout(() => input.focus(), 50);
-  }
-  checkSaved();
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', render);
-  } else {
-    render();
-  }
-})();
-</script>
+    async function sha256(text) {
+      const data = new TextEncoder().encode(text);
+      const hash = await crypto.subtle.digest('SHA-256', data);
+      return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+    async function checkSaved() {
+      if (localStorage.getItem(STORAGE_KEY) === PASS_HASH) unlock();
+    }
+    function render() {
+      if (!document.body.classList.contains('kj-auth-locked')) return;
+      const overlay = document.createElement('div');
+      overlay.id = 'kj-auth-overlay';
+      overlay.innerHTML = `
+        <div class="kj-auth-card">
+          <div class="kj-auth-label">Kaoru Juku Members</div>
+          <h1>かおる塾メンバー専用ページ</h1>
+          <p>このページを見るには、メンバー用パスワードを入力してください。</p>
+          <input type="password" id="kj-auth-password" autocomplete="current-password" placeholder="パスワード">
+          <button type="button" id="kj-auth-submit">表示する</button>
+          <div class="kj-auth-error" id="kj-auth-error"></div>
+        </div>`;
+      document.body.appendChild(overlay);
+      const input = document.getElementById('kj-auth-password');
+      const error = document.getElementById('kj-auth-error');
+      async function submit() {
+        const digest = await sha256(input.value || '');
+        if (digest === PASS_HASH) {
+          localStorage.setItem(STORAGE_KEY, PASS_HASH);
+          unlock();
+        } else {
+          error.textContent = 'パスワードが違います。';
+          input.value = '';
+          input.focus();
+        }
+      }
+      document.getElementById('kj-auth-submit').addEventListener('click', submit);
+      input.addEventListener('keydown', function(e) { if (e.key === 'Enter') submit(); });
+      setTimeout(() => input.focus(), 50);
+    }
+    checkSaved();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', render);
+    } else {
+      render();
+    }
+  })();
+  </script>
 </body>
 </html>
