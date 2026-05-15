@@ -683,6 +683,92 @@
       white-space: nowrap;
     }
 
+    .human-section {
+      background:
+        linear-gradient(180deg, rgba(255, 253, 248, 0.82), rgba(243, 234, 220, 0.72));
+    }
+
+    .human-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .human-card {
+      position: relative;
+      display: flex;
+      min-height: 280px;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(23, 21, 19, 0.12);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, 0.74);
+    }
+
+    .human-card::before {
+      content: "";
+      position: absolute;
+      inset: auto 22px 22px auto;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: rgba(168, 137, 80, 0.11);
+      transform: scale(0.72);
+      transition: transform 820ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .human-card.reveal.is-visible::before {
+      transform: scale(1);
+    }
+
+    .human-card .tag {
+      position: relative;
+      z-index: 1;
+      color: var(--clay);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .human-card h3 {
+      position: relative;
+      z-index: 1;
+      margin-top: 28px;
+      color: var(--deep);
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .human-card p {
+      position: relative;
+      z-index: 1;
+      margin: 16px 0 24px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .human-card a {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      min-height: 40px;
+      padding: 0 15px;
+      border: 1px solid rgba(47, 78, 66, 0.28);
+      border-radius: 999px;
+      color: var(--green);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
     .cta {
       padding: 96px 0;
       color: #fff;
@@ -800,7 +886,8 @@
 
       .grid.three,
       .grid.four,
-      .flow {
+      .flow,
+      .human-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
@@ -829,6 +916,7 @@
       .grid.three,
       .grid.four,
       .flow,
+      .human-grid,
       .case-row {
         grid-template-columns: 1fr;
       }
@@ -1182,6 +1270,47 @@
       </div>
     </section>
 
+    <section class="human-section">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">ANOTHER SIDE</div>
+          <div>
+            <h2>前田薫を、もう少し知る。</h2>
+            <p>仕事の説明だけでは伝わりきらない、天川村での日常があります。猫と歩くこと、川に入ること、問いを文章に残すこと。その全部が、場をつくる感覚の土台になっています。</p>
+          </div>
+        </div>
+
+        <div class="human-grid">
+          <article class="human-card">
+            <div>
+              <div class="tag">HIMI / INSTAGRAM</div>
+              <h3>猫のひみと歩く、天空の秘境。</h3>
+              <p>フォロワー13,000人を超える猫のひみのInstagram。猫との散歩を通して、天川村の川、雪、朝の光、祈りの気配を届けています。</p>
+            </div>
+            <a href="https://www.instagram.com/utsuke.himi_kaoruchan/" target="_blank" rel="noopener">Instagramを見る</a>
+          </article>
+
+          <article class="human-card">
+            <div>
+              <div class="tag">NOTE</div>
+              <h3>noteで読む、前田薫の言葉。</h3>
+              <p>コーチング、天川村、家族、AI、寺子屋。日々の出来事を通して、何を見て、何を問い続けているのかを文章にしています。</p>
+            </div>
+            <a href="https://note.com/nanbodemo" target="_blank" rel="noopener">noteを読む</a>
+          </article>
+
+          <article class="human-card">
+            <div>
+              <div class="tag">LIFE IN TENKAWA</div>
+              <h3>地域と関わることは、自分に還ること。</h3>
+              <p>幼少期から泥川に惹かれ、天川村に来たというより呼ばれた感覚がある。地域に合わせるのではなく、自分の反応に気づきながら、この土地と関わり続けています。</p>
+            </div>
+            <a href="https://note.com/nanbodemo" target="_blank" rel="noopener">背景をnoteで読む</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="links">
       <div class="section-inner">
         <div class="section-heading">
@@ -1319,7 +1448,7 @@
   <script>
     (() => {
       const targets = document.querySelectorAll(
-        "main section, .section-heading, .definition, .panel, .flow-step, .photo, .offer-card, .case-row, .active-row, .cta .section-inner"
+        "main section, .section-heading, .definition, .panel, .flow-step, .photo, .offer-card, .case-row, .human-card, .active-row, .cta .section-inner"
       );
 
       targets.forEach((el, index) => {
