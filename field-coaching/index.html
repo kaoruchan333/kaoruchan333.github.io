@@ -118,10 +118,10 @@
       position: relative;
       min-height: calc(100svh - 60px);
       display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(420px, 0.82fr);
+      grid-template-columns: minmax(0, 0.82fr) minmax(480px, 1.08fr);
       align-items: center;
-      gap: clamp(28px, 5vw, 74px);
-      padding: 78px max(32px, calc((100vw - 1160px) / 2)) 76px;
+      gap: clamp(24px, 4.4vw, 64px);
+      padding: 64px max(32px, calc((100vw - 1160px) / 2)) 64px;
       border-bottom: 1px solid var(--line);
       overflow: hidden;
       background:
@@ -178,12 +178,12 @@
     }
 
     h1 {
-      max-width: 11em;
+      max-width: 10.8em;
       font-family: var(--serif);
-      font-size: clamp(42px, 6.2vw, 86px);
+      font-size: clamp(32px, 3.35vw, 48px);
       font-weight: 500;
       letter-spacing: 0.035em;
-      line-height: 1.42;
+      line-height: 1.54;
       color: #fff;
     }
 
@@ -191,12 +191,15 @@
       color: var(--deep);
     }
 
-    h1 span { display: block; }
+    h1 span {
+      display: block;
+      white-space: nowrap;
+    }
 
     .lead {
       max-width: 35em;
-      margin: 28px 0 0;
-      font-size: clamp(16px, 1.45vw, 20px);
+      margin: 24px 0 0;
+      font-size: clamp(15px, 1.18vw, 18px);
       line-height: 1.96;
       color: rgba(255, 255, 255, 0.82);
     }
@@ -240,7 +243,7 @@
       inset: auto;
       z-index: 0;
       min-height: 0;
-      height: min(72svh, 640px);
+      height: min(76svh, 680px);
       overflow: hidden;
       border-radius: var(--radius);
       box-shadow: 0 32px 90px rgba(23, 21, 19, 0.18);
@@ -774,10 +777,10 @@
       }
     }
 
-    @media (max-width: 1040px) {
+    @media (max-width: 920px) {
       .hero {
         grid-template-columns: 1fr;
-        padding: 58px 16px 64px;
+        padding: 46px 16px 58px;
       }
 
       .section-heading,
@@ -792,7 +795,7 @@
 
       .hero-image {
         width: 100%;
-        height: min(58svh, 520px);
+        height: min(50svh, 460px);
       }
 
       .grid.three,
@@ -819,7 +822,7 @@
         padding-top: 46px;
       }
 
-      h1 { font-size: 40px; }
+      h1 { font-size: 36px; }
       section { padding: 60px 0; }
 
       .grid.two,
