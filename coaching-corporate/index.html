@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>法人向け 場のコーチング｜前田薫</title>
+  <meta name="description" content="経営者・幹部・次世代リーダーの本来性を引き出し、組織の対話文化と意思決定を整える法人向け伴走プログラム。前田薫の場のコーチング。">
+  <style>
+    :root {
+      --ink: #171512;
+      --char: #2d2924;
+      --muted: #70685f;
+      --cream: #fbf8f1;
+      --paper: #fffdf8;
+      --line: rgba(23, 21, 18, 0.12);
+      --gold: #9b7440;
+      --green: #28443a;
+      --clay: #8b5f43;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--char);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", sans-serif;
+      line-height: 1.85;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      background: rgba(251, 248, 241, 0.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .hero {
+      min-height: calc(100vh - 62px);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-copy {
+      align-self: center;
+      width: min(720px, calc(100% - 56px));
+      margin-left: auto;
+      padding: 96px 56px 84px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 38px;
+      height: 1px;
+      background: var(--green);
+    }
+
+    h1, h2, h3 { margin: 0; letter-spacing: 0; line-height: 1.35; }
+
+    h1 {
+      font-size: clamp(38px, 4.6vw, 68px);
+      font-weight: 850;
+      max-width: 10.8em;
+      color: var(--ink);
+    }
+
+    h1 span { display: block; }
+
+    .lead {
+      max-width: 42em;
+      margin: 30px 0 0;
+      font-size: clamp(16px, 1.4vw, 20px);
+      line-height: 1.95;
+      color: #3d3832;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .hero-image {
+      min-height: calc(100vh - 62px);
+      background:
+        linear-gradient(180deg, rgba(23,21,18,0.1), rgba(23,21,18,0.48)),
+        url("../site-assets/home/lecture-room.jpg") center / cover;
+    }
+
+    .section {
+      padding: 86px 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section.dark {
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    .section-inner {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 0.32fr 1fr;
+      gap: 42px;
+      margin-bottom: 42px;
+      align-items: start;
+    }
+
+    .kicker {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(28px, 3.2vw, 46px);
+      font-weight: 820;
+      color: var(--ink);
+    }
+
+    .dark h2 { color: var(--cream); }
+
+    .section-heading p,
+    .muted {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 48em;
+    }
+
+    .dark .muted,
+    .dark .section-heading p {
+      color: rgba(251, 248, 241, 0.72);
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .panel,
+    .price-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 26px;
+    }
+
+    .panel h3,
+    .price-card h3 {
+      font-size: 20px;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .panel p,
+    .price-card p {
+      color: #504941;
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .large-text {
+      font-size: clamp(22px, 2.2vw, 32px);
+      line-height: 1.75;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .image-split {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .photo {
+      min-height: 430px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #ddd;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: rgba(251, 248, 241, 0.18);
+      border: 1px solid rgba(251, 248, 241, 0.18);
+    }
+
+    .step {
+      padding: 28px;
+      background: var(--ink);
+      min-height: 210px;
+    }
+
+    .step span {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .step h3 {
+      color: var(--cream);
+      margin: 18px 0 10px;
+      font-size: 20px;
+    }
+
+    .step p {
+      color: rgba(251, 248, 241, 0.72);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .price-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 430px;
+    }
+
+    .price {
+      margin: 18px 0 14px;
+      color: var(--ink);
+      font-size: 34px;
+      font-weight: 900;
+      line-height: 1.15;
+    }
+
+    .price small {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    ul {
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      position: relative;
+      padding: 10px 0 10px 18px;
+      border-top: 1px solid var(--line);
+      color: #504941;
+      font-size: 14px;
+    }
+
+    li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 20px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .note {
+      margin-top: 22px;
+      padding: 18px;
+      border-radius: 8px;
+      background: rgba(155, 116, 64, 0.12);
+      color: #5b4428;
+      font-size: 14px;
+    }
+
+    .case-row {
+      display: grid;
+      grid-template-columns: 0.34fr 1fr;
+      gap: 32px;
+      padding: 24px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .case-row h3 { font-size: 19px; color: var(--ink); }
+    .case-row p { margin: 0; color: #504941; }
+
+    .cta {
+      background:
+        linear-gradient(90deg, rgba(23,21,18,0.92), rgba(23,21,18,0.66)),
+        url("../site-assets/home/goma-fire.jpg") center / cover;
+      color: var(--cream);
+      padding: 96px 28px;
+    }
+
+    .cta h2 { color: var(--cream); max-width: 780px; }
+    .cta p { max-width: 700px; color: rgba(251, 248, 241, 0.78); }
+    .cta .button { background: var(--cream); color: var(--ink); border-color: var(--cream); }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 26px 28px;
+      color: var(--muted);
+      font-size: 13px;
+      background: var(--paper);
+    }
+
+    .tag-label {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 3px 9px;
+      border-radius: 4px;
+      background: rgba(155, 116, 64, 0.14);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.07em;
+    }
+
+    .subsidy-amount {
+      margin-top: 16px;
+      padding: 10px 14px;
+      border-radius: 6px;
+      background: rgba(40, 68, 58, 0.08);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .scheme-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(251, 248, 241, 0.12);
+      border: 1px solid rgba(251, 248, 241, 0.12);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 42px;
+    }
+
+    .scheme-card {
+      padding: 30px 26px;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .scheme-label {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+    }
+
+    .scheme-card h3 {
+      color: var(--cream);
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .scheme-card p {
+      color: rgba(251, 248, 241, 0.70);
+      font-size: 14px;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .scheme-badge {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 5px 11px;
+      border-radius: 4px;
+      background: rgba(155, 116, 64, 0.20);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .fit-box {
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+    }
+
+    .fit-box.yes { background: rgba(40, 68, 58, 0.06); border-color: rgba(40, 68, 58, 0.2); }
+    .fit-box.no  { background: rgba(139, 95, 67, 0.06); border-color: rgba(139, 95, 67, 0.18); }
+
+    .fit-box h4 {
+      margin: 0 0 14px;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+    }
+
+    .fit-box.yes h4 { color: var(--green); }
+    .fit-box.no h4  { color: var(--clay); }
+
+    .fit-box ul { margin: 0; padding: 0; list-style: none; }
+    .fit-box li { padding: 8px 0 8px 16px; border-top: 1px solid var(--line); font-size: 14px; color: #504941; }
+    .fit-box li::before { background: var(--green); }
+    .fit-box.no li::before { background: var(--clay); }
+
+    .faq-list { margin-top: 32px; }
+
+    .faq-item {
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .faq-item:last-child { border-bottom: 1px solid var(--line); }
+
+    .faq-item dt {
+      font-weight: 800;
+      font-size: 16px;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .faq-item dd {
+      margin: 0;
+      color: #504941;
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    .schedule-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .schedule-day {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+    }
+
+    .schedule-day h4 {
+      margin: 0 0 16px;
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--green);
+      letter-spacing: 0.08em;
+    }
+
+    .schedule-day dl { margin: 0; }
+
+    .schedule-item {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 12px;
+      padding: 10px 0;
+      border-top: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    .schedule-item dt { color: var(--muted); font-weight: 700; }
+    .schedule-item dd { margin: 0; color: #504941; }
+
+    @media (max-width: 980px) {
+      .hero,
+      .section-heading,
+      .image-split,
+      .case-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        width: min(760px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 72px 0 52px;
+      }
+
+      .hero-image { min-height: 52vh; }
+      .grid.three, .grid.two, .process, .scheme-wrap, .fit-grid, .schedule-box { grid-template-columns: 1fr; }
+      .photo, .photo img { min-height: 320px; }
+      .nav-links { display: none; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">前田薫｜法人向け 場のコーチング</div>
+    <div class="nav-links">
+      <a href="#value">価値</a>
+      <a href="#program">プログラム</a>
+      <a href="#price">料金</a>
+      <a href="#cases">実績</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Corporate Field Coaching</div>
+        <h1><span>内省だけで終わらせない。</span><span>天川村の静寂で芯を捉え、</span><span>AIの速度で組織を動かす。</span></h1>
+        <p class="lead">理念はある。会議もしている。1on1も導入している。けれど、どこか本音が出ない。幹部の対話が深まらない。経営者の想いが現場の言葉になっていかない。<br><br>場のコーチングは、経営者・幹部・チームの中にある未整理の本音を扱い、判断軸・関係性・対話文化を整える法人向けプログラムです。</p>
+        <div class="hero-actions">
+          <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSeF0o2ALxK9Jd0WE2izpVzh8s9z2way320YtlIYmt92kjcC4A/viewform" target="_blank" rel="noopener noreferrer">法人相談を申し込む</a>
+          <a class="button secondary" href="#price">料金を見る</a>
+        </div>
+      </div>
+      <div class="hero-image" aria-label="対話と講座の場"></div>
+    </section>
+
+    <section class="section" id="value">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">Why Corporate</div>
+          <div>
+            <h2>法人向けは、個人コーチングの延長ではありません。</h2>
+            <p>扱うのは一人の人生だけではなく、経営判断、幹部の関係性、組織文化、次世代育成、採用・定着、地域や顧客との関係です。だから価格も、責任範囲も、設計も変わります。</p>
+          </div>
+        </div>
+
+        <div class="grid three">
+          <article class="panel">
+            <h3>経営者の言葉が整う</h3>
+            <p>事実と認知を分け、感情の奥にある本音を言語化することで、経営者自身の判断軸を整えます。</p>
+          </article>
+          <article class="panel">
+            <h3>幹部の対話が深まる</h3>
+            <p>正しさのぶつけ合いではなく、互いの背景・願い・恐れを扱えるチームへ進めます。</p>
+          </article>
+          <article class="panel">
+            <h3>組織の場が変わる</h3>
+            <p>会議、研修、合宿、日常の1on1が、問いと対話が起きる場へ変わっていきます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner image-split">
+        <div class="photo">
+          <img src="../site-assets/home/river-light.jpg" alt="天川村の水辺の光">
+        </div>
+        <div>
+          <div class="kicker">Core Value</div>
+          <p class="large-text">企業に必要なのは、きれいな理念を増やすことではなく、理念が日々の判断・関係・行動に戻ることです。</p>
+          <p class="muted">前田薫の法人向け場のコーチングは、理念研修やモチベーション研修ではありません。経営者や幹部が、自分の言葉で本当に大切にしているものを語り、チームの現実と接続するための伴走です。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="program">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">Process</div>
+          <div>
+            <h2>企業の中に、問いと対話の文化を実装する。</h2>
+            <p>研修を一度やって終わりではなく、経営者・幹部・チームが自分たちで問い続けられる状態をつくります。</p>
+          </div>
+        </div>
+
+        <div class="process">
+          <article class="step">
+            <span>01</span>
+            <h3>聴く</h3>
+            <p>経営者・責任者から、組織の違和感、願い、詰まり、未来像を聞きます。</p>
+          </article>
+          <article class="step">
+            <span>02</span>
+            <h3>見立てる</h3>
+            <p>表面の課題ではなく、その会社が本当に扱うべき問いを言語化します。</p>
+          </article>
+          <article class="step">
+            <span>03</span>
+            <h3>場をつくる</h3>
+            <p>対話会、幹部研修、天川リトリート、1on1伴走などを設計します。</p>
+          </article>
+          <article class="step">
+            <span>04</span>
+            <h3>定着させる</h3>
+            <p>会議・判断・育成の中に、問いと対話の型が残るように整えます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner image-split">
+        <div>
+          <div class="kicker">Why Tenkawa × AI</div>
+          <h2>なぜ今、天川村とAIなのか。</h2>
+          <p class="large-text">情報過多な現代、経営者に必要なのは「思考を止める場所」と「思考を加速させる道具」の両極です。</p>
+          <p class="muted" style="margin-top:16px;">天川村は思考のノイズを遮断し、身体と感覚を通して本音を引き出す場所です。AI秘書（Claude Code）は、そこで生まれた洞察を翌週から動けるレベルの企画書・組織指針・実装導線に変える道具です。<br><br>多くの経営合宿は「いい話だった」で終わります。このプログラムは、山を降りた後の実装スピードまで責任を持ちます。静（内省・天川村）で芯を定め、動（AI・実装）で一気に形にする——これが場のコーチングの独自性です。</p>
+        </div>
+        <div class="photo">
+          <img src="../site-assets/home/meditation-window.jpg" alt="静と動">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">What We Do</div>
+          <div>
+            <h2>実際に行うこと。</h2>
+            <p>企業ごとに組み合わせは変わります。以下が設計の素材です。</p>
+          </div>
+        </div>
+        <div class="grid two">
+          <div>
+            <div class="case-row"><h3>聴く・整理する</h3><p>経営者・幹部へのヒアリング。組織内の違和感・願い・認知のズレを言語化する。</p></div>
+            <div class="case-row"><h3>場をつくる</h3><p>幹部対話会のファシリテーション。天川村でのリトリート型研修。座禅・自然体験・修験道文脈を活かした内省時間。</p></div>
+            <div class="case-row"><h3>言葉を残す</h3><p>対話後の言語化レポート作成。経営理念・判断軸・行動指針への落とし込み。</p></div>
+          </div>
+          <div>
+            <div class="case-row"><h3>仕組みを整える</h3><p>会議アジェンダ・振り返りシートの設計。問いと対話が日常に残る場の型をつくる。</p></div>
+            <div class="case-row"><h3>実装する</h3><p>AI秘書を活用した議事録・企画書・導線整理。高速で「見える形」に変えて、組織に渡す。</p></div>
+            <div class="case-row"><h3>伴走する</h3><p>月次フォロー対話。経営者・幹部が自分たちで問い続けられる状態になるまで続ける。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="price">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">Investment</div>
+          <div>
+            <h2>法人向けの適正価格。</h2>
+            <p>この料金は、単なる研修費ではありません。事前ヒアリング、場の設計、当日のファシリテーション、対話後の言語化、組織への定着支援までを含めた伴走費用です。扱うテーマが経営判断・幹部関係・組織文化・人材育成に及ぶため、個人向けコーチングとは別設計になります。</p>
+          </div>
+        </div>
+
+        <div class="grid three">
+          <article class="price-card">
+            <h3>経営者 / 役員 個別伴走</h3>
+            <p>経営者、後継者、役員が、自分の判断軸・使命・組織との関わり方を整える個別伴走。</p>
+            <div class="price">120万円〜<small>6ヶ月 / 税別・実費別</small></div>
+            <ul>
+              <li>月2回の個別セッション</li>
+              <li>セッション間のメッセージ相談</li>
+              <li>意思決定・人間関係・事業構想の整理</li>
+              <li>必要に応じたAI秘書活用の設計</li>
+            </ul>
+          </article>
+
+          <article class="price-card">
+            <h3>幹部チーム対話プログラム</h3>
+            <p>経営者と幹部が、会社の本音・役割・未来像を同じテーブルで扱うためのチーム伴走。</p>
+            <div class="price">180万円〜<small>3ヶ月 / 税別・実費別</small></div>
+            <ul>
+              <li>事前ヒアリング</li>
+              <li>幹部対話会 3〜4回</li>
+              <li>経営者個別セッション</li>
+              <li>会議アジェンダ・振り返りシート作成</li>
+            </ul>
+          </article>
+
+          <article class="price-card">
+            <h3>組織変容 / 場づくり伴走</h3>
+            <p>企業研修、天川村リトリート、次世代育成、地域連携まで含めて設計する本格伴走。</p>
+            <div class="price">300万円〜<small>6ヶ月 / 税別・実費別</small></div>
+            <ul>
+              <li>経営者・幹部ヒアリング</li>
+              <li>研修 / リトリート / 対話会設計</li>
+              <li>参加者導線・案内ページ制作</li>
+              <li>AI秘書を使った継続運用設計</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="note">単発研修は35万円〜80万円程度、天川村でのリトリートや宿泊型プログラムは内容・人数・安全管理・宿泊/食事/交通により別途見積もり。法人向けは「安く始める」よりも、責任範囲と成果物を明確にすることを優先します。</div>
+      </div>
+    </section>
+
+    <section class="section" id="subsidy">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">Subsidy &amp; Policy</div>
+          <div>
+            <h2>公的支援と組み合わせると、企業の実質負担が変わる可能性があります。</h2>
+            <p>天川村の場のコーチングは、企業の研修予算・行政の地域づくり予算・企業の社会貢献予算という3つの財布を接続できる設計です。ただし、どの制度も「要件適合」が前提です。以下は制度の概要です。</p>
+          </div>
+        </div>
+
+        <div class="grid three">
+          <article class="panel">
+            <div class="tag-label">企業が申請</div>
+            <h3>人材開発支援助成金（厚労省）</h3>
+            <p>本プログラムのうち「リーダーシップ開発」「対話・コーチング技術」「組織開発訓練」に該当する部分は、職務能力との接続を明記したカリキュラム設計により申請できる可能性があります。要件を満たせば、訓練経費・賃金の相当部分が後日助成されます。趣味教養・企業理念研修は対象外。助成は後払い（申請から受給まで約1年）。</p>
+            <div class="subsidy-amount">要件適合時：中小企業は訓練経費の相当部分を助成</div>
+          </article>
+          <article class="panel">
+            <div class="tag-label">企業×天川村</div>
+            <h3>企業版ふるさと納税（人材派遣型）</h3>
+            <p>天川村が地域再生計画の認定を受けた場合、寄付企業は税額控除（最大6割）と損金算入（最大3割）の合算で、寄付額の最大約9割相当の税負担軽減が可能です。位置づけは「天川村の地域課題解決プロジェクトへの参画」であり、研修の対価としての寄付とは区別して設計します。利益供与禁止要件への適合確認が前提です。</p>
+            <div class="subsidy-amount">認定・要件適合時：税額控除6割＋損金3割の合算</div>
+          </article>
+          <article class="panel">
+            <div class="tag-label">行政が申請→委託</div>
+            <h3>新しい地方経済・生活環境創生交付金</h3>
+            <p>旧・デジタル田園都市国家構想交付金（2025年度に再編）。天川村が「関係人口創出・体験型コンテンツ造成事業」として申請し、前田薫が実施主体として受託する設計。民間が直接受給する制度ではなく、自治体（天川村）が申請主体となることが前提です。</p>
+            <div class="subsidy-amount">自治体申請主体：国費1/2〜3/4</div>
+          </article>
+        </div>
+
+        <div class="note">※本ページの公的支援に関する記載は2026年5月時点の制度概要です。実際の適用可否・助成額は、訓練内容・企業規模・賃上げ要件等により異なります。当方は申請を代行しません。補助金申請は社労士または管轄労働局にご確認ください。具体の設計は相談時に一緒に整理します。</div>
+      </div>
+    </section>
+
+    <section class="section dark" id="scheme">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">3 Schemes</div>
+          <div>
+            <h2>3つの資金スキームから、最適な入り方を選ぶ。</h2>
+            <p>企業の規模・目的・天川村との関係性によって、入り方が変わります。まずAから始めて、BとCへ拡張していく設計が最も自然です。</p>
+          </div>
+        </div>
+
+        <div class="scheme-wrap">
+          <div class="scheme-card">
+            <span class="scheme-label">SCHEME A</span>
+            <h3>企業直販型</h3>
+            <p>顧客企業が「リーダーシップ開発訓練」「対話技術習得訓練」として人材開発支援助成金を申請。要件適合時、訓練経費・賃金の相当部分が後日助成されます（助成は事業実施後の後払い）。行政の関与なしに今すぐ動ける最初の一手。</p>
+            <span class="scheme-badge">今すぐ動ける</span>
+          </div>
+          <div class="scheme-card">
+            <span class="scheme-label">SCHEME B</span>
+            <h3>行政委託型</h3>
+            <p>天川村が「関係人口創出事業」として地方創生交付金を申請し、前田薫がプログラム運営を受託。企業は「関係人口」として継続的に来訪する。天川村という場に公的な意味づけが生まれ、事業の持続性が高まる。</p>
+            <span class="scheme-badge">事業の背骨になる</span>
+          </div>
+          <div class="scheme-card">
+            <span class="scheme-label">SCHEME C</span>
+            <h3>ESG還流型</h3>
+            <p>企業版ふるさと納税（人材派遣型）で企業の寄付と社員派遣を天川村に流し込む。「天川村の地域課題解決プロジェクトへの参画を通じたリーダー育成」として設計し、研修の対価とは切り分ける。ESG/SDGs実績として社内外に語れるスキーム。設計は税理士・行政窓口と連携して進める。</p>
+            <span class="scheme-badge">ESG/SDGsで語れる</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cases">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">Use Cases</div>
+          <div>
+            <h2>企業・団体での使い方。</h2>
+            <p>同じ場のコーチングでも、企業ごとに入口は変わります。課題解決ではなく、組織の本来性を取り戻すための設計です。</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="case-row">
+            <h3>経営者の壁打ち</h3>
+            <p>事業・人・お金・家族・地域との関係が絡み合う経営者の思考をほどき、本来の判断軸へ戻す。</p>
+          </div>
+          <div class="case-row">
+            <h3>幹部合宿 / 対話会</h3>
+            <p>理念を確認するだけでなく、幹部それぞれが何を恐れ、何を願い、どんな役割を担うのかを扱う。</p>
+          </div>
+          <div class="case-row">
+            <h3>次世代リーダー育成</h3>
+            <p>正解を教える研修ではなく、自分の問いを持ち、現場で判断できる人材を育てる。</p>
+          </div>
+          <div class="case-row">
+            <h3>天川村リトリート</h3>
+            <p>自然・座禅・水・対話を組み合わせ、日常の役割から離れて組織の本音を扱う時間をつくる。</p>
+          </div>
+          <div class="case-row">
+            <h3>AI秘書導入と企画実装</h3>
+            <p>理念や会議内容を、企画書、案内ページ、運用コマンド、継続改善の仕組みに変える。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">Retreat Sample</div>
+          <div>
+            <h2>天川村リトリート 1泊2日の例。</h2>
+            <p>日程はすべて個別設計です。以下は典型的な経営者向けプログラムの流れです。</p>
+          </div>
+        </div>
+        <div class="schedule-box">
+          <div class="schedule-day">
+            <h4>DAY 1</h4>
+            <dl>
+              <div class="schedule-item"><dt>14:00</dt><dd>天川村到着・オリエンテーション（事業の現状と問いの整理）</dd></div>
+              <div class="schedule-item"><dt>16:00</dt><dd>川沿い対話セッション（事実と認知の分離ワーク）</dd></div>
+              <div class="schedule-item"><dt>18:00</dt><dd>夕食・対話の続き（役割を外した場での言葉）</dd></div>
+              <div class="schedule-item"><dt>21:00</dt><dd>翌朝の問いを置いて休む</dd></div>
+            </dl>
+          </div>
+          <div class="schedule-day">
+            <h4>DAY 2</h4>
+            <dl>
+              <div class="schedule-item"><dt>06:00</dt><dd>早朝座禅（30分・任意参加）</dd></div>
+              <div class="schedule-item"><dt>07:00</dt><dd>山道を歩きながらの対話セッション</dd></div>
+              <div class="schedule-item"><dt>10:00</dt><dd>室内ワーク（経営判断の言語化・次の問いの設計）</dd></div>
+              <div class="schedule-item"><dt>13:00</dt><dd>振り返り・「持ち帰る一行」の決定</dd></div>
+              <div class="schedule-item"><dt>14:00</dt><dd>解散</dd></div>
+            </dl>
+          </div>
+        </div>
+        <div class="note" style="margin-top: 24px;">宿泊・食事・交通・安全管理の実費は別途。参加人数・目的によりプログラム内容は変わります。</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">For / Not For</div>
+          <div>
+            <h2>こんな企業に向いています。そして、向かない方にも正直に。</h2>
+            <p>適合しない状態で始めても、双方にとって意味がありません。相談時に率直にお伝えします。</p>
+          </div>
+        </div>
+        <div class="fit-grid">
+          <div class="fit-box yes">
+            <h4>▶ こんな企業・経営者に向いています</h4>
+            <ul>
+              <li>「正しい答え」より「本当の問い」を扱いたい経営者</li>
+              <li>幹部との対話に詰まりや距離感を感じている</li>
+              <li>研修を1回やって終わりではなく、文化として定着させたい</li>
+              <li>天川村という場・身体性・自然を使う意味を感じられる</li>
+              <li>3〜6ヶ月以上の伴走に投資できる</li>
+            </ul>
+          </div>
+          <div class="fit-box no">
+            <h4>▶ このプログラムに向かない方</h4>
+            <ul>
+              <li>即効性・数値成果を研修に求める方</li>
+              <li>1〜2回の単発研修で組織を変えたい方</li>
+              <li>経営者自身が変わることへの関心が薄い</li>
+              <li>「コーチング」を講義型研修と同じものと想定している</li>
+              <li>補助金が通ることを前提に予算設計している方</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">FAQ</div>
+          <div>
+            <h2>よくある質問。</h2>
+            <p>社内稟議・担当者が気になる点を先回りして答えます。</p>
+          </div>
+        </div>
+        <dl class="faq-list">
+          <div class="faq-item">
+            <dt>Q. 成果は保証されますか？</dt>
+            <dd>成果保証はありません。ただし、「相談時に適合しないとお伝えする場合もある」というスタンスで設計しています。始める前に、期待値と現実の擦り合わせを必ず行います。</dd>
+          </div>
+          <div class="faq-item">
+            <dt>Q. 補助金は確実に使えますか？</dt>
+            <dd>確実ではありません。人材開発支援助成金は訓練内容・企業要件・賃上げ要件等によって適用可否が変わります。申請代行は行いませんが、対象訓練要件を満たすカリキュラム設計はご一緒できます。申請は社労士または管轄労働局に必ずご確認ください。</dd>
+          </div>
+          <div class="faq-item">
+            <dt>Q. 社内の稟議に使える資料はもらえますか？</dt>
+            <dd>はい。相談後、御社の状況に合わせた提案書・プログラム設計書・費用概算書を作成します。守秘義務契約も締結します。</dd>
+          </div>
+          <div class="faq-item">
+            <dt>Q. リモート対応は可能ですか？</dt>
+            <dd>個別セッション・フォローアップはオンラインでも対応可能です。ただし、場の力を扱うコアプログラム（リトリート・対話会）は天川村への現地参加が基本です。</dd>
+          </div>
+          <div class="faq-item">
+            <dt>Q. キャンセル・中途解約はできますか？</dt>
+            <dd>契約書に定めた条件に従います。相談時に解約規定・支払いスケジュール・不可抗力条項をご説明します。</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="section-inner">
+        <div class="kicker">Next Step</div>
+        <h2>まず60分、会社の中で本当に扱うべき問いを一緒に見ます。</h2>
+        <p>相談では研修メニューを売りません。今その組織で何が起きていて、このプログラムが適合するかどうかを率直にお伝えします。適合しない場合もその旨をお伝えします。営業電話・しつこい提案は一切ありません。</p>
+        <div class="hero-actions">
+          <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSeF0o2ALxK9Jd0WE2izpVzh8s9z2way320YtlIYmt92kjcC4A/viewform" target="_blank" rel="noopener noreferrer">法人相談を申し込む（無料・60分）</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>前田薫｜法人向け 場のコーチング</span>
+    <span>Corporate Field Coaching / Tenkawa</span>
+  </footer>
+</body>
+</html>
