@@ -465,6 +465,54 @@
       color: var(--muted);
     }
 
+    .active-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .active-row {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .active-tag {
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .active-main h3 {
+      margin-bottom: 5px;
+      color: var(--deep);
+      font-size: 19px;
+    }
+
+    .active-main p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .active-row a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border: 1px solid rgba(53, 93, 77, 0.26);
+      border-radius: 999px;
+      color: var(--green);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
     .cta {
       padding: 96px 0;
       color: #fff;
@@ -558,6 +606,11 @@
         grid-template-columns: 1fr;
       }
 
+      .active-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
       .photo {
         min-height: 320px;
       }
@@ -646,7 +699,7 @@
           <div class="kicker">COMMON STRUCTURE</div>
           <div>
             <h2>バラバラに見える企画は、同じ構造で動いている。</h2>
-            <p>座禅会、サマーキャンプ、宝塚JC、よっちゃん共同企画、天川再生体験事業。それぞれ形は違っても、中心にある流れは同じです。</p>
+            <p>座禅会、サマーキャンプ、宝塚JC、女性向けリトリート、自然農コミュニティ、天川再生体験事業。それぞれ形は違っても、中心にある流れは同じです。</p>
           </div>
         </div>
         <div class="flow">
@@ -787,58 +840,58 @@
           <div class="kicker">CASES</div>
           <div>
             <h2>いま動いている実例。</h2>
-            <p>まだ完成商品ではなくても、すでに「場のコーチング」は複数の形で動き始めています。</p>
+            <p>コーチング、教育、地域、親子事業、コミュニティづくり。形は違っても、場の力と人の本来性をつなぐ実践が進んでいます。</p>
           </div>
         </div>
 
         <div>
           <div class="case-row">
             <h3>かおる塾（コーチングスクール）</h3>
-            <p>自分の価値観・ミッション・才能に正直に生きたい人たちが集まるグループコーチングプログラム。月1回の対話セッションと個別伴走を重ねながら、「何かしなきゃ」という焦りや、他者の期待軸で生きてきた自分に気づき、本来の言葉で動き始めるプロセスを設計・伴走している。参加者それぞれの事業・発信・人生を個別にプロデュースする側面も持つ。</p>
+            <p>自分の価値観・ミッション・才能に正直に生きたい人たちが集まるグループコーチングプログラム。対話セッションと個別伴走を重ねながら、他者の期待軸で動いてきた自分に気づき、本来の言葉で人生・事業・発信を動かしていく場を設計している。</p>
           </div>
           <div class="case-row">
             <h3>座禅会</h3>
-            <p>経営者や参加者が、坐禅・水・読経・対話を通して自分と向き合う入口。天川村との最初の接点になっている。</p>
+            <p>坐禅・水・読経・対話を通して、日常の役割から離れ、自分の呼吸と感覚に戻る場。天川村との深い接点として、経営者や参加者が継続的に訪れる導線になっている。</p>
           </div>
           <div class="case-row">
             <h3>サマーキャンプ</h3>
-            <p>子どもたちの自然体験を、教育・地域交流・魂の経済圏へ接続する実装プロジェクト。</p>
+            <p>子どもたちの自然体験を、教育・地域交流・関係人口づくりへつなぐ実践。天川村の自然、地域の大人、都市部の子どもたちが交わることで、体験が地域の未来へ循環していく場をつくっている。</p>
           </div>
           <div class="case-row">
             <h3>自然農イベント × コミュニティ立ち上げ</h3>
-            <p>「自然農を暮らしに取り入れたい」というリーダーの想いを起点に、天川村での自然農体験イベントを企画・設計・実施。参加者が体験から持ち帰ったものをコミュニティページで蓄積し、一度きりの体験で終わらせない継続循環の仕組みとして育てている。申込み・LINE・コミュニティページの導線までを一体で伴走した。</p>
+            <p>「自然農を暮らしに取り入れたい」という想いを起点に、天川村での自然農体験イベントを企画・設計・実施。参加者が体験から持ち帰った気づきや実践をコミュニティページに蓄積し、一度きりで終わらない継続循環の仕組みとして育てている。</p>
           </div>
           <div class="case-row">
             <h3>息子のサッカー教室 × 寺子屋化</h3>
-            <p>自分の息子が天川村で始めたサッカー教室に、コーチとして関わっている。技術を教えるだけの場にせず、ジャッジしない・問いかける・その子の才能を引き出す場として一緒に育てている。「家族にも本音で向き合えるコーチ」であることが、ここに表れている。</p>
+            <p>息子が天川村で運営するサッカー教室に、メンタル面・問いかけ・場づくりのコーチとして関わっている。技術を教えるだけの場にせず、ジャッジしない、その子の才能を引き出す寺子屋的な育成の場として親子で育てている。</p>
           </div>
           <div class="case-row">
             <h3>息子の事業設計 × AI × 発信収益化</h3>
-            <p>息子が動かすサッカー事業を、note発信・AI活用・収益循環の仕組みとして一緒に設計した。親子間でここまで本音で事業を語り、AIと言葉と行動を重ねられる関係は、それ自体がひとつのコーチングの証明だと思っている。</p>
+            <p>息子が動かすサッカー事業を、note発信・AI活用・収益循環の仕組みとして一緒に設計。親子で本音、事業、AI秘書、現場の実践を重ねることで、家族関係の中にもコーチングを実装している。</p>
           </div>
           <div class="case-row">
             <h3>宝塚JC連携</h3>
-            <p>都市の子どもと天川村の子どもが出会い、体験と感動が地域価値へ変わるモデルづくり。</p>
+            <p>都市部の子どもたちと天川村の子どもたちが出会い、自然体験・対話・地域交流を通して学び合うプログラムを設計。単発イベントではなく、都市と地域が継続的につながる関係人口の入口として育てている。</p>
           </div>
           <div class="case-row">
             <h3>ワーホリ事業を立ち上げた経営者との共同設計</h3>
-            <p>海外経験を事業に変えようとしている経営者が、天川村の体験・禅・修験道を若者の成長プログラムとして組み立てるプロセスを伴走。「やりたいことはある。でも形にならない」という状態から、人が集まる場の設計へ。</p>
+            <p>海外経験を事業に変えようとしている経営者と、天川村の体験・禅・修験道を若者の成長プログラムへ接続。世界へ出る挑戦と、日本の精神文化に還る体験を往復する事業導線を共同で設計している。</p>
           </div>
           <div class="case-row">
-            <h3>高校生指導者のリーダーシップ設計</h3>
-            <p>サッカーを教える立場の高校生指導者が、サマーキャンプで子どもを支える側に立つ体験を通じて、伴走・問いかけ・判断の感覚を身体で掴んでいくプログラム。教えることで、自分自身が変わっていく。</p>
+            <h3>高校生サッカー選手のリーダー育成</h3>
+            <p>サッカーに打ち込む高校生が、サマーキャンプで子どもを支える側に立つプログラム。伴走・問いかけ・判断・安全を見る力を現場で学び、競技だけでは育ちにくいリーダーシップを身体で掴んでいく。</p>
           </div>
           <div class="case-row">
             <h3>都市で役割を背負ってきた女性のリトリート</h3>
-            <p>「何かしなきゃ」「ちゃんとしなきゃ」で動き続けてきた女性が、天川村の自然と対話の中で自分の言葉を取り戻していくリトリートを共同設計。体験型コーチングと場の設計を重ねて、「本来の自分で動く」起点をつくった。</p>
+            <p>「何かしなきゃ」「ちゃんとしなきゃ」で動き続けてきた女性が、天川村の自然と対話の中で自分の言葉を取り戻すリトリートを共同設計。体験型コーチングと場の設計を重ね、本来の自分で次の一歩を選べる時間をつくっている。</p>
           </div>
           <div class="case-row">
             <h3>天川村と世界をつなぐ教育循環の構想</h3>
-            <p>サマーキャンプ・高校生育成・ワーホリ・寺子屋を別々の事業としてではなく、子どもから大人へ・地域から世界へと広がる一つの成長循環として設計している。まだ動き始めたばかりの、長い仕事。</p>
+            <p>サマーキャンプ・高校生育成・ワーホリ・寺子屋を別々の事業としてではなく、子どもから大人へ、地域から世界へと広がる一つの成長循環として設計。天川村を起点に、日本の精神文化と世界への挑戦がつながる教育モデルを育てている。</p>
           </div>
           <div class="case-row">
             <h3>天川再生体験事業</h3>
-            <p>座禅・水・洞窟・修験道・文化再生を束ね、外国人や経営者にも届く深い体験事業として育てる構想。</p>
+            <p>座禅・水・洞窟・修験道・文化再生を束ね、外国人や経営者にも届く深い体験事業として設計。観光ではなく、感覚・呼吸・問いを取り戻す再生の体験として、天川村でしかできない価値を形にしている。</p>
           </div>
         </div>
       </div>
@@ -895,6 +948,7 @@
           <h2>前田薫</h2>
           <p class="large-text">人生デザインコーチ® / 天中道コーチ<br>奈良県天川村 在住・地域おこし協力隊</p>
           <p class="muted">「自分らしく生きられない人をゼロにする」をミッションに、天川村を拠点にコーチング・体験企画・地域づくりに関わっている。<br><br>
+          コーチングの源流には、人生デザイン構築学校と師匠である高衣紗彩（たかごろもさあや）先生から学び続けている中庸思考・人生デザインの思想がある。現在も人生デザイン構築学校に関わりながら、その学びを天川村での実践、かおる塾、個人コーチング、場づくりに落とし込んでいる。<br><br>
           価値観・才能・本音を瞬時に捉える対話力と、体験から場をつくる設計力を持つ。AI秘書を使った高速実装を組み合わせ、相談から形になるまでを一体で伴走する。<br><br>
           かおる塾（グループコーチング）、天川サマーキャンプ、座禅会、自然農コミュニティなど複数の場を主宰・設計・運営中。</p>
         </div>
@@ -904,67 +958,117 @@
     <section id="links">
       <div class="section-inner">
         <div class="section-heading">
-          <div class="kicker">PAGES</div>
+          <div class="kicker">NOW</div>
           <div>
-            <h2>いま公開している場の一覧。</h2>
-            <p>それぞれの入口から、あなたに合った形で関わってください。</p>
+            <h2>いま動いている場。</h2>
+            <p>かおるちゃんが今ひらいている場、これから関われる入口を縦に並べました。気になるところから、無理なく関わってください。</p>
           </div>
         </div>
-        <div class="grid three">
-          <article class="panel">
-            <div style="font-size:11px;font-weight:900;color:var(--green);letter-spacing:.07em;margin-bottom:10px;">COACHING</div>
-            <h3>かおる塾</h3>
-            <p>価値観・ミッション・才能に正直に生きるためのグループコーチング。</p>
-            <a href="https://kaoruchan333.github.io/kaoru-juku/" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;font-size:13px;font-weight:700;color:var(--green);">詳細を見る →</a>
-          </article>
-          <article class="panel">
-            <div style="font-size:11px;font-weight:900;color:var(--green);letter-spacing:.07em;margin-bottom:10px;">COACHING</div>
-            <h3>個人コーチング</h3>
-            <p>半年伴走の個別プログラム。本来の言葉で動き始めるまでを一緒に歩く。</p>
-            <a href="https://kaoruchan333.github.io/coaching-premium/" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;font-size:13px;font-weight:700;color:var(--green);">詳細を見る →</a>
-          </article>
-          <article class="panel">
-            <div style="font-size:11px;font-weight:900;color:var(--green);letter-spacing:.07em;margin-bottom:10px;">CORPORATE</div>
-            <h3>法人向けコーチング</h3>
-            <p>経営者・幹部・チームの対話文化を整える。補助金活用・天川リトリートも対応。</p>
-            <a href="../coaching-corporate/" style="display:inline-block;margin-top:14px;font-size:13px;font-weight:700;color:var(--green);">詳細を見る →</a>
-          </article>
-          <article class="panel">
-            <div style="font-size:11px;font-weight:900;color:var(--green);letter-spacing:.07em;margin-bottom:10px;">EVENT</div>
-            <h3>座禅会</h3>
-            <p>天川村の水と静寂の中で、自分と向き合う入口。</p>
-            <a href="https://kaoruchan333.github.io/zazen/" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;font-size:13px;font-weight:700;color:var(--green);">詳細を見る →</a>
-          </article>
-          <article class="panel">
-            <div style="font-size:11px;font-weight:900;color:var(--green);letter-spacing:.07em;margin-bottom:10px;">EVENT</div>
-            <h3>自然農イベント</h3>
-            <p>土に触れ、自然と対話する体験型イベント。天川村の里山で開催。</p>
-            <a href="https://kaoruchan333.github.io/nature-event/" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;font-size:13px;font-weight:700;color:var(--green);">詳細を見る →</a>
-          </article>
-          <article class="panel">
-            <div style="font-size:11px;font-weight:900;color:var(--green);letter-spacing:.07em;margin-bottom:10px;">EVENT</div>
-            <h3>夜の寺子屋</h3>
-            <p>問いと対話の夜。答えを出す場ではなく、自分の言葉を探す場。</p>
-            <a href="https://kaoruchan333.github.io/terakoya/" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;font-size:13px;font-weight:700;color:var(--green);">詳細を見る →</a>
-          </article>
-          <article class="panel">
-            <div style="font-size:11px;font-weight:900;color:var(--green);letter-spacing:.07em;margin-bottom:10px;">EVENT</div>
-            <h3>大峯山修験道プログラム</h3>
-            <p>修験道の山を歩き、自分の芯に触れる経営者・探求者向けプログラム。</p>
-            <a href="https://kaoruchan333.github.io/omine/" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;font-size:13px;font-weight:700;color:var(--green);">詳細を見る →</a>
-          </article>
-          <article class="panel">
-            <div style="font-size:11px;font-weight:900;color:var(--green);letter-spacing:.07em;margin-bottom:10px;">COMMUNITY</div>
-            <h3>座禅会コミュニティ</h3>
-            <p>参加者が繋がり、体験を言葉にし続ける場。</p>
-            <a href="https://kaoruchan333.github.io/zazen-community/" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;font-size:13px;font-weight:700;color:var(--green);">詳細を見る →</a>
-          </article>
-          <article class="panel">
-            <div style="font-size:11px;font-weight:900;color:var(--green);letter-spacing:.07em;margin-bottom:10px;">COMMUNITY</div>
-            <h3>自然農コミュニティ</h3>
-            <p>体験後の実践をシェアし、暮らしに自然農を取り入れ続けるコミュニティ。</p>
-            <a href="https://kaoruchan333.github.io/nature-community/" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;font-size:13px;font-weight:700;color:var(--green);">詳細を見る →</a>
-          </article>
+        <div class="active-list">
+          <div class="active-row">
+            <div class="active-tag">Coaching</div>
+            <div class="active-main">
+              <h3>かおる塾</h3>
+              <p>価値観・ミッション・才能に正直に生きるためのグループコーチング。</p>
+            </div>
+            <a href="https://kaoruchan333.github.io/kaoru-juku/" target="_blank" rel="noopener">見る</a>
+          </div>
+          <div class="active-row">
+            <div class="active-tag">Coaching</div>
+            <div class="active-main">
+              <h3>人生デザインコーチング</h3>
+              <p>かおるちゃんのメインとなる個人向けコーチング。半年伴走で、本来の言葉で動き始めるまでを一緒に歩く。</p>
+            </div>
+            <a href="https://kaoruchan333.github.io/coaching-premium/" target="_blank" rel="noopener">見る</a>
+          </div>
+          <div class="active-row">
+            <div class="active-tag">Corporate</div>
+            <div class="active-main">
+              <h3>法人向け 場のコーチング</h3>
+              <p>経営者・幹部・チームの対話文化を整える。補助金活用・天川リトリートも対応。</p>
+            </div>
+            <a href="../coaching-corporate/">見る</a>
+          </div>
+          <div class="active-row">
+            <div class="active-tag">Event</div>
+            <div class="active-main">
+              <h3>座禅会</h3>
+              <p>天川村の水と静寂の中で、自分と向き合う入口。</p>
+            </div>
+            <a href="https://kaoruchan333.github.io/zazen/" target="_blank" rel="noopener">見る</a>
+          </div>
+          <div class="active-row">
+            <div class="active-tag">Event</div>
+            <div class="active-main">
+              <h3>自然農イベント</h3>
+              <p>土に触れ、自然と対話する体験型イベント。天川村の里山で開催。</p>
+            </div>
+            <a href="https://kaoruchan333.github.io/nature-event/" target="_blank" rel="noopener">見る</a>
+          </div>
+          <div class="active-row">
+            <div class="active-tag">Event</div>
+            <div class="active-main">
+              <h3>夜の寺子屋</h3>
+              <p>問いと対話の夜。答えを急がず、自分の言葉を探す場。</p>
+            </div>
+            <a href="https://kaoruchan333.github.io/terakoya/" target="_blank" rel="noopener">見る</a>
+          </div>
+          <div class="active-row">
+            <div class="active-tag">Online</div>
+            <div class="active-main">
+              <h3>オンライン寺子屋</h3>
+              <p>場所を越えて、問いと対話を日常に持ち込むオンラインの場。</p>
+            </div>
+            <a href="https://kaoruchan333.github.io/online-terakoya/" target="_blank" rel="noopener">見る</a>
+          </div>
+          <div class="active-row">
+            <div class="active-tag">Workshop</div>
+            <div class="active-main">
+              <h3>魂の羅針盤 言語化ワークショップ</h3>
+              <p>自分の価値観・使命・才能を、自分の言葉で捉えるための入口。</p>
+            </div>
+            <a href="https://kaoruchan333.github.io/compass/" target="_blank" rel="noopener">見る</a>
+          </div>
+          <div class="active-row">
+            <div class="active-tag">Retreat</div>
+            <div class="active-main">
+              <h3>大峯山修験道プログラム</h3>
+              <p>修験道の山を歩き、自分の芯に触れる経営者・探求者向けプログラム。</p>
+            </div>
+            <a href="https://kaoruchan333.github.io/omine/" target="_blank" rel="noopener">見る</a>
+          </div>
+          <div class="active-row">
+            <div class="active-tag">Community</div>
+            <div class="active-main">
+              <h3>座禅会コミュニティ</h3>
+              <p>参加者がつながり、体験を言葉にし続ける場。</p>
+            </div>
+            <a href="https://kaoruchan333.github.io/zazen-community/" target="_blank" rel="noopener">見る</a>
+          </div>
+          <div class="active-row">
+            <div class="active-tag">Community</div>
+            <div class="active-main">
+              <h3>自然農コミュニティ</h3>
+              <p>体験後の実践をシェアし、暮らしに自然農を取り入れ続けるコミュニティ。</p>
+            </div>
+            <a href="https://kaoruchan333.github.io/nature-community/" target="_blank" rel="noopener">見る</a>
+          </div>
+          <div class="active-row">
+            <div class="active-tag">Archive</div>
+            <div class="active-main">
+              <h3>テラコヤホーム</h3>
+              <p>天川村で進んでいる寺子屋構想、活動記録、会議メモを見られる拠点。</p>
+            </div>
+            <a href="https://kaoruchan333.github.io/terakoya-home/" target="_blank" rel="noopener">見る</a>
+          </div>
+          <div class="active-row">
+            <div class="active-tag">Profile</div>
+            <div class="active-main">
+              <h3>前田薫プロフィール</h3>
+              <p>活動の背景、思想、プロフィールを確認できるページ。</p>
+            </div>
+            <a href="https://kaoruchan333.github.io/profile/" target="_blank" rel="noopener">見る</a>
+          </div>
         </div>
       </div>
     </section>
