@@ -1,0 +1,901 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>場のコーチング｜前田薫</title>
+  <meta name="description" content="天川村を拠点に、人・企画・地域の本来性が出会う体験企画をつくる。前田薫の場のコーチング / 体験企画プロデュース案内ページ。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="場のコーチング｜前田薫">
+  <meta property="og:description" content="コーチングを、個人セッションから場・企画・地域循環へ。天川村を拠点に、人と場の本来性が出会う体験企画をつくります。">
+  <meta property="og:image" content="../site-assets/home/river-light.jpg">
+  <style>
+    :root {
+      --ink: #1f1d1a;
+      --muted: #675f57;
+      --paper: #fffaf2;
+      --cream: #f5eadb;
+      --mist: #eef3ef;
+      --green: #355d4d;
+      --deep: #1e3e44;
+      --indigo: #3c4a5f;
+      --clay: #9f6a4e;
+      --gold: #a47c3d;
+      --line: rgba(31, 29, 26, 0.13);
+      --shadow: 0 22px 56px rgba(36, 31, 25, 0.12);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+      line-height: 1.86;
+    }
+
+    a { color: inherit; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(255, 250, 242, 0.9);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav-inner {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(53, 93, 77, 0.35);
+      border-radius: 50%;
+      color: var(--green);
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 12px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--deep);
+      background: rgba(30, 62, 68, 0.08);
+    }
+
+    .hero {
+      min-height: calc(100vh - 60px);
+      display: grid;
+      grid-template-columns: minmax(0, 0.96fr) minmax(390px, 1.04fr);
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(255, 250, 242, 1) 0%, rgba(255, 250, 242, 0.98) 45%, rgba(255, 250, 242, 0.08) 100%),
+        var(--cream);
+    }
+
+    .hero-copy {
+      width: min(640px, calc(100% - 48px));
+      margin-left: auto;
+      padding: 104px 48px 78px 0;
+      align-self: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 22px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: var(--green);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 11em;
+      font-size: clamp(38px, 4.6vw, 68px);
+      font-weight: 850;
+    }
+
+    h1 span { display: block; }
+
+    .lead {
+      max-width: 35em;
+      margin: 28px 0 0;
+      font-size: clamp(16px, 1.45vw, 20px);
+      line-height: 1.96;
+      color: #3c3833;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border: 1px solid var(--deep);
+      border-radius: 999px;
+      background: var(--deep);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 14px;
+      box-shadow: 0 12px 28px rgba(30, 62, 68, 0.2);
+    }
+
+    .button.secondary {
+      color: var(--deep);
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .hero-image {
+      position: relative;
+      min-height: calc(100vh - 60px);
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      filter: saturate(1.04) contrast(1.02);
+    }
+
+    .hero-note {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      max-width: 460px;
+      padding: 18px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: var(--radius);
+      background: rgba(255, 250, 242, 0.88);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      color: #302b25;
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
+    section {
+      padding: 88px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-inner {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(160px, 0.28fr) minmax(0, 0.72fr);
+      gap: 44px;
+      align-items: start;
+      margin-bottom: 44px;
+    }
+
+    .kicker {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    h2 {
+      font-size: clamp(28px, 3.4vw, 48px);
+      font-weight: 850;
+    }
+
+    .section-heading p,
+    .muted {
+      color: var(--muted);
+    }
+
+    .section-heading p {
+      max-width: 48em;
+      margin: 18px 0 0;
+      font-size: 16px;
+    }
+
+    .definition {
+      padding: 34px;
+      border-left: 5px solid var(--green);
+      border-radius: var(--radius);
+      background: #f8f1e7;
+      box-shadow: 0 12px 34px rgba(36, 31, 25, 0.08);
+      font-size: clamp(21px, 2.35vw, 34px);
+      line-height: 1.72;
+      font-weight: 850;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .panel {
+      min-height: 100%;
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fffdf8;
+      box-shadow: 0 12px 34px rgba(36, 31, 25, 0.06);
+    }
+
+    .panel h3 {
+      margin-bottom: 12px;
+      color: var(--deep);
+      font-size: 20px;
+    }
+
+    .panel p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .dark-band {
+      color: #fff;
+      background: var(--deep);
+    }
+
+    .dark-band .kicker,
+    .dark-band .muted,
+    .dark-band p {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .dark-band h2,
+    .dark-band h3 {
+      color: #fff;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+      counter-reset: flow;
+    }
+
+    .flow-step {
+      position: relative;
+      min-height: 170px;
+      padding: 20px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.08);
+      counter-increment: flow;
+    }
+
+    .flow-step::before {
+      content: counter(flow, decimal-leading-zero);
+      display: inline-flex;
+      margin-bottom: 12px;
+      color: rgba(255, 255, 255, 0.55);
+      font-weight: 900;
+      font-size: 12px;
+    }
+
+    .flow-step strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    .flow-step span {
+      display: block;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .image-split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.74fr) minmax(360px, 0.76fr);
+      gap: 34px;
+      align-items: center;
+    }
+
+    .photo {
+      overflow: hidden;
+      min-height: 440px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background: #ddd;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .large-text {
+      font-size: clamp(20px, 2.15vw, 31px);
+      line-height: 1.8;
+      font-weight: 850;
+    }
+
+    .offer {
+      background: var(--mist);
+    }
+
+    .offer-card {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 14px;
+      min-height: 100%;
+      padding: 25px;
+      border: 1px solid rgba(53, 93, 77, 0.16);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 12px 34px rgba(36, 31, 25, 0.06);
+    }
+
+    .offer-card .tag {
+      color: var(--clay);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .offer-card h3 {
+      color: var(--deep);
+      font-size: 22px;
+    }
+
+    .offer-card ul,
+    .quiet-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .offer-card li,
+    .quiet-list li {
+      position: relative;
+      padding-left: 22px;
+      color: #47413b;
+    }
+
+    .offer-card li::before,
+    .quiet-list li::before {
+      content: "";
+      position: absolute;
+      top: 0.82em;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--clay);
+    }
+
+    .case-row {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 20px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .case-row:first-child {
+      border-top: 1px solid var(--line);
+    }
+
+    .case-row h3 {
+      color: var(--deep);
+      font-size: 19px;
+    }
+
+    .case-row p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .cta {
+      padding: 96px 0;
+      color: #fff;
+      background:
+        linear-gradient(180deg, rgba(30, 62, 68, 0.85), rgba(30, 62, 68, 0.94)),
+        url("../site-assets/home/goma-fire.jpg") center/cover;
+      border-bottom: 0;
+    }
+
+    .cta .section-inner {
+      width: min(920px, calc(100% - 32px));
+    }
+
+    .cta h2 {
+      color: #fff;
+      margin-bottom: 22px;
+    }
+
+    .cta p {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 18px;
+    }
+
+    .cta .button {
+      margin-top: 30px;
+      background: #fff;
+      color: var(--deep);
+      border-color: #fff;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+    }
+
+    .footer {
+      padding: 28px 0 34px;
+      color: var(--muted);
+      background: #fffaf2;
+      font-size: 13px;
+    }
+
+    .footer .section-inner {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 1040px) {
+      .hero,
+      .section-heading,
+      .image-split {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        width: min(760px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 72px 0 48px;
+      }
+
+      .hero-image {
+        min-height: 56vh;
+      }
+
+      .grid.three,
+      .grid.four,
+      .flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 12px 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      h1 { font-size: 40px; }
+      section { padding: 60px 0; }
+
+      .grid.two,
+      .grid.three,
+      .grid.four,
+      .flow,
+      .case-row {
+        grid-template-columns: 1fr;
+      }
+
+      .photo {
+        min-height: 320px;
+      }
+
+      .definition,
+      .panel,
+      .offer-card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="ページ内ナビゲーション">
+    <div class="nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark">場</span>
+        <span>前田薫｜場のコーチング</span>
+      </a>
+      <div class="nav-links">
+        <a href="#what">何をするか</a>
+        <a href="#offers">依頼できること</a>
+        <a href="#cases">事例</a>
+        <a href="#process">進め方</a>
+        <a href="#contact">相談する</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-copy">
+      <p class="eyebrow">FIELD COACHING / TENKAWA</p>
+      <h1><span>人と場の</span><span>本来性が出会う</span><span>体験企画をつくる。</span></h1>
+      <p class="lead">
+        天川村を拠点に、コーチング・対話・自然体験・修験道の文脈を組み合わせて、人・企画・地域の可能性が立ち上がる場を設計します。
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="#offers">依頼できることを見る</a>
+        <a class="button secondary" href="#contact">まず相談する</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="../site-assets/home/river-light.jpg" alt="天川村の水辺の光">
+      <div class="hero-note">答えを与えない。問いを届ける。変えようとしない。還れる場をつくる。</div>
+    </div>
+  </header>
+
+  <main>
+    <section id="what">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">WHAT I DO</div>
+          <div>
+            <h2>コーチングを、個人セッションから場・企画・地域循環へ。</h2>
+            <p>前田薫がしているのは、イベントづくりでも、観光案内でも、地方創生の掛け声でもありません。人や団体の中にあるまだ言葉になっていない願いを聴き、天川村という場の力とつなぎ、体験として形にする仕事です。</p>
+          </div>
+        </div>
+        <div class="definition">
+          場の力と人の本来性をつなぎ、企画・体験・対話を通して、個人と地域の可能性を同時に立ち上げる。
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner">
+        <div class="grid three">
+          <article class="panel">
+            <h3>人の本音を聴く</h3>
+            <p>表面的な要望ではなく、相手が本当は何を実現したいのか、どんな違和感や願いを持っているのかを見立てます。</p>
+          </article>
+          <article class="panel">
+            <h3>場の力を読む</h3>
+            <p>天川村、洞川、川、山、座禅、修験道、地域の人の力を、単なる資源ではなく、場の個性として扱います。</p>
+          </article>
+          <article class="panel">
+            <h3>体験を企画に変える</h3>
+            <p>参加者が「よかった」で終わらず、自分の言葉や次の一歩を持ち帰れるように、流れ・問い・余白を設計します。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-band">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">COMMON STRUCTURE</div>
+          <div>
+            <h2>バラバラに見える企画は、同じ構造で動いている。</h2>
+            <p>座禅会、サマーキャンプ、宝塚JC、よっちゃん共同企画、天川再生体験事業。それぞれ形は違っても、中心にある流れは同じです。</p>
+          </div>
+        </div>
+        <div class="flow">
+          <div class="flow-step"><strong>願いを聴く</strong><span>人や団体の奥にある願い・違和感を受け取る。</span></div>
+          <div class="flow-step"><strong>問いにする</strong><span>本当に実現したいことを、扱える問いへ変える。</span></div>
+          <div class="flow-step"><strong>場とつなぐ</strong><span>天川村のどの場・人・体験と響くかを見立てる。</span></div>
+          <div class="flow-step"><strong>企画化する</strong><span>体験設計、導線、役割、価格、言葉へ落とす。</span></div>
+          <div class="flow-step"><strong>言葉を残す</strong><span>参加者や企画者が、自分の言葉を持ち帰る。</span></div>
+          <div class="flow-step"><strong>循環させる</strong><span>関係人口と地域への価値還元を育てる。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner image-split">
+        <div class="photo">
+          <img src="../site-assets/home/meditation-window.jpg" alt="静かな室内で座る時間">
+        </div>
+        <div>
+          <div class="kicker">MISSION</div>
+          <h2>寺子屋のビジョンを、現実の企画として立ち上げる。</h2>
+          <p class="large-text">社会で働き、場に還り、また社会へ戻る。その循環を、天川村からつくる。</p>
+          <p class="muted">寺子屋は、何かを教える場所ではなく、共鳴が起きる場所です。前田薫の仕事は、その共鳴が起きやすい場を、企画・導線・人の関係として設計することです。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">YOUR ENTRY</div>
+          <div>
+            <h2>場のコーチングへの入口は、目的によって変わります。</h2>
+            <p>まずは、あなたの中にある違和感や願いを聴くところから始めます。</p>
+          </div>
+        </div>
+        <div class="grid four">
+          <article class="panel">
+            <div style="font-size:11px;font-weight:900;color:var(--green);letter-spacing:.07em;margin-bottom:10px;">FOR INDIVIDUALS</div>
+            <h3>個人の方へ</h3>
+            <p>自分の本来の言葉に戻る。天川村でのリトリート・伴走コーチング。</p>
+            <a href="#contact" style="display:inline-block;margin-top:14px;font-size:13px;font-weight:700;color:var(--green);">相談する →</a>
+          </article>
+          <article class="panel">
+            <div style="font-size:11px;font-weight:900;color:var(--green);letter-spacing:.07em;margin-bottom:10px;">FOR CORPORATES</div>
+            <h3>企業・団体の方へ</h3>
+            <p>経営者・幹部・チームの対話文化を整える法人向けプログラム。補助金活用も含めて設計できます。</p>
+            <a href="../coaching-corporate/" style="display:inline-block;margin-top:14px;font-size:13px;font-weight:700;color:var(--green);">法人向けページへ →</a>
+          </article>
+          <article class="panel">
+            <div style="font-size:11px;font-weight:900;color:var(--green);letter-spacing:.07em;margin-bottom:10px;">FOR EDUCATION / REGION</div>
+            <h3>教育・地域関係者の方へ</h3>
+            <p>子ども・若者・関係人口・地域循環をつなぐ体験企画。天川村と行政・学校・地域事業者との協働設計。</p>
+            <a href="#contact" style="display:inline-block;margin-top:14px;font-size:13px;font-weight:700;color:var(--green);">相談する →</a>
+          </article>
+          <article class="panel">
+            <div style="font-size:11px;font-weight:900;color:var(--green);letter-spacing:.07em;margin-bottom:10px;">FOR CREATORS</div>
+            <h3>企画者・表現者の方へ</h3>
+            <p>まだ言葉になっていない願いを、企画書・案内ページ・導線に変える伴走。AI秘書を使って高速実装。</p>
+            <a href="#contact" style="display:inline-block;margin-top:14px;font-size:13px;font-weight:700;color:var(--green);">相談する →</a>
+          </article>
+        </div>
+
+        <div style="margin-top:40px;background:var(--green);border-radius:12px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+          <div>
+            <div style="font-size:11px;font-weight:900;color:rgba(255,255,255,.7);letter-spacing:.1em;margin-bottom:8px;">FOR CORPORATES</div>
+            <p style="margin:0;font-size:16px;font-weight:700;color:#fff;line-height:1.5;">経営者・幹部・組織チームの方へ</p>
+            <p style="margin:6px 0 0;font-size:13px;color:rgba(255,255,255,.85);line-height:1.6;">補助金活用・天川村リトリート・AI導入まで含めた法人向け専用プログラムがあります。</p>
+          </div>
+          <a href="../coaching-corporate/" style="display:inline-block;white-space:nowrap;background:#fff;color:var(--green);font-size:14px;font-weight:900;padding:14px 28px;border-radius:8px;text-decoration:none;letter-spacing:.05em;">法人向け詳細ページへ →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer" id="offers">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">OFFERS</div>
+          <div>
+            <h2>依頼できること。</h2>
+            <p>「天川村で何かしたい」「自分たちの企画を深めたい」「参加者に本物の体験を届けたい」。その段階から相談できます。</p>
+          </div>
+        </div>
+
+        <div class="grid four">
+          <article class="offer-card">
+            <div class="tag">FOR INDIVIDUALS</div>
+            <h3>個人向けリトリート / コーチング</h3>
+            <ul>
+              <li>自分の本来の言葉に戻る体験</li>
+              <li>座禅・対話・自然体験からの内省</li>
+              <li>天川村での深いリセット</li>
+            </ul>
+          </article>
+          <article class="offer-card">
+            <div class="tag">FOR TEAMS</div>
+            <h3>団体・企業向け体験研修</h3>
+            <ul>
+              <li>経営者・リーダー向け内省研修</li>
+              <li>教育団体の自然体験プログラム</li>
+              <li>都市と地域をつなぐ交流事業</li>
+            </ul>
+          </article>
+          <article class="offer-card">
+            <div class="tag">FOR YOUTH</div>
+            <h3>子ども・若者育成事業</h3>
+            <ul>
+              <li>サッカー教室と寺子屋の接続</li>
+              <li>高校生リーダー育成プログラム</li>
+              <li>世界へ出て、地域へ還る導線づくり</li>
+            </ul>
+          </article>
+          <article class="offer-card">
+            <div class="tag">FOR CREATORS</div>
+            <h3>企画者向け伴走</h3>
+            <ul>
+              <li>企画の芯の言語化</li>
+              <li>天川村でしかできない体験設計</li>
+              <li>AI秘書を使った企画書・LP作成</li>
+            </ul>
+          </article>
+          <article class="offer-card">
+            <div class="tag">FOR REGION</div>
+            <h3>関係人口プロデュース</h3>
+            <ul>
+              <li>地域に価値が戻る循環設計</li>
+              <li>廃校利活用の実績づくり</li>
+              <li>地域事業者との協働設計</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">CASES</div>
+          <div>
+            <h2>いま動いている実例。</h2>
+            <p>まだ完成商品ではなくても、すでに「場のコーチング」は複数の形で動き始めています。</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="case-row">
+            <h3>座禅会</h3>
+            <p>経営者や参加者が、坐禅・水・読経・対話を通して自分と向き合う入口。天川村との最初の接点になっている。</p>
+          </div>
+          <div class="case-row">
+            <h3>サマーキャンプ</h3>
+            <p>子どもたちの自然体験を、教育・地域交流・魂の経済圏へ接続する実装プロジェクト。</p>
+          </div>
+          <div class="case-row">
+            <h3>天川村サッカー教室</h3>
+            <p>長男・裕太くんを中心に、教育委員会と連携して動き始めている子どもたちの現場。サッカーを技術指導だけで終わらせず、ジャッジしない、問いかける、その子自身の才能を引き出す寺子屋の実践として育てている。</p>
+          </div>
+          <div class="case-row">
+            <h3>裕太くんとの天川村サッカー事業</h3>
+            <p>裕太くんのnote収益化、メンバーシップ、天川村サッカー活動費への循環をつなげる構想。かおるちゃんはプロデュース側でありながら、メンタル・精神性・問いかけの部分では現場のコーチとしても関わっている。</p>
+          </div>
+          <div class="case-row">
+            <h3>親子でつくるAIカンパニー型サッカー事業</h3>
+            <p>裕太くんのAI秘書、Claude Code運用、note事業、サッカー事業の導線を、かおるちゃんが企画・相談・コンサルティングしている実践。家族、とくに親子でここまで本音・事業・AI運用を重ねられること自体が希少なモデルになっている。</p>
+          </div>
+          <div class="case-row">
+            <h3>宝塚JC連携</h3>
+            <p>都市の子どもと天川村の子どもが出会い、体験と感動が地域価値へ変わるモデルづくり。</p>
+          </div>
+          <div class="case-row">
+            <h3>北斗さんとのワーキングホリデー循環</h3>
+            <p>ワーホリを単なる海外体験ではなく、挑戦心・金融・IT・自己理解を育てる若者の成長導線として捉え、天川村の修験道・禅・寺子屋と接続する構想。</p>
+          </div>
+          <div class="case-row">
+            <h3>船越さんとの高校生コーチングプログラム</h3>
+            <p>高校生サッカー選手がサマーキャンプに入り、子どもを支える側に立つことで、伴走・判断・問いかけ・リーダーシップを身体で学ぶプログラム。サッカーで育つ高校生が、天川で人を育てる側を経験する。</p>
+          </div>
+          <div class="case-row">
+            <h3>天川村と世界をつなぐビジョンプログラム</h3>
+            <p>かおるちゃん、北斗さん、船越さんの三者で進めている、子ども・高校生・若者・世界を一本でつなぐグローカル教育モデル。サマーキャンプ、高校生育成、ワーホリ、寺子屋を別々にせず、一つの成長循環として設計している。</p>
+          </div>
+          <div class="case-row">
+            <h3>よっちゃん共同企画</h3>
+            <p>都市で役割を背負ってきた女性が、自分の言葉を取り戻すリトリートを、よっちゃんの体験型コーチングと重ねて設計。</p>
+          </div>
+          <div class="case-row">
+            <h3>天川再生体験事業</h3>
+            <p>座禅・水・洞窟・修験道・文化再生を束ね、外国人や経営者にも届く深い体験事業として育てる構想。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div class="kicker">PROCESS</div>
+          <div>
+            <h2>相談から形になるまで。</h2>
+            <p>最初から完成した企画がなくても大丈夫です。むしろ、言葉になっていない段階から一緒に扱うのが得意です。</p>
+          </div>
+        </div>
+
+        <div class="grid three">
+          <article class="panel">
+            <h3>1. 話を聴く</h3>
+            <p>やりたいこと、違和感、対象者、背景、まだ言葉になっていない願いを丁寧に聞きます。</p>
+          </article>
+          <article class="panel">
+            <h3>2. 芯を見立てる</h3>
+            <p>その企画で本当に起こしたい変化、届けたい価値、天川村と重なる理由を言語化します。</p>
+          </article>
+          <article class="panel">
+            <h3>3. 形にする</h3>
+            <p>企画書、プログラム、案内ページ、会議アジェンダ、参加者導線までAI秘書と一緒に高速で作ります。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner image-split">
+        <div>
+          <div class="kicker">AI SECRETARY</div>
+          <h2>AIを使うから速い。でも、AIだけではできない。</h2>
+          <p class="large-text">AI秘書は、文字起こしを読み、企画書を作り、HTMLページを組み、情報を整理する。けれど、何を大切にするかを見立てるのは、人間の感受性です。</p>
+          <p class="muted">前田薫の強みは、コーチングで聴き取った本質を、AIの力で短時間に見える形へ変えること。これにより、相手は自分の企画の可能性をすぐに体感できます。</p>
+        </div>
+        <div class="photo">
+          <img src="../site-assets/home/lecture-room.jpg" alt="講座や対話が行われる室内">
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="section-inner">
+        <div class="kicker">CONTACT</div>
+        <h2>天川村で、あなたの企画やビジョンを形にしたい方へ。</h2>
+        <p>まだ企画になっていなくても大丈夫です。まずは、何を実現したいのか、誰に届けたいのか、天川村とどう重なるのかを一緒に言葉にしましょう。</p>
+        <a class="button" href="https://kaoruchan333.github.io/coaching-premium/" target="_blank" rel="noopener">まずは30分相談する</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="section-inner">
+      <span>前田薫｜場のコーチング / 体験企画プロデュース</span>
+      <span>Tenkawa Field Coaching</span>
+    </div>
+  </footer>
+</body>
+</html>
