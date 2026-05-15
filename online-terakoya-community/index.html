@@ -30,7 +30,7 @@
     /* NAV */
     .nav {
       position: sticky; top: 0; z-index: 20;
-      background: rgba(24,37,31,.95);
+      background: rgba(24,37,31,.96);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(255,255,255,.06);
     }
@@ -49,126 +49,130 @@
       display: grid; place-items: center;
       color: var(--gold); font-size: 13px;
     }
-    .nav-note {
-      font-size: 12px; color: rgba(255,255,255,.35); letter-spacing: .08em;
-    }
+    .nav-note { font-size: 11px; color: rgba(255,255,255,.3); letter-spacing: .08em; }
 
     /* HERO */
     .hero {
-      min-height: 56vh;
+      min-height: 52vh;
       background: linear-gradient(160deg, #0a1a13 0%, var(--deep) 60%, #1a2b23 100%);
       display: flex; flex-direction: column; align-items: center; justify-content: center;
       text-align: center; padding: 80px 24px;
       position: relative; overflow: hidden;
     }
-    .hero-orb {
+    .orb {
       position: absolute; border-radius: 50%; pointer-events: none;
-      animation: orbFloat var(--dur,10s) ease-in-out infinite var(--dl,0s);
+      animation: orbFloat var(--dur,12s) ease-in-out infinite var(--dl,0s);
     }
-    .hero-orb1 { width: 420px; height: 420px; top: -120px; left: -80px; --dur: 14s;
+    .orb1 { width: 420px; height: 420px; top: -120px; left: -80px; --dur:14s;
       background: radial-gradient(circle, rgba(47,78,66,.55), transparent 70%); filter: blur(60px); }
-    .hero-orb2 { width: 300px; height: 300px; bottom: -80px; right: -40px; --dur: 18s; --dl: -6s;
-      background: radial-gradient(circle, rgba(168,137,80,.25), transparent 70%); filter: blur(50px); }
+    .orb2 { width: 300px; height: 300px; bottom:-80px; right:-40px; --dur:18s; --dl:-6s;
+      background: radial-gradient(circle, rgba(168,137,80,.22), transparent 70%); filter: blur(50px); }
     @keyframes orbFloat {
       0%,100% { transform: translate(0,0) scale(1); }
-      33%     { transform: translate(-20px,-30px) scale(1.05); }
-      66%     { transform: translate(15px,15px) scale(.96); }
+      33%     { transform: translate(-20px,-28px) scale(1.05); }
+      66%     { transform: translate(14px,14px) scale(.96); }
     }
     .hero-eyebrow {
       font-size: 10px; font-weight: 700; letter-spacing: .32em;
       color: var(--gold); text-transform: uppercase; margin-bottom: 24px;
-      display: flex; align-items: center; gap: 12px; justify-content: center;
+      display: flex; align-items: center; gap: 12px; justify-content: center; position: relative; z-index:2;
     }
-    .hero-eyebrow::before, .hero-eyebrow::after {
-      content: ''; width: 32px; height: 1px; background: rgba(168,137,80,.45);
-    }
+    .hero-eyebrow::before, .hero-eyebrow::after { content:''; width:32px; height:1px; background:rgba(168,137,80,.45); }
     .hero h1 {
       font-family: var(--serif); font-weight: 300;
-      font-size: clamp(28px,4vw,48px); line-height: 1.7;
+      font-size: clamp(26px,4vw,46px); line-height: 1.75;
       color: rgba(255,255,255,.9); letter-spacing: .06em;
       margin-bottom: 20px; position: relative; z-index: 2;
     }
-    .hero h1 em { font-style: normal; color: var(--gold); }
     .hero-sub {
-      font-size: 15px; color: rgba(255,255,255,.45);
-      line-height: 2; max-width: 36em; position: relative; z-index: 2;
+      font-size: 15px; color: rgba(255,255,255,.42);
+      line-height: 2.1; max-width: 34em; position: relative; z-index: 2;
     }
 
     /* NEXT SESSION */
-    .next-section {
-      background: var(--cream); border-bottom: 1px solid var(--line);
-    }
+    .next-section { background: var(--cream); border-bottom: 1px solid var(--line); }
     .next-inner {
-      width: min(760px, calc(100% - 48px));
-      margin: 0 auto; padding: 56px 0;
+      width: min(800px, calc(100% - 48px)); margin: 0 auto; padding: 52px 0;
       display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 32px;
     }
-    .next-eyebrow {
+    .eyebrow-small {
       font-size: 10px; font-weight: 700; letter-spacing: .25em;
       text-transform: uppercase; color: var(--gold);
       display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
     }
-    .next-eyebrow::before { content: ''; width: 20px; height: 1px; background: rgba(168,137,80,.55); }
+    .eyebrow-small::before { content:''; width:18px; height:1px; background:rgba(168,137,80,.55); }
     .next-title {
-      font-family: var(--serif); font-size: 22px; font-weight: 500;
+      font-family: var(--serif); font-size: 20px; font-weight: 500;
       color: var(--deep); margin-bottom: 8px;
     }
     .next-meta { font-size: 14px; color: var(--muted); line-height: 1.9; }
     .btn-apply {
       display: inline-flex; align-items: center; white-space: nowrap;
-      height: 46px; padding: 0 24px; border-radius: 4px;
+      height: 44px; padding: 0 22px; border-radius: 4px;
       background: var(--green); color: #fff;
-      font-size: 13px; font-weight: 700; letter-spacing: .04em;
-      transition: background .2s;
+      font-size: 13px; font-weight: 700; letter-spacing: .04em; transition: background .2s;
     }
     .btn-apply:hover { background: var(--deep); }
 
-    /* SECTION COMMON */
+    /* SECTION */
     .section { padding: 72px 0; }
     .section + .section { border-top: 1px solid var(--line); }
-    .wrap { width: min(820px, calc(100% - 48px)); margin: 0 auto; }
-    .section-eyebrow {
-      font-size: 10px; font-weight: 700; letter-spacing: .25em;
-      text-transform: uppercase; color: var(--gold);
-      display: flex; align-items: center; gap: 8px; margin-bottom: 16px;
-    }
-    .section-eyebrow::before { content: ''; width: 20px; height: 1px; background: rgba(168,137,80,.55); }
+    .wrap { width: min(840px, calc(100% - 48px)); margin: 0 auto; }
     h2 {
       font-family: var(--serif); font-size: clamp(20px,2.5vw,28px);
       font-weight: 500; letter-spacing: .03em; line-height: 1.5;
-      margin-bottom: 36px; color: var(--deep);
+      margin-bottom: 40px; color: var(--deep);
     }
 
     /* SESSION CARD */
-    .session-list { display: flex; flex-direction: column; gap: 48px; }
-    .session-card {
-      border: 1px solid var(--line); border-radius: 8px;
-      overflow: hidden; background: #fff;
-      transition: box-shadow .25s ease;
-    }
-    .session-card:hover { box-shadow: 0 16px 48px rgba(23,21,19,.09); }
+    .session-list { display: flex; flex-direction: column; gap: 60px; }
+    .session-card { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #fff; transition: box-shadow .25s; }
+    .session-card:hover { box-shadow: 0 18px 52px rgba(23,21,19,.09); }
+
     .session-header {
-      background: var(--deep); padding: 28px 32px;
+      background: var(--deep); padding: 28px 36px;
       display: grid; grid-template-columns: auto 1fr; gap: 0 24px; align-items: start;
     }
     .session-num {
-      font-family: var(--serif); font-size: 48px; font-weight: 300;
-      color: rgba(168,137,80,.5); line-height: 1;
+      font-family: var(--serif); font-size: 52px; font-weight: 300;
+      color: rgba(168,137,80,.45); line-height: 1;
     }
-    .session-meta { padding-top: 4px; }
-    .session-date { font-size: 11px; color: rgba(255,255,255,.4); letter-spacing: .1em; margin-bottom: 8px; }
+    .session-date { font-size: 11px; color: rgba(255,255,255,.38); letter-spacing: .1em; margin-bottom: 8px; }
     .session-theme {
       font-family: var(--serif); font-size: 18px; font-weight: 500;
-      color: rgba(255,255,255,.9); line-height: 1.6;
+      color: rgba(255,255,255,.9); line-height: 1.65; margin-bottom: 10px;
     }
-    .session-body { padding: 32px; }
-    .session-summary {
-      font-size: 15px; color: var(--muted); line-height: 2.1;
-      margin-bottom: 28px;
+    .session-members {
+      font-size: 12px; color: rgba(255,255,255,.35); letter-spacing: .05em;
     }
 
+    .session-body { padding: 36px; }
+
+    /* NARRATIVE */
+    .narrative {
+      font-size: 15px; color: var(--muted); line-height: 2.15;
+      margin-bottom: 32px; border-left: 3px solid rgba(168,137,80,.2);
+      padding-left: 20px;
+    }
+
+    /* THEME BLOCKS */
+    .themes { display: flex; flex-direction: column; gap: 28px; margin-bottom: 32px; }
+    .theme-block { background: var(--cream); border-radius: 6px; padding: 24px 28px; }
+    .theme-label {
+      font-size: 10px; font-weight: 700; letter-spacing: .22em;
+      color: var(--gold); text-transform: uppercase; margin-bottom: 12px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .theme-label::before { content:''; width:16px; height:1px; background:rgba(168,137,80,.55); }
+    .theme-title {
+      font-family: var(--serif); font-size: 16px; font-weight: 500;
+      color: var(--deep); margin-bottom: 12px; line-height: 1.6;
+    }
+    .theme-body { font-size: 14px; color: var(--muted); line-height: 2.05; }
+    .theme-body p + p { margin-top: 10px; }
+
     /* QUOTES */
-    .quote-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
+    .quote-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
     .quote {
       background: var(--mist); border-left: 3px solid var(--gold);
       padding: 16px 20px; border-radius: 0 6px 6px 0;
@@ -177,31 +181,47 @@
       font-family: var(--serif); font-size: 14px; font-weight: 400;
       color: var(--deep); line-height: 1.95; margin-bottom: 8px;
     }
-    .quote-from {
-      font-size: 11px; color: var(--muted); letter-spacing: .06em;
-    }
+    .quote-from { font-size: 11px; color: var(--muted); letter-spacing: .05em; }
 
     /* DISTILL */
     .distill-box {
-      background: var(--cream); border-radius: 6px;
-      padding: 24px 28px; margin-bottom: 28px;
+      background: var(--deep); border-radius: 6px;
+      padding: 28px 32px; margin-bottom: 28px;
     }
     .distill-label {
+      font-size: 10px; font-weight: 700; letter-spacing: .25em;
+      color: var(--gold); text-transform: uppercase; margin-bottom: 18px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .distill-label::before { content:''; width:18px; height:1px; background:rgba(168,137,80,.55); }
+    .distill-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .distill-list li {
+      font-size: 14px; color: rgba(235,230,221,.85); line-height: 1.85;
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .distill-list li::before { content:'—'; color:var(--gold); flex-shrink:0; font-weight:300; }
+
+    /* SOUL POINTS */
+    .soul-box {
+      border: 1px solid rgba(168,137,80,.25); border-radius: 6px;
+      padding: 24px 28px; margin-bottom: 28px;
+    }
+    .soul-label {
       font-size: 10px; font-weight: 700; letter-spacing: .22em;
       color: var(--gold); text-transform: uppercase; margin-bottom: 14px;
+      display: flex; align-items: center; gap: 8px;
     }
-    .distill-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .distill-list li {
-      font-size: 14px; color: var(--ink); line-height: 1.8;
+    .soul-label::before { content:''; width:16px; height:1px; background:rgba(168,137,80,.55); }
+    .soul-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .soul-list li {
+      font-size: 14px; color: var(--ink); line-height: 1.85;
       display: flex; gap: 10px; align-items: flex-start;
     }
-    .distill-list li::before {
-      content: '—'; color: var(--gold); flex-shrink: 0; font-weight: 300;
-    }
+    .soul-list li::before { content:'・'; color:var(--gold); flex-shrink:0; }
 
     /* NOTE LINK */
     .note-link-row {
-      display: flex; align-items: center; gap: 12px;
+      display: flex; align-items: center; gap: 14px;
       padding-top: 24px; border-top: 1px solid var(--line);
     }
     .note-link-label { font-size: 12px; color: var(--muted); }
@@ -212,19 +232,17 @@
       padding-bottom: 1px; transition: color .2s, border-color .2s;
     }
     .note-link:hover { color: var(--gold); border-color: rgba(168,137,80,.4); }
-
-    /* ARCHIVE TAG */
     .tag-soon {
       display: inline-flex; align-items: center;
       height: 24px; padding: 0 10px; border-radius: 12px;
-      font-size: 10px; font-weight: 700; letter-spacing: .12em;
-      background: rgba(168,137,80,.12); color: var(--gold);
+      font-size: 10px; font-weight: 700; letter-spacing: .1em;
+      background: rgba(168,137,80,.1); color: var(--gold);
     }
 
     /* SCROLL REVEAL */
     .reveal {
       opacity: 0; transform: translateY(24px);
-      transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1);
+      transition: opacity .85s cubic-bezier(.16,1,.3,1), transform .85s cubic-bezier(.16,1,.3,1);
     }
     .reveal.visible { opacity: 1; transform: none; }
     .stagger > * {
@@ -232,8 +250,8 @@
       transition: opacity .65s ease, transform .65s ease;
     }
     .stagger.visible > *:nth-child(1) { transition-delay: 0s; }
-    .stagger.visible > *:nth-child(2) { transition-delay: .15s; }
-    .stagger.visible > *:nth-child(3) { transition-delay: .30s; }
+    .stagger.visible > *:nth-child(2) { transition-delay: .18s; }
+    .stagger.visible > *:nth-child(3) { transition-delay: .36s; }
     .stagger.visible > * { opacity: 1; transform: none; }
 
     /* FOOTER */
@@ -245,12 +263,12 @@
     footer a:hover { color: var(--gold); }
     footer p + p { margin-top: 12px; }
 
-    /* RESPONSIVE */
     @media (max-width: 640px) {
       .next-inner { grid-template-columns: 1fr; gap: 20px; }
       .session-header { grid-template-columns: 1fr; }
-      .session-num { font-size: 32px; }
+      .session-num { font-size: 36px; }
       .session-body { padding: 24px; }
+      .distill-box { padding: 20px; }
     }
   </style>
 </head>
@@ -263,19 +281,16 @@
       <div class="brand-mark">薫</div>
       オンライン寺子屋 — 参加者の部屋
     </div>
-    <span class="nav-note">このページはURLを知る方のみ公開</span>
+    <span class="nav-note">URLを知る方のみ公開</span>
   </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-orb hero-orb1"></div>
-  <div class="hero-orb hero-orb2"></div>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
   <p class="hero-eyebrow">PARTICIPANTS ARCHIVE</p>
-  <h1>
-    来てくれた夜の記録を、<br>
-    ここに残しています。
-  </h1>
+  <h1>来てくれた夜の記録を、<br>ここに残しています。</h1>
   <p class="hero-sub">
     一度きりで終わらせない。<br>
     あの夜に動いたものを、ここで何度でも読み返してください。
@@ -286,7 +301,7 @@
 <div class="next-section">
   <div class="next-inner reveal">
     <div>
-      <p class="next-eyebrow">NEXT SESSION</p>
+      <p class="eyebrow-small">NEXT SESSION</p>
       <p class="next-title">第3回 オンライン寺子屋</p>
       <p class="next-meta">
         開催日時：2026年6月（水曜・21:30〜）調整中<br>
@@ -300,27 +315,65 @@
 <!-- SESSION ARCHIVE -->
 <div class="section">
   <div class="wrap">
-    <p class="section-eyebrow">SESSION ARCHIVE</p>
-    <h2>これまでのセッション</h2>
+    <p class="eyebrow-small" style="margin-bottom:16px;">SESSION ARCHIVE</p>
+    <h2>これまでのセッション記録</h2>
 
     <div class="session-list stagger">
 
-      <!-- 第2回 -->
+      <!-- ===== 第2回 ===== -->
       <div class="session-card">
         <div class="session-header">
           <div class="session-num">02</div>
-          <div class="session-meta">
-            <p class="session-date">2026年5月13日（水）</p>
+          <div>
+            <p class="session-date">2026年5月13日（水）21:30〜</p>
             <p class="session-theme">AIの時代を見据えた、自分の問いの持ち方</p>
+            <p class="session-members">参加者：宙本直子 / Eri Sato / 前田薫（3名）</p>
           </div>
         </div>
         <div class="session-body">
-          <p class="session-summary">
-            転換点にいる人たちが、それぞれの言葉で現在地を語った夜。
-            転職があっという間に決まった人、一年半の混沌からようやく「そういうことか」が見えてきた人、AIを使いながら自分の認知のパターンに気づいた人。
-            AIとの向き合い方、座禅会の場の力、整理する前にそのまま投げることの重要性。
-            三者三様の話が、いつも同じ場所に着いた。
+
+          <p class="narrative">
+            転換期にいる3人が、それぞれの現在地をそのまま持ち寄った夜。転職があっという間に決まった人、一年半の混沌からようやく「そういうことか」が見えてきた人、AIと向き合いながら自分の認知パターンに気づいた人。AIとの付き合い方、座禅会の場の力、整理する前にそのままぶつけることの意味。三者三様の話が、いつも同じ場所に着地した。
           </p>
+
+          <div class="themes">
+
+            <div class="theme-block">
+              <p class="theme-label">THEME 01</p>
+              <p class="theme-title">AIは「使う」ものではなく「向き合う」もの ——愛と理解の対象として</p>
+              <div class="theme-body">
+                <p>「AIも人と同じで、理解するところから始まる。一言で言ったら、愛があるかどうかですよね」という言葉から始まったこのテーマ。AIをイエスマン化させていた自分への気づき、相手（AI）を理解しないまま動かそうとしていたこと——それが人間との関わり方と同じ構造であることを、3人で確かめた。</p>
+                <p>整理してから投げると、いちばん大事なエネルギーが出てこない。モヤモヤのまま、目的を持たずに渡してみる。そこに出てくるものの方が、本当のことを映している。</p>
+              </div>
+            </div>
+
+            <div class="theme-block">
+              <p class="theme-label">THEME 02</p>
+              <p class="theme-title">意識が変わると、見えてくる現実が変わる</p>
+              <div class="theme-body">
+                <p>Eriさんは4月に転職を決意し、あっという間に元の職場に戻ることが決まった。「以前は休むことなど許されないと思って生きてたのに、実際には『有給使ってゆっくり休んで』と言われた。世界は優しいんだな、と今さら気づいてる」と、不思議そうに笑いながら話した。</p>
+                <p>旦那さんの妹さんの出産にモヤモヤした自分を観察しながら、その怒りの正体を「自分が当時ゆっくりしたかったのにできなかった、叶えられなかった未消化の思いがある」と自分で紐解いた。「相手が悪いことは何もないから。私に残ってるものを教えてもらってる」という言葉が場に残った。</p>
+              </div>
+            </div>
+
+            <div class="theme-block">
+              <p class="theme-label">THEME 03</p>
+              <p class="theme-title">混沌の中にいても、意味があると思えること</p>
+              <div class="theme-body">
+                <p>宙本さんは「人の森」を始めて2年目。去年は「先が見えへんなりにジタバタしてた」一年。年明けにさらに大きな転換点が訪れ、「完全にゼロに戻る」感覚を経験した。地面がなかった感じ、もやもや、言語化しづらい焦り。</p>
+                <p>それでも「混乱しながらも、意味があるなと思ってた」と言いながら過ごすうちに、「だんだん自分の中で組み換えられた何かが起こって、ようやく形を成してきた」。前回の寺子屋より、だいぶ落ち着いてきたと、冒頭で静かに報告してくれた。</p>
+              </div>
+            </div>
+
+            <div class="theme-block">
+              <p class="theme-label">THEME 04</p>
+              <p class="theme-title">ビジョンが先で、AIが後。追いかけるな、追いつかせろ</p>
+              <div class="theme-body">
+                <p>「AIの進化に人間が追いかけてるような構図になってるけど、全く逆。誰に聞いても無理と言われる確固たるビジョンを持ってたら、AIの方が追いついてくる」。進んでいる感覚ではなく、「もともとビジョンがあって、その周りにひっついてるものを削ぎ落としていく感覚。彫刻を掘る人みたい」という言葉が、この夜の核心だった。</p>
+              </div>
+            </div>
+
+          </div>
 
           <div class="distill-box">
             <p class="distill-label">この夜の蒸留</p>
@@ -336,48 +389,119 @@
           <div class="quote-list">
             <div class="quote">
               <p class="quote-text">「世界は優しいんだなあって、今さら気づいてる」</p>
-              <p class="quote-from">— 参加者（作業療法士・30代）</p>
+              <p class="quote-from">— Eri Sato（作業療法士・30代）</p>
             </div>
             <div class="quote">
               <p class="quote-text">「混乱しながらも、意味があるなと思ってた。それがだんだん自分の中で決着してきた」</p>
-              <p class="quote-from">— 参加者（コミュニティ主宰・40代）</p>
+              <p class="quote-from">— 宙本直子（人の森 主宰・40代）</p>
             </div>
             <div class="quote">
               <p class="quote-text">「整理する前のまとまってないものをAIに投げてみると、そこにあるエネルギーを言語化してくれる。整理してから投げてしまうと、それは出てこない」</p>
               <p class="quote-from">— 前田薫</p>
             </div>
             <div class="quote">
+              <p class="quote-text">「AIの進化に人間が追いかけてる構図は全く逆。誰にも無理と言われるくらいのビジョンを持ったら、AIの方が追いついてくる」</p>
+              <p class="quote-from">— 前田薫</p>
+            </div>
+            <div class="quote">
               <p class="quote-text">「使う人の鏡として多様性がぶわあっと広がるのが分かる。希望もあるし、怖さもある。でも希望の方が大きい」</p>
-              <p class="quote-from">— 参加者（コミュニティ主宰・40代）</p>
+              <p class="quote-from">— 宙本直子</p>
+            </div>
+            <div class="quote">
+              <p class="quote-text">「相手が悪いことは何もないから。私に残ってるものを教えてもらってる」</p>
+              <p class="quote-from">— Eri Sato</p>
             </div>
           </div>
 
           <div class="note-link-row">
-            <span class="note-link-label">この夜の記録 →</span>
-            <a href="https://note.com/nanbodemo/n/nf152558c5036" target="_blank" rel="noopener" class="note-link">
-              noteで読む
-            </a>
+            <span class="note-link-label">この夜の記録をnoteで読む →</span>
+            <a href="https://note.com/nanbodemo/n/nf152558c5036" target="_blank" rel="noopener" class="note-link">noteを読む</a>
           </div>
         </div>
       </div>
 
-      <!-- 第1回 -->
+      <!-- ===== 第1回 ===== -->
       <div class="session-card">
         <div class="session-header">
           <div class="session-num">01</div>
-          <div class="session-meta">
-            <p class="session-date">2026年4月（水）</p>
+          <div>
+            <p class="session-date">2026年4月13日（月）</p>
             <p class="session-theme">自立とは何か。「素直」と「正直」の違い。</p>
+            <p class="session-members">参加者：前田薫 / ひとたん / えりちゃん / なおちゃん / じゅんきさん（5名）</p>
           </div>
         </div>
         <div class="session-body">
-          <p class="session-summary">
-            子どもとの関わり、自立の意味、分からなさをそのまま置いておけること。
-            問いが問いを生む時間になりました。
+
+          <p class="narrative">
+            前田薫が主催する初めてのオンライン寺子屋。5人が初めて顔を合わせながら、「自分らしく生きることとは何か」「子どもへの関わりとはどういうことか」「言葉の意味を決めるのではなく、問い続けること」を、2時間かけて深めていった夜。「分からないけど面白かった」という感想が自然に出てきたことが、この場の在り方そのものを表していた。
           </p>
+
+          <div class="themes">
+
+            <div class="theme-block">
+              <p class="theme-label">THEME 01</p>
+              <p class="theme-title">社会への違和感と、それぞれが大切にしていること</p>
+              <div class="theme-body">
+                <p>じゅんきさんは「自分らしく生きられていない人を見ると違和感を感じる」と言い、えりちゃんは「子どもが自分で考えて決められるようになることを大切にしたい」と。なおちゃんは「外側の声に引っ張られず、自分に嘘をつかずに生きられる社会を望んでいる」と話した。</p>
+                <p>ひとたんは「未来という言葉ではなく、今ここにいる子どもたちそのものを大切にしたい」と。薫ちゃんは「日本は世界的に見ても恵まれているのに幸福度が低いことへの違和感」を話した。5人の言葉は違いながらも、「自分らしく生きる人が増えることが、子どもたちにも、社会全体にもつながっていく」という視点に自然に集まっていった。</p>
+              </div>
+            </div>
+
+            <div class="theme-block">
+              <p class="theme-label">THEME 02</p>
+              <p class="theme-title">子どもの「自立」について——大人の在り方が鍵になる</p>
+              <div class="theme-body">
+                <p>なおちゃんから「自立は『自分の心を立たせること』、自律は『社会的・経済的に成り立つこと』」という整理が共有された。じゅんきさんは「自分で舵を取れること、自分の生活や気持ちを自分で扱えること」と表現し、ひとたんは「自分らしく、自分に素直に生きていることが自立」と言った。</p>
+                <p>そしてえりちゃんから、娘さんとの関わりの中での実践が具体的に共有された。感情を否定しないこと。感情をコントロールさせるのではなく、気づいて表現できるようにすること。怒っているなら、その気持ちをちゃんと味わわせてあげること。娘さん自身がノートに感情を書き出すようになったこと。「子どもに直接教えることよりも、大人自身が自分らしく生きる姿を見せることが大切」という流れに、5人が静かにうなずいていた。</p>
+              </div>
+            </div>
+
+            <div class="theme-block">
+              <p class="theme-label">THEME 03</p>
+              <p class="theme-title">「素直」と「正直」の違い——言葉の奥にあるもの</p>
+              <div class="theme-body">
+                <p>じゅんきさんから出てきた言葉として、「正直」には前提がある——何か言いづらいことや、覆したい前提がある時に使われやすい。「素直」には前提がない——ただ自然に、溢れ出るもの。なおちゃんからも「正直には、何かを正すような響きがある」という補足が加わった。</p>
+                <p>そこから「じゃあ柔軟って何だろう」「言葉の違いって何だろう」と問いが次の問いを生んでいった。答えを出すのではなく、問い続けることそのものに価値があると、みんなで感じていた時間だった。</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="soul-box">
+            <p class="soul-label">この夜に実際に起きていたこと</p>
+            <ul class="soul-list">
+              <li>寺子屋は「説明しきれる場」ではなく、「体験してもまだ分からなさが残る場」として共有された</li>
+              <li>自立について、5人がそれぞれ違う角度から言葉を持ち寄り、交差した</li>
+              <li>感情を否定せず、書き出す・味わうという実践例が、具体的な言葉で共有された</li>
+              <li>「正直」と「素直」の違いについて、辞書ではなく自分の感覚から言葉が持ち寄られた</li>
+              <li>分からなさが否定されず、そのまま場に置かれた</li>
+              <li>初対面同士でも対話が成立し、問いが問いを生む流れが実際に起きた</li>
+              <li>「分からないけど面白かった」という感想が、自然な言葉として出てきた</li>
+            </ul>
+          </div>
+
+          <div class="quote-list">
+            <div class="quote">
+              <p class="quote-text">「自立は『自分の心を立たせること』。自律は『自分を律すること、社会的・経済的に成り立つこと』」</p>
+              <p class="quote-from">— なおちゃん（ヘリオセントリック占星術）</p>
+            </div>
+            <div class="quote">
+              <p class="quote-text">「正直には前提がある。素直には前提がない。ただ自然に、溢れ出るもの」</p>
+              <p class="quote-from">— じゅんきさん（クレニオセイクラルセラピー）</p>
+            </div>
+            <div class="quote">
+              <p class="quote-text">「感情をコントロールさせるのではなく、気づいて表現できるようにしてあげること」</p>
+              <p class="quote-from">— えりちゃん（アロマセラピスト）</p>
+            </div>
+            <div class="quote">
+              <p class="quote-text">「未来という言葉ではなく、今ここにいる子どもたちそのものを大切にしたい」</p>
+              <p class="quote-from">— ひとたん（障害者支援）</p>
+            </div>
+          </div>
+
           <div class="note-link-row">
-            <span class="note-link-label">記録 →</span>
-            <span class="tag-soon">note記事 準備中</span>
+            <span class="note-link-label">この夜の記録をnoteで読む →</span>
+            <a href="https://note.com/nanbodemo/n/n7189a899c0a5" target="_blank" rel="noopener" class="note-link">noteを読む</a>
           </div>
         </div>
       </div>
@@ -390,7 +514,7 @@
 <footer>
   <p>オンライン寺子屋 参加者アーカイブ ／ 前田 薫</p>
   <p>
-    <a href="https://kaoruchan333.github.io/online-terakoya/">← オンライン寺子屋 案内ページ</a>
+    <a href="https://kaoruchan333.github.io/online-terakoya/">← 案内ページ</a>
     <a href="https://kaoruchan333.github.io/field-coaching/">場のコーチング</a>
     <a href="https://note.com/nanbodemo" target="_blank">note</a>
   </p>
@@ -402,7 +526,7 @@
     entries.forEach(function(e){
       if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal, .stagger').forEach(function(el){ io.observe(el); });
 })();
 </script>
