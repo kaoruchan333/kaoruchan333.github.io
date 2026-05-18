@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>「何もない」は、事実ですか？</title>
+  <style>
+:root {
+  --ink:#2f2b26;
+  --muted:#70685f;
+  --paper:#fbfaf6;
+  --panel:#ffffff;
+  --soft:#f2eee6;
+  --line:#e4ded3;
+  --accent:#9a6a3b;
+  --green:#566c59;
+  --deep:#26312b;
+  --gold:#c19a5b;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;color:var(--ink);background:var(--paper);line-height:1.95;font-size:16px;letter-spacing:0}
+body.kj-auth-locked > *:not(#kj-auth-overlay){display:none!important}
+a{color:inherit}.wrap{width:min(900px,calc(100% - 36px));margin:0 auto}.narrow{width:min(760px,calc(100% - 36px));margin:0 auto}
+.hero{background:linear-gradient(135deg,#26312b 0%,#3d4439 55%,#7f623f 100%);color:#fff8e8;padding:46px 0 44px;border-bottom:1px solid rgba(255,255,255,.18)}
+.back{display:inline-flex;gap:8px;align-items:center;color:rgba(255,248,232,.75);text-decoration:none;font-size:13px;margin-bottom:34px}.back.dark{color:var(--muted);margin-bottom:28px}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#d7bd8e;margin:0 0 12px}.hero h1{font-size:clamp(32px,7vw,62px);line-height:1.28;margin:0;font-weight:750}.lead{font-size:17px;color:rgba(255,248,232,.86);max-width:760px;margin:22px 0 0}.meta{font-size:14px;color:rgba(255,248,232,.72);margin-top:16px}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;border-radius:8px;border:1px solid rgba(255,248,232,.45);padding:8px 15px;text-decoration:none;color:#fff8e8;background:rgba(255,255,255,.08);font-size:14px}.button.light{background:#fff;color:var(--deep);border-color:#fff}.button.dark{background:var(--deep);color:#fff8e8;border-color:var(--deep)}
+main{padding:20px 0 76px}section{padding:42px 0;border-bottom:1px solid var(--line)}section:last-child{border-bottom:0}h2{font-size:clamp(25px,4vw,36px);line-height:1.42;margin:0 0 20px;color:var(--deep)}h3{font-size:20px;line-height:1.55;margin:30px 0 12px;color:#3d382f}h4{font-size:16px;margin:24px 0 8px;color:var(--accent)}p{margin:0 0 18px}strong{color:#241f1a}.intro{font-size:18px;color:#4a443d}.small{font-size:14px;color:var(--muted)}
+ul,ol{padding-left:1.25em;margin:14px 0 22px}li{margin:7px 0}hr{border:0;border-top:1px solid var(--line);margin:38px 0}.quote,blockquote{border-left:4px solid var(--accent);background:linear-gradient(90deg,rgba(154,106,59,.1),rgba(154,106,59,0));padding:12px 0 12px 20px;margin:24px 0;color:#463f36;font-size:18px}
+.key-box{background:var(--deep);color:#fff8e8;border-radius:8px;padding:28px;margin:28px 0}.key-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#d7bd8e;margin-bottom:8px}.key-text{font-size:clamp(24px,5vw,42px);line-height:1.36;font-weight:750}.note-box,.work-box{background:var(--soft);border:1px solid #ded5c7;border-radius:8px;padding:22px 24px;margin:24px 0}.truth-box{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px;margin:20px 0}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0}.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:22px;text-decoration:none;display:block}.card:hover{border-color:#b9935a}.card-date{font-size:12px;color:var(--accent);letter-spacing:.08em;margin-bottom:6px}.card-title{font-size:18px;font-weight:750;margin-bottom:8px;line-height:1.5}.card-desc{font-size:14px;color:var(--muted);line-height:1.8}.latest{border-color:#b9935a;background:#fffdf8}
+table{width:100%;border-collapse:collapse;margin:24px 0;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;display:block;overflow-x:auto}thead,tbody,tr{width:100%}th,td{border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;min-width:150px}th{background:#f1ece3;color:var(--deep);font-weight:700}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f0ebe1;border:1px solid #e1d8ca;border-radius:5px;padding:1px 5px}pre{white-space:pre-wrap;background:#f4f0e8;border:1px solid #ded3c2;border-radius:8px;padding:16px;overflow:auto;color:#3a342d}.signature{margin-top:22px;font-weight:700}.footer-note{padding:32px 0 0;color:var(--muted);font-size:13px}.private-note{background:#f0ede4;border:1px solid var(--line);border-radius:8px;padding:20px 24px;color:var(--muted);font-size:14px;margin-top:34px}
+#kj-auth-overlay{position:fixed;inset:0;background:linear-gradient(135deg,#26312b,#5b513f);display:grid;place-items:center;padding:22px;z-index:9999}.kj-auth-card{width:min(420px,100%);background:#fbfaf6;color:#2f2b26;border-radius:10px;padding:30px;box-shadow:0 24px 80px rgba(0,0,0,.28)}.kj-auth-label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9a6a3b;margin-bottom:10px}.kj-auth-card h1{font-size:24px;line-height:1.45;margin:0 0 10px}.kj-auth-card p{font-size:14px;color:#70685f}.kj-auth-card input{width:100%;min-height:46px;border:1px solid #d4cabd;border-radius:8px;padding:10px 12px;font-size:16px;background:#fff;margin:8px 0 12px}.kj-auth-card button{width:100%;min-height:46px;border:0;border-radius:8px;background:#26312b;color:#fff8e8;font-size:15px;font-weight:700}.kj-auth-error{min-height:22px;color:#a33;font-size:13px;margin-top:8px}
+@media(max-width:640px){.hero{padding:34px 0 36px}.cards{grid-template-columns:1fr}section{padding:34px 0}.card{padding:18px}.hero-actions{display:grid}.button{width:100%}table{font-size:14px}th,td{padding:10px 11px;min-width:130px}}
+</style>
+</head>
+<body class="kj-auth-locked">
+  <header class="hero">
+    <div class="wrap">
+      <a class="back" href="../../">← 一覧へ戻る</a>
+      <p class="eyebrow">Kaoru Juku Archive</p>
+      <h1>「何もない」は、事実ですか？</h1>
+      <p class="lead">「進んでいない」と感じる時、ほんとうは何が起きているのか</p>
+      <p class="meta">2026年5月17日 かおる塾グループコーチング</p>
+      <div class="hero-actions">
+        <a class="button light" href="#worksheet">ワークを見る</a>
+        <a class="button" href="#message">メッセージへ</a>
+      </div>
+    </div>
+  </header>
+  <main class="narrow">
+    <section class="note-box">
+      <p class="intro">これは、参加した人にも、アーカイブで見る人にも届くように整理した振り返りページです。答えを急がず、今の自分の反応を見ながら読み進めてください。</p>
+    </section>
+    <div class="quote"><strong>2026年5月17日</strong></div>
+<h2>タイトル</h2>
+<div class="quote"><strong>「何もない」は、事実ですか？</strong></div>
+<h2>サブタイトル</h2>
+<div class="quote"><strong>「進んでいない」と感じる時、ほんとうは何が起きているのか</strong></div>
+<h2>一行テーマ</h2>
+<p>苦しい、進まない、何もない。そう感じる時こそ、自分が何を守ろうとしているのかを見る。</p>
+<h2>この教材について</h2>
+<p>この教材は、うまくいったお手本を見るためのものではありません。</p>
+<p>今回のグループコーチングで起きた、</p>
+<ul>
+<li>言葉が出ない時間</li>
+<li>テーマがなかなか決まらない時間</li>
+<li>「何もない」と感じている人の中から言葉が出てくる時間</li>
+<li>コーチ自身が「まとめなきゃ」に気づく時間</li>
+</ul>
+<p>その全部を含めて、教材として見ていきます。</p>
+<p>きれいに答えが出た回というより、</p>
+<div class="quote"><strong>自分の中の「しなきゃ」に気づき、問いを持ち帰る回</strong></div>
+<p>として受け取ってください。</p>
+<h2>視聴前カード</h2>
+<p>アーカイブを見る前に、次の4つだけ頭に入れておいてください。</p>
+<h3>1. 前半は、長く迷います</h3>
+<p>最初の20分ほどは、何を扱うかがすぐには定まりません。</p>
+<p>でも、その時間も大事です。</p>
+<p>「何もない」 「気づきがない」 「書けない」 「受け取って終わってしまう」</p>
+<p>そういう言葉が出てくるまでの時間を、早送りせずに見てみてください。</p>
+<h3>2. 今回の核心は、「見えている」という言葉です</h3>
+<p>今回、特に大事だったのは、</p>
+<div class="quote"><strong>好きな仕事に就けているように見える</strong></div>
+<p>という言葉でした。</p>
+<p>「あの人は好きな仕事に就いている」と決めつけるのではなく、 「自分にはそう見えている」と言葉にできている。</p>
+<p>ここに、事実と認知を分ける感覚が出ています。</p>
+<h3>3. かおるちゃん自身の「何かしなきゃ」も出てきます</h3>
+<p>後半で、かおるちゃん自身が、</p>
+<p>「アーカイブを見る人にも、何か学びを届けなきゃ」 「グループコーチングとしてまとめなきゃ」</p>
+<p>と思っていることに気づきます。</p>
+<p>そこも含めて、今回の学びです。</p>
+<h3>4. 答えをもらうより、問いを持ち帰る</h3>
+<p>今回のアーカイブは、</p>
+<p>「こう考えればいい」</p>
+<p>という答えを受け取るためではなく、</p>
+<div class="quote"><strong>自分の中にも同じような感覚がないかを見るため</strong></div>
+<p>に使ってください。</p>
+<h2>見どころガイド</h2>
+<table><thead><tr><th>目安</th><th>シーン</th><th>見るポイント</th></tr></thead><tbody><tr><td>0〜20分</td><td>雑談からテーマ探しへ</td><td>「何もない」状態から、どう言葉が出てくるか</td></tr><tr><td>約21〜24分</td><td>「両方見たい」「感謝まで行きたい」</td><td>学びたいけれど入口がわからない感覚</td></tr><tr><td>約33分</td><td>「飛ばされた感じがして」</td><td>出てきた言葉を、本人がすぐ打ち消す瞬間</td></tr><tr><td>約37〜41分</td><td>「つまらない」「ただの会社員」</td><td>自分に語れるものがないという認知</td></tr><tr><td>約51分</td><td>「羨ましい」</td><td>本音に近い言葉が出てくる瞬間</td></tr><tr><td>約54分</td><td>「好きな仕事に就けているように見える」</td><td>事実と認知が分かれた瞬間</td></tr><tr><td>約62分</td><td>かおるちゃんの「まとめなきゃ」</td><td>コーチ自身の反応が教材になる場面</td></tr><tr><td>約78分以降</td><td>個人セッションへの橋</td><td>グループで扱う問いと、個人で扱う現実の違い</td></tr></tbody></table>
+<h2>今回扱ったテーマ</h2>
+<ul>
+<li>「何も進んでいない」と感じる時</li>
+<li>学んでいるのに、受け取って終わってしまう感覚</li>
+<li>「めんどくさい」「諦めた」「見つからない」の奥にあるもの</li>
+<li>自己紹介で出てきた「自分には言うことがない」という感覚</li>
+<li>羨ましい人に、自分がどんな認知を乗せているか</li>
+<li>苦しい、進まないと感じることは本当にダメなことなのか</li>
+<li>答えを渡すのではなく、問いを残すこと</li>
+</ul>
+<h2>セッションの流れ</h2>
+<h3>1. 「何も進んでいない」という感覚から始まった</h3>
+<p>今回の時間は、最初から大きなテーマがあったわけではありません。</p>
+<p>出てきたのは、</p>
+<ul>
+<li>仕事が早く終わらないかなと思っている</li>
+<li>セルフコーチングジャーナルを開いたけれど書けなかった</li>
+<li>教材やアーカイブを見ても、受け取って終わってしまう</li>
+<li>毎週「また何も進んでいない」と感じながら参加している</li>
+</ul>
+<p>という感覚でした。</p>
+<p>でも、ここに大事な入口がありました。</p>
+<p>かおる塾では、何か立派な気づきを持ってくる必要はありません。 「何もない」「進んでいない」「受け取れていない」と感じる自分のまま来ても、そこから本当のテーマが見えてくることがあります。</p>
+<h3>2. 「めんどくさい」の奥にあったもの</h3>
+<p>最初に出てきた言葉は「めんどくさい」でした。</p>
+<p>でも、丁寧に見ていくと、</p>
+<ul>
+<li>何を書いていいかわからない</li>
+<li>見つからない</li>
+<li>だから諦める</li>
+<li>やっても変わっていない気がする</li>
+</ul>
+<p>という流れが見えてきました。</p>
+<p>つまり、単にめんどくさいのではなく、</p>
+<div class="quote"><strong>どの出来事を入口にして、どこを見に行けばいいのかわからない</strong></div>
+<p>ということが起きていました。</p>
+<p>これは、やる気の問題ではありません。 見に行く場所がまだつかめていないだけです。</p>
+<h3>3. 自己紹介で出てきた「自分には言うことがない」</h3>
+<p>セッションの中で、自然農イベントでの自己紹介の場面が出てきました。</p>
+<p>周りには、自分の好きなことや得意なことをしているように見える人たちがいる。 その中で、自分は「会社員です」としか言うことがない。</p>
+<p>そこで出てきた言葉は、</p>
+<ul>
+<li>つまらない</li>
+<li>言うことがない</li>
+<li>関心を持ってもらえそうな内容がない</li>
+<li>ただの会社員</li>
+<li>普通の会社員</li>
+<li>羨ましい</li>
+</ul>
+<p>というものでした。</p>
+<p>ここで大切なのは、実際にその人たちが好きな仕事をしているかどうかは、事実としてはわからないということです。</p>
+<p>でも、自分にはそう見えている。</p>
+<div class="quote"><strong>「好きな仕事に就けているように見える」</strong></div>
+<p>この言葉が出たこと自体が、とても大きな気づきでした。</p>
+<p>「あの人は好きなことをしている」と決めつけるのではなく、 「自分にはそう見えている」と言葉にできている。</p>
+<p>これは、事実と認知を分けて見始めているということです。</p>
+<h3>4. 羨ましいの奥にあるもの</h3>
+<p>羨ましいという感情は、悪いものではありません。</p>
+<p>羨ましいと感じる時、そこには自分が大切にしているものが隠れていることがあります。</p>
+<p>今回の場合は、</p>
+<ul>
+<li>好きなことを仕事にしているように見える人</li>
+<li>得意なことを持っているように見える人</li>
+<li>自分のことを語れる人</li>
+<li>生き生きと仕事や活動をしているように見える人</li>
+</ul>
+<p>に反応していました。</p>
+<p>その反応の奥には、</p>
+<div class="quote"><strong>自分も、自分のことをちゃんと言葉にしたい</strong></div>
+<p>という願いがあったのかもしれません。</p>
+<h3>5. かおるちゃん自身の「何かしなきゃ」</h3>
+<p>今回の後半で、かおるちゃん自身にも「何かしなきゃ」が出てきました。</p>
+<p>グループコーチングだから、そろそろまとめなきゃ。 アーカイブを見る人にも、何か学びを届けなきゃ。 参加している人が、すっきり終われるようにしなきゃ。</p>
+<p>その感覚に気づいた時、かおるちゃんはあえて「まとめる」ことを止めました。</p>
+<p>そして、本当に大切にしたいことは、</p>
+<div class="quote"><strong>答えを渡すことではなく、問いを残すこと</strong></div>
+<p>だと話しました。</p>
+<p>この場面も、今回の大事な学びです。</p>
+<p>「何かしなきゃ」と思った時、そこには責任感や愛情もあります。 でも、そのまま動く前に、</p>
+<div class="quote"><strong>本当は何を守ろうとしているのか？</strong></div>
+<p>を見てみる。</p>
+<p>そこに、自分の大切にしたいものが見えてきます。</p>
+<h2>構造図</h2>
+<h3>事実と認知のズレ</h3>
+<table><thead><tr><th>事実</th><th>認知</th><th>感情・行動</th></tr></thead><tbody><tr><td>会社員として働いている</td><td>ただの会社員、普通の会社員</td><td>つまらない、言うことがない</td></tr><tr><td>プログラマーとして業務改善のシステム作りをしている</td><td>向いていない、才能がない</td><td>苦しい、進まない</td></tr><tr><td>自然農イベントに参加している</td><td>周りは好きなことをしているように見える</td><td>羨ましい</td></tr><tr><td>上映会スタッフ、駐車場係、弁当の買い出しをしている</td><td>自分には関心を持ってもらえるものがない</td><td>何もないように感じる</td></tr><tr><td>ジャーナルを開いた</td><td>何を書けばいいかわからない</td><td>諦める、めんどくさい</td></tr></tbody></table>
+<h3>認知の階層</h3>
+<p>表面:</p>
+<div class="quote"><strong>めんどくさい / 諦めた / 進まない</strong></div>
+<p>中核:</p>
+<div class="quote"><strong>自分には、人に関心を持ってもらえるものがない</strong></div>
+<p>その下の前提:</p>
+<div class="quote"><strong>価値とは、人から関心を持たれること</strong></div>
+<p>守っているものの仮説:</p>
+<div class="quote"><strong>期待されない安全</strong></div>
+<p>これは断定ではありません。 本人がまだ言葉にしていない領域なので、あくまで仮説として置いておきます。</p>
+<h2>今回の学び</h2>
+<h3>学び1. 「何もない」は、何もないわけではない</h3>
+<p>「何もない」と感じる時も、実際には何かが起きています。</p>
+<p>ただ、それがまだ言葉になっていないだけかもしれません。</p>
+<p>問い:</p>
+<ul>
+<li>最近「何もない」と思った場面はありましたか？</li>
+<li>その時、本当は何が少しだけ気になっていましたか？</li>
+</ul>
+<h3>学び2. 「進んでいない」は、何を基準に見ているのか</h3>
+<p>進んでいないと感じる時、そこには自分の中の基準があります。</p>
+<p>これくらい変わっているはず。 これくらいできるようになっているはず。 もっと受け取れているはず。</p>
+<p>その基準と現実の差に反応しているのかもしれません。</p>
+<p>問い:</p>
+<ul>
+<li>自分が「進んでいない」と感じる時、何と比べていますか？</li>
+<li>本当に何も進んでいないのでしょうか？</li>
+</ul>
+<h3>学び3. 羨ましい人には、自分の願いが映る</h3>
+<p>羨ましいと感じる人は、自分が大切にしたいものを見せてくれていることがあります。</p>
+<p>相手を見ているようで、実は自分の願いを見ている。</p>
+<p>問い:</p>
+<ul>
+<li>最近、羨ましいと感じた人はいますか？</li>
+<li>その人の何が羨ましかったですか？</li>
+<li>そこには、自分のどんな願いがありそうですか？</li>
+</ul>
+<h3>学び4. 苦しい、進まないは、本当にダメなことなのか</h3>
+<p>苦しい。 前に進まない。 向いていない気がする。</p>
+<p>そう感じることを、私たちはすぐに「ダメなこと」と見てしまいます。</p>
+<p>でも、本当にそうでしょうか。</p>
+<p>その苦しさの中で、学んでいること、受け取っていること、育っている力があるかもしれません。</p>
+<p>問い:</p>
+<ul>
+<li>今、自分が苦しいと感じていることはありますか？</li>
+<li>その中で、自分は何を受け取っている可能性がありますか？</li>
+</ul>
+<h3>学び5. 答えより、問いが残ること</h3>
+<p>今回の時間は、きれいに答えが出た回ではありません。</p>
+<p>でも、問いが残りました。</p>
+<p>問いが残るということは、日常に戻ったあとも、自分の中で見続けられるということです。</p>
+<p>問い:</p>
+<ul>
+<li>今回、自分の中に残った問いは何ですか？</li>
+<li>その問いを、今週どんな場面で思い出せそうですか？</li>
+</ul>
+<h2 id="worksheet">ワークシート</h2>
+<h3>ワーク1. 「私は〜だ」を取り出す</h3>
+<p>最近、自分について「私は〜だ」と言い切った言葉を一つ書いてください。</p>
+<p>例:</p>
+<ul>
+<li>私は何もない</li>
+<li>私はセンスがない</li>
+<li>私は続かない</li>
+<li>私は進んでいない</li>
+<li>私は向いていない</li>
+</ul>
+<p>書く言葉:</p>
+<pre>私は、</pre>
+<h3>ワーク2. 事実と認知に分ける</h3>
+<p>ワーク1の言葉を、左右に分けます。</p>
+<table><thead><tr><th>事実</th><th>認知</th></tr></thead><tbody><tr><td>実際に起きていること、やっていること</td><td>自分がそう感じていること</td></tr></tbody></table>
+<p>例:</p>
+<table><thead><tr><th>事実</th><th>認知</th></tr></thead><tbody><tr><td>ジャーナルを開いたが書かなかった</td><td>私は何も進んでいない</td></tr></tbody></table>
+<h3>ワーク3. 「〜のように見えている」に書き換える</h3>
+<p>ワーク1の言葉を、</p>
+<div class="quote"><strong>私には、〜のように見えている</strong></div>
+<p>に書き換えてください。</p>
+<p>例:</p>
+<pre>私は何も進んでいない
+↓
+私には、自分が何も進んでいないように見えている</pre>
+<p>書き換えた文:</p>
+<pre>私には、</pre>
+<p>読んでみて変わったこと:</p>
+<pre></pre>
+<h3>ワーク4. 守っているものを見る</h3>
+<p>もし、その「私は〜だ」がなくなったら、自分は何が困るでしょうか。</p>
+<p>すぐに答えが出なくても大丈夫です。</p>
+<pre>もしこの認知がなくなったら、困ること:</pre>
+<h3>ワーク5. 事実の重りを足す</h3>
+<p>「何もない」「できない」「進んでいない」と感じる人は、先週自分が実際にやったことを、評価抜きで3つ書いてください。</p>
+<pre>1.
+2.
+3.</pre>
+<p>書き終えたら、もう一度最初の言葉を読んでください。</p>
+<p>その言葉は、まだ「事実」に見えるでしょうか。</p>
+<h2>アーカイブを見る方へ</h2>
+<p>今回のアーカイブは、答えを受け取るためというより、</p>
+<div class="quote"><strong>自分の中の「しなきゃ」に気づくため</strong></div>
+<p>に見てもらえたらと思います。</p>
+<p>よっちゃんの話を聞きながら、自分の中にも似た感覚がないか見てみてください。</p>
+<ul>
+<li>何も進んでいない</li>
+<li>受け取って終わっている</li>
+<li>自分には言うことがない</li>
+<li>羨ましい</li>
+<li>苦しい</li>
+<li>前に進まない</li>
+</ul>
+<p>こういう感覚は、悪いものではありません。</p>
+<p>そこに気づけた時、自分が本当に大切にしたいものが見えてきます。</p>
+<h2>深く見たい人へ</h2>
+<p>今回の回は、コーチングそのものを学ぶ教材としても使えます。</p>
+<h3>良かったところ</h3>
+<ul>
+<li>クライアントの言葉をそのまま拾って返している</li>
+<li>「事実としては何をしている会社員ですか？」と、認知ではなく事実を取りに行っている</li>
+<li>長い沈黙に先回りして喋らず、待っている場面がある</li>
+<li>自分の中に出た「まとめなきゃ」を隠さず場に開き、そのまま今日のテーマの実例にしている</li>
+</ul>
+<h3>練習材料として見られるところ</h3>
+<p>これは失敗探しではありません。 より深く学ぶための観察ポイントです。</p>
+<ul>
+<li>「飛ばされた感じ」が出た直後、本人が「いいんだけど」と打ち消した。ここはさらに一段深く見られた可能性がある</li>
+<li>「劣等感」という、本人が言っていない言葉をコーチが先に出した場面がある。直後に確認しているが、コーチ側の言葉を出す時は慎重さが必要</li>
+<li>後半の自己開示は価値がある一方で、長く語ることは別の形で「答えを渡す」ことにもなり得る。短く問いを置いて黙る選択肢もある</li>
+</ul>
+<p>この両方を見ることも、中庸の練習です。</p>
+<h2 id="message">かおるちゃんからのメッセージ</h2>
+<p>今回のセッションは、きれいに答えを出す回ではありませんでした。</p>
+<p>でも、僕はそれでよかったと思っています。</p>
+<p>なぜなら、答えを渡すことよりも、 自分の中に問いが残ることの方が大切な時があるからです。</p>
+<p>「何かしなきゃ」 「ちゃんと受け取らなきゃ」 「進まなきゃ」 「変わらなきゃ」</p>
+<p>そう感じる時、私たちは自分を責めやすくなります。</p>
+<p>でも、その感覚の奥には、 本当は大切にしたいものがあるのかもしれません。</p>
+<p>今週は、何かを変えようとするより、 「今、自分は何を守ろうとしているんだろう？」 と少しだけ見てみてください。</p>
+<p>その問いが、自分の本当の言葉に戻る入口になると思っています。</p>
+<p>前田薫</p>
+<hr>
+<p>*このドキュメントは、2026年5月17日 かおる塾グループコーチングの参加者・アーカイブ視聴者向け振り返り教材です。*</p>
+    
+    <section><h2>関連ページ</h2><div class="cards"><a class="card" href="../../members/yocchan/2026-05-17/"><div class="card-date">PRIVATE</div><div class="card-title">よっちゃん個別分析シート</div><div class="card-desc">本人向けの個別振り返りページです。</div></a><a class="card" href="../2026-05-10/"><div class="card-date">PREVIOUS</div><div class="card-title">5/10 振り返り教材</div><div class="card-desc">前回のかおる塾アーカイブ教材です。</div></a></div></section>
+    <p class="footer-note">2026年5月17日 かおる塾グループコーチングより</p>
+  </main>
+  
+<script id="kaoru-juku-password-guard-v1">
+(function() {
+  const PASS_HASH = '5ccc5274b688d517a2da7384ca2077c1b95451108b20e9456f0fd32c8e6e928e';
+  const STORAGE_KEY = 'kaoru_juku_auth_v1';
+  function unlock() {
+    document.body.classList.remove('kj-auth-locked');
+    const overlay = document.getElementById('kj-auth-overlay');
+    if (overlay) overlay.remove();
+  }
+  async function sha256(text) {
+    const data = new TextEncoder().encode(text);
+    const hash = await crypto.subtle.digest('SHA-256', data);
+    return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+  function checkSaved() { if (localStorage.getItem(STORAGE_KEY) === PASS_HASH) unlock(); }
+  function render() {
+    if (!document.body.classList.contains('kj-auth-locked')) return;
+    const overlay = document.createElement('div');
+    overlay.id = 'kj-auth-overlay';
+    overlay.innerHTML = `<div class="kj-auth-card"><div class="kj-auth-label">Kaoru Juku Members</div><h1>かおる塾メンバー専用ページ</h1><p>このページを見るには、メンバー用パスワードを入力してください。</p><input type="password" id="kj-auth-password" autocomplete="current-password" placeholder="パスワード"><button type="button" id="kj-auth-submit">表示する</button><div class="kj-auth-error" id="kj-auth-error"></div></div>`;
+    document.body.appendChild(overlay);
+    const input = document.getElementById('kj-auth-password');
+    const error = document.getElementById('kj-auth-error');
+    async function submit() {
+      const digest = await sha256(input.value || '');
+      if (digest === PASS_HASH) { localStorage.setItem(STORAGE_KEY, PASS_HASH); unlock(); }
+      else { error.textContent = 'パスワードが違います。'; input.value = ''; input.focus(); }
+    }
+    document.getElementById('kj-auth-submit').addEventListener('click', submit);
+    input.addEventListener('keydown', function(e) { if (e.key === 'Enter') submit(); });
+    setTimeout(() => input.focus(), 50);
+  }
+  checkSaved();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render); else render();
+})();
+</script>
+
+</body>
+</html>
