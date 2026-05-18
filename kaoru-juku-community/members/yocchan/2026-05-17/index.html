@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>よっちゃんへ｜「つまらない自分」の奥にある願い</title>
+  <style>
+:root {
+  --ink:#2f2b26;
+  --muted:#70685f;
+  --paper:#fbfaf6;
+  --panel:#ffffff;
+  --soft:#f2eee6;
+  --line:#e4ded3;
+  --accent:#9a6a3b;
+  --green:#566c59;
+  --deep:#26312b;
+  --gold:#c19a5b;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;color:var(--ink);background:var(--paper);line-height:1.95;font-size:16px;letter-spacing:0}
+body.kj-auth-locked > *:not(#kj-auth-overlay){display:none!important}
+a{color:inherit}.wrap{width:min(900px,calc(100% - 36px));margin:0 auto}.narrow{width:min(760px,calc(100% - 36px));margin:0 auto}
+.hero{background:linear-gradient(135deg,#26312b 0%,#3d4439 55%,#7f623f 100%);color:#fff8e8;padding:46px 0 44px;border-bottom:1px solid rgba(255,255,255,.18)}
+.back{display:inline-flex;gap:8px;align-items:center;color:rgba(255,248,232,.75);text-decoration:none;font-size:13px;margin-bottom:34px}.back.dark{color:var(--muted);margin-bottom:28px}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#d7bd8e;margin:0 0 12px}.hero h1{font-size:clamp(32px,7vw,62px);line-height:1.28;margin:0;font-weight:750}.lead{font-size:17px;color:rgba(255,248,232,.86);max-width:760px;margin:22px 0 0}.meta{font-size:14px;color:rgba(255,248,232,.72);margin-top:16px}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;border-radius:8px;border:1px solid rgba(255,248,232,.45);padding:8px 15px;text-decoration:none;color:#fff8e8;background:rgba(255,255,255,.08);font-size:14px}.button.light{background:#fff;color:var(--deep);border-color:#fff}.button.dark{background:var(--deep);color:#fff8e8;border-color:var(--deep)}
+main{padding:20px 0 76px}section{padding:42px 0;border-bottom:1px solid var(--line)}section:last-child{border-bottom:0}h2{font-size:clamp(25px,4vw,36px);line-height:1.42;margin:0 0 20px;color:var(--deep)}h3{font-size:20px;line-height:1.55;margin:30px 0 12px;color:#3d382f}h4{font-size:16px;margin:24px 0 8px;color:var(--accent)}p{margin:0 0 18px}strong{color:#241f1a}.intro{font-size:18px;color:#4a443d}.small{font-size:14px;color:var(--muted)}
+ul,ol{padding-left:1.25em;margin:14px 0 22px}li{margin:7px 0}hr{border:0;border-top:1px solid var(--line);margin:38px 0}.quote,blockquote{border-left:4px solid var(--accent);background:linear-gradient(90deg,rgba(154,106,59,.1),rgba(154,106,59,0));padding:12px 0 12px 20px;margin:24px 0;color:#463f36;font-size:18px}
+.key-box{background:var(--deep);color:#fff8e8;border-radius:8px;padding:28px;margin:28px 0}.key-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#d7bd8e;margin-bottom:8px}.key-text{font-size:clamp(24px,5vw,42px);line-height:1.36;font-weight:750}.note-box,.work-box{background:var(--soft);border:1px solid #ded5c7;border-radius:8px;padding:22px 24px;margin:24px 0}.truth-box{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px;margin:20px 0}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0}.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:22px;text-decoration:none;display:block}.card:hover{border-color:#b9935a}.card-date{font-size:12px;color:var(--accent);letter-spacing:.08em;margin-bottom:6px}.card-title{font-size:18px;font-weight:750;margin-bottom:8px;line-height:1.5}.card-desc{font-size:14px;color:var(--muted);line-height:1.8}.latest{border-color:#b9935a;background:#fffdf8}
+table{width:100%;border-collapse:collapse;margin:24px 0;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;display:block;overflow-x:auto}thead,tbody,tr{width:100%}th,td{border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;min-width:150px}th{background:#f1ece3;color:var(--deep);font-weight:700}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f0ebe1;border:1px solid #e1d8ca;border-radius:5px;padding:1px 5px}pre{white-space:pre-wrap;background:#f4f0e8;border:1px solid #ded3c2;border-radius:8px;padding:16px;overflow:auto;color:#3a342d}.signature{margin-top:22px;font-weight:700}.footer-note{padding:32px 0 0;color:var(--muted);font-size:13px}.private-note{background:#f0ede4;border:1px solid var(--line);border-radius:8px;padding:20px 24px;color:var(--muted);font-size:14px;margin-top:34px}
+#kj-auth-overlay{position:fixed;inset:0;background:linear-gradient(135deg,#26312b,#5b513f);display:grid;place-items:center;padding:22px;z-index:9999}.kj-auth-card{width:min(420px,100%);background:#fbfaf6;color:#2f2b26;border-radius:10px;padding:30px;box-shadow:0 24px 80px rgba(0,0,0,.28)}.kj-auth-label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9a6a3b;margin-bottom:10px}.kj-auth-card h1{font-size:24px;line-height:1.45;margin:0 0 10px}.kj-auth-card p{font-size:14px;color:#70685f}.kj-auth-card input{width:100%;min-height:46px;border:1px solid #d4cabd;border-radius:8px;padding:10px 12px;font-size:16px;background:#fff;margin:8px 0 12px}.kj-auth-card button{width:100%;min-height:46px;border:0;border-radius:8px;background:#26312b;color:#fff8e8;font-size:15px;font-weight:700}.kj-auth-error{min-height:22px;color:#a33;font-size:13px;margin-top:8px}
+@media(max-width:640px){.hero{padding:34px 0 36px}.cards{grid-template-columns:1fr}section{padding:34px 0}.card{padding:18px}.hero-actions{display:grid}.button{width:100%}table{font-size:14px}th,td{padding:10px 11px;min-width:130px}}
+</style>
+</head>
+<body class="kj-auth-locked">
+  <header class="hero">
+    <div class="wrap">
+      <a class="back" href="../">← 一覧へ戻る</a>
+      <p class="eyebrow">Kaoru Juku Archive</p>
+      <h1>よっちゃんへ｜「つまらない自分」の奥にある願い</h1>
+      <p class="lead">好きなこと・得意なことへの羨ましさと、「ただの会社員」という認知の整理</p>
+      <p class="meta">2026年5月17日 かおる塾グループコーチングより</p>
+      <div class="hero-actions">
+        <a class="button light" href="#worksheet">ワークを見る</a>
+        <a class="button" href="#message">メッセージへ</a>
+      </div>
+    </div>
+  </header>
+  <main class="narrow">
+    <section class="note-box">
+      <p class="intro">これは、参加した人にも、アーカイブで見る人にも届くように整理した振り返りページです。答えを急がず、今の自分の反応を見ながら読み進めてください。</p>
+    </section>
+    <div class="quote"><strong>2026年5月17日 かおる塾グループコーチングより</strong></div>
+<h2>タイトル</h2>
+<div class="quote"><strong>「つまらない自分」の奥にある、好きなこと・得意なことへの願い</strong></div>
+<h2>はじめに</h2>
+<p>このシートは、2026年5月17日のかおる塾グループコーチングで話された内容をもとに、よっちゃんの中で起きていた心の動きを整理したものです。</p>
+<p>これは評価や診断ではありません。</p>
+<p>今回の対話の中で出てきた言葉を手がかりに、</p>
+<ul>
+<li>どんな出来事に反応していたのか</li>
+<li>そこにどんな認知が乗っていたのか</li>
+<li>その奥に、どんな本音や価値観がありそうか</li>
+</ul>
+<p>を一緒に見つめるためのものです。</p>
+<p>断定ではなく、あくまで今回の対話から見えてきた可能性として読んでください。</p>
+<h2>今回扱った出来事・テーマ</h2>
+<p>今回の入口は、セルフコーチングジャーナルの話でした。</p>
+<p>よっちゃんは、ジャーナルを買っていたけれど、なかなか開けなかったこと、開いても何を書いていいかわからず書けなかったことを話していました。</p>
+<p>そこから、</p>
+<ul>
+<li>やろうと思ってもできない</li>
+<li>何を書けばいいかわからない</li>
+<li>考えるだけでめんどくさい</li>
+<li>学んでいるのに受け取って終わってしまう</li>
+<li>何も進んでいない感じがする</li>
+<li>何もないまま参加している自分が嫌</li>
+</ul>
+<p>という感覚が出てきました。</p>
+<p>その後、自然農イベントでの自己紹介の場面が出てきました。</p>
+<p>周りには、自分の好きなことや得意なことを持っているように見える人たちがいた。 その中で、よっちゃんは「会社員です」としか言うことがないように感じた。</p>
+<p>そこで、</p>
+<ul>
+<li>自分には言うことがない</li>
+<li>つまらない</li>
+<li>関心を持ってもらえそうな内容がない</li>
+<li>ただの会社員</li>
+<li>普通の会社員</li>
+<li>みんなは好きな仕事に就けているように見える</li>
+<li>羨ましい</li>
+</ul>
+<p>という言葉が出てきました。</p>
+<h2>事実と認知の整理</h2>
+<table><thead><tr><th>事実</th><th>よっちゃんの認知・解釈</th><th>生まれた感情</th><th>奥にありそうな本音</th></tr></thead><tbody><tr><td>セルフコーチングジャーナルを開いた</td><td>何を書いていいかわからない</td><td>めんどくさい、諦め</td><td>学びを使えるようになりたい</td></tr><tr><td>かおる塾に参加している</td><td>受け取って終わっている、進んでいない</td><td>嫌だ、焦り</td><td>ちゃんと変化を感じたい</td></tr><tr><td>自然農イベントで自己紹介した</td><td>自分には言うことがない</td><td>つまらない、恥ずかしさ</td><td>自分のことを言葉にしたい</td></tr><tr><td>周りの人が自分の活動を語っていた</td><td>みんなは好きなことや得意なことを持っているように見える</td><td>羨ましい</td><td>自分も好きや得意を生かしたい</td></tr><tr><td>自分の仕事について話した</td><td>向いていない、誇りを持てない</td><td>苦しい、重い</td><td>今の仕事との関わり方を見直したい</td></tr><tr><td>資料作成が進まない</td><td>自分はできていない、スキルがない</td><td>苦しい、前に進まない</td><td>具体的に詰まりをほどきたい</td></tr></tbody></table>
+<h2>繰り返し出てきた言葉</h2>
+<h3>1. 進んでいない</h3>
+<p>今回、何度も出てきたのが「進んでいない」という感覚でした。</p>
+<p>ここには、よっちゃんの中に、</p>
+<div class="quote"><strong>学んでいるなら、何か変化を感じられるはず</strong></div>
+<p>という基準があるのかもしれません。</p>
+<p>変化したい。 学びを使えるようになりたい。 ただ参加しているだけではなく、自分の中で何かが動いている感覚がほしい。</p>
+<p>その願いがあるからこそ、「進んでいない」という感覚が強く出ていたようにも見えます。</p>
+<h3>2. めんどくさい</h3>
+<p>「めんどくさい」は、単にやる気がないという意味ではなさそうでした。</p>
+<p>今回の話では、</p>
+<ul>
+<li>何を書けばいいかわからない</li>
+<li>見つからない</li>
+<li>どこを見ればいいかわからない</li>
+<li>だから諦める</li>
+</ul>
+<p>という流れの中で出ていました。</p>
+<p>つまり、めんどくさいの奥には、</p>
+<div class="quote"><strong>やりたいけれど、入口がわからない</strong></div>
+<p>という感覚があったのかもしれません。</p>
+<h3>3. つまらない</h3>
+<p>自己紹介の場面で出てきた「つまらない」という言葉。</p>
+<p>これは、自分そのものがつまらないというより、</p>
+<div class="quote"><strong>人に語れるものが自分にはないように感じる</strong></div>
+<p>という感覚に近かったように見えます。</p>
+<p>でも、実際にはよっちゃんは自然農イベントに参加し、ボランティアをし、映画上映会のスタッフもしていました。</p>
+<p>外から見れば、十分に語れることがあります。</p>
+<p>それでも本人の中では「言うことがない」と感じていた。</p>
+<p>ここに、自己認識と事実のズレがありそうです。</p>
+<h3>4. 羨ましい</h3>
+<p>今回、一番大切な言葉の一つが「羨ましい」でした。</p>
+<p>周りの人が、好きなことや得意なことを持っているように見える。 自分の仕事や活動を語れるように見える。</p>
+<p>そこに羨ましさが出ていました。</p>
+<p>羨ましいという感情は、自分の中にも本当はほしいものがあるサインかもしれません。</p>
+<p>よっちゃんの中にも、</p>
+<ul>
+<li>自分のことをちゃんと語りたい</li>
+<li>好きや得意を見つけたい</li>
+<li>自分の仕事や活動に納得したい</li>
+<li>人から関心を持たれる自分でありたい</li>
+</ul>
+<p>という願いがあるのかもしれません。</p>
+<h2>表層のテーマ</h2>
+<p>今回の表層テーマは、</p>
+<div class="quote"><strong>学びを受け取っているのに、行動や変化につながっていないように感じる</strong></div>
+<p>ということでした。</p>
+<p>具体的には、</p>
+<ul>
+<li>ジャーナルが書けない</li>
+<li>セルフコーチングができない</li>
+<li>気づきがない</li>
+<li>仕事が進まない</li>
+<li>アーカイブや教材を読んでも受け取って終わる</li>
+</ul>
+<p>という形で表れていました。</p>
+<h2>深層のテーマ</h2>
+<p>深層には、</p>
+<div class="quote"><strong>自分には語れるものがない</strong></div>
+<p>という感覚がありそうです。</p>
+<p>そして、その奥には、</p>
+<div class="quote"><strong>本当は、自分のことをちゃんと語れるようになりたい</strong></div>
+<p>という願いがあるようにも見えます。</p>
+<p>今回の対話で、よっちゃんは「好きな仕事に就けているように見える」という言葉を使いました。</p>
+<p>これはとても大切な言葉です。</p>
+<p>「あの人たちは好きな仕事に就いている」と決めつけたのではなく、 「自分にはそう見えている」と言葉にできていた。</p>
+<p>つまり、よっちゃんはすでに、相手の事実と自分の認知を分けて見始めています。</p>
+<p>本人は「進んでいない」と感じているけれど、実際にはちゃんと進んでいる部分があります。</p>
+<h2>認知のフレームワーク</h2>
+<p>今回、動いていた可能性のある認知は以下です。</p>
+<h3>1. 語れるものがある人は価値がある</h3>
+<p>自己紹介で、何か人に興味を持ってもらえるようなことが言えないと、自分がつまらないように感じる。</p>
+<p>ここには、</p>
+<div class="quote"><strong>人に語れるものがある = 価値がある</strong></div>
+<p>という認知があった可能性があります。</p>
+<h3>2. 好きや得意を仕事にしている人は進んでいる</h3>
+<p>周りの人が、好きなことや得意なことを持っているように見えた。</p>
+<p>その時、自分は今の仕事に誇りを持てていないように感じた。</p>
+<p>ここには、</p>
+<div class="quote"><strong>好きや得意を生かしている人 = 自分より進んでいる</strong></div>
+<p>という見方があったかもしれません。</p>
+<h3>3. 学んでいるなら、変化を感じられるはず</h3>
+<p>かおる塾に参加し、教材を受け取り、アーカイブを見ている。 それなのに自分では変化を感じられない。</p>
+<p>ここには、</p>
+<div class="quote"><strong>学んでいるなら、何か気づきや変化があるはず</strong></div>
+<p>という基準があった可能性があります。</p>
+<h2>欠落感・価値観・才能の源泉</h2>
+<h3>欠落感</h3>
+<p>今回見えてきた欠落感は、</p>
+<div class="quote"><strong>自分には語れるものがない</strong></div>
+<p>という感覚です。</p>
+<p>ただし、これは「本当にない」という意味ではありません。</p>
+<p>むしろ、自分の中にあるものをまだ自分で価値として認識できていない可能性があります。</p>
+<h3>本当の価値観</h3>
+<p>よっちゃんは、本当はとても誠実に学びたい人です。</p>
+<p>ただ参加して終わりにしたくない。 ちゃんと受け取りたい。 自分の中で変化を感じたい。 自分の言葉で話せるようになりたい。</p>
+<p>そこには、</p>
+<div class="quote"><strong>学びをちゃんと自分のものにしたい</strong></div>
+<p>という価値観があるように見えます。</p>
+<h3>感受性</h3>
+<p>よっちゃんは、周りの人の「好き」や「得意」や「生き生きしている感じ」に反応していました。</p>
+<p>それは、よっちゃん自身が人の中にある熱や誇りを感じ取れる感受性を持っているということでもあります。</p>
+<h3>才能の源泉</h3>
+<p>今回、よっちゃんは自分の仕事を「業務改善のためのシステム作り」と言葉にしました。</p>
+<p>これはとても大事です。</p>
+<p>自分では「ただの会社員」と感じていたけれど、事実としては、</p>
+<div class="quote"><strong>誰かの仕事がよくなるための仕組みを作っている</strong></div>
+<p>とも言えます。</p>
+<p>ここには、よっちゃんの才能の源泉があるかもしれません。</p>
+<p>人の困りごとを仕組みで軽くする。 業務を改善する。 見えにくい問題を整理する。</p>
+<p>今は苦しさの方が大きく見えているかもしれませんが、仕事の中にある価値を見直す入口にもなりそうです。</p>
+<h2>よっちゃんへの問い</h2>
+<ol>
+<li>「進んでいない」と感じる時、何と比べてそう感じていますか？</li>
+<li>「自分には言うことがない」と思う時、本当はどんな自分を見せたいのでしょうか？</li>
+<li>羨ましいと感じる人は、よっちゃんに何を見せてくれていますか？</li>
+<li>今の仕事の中で、ほんの少しでも人の役に立っていることは何ですか？</li>
+<li>苦しい、進まないと感じることは、本当にダメなことなのでしょうか？</li>
+<li>仕事が進まない時、実際にはどこで止まっていますか？</li>
+<li>「ただの会社員」ではなく事実として言うなら、よっちゃんは何をしている人ですか？</li>
+</ol>
+<h2 id="worksheet">次回までの小さな宿題</h2>
+<p>大きく変えようとしなくて大丈夫です。</p>
+<p>次回までに、仕事中に以下のどれかが出た瞬間を1つだけメモしてみてください。</p>
+<ul>
+<li>苦しい</li>
+<li>進まない</li>
+<li>めんどくさい</li>
+<li>もういいや</li>
+<li>早く終わらないかな</li>
+</ul>
+<p>その時に書くのは、これだけで大丈夫です。</p>
+<pre>いつ:
+何をしていた:
+その時の言葉:
+体の感じ:</pre>
+<p>余裕があれば、最後に一つだけ見てみてください。</p>
+<pre>この中で、自分は何を受け取っている可能性があるか:</pre>
+<p>答えにならなくても大丈夫です。 見に行こうとすること自体が、今回の一歩です。</p>
+<h2 id="message">かおるちゃんからよっちゃんへのメッセージ</h2>
+<p>よっちゃん、今回もありがとうございました。</p>
+<p>今回の時間で、よっちゃんは「何も進んでいない」と言っていたけれど、僕にはそうは見えていません。</p>
+<p>特に、</p>
+<div class="quote"><strong>好きな仕事に就けているように見える</strong></div>
+<p>という言葉が出てきたこと。</p>
+<p>これは、自分の見方を「事実」ではなく「自分にはそう見えている」と分けて言葉にできているということです。</p>
+<p>これは本当に大きいです。</p>
+<p>よっちゃんは、自分では「気づけていない」「進んでいない」と感じているかもしれません。 でも、対話の中ではちゃんと見え始めているものがあります。</p>
+<p>今回のテーマは、無理に前に進むことではありません。</p>
+<p>「苦しい」 「進まない」 「めんどくさい」</p>
+<p>そう感じた時に、それをダメなものにせず、 そこから何を受け取っているのかを少しだけ見に行くこと。</p>
+<p>それで十分です。</p>
+<p>あと、仕事の具体的な詰まりは、必要なら個人セッションで一緒に見られます。</p>
+<p>それはコーチングというより、実際の現実を一緒に動かす時間になるかもしれません。 でも、それもよっちゃんの今のテーマにとって大事なことだと思っています。</p>
+<p>遠慮せず、必要な時はそのまま持ってきてください。</p>
+<p>前田薫</p>
+<hr>
+<p>*このシートは、2026年5月17日 かおる塾グループコーチングの対話をもとに作成した、よっちゃん本人向けの振り返り資料です。第三者共有は前提としていません。*</p>
+    <div class="private-note">このページは本人向けの個別資料です。URLを他の方と共有しないでください。</div>
+    <section><h2>関連ページ</h2><div class="cards"><a class="card" href="../../../sessions/2026-05-17/"><div class="card-date">ALL MEMBERS</div><div class="card-title">5/17 振り返り教材（全員向け）</div><div class="card-desc">今回のテーマを塾生さん全体向けに整理した教材です。</div></a><a class="card" href="../"><div class="card-date">PRIVATE TOP</div><div class="card-title">よっちゃん専用トップ</div><div class="card-desc">過去分の個人ページもここから見られます。</div></a></div></section>
+    <p class="footer-note">2026年5月17日 かおる塾グループコーチングより</p>
+  </main>
+  
+<script id="kaoru-juku-password-guard-v1">
+(function() {
+  const PASS_HASH = '5ccc5274b688d517a2da7384ca2077c1b95451108b20e9456f0fd32c8e6e928e';
+  const STORAGE_KEY = 'kaoru_juku_auth_v1';
+  function unlock() {
+    document.body.classList.remove('kj-auth-locked');
+    const overlay = document.getElementById('kj-auth-overlay');
+    if (overlay) overlay.remove();
+  }
+  async function sha256(text) {
+    const data = new TextEncoder().encode(text);
+    const hash = await crypto.subtle.digest('SHA-256', data);
+    return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+  function checkSaved() { if (localStorage.getItem(STORAGE_KEY) === PASS_HASH) unlock(); }
+  function render() {
+    if (!document.body.classList.contains('kj-auth-locked')) return;
+    const overlay = document.createElement('div');
+    overlay.id = 'kj-auth-overlay';
+    overlay.innerHTML = `<div class="kj-auth-card"><div class="kj-auth-label">Kaoru Juku Members</div><h1>かおる塾メンバー専用ページ</h1><p>このページを見るには、メンバー用パスワードを入力してください。</p><input type="password" id="kj-auth-password" autocomplete="current-password" placeholder="パスワード"><button type="button" id="kj-auth-submit">表示する</button><div class="kj-auth-error" id="kj-auth-error"></div></div>`;
+    document.body.appendChild(overlay);
+    const input = document.getElementById('kj-auth-password');
+    const error = document.getElementById('kj-auth-error');
+    async function submit() {
+      const digest = await sha256(input.value || '');
+      if (digest === PASS_HASH) { localStorage.setItem(STORAGE_KEY, PASS_HASH); unlock(); }
+      else { error.textContent = 'パスワードが違います。'; input.value = ''; input.focus(); }
+    }
+    document.getElementById('kj-auth-submit').addEventListener('click', submit);
+    input.addEventListener('keydown', function(e) { if (e.key === 'Enter') submit(); });
+    setTimeout(() => input.focus(), 50);
+  }
+  checkSaved();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render); else render();
+})();
+</script>
+
+</body>
+</html>
