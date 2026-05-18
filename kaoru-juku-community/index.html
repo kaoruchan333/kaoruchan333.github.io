@@ -3,131 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>かおる塾｜塾生専用ページ</title>
+  <title>かおる塾 振り返りページ</title>
   <style>
-    body {
-      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
-      font-size: 16px;
-      line-height: 1.9;
-      color: #333;
-      background: #faf9f6;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 60px 24px 100px;
-    }
-    .site-label {
-      font-size: 12px;
-      letter-spacing: 0.15em;
-      color: #aaa;
-      margin-bottom: 12px;
-    }
-    h1 { font-size: 28px; font-weight: bold; margin: 0 0 8px; }
-    .subtitle { font-size: 15px; color: #888; margin-bottom: 56px; }
-    h2 {
-      font-size: 12px;
-      letter-spacing: 0.15em;
-      color: #aaa;
-      margin: 48px 0 16px;
-      border-bottom: 1px solid #e8e8e0;
-      padding-bottom: 8px;
-    }
-    .session-card {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      background: #fff;
-      border: 1px solid #e0e0d8;
-      border-radius: 10px;
-      padding: 20px 24px;
-      margin-bottom: 12px;
-      transition: border-color 0.2s;
-    }
-    .session-card:hover { border-color: #b0a890; }
-    .session-date { font-size: 12px; color: #aaa; margin-bottom: 4px; }
-    .session-title { font-size: 17px; font-weight: bold; margin-bottom: 4px; }
-    .session-desc { font-size: 14px; color: #777; }
-    .tag-new {
-      display: inline-block;
-      font-size: 10px;
-      background: #2a2a28;
-      color: #c4a96e;
-      border-radius: 3px;
-      padding: 1px 6px;
-      margin-left: 8px;
-      vertical-align: middle;
-    }
-    .private-note {
-      margin-top: 24px;
-      padding: 20px 24px;
-      background: #f0ede4;
-      border-radius: 8px;
-      font-size: 14px;
-      color: #888;
-    }
-  </style>
-<style id="kaoru-juku-password-guard-v1-style">
-  body.kj-auth-locked > *:not(#kj-auth-overlay) { display: none !important; }
-  #kj-auth-overlay {
-    position: fixed; inset: 0; z-index: 2147483647;
-    display: flex; align-items: center; justify-content: center;
-    background: #f8f7f4; color: #2a2a28;
-    font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
-    padding: 24px;
-  }
-  #kj-auth-overlay .kj-auth-card {
-    width: min(420px, 100%); background: #fff; border: 1px solid #e0ddd8;
-    border-radius: 14px; padding: 30px 28px; box-shadow: 0 18px 50px rgba(0,0,0,0.08);
-  }
-  #kj-auth-overlay .kj-auth-label {
-    font-size: 11px; letter-spacing: 0.16em; color: #b08a5c; text-transform: uppercase; margin-bottom: 8px;
-  }
-  #kj-auth-overlay h1 { font-size: 22px; line-height: 1.5; margin: 0 0 10px; }
-  #kj-auth-overlay p { font-size: 14px; line-height: 1.8; color: #666; margin: 0 0 18px; }
-  #kj-auth-overlay input {
-    width: 100%; box-sizing: border-box; border: 1px solid #d8d3c9; border-radius: 8px;
-    padding: 13px 14px; font-size: 16px; margin-bottom: 12px;
-  }
-  #kj-auth-overlay button {
-    width: 100%; border: 0; border-radius: 8px; background: #2a2a28; color: #f8f1df;
-    padding: 13px 16px; font-size: 15px; cursor: pointer;
-  }
-  #kj-auth-overlay .kj-auth-error { min-height: 20px; margin-top: 10px; color: #9b3b2f; font-size: 13px; }
+:root {
+  --ink:#2f2b26;
+  --muted:#70685f;
+  --paper:#fbfaf6;
+  --panel:#ffffff;
+  --soft:#f2eee6;
+  --line:#e4ded3;
+  --accent:#9a6a3b;
+  --green:#566c59;
+  --deep:#26312b;
+  --gold:#c19a5b;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;color:var(--ink);background:var(--paper);line-height:1.95;font-size:16px;letter-spacing:0}
+body.kj-auth-locked > *:not(#kj-auth-overlay){display:none!important}
+a{color:inherit}.wrap{width:min(900px,calc(100% - 36px));margin:0 auto}.narrow{width:min(760px,calc(100% - 36px));margin:0 auto}
+.hero{background:linear-gradient(135deg,#26312b 0%,#3d4439 55%,#7f623f 100%);color:#fff8e8;padding:46px 0 44px;border-bottom:1px solid rgba(255,255,255,.18)}
+.back{display:inline-flex;gap:8px;align-items:center;color:rgba(255,248,232,.75);text-decoration:none;font-size:13px;margin-bottom:34px}.back.dark{color:var(--muted);margin-bottom:28px}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#d7bd8e;margin:0 0 12px}.hero h1{font-size:clamp(32px,7vw,62px);line-height:1.28;margin:0;font-weight:750}.lead{font-size:17px;color:rgba(255,248,232,.86);max-width:760px;margin:22px 0 0}.meta{font-size:14px;color:rgba(255,248,232,.72);margin-top:16px}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;border-radius:8px;border:1px solid rgba(255,248,232,.45);padding:8px 15px;text-decoration:none;color:#fff8e8;background:rgba(255,255,255,.08);font-size:14px}.button.light{background:#fff;color:var(--deep);border-color:#fff}.button.dark{background:var(--deep);color:#fff8e8;border-color:var(--deep)}
+main{padding:20px 0 76px}section{padding:42px 0;border-bottom:1px solid var(--line)}section:last-child{border-bottom:0}h2{font-size:clamp(25px,4vw,36px);line-height:1.42;margin:0 0 20px;color:var(--deep)}h3{font-size:20px;line-height:1.55;margin:30px 0 12px;color:#3d382f}h4{font-size:16px;margin:24px 0 8px;color:var(--accent)}p{margin:0 0 18px}strong{color:#241f1a}.intro{font-size:18px;color:#4a443d}.small{font-size:14px;color:var(--muted)}
+ul,ol{padding-left:1.25em;margin:14px 0 22px}li{margin:7px 0}hr{border:0;border-top:1px solid var(--line);margin:38px 0}.quote,blockquote{border-left:4px solid var(--accent);background:linear-gradient(90deg,rgba(154,106,59,.1),rgba(154,106,59,0));padding:12px 0 12px 20px;margin:24px 0;color:#463f36;font-size:18px}
+.key-box{background:var(--deep);color:#fff8e8;border-radius:8px;padding:28px;margin:28px 0}.key-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#d7bd8e;margin-bottom:8px}.key-text{font-size:clamp(24px,5vw,42px);line-height:1.36;font-weight:750}.note-box,.work-box{background:var(--soft);border:1px solid #ded5c7;border-radius:8px;padding:22px 24px;margin:24px 0}.truth-box{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px;margin:20px 0}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0}.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:22px;text-decoration:none;display:block}.card:hover{border-color:#b9935a}.card-date{font-size:12px;color:var(--accent);letter-spacing:.08em;margin-bottom:6px}.card-title{font-size:18px;font-weight:750;margin-bottom:8px;line-height:1.5}.card-desc{font-size:14px;color:var(--muted);line-height:1.8}.latest{border-color:#b9935a;background:#fffdf8}
+table{width:100%;border-collapse:collapse;margin:24px 0;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;display:block;overflow-x:auto}thead,tbody,tr{width:100%}th,td{border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;min-width:150px}th{background:#f1ece3;color:var(--deep);font-weight:700}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f0ebe1;border:1px solid #e1d8ca;border-radius:5px;padding:1px 5px}pre{white-space:pre-wrap;background:#f4f0e8;border:1px solid #ded3c2;border-radius:8px;padding:16px;overflow:auto;color:#3a342d}.signature{margin-top:22px;font-weight:700}.footer-note{padding:32px 0 0;color:var(--muted);font-size:13px}.private-note{background:#f0ede4;border:1px solid var(--line);border-radius:8px;padding:20px 24px;color:var(--muted);font-size:14px;margin-top:34px}
+#kj-auth-overlay{position:fixed;inset:0;background:linear-gradient(135deg,#26312b,#5b513f);display:grid;place-items:center;padding:22px;z-index:9999}.kj-auth-card{width:min(420px,100%);background:#fbfaf6;color:#2f2b26;border-radius:10px;padding:30px;box-shadow:0 24px 80px rgba(0,0,0,.28)}.kj-auth-label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9a6a3b;margin-bottom:10px}.kj-auth-card h1{font-size:24px;line-height:1.45;margin:0 0 10px}.kj-auth-card p{font-size:14px;color:#70685f}.kj-auth-card input{width:100%;min-height:46px;border:1px solid #d4cabd;border-radius:8px;padding:10px 12px;font-size:16px;background:#fff;margin:8px 0 12px}.kj-auth-card button{width:100%;min-height:46px;border:0;border-radius:8px;background:#26312b;color:#fff8e8;font-size:15px;font-weight:700}.kj-auth-error{min-height:22px;color:#a33;font-size:13px;margin-top:8px}
+@media(max-width:640px){.hero{padding:34px 0 36px}.cards{grid-template-columns:1fr}section{padding:34px 0}.card{padding:18px}.hero-actions{display:grid}.button{width:100%}table{font-size:14px}th,td{padding:10px 11px;min-width:130px}}
 </style>
 </head>
 <body class="kj-auth-locked">
-  <div class="container">
-
-    <div class="site-label">KAORU-JUKU MEMBERS</div>
-    <h1>かおる塾</h1>
-    <p class="subtitle">塾生専用｜振り返り教材・セッション記録</p>
-
-    <h2>振り返り教材 SESSIONS</h2>
-
-    <a class="session-card" href="sessions/2026-05-10/">
-      <div class="session-date">2026年5月10日<span class="tag-new">NEW</span></div>
-      <div class="session-title">誰かの認知の中で、生きていませんか？</div>
-      <div class="session-desc">「なんかしなきゃ」が気づくサイン。気づいたら反応から選択へ。</div>
-    </a>
-
-    <a class="session-card" href="sessions/2026-04-26/">
-      <div class="session-date">2026年4月26日</div>
-      <div class="session-title">「気になる」は、感情の声だった</div>
-      <div class="session-desc">感情をキャッチするとは、「気になること」に気づくことから始まる。</div>
-    </a>
-
-    <h2>塾生専用ページ MEMBERS</h2>
-
-    <div class="private-note">
-      個人専用ページのURLは、かおるちゃんから各自に個別でお送りします。<br>
-      URLは本人のみ有効です。他の方と共有しないでください。
+  <header class="hero">
+    <div class="wrap">
+      <a class="back" href="https://kaoruchan333.github.io/">← 戻る</a>
+      <p class="eyebrow">Kaoru Juku Members</p>
+      <h1>かおる塾 振り返りページ</h1>
+      <p class="lead">グループコーチングのアーカイブと振り返り教材</p>
     </div>
-
-  </div>
-
+  </header>
+  <main class="narrow">
+    <section>
+      <h2>最新の振り返り</h2>
+      <div class="cards">
+        <a class="card latest" href="sessions/2026-05-17/">
+          <div class="card-date">2026年5月17日 グループコーチング</div>
+          <div class="card-title">「何もない」は、事実ですか？</div>
+          <div class="card-desc">「進んでいない」と感じる時、ほんとうは何が起きているのか。</div>
+        </a>
+        <a class="card" href="sessions/2026-05-10/">
+          <div class="card-date">2026年5月10日 グループコーチング</div>
+          <div class="card-title">「なんかしなきゃ」の奥にあるもの</div>
+          <div class="card-desc">焦りや義務感の奥にある、自分が守っているものを見る回。</div>
+        </a>
+        <a class="card" href="sessions/2026-04-26/">
+          <div class="card-date">2026年4月26日 グループコーチング</div>
+          <div class="card-title">感情の発見と認知の整理</div>
+          <div class="card-desc">「気になる」「わかってほしい」の奥にあるものを見た回。</div>
+        </a>
+        <a class="card" href="members/yocchan/">
+          <div class="card-date">MEMBER PRIVATE</div>
+          <div class="card-title">よっちゃん専用ページ</div>
+          <div class="card-desc">個別の認知構造分析シートと振り返り資料。</div>
+        </a></div>
+    </section>
+    <section class="note-box">
+      <h2>この場所について</h2>
+      <p>ここは、かおる塾の時間を一度きりで終わらせず、あとから何度でも自分の言葉に戻るための場所です。</p>
+      <p>参加した人は自分の体験を深めるために、参加できなかった人はアーカイブの入口として使ってください。</p>
+    </section>
+  </main>
+  
 <script id="kaoru-juku-password-guard-v1">
 (function() {
   const PASS_HASH = '5ccc5274b688d517a2da7384ca2077c1b95451108b20e9456f0fd32c8e6e928e';
@@ -142,47 +87,28 @@
     const hash = await crypto.subtle.digest('SHA-256', data);
     return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
   }
-  async function checkSaved() {
-    if (localStorage.getItem(STORAGE_KEY) === PASS_HASH) unlock();
-  }
+  function checkSaved() { if (localStorage.getItem(STORAGE_KEY) === PASS_HASH) unlock(); }
   function render() {
     if (!document.body.classList.contains('kj-auth-locked')) return;
     const overlay = document.createElement('div');
     overlay.id = 'kj-auth-overlay';
-    overlay.innerHTML = `
-      <div class="kj-auth-card">
-        <div class="kj-auth-label">Kaoru Juku Members</div>
-        <h1>かおる塾メンバー専用ページ</h1>
-        <p>このページを見るには、メンバー用パスワードを入力してください。</p>
-        <input type="password" id="kj-auth-password" autocomplete="current-password" placeholder="パスワード">
-        <button type="button" id="kj-auth-submit">表示する</button>
-        <div class="kj-auth-error" id="kj-auth-error"></div>
-      </div>`;
+    overlay.innerHTML = `<div class="kj-auth-card"><div class="kj-auth-label">Kaoru Juku Members</div><h1>かおる塾メンバー専用ページ</h1><p>このページを見るには、メンバー用パスワードを入力してください。</p><input type="password" id="kj-auth-password" autocomplete="current-password" placeholder="パスワード"><button type="button" id="kj-auth-submit">表示する</button><div class="kj-auth-error" id="kj-auth-error"></div></div>`;
     document.body.appendChild(overlay);
     const input = document.getElementById('kj-auth-password');
     const error = document.getElementById('kj-auth-error');
     async function submit() {
       const digest = await sha256(input.value || '');
-      if (digest === PASS_HASH) {
-        localStorage.setItem(STORAGE_KEY, PASS_HASH);
-        unlock();
-      } else {
-        error.textContent = 'パスワードが違います。';
-        input.value = '';
-        input.focus();
-      }
+      if (digest === PASS_HASH) { localStorage.setItem(STORAGE_KEY, PASS_HASH); unlock(); }
+      else { error.textContent = 'パスワードが違います。'; input.value = ''; input.focus(); }
     }
     document.getElementById('kj-auth-submit').addEventListener('click', submit);
     input.addEventListener('keydown', function(e) { if (e.key === 'Enter') submit(); });
     setTimeout(() => input.focus(), 50);
   }
   checkSaved();
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', render);
-  } else {
-    render();
-  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render); else render();
 })();
 </script>
+
 </body>
 </html>
