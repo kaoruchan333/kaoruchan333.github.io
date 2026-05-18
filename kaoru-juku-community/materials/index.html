@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>音声・動画アーカイブ｜かおる塾</title>
+  <style>
+:root {
+  --ink:#2f2b26;
+  --muted:#70685f;
+  --paper:#fbfaf6;
+  --panel:#ffffff;
+  --soft:#f2eee6;
+  --line:#e4ded3;
+  --accent:#9a6a3b;
+  --green:#566c59;
+  --deep:#26312b;
+  --gold:#c19a5b;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;color:var(--ink);background:var(--paper);line-height:1.95;font-size:16px;letter-spacing:0}
+body.kj-auth-locked > *:not(#kj-auth-overlay){display:none!important}
+a{color:inherit}.wrap{width:min(900px,calc(100% - 36px));margin:0 auto}.narrow{width:min(760px,calc(100% - 36px));margin:0 auto}
+.hero{background:linear-gradient(135deg,#26312b 0%,#3d4439 55%,#7f623f 100%);color:#fff8e8;padding:46px 0 44px;border-bottom:1px solid rgba(255,255,255,.18)}
+.back{display:inline-flex;gap:8px;align-items:center;color:rgba(255,248,232,.75);text-decoration:none;font-size:13px;margin-bottom:34px}.back.dark{color:var(--muted);margin-bottom:28px}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#d7bd8e;margin:0 0 12px}.hero h1{font-size:clamp(32px,7vw,62px);line-height:1.28;margin:0;font-weight:750}.lead{font-size:17px;color:rgba(255,248,232,.86);max-width:760px;margin:22px 0 0}.meta{font-size:14px;color:rgba(255,248,232,.72);margin-top:16px}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;border-radius:8px;border:1px solid rgba(255,248,232,.45);padding:8px 15px;text-decoration:none;color:#fff8e8;background:rgba(255,255,255,.08);font-size:14px}.button.light{background:#fff;color:var(--deep);border-color:#fff}.button.dark{background:var(--deep);color:#fff8e8;border-color:var(--deep)}
+main{padding:20px 0 76px}section{padding:42px 0;border-bottom:1px solid var(--line)}section:last-child{border-bottom:0}h2{font-size:clamp(25px,4vw,36px);line-height:1.42;margin:0 0 20px;color:var(--deep)}h3{font-size:20px;line-height:1.55;margin:30px 0 12px;color:#3d382f}h4{font-size:16px;margin:24px 0 8px;color:var(--accent)}p{margin:0 0 18px}strong{color:#241f1a}.intro{font-size:18px;color:#4a443d}.small{font-size:14px;color:var(--muted)}
+ul,ol{padding-left:1.25em;margin:14px 0 22px}li{margin:7px 0}hr{border:0;border-top:1px solid var(--line);margin:38px 0}.quote,blockquote{border-left:4px solid var(--accent);background:linear-gradient(90deg,rgba(154,106,59,.1),rgba(154,106,59,0));padding:12px 0 12px 20px;margin:24px 0;color:#463f36;font-size:18px}
+.key-box{background:var(--deep);color:#fff8e8;border-radius:8px;padding:28px;margin:28px 0}.key-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#d7bd8e;margin-bottom:8px}.key-text{font-size:clamp(24px,5vw,42px);line-height:1.36;font-weight:750}.note-box,.work-box{background:var(--soft);border:1px solid #ded5c7;border-radius:8px;padding:22px 24px;margin:24px 0}.truth-box{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px;margin:20px 0}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0}.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:22px;text-decoration:none;display:block}.card:hover{border-color:#b9935a}.card-date{font-size:12px;color:var(--accent);letter-spacing:.08em;margin-bottom:6px}.card-title{font-size:18px;font-weight:750;margin-bottom:8px;line-height:1.5}.card-desc{font-size:14px;color:var(--muted);line-height:1.8}.latest{border-color:#b9935a;background:#fffdf8}
+table{width:100%;border-collapse:collapse;margin:24px 0;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;display:block;overflow-x:auto}thead,tbody,tr{width:100%}th,td{border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;min-width:150px}th{background:#f1ece3;color:var(--deep);font-weight:700}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f0ebe1;border:1px solid #e1d8ca;border-radius:5px;padding:1px 5px}pre{white-space:pre-wrap;background:#f4f0e8;border:1px solid #ded3c2;border-radius:8px;padding:16px;overflow:auto;color:#3a342d}.signature{margin-top:22px;font-weight:700}.footer-note{padding:32px 0 0;color:var(--muted);font-size:13px}.private-note{background:#f0ede4;border:1px solid var(--line);border-radius:8px;padding:20px 24px;color:var(--muted);font-size:14px;margin-top:34px}
+#kj-auth-overlay{position:fixed;inset:0;background:linear-gradient(135deg,#26312b,#5b513f);display:grid;place-items:center;padding:22px;z-index:9999}.kj-auth-card{width:min(420px,100%);background:#fbfaf6;color:#2f2b26;border-radius:10px;padding:30px;box-shadow:0 24px 80px rgba(0,0,0,.28)}.kj-auth-label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9a6a3b;margin-bottom:10px}.kj-auth-card h1{font-size:24px;line-height:1.45;margin:0 0 10px}.kj-auth-card p{font-size:14px;color:#70685f}.kj-auth-card input{width:100%;min-height:46px;border:1px solid #d4cabd;border-radius:8px;padding:10px 12px;font-size:16px;background:#fff;margin:8px 0 12px}.kj-auth-card button{width:100%;min-height:46px;border:0;border-radius:8px;background:#26312b;color:#fff8e8;font-size:15px;font-weight:700}.kj-auth-error{min-height:22px;color:#a33;font-size:13px;margin-top:8px}
+@media(max-width:640px){.hero{padding:34px 0 36px}.cards{grid-template-columns:1fr}section{padding:34px 0}.card{padding:18px}.hero-actions{display:grid}.button{width:100%}table{font-size:14px}th,td{padding:10px 11px;min-width:130px}}
+
+
+.resource-panel{background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px;margin:24px 0}.resource-panel h2{margin-bottom:12px}.resource-note{font-size:14px;color:var(--muted);margin-bottom:18px}.access-line{display:grid;gap:8px;background:#f4f0e8;border:1px solid #ded3c2;border-radius:8px;padding:16px 18px;margin:18px 0}.access-line strong{font-size:13px;color:var(--accent);letter-spacing:.08em}.access-line span{font-weight:700;color:var(--deep);word-break:break-word}.resource-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}.resource-card{display:block;text-decoration:none;background:#fffdf8;border:1px solid #dfd1bd;border-radius:8px;padding:18px}.resource-card:hover{border-color:#b9935a}.resource-kind{font-size:11px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:8px}.resource-title{font-size:17px;font-weight:750;line-height:1.45;margin-bottom:6px}.resource-desc{font-size:13px;color:var(--muted);line-height:1.7}@media(max-width:720px){.resource-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="kj-auth-locked">
+  <header class="hero">
+    <div class="wrap">
+      <a class="back" href="../">← かおる塾トップへ</a>
+      <p class="eyebrow">Kaoru Juku Materials</p>
+      <h1>音声・動画アーカイブ</h1>
+      <p class="lead">グループコーチングの振り返り教材、音声教材、アーカイブ動画を積み上げていく場所です。</p>
+    </div>
+  </header>
+  <main class="narrow">
+    <section class="resource-panel">
+      <h2>2026年5月17日</h2>
+      <p class="resource-note">テーマ：「何もない」は、事実ですか？</p>
+      <div class="access-line"><strong>閲覧パスワード</strong><span>kizuki2026</span></div>
+      <div class="resource-grid">
+        <a class="resource-card" href="../sessions/2026-05-17/"><div class="resource-kind">Text</div><div class="resource-title">振り返り教材</div><div class="resource-desc">問いとワークで見返す教材ページ。</div></a>
+        <a class="resource-card" href="https://drive.google.com/file/d/1uEelEwIFlRZI1PjiGCW1Yc2U3D_CH_Jv/view?usp=sharing" target="_blank" rel="noopener"><div class="resource-kind">Audio</div><div class="resource-title">音声教材</div><div class="resource-desc">Google Driveの音声教材。</div></a>
+        <a class="resource-card" href="https://youtu.be/XWUJTy-gtH8" target="_blank" rel="noopener"><div class="resource-kind">Archive</div><div class="resource-title">アーカイブ動画</div><div class="resource-desc">YouTubeのグループコーチング本編。</div></a>
+      </div>
+    </section>
+  </main>
+  <script id="kaoru-juku-password-guard-v1">
+(function() {
+  const PASS_HASH = '5ccc5274b688d517a2da7384ca2077c1b95451108b20e9456f0fd32c8e6e928e';
+  const STORAGE_KEY = 'kaoru_juku_auth_v1';
+  function unlock() {
+    document.body.classList.remove('kj-auth-locked');
+    const overlay = document.getElementById('kj-auth-overlay');
+    if (overlay) overlay.remove();
+  }
+  async function sha256(text) {
+    const data = new TextEncoder().encode(text);
+    const hash = await crypto.subtle.digest('SHA-256', data);
+    return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+  function checkSaved() { if (localStorage.getItem(STORAGE_KEY) === PASS_HASH) unlock(); }
+  function render() {
+    if (!document.body.classList.contains('kj-auth-locked')) return;
+    const overlay = document.createElement('div');
+    overlay.id = 'kj-auth-overlay';
+    overlay.innerHTML = `<div class="kj-auth-card"><div class="kj-auth-label">Kaoru Juku Members</div><h1>かおる塾メンバー専用ページ</h1><p>このページを見るには、メンバー用パスワードを入力してください。</p><input type="password" id="kj-auth-password" autocomplete="current-password" placeholder="パスワード"><button type="button" id="kj-auth-submit">表示する</button><div class="kj-auth-error" id="kj-auth-error"></div></div>`;
+    document.body.appendChild(overlay);
+    const input = document.getElementById('kj-auth-password');
+    const error = document.getElementById('kj-auth-error');
+    async function submit() {
+      const digest = await sha256(input.value || '');
+      if (digest === PASS_HASH) { localStorage.setItem(STORAGE_KEY, PASS_HASH); unlock(); }
+      else { error.textContent = 'パスワードが違います。'; input.value = ''; input.focus(); }
+    }
+    document.getElementById('kj-auth-submit').addEventListener('click', submit);
+    input.addEventListener('keydown', function(e) { if (e.key === 'Enter') submit(); });
+    setTimeout(() => input.focus(), 50);
+  }
+  checkSaved();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render); else render();
+})();
+</script>
+
+</body>
+</html>
+</body>
+</html>
