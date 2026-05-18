@@ -29,6 +29,9 @@ ul,ol{padding-left:1.25em;margin:14px 0 22px}li{margin:7px 0}hr{border:0;border-
 .key-box{background:var(--deep);color:#fff8e8;border-radius:8px;padding:28px;margin:28px 0}.key-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#d7bd8e;margin-bottom:8px}.key-text{font-size:clamp(24px,5vw,42px);line-height:1.36;font-weight:750}.note-box,.work-box{background:var(--soft);border:1px solid #ded5c7;border-radius:8px;padding:22px 24px;margin:24px 0}.truth-box{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px;margin:20px 0}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0}.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:22px;text-decoration:none;display:block}.card:hover{border-color:#b9935a}.card-date{font-size:12px;color:var(--accent);letter-spacing:.08em;margin-bottom:6px}.card-title{font-size:18px;font-weight:750;margin-bottom:8px;line-height:1.5}.card-desc{font-size:14px;color:var(--muted);line-height:1.8}.latest{border-color:#b9935a;background:#fffdf8}
 table{width:100%;border-collapse:collapse;margin:24px 0;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;display:block;overflow-x:auto}thead,tbody,tr{width:100%}th,td{border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;min-width:150px}th{background:#f1ece3;color:var(--deep);font-weight:700}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f0ebe1;border:1px solid #e1d8ca;border-radius:5px;padding:1px 5px}pre{white-space:pre-wrap;background:#f4f0e8;border:1px solid #ded3c2;border-radius:8px;padding:16px;overflow:auto;color:#3a342d}.signature{margin-top:22px;font-weight:700}.footer-note{padding:32px 0 0;color:var(--muted);font-size:13px}.private-note{background:#f0ede4;border:1px solid var(--line);border-radius:8px;padding:20px 24px;color:var(--muted);font-size:14px;margin-top:34px}
 #kj-auth-overlay{position:fixed;inset:0;background:linear-gradient(135deg,#26312b,#5b513f);display:grid;place-items:center;padding:22px;z-index:9999}.kj-auth-card{width:min(420px,100%);background:#fbfaf6;color:#2f2b26;border-radius:10px;padding:30px;box-shadow:0 24px 80px rgba(0,0,0,.28)}.kj-auth-label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9a6a3b;margin-bottom:10px}.kj-auth-card h1{font-size:24px;line-height:1.45;margin:0 0 10px}.kj-auth-card p{font-size:14px;color:#70685f}.kj-auth-card input{width:100%;min-height:46px;border:1px solid #d4cabd;border-radius:8px;padding:10px 12px;font-size:16px;background:#fff;margin:8px 0 12px}.kj-auth-card button{width:100%;min-height:46px;border:0;border-radius:8px;background:#26312b;color:#fff8e8;font-size:15px;font-weight:700}.kj-auth-error{min-height:22px;color:#a33;font-size:13px;margin-top:8px}
+
+.resource-panel{background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px;margin:24px 0}.resource-panel h2{margin-bottom:12px}.resource-note{font-size:14px;color:var(--muted);margin-bottom:18px}.access-line{display:grid;gap:8px;background:#f4f0e8;border:1px solid #ded3c2;border-radius:8px;padding:16px 18px;margin:18px 0}.access-line strong{font-size:13px;color:var(--accent);letter-spacing:.08em}.access-line span{font-weight:700;color:var(--deep);word-break:break-word}.resource-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}.resource-card{display:block;text-decoration:none;background:#fffdf8;border:1px solid #dfd1bd;border-radius:8px;padding:18px}.resource-card:hover{border-color:#b9935a}.resource-kind{font-size:11px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:8px}.resource-title{font-size:17px;font-weight:750;line-height:1.45;margin-bottom:6px}.resource-desc{font-size:13px;color:var(--muted);line-height:1.7}@media(max-width:720px){.resource-grid{grid-template-columns:1fr}}
+
 @media(max-width:640px){.hero{padding:34px 0 36px}.cards{grid-template-columns:1fr}section{padding:34px 0}.card{padding:18px}.hero-actions{display:grid}.button{width:100%}table{font-size:14px}th,td{padding:10px 11px;min-width:130px}}
 </style>
 </head>
@@ -42,6 +45,7 @@ table{width:100%;border-collapse:collapse;margin:24px 0;background:#fff;border:1
       <p class="meta">2026年5月17日 かおる塾グループコーチング</p>
       <div class="hero-actions">
         <a class="button light" href="#worksheet">ワークを見る</a>
+        <a class="button" href="#materials">教材セット</a>
         <a class="button" href="#message">メッセージへ</a>
       </div>
     </div>
@@ -49,6 +53,17 @@ table{width:100%;border-collapse:collapse;margin:24px 0;background:#fff;border:1
   <main class="narrow">
     <section class="note-box">
       <p class="intro">これは、参加した人にも、アーカイブで見る人にも届くように整理した振り返りページです。答えを急がず、今の自分の反応を見ながら読み進めてください。</p>
+    </section>
+
+    <section class="resource-panel" id="materials">
+      <h2>今回の教材セット</h2>
+      <p class="resource-note">振り返り教材、音声教材、アーカイブ動画をまとめています。参加できなかった方は、まず振り返り教材を読んでから音声・動画に入ると受け取りやすいです。</p>
+      <div class="access-line"><strong>閲覧パスワード</strong><span>kizuki2026</span></div>
+      <div class="resource-grid">
+        <a class="resource-card" href="https://kaoruchan333.github.io/kaoru-juku-community/sessions/2026-05-17/"><div class="resource-kind">Text</div><div class="resource-title">振り返り教材</div><div class="resource-desc">「何もない」は、事実ですか？</div></a>
+        <a class="resource-card" href="https://drive.google.com/file/d/1uEelEwIFlRZI1PjiGCW1Yc2U3D_CH_Jv/view?usp=sharing" target="_blank" rel="noopener"><div class="resource-kind">Audio</div><div class="resource-title">音声教材</div><div class="resource-desc">移動中や作業前にも聞ける音声版です。</div></a>
+        <a class="resource-card" href="https://youtu.be/XWUJTy-gtH8" target="_blank" rel="noopener"><div class="resource-kind">Archive</div><div class="resource-title">アーカイブ動画</div><div class="resource-desc">グループコーチング本編の動画です。</div></a>
+      </div>
     </section>
     <div class="key-box"><div class="key-label">Theme</div><div class="key-text">苦しい、進まない、何もない。そう感じる時こそ、自分が何を守ろうとしているのかを見る。</div></div>
 <h2>この教材について</h2>
