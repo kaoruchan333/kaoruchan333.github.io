@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>よっちゃん 認知構造マップ｜かおる塾</title>
+  <style>
+:root {
+  --ink:#2f2b26;
+  --muted:#70685f;
+  --paper:#fbfaf6;
+  --panel:#ffffff;
+  --soft:#f2eee6;
+  --line:#e4ded3;
+  --accent:#9a6a3b;
+  --green:#566c59;
+  --deep:#26312b;
+  --gold:#c19a5b;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;color:var(--ink);background:var(--paper);line-height:1.95;font-size:16px;letter-spacing:0}
+body.kj-auth-locked > *:not(#kj-auth-overlay){display:none!important}
+a{color:inherit}.wrap{width:min(900px,calc(100% - 36px));margin:0 auto}.narrow{width:min(760px,calc(100% - 36px));margin:0 auto}
+.hero{background:linear-gradient(135deg,#26312b 0%,#3d4439 55%,#7f623f 100%);color:#fff8e8;padding:46px 0 44px;border-bottom:1px solid rgba(255,255,255,.18)}
+.back{display:inline-flex;gap:8px;align-items:center;color:rgba(255,248,232,.75);text-decoration:none;font-size:13px;margin-bottom:34px}.back.dark{color:var(--muted);margin-bottom:28px}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#d7bd8e;margin:0 0 12px}.hero h1{font-size:clamp(32px,7vw,62px);line-height:1.28;margin:0;font-weight:750}.lead{font-size:17px;color:rgba(255,248,232,.86);max-width:760px;margin:22px 0 0}.meta{font-size:14px;color:rgba(255,248,232,.72);margin-top:16px}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;border-radius:8px;border:1px solid rgba(255,248,232,.45);padding:8px 15px;text-decoration:none;color:#fff8e8;background:rgba(255,255,255,.08);font-size:14px}.button.light{background:#fff;color:var(--deep);border-color:#fff}.button.dark{background:var(--deep);color:#fff8e8;border-color:var(--deep)}
+main{padding:20px 0 76px}section{padding:42px 0;border-bottom:1px solid var(--line)}section:last-child{border-bottom:0}h2{font-size:clamp(25px,4vw,36px);line-height:1.42;margin:0 0 20px;color:var(--deep)}h3{font-size:20px;line-height:1.55;margin:30px 0 12px;color:#3d382f}h4{font-size:16px;margin:24px 0 8px;color:var(--accent)}p{margin:0 0 18px}strong{color:#241f1a}.intro{font-size:18px;color:#4a443d}.small{font-size:14px;color:var(--muted)}
+ul,ol{padding-left:1.25em;margin:14px 0 22px}li{margin:7px 0}hr{border:0;border-top:1px solid var(--line);margin:38px 0}.quote,blockquote{border-left:4px solid var(--accent);background:linear-gradient(90deg,rgba(154,106,59,.1),rgba(154,106,59,0));padding:12px 0 12px 20px;margin:24px 0;color:#463f36;font-size:18px}
+.key-box{background:var(--deep);color:#fff8e8;border-radius:8px;padding:28px;margin:28px 0}.key-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#d7bd8e;margin-bottom:8px}.key-text{font-size:clamp(24px,5vw,42px);line-height:1.36;font-weight:750}.note-box,.work-box{background:var(--soft);border:1px solid #ded5c7;border-radius:8px;padding:22px 24px;margin:24px 0}.truth-box{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px;margin:20px 0}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0}.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:22px;text-decoration:none;display:block}.card:hover{border-color:#b9935a}.card-date{font-size:12px;color:var(--accent);letter-spacing:.08em;margin-bottom:6px}.card-title{font-size:18px;font-weight:750;margin-bottom:8px;line-height:1.5}.card-desc{font-size:14px;color:var(--muted);line-height:1.8}.latest{border-color:#b9935a;background:#fffdf8}
+table{width:100%;border-collapse:collapse;margin:24px 0;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;display:block;overflow-x:auto}thead,tbody,tr{width:100%}th,td{border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;min-width:150px}th{background:#f1ece3;color:var(--deep);font-weight:700}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#f0ebe1;border:1px solid #e1d8ca;border-radius:5px;padding:1px 5px}pre{white-space:pre-wrap;background:#f4f0e8;border:1px solid #ded3c2;border-radius:8px;padding:16px;overflow:auto;color:#3a342d}.signature{margin-top:22px;font-weight:700}.footer-note{padding:32px 0 0;color:var(--muted);font-size:13px}.private-note{background:#f0ede4;border:1px solid var(--line);border-radius:8px;padding:20px 24px;color:var(--muted);font-size:14px;margin-top:34px}
+#kj-auth-overlay{position:fixed;inset:0;background:linear-gradient(135deg,#26312b,#5b513f);display:grid;place-items:center;padding:22px;z-index:9999}.kj-auth-card{width:min(420px,100%);background:#fbfaf6;color:#2f2b26;border-radius:10px;padding:30px;box-shadow:0 24px 80px rgba(0,0,0,.28)}.kj-auth-label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9a6a3b;margin-bottom:10px}.kj-auth-card h1{font-size:24px;line-height:1.45;margin:0 0 10px}.kj-auth-card p{font-size:14px;color:#70685f}.kj-auth-card input{width:100%;min-height:46px;border:1px solid #d4cabd;border-radius:8px;padding:10px 12px;font-size:16px;background:#fff;margin:8px 0 12px}.kj-auth-card button{width:100%;min-height:46px;border:0;border-radius:8px;background:#26312b;color:#fff8e8;font-size:15px;font-weight:700}.kj-auth-error{min-height:22px;color:#a33;font-size:13px;margin-top:8px}
+@media(max-width:640px){.hero{padding:34px 0 36px}.cards{grid-template-columns:1fr}section{padding:34px 0}.card{padding:18px}.hero-actions{display:grid}.button{width:100%}table{font-size:14px}th,td{padding:10px 11px;min-width:130px}}
+
+    .timeline { display:grid; gap:16px; margin:24px 0; }
+    .timeline-item { background:#fff; border:1px solid var(--line); border-radius:8px; padding:22px; }
+    .tag { display:inline-block; font-size:12px; color:var(--accent); letter-spacing:.08em; margin-bottom:8px; }
+    .map-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:24px 0; }
+    .map-card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:22px; }
+    .map-card h3 { margin-top:0; }
+    @media(max-width:640px){.map-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body class="kj-auth-locked">
+  <header class="hero">
+    <div class="wrap">
+      <a class="back" href="../">← よっちゃん専用トップへ</a>
+      <p class="eyebrow">Private Cognitive Map</p>
+      <h1>よっちゃん 認知構造マップ</h1>
+      <p class="lead">各回の振り返りを横につなぎ、繰り返し出てくる言葉・反応・育っている力を見えるようにするページです。</p>
+    </div>
+  </header>
+  <main class="narrow">
+    <section class="note-box">
+      <h2>このページの使い方</h2>
+      <p>ここは、毎回の認知構造分析シートを別々に増やす場所ではありません。</p>
+      <p>参加するたびに、その回で見えた認知・問い・変化をここへ重ねていきます。自分が「何度も同じところで反応している」のか、「少しずつ見方が変わっている」のかを確認するための地図です。</p>
+    </section>
+
+    <section>
+      <h2>現在見えている大きなテーマ</h2>
+      <div class="key-box"><div class="key-label">Core Theme</div><div class="key-text">人からどう見られるか、役に立てているか、自分には語れるものがあるか。</div></div>
+      <p>よっちゃんの中では、「ちゃんとやりたい」「見てもらいたい」「自分のことを言葉にしたい」という願いが、いろいろな場面で形を変えて出てきています。</p>
+    </section>
+
+    <section>
+      <h2>積み上がってきた流れ</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="tag">2026.04.26</div>
+          <h3>「気になる」の奥にあった、見てほしい気持ち</h3>
+          <p>他の人が言われていることを自分ごとのように受け取り、「自分もそう言われるかもしれない」と反応していた回。</p>
+          <ul>
+            <li>繰り返し出た言葉: 気になる、怖い、ビクビク、見てほしい</li>
+            <li>見えた認知: 相手の反応や言葉で、自分が認められているかを測りやすい</li>
+            <li>育った力: 「相手のことばかり気にしている」と自分で気づけた</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="tag">2026.05.10</div>
+          <h3>「なんかしなきゃ」が出る場面</h3>
+          <p>話すことがない、役に立っていないかもしれない、見ている人にとって意味がないかもしれない、という感覚が出た回。</p>
+          <ul>
+            <li>繰り返し出た言葉: なんかしなきゃ、役に立たなきゃ、ちゃんとしなきゃ</li>
+            <li>見えた認知: その場にいるなら、何か価値を出さなければならない</li>
+            <li>育った力: 身体に出るサインとして「なんかしなきゃ」を見つけた</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <div class="tag">2026.05.17</div>
+          <h3>「つまらない自分」の奥にある願い</h3>
+          <p>自然農イベントでの自己紹介をきっかけに、「自分には言うことがない」「ただの会社員」と感じていた回。</p>
+          <ul>
+            <li>繰り返し出た言葉: 進んでいない、めんどくさい、つまらない、羨ましい</li>
+            <li>見えた認知: 語れるものがある人、好きや得意を仕事にしている人は進んでいるように見える</li>
+            <li>育った力: 「好きな仕事に就けているように見える」と、事実と認知を分けて言葉にできた</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>繰り返し出ている認知パターン</h2>
+      <div class="map-grid">
+        <div class="map-card"><h3>1. 人からどう見られているか</h3><p>相手の言葉、反応、関心によって、自分がちゃんとできているかを確認しやすい。</p></div>
+        <div class="map-card"><h3>2. 役に立たなきゃ</h3><p>場にいるなら、何か意味のあることを出さなければならないという圧が出やすい。</p></div>
+        <div class="map-card"><h3>3. 自分には語れるものがない</h3><p>実際には経験や行動があるのに、自分の価値として認識しきれていない。</p></div>
+        <div class="map-card"><h3>4. 羨ましさに願いが映る</h3><p>好きなこと、得意なこと、自分の活動を語れる人に反応する。そこには「自分もそうありたい」という願いがある。</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>育っている力</h2>
+      <ul>
+        <li>感情が動いたことに気づく力</li>
+        <li>自分の認知を「事実」ではなく「そう見えている」と分ける力</li>
+        <li>何もないと思うところから、実際に起きている出来事を拾う力</li>
+        <li>羨ましさや怖さを、悪いものにせず入口として見る力</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>次に見ていく問い</h2>
+      <ol>
+        <li>「自分には言うことがない」と思う時、事実としては何をしている人なのか。</li>
+        <li>「役に立たなきゃ」が出る時、誰にどう見られることを守っているのか。</li>
+        <li>羨ましい人の中に、自分のどんな願いを見ているのか。</li>
+        <li>仕事の中で、自分がすでに人の困りごとを軽くしている部分はどこか。</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>各回の振り返り</h2>
+      <div class="cards">
+        <a class="card latest" href="../2026-05-17/"><div class="card-date">2026年5月17日</div><div class="card-title">「つまらない自分」の奥にある願い</div><div class="card-desc">今回の個人向け振り返りページ。</div></a>
+        <a class="card" href="../2026-05-10/"><div class="card-date">2026年5月10日</div><div class="card-title">「なんかしなきゃ」の奥にあるもの</div><div class="card-desc">身体に出るサインと場への責任感。</div></a>
+        <a class="card" href="../2026-04-26/"><div class="card-date">2026年4月26日</div><div class="card-title">「気になる」と感情の発見</div><div class="card-desc">見てほしい、わかってほしい感覚。</div></a>
+      </div>
+    </section>
+  </main>
+  <script id="kaoru-juku-password-guard-v1">
+(function() {
+  const PASS_HASH = '1d3327e0df4257470c17e90db4c8651c840277973efc58a7ee5943f86c279b7b';
+  const STORAGE_KEY = 'kaoru_juku_member_yocchan_auth_v1';
+  function unlock() {
+    document.body.classList.remove('kj-auth-locked');
+    const overlay = document.getElementById('kj-auth-overlay');
+    if (overlay) overlay.remove();
+  }
+  async function sha256(text) {
+    const data = new TextEncoder().encode(text);
+    const hash = await crypto.subtle.digest('SHA-256', data);
+    return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+  function checkSaved() { if (localStorage.getItem(STORAGE_KEY) === PASS_HASH) unlock(); }
+  function render() {
+    if (!document.body.classList.contains('kj-auth-locked')) return;
+    const overlay = document.createElement('div');
+    overlay.id = 'kj-auth-overlay';
+    overlay.innerHTML = `<div class="kj-auth-card"><div class="kj-auth-label">Kaoru Juku Members</div><h1>本人専用ページ</h1><p>このページを見るには、本人用パスワードを入力してください。</p><input type="password" id="kj-auth-password" autocomplete="current-password" placeholder="パスワード"><button type="button" id="kj-auth-submit">表示する</button><div class="kj-auth-error" id="kj-auth-error"></div></div>`;
+    document.body.appendChild(overlay);
+    const input = document.getElementById('kj-auth-password');
+    const error = document.getElementById('kj-auth-error');
+    async function submit() {
+      const digest = await sha256(input.value || '');
+      if (digest === PASS_HASH) { localStorage.setItem(STORAGE_KEY, PASS_HASH); unlock(); }
+      else { error.textContent = 'パスワードが違います。'; input.value = ''; input.focus(); }
+    }
+    document.getElementById('kj-auth-submit').addEventListener('click', submit);
+    input.addEventListener('keydown', function(e) { if (e.key === 'Enter') submit(); });
+    setTimeout(() => input.focus(), 50);
+  }
+  checkSaved();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render); else render();
+})();
+</script>
+
+</body>
+</html>
+</body>
+</html>
