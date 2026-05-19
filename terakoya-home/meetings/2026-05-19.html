@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>戦略会議 #03 — 天川グローカル寺子屋教育</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400&display=swap');
+
+  :root {
+    --forest: #2d4a3e;
+    --moss: #4a7c6f;
+    --ink: #2a2a2a;
+    --stone: #6b6b6b;
+    --paper: #f8f6f2;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Serif JP', serif;
+    line-height: 2;
+  }
+
+  .page-header {
+    background: var(--forest);
+    padding: 80px 32px 60px;
+  }
+  .page-header-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .back-link {
+    display: inline-flex;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    margin-bottom: 40px;
+  }
+  .meta {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 16px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .page-header h1 {
+    font-size: clamp(1.3rem, 4vw, 1.9rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .subtitle {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+  }
+
+  .page-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 80px 32px 120px;
+  }
+  .section { margin-bottom: 72px; }
+  .section-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    color: var(--moss);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--moss);
+    opacity: 0.2;
+  }
+  h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  p {
+    font-size: 0.95rem;
+    color: var(--stone);
+    line-height: 2.3;
+    margin-bottom: 20px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 24px;
+  }
+  ul li {
+    font-size: 0.92rem;
+    color: var(--stone);
+    line-height: 2.1;
+    padding-left: 1.4em;
+    position: relative;
+    margin-bottom: 4px;
+  }
+  ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: rgba(74,124,111,0.5);
+  }
+  .quote {
+    border-left: 2px solid var(--moss);
+    padding: 20px 28px;
+    margin: 32px 0;
+    background: var(--white);
+  }
+  .quote p {
+    font-size: 1rem;
+    color: var(--ink);
+    line-height: 2.2;
+    margin: 0;
+  }
+  .table-wrap { overflow-x: auto; margin: 24px 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  th {
+    background: var(--forest);
+    color: rgba(255,255,255,0.85);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    padding: 12px 16px;
+    text-align: left;
+  }
+  td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(74,124,111,0.1);
+    color: var(--stone);
+    line-height: 1.8;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: var(--white); }
+  .link-card {
+    display: block;
+    background: var(--white);
+    border: 1px solid rgba(74,124,111,0.12);
+    padding: 18px 22px;
+    margin-bottom: 12px;
+    color: var(--forest);
+    text-decoration: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.86rem;
+  }
+  .distill {
+    background: var(--forest);
+    padding: 40px;
+    color: var(--white);
+  }
+  .distill h3 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 28px;
+  }
+  .distill ol { padding-left: 1.2em; }
+  .distill li {
+    color: rgba(255,255,255,0.72);
+    font-size: 0.92rem;
+    margin-bottom: 20px;
+    line-height: 2;
+  }
+  .distill strong {
+    display: block;
+    color: var(--white);
+    font-weight: 400;
+    margin-bottom: 4px;
+  }
+  .page-footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid rgba(74,124,111,0.1);
+  }
+  .page-footer a {
+    color: var(--moss);
+    text-decoration: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.8rem;
+  }
+  @media (max-width: 640px) {
+    .page-header { padding: 60px 24px 44px; }
+    .page-body { padding: 56px 24px 96px; }
+    .distill { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <a href="../index.html" class="back-link">← 問いのタイムラインへ戻る</a>
+    <div class="meta">
+      <span>2026.05.19</span>
+      <span>STRATEGY MEETING #03</span>
+    </div>
+    <h1>天川グローカル寺子屋教育。<br>三者の地図が重なった日。</h1>
+    <p class="subtitle">北斗さん・舟越さん・前田薫の三者会談から、子ども・高校生・若者・世界をつなぐ教育構想が立ち上がった。</p>
+  </div>
+</header>
+
+<main class="page-body">
+
+  <div class="section">
+    <p class="section-title">OVERVIEW</p>
+    <h2>この会議で起きたこと</h2>
+    <p>
+      2026年5月19日、北斗さん、舟越さん、前田薫の三者でZoom会議を行った。
+      目的は、サマーキャンプの具体化だけではなく、それぞれが見ている教育・育成・世界循環の地図を重ねることだった。
+    </p>
+    <p>
+      北斗さんは、ワーホリや海外経験を通して、若者が既存のレールから一度外れ、自分と向き合う機会をつくろうとしている。
+      舟越さんは、サッカーを入口にしながら、身体性、武士道、帝王学、稽古の思想を通して、高校生が本来の力を取り戻す育成を進めている。
+      前田薫は、天川村、寺子屋、修験道、問いと対話を通して、人が本来の自分に還る場づくりを進めている。
+    </p>
+    <div class="quote">
+      <p>この三つの地図を重ねることで、「天川グローカル寺子屋教育」という企画の輪郭が見えてきた。</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">MAP</p>
+    <h2>三者の役割</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>担い手</th>
+            <th>領域</th>
+            <th>この構想での役割</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>北斗さん</td>
+            <td>若者・ワーホリ・海外循環</td>
+            <td>若者が世界へ出て、自分と向き合い、また日本や天川へ還ってくる導線をつくる。</td>
+          </tr>
+          <tr>
+            <td>舟越さん</td>
+            <td>高校生・サッカー・身体性</td>
+            <td>高校生を、子どもたちを支える若き伴走者として育てる。</td>
+          </tr>
+          <tr>
+            <td>前田薫</td>
+            <td>天川村・寺子屋・修験道</td>
+            <td>場の意味づけ、問いの設計、体験後の言語化を担う。</td>
+          </tr>
+          <tr>
+            <td>裕太</td>
+            <td>小中学生・サッカー・地域の日常</td>
+            <td>子どもたちが自然の中で身体を動かし、安心して挑戦できる入口をつくる。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">PROPOSAL</p>
+    <h2>仕上がった企画提案書の骨子</h2>
+    <p>
+      会議後、三者の対話をもとに「天川グローカル寺子屋教育｜企画提案書たたき台」を作成した。
+      感想文ではなく、企画として進めるために、目的・背景・課題・役割分担・最初の実験・将来展開に整理している。
+    </p>
+    <ul>
+      <li>天川村を起点に、小中学生・高校生・若者が、地域と世界を往復しながら育ち合う教育プロジェクト。</li>
+      <li>2026年8月1日〜4日の天川サマーキャンプを、最初の実験場として位置づける。</li>
+      <li>高校生を単なる手伝いではなく、子どもたちを見守る若き伴走者として扱う。</li>
+      <li>サマーキャンプ後の振り返りを、次年度以降の高校生育成、若者の自己探求、ワーホリ、天川村での滞在プログラムへ接続する。</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <p class="section-title">LINKS</p>
+    <h2>関連する公開ページ</h2>
+    <a class="link-card" href="../index.html">天川寺子屋ホーム</a>
+    <a class="link-card" href="../camp-program.html">サマーキャンプ（組織向けプログラム）</a>
+    <a class="link-card" href="../activities/2025-summer-camp.html">サマーキャンプ2025 実績報告</a>
+    <a class="link-card" href="2026-05-06.html">戦略会議 #01</a>
+    <a class="link-card" href="2026-05-09.html">戦略会議 #02</a>
+    <a class="link-card" href="../../field-coaching/">場のコーチング / 体験企画プロデュース</a>
+  </div>
+
+  <div class="distill">
+    <h3>DISTILLATION — この会議から抽出した問い</h3>
+    <ol>
+      <li>
+        <strong>高校生を「手伝い」ではなく「若き伴走者」として扱うには、どんな事前設計が必要か。</strong>
+        舟越さんの身体性・稽古・武士道の視点を、サマーキャンプの役割設計にどう落とし込むか。
+      </li>
+      <li>
+        <strong>ワーホリ・第二の大学構想と、天川村の寺子屋はどこで接続するのか。</strong>
+        北斗さんの若者循環と、天川村での滞在・自己探求をどう結ぶか。
+      </li>
+      <li>
+        <strong>2026年8月のサマーキャンプで、何を記録すれば来年以降の事業化につながるのか。</strong>
+        子ども、高校生、若者、大人の変化を一次情報として残す必要がある。
+      </li>
+      <li>
+        <strong>この企画を、誰か一人のビジョンではなく、三者の地図が重なった企画としてどう育てるか。</strong>
+        北斗さんの地図、舟越さんの地図、前田薫の天川の地図。この順番を大切にする。
+      </li>
+    </ol>
+  </div>
+
+</main>
+
+<div class="page-footer">
+  <a href="../index.html">← 問いのタイムラインへ戻る</a>
+</div>
+
+</body>
+</html>
