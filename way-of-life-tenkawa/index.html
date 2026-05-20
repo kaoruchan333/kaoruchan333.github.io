@@ -504,6 +504,20 @@
       box-shadow: var(--shadow);
     }
 
+    .night-gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .night-gallery img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
     .steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -755,7 +769,7 @@
         <div class="route-list">
           <figure class="route-overview">
             <img src="photos/route-map-overview.jpg" alt="女人結界門から洞川温泉ビジターセンターまでの全体ルート地図">
-            <figcaption>全体ルートの目安。女人結界門・大橋茶屋から山上川沿いを歩き、かりがね橋や龍泉寺、洞川小中学校跡グラウンド、洞川温泉ビジターセンターへ向かいます。Google Maps上では約4.1km・徒歩約52分として表示されています。</figcaption>
+            <figcaption>全体ルートの目安。女人結界門・大橋茶屋から山上川沿いを歩き、母公堂、かじかの滝、岩屋、蛇之倉七尾山をめぐります。洞川小中学校跡グラウンドで振り返ったあと、龍泉寺へお参りし、かりがね橋を経て洞川温泉ビジターセンターへ向かいます。</figcaption>
           </figure>
           <div class="route-point">
             <div class="route-no">01</div>
@@ -778,10 +792,10 @@
           <div class="route-point">
             <div class="route-no">03</div>
             <div>
-              <h3>かりがね橋（候補地）</h3>
-              <p>吊り橋の上から山へ声を放つ候補地点。やっほーと山びこを返しながら、天川の谷と身体の響きを感じます。</p>
-              <iframe class="map-embed" loading="lazy" src="https://www.google.com/maps?q=%E3%81%8B%E3%82%8A%E3%81%8C%E3%81%AD%E6%A9%8B%20%E6%B4%9E%E5%B7%9D%20%E5%A4%A9%E5%B7%9D%E6%9D%91&output=embed" title="かりがね橋の地図"></iframe>
-              <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E3%81%8B%E3%82%8A%E3%81%8C%E3%81%AD%E6%A9%8B%20%E6%B4%9E%E5%B7%9D%20%E5%A4%A9%E5%B7%9D%E6%9D%91" target="_blank" rel="noopener">Googleマップで見る</a>
+              <h3>母公堂 / ごろごろ水</h3>
+              <p>役行者の母を祀る母公堂、そして名水百選のごろごろ水。命を守ること、水が身体に入ることを感じる地点です。</p>
+              <iframe class="map-embed" loading="lazy" src="https://www.google.com/maps?q=%E6%AF%8D%E5%85%AC%E5%A0%82%20%E3%81%94%E3%82%8D%E3%81%94%E3%82%8D%E6%B0%B4%20%E6%B4%9E%E5%B7%9D&output=embed" title="母公堂とごろごろ水の地図"></iframe>
+              <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%AF%8D%E5%85%AC%E5%A0%82%20%E3%81%94%E3%82%8D%E3%81%94%E3%82%8D%E6%B0%B4%20%E6%B4%9E%E5%B7%9D" target="_blank" rel="noopener">Googleマップで見る</a>
             </div>
           </div>
           <div class="route-point">
@@ -814,10 +828,10 @@
           <div class="route-point">
             <div class="route-no">07</div>
             <div>
-              <h3>母公堂 / ごろごろ水</h3>
-              <p>役行者の母を祀る母公堂、そして名水百選のごろごろ水。命を守ること、水が身体に入ることを感じる地点です。</p>
-              <iframe class="map-embed" loading="lazy" src="https://www.google.com/maps?q=%E6%AF%8D%E5%85%AC%E5%A0%82%20%E3%81%94%E3%82%8D%E3%81%94%E3%82%8D%E6%B0%B4%20%E6%B4%9E%E5%B7%9D&output=embed" title="母公堂とごろごろ水の地図"></iframe>
-              <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%AF%8D%E5%85%AC%E5%A0%82%20%E3%81%94%E3%82%8D%E3%81%94%E3%82%8D%E6%B0%B4%20%E6%B4%9E%E5%B7%9D" target="_blank" rel="noopener">Googleマップで見る</a>
+              <h3>洞川小中学校跡グラウンド</h3>
+              <p>歩行体験のゴール候補。かつて学校だった場所に寝そべり、地球46億年の旅を振り返ります。</p>
+              <iframe class="map-embed" loading="lazy" src="https://www.google.com/maps?q=%E5%A4%A9%E5%B7%9D%E6%9D%91%E7%AB%8B%E6%B4%9E%E5%B7%9D%E5%B0%8F%E4%B8%AD%E5%AD%A6%E6%A0%A1%E8%B7%A1&output=embed" title="天川村立洞川小中学校跡の地図"></iframe>
+              <a class="map-link" href="https://maps.app.goo.gl/5hao3YpyqqpSTHaZ9" target="_blank" rel="noopener">Googleマップで見る</a>
             </div>
           </div>
           <div class="route-point">
@@ -832,10 +846,10 @@
           <div class="route-point">
             <div class="route-no">09</div>
             <div>
-              <h3>洞川小中学校跡グラウンド</h3>
-              <p>歩行体験のゴール候補。かつて学校だった場所に寝そべり、地球46億年の旅を振り返ります。</p>
-              <iframe class="map-embed" loading="lazy" src="https://www.google.com/maps?q=%E5%A4%A9%E5%B7%9D%E6%9D%91%E7%AB%8B%E6%B4%9E%E5%B7%9D%E5%B0%8F%E4%B8%AD%E5%AD%A6%E6%A0%A1%E8%B7%A1&output=embed" title="天川村立洞川小中学校跡の地図"></iframe>
-              <a class="map-link" href="https://maps.app.goo.gl/5hao3YpyqqpSTHaZ9" target="_blank" rel="noopener">Googleマップで見る</a>
+              <h3>かりがね橋（提案）</h3>
+              <p>龍泉寺でお参りしたあと、振り返りで気づいたことやシェアしたことを橋の上から山へ叫ぶ案です。山びことともに、自分の声を天川の谷へ放ちます。</p>
+              <iframe class="map-embed" loading="lazy" src="https://www.google.com/maps?q=%E3%81%8B%E3%82%8A%E3%81%8C%E3%81%AD%E6%A9%8B%20%E6%B4%9E%E5%B7%9D%20%E5%A4%A9%E5%B7%9D%E6%9D%91&output=embed" title="かりがね橋の地図"></iframe>
+              <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E3%81%8B%E3%82%8A%E3%81%8C%E3%81%AD%E6%A9%8B%20%E6%B4%9E%E5%B7%9D%20%E5%A4%A9%E5%B7%9D%E6%9D%91" target="_blank" rel="noopener">Googleマップで見る</a>
             </div>
           </div>
           <div class="route-point">
@@ -853,7 +867,7 @@
 
     <section>
       <div class="section-inner family">
-        <img src="photos/school-cat-horizontalbar.jpg" alt="洞川小中学校跡の鉄棒に乗る猫と校舎">
+        <img src="photos/haiko-ground.jpg" alt="洞川小中学校跡グラウンドで子どもたちが集まる風景">
         <div>
           <p class="section-kicker">Family & Children</p>
           <h2>親も子も、それぞれ豊かな時間を。</h2>
@@ -872,7 +886,10 @@
           <p>歩いたあとの身体で、温泉街の灯りの中をゆっくり歩く。昼の水と森の時間とは違う、もうひとつの天川の表情です。</p>
           <p>宿泊や懇親の流れも、この夜の雰囲気を大切にしながら整えていきます。</p>
         </div>
-        <img class="feature-img" src="photos/dorogawa-lantern-cat.png" alt="提灯が灯る洞川温泉街を歩く猫">
+        <div class="night-gallery">
+          <img src="photos/dorogawa-onsen-night-1.jpg" alt="提灯が灯る洞川温泉街の旅館">
+          <img src="photos/dorogawa-lantern-cat.png" alt="提灯が灯る洞川温泉街を歩く猫">
+        </div>
       </div>
     </section>
 
