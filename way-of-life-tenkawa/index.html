@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Way of Life いのちの巡礼 in 天川村</title>
+  <meta name="description" content="Way of Life いのちの巡礼 in 天川村。地球46億年を4.6kmで歩き、天川村の水・森・岩屋・祈りの場をめぐる2日間。">
+  <style>
+    :root {
+      --ink: #202522;
+      --sub: #5f6962;
+      --paper: #f7f4ec;
+      --mist: #e9eee9;
+      --water: #426f79;
+      --moss: #425744;
+      --cedar: #263a2f;
+      --clay: #986746;
+      --gold: #b99a54;
+      --white: #ffffff;
+      --line: rgba(32, 37, 34, .16);
+      --shadow: 0 18px 54px rgba(22, 29, 24, .16);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+      line-height: 1.86;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    .hero {
+      min-height: 92vh;
+      position: relative;
+      display: grid;
+      align-items: end;
+      padding: 28px;
+      color: var(--white);
+      background:
+        linear-gradient(180deg, rgba(14, 24, 20, .12) 0%, rgba(14, 24, 20, .68) 58%, rgba(14, 24, 20, .92) 100%),
+        url("photos/kajika-sunlight.jpg") center / cover no-repeat;
+    }
+
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 28px;
+      color: rgba(255,255,255,.88);
+      z-index: 2;
+    }
+
+    .brand {
+      font-size: 13px;
+      letter-spacing: .08em;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 12px;
+      letter-spacing: .08em;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav-links a:hover { border-bottom-color: currentColor; }
+
+    .hero-inner {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      padding: 120px 0 42px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.78);
+      margin: 0 0 14px;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 920px;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+      font-size: clamp(42px, 8vw, 94px);
+      line-height: 1.08;
+      letter-spacing: 0;
+      font-weight: 600;
+    }
+
+    .hero-lead {
+      max-width: 720px;
+      margin: 26px 0 0;
+      font-size: clamp(17px, 2.2vw, 23px);
+      line-height: 1.82;
+      color: rgba(255,255,255,.9);
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .06em;
+      white-space: nowrap;
+    }
+
+    .button.primary {
+      background: var(--white);
+      color: var(--cedar);
+    }
+
+    .button.secondary {
+      border-color: rgba(255,255,255,.62);
+      color: var(--white);
+      background: rgba(255,255,255,.08);
+    }
+
+    .quick {
+      width: min(1120px, calc(100% - 56px));
+      margin: -34px auto 0;
+      position: relative;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--white);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .quick-item {
+      padding: 20px 22px;
+      border-right: 1px solid var(--line);
+    }
+
+    .quick-item:last-child { border-right: 0; }
+
+    .quick-label {
+      display: block;
+      font-size: 11px;
+      letter-spacing: .14em;
+      color: var(--water);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .quick-value {
+      display: block;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.45;
+    }
+
+    main { overflow: hidden; }
+
+    section {
+      padding: 86px 28px;
+    }
+
+    .section-inner {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    .narrow {
+      width: min(840px, 100%);
+      margin: 0 auto;
+    }
+
+    .section-kicker {
+      color: var(--water);
+      font-size: 12px;
+      letter-spacing: .16em;
+      font-weight: 800;
+      margin: 0 0 12px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0 0 30px;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+      font-size: clamp(30px, 4.3vw, 58px);
+      line-height: 1.22;
+      letter-spacing: 0;
+      font-weight: 600;
+      color: var(--cedar);
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+      font-size: clamp(22px, 2.6vw, 32px);
+      line-height: 1.34;
+      letter-spacing: 0;
+      color: var(--cedar);
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: var(--sub);
+      font-size: 16px;
+    }
+
+    .lead-copy {
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+      font-size: clamp(20px, 2.5vw, 30px);
+      line-height: 1.9;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .band-dark {
+      background: var(--cedar);
+      color: var(--white);
+    }
+
+    .band-dark h2,
+    .band-dark h3 { color: var(--white); }
+
+    .band-dark p { color: rgba(255,255,255,.74); }
+    .band-dark .section-kicker { color: #b8d3d0; }
+
+    .image-text {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .feature-img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .wide-img {
+      width: 100%;
+      aspect-ratio: 16 / 8;
+      object-fit: cover;
+      border-radius: var(--radius);
+      margin-top: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .quote {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    .quote p {
+      color: rgba(255,255,255,.86);
+      font-size: 14px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .quote strong {
+      display: block;
+      margin-top: 12px;
+      color: #d7c08a;
+      font-size: 12px;
+    }
+
+    .days {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-top: 34px;
+    }
+
+    .day {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .day img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .day-body { padding: 26px; }
+
+    .day-num {
+      display: inline-block;
+      color: var(--water);
+      font-size: 12px;
+      letter-spacing: .12em;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .route {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .route-sticky {
+      position: sticky;
+      top: 18px;
+    }
+
+    .route-sticky img {
+      aspect-ratio: 1 / 1.18;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .route-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .route-overview {
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.06);
+      margin: 0 0 10px;
+    }
+
+    .route-overview img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .route-overview img {
+      aspect-ratio: 16 / 7;
+    }
+
+    .route-overview figcaption {
+      color: rgba(255,255,255,.72);
+      font-size: 13px;
+      line-height: 1.7;
+      margin-top: 10px;
+    }
+
+    .route-point {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+
+    .route-no {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.35);
+      color: #d7c08a;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .route-point h3 {
+      font-family: inherit;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .route-point p {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .map-embed {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      border-radius: var(--radius);
+      margin-top: 14px;
+      background: rgba(255,255,255,.08);
+    }
+
+    .map-link {
+      display: inline-flex;
+      margin-top: 10px;
+      font-size: 13px;
+      color: #d7c08a;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(215,192,138,.55);
+    }
+
+    .note {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-left: 4px solid var(--gold);
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.78);
+      font-size: 14px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .info-row {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .info-row span {
+      display: block;
+      color: var(--water);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      margin-bottom: 4px;
+    }
+
+    .info-row strong {
+      display: block;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    .info-link {
+      display: inline-flex;
+      margin-top: 12px;
+      padding: 9px 12px;
+      border-radius: 4px;
+      background: var(--cedar);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.4;
+      text-decoration: none;
+    }
+
+    .family {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .family img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .step {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      padding: 24px;
+    }
+
+    .step b {
+      color: var(--clay);
+      font-size: 13px;
+      letter-spacing: .12em;
+    }
+
+    .entry {
+      background: var(--cedar);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 38px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 24px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .entry h2 { color: var(--white); margin-bottom: 14px; }
+    .entry p { color: rgba(255,255,255,.78); }
+
+    .entry-panel {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    .entry-panel dl {
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .entry-panel div {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255,255,255,.14);
+      padding-bottom: 12px;
+    }
+
+    .entry-panel div:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .entry-panel dt {
+      color: #d7c08a;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .entry-panel dd {
+      margin: 0;
+      color: rgba(255,255,255,.9);
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 36px 28px;
+      background: #18221c;
+      color: rgba(255,255,255,.58);
+      font-size: 13px;
+    }
+
+    footer .section-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .quick { grid-template-columns: repeat(2, 1fr); }
+      .quick-item:nth-child(2) { border-right: 0; }
+      .quick-item:nth-child(1),
+      .quick-item:nth-child(2) { border-bottom: 1px solid var(--line); }
+      .image-text,
+      .route,
+      .family,
+      .entry { grid-template-columns: 1fr; }
+      .quote-grid,
+      .days,
+      .steps,
+      .info-grid { grid-template-columns: 1fr; }
+      .route-sticky { position: static; }
+      section { padding: 66px 22px; }
+      .hero { padding: 22px; }
+      .quick { width: calc(100% - 28px); }
+      .entry { padding: 26px; }
+    }
+
+    @media (max-width: 520px) {
+      .quick { grid-template-columns: 1fr; }
+      .quick-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .quick-item:last-child { border-bottom: 0; }
+      .hero-actions { align-items: stretch; }
+      .button { width: 100%; white-space: normal; text-align: center; }
+      .entry-panel div { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav" aria-label="ページ内ナビゲーション">
+      <div class="brand">Way of Life x 天川村</div>
+      <div class="nav-links">
+        <a href="#concept">コンセプト</a>
+        <a href="#route">コース</a>
+        <a href="#info">開催概要</a>
+        <a href="#entry">申し込み</a>
+      </div>
+    </nav>
+    <div class="hero-inner">
+      <p class="eyebrow">Pilgrimage of Life / 2026.07.28 - 29</p>
+      <h1>いのちの巡礼<br>in 天川村</h1>
+      <p class="hero-lead">地球46億年の時間を、4.6kmの歩みに重ねる。水と森と祈りの場をめぐりながら、わたしという命がどこから来て、どこへ還っていくのかを身体で思い出す2日間。</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#entry">申し込み準備を見る</a>
+        <a class="button secondary" href="#route">歩くコースを見る</a>
+      </div>
+    </div>
+  </header>
+
+  <aside class="quick" aria-label="開催概要">
+    <div class="quick-item">
+      <span class="quick-label">DATE</span>
+      <span class="quick-value">2026年7月28日・29日</span>
+    </div>
+    <div class="quick-item">
+      <span class="quick-label">PLACE</span>
+      <span class="quick-value">奈良県 天川村 洞川</span>
+    </div>
+    <div class="quick-item">
+      <span class="quick-label">CAPACITY</span>
+      <span class="quick-value">20名程度</span>
+    </div>
+    <div class="quick-item">
+      <span class="quick-label">FEE</span>
+      <span class="quick-value">2日間 16,000円予定</span>
+    </div>
+  </aside>
+
+  <main>
+    <section id="concept">
+      <div class="narrow">
+        <p class="section-kicker">Concept</p>
+        <h2>天川村は、還る場所。</h2>
+        <p class="lead-copy">感じようとしなくても、感じてしまう土地がある。天川村は、何者かになるための場所ではなく、いのちの流れにもう一度還る場所です。</p>
+        <p>Way of Lifeは、地球46億年の歴史を4.6kmの歩みに見立てて歩く巡礼です。ポイントごとに宇宙、地球、生命の物語を聞き、静かに感じ、言葉にしていきます。</p>
+        <p>月や太陽が遠い天体ではなく、友達や親のように近く感じられる。隣の人、植物、水、石、地球が、どこか親戚のように思えてくる。そんな世界との距離が近づく体験を、天川村の水と森と祈りの場でひらきます。</p>
+      </div>
+      <div class="section-inner">
+        <img class="wide-img" src="photos/ryusenji-water-autumn.png" alt="龍泉寺の水辺に木々が映り込む風景">
+      </div>
+    </section>
+
+    <section class="band-dark">
+      <div class="section-inner">
+        <p class="section-kicker">Voices</p>
+        <h2>この企画で大切にしたいこと</h2>
+        <div class="quote-grid">
+          <div class="quote">
+            <p>世界に守られている、祝福されているという感覚を、身体で受け取る時間にしたい。</p>
+            <strong>たくちゃん</strong>
+          </div>
+          <div class="quote">
+            <p>土地にご挨拶する場所が増えることで、地球とのつながりも広がっていく。</p>
+            <strong>ともちゃん</strong>
+          </div>
+          <div class="quote">
+            <p>最後には、みんなで手をつないでゴールしたくなるような一体感が生まれる。</p>
+            <strong>ふうちゃん</strong>
+          </div>
+          <div class="quote">
+            <p>子どもも楽しんでほしいし、自分も参加者としてちゃんと楽しみたい。</p>
+            <strong>こすずちゃん</strong>
+          </div>
+          <div class="quote">
+            <p>自分という存在も、隣にいる人も、植物も、かけがえがないと思い出す。</p>
+            <strong>まさおくん</strong>
+          </div>
+          <div class="quote">
+            <p>風、土の匂い、竹の音。自然のエネルギーを受け取って、幸せに戻っていく。</p>
+            <strong>めいちゃん</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner image-text">
+        <div>
+          <p class="section-kicker">Two Days</p>
+          <h2>外なる宇宙から、内なる宇宙へ。</h2>
+          <p>1日目は、山上川沿いの道を歩きながら、地球46億年の時間を足でたどります。2日目は、室内で静かに言葉をほどき、自分の中にある命の流れを見つめます。</p>
+          <p>頭で理解するだけではなく、歩く、聞く、見る、寝そべる、分かち合う。身体全体で「わたしはこの世界の中にいる」と思い出すための2日間です。</p>
+        </div>
+        <img class="feature-img" src="photos/karigane-river-wide.png" alt="川越しに見えるかりがね橋と森">
+      </div>
+      <div class="section-inner">
+        <div class="days">
+          <article class="day">
+            <img src="photos/forest-stream-light.png" alt="森の渓流に光が差し込む風景">
+            <div class="day-body">
+              <span class="day-num">DAY 01</span>
+              <h3>地球とめぐる46億年</h3>
+              <p>女人結界門から歩きはじめ、山上川、滝、岩屋、名水、祈りの場をめぐります。ゴールは洞川小中学校跡のグラウンド。空を見上げながら振り返ります。</p>
+            </div>
+          </article>
+          <article class="day">
+            <img src="photos/kaoru-mother-hall.jpg" alt="白装束で合掌する前田薫">
+            <div class="day-body">
+              <span class="day-num">DAY 02</span>
+              <h3>いのちがわたしを生きている</h3>
+              <p>外で受け取ったものを、内側の言葉へ。瞑想、ワーク、シェアを通して、自分の中の宇宙とこれからの生き方を見つめます。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="route" class="band-dark">
+      <div class="section-inner route">
+        <div class="route-sticky">
+          <p class="section-kicker">Route</p>
+          <h2>山上川を歩く、天川版の巡礼路。</h2>
+          <div class="note">Google Mapsでは遊歩道の距離が正確に出ない場合があります。7月27日の下見で実測し、4.6kmに合わせた最終ルートを確定します。</div>
+        </div>
+        <div class="route-list">
+          <figure class="route-overview">
+            <img src="photos/route-map-overview.jpg" alt="女人結界門から洞川温泉ビジターセンターまでの全体ルート地図">
+            <figcaption>全体ルートの目安。女人結界門・大橋茶屋から山上川沿いを歩き、かりがね橋や龍泉寺、洞川小中学校跡グラウンド、洞川温泉ビジターセンターへ向かいます。Google Maps上では約4.1km・徒歩約52分として表示されています。</figcaption>
+          </figure>
+          <div class="route-point">
+            <div class="route-no">01</div>
+            <div>
+              <h3>女人結界門 / 大橋茶屋</h3>
+              <p>大峯山の入口から歩きはじめます。駐車場と公衆トイレがあるため、集合地点候補として確認中です。</p>
+              <iframe class="map-embed" loading="lazy" src="https://www.google.com/maps?q=%E5%A4%A7%E6%A9%8B%E8%8C%B6%E5%B1%8B%20%E5%A5%88%E8%89%AF%E7%9C%8C%E5%90%89%E9%87%8E%E9%83%A1%E5%A4%A9%E5%B7%9D%E6%9D%91%E6%B4%9E%E5%B7%9D684-72&output=embed" title="大橋茶屋 / 女人結界門の地図"></iframe>
+              <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E6%A9%8B%E8%8C%B6%E5%B1%8B%20%E5%A5%88%E8%89%AF%E7%9C%8C%E5%90%89%E9%87%8E%E9%83%A1%E5%A4%A9%E5%B7%9D%E6%9D%91%E6%B4%9E%E5%B7%9D684-72" target="_blank" rel="noopener">Googleマップで見る</a>
+            </div>
+          </div>
+          <div class="route-point">
+            <div class="route-no">02</div>
+            <div>
+              <h3>山上川沿いの遊歩道</h3>
+              <p>森の中、川沿いの涼しい道。夏でも水音と木陰に包まれながら歩ける、天川らしい道です。</p>
+              <iframe class="map-embed" loading="lazy" src="https://www.google.com/maps?q=%E6%B4%9E%E5%B7%9D%E8%87%AA%E7%84%B6%E7%A0%94%E7%A9%B6%E8%B7%AF%20%E5%B1%B1%E4%B8%8A%E5%B7%9D&output=embed" title="山上川沿い遊歩道の地図"></iframe>
+              <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%B4%9E%E5%B7%9D%E8%87%AA%E7%84%B6%E7%A0%94%E7%A9%B6%E8%B7%AF%20%E5%B1%B1%E4%B8%8A%E5%B7%9D" target="_blank" rel="noopener">Googleマップで見る</a>
+            </div>
+          </div>
+          <div class="route-point">
+            <div class="route-no">03</div>
+            <div>
+              <h3>かりがね橋（候補地）</h3>
+              <p>吊り橋の上から山へ声を放つ候補地点。やっほーと山びこを返しながら、天川の谷と身体の響きを感じます。</p>
+              <iframe class="map-embed" loading="lazy" src="https://www.google.com/maps?q=%E3%81%8B%E3%82%8A%E3%81%8C%E3%81%AD%E6%A9%8B%20%E6%B4%9E%E5%B7%9D%20%E5%A4%A9%E5%B7%9D%E6%9D%91&output=embed" title="かりがね橋の地図"></iframe>
+              <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E3%81%8B%E3%82%8A%E3%81%8C%E3%81%AD%E6%A9%8B%20%E6%B4%9E%E5%B7%9D%20%E5%A4%A9%E5%B7%9D%E6%9D%91" target="_blank" rel="noopener">Googleマップで見る</a>
+            </div>
+          </div>
+          <div class="route-point">
+            <div class="route-no">04</div>
+            <div>
+              <h3>かじかの滝</h3>
+              <p>水の流れ、岩のかたち、音を感じる場所。地球の時間と身体の時間が重なるポイントです。</p>
+              <iframe class="map-embed" loading="lazy" src="https://www.google.com/maps?q=%E3%81%8B%E3%81%98%E3%81%8B%E3%81%AE%E6%BB%9D%20%E6%B4%9E%E5%B7%9D%20%E5%A4%A9%E5%B7%9D%E6%9D%91&output=embed" title="かじかの滝の地図"></iframe>
+              <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E3%81%8B%E3%81%98%E3%81%8B%E3%81%AE%E6%BB%9D%20%E6%B4%9E%E5%B7%9D%20%E5%A4%A9%E5%B7%9D%E6%9D%91" target="_blank" rel="noopener">Googleマップで見る</a>
+            </div>
+          </div>
+          <div class="route-point">
+            <div class="route-no">05</div>
+            <div>
+              <h3>蟷螂の岩屋 / 蝙蝠の岩屋</h3>
+              <p>修験道の行場として伝わる岩屋。暗さ、低さ、内側へ入る感覚が、歩く体験に深みを与えます。</p>
+              <iframe class="map-embed" loading="lazy" src="https://www.google.com/maps?q=%E8%9F%B7%E8%9E%82%E3%81%AE%E5%B2%A9%E5%B1%8B%20%E5%A4%A9%E5%B7%9D%E6%9D%91&output=embed" title="蟷螂の岩屋の地図"></iframe>
+              <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E8%9F%B7%E8%9E%82%E3%81%AE%E5%B2%A9%E5%B1%8B%20%E5%A4%A9%E5%B7%9D%E6%9D%91" target="_blank" rel="noopener">Googleマップで見る</a>
+            </div>
+          </div>
+          <div class="route-point">
+            <div class="route-no">06</div>
+            <div>
+              <h3>蛇之倉七尾山</h3>
+              <p>大峯修行と洞窟伝承につながる祈りの場。お参りする場所として下見で導線を確認します。</p>
+              <iframe class="map-embed" loading="lazy" src="https://www.google.com/maps?q=%E8%9B%87%E4%B9%8B%E5%80%89%E4%B8%83%E5%B0%BE%E5%B1%B1%20%E5%A5%88%E8%89%AF%E7%9C%8C%E5%90%89%E9%87%8E%E9%83%A1%E5%A4%A9%E5%B7%9D%E6%9D%91%E6%B4%9E%E5%B7%9D643&output=embed" title="蛇之倉七尾山の地図"></iframe>
+              <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E8%9B%87%E4%B9%8B%E5%80%89%E4%B8%83%E5%B0%BE%E5%B1%B1%20%E5%A5%88%E8%89%AF%E7%9C%8C%E5%90%89%E9%87%8E%E9%83%A1%E5%A4%A9%E5%B7%9D%E6%9D%91%E6%B4%9E%E5%B7%9D643" target="_blank" rel="noopener">Googleマップで見る</a>
+            </div>
+          </div>
+          <div class="route-point">
+            <div class="route-no">07</div>
+            <div>
+              <h3>母公堂 / ごろごろ水</h3>
+              <p>役行者の母を祀る母公堂、そして名水百選のごろごろ水。命を守ること、水が身体に入ることを感じる地点です。</p>
+              <iframe class="map-embed" loading="lazy" src="https://www.google.com/maps?q=%E6%AF%8D%E5%85%AC%E5%A0%82%20%E3%81%94%E3%82%8D%E3%81%94%E3%82%8D%E6%B0%B4%20%E6%B4%9E%E5%B7%9D&output=embed" title="母公堂とごろごろ水の地図"></iframe>
+              <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%AF%8D%E5%85%AC%E5%A0%82%20%E3%81%94%E3%82%8D%E3%81%94%E3%82%8D%E6%B0%B4%20%E6%B4%9E%E5%B7%9D" target="_blank" rel="noopener">Googleマップで見る</a>
+            </div>
+          </div>
+          <div class="route-point">
+            <div class="route-no">08</div>
+            <div>
+              <h3>龍泉寺</h3>
+              <p>洞川の大切な祈りの場。水と修験道の文脈を受け取り、最後の振り返りへ向かう前にお参りします。</p>
+              <iframe class="map-embed" loading="lazy" src="https://www.google.com/maps?q=%E9%BE%8D%E6%B3%89%E5%AF%BA%20%E6%B4%9E%E5%B7%9D%20%E5%A4%A9%E5%B7%9D%E6%9D%91&output=embed" title="龍泉寺の地図"></iframe>
+              <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E9%BE%8D%E6%B3%89%E5%AF%BA%20%E6%B4%9E%E5%B7%9D%20%E5%A4%A9%E5%B7%9D%E6%9D%91" target="_blank" rel="noopener">Googleマップで見る</a>
+            </div>
+          </div>
+          <div class="route-point">
+            <div class="route-no">09</div>
+            <div>
+              <h3>洞川小中学校跡グラウンド</h3>
+              <p>歩行体験のゴール候補。かつて学校だった場所に寝そべり、地球46億年の旅を振り返ります。</p>
+              <iframe class="map-embed" loading="lazy" src="https://www.google.com/maps?q=%E3%82%82%E3%81%BF%E3%81%98%E3%81%AE%E9%87%8C%20%E5%A4%A9%E5%B7%9D%E6%9D%91%20%E6%B4%9E%E5%B7%9D&output=embed" title="洞川小中学校跡付近の地図"></iframe>
+              <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E3%82%82%E3%81%BF%E3%81%98%E3%81%AE%E9%87%8C%20%E5%A4%A9%E5%B7%9D%E6%9D%91%20%E6%B4%9E%E5%B7%9D" target="_blank" rel="noopener">Googleマップで見る</a>
+            </div>
+          </div>
+          <div class="route-point">
+            <div class="route-no">10</div>
+            <div>
+              <h3>洞川温泉ビジターセンター</h3>
+              <p>振り返りのあと、温泉へ。歩いた身体をほどき、天川の一日を静かに閉じます。</p>
+              <iframe class="map-embed" loading="lazy" src="https://www.google.com/maps?q=%E6%B4%9E%E5%B7%9D%E6%B8%A9%E6%B3%89%E3%83%93%E3%82%B8%E3%82%BF%E3%83%BC%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%20%E5%A5%88%E8%89%AF%E7%9C%8C%E5%90%89%E9%87%8E%E9%83%A1%E5%A4%A9%E5%B7%9D%E6%9D%91%E6%B4%9E%E5%B7%9D13-1&output=embed" title="洞川温泉ビジターセンターの地図"></iframe>
+              <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E6%B4%9E%E5%B7%9D%E6%B8%A9%E6%B3%89%E3%83%93%E3%82%BF%E3%83%BC%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%20%E5%A5%88%E8%89%AF%E7%9C%8C%E5%90%89%E9%87%8E%E9%83%A1%E5%A4%A9%E5%B7%9D%E6%9D%91%E6%B4%9E%E5%B7%9D13-1" target="_blank" rel="noopener">Googleマップで見る</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner family">
+        <img src="photos/school-cat-horizontalbar.jpg" alt="洞川小中学校跡の鉄棒に乗る猫と校舎">
+        <div>
+          <p class="section-kicker">Family & Children</p>
+          <h2>親も子も、それぞれ豊かな時間を。</h2>
+          <p>子どもを連れてきたのに、親が子どもの面倒で終わってしまう。天川版では、そこを越えたいと話し合っています。</p>
+          <p>子どもたちは子どもたちで、自然体験やWay of Lifeアプリを通した学びへ。親は親で、歩き、感じ、言葉にする時間へ。天川村の子どもたちと、外から来る子どもたちの交流も検討しています。</p>
+          <p>安全管理、見守り体制、年齢条件は現在調整中です。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band-dark">
+      <div class="section-inner image-text">
+        <div>
+          <p class="section-kicker">Dorogawa Night</p>
+          <h2>提灯の灯る、洞川の夜。</h2>
+          <p>歩いたあとの身体で、温泉街の灯りの中をゆっくり歩く。昼の水と森の時間とは違う、もうひとつの天川の表情です。</p>
+          <p>宿泊や懇親の流れも、この夜の雰囲気を大切にしながら整えていきます。</p>
+        </div>
+        <img class="feature-img" src="photos/dorogawa-lantern-cat.png" alt="提灯が灯る洞川温泉街を歩く猫">
+      </div>
+    </section>
+
+    <section id="info" style="background: var(--mist);">
+      <div class="section-inner">
+        <p class="section-kicker">Information</p>
+        <h2>開催概要</h2>
+        <div class="info-grid">
+          <div class="info-row">
+            <span>開催日</span>
+            <strong>2026年7月28日・29日</strong>
+          </div>
+          <div class="info-row">
+            <span>下見日</span>
+            <strong>2026年7月27日</strong>
+          </div>
+          <div class="info-row">
+            <span>開催地</span>
+            <strong>奈良県吉野郡天川村 洞川エリア</strong>
+          </div>
+          <div class="info-row">
+            <span>定員</span>
+            <strong>20名程度</strong>
+          </div>
+          <div class="info-row">
+            <span>参加費</span>
+            <strong>2日間 16,000円予定</strong>
+          </div>
+          <div class="info-row">
+            <span>宿泊</span>
+            <strong>希望者向けに候補調整中</strong>
+            <a class="info-link" href="https://share.google/7lFzZL0rjoKjFvUF9" target="_blank" rel="noopener">宿泊場所はこちら</a>
+          </div>
+          <div class="info-row">
+            <span>集合場所</span>
+            <strong>大橋茶屋 / 洞川温泉ビジターセンター周辺で調整中</strong>
+          </div>
+          <div class="info-row">
+            <span>主催</span>
+            <strong>HARE project / 前田薫</strong>
+          </div>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <b>BRING</b>
+            <p>歩きやすい靴、帽子、飲み物、糖分補給、日焼け対策、雨具。詳細は確定後に案内します。</p>
+          </div>
+          <div class="step">
+            <b>SAFETY</b>
+            <p>川沿い、岩屋、橋、熱中症対策を含めて下見で確認します。子どもの見守り体制も設計中です。</p>
+          </div>
+          <div class="step">
+            <b>ACCESS</b>
+            <p>車での現地集合を想定しつつ、公共交通と送迎導線も整理します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner image-text">
+        <div>
+          <p class="section-kicker">Host</p>
+          <h2>前田薫</h2>
+          <p>奈良県天川村 地域おこし協力隊。天川村を拠点に、問いと対話、コーチング、サッカー教室、寺子屋構想、座禅・修験道体験、地域の人との関係づくりを進めている。</p>
+          <p>この企画での役割は、単なる現地案内ではなく、天川村という場の意味を読み、参加者が体験を自分の言葉に戻していくための場をひらくこと。かおるちゃんが取り組んでいる仕事は、場の力と人の本来性をつなぐ「場のコーチング」です。</p>
+          <p>天川村は、感じようとしなくても感じてしまう場所。生まれ変わるとは、何者かになることではなく、還ること。その感覚を、この巡礼の中心に置いています。</p>
+          <a class="button primary" href="https://kaoruchan333.github.io/field-coaching/" target="_blank" rel="noopener">場のコーチングを見る</a>
+        </div>
+        <img class="feature-img" src="photos/kaoru-indoor-profile.jpg" alt="室内で静かに座る前田薫の横顔">
+      </div>
+    </section>
+
+    <section id="entry">
+      <div class="section-inner entry">
+        <div>
+          <p class="section-kicker">Entry</p>
+          <h2>申し込み準備中</h2>
+          <p>現在、集合場所、宿泊、子ども向けプログラム、安全管理、送迎導線を最終調整しています。告知開始は2026年6月初旬から中旬を目安にしています。</p>
+          <p>申込フォームが確定したら、このページのボタンを正式な申し込み先へ差し替えます。</p>
+          <a class="button primary" href="#info">開催概要を確認する</a>
+        </div>
+        <div class="entry-panel">
+          <dl>
+            <div>
+              <dt>日程</dt>
+              <dd>2026年7月28日・29日</dd>
+            </div>
+            <div>
+              <dt>定員</dt>
+              <dd>20名程度</dd>
+            </div>
+            <div>
+              <dt>費用</dt>
+              <dd>2日間 16,000円予定。宿泊・食事等は調整中</dd>
+            </div>
+            <div>
+              <dt>備考</dt>
+              <dd>7月27日にコース下見予定</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="section-inner">
+      <span>Way of Life いのちの巡礼 in 天川村</span>
+      <span>Draft page / 2026</span>
+    </div>
+  </footer>
+</body>
+</html>
