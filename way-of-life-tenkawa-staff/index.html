@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Way of Life × 天川村｜天川側 企画運営スタッフ募集</title>
+  <meta name="description" content="2026年7月28日-29日、天川村でひらく Way of Life いのちの巡礼を、天川側から一緒に支える企画運営スタッフ募集ページです。">
+  <style>
+    :root {
+      --ink: #242923;
+      --sub: #626d63;
+      --paper: #f7f4ec;
+      --white: #fffdf8;
+      --mist: #e8eee8;
+      --water: #416f7a;
+      --cedar: #253a30;
+      --leaf: #506f58;
+      --clay: #8d664c;
+      --gold: #b99b56;
+      --line: rgba(36, 41, 35, .15);
+      --shadow: 0 18px 52px rgba(24, 32, 27, .15);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+      line-height: 1.88;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    .hero {
+      min-height: 92vh;
+      position: relative;
+      display: grid;
+      align-items: end;
+      padding: 28px;
+      color: white;
+      background:
+        linear-gradient(180deg, rgba(12, 23, 18, .12) 0%, rgba(12, 23, 18, .62) 58%, rgba(12, 23, 18, .94) 100%),
+        url("photos/forest-stream-light.png") center / cover no-repeat;
+    }
+
+    .nav {
+      position: absolute;
+      inset: 0 0 auto;
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 20px 28px;
+      z-index: 2;
+      color: rgba(255,255,255,.9);
+    }
+
+    .brand {
+      font-size: 18px;
+      font-weight: 850;
+      letter-spacing: .08em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav-links a:hover { border-bottom-color: currentColor; }
+
+    .hero-inner {
+      width: min(1080px, 100%);
+      margin: 0 auto;
+      padding: 118px 0 44px;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.82);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 920px;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+      font-size: clamp(40px, 7.5vw, 88px);
+      line-height: 1.1;
+      letter-spacing: 0;
+      font-weight: 600;
+    }
+
+    .hero-lead {
+      max-width: 720px;
+      margin: 28px 0 0;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+      font-size: clamp(17px, 2.2vw, 23px);
+      color: rgba(255,255,255,.92);
+    }
+
+    .hero-actions {
+      margin-top: 34px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 19px;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      background: var(--white);
+      color: var(--cedar);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 850;
+      letter-spacing: .06em;
+    }
+
+    .button.secondary {
+      background: rgba(255,255,255,.08);
+      color: white;
+      border-color: rgba(255,255,255,.62);
+    }
+
+    .quick {
+      width: min(1080px, calc(100% - 56px));
+      margin: -34px auto 0;
+      position: relative;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .quick-item {
+      padding: 20px 22px;
+      border-right: 1px solid var(--line);
+    }
+
+    .quick-item:last-child { border-right: 0; }
+
+    .quick-label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--water);
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: .14em;
+    }
+
+    .quick-value {
+      display: block;
+      font-size: 16px;
+      font-weight: 850;
+      line-height: 1.45;
+    }
+
+    main { overflow: hidden; }
+    section { padding: 84px 28px; }
+
+    .section-inner {
+      width: min(1080px, 100%);
+      margin: 0 auto;
+    }
+
+    .narrow {
+      width: min(820px, 100%);
+      margin: 0 auto;
+    }
+
+    .kicker {
+      margin: 0 0 12px;
+      color: var(--water);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0 0 28px;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+      font-size: clamp(30px, 4.3vw, 56px);
+      line-height: 1.24;
+      letter-spacing: 0;
+      font-weight: 600;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    p { margin: 0 0 1.08em; }
+
+    .lead {
+      font-size: clamp(17px, 2vw, 21px);
+      color: var(--sub);
+    }
+
+    .soft-band { background: var(--mist); }
+
+    .image-text {
+      display: grid;
+      grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+      gap: 52px;
+      align-items: center;
+    }
+
+    .image-text.reverse {
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+    }
+
+    .photo {
+      width: 100%;
+      min-height: 360px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .message {
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+      font-size: clamp(18px, 2.2vw, 24px);
+      line-height: 2;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .card-number {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--clay);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .16em;
+    }
+
+    .list {
+      display: grid;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .list-item {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 16px 18px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(65, 111, 122, .12);
+      color: var(--water);
+      font-weight: 900;
+      font-size: 12px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .info-item {
+      padding: 20px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .info-item span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--water);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .14em;
+    }
+
+    .info-item strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .notice {
+      margin-top: 26px;
+      padding: 18px 20px;
+      background: rgba(185, 155, 86, .14);
+      border: 1px solid rgba(185, 155, 86, .36);
+      border-radius: var(--radius);
+      color: #5a513c;
+      font-weight: 750;
+    }
+
+    .profile {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 30px;
+      align-items: center;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .profile img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: var(--radius);
+    }
+
+    .profile-link {
+      color: var(--water);
+      font-weight: 900;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(65, 111, 122, .42);
+    }
+
+    footer {
+      padding: 46px 28px;
+      background: var(--cedar);
+      color: rgba(255,255,255,.86);
+    }
+
+    footer .section-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 860px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 10px 14px;
+      }
+
+      .quick,
+      .image-text,
+      .image-text.reverse,
+      .cards,
+      .info-grid,
+      .profile {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .quick-item:last-child { border-bottom: 0; }
+      section { padding: 64px 22px; }
+      .hero { padding: 24px; }
+      .profile img { width: 100%; height: auto; aspect-ratio: 4 / 3; }
+
+      footer .section-inner { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav" aria-label="ページ内リンク">
+      <div class="brand">Way of Life × 天川村</div>
+      <div class="nav-links">
+        <a href="#message">想い</a>
+        <a href="#role">役割</a>
+        <a href="#info">募集概要</a>
+      </div>
+    </nav>
+
+    <div class="hero-inner">
+      <p class="eyebrow">Volunteer Staff / 2026.07.28-29</p>
+      <h1>天川側の仲間として、<br>この巡礼を一緒に支えませんか。</h1>
+      <p class="hero-lead">Way of Life「いのちの巡礼」を、天川村から一緒に育てていく企画運営スタッフの募集です。</p>
+      <div class="hero-actions">
+        <a class="button" href="#message">かおるの想い</a>
+        <a class="button secondary" href="#info">募集概要を見る</a>
+      </div>
+    </div>
+  </header>
+
+  <aside class="quick" aria-label="募集概要">
+    <div class="quick-item">
+      <span class="quick-label">DATE</span>
+      <span class="quick-value">2026年7月28日・29日</span>
+    </div>
+    <div class="quick-item">
+      <span class="quick-label">PLACE</span>
+      <span class="quick-value">奈良県 天川村・洞川</span>
+    </div>
+    <div class="quick-item">
+      <span class="quick-label">STYLE</span>
+      <span class="quick-value">天川側 企画運営スタッフ</span>
+    </div>
+    <div class="quick-item">
+      <span class="quick-label">REWARD</span>
+      <span class="quick-value">無償ボランティア</span>
+    </div>
+  </aside>
+
+  <main>
+    <section id="message">
+      <div class="section-inner image-text">
+        <img class="photo" src="photos/kajika-sunlight.jpg" alt="天川村の森と川に光が差し込む風景">
+        <div>
+          <p class="kicker">Message</p>
+          <h2>これは、ただのお手伝い募集ではありません。</h2>
+          <p class="lead">天川村で生まれる場を、天川村側から一緒に支え、育てていく仲間への呼びかけです。</p>
+          <p>Way of Life「いのちの巡礼」は、宇宙138億年、地球46億年の物語を、天川村の水、森、岩屋、祈りの場をめぐる歩みに重ねていく2日間の体験です。</p>
+          <p>この企画は、外から来た人たちが天川村でイベントをするだけのものではなく、天川村にいる人、天川村とご縁のある人が一緒に関わることで、より深く、あたたかく、土地に根ざした場になると感じています。</p>
+          <p>だからこそ、天川側の仲間として、この巡礼を一緒に支えてくれる人を募集します。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-band">
+      <div class="narrow">
+        <p class="kicker">Why</p>
+        <h2>天川村のご縁を、ここから未来へつなげたい。</h2>
+        <div class="message">
+          <p>天川村は、来る人に何かを思い出させる場所です。</p>
+          <p>水の音、山の気配、祈りの場、人との出会い。</p>
+          <p>その場に立ち会い、支える側になることで、受け取れるものがあります。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner">
+        <p class="kicker">What You Receive</p>
+        <h2>報酬はありません。けれど、受け取れるものがあります。</h2>
+        <div class="cards">
+          <article class="card">
+            <span class="card-number">01</span>
+            <h3>場の価値を内側から受け取れる</h3>
+            <p>参加者としてだけでは見えない、場が立ち上がる瞬間、土地と人がつながる瞬間に立ち会えます。</p>
+          </article>
+          <article class="card">
+            <span class="card-number">02</span>
+            <h3>大切な人へ先に案内できる</h3>
+            <p>この価値を届けたい人、大切な友人や家族に、正式募集前の先行案内としてお知らせできます。</p>
+          </article>
+          <article class="card">
+            <span class="card-number">03</span>
+            <h3>天川村を一緒に育てる仲間になる</h3>
+            <p>単発のイベントではなく、天川村のご縁や関係人口を未来へつなげていく流れに関われます。</p>
+          </article>
+        </div>
+        <div class="notice">
+          この募集は無償ボランティアです。金銭的な報酬は発生しません。その代わりに、場を支えることで受け取る体験、ご縁、学び、天川村との深いつながりを大切にしています。
+        </div>
+      </div>
+    </section>
+
+    <section id="role" class="soft-band">
+      <div class="section-inner image-text reverse">
+        <div>
+          <p class="kicker">Role</p>
+          <h2>できることを、できる形で。</h2>
+          <p class="lead">特別なスキルがある人だけを募集しているわけではありません。</p>
+          <p>大切なのは、天川村を大切に思う気持ちと、この場を一緒に支えたいという感覚です。</p>
+          <div class="list">
+            <div class="list-item">
+              <span class="mark">1</span>
+              <div>
+                <h3>参加者を迎える</h3>
+                <p>集合場所での案内、声かけ、ちょっとした不安の受け止め。</p>
+              </div>
+            </div>
+            <div class="list-item">
+              <span class="mark">2</span>
+              <div>
+                <h3>天川村の場をつなぐ</h3>
+                <p>宿泊、温泉、地域の方、場所の使い方など、天川側の感覚を共有する。</p>
+              </div>
+            </div>
+            <div class="list-item">
+              <span class="mark">3</span>
+              <div>
+                <h3>安全と安心を支える</h3>
+                <p>歩く道の見守り、子どもや参加者の体調への気づき、休憩の声かけ。</p>
+              </div>
+            </div>
+            <div class="list-item">
+              <span class="mark">4</span>
+              <div>
+                <h3>大切な人へ届ける</h3>
+                <p>この企画に合いそうな人へ、無理に誘うのではなく、丁寧に案内する。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img class="photo" src="photos/haiko-ground.jpg" alt="洞川小中学校跡グラウンドで子どもたちが集まる風景">
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner image-text">
+        <img class="photo" src="photos/ryusenji-water-autumn.png" alt="龍泉寺の水辺と木々の風景">
+        <div>
+          <p class="kicker">How We Work</p>
+          <h2>役割を固定しすぎず、でも自分の位置に戻れる形で。</h2>
+          <p>この企画では、それぞれが得意なこと、自然にできることを持ち寄れたらいいと思っています。</p>
+          <p>時には役割を超えて動く。時には混ざる。けれど、最終的にはそれぞれが呼吸するようにできる場所に戻って、補い合う。</p>
+          <p>天川側のスタッフも、「全部を背負う」のではなく、自分にできる形で、場を一緒に育てる仲間として関わってもらえたら嬉しいです。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="info" class="soft-band">
+      <div class="section-inner">
+        <p class="kicker">Information</p>
+        <h2>募集概要</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <span>日程</span>
+            <strong>2026年7月28日(火)・29日(水)</strong>
+          </div>
+          <div class="info-item">
+            <span>場所</span>
+            <strong>奈良県吉野郡天川村 洞川エリア</strong>
+          </div>
+          <div class="info-item">
+            <span>募集</span>
+            <strong>天川側 企画運営スタッフ</strong>
+          </div>
+          <div class="info-item">
+            <span>報酬</span>
+            <strong>無償ボランティア</strong>
+          </div>
+          <div class="info-item">
+            <span>関わり方</span>
+            <strong>当日の運営補助、案内、見守り、場づくり、大切な人への先行案内</strong>
+          </div>
+          <div class="info-item">
+            <span>参加者定員</span>
+            <strong>20名ほどの少人数開催</strong>
+          </div>
+        </div>
+        <div class="notice">
+          スタッフとして関わる人にも、まずこの企画の価値を知り、天川村で起きる場の力を一緒に感じてもらいたいと思っています。関わってみたい方は、かおるまで声をかけてください。
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner image-text reverse">
+        <div>
+          <p class="kicker">Continuation</p>
+          <h2>一回きりではなく、天川村の未来につながる企画へ。</h2>
+          <p>このWay of Lifeをきっかけに、天川村を好きになる人、また帰ってきたいと思う人、誰かを連れてきたいと思う人が増えていく。</p>
+          <p>そんなご縁の流れを、天川側の仲間と一緒に育てていきたいです。</p>
+          <p>イベントを支えることは、ただ裏方になることではなく、天川村と人のあいだに橋をかけることだと思っています。</p>
+        </div>
+        <img class="photo" src="photos/dorogawa-onsen-night-1.jpg" alt="洞川温泉街の夜、提灯が灯る旅館街">
+      </div>
+    </section>
+
+    <section class="soft-band">
+      <div class="section-inner">
+        <div class="profile">
+          <img src="photos/kaoru-indoor-profile.jpg" alt="前田薫のプロフィール写真">
+          <div>
+            <p class="kicker">From Kaoru</p>
+            <h2>かおるから</h2>
+            <p>天川村で暮らし、この場所の水、森、人、祈りに触れながら、場が人をひらいていく瞬間を見てきました。</p>
+            <p>この巡礼を、外から来るイベントとしてではなく、天川村のご縁を未来へつなぐ企画として、一緒に育てていけたら嬉しいです。</p>
+            <a class="profile-link" href="https://kaoruchan333.github.io/way-of-life-tenkawa-invitation/" target="_blank" rel="noopener">参加者向けの先行案内ページを見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="section-inner">
+      <div>Way of Life × 天川村 / 天川側 企画運営スタッフ募集</div>
+      <div>2026.07.28-29 / 奈良県 天川村・洞川</div>
+    </div>
+  </footer>
+</body>
+</html>
