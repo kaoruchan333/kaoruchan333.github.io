@@ -256,6 +256,10 @@
       gap: 18px;
     }
 
+    .cards.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .card {
       background: var(--white);
       border: 1px solid var(--line);
@@ -365,6 +369,45 @@
       border-bottom: 1px solid rgba(65, 111, 122, .42);
     }
 
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .link-card {
+      display: block;
+      padding: 20px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .link-card span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--water);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .14em;
+    }
+
+    .link-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .link-card small {
+      color: var(--sub);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
     footer {
       padding: 46px 28px;
       background: var(--cedar);
@@ -394,7 +437,9 @@
       .image-text,
       .image-text.reverse,
       .cards,
+      .cards.two,
       .info-grid,
+      .link-grid,
       .profile {
         grid-template-columns: 1fr;
       }
@@ -419,6 +464,8 @@
       <div class="brand">Way of Life × 天川村</div>
       <div class="nav-links">
         <a href="#message">想い</a>
+        <a href="#people">つくる人</a>
+        <a href="#links">実績</a>
         <a href="#role">役割</a>
         <a href="#info">募集概要</a>
       </div>
@@ -449,8 +496,8 @@
       <span class="quick-value">天川側 企画運営スタッフ</span>
     </div>
     <div class="quick-item">
-      <span class="quick-label">REWARD</span>
-      <span class="quick-value">無償ボランティア</span>
+      <span class="quick-label">FORM</span>
+      <span class="quick-value">ボランティアスタッフ</span>
     </div>
   </aside>
 
@@ -484,7 +531,7 @@
     <section>
       <div class="section-inner">
         <p class="kicker">What You Receive</p>
-        <h2>報酬はありません。けれど、受け取れるものがあります。</h2>
+        <h2>お金以上に、受け取れるものがあります。</h2>
         <div class="cards">
           <article class="card">
             <span class="card-number">01</span>
@@ -503,7 +550,63 @@
           </article>
         </div>
         <div class="notice">
-          この募集は無償ボランティアです。金銭的な報酬は発生しません。その代わりに、場を支えることで受け取る体験、ご縁、学び、天川村との深いつながりを大切にしています。
+          この募集はボランティアスタッフとしての関わりです。けれど、ただ手伝うだけではありません。企画の内側に入り、場を支え、仲間と学び、天川村とのご縁を深めていく体験そのものを大切にしています。
+        </div>
+      </div>
+    </section>
+
+    <section id="people" class="soft-band">
+      <div class="section-inner">
+        <p class="kicker">People</p>
+        <h2>この人たちと関われることが、何よりの価値です。</h2>
+        <p class="lead">Way of Lifeをつくってきた中心メンバーと、企画運営会議の段階から一緒に場を育てていけること。それ自体が、このスタッフ参加の大きな魅力です。</p>
+        <div class="cards two">
+          <article class="card">
+            <span class="card-number">TAKUO NOZAWA</span>
+            <h3>野澤 卓央さん</h3>
+            <p>「たった一つの小さなコツ」を通して、人の意識、関係性、生き方の変化を言葉にし続けている人。</p>
+            <p>Way of Lifeでは、宇宙と地球の大きな時間の中で、世界と人との距離が近づく体験を大切にしています。</p>
+            <a class="profile-link" href="https://ameblo.jp/chiisanakotsu/entry-12962957616.html" target="_blank" rel="noopener">野澤さんのWay of Life発信を見る</a>
+          </article>
+          <article class="card">
+            <span class="card-number">MASAO KOIZUMI</span>
+            <h3>小泉 正男さん</h3>
+            <p>Way of Lifeを共につくっている中心メンバー。宇宙138億年、地球46億年、生命のつながりを、体験として伝える場づくりを担っています。</p>
+            <p>子どもたちも学びやすいアプリや、科学とロマンをつなぐ表現づくりにも関わっています。</p>
+          </article>
+        </div>
+        <div class="notice">
+          スタッフとして関わるということは、この人たちの思想、企画づくり、場の立ち上げ方に近い距離で触れられるということです。お客さんとして参加するだけでは見えない学びがあります。
+        </div>
+      </div>
+    </section>
+
+    <section id="links">
+      <div class="section-inner">
+        <p class="kicker">References</p>
+        <h2>背景や実績を見られるページ</h2>
+        <p class="lead">この企画がどんな流れから生まれているのか、どんな雰囲気のイベントなのかを、事前に見てもらえるようにしました。</p>
+        <div class="link-grid">
+          <a class="link-card" href="https://www.beyond-w.com/oneday" target="_blank" rel="noopener">
+            <span>ONE DAY</span>
+            <strong>beyonD / One Day</strong>
+            <small>関連する取り組みや背景を確認できます。</small>
+          </a>
+          <a class="link-card" href="https://hug4.org/wakayama/" target="_blank" rel="noopener">
+            <span>WAKAYAMA</span>
+            <strong>Way of Life 和歌山</strong>
+            <small>過去開催・関連開催の雰囲気を見られるページです。</small>
+          </a>
+          <a class="link-card" href="https://kaoruchan333.github.io/way-of-life-tenkawa/" target="_blank" rel="noopener">
+            <span>STAFF NOTE</span>
+            <strong>企画運営スタッフ共有の企画ページ</strong>
+            <small>天川村でのルート、写真、場のイメージを共有するために作ったページです。</small>
+          </a>
+          <a class="link-card" href="https://kaoruchan333.github.io/way-of-life-tenkawa-invitation/" target="_blank" rel="noopener">
+            <span>INVITATION</span>
+            <strong>参加者向けの先行案内ページ</strong>
+            <small>大切な人に日程と雰囲気を先に伝えるためのページです。</small>
+          </a>
         </div>
       </div>
     </section>
@@ -544,6 +647,20 @@
                 <p>この企画に合いそうな人へ、無理に誘うのではなく、丁寧に案内する。</p>
               </div>
             </div>
+            <div class="list-item">
+              <span class="mark">5</span>
+              <div>
+                <h3>子連れの安心を一緒につくる</h3>
+                <p>お母さんたちが子どもを連れて来ても安心できるように、見守りや過ごし方を一緒に整えていく。</p>
+              </div>
+            </div>
+            <div class="list-item">
+              <span class="mark">6</span>
+              <div>
+                <h3>企画運営会議に参加する</h3>
+                <p>当日だけでなく、企画が形になるプロセスに参加し、天川村側の視点やアイデアを持ち寄る。</p>
+              </div>
+            </div>
           </div>
         </div>
         <img class="photo" src="photos/haiko-ground.jpg" alt="洞川小中学校跡グラウンドで子どもたちが集まる風景">
@@ -581,16 +698,20 @@
             <strong>天川側 企画運営スタッフ</strong>
           </div>
           <div class="info-item">
-            <span>報酬</span>
-            <strong>無償ボランティア</strong>
+            <span>参加形態</span>
+            <strong>ボランティアスタッフ</strong>
           </div>
           <div class="info-item">
             <span>関わり方</span>
-            <strong>当日の運営補助、案内、見守り、場づくり、大切な人への先行案内</strong>
+            <strong>企画運営会議、当日の運営補助、案内、見守り、場づくり、大切な人への先行案内</strong>
           </div>
           <div class="info-item">
             <span>参加者定員</span>
             <strong>20名ほどの少人数開催</strong>
+          </div>
+          <div class="info-item">
+            <span>子連れ</span>
+            <strong>子ども連れのお母さんも関われる形を一緒に整えます</strong>
           </div>
         </div>
         <div class="notice">
