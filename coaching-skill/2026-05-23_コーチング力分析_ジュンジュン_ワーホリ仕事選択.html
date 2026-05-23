@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コーチング力分析｜ジュンジュン ワーホリ仕事選択｜2026-05-23</title>
+  <style>
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      line-height: 2;
+      color: #2a2a28;
+      background: #f8f7f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 28px 100px;
+    }
+    .doc-label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: #aaa;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .doc-badge {
+      display: inline-block;
+      font-size: 12px;
+      background: #2a2a28;
+      color: #c4a96e;
+      border-radius: 4px;
+      padding: 3px 12px;
+      margin-bottom: 24px;
+      letter-spacing: 0.08em;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0 0 6px;
+      line-height: 1.5;
+    }
+    .doc-sub {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 40px;
+    }
+    .context-note {
+      background: #f0ede6;
+      border-left: 4px solid #c4a96e;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 20px;
+      margin-bottom: 36px;
+      font-size: 14px;
+      color: #5a4e3a;
+      line-height: 1.9;
+    }
+    .context-note strong { color: #2a2a28; }
+    .section {
+      margin-bottom: 52px;
+    }
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: #c4a96e;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0 0 16px;
+      color: #1a1a18;
+    }
+    p {
+      margin: 0 0 16px;
+      color: #3a3838;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #e0ddd8;
+      margin: 40px 0;
+    }
+    /* 概要テーブル */
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+    .info-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #ece9e4;
+      vertical-align: top;
+    }
+    .info-table td:first-child {
+      color: #aaa;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      width: 140px;
+      white-space: nowrap;
+    }
+    /* 評価バッジ */
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 3px;
+      letter-spacing: 0.04em;
+      margin-right: 4px;
+    }
+    .badge-good { background: #e8f5ec; color: #3a7a4a; }
+    .badge-delta { background: #fff3e0; color: #a06000; }
+    .badge-key { background: #2a2a28; color: #c4a96e; }
+    .badge-note { background: #e8f0ff; color: #3a5aaa; }
+    /* 問いのフロー */
+    .flow-row {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid #ece9e4;
+      padding: 12px 0;
+      align-items: flex-start;
+    }
+    .flow-row:last-child { border-bottom: none; }
+    .flow-num {
+      font-size: 11px;
+      color: #ccc;
+      width: 28px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+    .flow-content { flex: 1; }
+    .flow-q {
+      font-size: 14px;
+      font-weight: bold;
+      color: #2a2a28;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+    .flow-res {
+      font-size: 13px;
+      color: #777;
+      line-height: 1.6;
+    }
+    .flow-eval { font-size: 12px; margin-top: 4px; }
+    /* ポイントカード */
+    .point-card {
+      background: #fff;
+      border: 0.5px solid #ddd9d0;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-bottom: 12px;
+    }
+    .point-title {
+      font-size: 15px;
+      font-weight: bold;
+      color: #2a2a28;
+      margin-bottom: 6px;
+    }
+    .point-desc {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.8;
+      margin: 0;
+    }
+    /* ハイライトブロック */
+    .highlight-box {
+      background: #2a2a28;
+      color: #f0e8d8;
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin: 24px 0;
+    }
+    .highlight-box .hl-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: #c4a96e;
+      margin-bottom: 8px;
+    }
+    .highlight-box .hl-text {
+      font-size: 17px;
+      font-weight: bold;
+      line-height: 1.7;
+      margin: 0;
+    }
+    /* 改善カード */
+    .delta-card {
+      background: #fffaf3;
+      border: 1px solid #f0e0c0;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .delta-title {
+      font-size: 15px;
+      font-weight: bold;
+      color: #a06000;
+      margin-bottom: 8px;
+    }
+    .delta-desc {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.8;
+      margin: 0;
+    }
+    /* 学生特有カード */
+    .student-card {
+      background: #f0f4ff;
+      border: 1px solid #c8d8f8;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .student-title {
+      font-size: 15px;
+      font-weight: bold;
+      color: #3a5aaa;
+      margin-bottom: 8px;
+    }
+    .student-desc {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.8;
+      margin: 0;
+    }
+    /* 3軸分析 */
+    .axis-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    @media(max-width: 600px) { .axis-row { grid-template-columns: 1fr; } }
+    .axis-card {
+      background: #fff;
+      border: 1px solid #e0ddd8;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+    }
+    .axis-label {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: #c4a96e;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .axis-text {
+      font-size: 13px;
+      color: #2a2a28;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+    .axis-sub {
+      font-size: 11px;
+      color: #999;
+      margin-top: 4px;
+      line-height: 1.6;
+    }
+    /* 一行定義 */
+    .one-line {
+      font-size: 18px;
+      font-weight: bold;
+      color: #2a2a28;
+      text-align: center;
+      padding: 28px 20px;
+      border-top: 2px solid #e0ddd8;
+      border-bottom: 2px solid #e0ddd8;
+      margin: 32px 0;
+      line-height: 1.7;
+      letter-spacing: 0.04em;
+    }
+    .back-link {
+      display: inline-block;
+      font-size: 12px;
+      color: #aaa;
+      text-decoration: none;
+      margin-bottom: 32px;
+      letter-spacing: 0.04em;
+    }
+    .back-link:hover { color: #888; }
+    .footer-note {
+      font-size: 12px;
+      color: #bbb;
+      margin-top: 60px;
+      border-top: 1px solid #e8e5de;
+      padding-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <a class="back-link" href="index.html">← 訓練記録一覧へ</a>
+
+  <div class="doc-label">薫ちゃんのコーチング力向上 訓練記録</div>
+  <div class="doc-badge">COACHING SKILL LOG</div>
+  <h1>ジュンジュン：仕事選択の迷いの奥に<br>「何のためにカナダへ来たか」を見つけた</h1>
+  <p class="doc-sub">2026年5月23日｜非公式LINE通話コーチング｜相手：カナダワーホリ中の大学生</p>
+
+  <div class="context-note">
+    <strong>このセッションの前提：</strong><br>
+    相手はカナダワーキングホリデー中の大学生。かおるちゃんとは息子という関係でもある。<br>
+    フォーマルなコーチングではなく、「相談があるんやけど」という一本の電話から始まった非公式セッション。<br>
+    親子関係・遠距離・学生相手という3つの要素が重なる特殊なセッション。<br>
+    <strong>このシートで分析するのは、コーチとしてのかおるちゃんの動き。</strong>
+  </div>
+
+  <hr>
+
+  <!-- Section 01: 概要 -->
+  <div class="section">
+    <div class="section-label">Section 01</div>
+    <h2>セッション概要</h2>
+
+    <table class="info-table">
+      <tr><td>クライアント</td><td>ジュンジュン（大学生・カナダワーキングホリデー中）</td></tr>
+      <tr><td>セッション種別</td><td>非公式 LINE 通話コーチング（「相談あるんやけど」から始まった）</td></tr>
+      <tr><td>テーマ</td><td>今のピザ屋で続けるか、カフェへ移るか</td></tr>
+      <tr><td>クライアントの状態</td><td>損得で比べようとしているが決まらない。「ない」という返しが2回続いた。</td></tr>
+      <tr><td>セッションの転換点</td><td>「何のためにカナダへ来てるん？」→「英語」という答えが即座に出た瞬間</td></tr>
+      <tr><td>今日の一歩</td><td>損得で選ぼうとしているうちは決まらない。目的で選ぶとシンプルになる。</td></tr>
+      <tr><td>学生向け固有観察</td><td>大学生の「ない」は洞察がないのではなく、洞察の仕方を知らないサイン</td></tr>
+    </table>
+  </div>
+
+  <!-- Section 02: 転換点 -->
+  <div class="section">
+    <div class="section-label">Section 02</div>
+    <h2>今日最大の転換点</h2>
+
+    <div class="highlight-box">
+      <div class="hl-label">The Moment</div>
+      <p class="hl-text">「今俺は何のために<br>ワーホリ来てるんやろな？」<br>→「英語。一番は英語」</p>
+    </div>
+
+    <p>それまで散らばっていた判断基準（お金・賄い・シフト・経験・ジム）が、この一問ですべて整理された。</p>
+
+    <p>ジュンジュンが「英語」と即座に答えた瞬間、「どちらが得か」という問いは無効になった。「英語に近いのはどちらか」という問いに変わった。</p>
+
+    <p>かおるちゃんが「今めっちゃはっきりしてるやん」と返したのは正確だった。<br>
+    ジュンジュン自身がブレなく答えられた瞬間だった。</p>
+  </div>
+
+  <!-- Section 03: 問いの流れ -->
+  <div class="section">
+    <div class="section-label">Section 03</div>
+    <h2>問いの流れ（評価付き）</h2>
+
+    <div class="flow-row">
+      <div class="flow-num">1</div>
+      <div class="flow-content">
+        <div class="flow-q">「それはどっちがいいかな、っていうのは、何で迷ってるん？」</div>
+        <div class="flow-res">→ ピザの種類が多い・名前が分からない・怒られるかも、という具体的な恐れが出た</div>
+        <div class="flow-eval"><span class="badge badge-good">◎ 最初から「何で迷ってる？」を聞けた</span></div>
+      </div>
+    </div>
+
+    <div class="flow-row">
+      <div class="flow-num">2</div>
+      <div class="flow-content">
+        <div class="flow-q">「働く目的はなんなん？」</div>
+        <div class="flow-res">→「生活」「家にお金払わなあかん」（最初の答え）</div>
+        <div class="flow-eval"><span class="badge badge-good">◎ 早い段階で「目的」を問えた。これが後半の伏線になった</span></div>
+      </div>
+    </div>
+
+    <div class="flow-row">
+      <div class="flow-num">3</div>
+      <div class="flow-content">
+        <div class="flow-q">「今まで自分で喋ってきて、何か気づいたことある？」</div>
+        <div class="flow-res">→「ない」</div>
+        <div class="flow-eval"><span class="badge badge-delta">△ 「ない」を掘らずに次へ進んだ。一度止まれた場所</span></div>
+      </div>
+    </div>
+
+    <div class="flow-row">
+      <div class="flow-num">4</div>
+      <div class="flow-content">
+        <div class="flow-q">（メリット・デメリットを書き出す提案）「バーって書き出してみ、見える化するから」</div>
+        <div class="flow-res">→ ジュンジュンが口頭でリスト化した</div>
+        <div class="flow-eval"><span class="badge badge-good">◎ 学生に最適なアプローチ。具体的・即実行可能な整理法</span></div>
+      </div>
+    </div>
+
+    <div class="flow-row">
+      <div class="flow-num">5</div>
+      <div class="flow-content">
+        <div class="flow-q">「今自分でこう見てみたら、何か気づきとか感じたことある？」</div>
+        <div class="flow-res">→「全然ない、特にない」（2回目の「ない」）</div>
+        <div class="flow-eval"><span class="badge badge-delta">△ 2回目の「ない」。ここも掘るチャンスだった</span></div>
+      </div>
+    </div>
+
+    <div class="flow-row">
+      <div class="flow-num">6</div>
+      <div class="flow-content">
+        <div class="flow-q">「改めて聞くけど、何で悩んでるんやろね？」</div>
+        <div class="flow-res">→「安心性…安心」というキーワードが出た</div>
+        <div class="flow-eval"><span class="badge badge-good">◎ 諦めずに戻ってきた。「ない」で終わらなかった</span></div>
+      </div>
+    </div>
+
+    <div class="flow-row">
+      <div class="flow-num">7</div>
+      <div class="flow-content">
+        <div class="flow-q">（かおるちゃんが命名）「一言で言ったら、どっちのプラスが多いかっていう基準で悩んでると思う」</div>
+        <div class="flow-res">→ パターンの名付け</div>
+        <div class="flow-eval">
+          <span class="badge badge-key">核心</span>
+          <span class="badge badge-delta">△ ジュンジュンが自分でこれを言えた可能性があった</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-row">
+      <div class="flow-num">8</div>
+      <div class="flow-content">
+        <div class="flow-q">「今俺は何のためにワーホリ来てるんやろな？」</div>
+        <div class="flow-res">→「英語（一番）・思い出・友達」</div>
+        <div class="flow-eval"><span class="badge badge-good">◎◎ このセッションの核心の問い。ジュンジュン自身の言葉で答えが出た</span></div>
+      </div>
+    </div>
+
+    <div class="flow-row">
+      <div class="flow-num">9</div>
+      <div class="flow-content">
+        <div class="flow-q">「英語上達ってどうなることなのか？」</div>
+        <div class="flow-res">→「外国人の友達をつくること」</div>
+        <div class="flow-eval"><span class="badge badge-good">◎ 言葉の定義を掘った。「英語」という言葉の下に何があるかを引き出した</span></div>
+      </div>
+    </div>
+
+    <div class="flow-row">
+      <div class="flow-num">10</div>
+      <div class="flow-content">
+        <div class="flow-q">「外国の友達作るためにやったらどっちの方が良さそう？」</div>
+        <div class="flow-res">→ 答えが曖昧になり、アプリの話になった</div>
+        <div class="flow-eval"><span class="badge badge-delta">△ 最後の問いへの答えを掘りきれなかった。ここが次の練習地点</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Section 04: 良かった点 -->
+  <div class="section">
+    <div class="section-label">Section 04</div>
+    <h2>良かった点</h2>
+
+    <div class="point-card">
+      <div class="point-title">「何で迷ってるん？」を最初に聞いた</div>
+      <p class="point-desc">「どっちがいい？」ではなく「何で迷ってるの？」から入ったことで、ジュンジュンの迷いの構造（怒られる怖さ・安心）が早い段階で出た。</p>
+    </div>
+
+    <div class="point-card">
+      <div class="point-title">「目的を問う」フックを早期に打てた</div>
+      <p class="point-desc">「働く目的はなんなん？」という問いを2番目に持ってきた。これが後半の「何のためにワーホリへ来たか」という核心の問いへの伏線になった。</p>
+    </div>
+
+    <div class="point-card">
+      <div class="point-title">「プラスが多い方を選ぼうとしている」とパターンに名前をつけた</div>
+      <p class="point-desc">ジュンジュンの迷いの構造を一言で言語化した。「どっちでもいい、どっちを選んでも同じ」という逆説的な整理は的確で、ジュンジュンが前に進む起点になった。</p>
+    </div>
+
+    <div class="point-card">
+      <div class="point-title">メリット・デメリットの見える化を促した</div>
+      <p class="point-desc">「バーって書き出してみ、見える化すると整理つく」という提案は、大学生に最適なアプローチ。頭の中だけで考えている状態を、紙（メモ）に出す具体的なアクションを渡せた。</p>
+    </div>
+
+    <div class="point-card">
+      <div class="point-title">「英語上達ってどうなることなのか？」で言葉の定義を掘った</div>
+      <p class="point-desc">「英語」という曖昧な目的の下に何があるかを問うた。→「外国人の友達をつくること」という、より具体的な答えが出た。この問いがなければ、「英語」という言葉のままでは判断軸にならなかった。</p>
+    </div>
+
+    <div class="point-card">
+      <div class="point-title">「決めるのは順々やから」と自律を返した</div>
+      <p class="point-desc">最後に、答えを押しつけずに「決めるのはジュンジュン自身」と自律を手渡せた。分析シートを届けると言いながら「どうしろ」とは言わなかった。これがコーチとしての正しい着地。</p>
+    </div>
+
+    <div class="point-card">
+      <div class="point-title">「分析シート作るよ」という具体的なフォロー</div>
+      <p class="point-desc">電話だけで終わらず、シートとして届けることを約束した。遠距離の学生コーチングにおいて、こういうタンジブルな支援は関係を継続させる接点になる。</p>
+    </div>
+
+  </div>
+
+  <!-- Section 05: 改善の核心 -->
+  <div class="section">
+    <div class="section-label">Section 05</div>
+    <h2>改善の核心</h2>
+
+    <div class="delta-card">
+      <div class="delta-title">「ない」が2回続いたのに掘らなかった</div>
+      <p class="delta-desc">
+        ジュンジュンは「気づいたことある？」→「ない」を2回繰り返した。<br>
+        かおるちゃんは次の問いへ進んだが、ここが最も大切な止まり場所だった。<br><br>
+        <strong>「ない」を掘る問い：</strong><br>
+        「ない、っていう感じ、どんな感じがして"ない"感じなの？」<br>
+        「"気づいていない"って、気づいてないことに気づいてるってことやん。なんか感じてる？」<br><br>
+        大学生の「ない」は「答えがない」のではなく、「答えの出し方を知らない」サインであることが多い。
+        掘ることで、ジュンジュン自身がパターンに気づける可能性があった。
+      </p>
+    </div>
+
+    <div class="delta-card">
+      <div class="delta-title">パターン命名をかおるちゃんが先にやってしまった</div>
+      <p class="delta-desc">
+        「どっちのプラスが多いかという基準で悩んでいる」という洞察は鋭かった。<br>
+        ただ、これをかおるちゃん側から言ってしまった。<br><br>
+        <strong>ジュンジュン自身に言わせる問い：</strong><br>
+        「今まで話してみて、自分がどういう基準で比べようとしてたか、一言で言うと？」<br>
+        「さっき賄い、時給、シフトってバーって出てきたやん。全部何を決めようとしてた？」<br><br>
+        自分の口から言えた言葉は記憶に残る。コーチが言った言葉は翌日忘れる。
+      </p>
+    </div>
+
+    <div class="delta-card">
+      <div class="delta-title">「最後の問い」の答えを掘りきれなかった</div>
+      <p class="delta-desc">
+        「外国の友達作るためにやったらどっちの方が良さそう？」という問いを出した後、ジュンジュンの答えが「アプリ」「全員見る」と拡散した。<br>
+        かおるちゃんはそのまま流れ、ここが着地しないままセッションが終わった。<br><br>
+        <strong>掘り返す問い：</strong><br>
+        「ちょっと待って。ピザ屋とカフェ、どっちが外国人の友達つくりやすいと思う？」<br>
+        「それだけで決めんでもいいけど、自分ではどっちやと思う？」<br><br>
+        最後の問いへの答えをジュンジュン自身の言葉で出させることができれば、このセッションはさらに完結した。
+      </p>
+    </div>
+
+    <div class="delta-card">
+      <div class="delta-title">「怒られる怖さ」に一度も戻らなかった</div>
+      <p class="delta-desc">
+        最初の問いで「ピザは20種類あって名前もわからん、怒られるかも」という怖さが出た。<br>
+        かおるちゃんはそれを聞いたが、そのままスルーして判断基準の整理へ移った。<br><br>
+        怖さはワーホリ学生のコーチングで最も重要なテーマの一つ。<br>
+        特に「失敗・怒られること」への怖さは、選択の質を変えるほど働いていることがある。<br><br>
+        <strong>一度戻れた問い：</strong><br>
+        「ちょっと聞いていい？怒られるのが怖いっていうのは、どんな感じがするの？」<br>
+        「失敗したくない、みたいな感じ？それとも人が怖いって感じ？」<br><br>
+        必ずしも深掘りしなくてよいが、「それは聞こえてるよ」という一言があるだけで違った。
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Section 05a: ワーホリ学生特有の観察 -->
+  <div class="section">
+    <div class="section-label">Section 05a</div>
+    <h2>ワーホリ大学生コーチング：特有の観察</h2>
+
+    <div class="student-card">
+      <div class="student-title">大学生の「ない」は、洞察の欠如ではなく、洞察の方法の欠如</div>
+      <p class="student-desc">
+        社会人のクライアントは「気づいたことある？」と聞かれると、何らかの言葉が出ることが多い。<br>
+        大学生は「ない」と答えることが多い。それは怠慢ではなく、「自分の内側を見て言葉にする」という経験そのものが少ないから。<br><br>
+        <strong>学生への問い方：</strong><br>
+        「ない、でいい。"ない"感じって、体でどこかに感じてる？」<br>
+        「"ない"ってさ、どんな感じがして"ない"って思った？」<br>
+        「"ない"って言いながら、なんかモヤっとしたりは？」
+      </p>
+    </div>
+
+    <div class="student-card">
+      <div class="student-title">一歩目が見えていなかったのは「目的が先か、手段が先か」という順番</div>
+      <p class="student-desc">
+        ジュンジュンは「ピザ屋とカフェ、どっちが得か」から入っていた。<br>
+        これは大学生の典型的な思考フレーム。選択肢を比較することが、選ぶことだと思っている。<br><br>
+        <strong>見えていなかった一歩目：</strong><br>
+        「そもそも何のためにカナダへ来たのか」という問いが先にある。<br>
+        手段（どの仕事か）より先に目的（何のためか）を問うことが、すべての比較を整理する。<br><br>
+        <strong>コーチとしての示唆：</strong><br>
+        学生相手のセッションでは、比較の話が出てきたとき、比較を整理するより先に「何のため？」を問う。<br>
+        目的さえ言語化されれば、比較は学生自身がやれる。
+      </p>
+    </div>
+
+    <div class="student-card">
+      <div class="student-title">親子関係がある中で「コーチとして関わる」難しさ</div>
+      <p class="student-desc">
+        今回のセッションは息子への電話という形だった。<br>
+        かおるちゃんは全体的にコーチとして関われていたが、「メモっといてな、これめちゃくちゃ具体的に言うから」という場面では、少しアドバイスモードに入った瞬間があった。<br><br>
+        これは悪いことではない。ただ、「コーチとしての関わり」に意識を置くなら、具体的な提案を出すとき「これやってみ」より「どうしたらジュンジュン自身が整理できそう？」と先に問う方が純度が高い。<br><br>
+        今回は「分析シートを作って届ける」という形でコーチとしての線引きができていた。
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Section 06: 3軸分析 -->
+  <div class="section">
+    <div class="section-label">Section 06</div>
+    <h2>3軸で見るコーチング</h2>
+
+    <div class="axis-row">
+      <div class="axis-card">
+        <div class="axis-label">拾う力</div>
+        <div class="axis-text">○ 良好</div>
+        <div class="axis-sub">「怒られる怖さ」「安心」「英語」を拾えた。最後の問いへの答え（アプリ）が拡散した際は少し追えなかった</div>
+      </div>
+      <div class="axis-card">
+        <div class="axis-label">返す力</div>
+        <div class="axis-text">△ 伸びしろあり</div>
+        <div class="axis-sub">「ない」×2を次へ流した。パターン命名をかおるちゃん側から言ってしまった。返す前に掘る余地</div>
+      </div>
+      <div class="axis-card">
+        <div class="axis-label">待つ力</div>
+        <div class="axis-text">◎ 高い</div>
+        <div class="axis-sub">2回「ない」が出た後も諦めずに問い直した。「決めるのは順々やから」で自律を返せた</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 07: 一行定義 -->
+  <div class="section">
+    <div class="section-label">Section 07</div>
+    <h2>今日の一行定義</h2>
+
+    <div class="one-line">
+      学生の「ない」は、答えがないのではなく、<br>答えの出し方を知らないサインだった。
+    </div>
+
+    <p>ジュンジュンが「英語」と即座に答えた瞬間は、正しい問いへの正直な反応だった。<br>
+    コーチがすべきは「ない」に留まることではなく、正しい問いにたどり着くことだった。<br>
+    今日それはできた。次は「ない」の中に入っていく練習を。</p>
+  </div>
+
+  <!-- Section 08: 次の練習テーマ -->
+  <div class="section">
+    <div class="section-label">Section 08</div>
+    <h2>次の練習テーマ</h2>
+
+    <div class="point-card">
+      <div class="point-title">「ない」が出たら一歩入ってみる</div>
+      <p class="point-desc">「気づいたことある？」→「ない」が出たら、「ない、でいい。"ない"感じって、体でどこかに感じてる？」と一歩だけ入ってみる。学生特有のスキルとして身につけたい問い。</p>
+    </div>
+
+    <div class="point-card">
+      <div class="point-title">パターン命名をジュンジュン自身にやらせる</div>
+      <p class="point-desc">「自分がどういう基準で悩んでたか、一言で言うと？」と先に問う。出てこなければかおるちゃんが言う。出てきたらそれを使う。自分の言葉は翌日も残る。</p>
+    </div>
+
+    <div class="point-card">
+      <div class="point-title">「目的に照らしてどっちが近い？」という問いを、ジュンジュンの口から出させる</div>
+      <p class="point-desc">「外国の友達つくるにはどっちが良さそう？」に対して、曖昧な答えが返ってきたとき、アプリの話に乗らず「ピザ屋とカフェで言うと？」と絞り込む。最後の着地をジュンジュン自身に言わせる練習。</p>
+    </div>
+
+    <div class="point-card">
+      <div class="point-title">怖さの感情を一度だけ立ち止まって聞く</div>
+      <p class="point-desc">「怒られるかも」という言葉が出たとき、「それはどんな感じ？」と一回だけ立ち止まる。深掘りしなくていい。「聞こえてるよ」という一言で十分。感情を拾った事実が次の問いを変える。</p>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <div class="footer-note">
+    このページは薫ちゃん自身のコーチング訓練記録です。<br>
+    次のセッション前に読み返して使ってください。<br>
+    対象：ジュンジュン（カナダワーホリ中・大学生） / 2026年5月23日
+  </div>
+
+</div>
+</body>
+</html>
