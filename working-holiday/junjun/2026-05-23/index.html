@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>ジュンジュンへ｜どっちが得かから、何のためにカナダへ来たのかへ戻る</title>
+  <style>
+:root {
+  --ink: #2b2b2b;
+  --muted: #6e6b65;
+  --paper: #f9f8f5;
+  --panel: #ffffff;
+  --soft: #f0ede6;
+  --line: #e2ddd5;
+  --accent: #3a7a8c;
+  --deep: #1e3a45;
+  --light-accent: #e8f4f7;
+  --gold: #c8a55a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.9;
+  font-size: 16px;
+}
+a { color: inherit; }
+.wrap { width: min(900px, calc(100% - 32px)); margin: 0 auto; }
+.narrow { width: min(760px, calc(100% - 32px)); margin: 0 auto; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #1e3a45 0%, #2c5f72 55%, #3a7a8c 100%);
+  color: #f0f9fb;
+  padding: 52px 0 48px;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+}
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #a8d8e2;
+  margin: 0 0 14px;
+}
+.hero h1 {
+  font-size: clamp(26px, 6vw, 52px);
+  line-height: 1.32;
+  margin: 0;
+  font-weight: 750;
+}
+.lead {
+  font-size: 17px;
+  color: rgba(240,249,251,.82);
+  max-width: 700px;
+  margin: 20px 0 0;
+}
+.meta { font-size: 13px; color: rgba(240,249,251,.65); margin-top: 14px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  border-radius: 8px;
+  border: 1px solid rgba(240,249,251,.4);
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #f0f9fb;
+  background: rgba(255,255,255,.1);
+  font-size: 14px;
+}
+.button.light { background: #fff; color: var(--deep); border-color: #fff; }
+
+/* Layout */
+main { padding: 24px 0 80px; }
+section { padding: 44px 0; border-bottom: 1px solid var(--line); }
+section:last-child { border-bottom: 0; }
+h2 { font-size: clamp(22px, 3.5vw, 32px); line-height: 1.45; margin: 0 0 20px; color: var(--deep); }
+h3 { font-size: 19px; line-height: 1.55; margin: 28px 0 12px; color: #2e4a55; }
+h4 { font-size: 15px; margin: 22px 0 8px; color: var(--accent); }
+p { margin: 0 0 16px; }
+strong { color: #1e2a2e; }
+ul, ol { padding-left: 1.3em; margin: 12px 0 20px; }
+li { margin: 8px 0; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 36px 0; }
+
+/* Intro */
+.intro-box {
+  background: var(--light-accent);
+  border: 1px solid #b8dce4;
+  border-radius: 10px;
+  padding: 26px 28px;
+  margin: 0 0 32px;
+  font-size: 17px;
+  color: var(--deep);
+}
+
+/* Key box */
+.key-box {
+  background: var(--deep);
+  color: #f0f9fb;
+  border-radius: 10px;
+  padding: 28px;
+  margin: 28px 0;
+}
+.key-label {
+  font-size: 11px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #a8d8e2;
+  margin-bottom: 10px;
+}
+.key-text {
+  font-size: clamp(20px, 4.5vw, 36px);
+  line-height: 1.45;
+  font-weight: 750;
+}
+
+/* Blockquote */
+blockquote {
+  border-left: 4px solid var(--accent);
+  background: linear-gradient(90deg, rgba(58,122,140,.08), rgba(58,122,140,0));
+  padding: 12px 0 12px 20px;
+  margin: 24px 0;
+  color: #2e4a55;
+  font-size: 18px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  display: block;
+  overflow-x: auto;
+}
+thead, tbody, tr { width: 100%; }
+th, td {
+  border: 1px solid var(--line);
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+  min-width: 140px;
+}
+th { background: #e8f4f7; color: var(--deep); font-weight: 700; }
+
+/* Compare grid */
+.compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+.compare-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 22px;
+}
+.compare-title { font-weight: 750; font-size: 16px; margin-bottom: 14px; color: var(--deep); }
+.compare-title.merit { color: #2a6e4a; }
+.compare-title.demerit { color: #7a3a3a; }
+.compare-card ul { margin: 0; padding-left: 1.2em; }
+.compare-card li { font-size: 15px; margin: 6px 0; }
+
+/* Work box */
+.work-box {
+  background: var(--soft);
+  border: 1px solid #d8d2c8;
+  border-radius: 8px;
+  padding: 22px 24px;
+  margin: 20px 0;
+}
+pre {
+  white-space: pre-wrap;
+  background: #f4f1ea;
+  border: 1px solid #ddd5c4;
+  border-radius: 8px;
+  padding: 16px;
+  overflow: auto;
+  color: #3a342d;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 14px;
+}
+
+/* Cognition items */
+.cog-item {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px 22px;
+  margin: 16px 0;
+}
+.cog-num {
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.cog-title { font-size: 17px; font-weight: 750; margin-bottom: 10px; color: var(--deep); }
+
+/* Value tags */
+.values { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+.value-tag {
+  background: var(--light-accent);
+  border: 1px solid #b8dce4;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 15px;
+  color: var(--deep);
+}
+
+/* Work steps */
+.step { display: flex; gap: 16px; align-items: flex-start; margin: 18px 0; }
+.step-num {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: var(--deep);
+  color: #f0f9fb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 750;
+}
+.step-content { flex: 1; }
+.step-title { font-weight: 750; font-size: 16px; color: var(--deep); margin-bottom: 6px; }
+
+/* Message */
+.message-box {
+  background: linear-gradient(135deg, #f0f9fb 0%, #e8f4f7 100%);
+  border: 1px solid #b8dce4;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 24px 0;
+}
+.signature { margin-top: 20px; font-weight: 750; color: var(--deep); }
+
+/* Footer */
+footer {
+  background: var(--deep);
+  color: rgba(240,249,251,.7);
+  padding: 28px 0;
+  text-align: center;
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .hero { padding: 38px 0 38px; }
+  .compare { grid-template-columns: 1fr; }
+  .hero-actions { display: grid; }
+  .button { width: 100%; justify-content: center; }
+  section { padding: 34px 0; }
+  table { font-size: 14px; }
+  th, td { padding: 10px 11px; min-width: 120px; }
+}
+  </style>
+</head>
+<style>
+body.wh-locked > *:not(#wh-auth){display:none!important}
+#wh-auth{position:fixed;inset:0;background:linear-gradient(135deg,#1e3a45,#2c5f72);display:grid;place-items:center;padding:22px;z-index:9999}
+.wh-auth-card{width:min(400px,100%);background:#f9f8f5;color:#2b2b2b;border-radius:12px;padding:32px;box-shadow:0 24px 80px rgba(0,0,0,.32)}
+.wh-auth-label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#3a7a8c;margin-bottom:10px}
+.wh-auth-card h1{font-size:22px;line-height:1.45;margin:0 0 10px}
+.wh-auth-card p{font-size:14px;color:#6e6b65;margin:0 0 18px}
+.wh-auth-card input{width:100%;min-height:46px;border:1px solid #d0ccc5;border-radius:8px;padding:10px 14px;font-size:16px;background:#fff;margin:0 0 12px;box-sizing:border-box}
+.wh-auth-card button{width:100%;min-height:46px;border:0;border-radius:8px;background:#1e3a45;color:#f0f9fb;font-size:15px;font-weight:700;cursor:pointer}
+.wh-auth-err{min-height:20px;color:#a33;font-size:13px;margin-top:8px}
+</style>
+<script>
+(function(){
+  const KEY='wh_junjun_auth';
+  const PASS='canada2026';
+  if(sessionStorage.getItem(KEY)==='ok'){
+    document.addEventListener('DOMContentLoaded',function(){document.body.classList.remove('wh-locked')});
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var btn=document.getElementById('wh-btn');
+    var inp=document.getElementById('wh-inp');
+    var err=document.getElementById('wh-err');
+    if(!btn)return;
+    function check(){
+      if(inp.value===PASS){
+        sessionStorage.setItem(KEY,'ok');
+        document.body.classList.remove('wh-locked');
+        document.getElementById('wh-auth').remove();
+      } else {
+        err.textContent='パスワードが違います';
+        inp.value='';inp.focus();
+      }
+    }
+    btn.addEventListener('click',check);
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter')check();});
+  });
+})();
+</script>
+
+<body class="wh-locked">
+
+<div id="wh-auth">
+  <div class="wh-auth-card">
+    <div class="wh-auth-label">Working Holiday Growth Log</div>
+    <h1>ジュンジュン 成長ログ</h1>
+    <p>パスワードを入力してください</p>
+    <input id="wh-inp" type="password" placeholder="パスワード" autocomplete="current-password">
+    <button id="wh-btn">入る</button>
+    <div class="wh-auth-err" id="wh-err"></div>
+  </div>
+</div>
+
+  <header class="hero">
+    <div class="wrap">
+      <a href="../" style="display:inline-flex;gap:8px;align-items:center;color:rgba(240,249,251,.7);text-decoration:none;font-size:13px;margin-bottom:34px;">← 成長ログへ戻る</a>
+      <p class="eyebrow">Working Holiday Growth Log — No. 01</p>
+      <h1>「どっちが得か」から、<br>「何のためにカナダへ来たのか」へ戻る</h1>
+      <p class="lead">仕事選びの迷いを見える化して、自分が大切にしていることに戻るための整理シート</p>
+      <p class="meta">2026年5月23日 ／ カナダワーキングホリデー中</p>
+      <div class="hero-actions">
+        <a class="button light" href="#facts">事実と認知の整理</a>
+        <a class="button" href="#work">次にやること</a>
+        <a class="button" href="#message">メッセージへ</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="narrow">
+
+      <!-- はじめに -->
+      <section>
+        <h2>はじめに</h2>
+        <div class="intro-box">
+          このシートは、評価でも診断でもありません。<br>
+          仕事選びの「正解」を決めるページでもありません。<br><br>
+          今の迷いを見える化して、<strong>自分で選びやすくするための整理</strong>です。<br>
+          コーチングとしての伴走の中で見えてきたことを、責める形ではなく、前に進める形でまとめています。<br><br>
+          断定ではなく「こういうことがあったかもしれない」という可能性として読んでください。
+        </div>
+      </section>
+
+      <!-- 今回のテーマ -->
+      <section>
+        <h2>今回のテーマ</h2>
+        <p>カナダでの<strong>仕事選択</strong>。</p>
+        <p>具体的には、今のピザ屋で働き続けるか、カフェへ移るか、この2つの間の迷いでした。</p>
+        <p>ただ、話を聞いていくと、その迷いの中にはこういうものが同時に動いていました。</p>
+        <ul>
+          <li>生活費・時給・賄い・シフト日数</li>
+          <li>仕事内容の難しさ、怒られる怖さ</li>
+          <li>安心感と新しい挑戦のバランス</li>
+          <li>英語の上達</li>
+          <li>外国人の友達・日本人の友達</li>
+          <li>思い出をつくること</li>
+          <li>ジムに行けるか</li>
+        </ul>
+        <p>選択肢は2つだけど、判断材料は10以上。それだけ真剣に考えているということでもあります。</p>
+      </section>
+
+      <!-- 事実と認知の整理 -->
+      <section id="facts">
+        <h2>事実と認知の整理</h2>
+        <p>起きていた「事実」と、そこに乗っていた「認知」を分けて見てみます。</p>
+        <table>
+          <thead>
+            <tr>
+              <th>事実</th>
+              <th>乗っていた認知・解釈</th>
+              <th>生まれていた感情</th>
+              <th>奥にありそうな本音</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>今、ピザ屋で働いている</td>
+              <td>すでに働いているから安心がある</td>
+              <td>安心、迷い</td>
+              <td>生活を安定させたい</td>
+            </tr>
+            <tr>
+              <td>ピザの種類を覚える必要がある</td>
+              <td>難しい、怒られるかもしれない</td>
+              <td>緊張、怖さ</td>
+              <td>ちゃんとできるようになりたい</td>
+            </tr>
+            <tr>
+              <td>ピザ屋には賄いがある</td>
+              <td>ご飯代が助かる</td>
+              <td>安心、得した感覚</td>
+              <td>生活費を抑えたい</td>
+            </tr>
+            <tr>
+              <td>カフェはフルタイムで入れる可能性がある</td>
+              <td>働く時間を確保できそう</td>
+              <td>期待、安心</td>
+              <td>収入を安定させたい</td>
+            </tr>
+            <tr>
+              <td>カフェはまだ働いていない</td>
+              <td>実際どうかわからない</td>
+              <td>不安、保留</td>
+              <td>情報を確認してから決めたい</td>
+            </tr>
+            <tr>
+              <td>カナダへ来ている</td>
+              <td>ただ働くだけで終わりたくない</td>
+              <td>期待、迷い</td>
+              <td>英語・友達・思い出を手に入れたい</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ピザ屋・カフェの比較 -->
+      <section>
+        <h2>ピザ屋とカフェの比較</h2>
+        <div class="compare">
+          <div class="compare-card">
+            <div class="compare-title merit">ピザ屋のメリット</div>
+            <ul>
+              <li>すでに働いている安心がある</li>
+              <li>場の雰囲気がある程度わかっている</li>
+              <li>賄いがある</li>
+              <li>生活の見通しが少しある</li>
+            </ul>
+          </div>
+          <div class="compare-card">
+            <div class="compare-title demerit">ピザ屋のデメリット</div>
+            <ul>
+              <li>ピザの種類・名前を覚える必要がある</li>
+              <li>仕事内容が難しく感じている</li>
+              <li>怒られる怖さがある</li>
+              <li>人や場に少し怖さがある</li>
+            </ul>
+          </div>
+          <div class="compare-card">
+            <div class="compare-title merit">カフェのメリット</div>
+            <ul>
+              <li>今後も使えそうな経験になる</li>
+              <li>フルタイムで働ける可能性がある</li>
+              <li>時給が高い可能性がある</li>
+              <li>英語・外国人との接点が増える可能性</li>
+            </ul>
+          </div>
+          <div class="compare-card">
+            <div class="compare-title demerit">カフェのデメリット</div>
+            <ul>
+              <li>実際に働いていないので情報が少ない</li>
+              <li>どれくらい働けるかは確認が必要</li>
+              <li>新しい環境に入る不安がある</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 判断基準 -->
+      <section>
+        <h2>繰り返し出てきた言葉・判断基準</h2>
+        <p>今回の会話の中で何度も顔を出していたもの。</p>
+        <div class="values">
+          <span class="value-tag">生活</span>
+          <span class="value-tag">安心</span>
+          <span class="value-tag">怖さ</span>
+          <span class="value-tag">経験</span>
+          <span class="value-tag">英語</span>
+          <span class="value-tag">友達</span>
+          <span class="value-tag">思い出</span>
+          <span class="value-tag">まだわからない</span>
+        </div>
+
+        <h3>今回動いていた可能性のある認知</h3>
+
+        <div class="cog-item">
+          <div class="cog-num">認知 01</div>
+          <div class="cog-title">安心できる方を選びたい</div>
+          <p>ピザ屋はすでに知っている場所。その安心は本物です。ただ、安心だけを基準にすると、英語・友達・思い出という目的が少し見えにくくなることがあります。</p>
+        </div>
+
+        <div class="cog-item">
+          <div class="cog-num">認知 02</div>
+          <div class="cog-title">プラスが多い方を選びたい</div>
+          <p>時給・賄い・シフト・経験……いろんなプラスを比べている状態でした。でも、どちらにもプラスとマイナスがあるので、ここだけで比べると迷い続けやすくなります。</p>
+        </div>
+
+        <div class="cog-item">
+          <div class="cog-num">認知 03</div>
+          <div class="cog-title">失敗したくない</div>
+          <p>怒られる怖さ、新しい場所でうまくいくかわからない不安。「選んで失敗したくない」という感覚があったかもしれません。ワーホリの中では、失敗しない選択より、選んだあとに自分で修正できることの方が大切かもしれません。</p>
+        </div>
+
+        <div class="cog-item">
+          <div class="cog-num">認知 04</div>
+          <div class="cog-title">情報が足りない状態では決めきれない</div>
+          <p>カフェについて「まだわからない」という言葉が何度も出ていました。これは慎重さのサインです。月曜日に確認してから判断するのは理にかなっています。</p>
+        </div>
+
+        <div class="cog-item">
+          <div class="cog-num">認知 05</div>
+          <div class="cog-title">本当は英語・友達・思い出という目的に近づきたい</div>
+          <p>一番奥にあったのは、これだったかもしれません。仕事を選んでいるつもりが、実はカナダで何を手に入れたいかを選んでいた。</p>
+        </div>
+      </section>
+
+      <!-- 今回の核心 -->
+      <section>
+        <h2>今回の核心</h2>
+        <div class="key-box">
+          <div class="key-label">Core Point</div>
+          <div class="key-text">仕事を選ぶのではなく、カナダで何を得たいかに戻って仕事を見る。</div>
+        </div>
+        <p>ピザ屋かカフェかを先に決めようとすると、判断材料が多すぎて迷います。</p>
+        <p>でも、こういう見方をすると整理しやすくなります。</p>
+        <ul>
+          <li>英語を伸ばすには、どちらが近いか</li>
+          <li>友達をつくるには、どちらが近いか</li>
+          <li>思い出をつくるには、どちらが近いか</li>
+          <li>生活を安定させるには、どちらが近いか</li>
+        </ul>
+      </section>
+
+      <!-- 次にやること -->
+      <section id="work">
+        <h2>次にやること</h2>
+
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">月曜日にカフェ側の情報を確認する</div>
+            <div class="work-box">
+              <pre>・週に何日入れるか
+・1日何時間働けるか
+・時給
+・仕事内容
+・どんな人が働いているか
+・英語を使う場面がどれくらいあるか
+・日本人が多いか、外国人が多いか
+・シフトの融通</pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">ピザ屋とカフェのメリット・デメリットを書き出す</div>
+            <div class="work-box">
+              <pre>ピザ屋のメリット
+-
+-
+
+ピザ屋のデメリット
+-
+-
+
+カフェのメリット
+-
+-
+
+カフェのデメリット
+-
+-</pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">「何のためにカナダへ来たのか」に戻る</div>
+            <div class="work-box">
+              <pre>自分は何のためにカナダへ来たのか？
+
+1. 英語
+2. 思い出
+3. 友達
+
+この3つに近づく選択はどちらか？</pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">英語・思い出・友達に近づく選択を選ぶ</div>
+            <p>「正解」かどうかではなく、「目的に近いかどうか」で見てみる。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- メッセージ -->
+      <section id="message">
+        <h2>ジュンジュンへ</h2>
+        <div class="message-box">
+          <p>今の迷いは、悪い迷いじゃないよ。</p>
+          <p>生活のこともちゃんと考えてる。<br>英語や友達や思い出のことも考えてる。<br>だから判断材料が多くなって、頭の中で整理しにくくなってるだけ。</p>
+          <p>まずは月曜日に情報を集める。<br>その上で、自分がカナダへ何しに来たかに戻って選んでみて。</p>
+          <p>正解を当てにいかなくていい。<br>選んだあとに修正できる力の方が、ずっと大事だから。</p>
+          <div class="signature">前田薫</div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      Working Holiday Growth Log ／ Coaching by Kaoru Maeda
+    </div>
+  </footer>
+
+</body>
+</html>
