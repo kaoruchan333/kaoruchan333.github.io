@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コーチング力分析シート｜前田薫</title>
+  <style>
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      line-height: 2;
+      color: #2a2a28;
+      background: #f8f7f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 28px 100px;
+    }
+
+    /* ── HEADER ── */
+    .doc-label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: #aaa;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .doc-badge {
+      display: inline-block;
+      font-size: 12px;
+      background: #2a2a28;
+      color: #c4a96e;
+      border-radius: 4px;
+      padding: 3px 12px;
+      margin-bottom: 24px;
+      letter-spacing: 0.08em;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0 0 6px;
+      line-height: 1.5;
+    }
+    .doc-sub {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 40px;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      margin-bottom: 52px;
+    }
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: #c4a96e;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0 0 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #2a2a28;
+      line-height: 1.5;
+    }
+    h3 {
+      font-size: 14px;
+      font-weight: bold;
+      color: #555;
+      letter-spacing: 0.08em;
+      margin: 28px 0 10px;
+    }
+    p {
+      margin: 0 0 16px;
+      font-size: 15px;
+      color: #3a3835;
+    }
+
+    /* ── TABLE ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 24px;
+      font-size: 14px;
+    }
+    th {
+      background: #2a2a28;
+      color: #c4a96e;
+      padding: 10px 16px;
+      text-align: left;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+    }
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #e8e5de;
+      vertical-align: top;
+      line-height: 1.8;
+      color: #3a3835;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #faf9f6; }
+
+    /* ── STEP FLOW ── */
+    .step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 2px;
+    }
+    .step-num {
+      min-width: 80px;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: #c4a96e;
+      text-transform: uppercase;
+      padding-top: 3px;
+      text-align: right;
+      font-weight: 500;
+    }
+    .step-body {
+      flex: 1;
+      font-size: 14px;
+      color: #3a3835;
+      border-left: 2px solid #e8e5de;
+      padding-left: 16px;
+      line-height: 1.85;
+    }
+    .step-q {
+      background: #fdf8f2;
+      border-left: 3px solid #c4a96e;
+      padding: 8px 14px;
+      margin: 6px 0 0;
+      font-size: 13px;
+      color: #5a4e3a;
+      border-radius: 0 6px 6px 0;
+    }
+    .step-arrow {
+      text-align: center;
+      color: #ccc;
+      font-size: 14px;
+      margin: 4px 0 4px 96px;
+    }
+
+    /* ── GOOD / BAD BLOCK ── */
+    .good-block {
+      background: #fff;
+      border: 0.5px solid #d8d8cc;
+      border-left: 4px solid #5a8a5a;
+      border-radius: 0 8px 8px 0;
+      padding: 18px 20px;
+      margin: 12px 0;
+    }
+    .bad-block {
+      background: #fff;
+      border: 0.5px solid #d8d8cc;
+      border-left: 4px solid #b85a5a;
+      border-radius: 0 8px 8px 0;
+      padding: 18px 20px;
+      margin: 12px 0;
+    }
+    .block-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0 0 8px;
+      color: #2a2a28;
+    }
+    .block-body {
+      font-size: 14px;
+      color: #4a4640;
+      margin: 0 0 8px;
+      line-height: 1.85;
+    }
+    .block-why {
+      font-size: 12px;
+      color: #888;
+      margin: 4px 0 0;
+    }
+    .block-fix {
+      font-size: 13px;
+      color: #5a4e3a;
+      background: #fdf8f2;
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin: 10px 0 0;
+    }
+
+    /* ── CHECKLIST ── */
+    .check-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 20px;
+      font-size: 14px;
+    }
+    .check-table th {
+      background: #f0ede6;
+      color: #2a2a28;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.06em;
+    }
+    .check-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #e8e5de;
+      vertical-align: top;
+      color: #3a3835;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+    .check-table tr:last-child td { border-bottom: none; }
+    .ok { color: #5a8a5a; font-weight: bold; }
+    .up { color: #b87a2a; font-weight: bold; }
+
+    /* ── HIGHLIGHT ── */
+    .highlight {
+      background: #2a2a28;
+      color: #f0ede6;
+      padding: 22px 26px;
+      border-radius: 10px;
+      margin: 16px 0;
+      font-size: 15px;
+      line-height: 1.85;
+    }
+    .highlight strong { color: #c4a96e; }
+
+    /* ── FF BOX ── */
+    .ff-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 0.5px solid #e8e5de;
+    }
+    .ff-item:last-child { border-bottom: none; }
+    .ff-num {
+      min-width: 28px;
+      height: 28px;
+      background: #2a2a28;
+      color: #c4a96e;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .ff-body { flex: 1; font-size: 14px; color: #3a3835; line-height: 1.85; }
+    .ff-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: #aaa;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* ── PRACTICE ── */
+    .practice-block {
+      background: #fff;
+      border: 0.5px solid #ddd9d0;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 12px 0;
+    }
+    .practice-theme {
+      font-size: 14px;
+      font-weight: bold;
+      color: #2a2a28;
+      margin: 0 0 8px;
+    }
+    .practice-how {
+      font-size: 13px;
+      color: #5a4e3a;
+      background: #fdf8f2;
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin: 8px 0 0;
+      line-height: 1.85;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e8e5de;
+      margin: 36px 0;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="doc-label">薫ちゃんのコーチング力向上 訓練記録</div>
+  <div class="doc-badge">COACHING SKILL LOG</div>
+  <h1>セッション記録<br>ひとたん・送迎依頼のムカつきを題材にした短時間コーチング</h1>
+  <div class="doc-sub">2026年5月8日 ／ 約18分 ／ オンライン個人セッション</div>
+
+  <hr>
+
+  <!-- ── SECTION 1 ── -->
+  <div class="section">
+    <div class="section-label">Section 01</div>
+    <h2>セッション概要</h2>
+
+    <table>
+      <tr><th>項目</th><th>内容</th></tr>
+      <tr><td>クライアント</td><td>前田一美（ひとたん）</td></tr>
+      <tr><td>題材</td><td>スタッフ全員が入るグループLINEで送迎依頼が届いた出来事</td></tr>
+      <tr><td>時間</td><td>約18分（00:25:29〜00:43:32）</td></tr>
+      <tr><td>形式</td><td>オンライン。日常会話の流れからの自然な移行</td></tr>
+      <tr><td>セッション前の状態</td><td>怒りが「二倍」。グループLINEで頼んできたことに強くムカついていた</td></tr>
+      <tr><td>セッション後の変容</td><td>怒りが「めちゃくちゃ半減した」とクライアントが言語化。次に同じメッセージが来ても「別に何もない。できますかできませんかだけの話」と返せる状態に変容</td></tr>
+    </table>
+  </div>
+
+  <!-- ── SECTION 2 ── -->
+  <div class="section">
+    <div class="section-label">Section 02</div>
+    <h2>セッションの流れ</h2>
+
+    <div class="step">
+      <div class="step-num">Step 1</div>
+      <div class="step-body">
+        <strong>出来事の確認</strong><br>
+        いきなり解釈を渡さず、まず出来事を聞いた。ひとたんが自分で話し始めるのを待った。
+        <div class="step-q">「どんな出来事やったん」（00:25:37）<br>「もう一回。その一番最初のメッセージは。」（00:30:02）</div>
+      </div>
+    </div>
+    <div class="step-arrow">↓</div>
+
+    <div class="step">
+      <div class="step-num">Step 2</div>
+      <div class="step-body">
+        <strong>感情の対象を具体化</strong><br>
+        「ムカついた」という状態をそのまま扱い、「何に」ムカついているかを具体化させた。
+        <div class="step-q">「何がみ何にむかついたんです。」（00:30:36）<br>「なるほど、私に送迎を頼むことに。ムカついた。」（00:31:36）</div>
+      </div>
+    </div>
+    <div class="step-arrow">↓</div>
+
+    <div class="step">
+      <div class="step-num">Step 3</div>
+      <div class="step-body">
+        <strong>怒りの2層を分ける</strong><br>
+        ひとたん自身が「なんでこのライングループに送ってきてんっていう二点やった」と自分で2層を言語化した。薫ちゃんはそれを短く受け取った。
+        <div class="step-q">「なるほど。二つ。ね。」（00:32:29）</div>
+      </div>
+    </div>
+    <div class="step-arrow">↓</div>
+
+    <div class="step">
+      <div class="step-num">Step 4</div>
+      <div class="step-body">
+        <strong>怒りの根拠に近づく</strong><br>
+        なぜムカついているかを掘り下げた。ひとたんが「一回やっちゃってるし、はっきり言ったのに」という自分の境界線を言語化していった。
+        <div class="step-q">「なぜそのムカつきが起きているかって感じる。」（00:33:40〜33:47）</div>
+      </div>
+    </div>
+    <div class="step-arrow">↓</div>
+
+    <div class="step">
+      <div class="step-num">Step 5</div>
+      <div class="step-body">
+        <strong>相手視点への転換</strong><br>
+        「ちょっと視点も変えてみたいんやけど」という前置きをつけて、自然に相手側を見る問いを置いた。
+        <div class="step-q">「ちょっと視点も変えてみたいんやけど。その相手がそれを頼んだ。なんか背景というか可能性というか、相手視点に立った時に何かどんなものが見えるというか、可能性としてどういうものが見えたりもする。」（00:34:46〜34:58）</div>
+      </div>
+    </div>
+    <div class="step-arrow">↓</div>
+
+    <div class="step">
+      <div class="step-num">Step 6</div>
+      <div class="step-body">
+        <strong>見えていなかった側の発見</strong><br>
+        ひとたんが「今を今考えてみれば…」と自分で話し始めた。グループLINEだからこそ「送迎しません」が全員に見えた、という逆側の発見をひとたん自身が言語化した。
+        <div class="step-q">「変わってます。」（00:37:13）※ひとたんが話し始めた時に、一言だけ返して待った</div>
+      </div>
+    </div>
+    <div class="step-arrow">↓</div>
+
+    <div class="step">
+      <div class="step-num">Step 7</div>
+      <div class="step-body">
+        <strong>気づきの言語化</strong><br>
+        今セッションで最も効いた一問。ひとたんが逆側を見えかけていたタイミングに、短く明確に置いた。
+        <div class="step-q">「一タンのメリットは何ですか？」（00:39:40）</div>
+        <div class="step-q" style="margin-top:6px;">「何かこう一束の中での気づき、変化があったら教えてください。」（00:40:01）</div>
+      </div>
+    </div>
+    <div class="step-arrow">↓</div>
+
+    <div class="step">
+      <div class="step-num">Step 8</div>
+      <div class="step-body">
+        <strong>次の行動と感情の確認</strong><br>
+        「次同じことが起きたら」という問いで、変容を行動レベルで確認した。感情まで確認して着地した。
+        <div class="step-q">「次同じことが起きたら、木戸さんはどう対応しますか？」（00:42:24〜42:28）<br>「その時の人との感情はどんな感情になってますか？」（00:43:06）</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SECTION 3 ── -->
+  <div class="section">
+    <div class="section-label">Section 03</div>
+    <h2>良かった点</h2>
+    <p>それぞれ「どの問いが、何を引き出したか」という観点で記録する。</p>
+
+    <div class="good-block">
+      <div class="block-title">① 冒頭、いきなり解釈を渡さなかった</div>
+      <p class="block-body">「どんな出来事やったん」（00:25:37）という問いで始めた。「それはこういうことやな」とすぐ解釈を渡すのではなく、ひとたんが自分の言葉で話し始める場を作った。</p>
+      <p class="block-why">→ クライアントが自分の体験を自分の言葉にする最初のプロセスを、コーチが踏み潰さなかった</p>
+    </div>
+
+    <div class="good-block">
+      <div class="block-title">② 「何にムカついたんです」で感情の対象を具体化した</div>
+      <p class="block-body">「ムカついた」という状態に留まらず、「何に」という問いを置いた（00:30:36）。これによってひとたんが「送迎しいひん言うてるやろ」「なんでライングループに送ってきてんねん」という2つの層を自分で整理していった。</p>
+      <p class="block-why">→ 感情を漠然と処理するのではなく、対象を言語化させることで、ひとたん自身が構造を見えるようになった</p>
+    </div>
+
+    <div class="good-block">
+      <div class="block-title">③ 2層を「なるほど。二つ。ね。」と短く受け取った</div>
+      <p class="block-body">ひとたんが自分で「二点やった」と言い切った直後に「なるほど。二つ。ね。」（00:32:29）と短く受けた。説明も付け足しもしなかった。</p>
+      <p class="block-why">→ クライアントの気づきを壊さずに受け取る最小の介入だった</p>
+    </div>
+
+    <div class="good-block">
+      <div class="block-title">④ 「ちょっと視点も変えてみたいんやけど」という前置きが効いた</div>
+      <p class="block-body">相手視点に移る前に「視点を変える」という前置きを一言置いた（00:34:46）。これによってひとたんが「これから違う角度を見るんだ」と自分を準備できた。</p>
+      <p class="block-why">→ 急に相手視点を要求するのではなく、移行の合図を出したことで、ひとたんがついてきやすくなった</p>
+    </div>
+
+    <div class="good-block">
+      <div class="block-title">⑤ ひとたんが「今を今考えてみれば…」と話し始めた時に割り込まずに待った</div>
+      <p class="block-body">「変わってます。」（00:37:13）という一言だけを返して、ひとたんが自分で気づきを展開するのを待った。グループLINEだからこそ「送迎しません」が全員に見えた、という発見をひとたん自身の言葉で引き出せた。</p>
+      <p class="block-why">→ ここで何か足していたら、この発見はひとたんのものにならなかった</p>
+    </div>
+
+    <div class="good-block">
+      <div class="block-title">⑥ 「一タンのメリットは何ですか？」という一問が核心だった</div>
+      <p class="block-body">ひとたんが逆側を見えかけていたタイミングに、短く明確に「一タンのメリットは何ですか？」（00:39:40）と置いた。ひとたんが「私もうせーへんって言ってるし…あ、前田さんってこういう人なんやっていうのをみんな分かってもらったと思う」と自分の口から言えた。</p>
+      <p class="block-why">→ 短さ・タイミング・「相手のメリット」ではなく「自分のメリット」を聞いたこと、3つが揃っていた</p>
+    </div>
+
+    <div class="good-block">
+      <div class="block-title">⑦ 「次同じことが起きたら」まで確認して着地した</div>
+      <p class="block-body">気づきを得た後、「次同じことが起きたら」という問いで行動レベルまで確認し、「その時の感情はどんな感情になってますか？」（00:43:06）で感情の変容まで確認して着地した。ひとたんが「別に何もない。できますかできませんかだけの話」と自分で言えた。</p>
+      <p class="block-why">→ 気づきで終わらず、「次にどうするか」まで一緒に確認したことで、セッションが行動に繋がった</p>
+    </div>
+  </div>
+
+  <!-- ── SECTION 4 ── -->
+  <div class="section">
+    <div class="section-label">Section 04</div>
+    <h2>改善点</h2>
+    <p>理由と改善案を必ずセットで記録する。</p>
+
+    <div class="bad-block">
+      <div class="block-title">① 問いが長くなる傾向がある</div>
+      <p class="block-body">「ちょっと視点も変えてみたいんやけど。その相手がそれを頼んだ。なんか背景というか可能性というか、相手視点に立った時に何かどんなものが見えるというか、可能性としてどういうものが見えたりもする。」（00:34:46〜34:58）</p>
+      <p class="block-why">→ なぜ問題か：問いが長くなると、クライアントがどこへ向けて考えればいいか散漫になる。「背景」「可能性」「相手視点」「どんなものが見えるか」と4つの要素が入っている</p>
+      <div class="block-fix">改善案：「相手はなぜそれをしたと思いますか？可能性として。」の一文に圧縮する</div>
+    </div>
+
+    <div class="bad-block">
+      <div class="block-title">② 一つの問いに複数の問いが入る（複合質問）</div>
+      <p class="block-body">「それってあのあい、具体的にやったのは一体のお願いなんだけど、表現のお願いなんだけど、それは背景を見たときに、相手が何を人台に対して何をしたっていうふうに今やったらこう 感じるか見えるか、 相手がしたこと。」（00:35:42〜36:00）</p>
+      <p class="block-why">→ なぜ問題か：クライアントが最初の問いと次の問いのどちらに答えるか選ばなければならなくなる。この箇所でひとたんが一度止まっている（「私に対して何をした。」と繰り返してから答えた）</p>
+      <div class="block-fix">改善案：問いを一文に絞る。投げたい問いが複数ある時は、一つずつ順番に置く</div>
+    </div>
+
+    <div class="bad-block">
+      <div class="block-title">③ 続きの方向を先に提示してしまった</div>
+      <p class="block-body">「続きをするとしたら、まあこの出来事と宇野さんに対して、宇野さんがそれをしてくれたおかげで、人単が何を受け取っているかっていうところ。人だったらもう見れるかもね。」（00:41:48〜41:58）</p>
+      <p class="block-why">→ なぜ問題か：「宇野さんがしてくれたおかげで何を受け取っているか」という構造をコーチが先に示している。相手が自分で向かう前に、方向をコーチが指定している</p>
+      <div class="block-fix">改善案：「もし続けるとしたら、ひとたんは何を掘りたい？」という問いにとどめる</div>
+    </div>
+
+    <div class="bad-block">
+      <div class="block-title">④ ひとたんが気づきを展開している最中に追加視点を入れた場面がある</div>
+      <p class="block-body">ひとたんが「今やったら思えれる」「あえてあそこに送ってきた、いやそれは分かれへんで可能性やから…」と自分でしゃべっている最中に「なるほどね」「その可能性として」と返しながら次の問いを入れた</p>
+      <p class="block-why">→ なぜ問題か：クライアントが自分の声を聞いている時間を、コーチの言葉が切っている。ひとたんが展開しようとしていたものを、こちらが少し先取りした形になった</p>
+      <div class="block-fix">改善案：クライアントが自分でしゃべっている時は、「うんうん」だけで待つ。何も足さない</div>
+    </div>
+  </div>
+
+  <!-- ── SECTION 5 ── -->
+  <div class="section">
+    <div class="section-label">Section 05</div>
+    <h2>さや先生の教えとの照合</h2>
+
+    <table class="check-table">
+      <tr>
+        <th>観点</th>
+        <th class="ok">できていたこと</th>
+        <th class="up">まだ伸ばせること</th>
+      </tr>
+      <tr>
+        <td>見えた瞬間と、言っていい瞬間は違う</td>
+        <td>「一タンのメリットは何ですか？」を置くタイミングは、ひとたんが逆側を見えかけていたタイミングだった</td>
+        <td>終盤で続きの方向を先に提示した場面は、「見えた構造を言ってしまった」場面。言っていい瞬間ではまだなかった</td>
+      </tr>
+      <tr>
+        <td>階段を小さくする</td>
+        <td>「どんな出来事やったん」→「何にムカついたん」→「二つ。ね」という小さなステップで進んだ</td>
+        <td>Step 5の相手視点への転換で、問いの中に「背景・可能性・相手視点・何が見えるか」を一度に入れてしまった</td>
+      </tr>
+      <tr>
+        <td>相手の現在地から一段だけ進める</td>
+        <td>ひとたんが「ムカついた」という現在地から始めて、「何に」→「なぜ」→「逆側は」という一段ずつの移行ができていた</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>問いを置いて待つ</td>
+        <td>「変わってます。」の一言だけ返して、ひとたんが自分で展開するのを待てた</td>
+        <td>ひとたんが気づきを展開している最中に「なるほどね」「その可能性として」と入れた場面は、待てていなかった</td>
+      </tr>
+      <tr>
+        <td>答えを渡さず、相手が自分で気づけるようにする</td>
+        <td>最後の変容（「別に何もない。できますかできませんかだけの話」）はひとたん自身の言葉で出た</td>
+        <td>「宇野さんがしてくれたおかげで何を受け取っているか」という構造は、コーチが先に渡した</td>
+      </tr>
+      <tr>
+        <td>壁になる</td>
+        <td>送迎しないという境界線を問いで揺さぶらず、ひとたんの立場をそのまま保持した</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>ポソッと一言を置く</td>
+        <td>「一タンのメリットは何ですか？」がまさにこれ。短く、タイミングが合っていた</td>
+        <td>Step 5の問いを「相手はなぜそれをしたと思いますか？可能性として。」の一文に圧縮できれば、もっと「ポソッと」になる</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ── SECTION 6 ── -->
+  <div class="section">
+    <div class="section-label">Section 06</div>
+    <h2>今回のセッションで一番効いた問い</h2>
+
+    <div class="highlight">
+      「一タンのメリットは何ですか？」（00:39:40）
+    </div>
+
+    <h3>なぜこの問いが効いたか</h3>
+
+    <p><strong>置いたタイミング</strong><br>
+    ひとたんが「今やったら思えれる」と言い、逆側が見えかけていた状態のタイミングだった。ムカつきが最も大きかった時点ではなく、少し視野が開き始めた瞬間に置いた。タイミングが一番の理由。</p>
+
+    <p><strong>問いの短さと明確さ</strong><br>
+    「一タンのメリットは何ですか？」は7文字。前後に何も足していない。これだけでひとたんが「私もうせーへんって言ってるし、物事をはっきり言ってるし。あ、前田さんってこういう人なんやっていうのをみんな分かってもらったと思う」という言葉を自分で出した。問いの短さが、相手の考える余白を最大にした。</p>
+
+    <p><strong>「相手のメリット」ではなく「自分のメリット」を聞いた</strong><br>
+    「相手がなぜそうしたか」「宇野さんの意図は何か」ではなく「ひとたんに何のメリットがあったか」を聞いた。これによってひとたんが自分の立場から逆側を見ることができた。</p>
+
+    <p><strong>さや先生の「ポソッと一言」に近い理由</strong><br>
+    「ポソッと一言」は、コーチの見えている構造を言葉にして渡すのではなく、相手が自分で構造を見つけるための「引き金」を一言置くこと。「一タンのメリットは何ですか？」は、答えを持たせずに問いだけを置いた。ひとたんの口から答えが出た。これがポソッと一言の構造。</p>
+  </div>
+
+  <!-- ── SECTION 7 ── -->
+  <div class="section">
+    <div class="section-label">Section 07</div>
+    <h2>かおるちゃんへのフィードフォワード</h2>
+
+    <div class="ff-item">
+      <div class="ff-num">1</div>
+      <div class="ff-body">
+        <span class="ff-label">今回一番良かったこと</span>
+        「一タンのメリットは何ですか？」というたった一問を、正しいタイミングに短く置けた。
+      </div>
+    </div>
+
+    <div class="ff-item">
+      <div class="ff-num">2</div>
+      <div class="ff-body">
+        <span class="ff-label">今回一番伸ばせるところ</span>
+        見えた構造を言葉にして渡す前に、一問に圧縮して置く。
+      </div>
+    </div>
+
+    <div class="ff-item">
+      <div class="ff-num">3</div>
+      <div class="ff-body">
+        <span class="ff-label">次回意識する一言（セッション中に思い出せる言葉）</span>
+        「今言いたいことを、一問にできるか？」
+      </div>
+    </div>
+
+    <div class="ff-item">
+      <div class="ff-num">4</div>
+      <div class="ff-body">
+        <span class="ff-label">問いを小さくするための具体練習</span>
+        セッション後に、自分が使った問いを書き出す。10文字を超えているものを半分に削る練習を1回のセッションに1問やってみる。
+      </div>
+    </div>
+
+    <div class="ff-item">
+      <div class="ff-num">5</div>
+      <div class="ff-body">
+        <span class="ff-label">強みを活かした改善ポイント</span>
+        薫ちゃんの強みは「構造が見える診断力」。その診断力を相手に説明するのではなく、「相手が自分でその構造を見つけるための一問に圧縮して置く」ことに使う。見えた構造＝解説するものではなく、問いに変換するもの。
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SECTION 8 ── -->
+  <div class="section">
+    <div class="section-label">Section 08</div>
+    <h2>次の練習テーマ</h2>
+
+    <div class="practice-block">
+      <div class="practice-theme">① 見えた構造をそのまま渡さず、圧縮して一問にする練習</div>
+      <p style="font-size:14px;color:#4a4640;margin:8px 0 0;">「〇〇ということが見えているな」と感じた瞬間に、それを言葉にする前に止まる。「この構造を相手が自分で見つけるために、どんな一問を置けばいいか？」を5秒考えてから口を開く。</p>
+      <div class="practice-how">具体的な練習：セッション中「言いたいことがある」と感じたら、それを一問に変換してから話す。変換できない場合は、まだ言うタイミングではないと判断して待つ。</div>
+    </div>
+
+    <div class="practice-block">
+      <div class="practice-theme">② 長い問いを半分にする練習</div>
+      <p style="font-size:14px;color:#4a4640;margin:8px 0 0;">問いを口に出す前に「一文で言えるか？」を確認する。「〜ということで〜というか〜というか」が続いていたら、どれか一つを選ぶ。</p>
+      <div class="practice-how">具体的な練習：今回改善点①の問いを実際に一文に削る練習をする。<br>before：「その相手がそれを頼んだ。なんか背景というか可能性というか、相手視点に立った時に何かどんなものが見えるというか」<br>after：「相手はなぜそれをしたと思いますか？可能性として。」</div>
+    </div>
+
+    <div class="practice-block">
+      <div class="practice-theme">③ 相手の言葉の中で「一番エネルギーが乗っている言葉」を拾う練習</div>
+      <p style="font-size:14px;color:#4a4640;margin:8px 0 0;">今回のセッションで、ひとたんが一番エネルギーを乗せて言っていた言葉は「なんでここに送ってきてんねん」と「断られへん状況を作りやがった」だった。こういう言葉を拾う練習。</p>
+      <div class="practice-how">具体的な練習：セッション後に「相手が一番強く言っていた言葉はどれだったか」を一つ書き留める。それを次のセッションでどう使えたか振り返る。</div>
+    </div>
+
+    <div class="practice-block">
+      <div class="practice-theme">④「見えた → 圧縮して一問 → 置いて待つ」の一連を一セッションで意識する</div>
+      <p style="font-size:14px;color:#4a4640;margin:8px 0 0;">「見えた・圧縮・待つ」の3ステップをセットで一回やりきることを、次のセッションの目標にする。</p>
+      <div class="practice-how">具体的な練習：次のセッション後に「この3ステップが一回できたか？」だけを確認する。できた場面をこのシートに追記する。</div>
+    </div>
+  </div>
+
+  <hr>
+  <div style="font-size:12px;color:#bbb;padding-top:16px;">
+    このシートは薫ちゃん自身の訓練記録です。セッション前に見返すために使ってください。
+  </div>
+
+</div>
+</body>
+</html>
