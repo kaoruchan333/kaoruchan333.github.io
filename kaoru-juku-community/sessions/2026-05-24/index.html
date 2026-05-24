@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>頭で知っていることと、腑に落ちることは違う｜かおる塾</title>
+  <style>
+:root{--ink:#2f2b26;--muted:#70685f;--paper:#fbfaf6;--panel:#ffffff;--soft:#f2eee6;--line:#e4ded3;--accent:#9a6a3b;--green:#566c59;--deep:#26312b;--gold:#c19a5b}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;color:var(--ink);background:var(--paper);line-height:1.95;font-size:16px}
+body.kj-auth-locked>*:not(#kj-auth-overlay){display:none!important}
+a{color:inherit}.wrap{width:min(900px,calc(100% - 36px));margin:0 auto}.narrow{width:min(760px,calc(100% - 36px));margin:0 auto}
+.hero{background:linear-gradient(135deg,#26312b 0%,#3d4439 55%,#7f623f 100%);color:#fff8e8;padding:46px 0 44px;border-bottom:1px solid rgba(255,255,255,.18)}
+.back{display:inline-flex;gap:8px;align-items:center;color:rgba(255,248,232,.75);text-decoration:none;font-size:13px;margin-bottom:34px}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#d7bd8e;margin:0 0 12px}
+.hero h1{font-size:clamp(28px,6vw,54px);line-height:1.28;margin:0;font-weight:750}
+.lead{font-size:17px;color:rgba(255,248,232,.86);max-width:760px;margin:22px 0 0}
+.meta{font-size:14px;color:rgba(255,248,232,.72);margin-top:16px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;border-radius:8px;border:1px solid rgba(255,248,232,.45);padding:8px 15px;text-decoration:none;color:#fff8e8;background:rgba(255,255,255,.08);font-size:14px}
+.button.light{background:#fff;color:var(--deep);border-color:#fff}
+main{padding:20px 0 76px}section{padding:42px 0;border-bottom:1px solid var(--line)}section:last-child{border-bottom:0}
+h2{font-size:clamp(22px,4vw,34px);line-height:1.42;margin:0 0 20px;color:var(--deep)}
+h3{font-size:20px;line-height:1.55;margin:30px 0 12px;color:#3d382f}
+p{margin:0 0 18px}strong{color:#241f1a}
+.intro{font-size:18px;color:#4a443d}
+ul,ol{padding-left:1.25em;margin:14px 0 22px}li{margin:7px 0}
+.note-box{background:var(--soft);border:1px solid #ded5c7;border-radius:8px;padding:22px 24px;margin:24px 0}
+.key-box{background:var(--deep);color:#fff8e8;border-radius:8px;padding:28px;margin:28px 0}
+.key-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#d7bd8e;margin-bottom:8px}
+.key-text{font-size:clamp(22px,4vw,38px);line-height:1.36;font-weight:750}
+blockquote{border-left:4px solid var(--accent);background:linear-gradient(90deg,rgba(154,106,59,.1),rgba(154,106,59,0));padding:12px 0 12px 20px;margin:24px 0;color:#463f36;font-size:18px}
+table{width:100%;border-collapse:collapse;margin:24px 0;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;min-width:130px}
+th{background:#f1ece3;color:var(--deep);font-weight:700}
+.work-box{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px 24px;margin:24px 0}
+.step-flow{display:grid;gap:12px;margin:24px 0}
+.step-item{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px 22px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start}
+.step-num{width:40px;height:40px;border-radius:50%;background:var(--deep);color:#fff8e8;display:flex;align-items:center;justify-content:center;font-weight:750;font-size:16px;flex-shrink:0;margin-top:2px}
+.step-content h4{margin:0 0 6px;font-size:16px;color:var(--deep)}
+.step-content p{margin:0;font-size:15px;color:var(--muted)}
+.resource-panel{background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px;margin:24px 0}
+.access-line{background:#f4f0e8;border:1px solid #ded3c2;border-radius:8px;padding:16px 18px;margin:18px 0;display:grid;gap:6px}
+.access-line strong{font-size:13px;color:var(--accent);letter-spacing:.08em}
+.access-line span{font-weight:700;color:var(--deep)}
+.resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+.resource-card{display:block;text-decoration:none;background:#fffdf8;border:1px solid #dfd1bd;border-radius:8px;padding:18px}
+.resource-card:hover{border-color:#b9935a}
+.resource-kind{font-size:11px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+.resource-title{font-size:16px;font-weight:750;line-height:1.45;margin-bottom:6px}
+.resource-desc{font-size:13px;color:var(--muted);line-height:1.7}
+.small{font-size:14px;color:var(--muted)}
+#kj-auth-overlay{position:fixed;inset:0;background:linear-gradient(135deg,#26312b,#5b513f);display:grid;place-items:center;padding:22px;z-index:9999}
+.kj-auth-card{width:min(420px,100%);background:#fbfaf6;color:#2f2b26;border-radius:10px;padding:30px;box-shadow:0 24px 80px rgba(0,0,0,.28)}
+.kj-auth-label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9a6a3b;margin-bottom:10px}
+.kj-auth-card h1{font-size:24px;line-height:1.45;margin:0 0 10px}
+.kj-auth-card p{font-size:14px;color:#70685f}
+.kj-auth-card input{width:100%;min-height:46px;border:1px solid #d4cabd;border-radius:8px;padding:10px 12px;font-size:16px;background:#fff;margin:8px 0 12px}
+.kj-auth-card button{width:100%;min-height:46px;border:0;border-radius:8px;background:#26312b;color:#fff8e8;font-size:15px;font-weight:700}
+.kj-auth-error{min-height:22px;color:#a33;font-size:13px;margin-top:8px}
+@media(max-width:640px){.hero{padding:34px 0 36px}section{padding:34px 0}.resource-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="kj-auth-locked">
+  <header class="hero">
+    <div class="wrap">
+      <a class="back" href="../../">← 一覧へ戻る</a>
+      <p class="eyebrow">Kaoru Juku Archive</p>
+      <h1>頭で知っていることと、腑に落ちることは違う</h1>
+      <p class="lead">フレームワークのデメリットを見てから、出来事の反対側を見に行く</p>
+      <p class="meta">2026年5月24日 かおる塾グループコーチング</p>
+      <div class="hero-actions">
+        <a class="button light" href="#flow">今日のプロセス</a>
+        <a class="button" href="#materials">教材セット</a>
+      </div>
+    </div>
+  </header>
+  <main class="narrow">
+
+    <section class="note-box">
+      <p class="intro">これは、参加した人にも、アーカイブで見る人にも届くように整理した振り返りページです。答えを急がず、今の自分の反応を見ながら読み進めてください。</p>
+    </section>
+
+    <section id="materials" class="resource-panel">
+      <h2>今回の教材セット</h2>
+      <div class="access-line">
+        <strong>パスワード</strong>
+        <span>kizuki2026</span>
+      </div>
+      <div class="resource-grid">
+        <a class="resource-card" href="https://youtu.be/9ln6UYSJYnE" target="_blank">
+          <div class="resource-kind">Archive Video</div>
+          <div class="resource-title">アーカイブ動画</div>
+          <div class="resource-desc">今日のグループコーチング全編。YouTube限定公開。</div>
+        </a>
+        <a class="resource-card" href="https://drive.google.com/file/d/1mqJM89s5EOzfAlWBkuhdoRtw9oMsIkF-/view?usp=sharing" target="_blank">
+          <div class="resource-kind">Audio Material</div>
+          <div class="resource-title">音声教材</div>
+          <div class="resource-desc">今日のテーマを音声でおさらい。移動中・家事の間でも。</div>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>今日のテーマ</h2>
+      <div class="key-box">
+        <div class="key-label">Core Theme</div>
+        <div class="key-text">知識として知っていることと、腑に落ちることは違う。</div>
+      </div>
+      <p>中庸志向・感情のフレームワーク・出来事から受け取るもの——これらをずっと学んできていても、「頭でわかってる、でも体がついてこない」ということが起きる。</p>
+      <p>今日は、それがなぜ起きるのか。そして、どうすれば頭の理解が体で腑に落ちていくのかを、実際のセッションの流れで見ていきました。</p>
+    </section>
+
+    <section id="flow">
+      <h2>今日のプロセス</h2>
+      <p>感情が動いた出来事を、腑に落とすための流れです。</p>
+      <div class="step-flow">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>感情が動いたことをキャッチする</h4>
+            <p>イラッ・悲しい・もやもや・なんか気になる——なんでもいい。まず気づく。</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>自分のフレームワーク（前提）を言葉にする</h4>
+            <p>自分は何を「正しいこと」「いいこと」として持っているか。何をすべきと思っているか。</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>そのフレームワークの反対側を見に行く</h4>
+            <p>「いいこと」と思っているならデメリットを。「ダメなこと」と思っているならメリットを。</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>その出来事から何を受け取っているかを見る</h4>
+            <p>ステップ3を踏んでから見に行くと、ポジティブシンキングではなく「事実として」腑に落ちる。</p>
+          </div>
+        </div>
+      </div>
+      <div class="note-box">
+        <strong>体が先に反応している</strong><br>
+        フレームワーク（自己像）が揺らされると、認知より先に体が反応する。だから、いくら頭で「受け取ってるものを見よう」としても、体が緊張していると腑に落ちない。<br><br>
+        体からのアプローチも一緒にやってみてください。<strong>深呼吸・空を見上げる・伸びをする</strong>——簡単なことで構いません。
+      </div>
+    </section>
+
+    <section>
+      <h2>今日の出来事から見えたもの</h2>
+      <h3>よっちゃんの場合</h3>
+      <table>
+        <thead><tr><th>出来事（事実）</th><th>認知</th><th>感情</th></tr></thead>
+        <tbody>
+          <tr><td>仕事でトラブル。原因は自分ではなかった</td><td>「自分のせいと思われてるかも」「上司にどう伝わってるか」</td><td>ドキドキ・焦り・集中できない</td></tr>
+          <tr><td>まだ誰にも何も言われていない</td><td>「言われわれた」ではなく「言われるかも」という妄想</td><td>気になって止まらない</td></tr>
+          <tr><td>振り返り教材を毎日読み返した</td><td>「何かを変えなければ」</td><td>なんとかしたいという切迫感</td></tr>
+        </tbody>
+      </table>
+      <p class="small">よっちゃんのフレームワーク：「穴を見つける才能」が自分に向かうと、「自分の不具合かも」という認知を先に生みやすい。これは才能が諸刃の刃になっているパターン。</p>
+
+      <h3>あすかさんの場合</h3>
+      <table>
+        <thead><tr><th>出来事（事実）</th><th>認知</th><th>感情</th></tr></thead>
+        <tbody>
+          <tr><td>相手に「後付けやん」と言われた</td><td>「否定された」「気づきを認められなかった」</td><td>一瞬ムカッとした・体がキュッとなった</td></tr>
+          <tr><td>自分はその相手の良さを気づき認めた</td><td>「同調してほしかった」「こうなって欲しかった」</td><td>悲しみ・失望</td></tr>
+        </tbody>
+      </table>
+      <p class="small">あすかさんのフレームワーク：「共感・同調されることが正しいこと」という前提。デメリット：同調が得られると相手の本音が見えなくなる。「後付けやん」という違う視点こそが、心理を見るための素材になっていた。</p>
+    </section>
+
+    <section>
+      <h2>今日の学び</h2>
+
+      <h3>1. 自己像が揺らされると、体が先に反応する</h3>
+      <p>「気づける人」「本質を見る人」という自己像を持っているとき、「後付けやん」は自己像への攻撃として認知される。だから「言われた」と感じ、体がキュッとなる。</p>
+      <p>これは防衛反応。悪いわけじゃない。ただ、それに気づけると——「あ、自己像が揺らされたんだ」と一歩引いて見られる。</p>
+
+      <h3>2. フレームワークのデメリットを見てから、受け取りを見に行く</h3>
+      <p>いきなり「この出来事から何を受け取っているか」を見に行くと、ポジティブシンキングになりやすい。表面だけ変えて終わる。</p>
+      <p>でも、先に「自分が何をいいと思っているのか（フレームワーク）」を言葉にして、そのデメリットを見てから見に行くと——事実として腑に落ちる。</p>
+
+      <h3>3. 学べば学ぶほど、頭と体のズレが出てくる</h3>
+      <p>学ぶことで頭の理解は進む。でも体の方はそれより時間がかかる。繰り返し同じテーマに出会うことで、少しずつ体の方に届いていく。</p>
+      <p>「また同じテーマか」と思う時、それは退化じゃない。別の角度から同じ場所を見ている。</p>
+    </section>
+
+    <section>
+      <h2>今週持ち帰る問い</h2>
+      <div class="work-box">
+        <ol>
+          <li>最近、自分が感情的に反応した出来事は何ですか？</li>
+          <li>その時、自分はどんな「正しさ・前提」を持っていましたか？</li>
+          <li>その前提の反対側（デメリットまたはメリット）は何ですか？</li>
+          <li>その出来事から、実は何を受け取っていましたか？</li>
+        </ol>
+        <p class="small">答えを出す必要はないです。体に置いておく問いとして。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>かおるちゃんから</h2>
+      <p>今日一番伝えたかったのは、プロセスです。</p>
+      <p>感情が動く → フレームワークに気づく → 反対側を見る → 受け取りを見る。</p>
+      <p>この順番を踏むだけで、同じ出来事から見えるものが変わります。これ、めっちゃ変わります。</p>
+      <p>知識として知ってるより、一回体験した方が早い。今日あすかさんがやってくれたのが、まさにそれでした。よっちゃんが毎日振り返り教材を読んで「なんかつながった気がする」って言ったのも、それです。</p>
+      <p>繰り返すことで、体に届く。焦らなくていいです。</p>
+      <p class="signature">前田薫</p>
+    </section>
+
+  </main>
+
+<script id="kaoru-juku-password-guard-v1">
+(function() {
+  const PASS_HASH = '1d3327e0df4257470c17e90db4c8651c840277973efc58a7ee5943f86c279b7b';
+  const STORAGE_KEY = 'kaoru_juku_session_20260524_auth_v1';
+  function unlock() { document.body.classList.remove('kj-auth-locked'); const o=document.getElementById('kj-auth-overlay'); if(o) o.remove(); }
+  async function sha256(text) { const d=new TextEncoder().encode(text); const h=await crypto.subtle.digest('SHA-256',d); return Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,'0')).join(''); }
+  function checkSaved() { if(localStorage.getItem(STORAGE_KEY)===PASS_HASH) unlock(); }
+  function render() {
+    if(!document.body.classList.contains('kj-auth-locked')) return;
+    const overlay=document.createElement('div'); overlay.id='kj-auth-overlay';
+    overlay.innerHTML=`<div class="kj-auth-card"><div class="kj-auth-label">Kaoru Juku</div><h1>メンバー専用ページ</h1><p>このページを見るには、パスワードを入力してください。</p><input type="password" id="kj-auth-password" autocomplete="current-password" placeholder="パスワード"><button type="button" id="kj-auth-submit">表示する</button><div class="kj-auth-error" id="kj-auth-error"></div></div>`;
+    document.body.appendChild(overlay);
+    const input=document.getElementById('kj-auth-password');
+    const error=document.getElementById('kj-auth-error');
+    async function submit() { const digest=await sha256(input.value||''); if(digest===PASS_HASH){localStorage.setItem(STORAGE_KEY,PASS_HASH);unlock();}else{error.textContent='パスワードが違います。';input.value='';input.focus();} }
+    document.getElementById('kj-auth-submit').addEventListener('click',submit);
+    input.addEventListener('keydown',function(e){if(e.key==='Enter')submit();});
+    setTimeout(()=>input.focus(),50);
+  }
+  checkSaved();
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',render); else render();
+})();
+</script>
+</body>
+</html>
