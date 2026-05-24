@@ -205,7 +205,7 @@ body.kj-auth-locked > *:not(#kj-auth-overlay){display:none!important}
 <script id="kaoru-juku-password-guard-v1">
 (function() {
   const PASS_HASH = '1d3327e0df4257470c17e90db4c8651c840277973efc58a7ee5943f86c279b7b';
-  const STORAGE_KEY = 'kaoru_juku_member_yocchan_auth_v1';
+  const STORAGE_KEY = 'kaoru_juku_member_yocchan_auth_v2';
   function unlock() { document.body.classList.remove('kj-auth-locked'); const overlay = document.getElementById('kj-auth-overlay'); if (overlay) overlay.remove(); }
   async function sha256(text) { const data = new TextEncoder().encode(text); const hash = await crypto.subtle.digest('SHA-256', data); return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join(''); }
   function checkSaved() { if (localStorage.getItem(STORAGE_KEY) === PASS_HASH) unlock(); }
