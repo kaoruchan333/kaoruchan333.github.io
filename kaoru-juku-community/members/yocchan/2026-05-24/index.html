@@ -148,7 +148,7 @@ blockquote{border-left:4px solid var(--accent);background:linear-gradient(90deg,
 
 <script id="kaoru-juku-password-guard-v1">
 (function() {
-  const PASS_HASH = '1d3327e0df4257470c17e90db4c8651c840277973efc58a7ee5943f86c279b7b';
+  const PASS_HASH = '5ccc5274b688d517a2da7384ca2077c1b95451108b20e9456f0fd32c8e6e928e';
   const STORAGE_KEY = 'kaoru_juku_member_yocchan_auth_v1';
   function unlock() { document.body.classList.remove('kj-auth-locked'); const o=document.getElementById('kj-auth-overlay'); if(o) o.remove(); }
   async function sha256(text) { const d=new TextEncoder().encode(text); const h=await crypto.subtle.digest('SHA-256',d); return Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,'0')).join(''); }
