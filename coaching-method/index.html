@@ -277,6 +277,48 @@
       border-color: #a8beb8;
       background: #edf3f1;
     }
+    .polarity-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+      margin-top: 25px;
+    }
+    .polarity-card {
+      padding: 23px 22px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--paper);
+    }
+    .polarity-card h3 {
+      margin: 8px 0 10px;
+      font-size: 1.06rem;
+    }
+    .polarity-card p {
+      margin-bottom: 12px;
+      color: var(--ink-soft);
+      font-size: 0.88rem;
+    }
+    .polarity-card strong {
+      display: block;
+      padding: 12px 14px;
+      color: var(--moss);
+      background: var(--water);
+      font-size: 0.91rem;
+    }
+    .polarity-card .number {
+      color: var(--gold);
+      font-size: 0.73rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+    .do-not {
+      margin-top: 15px;
+      padding: 17px 19px;
+      border-left: 3px solid var(--gold);
+      background: #f7f3ea;
+      color: var(--ink-soft);
+      font-size: 0.89rem;
+    }
     .two-column {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
@@ -523,7 +565,7 @@
       .hero h1 { font-size: 2rem; }
       .hero-copy { font-size: 0.94rem; }
       .section { padding: 55px 0; }
-      .audiences, .protocol, .applications, .library, .case-notes {
+      .audiences, .protocol, .applications, .library, .case-notes, .polarity-grid {
         grid-template-columns: 1fr;
       }
       .resource.primary { grid-column: auto; }
@@ -608,7 +650,7 @@
           <span class="label">CORE PROTOCOL</span>
           <h2>認知が本当に動く、<br>問いの順番。</h2>
         </div>
-        <p>出来事からすぐに前向きな意味を探しに行くのではなく、まず感情を通して片側に寄った認知を見つけます。その前提の反対側を確かめ、緩みが起きた後に初めて、出来事から受け取った支援や価値観との接続を扱います。</p>
+        <p>出来事の意味づけや支援へ早く進むのではなく、まず感情を生んでいる片側認知を見つけます。プラス側ならデメリット、マイナス側ならメリットを一問だけ置き、緩みが起きた後に初めて支援を扱います。</p>
       </div>
       <div class="protocol">
         <article class="step">
@@ -622,24 +664,24 @@
           <p>怒り、悔しさ、悲しみ、恥、虚しさ。不快感の種類を言葉にする。</p>
         </article>
         <article class="step">
-          <span class="number">03 / DIRECTION</span>
-          <h3>感情の向き先</h3>
-          <p>その感情は誰に、何に向いているのかを確かめる。</p>
-        </article>
-        <article class="step">
-          <span class="number">04 / COGNITION</span>
-          <h3>認知と自己像</h3>
-          <p>何が起きたと捉えたのか。どんな自分でいたかったのかを見る。</p>
+          <span class="number">03 / FRAMEWORK</span>
+          <h3>片側認知</h3>
+          <p>感情を生んでいる「〇〇は良い / 〇〇はダメ」という前提を見つける。</p>
         </article>
         <article class="step turn">
-          <span class="number">05 / FRAMEWORK</span>
-          <h3>片側認知の前提</h3>
-          <p>「これは良い」「これはダメ」と固定している前提を特定する。</p>
+          <span class="number">04 / DIRECTION</span>
+          <h3>向きを判定</h3>
+          <p>プラス側か、マイナス側か。ここで問いの向きを決める。</p>
         </article>
         <article class="step turn">
-          <span class="number">06 / OPPOSITE SIDE</span>
-          <h3>反対側を問う</h3>
-          <p>良いことにはデメリットを、ダメなことにはメリットを問う。</p>
+          <span class="number">05 / PLUS</span>
+          <h3>プラス側なら</h3>
+          <p>「〇〇であることのデメリットは何ですか？」と問う。</p>
+        </article>
+        <article class="step turn">
+          <span class="number">06 / MINUS</span>
+          <h3>マイナス側なら</h3>
+          <p>「〇〇であることのメリットは何ですか？」と問う。</p>
         </article>
         <article class="step">
           <span class="number">07 / RELEASE</span>
@@ -648,10 +690,25 @@
         </article>
         <article class="step">
           <span class="number">08 / INTEGRATION</span>
-          <h3>支援と統合</h3>
-          <p>その出来事から受け取ったものを、価値観や次の実践につなぐ。</p>
+          <h3>支援を見る</h3>
+          <p>緩んだ後で初めて、出来事に含まれる支援や次の実践を扱う。</p>
         </article>
       </div>
+      <div class="polarity-grid" aria-label="片側認知に対応する問い">
+        <article class="polarity-card">
+          <span class="number">PLUS SIDE</span>
+          <h3>プラス側フレームワーク</h3>
+          <p>例: 「誤解なく伝わることはいいこと」「共感されることはいいこと」</p>
+          <strong>「共感されることのデメリットは何ですか？」</strong>
+        </article>
+        <article class="polarity-card">
+          <span class="number">MINUS SIDE</span>
+          <h3>マイナス側フレームワーク</h3>
+          <p>例: 「誤解されることはダメ」「否定されることはダメ」</p>
+          <strong>「誤解されることのメリットは何ですか？」</strong>
+        </article>
+      </div>
+      <p class="do-not">片側認知が緩む前に、「何を受け取ったか」「何を失ったか」「どんな支援があるか」へ進みません。それは思考や前向きな解釈へ早く進ませる可能性があるためです。</p>
     </section>
 
     <section class="section shell" id="laws">
@@ -667,11 +724,11 @@
             </article>
             <article class="law">
               <strong>支援を見る前に、前提を見る。</strong>
-              <p>支援を急ぐと、統合ではなくポジティブ変換になりやすい。</p>
+              <p>前提を見つけたら、プラス側にはデメリット、マイナス側にはメリットを短く問う。</p>
             </article>
             <article class="law">
               <strong>感情は、認知の入口である。</strong>
-              <p>同じ出来事でも感情が違えば、揺れている自己像と問いの入口は異なる。</p>
+              <p>感情が、どの片側認知を探すべきかの入口になる。</p>
             </article>
             <article class="law">
               <strong>構造が見えた瞬間ほど、感情に戻る。</strong>
@@ -743,7 +800,7 @@
         <article class="application">
           <span class="marker">SELF WORK</span>
           <h3>セルフコーチング</h3>
-          <p>日々の感情を、認知・前提・支援へつなぐ振り返りワーク。</p>
+          <p>日々の感情から片側認知を見つけ、その反対側をシンプルに見る振り返りワーク。</p>
         </article>
         <article class="application">
           <span class="marker">EDUCATION</span>
@@ -769,8 +826,8 @@
       <div class="library">
         <article class="resource primary">
           <span class="status">DOWNLOAD / 公開中</span>
-          <h3>感情から前提へ降りる セルフコーチング・ワークシート</h3>
-          <p>出来事、感情、前提、反対側、支援、統合を順番に書き込める初回教材。コーチ・育成者の観察欄とスポーツ指導への応用欄も収録しました。</p>
+          <h3>感情から片側認知を見る セルフコーチング・ワークシート</h3>
+          <p>感情から片側認知を特定し、プラス側 / マイナス側ごとの一問を使ってから支援へ進む記入式教材。指導現場への応用欄も収録しています。</p>
           <div class="resource-links">
             <a class="resource-link" href="downloads/emotion-framework-self-coaching-workbook.pdf" download>PDFをダウンロード</a>
             <a class="resource-link" href="downloads/emotion-framework-self-coaching-workbook.html">ブラウザで読む</a>
@@ -779,7 +836,7 @@
         <article class="resource">
           <span class="status">CORE / 公開中</span>
           <h3>認知が動くコーチング 正規プロトコル</h3>
-          <p>感情から入り、片側認知の反対側を問い、支援と統合へ進む基本設計。</p>
+          <p>感情から入り、プラス側ならデメリット、マイナス側ならメリットを問ってから支援へ進む基本設計。</p>
         </article>
         <article class="resource">
           <span class="status">NEXT</span>
@@ -814,7 +871,7 @@
         </article>
         <article class="case">
           <h3>同調されなかった場面</h3>
-          <p>共感されることを良いこととして握っている時は、同調されることによって見えなくなるものを問うことで、相手の本音や真実を受け取る余地が生まれる。</p>
+          <p>「共感されることはいいこと」というプラス側フレームワークなら、「共感されることのデメリットは何ですか？」と短く問う。</p>
         </article>
       </div>
     </section>
@@ -830,8 +887,8 @@
       <article class="update">
         <time datetime="2026-05-25">2026.05.25</time>
         <div>
-          <h3>初回ワークシートと実践原則体系を公開</h3>
-          <p>過去のコーチング分析を横断し、八つの中核原則を整理。セルフコーチング・育成・スポーツ指導で使える記入式教材を追加。</p>
+          <h3>正規プロトコルを精密化</h3>
+          <p>プラス側 / マイナス側を明確に分け、支援へ早く進まない問いの順序へワークシートを改訂。</p>
         </div>
       </article>
       <article class="update">
