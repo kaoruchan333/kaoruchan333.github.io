@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>感情から前提へ降りる セルフコーチング・ワークシート | 前田薫</title>
+  <meta name="description" content="感情を入口にし、前提を見てから、支援を見るための記入式セルフコーチング・ワークシート。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #263633;
+      --soft: #586560;
+      --moss: #35554c;
+      --gold: #a78046;
+      --paper: #fffefb;
+      --base: #f3f2ed;
+      --line: #d8d2c7;
+      --mist: #e9f0ee;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--base);
+      color: var(--ink);
+      font-family: "Noto Sans JP", sans-serif;
+      line-height: 1.72;
+      letter-spacing: 0;
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 {
+      font-family: "Noto Serif JP", serif;
+      font-weight: 600;
+    }
+    a { color: inherit; text-decoration: none; }
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 13px max(18px, calc((100% - 880px) / 2));
+      color: #fff;
+      background: var(--moss);
+    }
+    .toolbar span { font-size: 0.84rem; font-weight: 700; }
+    .toolbar-links { display: flex; gap: 9px; }
+    .tool-link {
+      padding: 7px 13px;
+      border: 1px solid rgba(255,255,255,0.48);
+      border-radius: 5px;
+      font-size: 0.8rem;
+    }
+    .book {
+      width: min(880px, calc(100% - 34px));
+      margin: 28px auto 54px;
+    }
+    .page {
+      margin-bottom: 18px;
+      padding: 52px 56px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      box-shadow: 0 8px 23px rgba(30,40,36,0.05);
+    }
+    .cover {
+      min-height: 1030px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #fff;
+      background: var(--moss);
+    }
+    .cover .kicker, .section-label {
+      color: #d8c49f;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+    .cover h1 {
+      margin-top: 38px;
+      font-size: 2.65rem;
+      line-height: 1.48;
+    }
+    .cover-copy {
+      max-width: 590px;
+      margin-top: 30px;
+      color: rgba(255,255,255,0.86);
+      font-size: 1.02rem;
+      line-height: 2;
+    }
+    .core {
+      padding-top: 34px;
+      border-top: 1px solid rgba(255,255,255,0.28);
+      font-family: "Noto Serif JP", serif;
+      font-size: 1.48rem;
+      line-height: 1.8;
+    }
+    .meta {
+      margin-top: 20px;
+      color: rgba(255,255,255,0.68);
+      font-size: 0.83rem;
+    }
+    .page h2 {
+      margin: 12px 0 22px;
+      font-size: 1.68rem;
+      line-height: 1.55;
+    }
+    .page h3 {
+      margin: 26px 0 9px;
+      font-size: 1.05rem;
+    }
+    .intro {
+      color: var(--soft);
+      margin-bottom: 20px;
+    }
+    .notice {
+      margin: 25px 0;
+      padding: 18px 20px;
+      border-left: 3px solid var(--gold);
+      background: #f8f5ec;
+      color: var(--soft);
+      font-size: 0.91rem;
+    }
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 9px;
+      margin: 28px 0;
+    }
+    .flow div {
+      min-height: 70px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--mist);
+      font-size: 0.84rem;
+      font-weight: 500;
+    }
+    .flow b {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--gold);
+      font-size: 0.72rem;
+    }
+    .prompt {
+      margin-top: 22px;
+    }
+    .prompt-label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--moss);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+    .prompt p {
+      margin-bottom: 9px;
+      color: var(--soft);
+      font-size: 0.87rem;
+    }
+    .write {
+      min-height: 86px;
+      border: 1px solid var(--line);
+      background:
+        repeating-linear-gradient(to bottom, transparent 0, transparent 31px, #dfdbd1 32px),
+        #fff;
+    }
+    .write.short { min-height: 55px; }
+    .write.tall { min-height: 150px; }
+    .two {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .choice {
+      margin: 18px 0 25px;
+      padding: 17px 19px;
+      border: 1px solid var(--line);
+      background: var(--mist);
+    }
+    .choice strong { display: block; margin-bottom: 9px; }
+    .choice-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 17px;
+      color: var(--soft);
+      font-size: 0.9rem;
+    }
+    .box {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      margin-right: 7px;
+      vertical-align: -2px;
+      border: 1px solid #898e87;
+      background: #fff;
+    }
+    .principles {
+      display: grid;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .principles article {
+      padding: 13px 15px;
+      border: 1px solid var(--line);
+    }
+    .principles strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--moss);
+      font-size: 0.9rem;
+    }
+    .principles p { color: var(--soft); font-size: 0.82rem; }
+    table {
+      width: 100%;
+      margin: 22px 0;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+    }
+    th, td {
+      padding: 10px 9px;
+      border: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th { color: var(--moss); background: var(--mist); }
+    .footer-note {
+      margin-top: 34px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--soft);
+      font-size: 0.78rem;
+    }
+    @media (max-width: 660px) {
+      .toolbar { position: static; flex-direction: column; align-items: flex-start; }
+      .page { padding: 32px 22px; }
+      .cover { min-height: 760px; }
+      .cover h1 { font-size: 2rem; }
+      .flow, .two { grid-template-columns: 1fr; }
+    }
+    @page { size: A4; margin: 0; }
+    @media print {
+      body { background: #fff; }
+      .toolbar { display: none; }
+      .book { width: auto; margin: 0; }
+      .page {
+        min-height: 297mm;
+        margin: 0;
+        padding: 18mm 17mm;
+        border: 0;
+        box-shadow: none;
+        page-break-after: always;
+      }
+      .page:last-child { page-break-after: auto; }
+      .cover { min-height: 297mm; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="toolbar">
+    <span>前田薫 / コーチング学習室</span>
+    <div class="toolbar-links">
+      <a class="tool-link" href="../">学習室へ戻る</a>
+      <a class="tool-link" href="emotion-framework-self-coaching-workbook.pdf" download>PDFをダウンロード</a>
+    </div>
+  </header>
+
+  <main class="book">
+    <section class="page cover">
+      <div>
+        <div class="kicker">KAORU COACHING METHOD / WORKBOOK 01</div>
+        <h1>感情から前提へ降りる<br>セルフコーチング・<br>ワークシート</h1>
+        <p class="cover-copy">日常で感情が動いた出来事を、正しさや反省で終わらせず、自分が握っていた前提と、そこから受け取れる支援へつなぐための記入式教材。</p>
+      </div>
+      <div>
+        <div class="core">感情を入口にし、<br>前提を見てから、支援を見る。</div>
+        <div class="meta">前田薫 / 認知が動くコーチング 実践教材 v1.0 / 2026.05</div>
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">HOW TO USE</div>
+      <h2>このワークの使い方</h2>
+      <p class="intro">最近、気持ちが揺れた出来事を一つだけ選びます。大きな問題でなくて構いません。まずは実際に起きたことと感情を丁寧に分け、本人の言葉で整理していきます。</p>
+      <div class="notice">この資料は、日常の振り返りやコーチング学習を目的としています。強い苦痛、トラウマ、危機的な状況を扱うための医療・心理治療の資料ではありません。負担が大きい場合は無理に進めず、適切な専門支援を選んでください。</div>
+      <h3>進む順番</h3>
+      <div class="flow">
+        <div><b>01</b>出来事</div>
+        <div><b>02</b>感情と体</div>
+        <div><b>03</b>向き先</div>
+        <div><b>04</b>認知・自己像</div>
+        <div><b>05</b>片側認知</div>
+        <div><b>06</b>反対側</div>
+        <div><b>07</b>緩み確認</div>
+        <div><b>08</b>支援・価値観</div>
+        <div><b>09</b>統合</div>
+      </div>
+      <h3>始める前に</h3>
+      <div class="prompt">
+        <span class="prompt-label">今日扱うテーマを、一言で書いてください。</span>
+        <div class="write short"></div>
+      </div>
+      <div class="prompt">
+        <span class="prompt-label">いまこのテーマを扱える余裕はありますか。</span>
+        <div class="choice-line"><span><i class="box"></i>はい</span><span><i class="box"></i>少しだけ扱う</span><span><i class="box"></i>今日は扱わない</span></div>
+      </div>
+      <div class="footer-note">ポイント: 深く掘ることより、自分が安全に言葉を出せることを優先します。</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">STEP 01 - 03</div>
+      <h2>出来事と感情を分ける</h2>
+      <div class="prompt">
+        <span class="prompt-label">1. 実際に起きたことだけで言うと、何がありましたか。</span>
+        <p>相手の意図や評価は入れず、見聞きした言葉・行動・結果を書きます。</p>
+        <div class="write tall"></div>
+      </div>
+      <div class="prompt">
+        <span class="prompt-label">2. 相手が実際に使った言葉、または自分に残った言葉は何ですか。</span>
+        <div class="write"></div>
+      </div>
+      <div class="prompt">
+        <span class="prompt-label">3. その時、一番強かった感情は何でしたか。</span>
+        <div class="choice-line"><span><i class="box"></i>怒り</span><span><i class="box"></i>悔しさ</span><span><i class="box"></i>悲しみ</span><span><i class="box"></i>恥</span><span><i class="box"></i>虚しさ</span><span><i class="box"></i>不安</span><span><i class="box"></i>その他</span></div>
+        <div class="write short" style="margin-top:11px;"></div>
+      </div>
+      <div class="two">
+        <div class="prompt">
+          <span class="prompt-label">4. 体のどこに反応がありましたか。</span>
+          <div class="write"></div>
+        </div>
+        <div class="prompt">
+          <span class="prompt-label">5. その感情は誰・何に向いていましたか。</span>
+          <div class="write"></div>
+        </div>
+      </div>
+      <div class="footer-note">原則: 感情は認知の入口です。感情を飛ばして結論へ行かない。</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">STEP 04 - 05</div>
+      <h2>認知と前提を見る</h2>
+      <div class="prompt">
+        <span class="prompt-label">6. 何が起きたと捉えたから、その感情が出たのでしょうか。</span>
+        <p>例: 大切にされなかった / 失敗した / 否定された / 努力が無駄になった。</p>
+        <div class="write tall"></div>
+      </div>
+      <div class="prompt">
+        <span class="prompt-label">7. その出来事で、どんな自分でいられなくなった感じがありましたか。</span>
+        <p>例: 理解できる自分 / 良い親である自分 / 信頼される選手である自分。</p>
+        <div class="write"></div>
+      </div>
+      <div class="prompt">
+        <span class="prompt-label">8. その奥には、どんな「こうあるべき」「これはダメ」がありそうですか。</span>
+        <div class="write"></div>
+      </div>
+      <div class="choice">
+        <strong>片側認知の向きを確認する</strong>
+        <div class="choice-line">
+          <span><i class="box"></i>プラス側の固定: 「〇〇は良いこと / 得られるべき」</span>
+          <span><i class="box"></i>マイナス側の固定: 「〇〇はダメ / 起きてはいけない」</span>
+        </div>
+      </div>
+      <div class="footer-note">原則: 支援を見る前に、本人が何を成功・失敗・価値だと見ていたかを確認します。</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">STEP 06</div>
+      <h2>反対側を問う</h2>
+      <p class="intro">片側だけに固定されている見方を責めずに、まだ見えていなかった側を探します。どちらか該当する欄を中心に書いてください。</p>
+      <div class="choice">
+        <strong>プラス側の固定がある場合</strong>
+        <p style="color:var(--soft); font-size:0.88rem;">「それが得られること / そうあること」のデメリットは何ですか。</p>
+        <div class="write tall" style="margin-top:10px;"></div>
+      </div>
+      <div class="choice">
+        <strong>マイナス側の固定がある場合</strong>
+        <p style="color:var(--soft); font-size:0.88rem;">「それが起きたこと / そうであること」のメリット、守られたもの、得られたものは何ですか。</p>
+        <div class="write tall" style="margin-top:10px;"></div>
+      </div>
+      <div class="prompt">
+        <span class="prompt-label">9. 両面を見た今、最初の前提はどのように見えていますか。</span>
+        <div class="write"></div>
+      </div>
+      <div class="footer-note">原則: 「良いものには不都合な面」「悪いものには受け取っていた面」を見る。すぐに前向きな意味へ変換しない。</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">STEP 07 - 09</div>
+      <h2>支援と統合へ進む</h2>
+      <div class="prompt">
+        <span class="prompt-label">10. 前提は少し緩みましたか。</span>
+        <div class="choice-line"><span><i class="box"></i>緩んだ</span><span><i class="box"></i>少し緩んだ</span><span><i class="box"></i>まだ動かない</span><span><i class="box"></i>分からない</span></div>
+        <p style="margin-top:10px;">「まだ動かない」場合は、支援へ進まず、感情や言葉に戻って構いません。</p>
+      </div>
+      <div class="prompt">
+        <span class="prompt-label">11. この出来事があったからこそ、見えたもの・受け取ったものは何ですか。</span>
+        <div class="write tall"></div>
+      </div>
+      <div class="prompt">
+        <span class="prompt-label">12. それは、自分が大切にしたい価値や目的にどうつながりますか。</span>
+        <div class="write"></div>
+      </div>
+      <div class="two">
+        <div class="prompt">
+          <span class="prompt-label">13. 同じようなことが起きたら、今はどんな感情になりそうですか。</span>
+          <div class="write"></div>
+        </div>
+        <div class="prompt">
+          <span class="prompt-label">14. その時、どんな対応を選びそうですか。</span>
+          <div class="write"></div>
+        </div>
+      </div>
+      <div class="footer-note">原則: 「もう避ける」だけではなく、同じ構造の場面で見方と選択に余白が生まれたかを確認します。</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">FOR COACHES AND EDUCATORS</div>
+      <h2>コーチ・育成者の観察メモ</h2>
+      <p class="intro">対話を支える立場で使う場合は、答えを出すことより、本人の言葉と変化のサインを記録します。</p>
+      <table>
+        <tr><th>観察項目</th><th>記録</th></tr>
+        <tr><td>本人が使った中心語</td><td style="height:48px;"></td></tr>
+        <tr><td>最初の感情 / 身体反応</td><td></td></tr>
+        <tr><td>感情の向き先</td><td></td></tr>
+        <tr><td>片側認知の前提</td><td></td></tr>
+        <tr><td>置いた短い一問</td><td></td></tr>
+        <tr><td>一問の後に出た本人の言葉</td><td style="height:54px;"></td></tr>
+        <tr><td>緩みを確認した言葉</td><td></td></tr>
+        <tr><td>統合時の感情 / 次の対応</td><td></td></tr>
+      </table>
+      <h3>対話後のセルフチェック</h3>
+      <div class="choice-line"><span><i class="box"></i>感情を聞いた</span><span><i class="box"></i>本人の言葉を使った</span><span><i class="box"></i>受け取ってから問うた</span></div>
+      <div class="choice-line" style="margin-top:11px;"><span><i class="box"></i>問いは一つずつだった</span><span><i class="box"></i>反対側を扱った</span><span><i class="box"></i>統合を確認した</span></div>
+      <div class="prompt">
+        <span class="prompt-label">フィードフォワード: 次の実践で一つだけ変えるなら。</span>
+        <div class="write"></div>
+      </div>
+      <div class="footer-note">観察の軸: 見えた構造を説明するのではなく、本人が自分で出会える一問へ変換できたか。</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">SPORTS / DEVELOPMENT</div>
+      <h2>スポーツ指導・育成で使う</h2>
+      <p class="intro">試合、失敗、選考、指導への反応など、結果に心が大きく動く現場では、成果だけで選手を評価せず、経験を学びに統合する対話として使えます。</p>
+      <div class="prompt">
+        <span class="prompt-label">競技・育成の場で起きた出来事</span>
+        <div class="write"></div>
+      </div>
+      <div class="two">
+        <div class="prompt">
+          <span class="prompt-label">本人の感情と体の反応</span>
+          <div class="write"></div>
+        </div>
+        <div class="prompt">
+          <span class="prompt-label">結果について握っていた前提</span>
+          <div class="write"></div>
+        </div>
+      </div>
+      <div class="prompt">
+        <span class="prompt-label">結果が得られることの不都合 / 得られなかったことで育ったもの</span>
+        <div class="write tall"></div>
+      </div>
+      <div class="two">
+        <div class="prompt">
+          <span class="prompt-label">次の練習で本人が選ぶ一歩</span>
+          <div class="write"></div>
+        </div>
+        <div class="prompt">
+          <span class="prompt-label">指導者が手放すコントロール</span>
+          <div class="write"></div>
+        </div>
+      </div>
+      <div class="notice">指導者の役割は、望む答えへ選手を運ぶことではなく、選手が自分の言葉で経験を意味づけ、次の選択を持てる場を支えることです。</div>
+    </section>
+
+    <section class="page">
+      <div class="section-label">PRACTICE PRINCIPLES</div>
+      <h2>この教材の八つの原則</h2>
+      <div class="principles">
+        <article><strong>01 感情は認知の入口である</strong><p>出来事からすぐ答えへ行かず、感情が知らせている意味づけを見る。</p></article>
+        <article><strong>02 本人の言葉を保持する</strong><p>言葉の定義を置き換えず、本人の世界を本人の言葉で探索する。</p></article>
+        <article><strong>03 深く見る前に受け取る</strong><p>掘る問いの前に、感情と言葉を一度そのまま受け止める。</p></article>
+        <article><strong>04 構造は短い一問に変換する</strong><p>説明せず、本人の口から気づきが出る余白を保つ。</p></article>
+        <article><strong>05 片側認知は反対側で緩む</strong><p>良いことには不都合を、ダメなことには受け取ったものを見る。</p></article>
+        <article><strong>06 支援を見る前に前提を見る</strong><p>支援を急がず、見方が緩んでから価値へ接続する。</p></article>
+        <article><strong>07 統合は感情と行動で確認する</strong><p>同じ場面への反応がどう変わるかを確認して着地する。</p></article>
+        <article><strong>08 安全な場は一人では出ない言葉を生む</strong><p>本人の言葉で満ちる場が、本人自身の気づきを支える。</p></article>
+      </div>
+      <div class="notice">本教材は、実践記録から抽出した観察可能な原則をもとに作成しています。今後のセッション記録とフィードフォワードを通じて、問い・順番・適用条件を継続的に検証し、改訂します。</div>
+      <div class="footer-note">前田薫 / 認知が動くコーチングを学ぶ | https://kaoruchan333.github.io/coaching-method/</div>
+    </section>
+  </main>
+</body>
+</html>
