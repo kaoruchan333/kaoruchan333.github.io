@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>認知が動くコーチングを学ぶ | 前田薫</title>
+  <meta name="description" content="感情を入口にし、前提を見てから、支援を見る。前田薫のコーチングを、日常・育成・スポーツ指導に活かすための公開教材ハブ。">
+  <meta property="og:title" content="認知が動くコーチングを学ぶ | 前田薫">
+  <meta property="og:description" content="講座、セルフコーチング、ワークシート、スポーツ育成への応用を積み重ねる学習室。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kaoruchan333.github.io/coaching-method/">
+  <meta property="og:image" content="https://kaoruchan333.github.io/coaching/photos/kaoru-lecture-smile.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #23322f;
+      --ink-soft: #4d5b57;
+      --moss: #35554c;
+      --moss-deep: #223d37;
+      --leaf: #64806d;
+      --gold: #ab8246;
+      --gold-soft: #d6c19b;
+      --cloud: #f5f4ef;
+      --paper: #fffdf8;
+      --stone: #e3ddd1;
+      --line: #d9d4c9;
+      --water: #e7eff0;
+      --white: #fff;
+      --shadow: 0 16px 38px rgba(29, 38, 35, 0.09);
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--cloud);
+      color: var(--ink);
+      font-family: "Noto Sans JP", sans-serif;
+      line-height: 1.8;
+      letter-spacing: 0;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2 {
+      font-family: "Noto Serif JP", serif;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+    .shell {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+    .topbar {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: min(var(--max), calc(100% - 40px));
+      transform: translateX(-50%);
+      z-index: 4;
+      color: var(--white);
+    }
+    .brand {
+      font-family: "Noto Serif JP", serif;
+      font-size: 0.98rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+    .nav a { opacity: 0.84; }
+    .nav a:hover, .nav a[aria-current="page"] { opacity: 1; }
+    .hero {
+      min-height: min(86svh, 780px);
+      display: grid;
+      align-items: end;
+      position: relative;
+      isolation: isolate;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(19, 32, 30, 0.82) 0%, rgba(19, 32, 30, 0.58) 46%, rgba(19, 32, 30, 0.28) 100%),
+        url("../coaching/photos/kaoru-lecture-smile.jpg") center 29% / cover no-repeat;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 120px;
+      z-index: -1;
+      background: linear-gradient(0deg, rgba(19, 32, 30, 0.35), transparent);
+    }
+    .hero-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 130px 0 70px;
+    }
+    .eyebrow {
+      margin-bottom: 22px;
+      color: var(--gold-soft);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+    }
+    .hero h1 {
+      max-width: 700px;
+      font-size: clamp(2.15rem, 4vw, 3.55rem);
+      line-height: 1.36;
+    }
+    .hero-copy {
+      max-width: 610px;
+      margin-top: 25px;
+      font-size: 1.03rem;
+      line-height: 2;
+      color: rgba(255,255,255,0.92);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border: 1px solid var(--moss);
+      border-radius: 6px;
+      background: var(--moss);
+      color: var(--white);
+      font-size: 0.92rem;
+      font-weight: 700;
+      transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+    }
+    .button:hover { background: var(--moss-deep); border-color: var(--moss-deep); }
+    .button.light {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.62);
+    }
+    .button.light:hover { background: rgba(255,255,255,0.13); }
+    .jumpbar {
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+    }
+    .jumpbar-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 16px 0;
+    }
+    .jumpbar a {
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      color: var(--ink-soft);
+      font-size: 0.86rem;
+      font-weight: 500;
+    }
+    .jumpbar a:hover { border-color: var(--moss); color: var(--moss); }
+    .section {
+      padding: 74px 0;
+    }
+    .section + .section { border-top: 1px solid var(--line); }
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 48px;
+      margin-bottom: 42px;
+      align-items: start;
+    }
+    .label {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--gold);
+      font-size: 0.73rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+    }
+    .section-head h2, .band h2, .closing h2 {
+      font-size: clamp(1.62rem, 2.8vw, 2.28rem);
+      line-height: 1.55;
+    }
+    .section-head p {
+      color: var(--ink-soft);
+      font-size: 0.97rem;
+    }
+    .audiences {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 15px;
+    }
+    .audience, .law, .resource, .application {
+      min-height: 100%;
+      padding: 23px 22px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--paper);
+    }
+    .audience h3, .resource h3, .application h3 {
+      margin-bottom: 10px;
+      font-family: "Noto Serif JP", serif;
+      font-size: 1.08rem;
+      line-height: 1.55;
+    }
+    .audience p, .resource p, .application p {
+      color: var(--ink-soft);
+      font-size: 0.88rem;
+      line-height: 1.78;
+    }
+    .principle {
+      padding: 52px max(22px, calc((100% - var(--max)) / 2));
+      background: var(--moss-deep);
+      color: var(--white);
+    }
+    .principle blockquote {
+      max-width: var(--max);
+      margin: 0 auto;
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(1.48rem, 3vw, 2.35rem);
+      line-height: 1.75;
+    }
+    .principle p {
+      max-width: var(--max);
+      margin: 18px auto 0;
+      color: rgba(255,255,255,0.73);
+      font-size: 0.9rem;
+    }
+    .protocol {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .step {
+      position: relative;
+      min-height: 188px;
+      padding: 24px 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--paper);
+    }
+    .step .number {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--gold);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+    .step h3 {
+      margin-bottom: 9px;
+      font-size: 1.02rem;
+      line-height: 1.55;
+    }
+    .step p {
+      color: var(--ink-soft);
+      font-size: 0.84rem;
+      line-height: 1.72;
+    }
+    .step.turn {
+      border-color: #a8beb8;
+      background: #edf3f1;
+    }
+    .two-column {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+    .photo {
+      min-height: 560px;
+      border-radius: 7px;
+      background: url("../site-assets/home/lecture-room.jpg") center / cover no-repeat;
+    }
+    .laws {
+      display: grid;
+      gap: 12px;
+    }
+    .law {
+      padding: 19px 21px;
+      background: var(--white);
+    }
+    .law strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--moss);
+      font-family: "Noto Serif JP", serif;
+      font-size: 1.02rem;
+      line-height: 1.65;
+    }
+    .law p {
+      color: var(--ink-soft);
+      font-size: 0.85rem;
+      line-height: 1.72;
+    }
+    .band {
+      padding: 54px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--water);
+    }
+    .band-grid {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .checklist {
+      display: grid;
+      gap: 11px;
+    }
+    .checklist div {
+      padding: 16px 17px;
+      border-left: 3px solid var(--gold);
+      background: rgba(255,255,255,0.68);
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+    }
+    .applications {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 15px;
+    }
+    .applications .marker {
+      display: inline-block;
+      margin-bottom: 13px;
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+    .library {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+    }
+    .status {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 14px;
+      padding: 4px 9px;
+      border: 1px solid #c5d4d0;
+      border-radius: 4px;
+      color: var(--moss);
+      background: #eef4f1;
+      font-size: 0.71rem;
+      font-weight: 700;
+    }
+    .resource.primary {
+      grid-column: span 2;
+      background: var(--moss);
+      color: var(--white);
+      border-color: var(--moss);
+    }
+    .resource.primary p { color: rgba(255,255,255,0.82); }
+    .resource.primary .status {
+      color: var(--white);
+      border-color: rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.12);
+    }
+    .case-notes {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .case {
+      padding: 27px;
+      border-left: 3px solid var(--gold);
+      background: var(--paper);
+    }
+    .case h3 {
+      margin-bottom: 14px;
+      font-family: "Noto Serif JP", serif;
+      font-size: 1.12rem;
+    }
+    .case p {
+      color: var(--ink-soft);
+      font-size: 0.91rem;
+    }
+    .update {
+      display: grid;
+      grid-template-columns: 138px 1fr;
+      gap: 28px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .update time {
+      color: var(--gold);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .update h3 {
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+    .update p { color: var(--ink-soft); font-size: 0.9rem; }
+    .closing {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+      gap: 44px;
+      margin: 12px auto 70px;
+      padding: 48px;
+      border-radius: 7px;
+      color: var(--white);
+      background: var(--moss-deep);
+    }
+    .closing p {
+      margin: 19px 0 28px;
+      color: rgba(255,255,255,0.81);
+    }
+    .closing-image {
+      aspect-ratio: 4 / 4.2;
+      border-radius: 6px;
+      background: url("../coaching/photos/soccer-gym.jpg") center / cover no-repeat;
+    }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 27px 0 50px;
+      color: var(--ink-soft);
+      font-size: 0.83rem;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 19px;
+      margin-bottom: 12px;
+      color: var(--moss);
+      font-weight: 500;
+    }
+    @media (max-width: 920px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-top: 20px;
+        gap: 12px;
+      }
+      .nav { gap: 10px 15px; font-size: 0.84rem; }
+      .hero { min-height: min(88svh, 700px); background-position: 61% center; }
+      .hero-inner { padding-top: 160px; padding-bottom: 52px; }
+      .section-head, .two-column, .band-grid, .closing { grid-template-columns: 1fr; gap: 30px; }
+      .audiences, .applications { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .protocol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .library { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .photo { min-height: 380px; }
+      .closing-image { max-height: 360px; }
+    }
+    @media (max-width: 590px) {
+      .shell, .hero-inner, .jumpbar-inner, .topbar {
+        width: min(var(--max), calc(100% - 30px));
+      }
+      .hero { background-position: 67% center; }
+      .hero h1 { font-size: 2rem; }
+      .hero-copy { font-size: 0.94rem; }
+      .section { padding: 55px 0; }
+      .audiences, .protocol, .applications, .library, .case-notes {
+        grid-template-columns: 1fr;
+      }
+      .resource.primary { grid-column: auto; }
+      .step { min-height: 0; }
+      .update { grid-template-columns: 1fr; gap: 7px; }
+      .closing { padding: 31px 22px; margin-bottom: 48px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="topbar">
+      <a class="brand" href="../">KAORU MAEDA</a>
+      <nav class="nav" aria-label="主なページ">
+        <a href="../">ホーム</a>
+        <a href="../thought/">思想</a>
+        <a href="../activities/">活動</a>
+        <a href="../services/">サービス</a>
+        <a href="../kaoru-juku/">かおる塾</a>
+        <a href="./" aria-current="page">学習室</a>
+      </nav>
+    </div>
+    <div class="hero-inner">
+      <div class="eyebrow">KAORU COACHING METHOD / LEARNING LIBRARY</div>
+      <h1>認知が動く<br>コーチングを学ぶ</h1>
+      <p class="hero-copy">感情を入口にし、前提を見てから、支援を見る。コーチングを本気で学ぶ人、日常や育成、スポーツ指導に活かす人のために、実践から生まれた教材を積み重ねていく場所です。</p>
+      <div class="hero-actions">
+        <a class="button" href="#protocol">正規プロトコルを見る</a>
+        <a class="button light" href="#library">教材棚を見る</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="jumpbar" aria-label="ページ内目次">
+    <div class="jumpbar-inner">
+      <a href="#about">この場所について</a>
+      <a href="#protocol">問いの順番</a>
+      <a href="#laws">法則メモ</a>
+      <a href="#application">活用領域</a>
+      <a href="#library">教材棚</a>
+      <a href="#updates">更新記録</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section shell" id="about">
+      <div class="section-head">
+        <div>
+          <span class="label">PURPOSE</span>
+          <h2>学びを、使える形で<br>育て続ける。</h2>
+        </div>
+        <p>このページは、セッションの答えや個人の事例を公開するための場所ではありません。現場の実践から抽出した、再現可能な問い・観察・ワークの型を、講座や教材へ育てていくための公開アーカイブです。個別の記録は匿名化し、学びとして活用できる構造だけをここに残します。</p>
+      </div>
+      <div class="audiences">
+        <article class="audience">
+          <h3>本気で学びたい人</h3>
+          <p>問いの表面ではなく、認知が動く順番と観察の精度を学ぶ。</p>
+        </article>
+        <article class="audience">
+          <h3>日常で使いたい人</h3>
+          <p>家族や仕事で揺れた時、自分の感情から見直すセルフコーチングへ。</p>
+        </article>
+        <article class="audience">
+          <h3>育成に携わる人</h3>
+          <p>答えを押しつけず、本人の言葉と可能性を支える関わりへ。</p>
+        </article>
+        <article class="audience">
+          <h3>スポーツ指導者</h3>
+          <p>結果だけで選手を見ず、感情・前提・成長の過程を扱う指導へ。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="principle" aria-label="コーチングの中核">
+      <blockquote>感情を入口にし、<br>前提を見てから、支援を見る。</blockquote>
+      <p>実践分析から言語化された、薫ちゃんのコーチングにおける基本順序。</p>
+    </section>
+
+    <section class="section shell" id="protocol">
+      <div class="section-head">
+        <div>
+          <span class="label">CORE PROTOCOL</span>
+          <h2>認知が本当に動く、<br>問いの順番。</h2>
+        </div>
+        <p>出来事からすぐに前向きな意味を探しに行くのではなく、まず感情を通して片側に寄った認知を見つけます。その前提の反対側を確かめ、緩みが起きた後に初めて、出来事から受け取った支援や価値観との接続を扱います。</p>
+      </div>
+      <div class="protocol">
+        <article class="step">
+          <span class="number">01 / EVENT</span>
+          <h3>出来事</h3>
+          <p>何が起きたのか。解釈を混ぜず、具体的な事実から始める。</p>
+        </article>
+        <article class="step">
+          <span class="number">02 / EMOTION</span>
+          <h3>感情</h3>
+          <p>怒り、悔しさ、悲しみ、恥、虚しさ。不快感の種類を言葉にする。</p>
+        </article>
+        <article class="step">
+          <span class="number">03 / DIRECTION</span>
+          <h3>感情の向き先</h3>
+          <p>その感情は誰に、何に向いているのかを確かめる。</p>
+        </article>
+        <article class="step">
+          <span class="number">04 / COGNITION</span>
+          <h3>認知と自己像</h3>
+          <p>何が起きたと捉えたのか。どんな自分でいたかったのかを見る。</p>
+        </article>
+        <article class="step turn">
+          <span class="number">05 / FRAMEWORK</span>
+          <h3>片側認知の前提</h3>
+          <p>「これは良い」「これはダメ」と固定している前提を特定する。</p>
+        </article>
+        <article class="step turn">
+          <span class="number">06 / OPPOSITE SIDE</span>
+          <h3>反対側を問う</h3>
+          <p>良いことにはデメリットを、ダメなことにはメリットを問う。</p>
+        </article>
+        <article class="step">
+          <span class="number">07 / RELEASE</span>
+          <h3>緩みを確認</h3>
+          <p>片側だけの見方が緩んだか、本人の感覚とことばで確認する。</p>
+        </article>
+        <article class="step">
+          <span class="number">08 / INTEGRATION</span>
+          <h3>支援と統合</h3>
+          <p>その出来事から受け取ったものを、価値観や次の実践につなぐ。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="laws">
+      <div class="two-column">
+        <div class="photo" role="img" aria-label="対話の学びの場で講義を行う様子"></div>
+        <div>
+          <span class="label">FIELD NOTES</span>
+          <h2 style="margin-bottom:26px;">実践から生まれた<br>コーチング法則</h2>
+          <div class="laws">
+            <article class="law">
+              <strong>成果に意識が向いた時、人は支援を見失う。</strong>
+              <p>望んだ結果だけを価値と見ていると、過程で受け取ったものが見えなくなる。</p>
+            </article>
+            <article class="law">
+              <strong>支援を見る前に、前提を見る。</strong>
+              <p>支援を急ぐと、統合ではなくポジティブ変換になりやすい。</p>
+            </article>
+            <article class="law">
+              <strong>感情は、認知の入口である。</strong>
+              <p>同じ出来事でも感情が違えば、揺れている自己像と問いの入口は異なる。</p>
+            </article>
+            <article class="law">
+              <strong>構造が見えた瞬間ほど、感情に戻る。</strong>
+              <p>コーチの仮説ではなく、本人の内側から構造が立ち上がることを大切にする。</p>
+            </article>
+            <article class="law">
+              <strong>「もうやらない」は、回避のサインであることがある。</strong>
+              <p>統合は、同じ出来事が起きても違う見方ができる状態として現れる。</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="shell band-grid">
+        <div>
+          <span class="label">COACH'S CHECK</span>
+          <h2>コーチ自身が<br>見落とさないために。</h2>
+        </div>
+        <div class="checklist">
+          <div>出来事からすぐ構造へ進まず、クライアントの感情を聞いたか。</div>
+          <div>質問を一度に重ねず、一つの問いとして渡せているか。</div>
+          <div>具体の出来事と、抽象化した前提を混同せず確認できているか。</div>
+          <div>自分の見立てに答えてもらう時間ではなく、本人の言葉が増える場になっているか。</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="application">
+      <div class="section-head">
+        <div>
+          <span class="label">APPLICATION</span>
+          <h2>講座だけでなく、<br>日常と育成の現場へ。</h2>
+        </div>
+        <p>問いの型は、プロコーチのためだけのものではありません。関係性の中で人を「変える」のではなく、その人が自分で見直し、選び直せる場を作るための実践として展開していきます。</p>
+      </div>
+      <div class="applications">
+        <article class="application">
+          <span class="marker">COURSE</span>
+          <h3>コーチング講座</h3>
+          <p>事例分析、問いの練習、フィードフォワードによる実践型カリキュラム。</p>
+        </article>
+        <article class="application">
+          <span class="marker">SELF WORK</span>
+          <h3>セルフコーチング</h3>
+          <p>日々の感情を、認知・前提・支援へつなぐ振り返りワーク。</p>
+        </article>
+        <article class="application">
+          <span class="marker">EDUCATION</span>
+          <h3>教育・人材育成</h3>
+          <p>相手を評価で閉じず、本人の言葉を引き出す関わりの型。</p>
+        </article>
+        <article class="application">
+          <span class="marker">SPORTS</span>
+          <h3>スポーツ指導</h3>
+          <p>勝敗や結果に揺れる選手が、経験を成長へ統合するための対話。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="library">
+      <div class="section-head">
+        <div>
+          <span class="label">LEARNING LIBRARY</span>
+          <h2>ここから育てる<br>教材棚。</h2>
+        </div>
+        <p>実践回の分析を、学べる順番へ編み直していきます。まずは正規プロトコルと問いの型を核にし、講座化、ワークシート化、指導現場への応用へと積み上げます。</p>
+      </div>
+      <div class="library">
+        <article class="resource primary">
+          <span class="status">CORE / 公開開始</span>
+          <h3>認知が動くコーチング 正規プロトコル</h3>
+          <p>感情から入り、片側認知の反対側を問い、支援と統合へ進む基本設計。この学習室の中心教材として更新を重ねます。</p>
+        </article>
+        <article class="resource">
+          <span class="status">NEXT</span>
+          <h3>感情から認知へ降りる問いの型</h3>
+          <p>怒り、悔しさ、恥、悲しみなど、感情別の入口を整理する教材。</p>
+        </article>
+        <article class="resource">
+          <span class="status">NEXT</span>
+          <h3>片側認知ワークシート</h3>
+          <p>プラス側にはデメリット、マイナス側にはメリットを見る記入式資料。</p>
+        </article>
+        <article class="resource">
+          <span class="status">BUILDING</span>
+          <h3>セルフコーチングノート</h3>
+          <p>日常で感情が動いた出来事を、自分で整理・統合する実践ノート。</p>
+        </article>
+        <article class="resource">
+          <span class="status">BUILDING</span>
+          <h3>育成・スポーツ指導編</h3>
+          <p>指導者が結果だけで選手を見ず、学びと主体性を支えるための応用教材。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" aria-labelledby="practice-title">
+      <div class="section-head">
+        <div>
+          <span class="label">ANONYMIZED PRACTICE</span>
+          <h2 id="practice-title">実践から抽出した<br>二つの学び。</h2>
+        </div>
+        <p>ここでは個人が特定される情報を公開せず、セッションから再利用できる学びのみを記録します。教材は、実際の対話に根ざしながら、誰もが扱える構造として残します。</p>
+      </div>
+      <div class="case-notes">
+        <article class="case">
+          <h3>望んだ結果が得られなかった場面</h3>
+          <p>努力や手間をかけたのに結果が得られず「損した」と感じた場面では、得たものを急いで探す前に、「結果が出るべき」という前提と、その時の感情を扱う必要がある。</p>
+        </article>
+        <article class="case">
+          <h3>同調されなかった場面</h3>
+          <p>共感されることを良いこととして握っている時は、同調されることによって見えなくなるものを問うことで、相手の本音や真実を受け取る余地が生まれる。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="updates">
+      <div class="section-head">
+        <div>
+          <span class="label">UPDATE LOG</span>
+          <h2>積み重ねの記録。</h2>
+        </div>
+        <p>このページは完成品ではなく、実践によって精度を上げていく教材基盤です。問いが磨かれた時、新しい応用領域が見えた時、その変化をここに記録していきます。</p>
+      </div>
+      <article class="update">
+        <time datetime="2026-05-25">2026.05.25</time>
+        <div>
+          <h3>コーチング学習室を公開</h3>
+          <p>グループコーチングと道場の分析をもとに、正規プロトコル、法則メモ、教材棚、応用領域を一つの公開ハブに統合。</p>
+        </div>
+      </article>
+      <article class="update">
+        <time datetime="2026-05-24">2026.05.24</time>
+        <div>
+          <h3>順番の核を言語化</h3>
+          <p>「感情を入口にし、前提を見てから、支援を見る」と「プラス側にはデメリット、マイナス側にはメリットを問う」を整理。</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="closing shell">
+      <div>
+        <span class="label" style="color:var(--gold-soft);">NEXT STEP</span>
+        <h2>問いを学び、<br>人が育つ場に使う。</h2>
+        <p>これから講座、ワークシート、セルフコーチング資料、育成・スポーツ指導編へ育てていきます。学び方や活用の相談は、かおる塾の相談窓口から受け付けています。</p>
+        <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSf_YlfQdXEy9Sv8n0HZU2YT67MyM4YLF0WwTcTpk6LgAgByYA/viewform" target="_blank" rel="noopener">学びの相談をする</a>
+      </div>
+      <div class="closing-image" role="img" aria-label="スポーツ指導の現場で参加者と向き合う様子"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <div class="footer-links">
+        <a href="../kaoru-juku/">かおる塾</a>
+        <a href="../coaching/">個別コーチング</a>
+        <a href="../activities/">活動</a>
+        <a href="../thought/">思想</a>
+        <a href="../">前田薫ホーム</a>
+      </div>
+      <p>前田薫 / 人生デザインコーチ / 天中道コーチ。実践記録は公開時に匿名化し、教材として扱える構造のみを掲載しています。</p>
+    </div>
+  </footer>
+</body>
+</html>
