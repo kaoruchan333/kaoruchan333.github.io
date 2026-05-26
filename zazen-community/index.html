@@ -213,6 +213,68 @@ p.light { color: rgba(255,255,255,0.82); }
   image-orientation: from-image;
 }
 
+/* ━━ GATHERING RECORD LINK ━━ */
+.record-entry {
+  background: var(--white);
+}
+.record-date {
+  display: inline-flex;
+  margin-bottom: 28px;
+  padding: 8px 15px;
+  border: 1px solid rgba(168,137,80,0.38);
+  color: var(--earth);
+  font-family: var(--serif);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+}
+.record-card {
+  display: block;
+  margin-top: 32px;
+  text-decoration: none;
+  background: var(--cream);
+  border: 1px solid rgba(168,137,80,0.2);
+}
+.record-card img {
+  display: block;
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  object-position: center 57%;
+}
+.record-card-body {
+  padding: 22px 22px 24px;
+}
+.record-card-body span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+.record-card-body strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--stone);
+}
+.record-card-body p {
+  margin: 12px 0 0;
+  font-size: 13px;
+  line-height: 1.9;
+  color: #5b5148;
+}
+.speaker-note {
+  display: block;
+  margin: 10px 0 0;
+  font-family: var(--sans);
+  font-size: 11px;
+  color: rgba(255,255,255,0.42);
+  font-style: normal;
+  letter-spacing: 0.08em;
+}
+
 /* ━━ BG-OVERLAY SECTIONS ━━ */
 .bg-overlay {
   position: relative;
@@ -745,119 +807,51 @@ p.light { color: rgba(255,255,255,0.82); }
     <span class="eyebrow">01 — Message</span>
     <h2>体験してくださった<br>皆さんへ</h2>
     <p>龍泉寺での座禅会へ参加してくださり、ありがとうございました。</p>
-    <p>雨の音、行衣（白衣）の感触、池の水の冷たさ、洞窟で目を閉じた時間。日常へ戻ると薄れていくあの感覚を、もう一度、身体の奥から思い出してもらえたらと思っています。</p>
-    <p>このページは、あの日の体験を終わらせないための場所です。写真と言葉をたどりながら、自分が何を受け取り、何を感じていたのかを、今の自分の言葉で受け取り直すためにつくりました。</p>
+    <p>雨の音、行衣（白衣）の感触、池の水の冷たさ、洞窟で目を閉じた時間。そして、2026年5月26日に歩いた新緑の道、岩屋の外から届いた冷気、自然の中で呼吸に還った時間。</p>
+    <p>このページは、重なっていく一日一日の体験を終わらせないための場所です。日常の速さの中で感覚が薄れてきたとき、写真と言葉をたどりながら、自分が受け取ったもの、自分の軸にもう一度触れてください。</p>
     <div class="rule-gold"></div>
     <p style="font-family: var(--serif); font-size: 14px; color: var(--earth); letter-spacing: 0.06em;">前田 薫</p>
   </div>
 </section>
 
 <!-- ══════════════════════════════════
-     PHOTO: 龍泉寺
+     LATEST RECORD: 2026.05.26
 ══════════════════════════════════ -->
-<div class="photo-full">
-  <img src="images/shrine-building.jpg" alt="龍泉寺の境内に立つ朱色の社">
-</div>
-
-<!-- ══════════════════════════════════
-     02. 座禅会はイベントではない
-══════════════════════════════════ -->
-<section class="bg-overlay bg-ceremony" style="background: var(--white);">
+<section class="record-entry">
   <div class="wrap pad">
-    <span class="eyebrow">02 — What It Is</span>
-    <h2>座禅会は、<br>イベントではありません</h2>
-    <p>使命に生きる日本の精神性を、身体で学ぶ場です。</p>
-    <div class="quote">
-      同志が集まり、自分に還り、社会へ戻っていく場所。
-    </div>
-    <p>龍泉寺には、言葉より先に「場」が整えてくれる力があります。修験道の開祖・役行者が修行を積んだ、特別な霊地です。弁財天信仰の源流にも触れる大元の聖地として、毎回そこにいる人の「今」が重なり、何かが生まれていきます。</p>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════
-     PHOTO: 龍泉寺の石段
-══════════════════════════════════ -->
-<div class="photo-full">
-  <img src="images/shrine-stairs.jpg" alt="龍泉寺の境内へ続く石段と五色の幡" style="max-height:500px; object-fit:cover; object-position:center 40%;">
-</div>
-
-<!-- ══════════════════════════════════
-     03. 座禅会で起きていること
-══════════════════════════════════ -->
-<section class="bg-overlay bg-bell" style="background: var(--cream);">
-  <div class="wrap pad">
-    <span class="eyebrow">03 — What Happens</span>
-    <h2>静かになると、<br>余分なものが剥がれていく</h2>
-    <p>うまく説明できないけれど、何かが変わる。座禅会では、そういうことが起きています。</p>
-    <div class="exp-grid">
-      <div class="exp-card">「あ、これは判断だったな」<br>と気づく瞬間</div>
-      <div class="exp-card">「こっちが本音だったんだ」<br>と感じる静けさ</div>
-      <div class="exp-card">「ずっと外の基準で動いていた」<br>という発見</div>
-      <div class="exp-card">自分が選んでいた、<br>ということへの気づき</div>
-    </div>
-    <p>認知がほどける。内側の基準に触れる。説明では伝わらない何かが、そこで起きています。</p>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════
-     04. 禊・水行（行衣で池の前）
-══════════════════════════════════ -->
-<div class="photo-full photo-full--gathering">
-  <img src="images/ryusenji-misogi-standing.jpg" alt="行衣をまとい龍泉寺の池へ入る参加者たち" style="max-height:620px; object-fit:cover; object-position:center 40%;">
-</div>
-
-<section class="dark-section dark-misogi">
-  <div class="wrap pad">
-    <span class="eyebrow-light">04 — 禊</span>
-    <h2 class="light">龍泉寺の池に、<br>行衣のまま入っていく</h2>
-    <p class="light">裸足で境内に立ち、行衣をまとい、池の水に入っていく。冷たい。でも、どこかで「ああ、これだ」と思う感覚がある。</p>
-    <div class="quote light">
-      身体が洗われながら、何かがリセットされていく。<br>
-      頭の中のノイズが、静かになる。
-    </div>
-    <p class="light">役行者像を前に、みんなで水に入る。雨が降っていても、寒くても、不思議と清々しい気持ちになっていきます。</p>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════
-     PHOTO: 池の中（全員）
-══════════════════════════════════ -->
-<div class="photo-full">
-  <img src="images/ryusenji-misogi-close.jpg" alt="龍泉寺の池で手を合わせる禊の時間" style="max-height:640px; object-fit:cover; object-position:center 34%;">
-</div>
-
-<!-- ══════════════════════════════════
-     05. 洞窟での座禅
-══════════════════════════════════ -->
-<div class="photo-full">
-  <img src="images/cave-approach-rain.jpg" alt="雨の森と岩場の前で静かに立つ時間" style="max-height:520px; object-fit:cover; object-position:center 58%;">
-</div>
-
-<section class="dark-section dark-cave">
-  <div class="wrap pad">
-    <span class="eyebrow-light">05 — 洞窟</span>
-    <h2 class="light">役行者が修行した洞窟で、<br>目を閉じる</h2>
-    <p class="light">修験道の開祖が、何百年も前に座った場所。その洞窟の中で、みなさんと座禅をします。</p>
-    <p class="light">場に染み込んだ時間の重みが、言葉より先に働きます。頭で理解する前に、身体が何かを受け取っています。</p>
-    <div class="write-box">
-      <div class="write-item">
-        <span class="write-q">洞窟の中で感じた空気や、場の感じは？ ——</span>
-        <input class="write-line" type="text" placeholder="あなたが感じたまま...">
-        <input class="write-line" type="text" placeholder="">
+    <span class="eyebrow">Latest Record — 2026.05.26</span>
+    <div class="record-date">2026.05.26 / 天川村座禅会</div>
+    <h2>自然の中を移動しながら、<br>坐った一日</h2>
+    <p>龍泉寺から水辺と森へ歩き、岩屋の外から届く冷気と風の中で坐りました。今日の写真と言葉は、日付ごとの記録ページにまとめています。</p>
+    <a class="record-card" href="records/2026-05-26.html">
+      <img src="images/2026-05-26-river-walk.jpg" alt="新緑と川のそばを歩く5月26日の参加者たち">
+      <div class="record-card-body">
+        <span>記録ページを開く</span>
+        <strong>2026年5月26日の写真と言葉を見る →</strong>
+        <p>自然の中での座禅、水の場、食事を囲んだ振り返りをまとめています。</p>
       </div>
-      <div class="write-item">
-        <span class="write-q">日本の精神性や、先人の修行と触れた感じは？ ——</span>
-        <input class="write-line" type="text" placeholder="あなたの言葉で...">
-        <input class="write-line" type="text" placeholder="">
-      </div>
-    </div>
-    <p style="font-size:12px; color:rgba(255,255,255,0.25); text-align:center; margin-top:8px;">入力内容は保存されません。書くことで、自分の中で整えるための余白です。</p>
+    </a>
   </div>
 </section>
 
-<div class="photo-full photo-full--quiet">
-  <img src="images/zazen-hondo.jpg" alt="本堂で座禅を深める参加者たち" style="max-height:560px; object-fit:cover; object-position:center 45%;">
-</div>
+<!-- ══════════════════════════════════
+     PREVIOUS RECORD: 2026.04.30
+══════════════════════════════════ -->
+<section class="record-entry" style="background: var(--cream);">
+  <div class="wrap pad">
+    <span class="eyebrow">Previous Record — 2026.04.30</span>
+    <h2>雨の天川村で、<br>自分に還った一日</h2>
+    <p>雨、行衣、池の水、洞窟の暗さ、本堂の静けさ。4月30日の記録も、日付ごとのページに移しました。</p>
+    <a class="record-card" href="records/2026-04-30.html">
+      <img src="images/ryusenji-misogi-wide.jpg" alt="雨の龍泉寺で禊をする4月30日の参加者たち">
+      <div class="record-card-body">
+        <span>記録ページを開く</span>
+        <strong>2026年4月30日の写真と言葉を見る →</strong>
+        <p>龍泉寺での禊、洞窟での座禅、本堂と食事の時間をまとめています。</p>
+      </div>
+    </a>
+  </div>
+</section>
 
 <!-- ══════════════════════════════════
      06. 参加者が受け取っているもの
@@ -867,6 +861,9 @@ p.light { color: rgba(255,255,255,0.82); }
     <span class="eyebrow-light">06 — Voices</span>
     <h2 class="light">参加された方々の声が、<br>ここに重なっていきます</h2>
     <div class="voice-list">
+      <div class="voice-card">「場所は思った以上に大事でした。洞窟の前では、冷気を受けながら、すごく研ぎ澄まされていた感じがしました。」<span class="speaker-note">2026年5月26日 / 食事を囲んだ振り返りより</span></div>
+      <div class="voice-card">「川と自分の境がわからなくなるというか、流れているものと一体化しているような感覚がありました。」<span class="speaker-note">2026年5月26日 / 参加者さんの声</span></div>
+      <div class="voice-card">「こんなに息を吐けるんだと思いました。身体の内側が開いて、呼吸がさらに楽になった感じがしました。」<span class="speaker-note">2026年5月26日 / 参加者さんの声</span></div>
       <div class="voice-card">「意思決定の質が変わりました。何かを決めるとき、以前とは別の場所から選べるようになった気がします」</div>
       <div class="voice-card">「人間関係の見え方が変わりました。相手への反応が、少しゆっくりになりました」</div>
       <div class="voice-card">「使命という言葉が、急に身近になりました。自分にもそういうものがあると感じはじめています」</div>
@@ -883,6 +880,11 @@ p.light { color: rgba(255,255,255,0.82); }
         <h3>感想や投稿から、ゆるやかにつながる</h3>
         <p>Facebook、Instagram、noteなどに投稿された座禅会の感想も、参加者限定の場としてここに集めていきます。もし将来、外向きに紹介する場合や言葉を引用する場合は、あらためて本人に確認します。</p>
         <div class="social-post-list">
+          <a class="social-post-card" href="https://www.facebook.com/kaoruchan.nanbodemo/posts/pfbid0Xmin6Ah3dbTwaQpLvqxu8QRh6kaAreuCaDPk18itC6FBtemwbQzmHtjNqCoz6nNvl" target="_blank" rel="noopener noreferrer">
+            <strong>前田薫｜2026年5月26日 天川村座禅会の記録</strong>
+            <span class="post-meta">2026年5月26日</span>
+            <span>Facebook投稿を見る →</span>
+          </a>
           <a class="social-post-card" href="https://note.com/nanbodemo/n/n7628d996b16b" target="_blank" rel="noopener noreferrer">
             <strong>前田薫｜天川村に、還る場所ができた。</strong>
             <span class="post-meta">第6回 4月30日（雨）</span>
@@ -926,6 +928,14 @@ p.light { color: rgba(255,255,255,0.82); }
     <h2>みんなが見ていた景色</h2>
     <p class="memory-intro">同じ一日を過ごしていても、残っている景色は一人ひとり少しずつ違います。LINEグループに届いた写真や、みなさんが見ていた瞬間も、ここに少しずつ加えていきます。</p>
     <div class="memory-grid">
+      <figure class="memory-tile memory-tile--wide">
+        <img src="images/2026-05-26-river-walk.jpg" alt="新緑と川のそばを歩く5月26日の参加者たち">
+        <figcaption class="memory-caption">2026年5月26日 / 自然の中へ移動しながら坐った一日</figcaption>
+      </figure>
+      <figure class="memory-tile">
+        <img src="images/2026-05-26-ryusenji-group.jpg" alt="龍泉寺で手を合わせる5月26日の参加者たち">
+        <figcaption class="memory-caption">龍泉寺で手を合わせて、一日を記憶に残す</figcaption>
+      </figure>
       <figure class="memory-tile memory-tile--wide">
         <img src="images/ryusenji-misogi-standing.jpg" alt="龍泉寺の池で行衣をまとい立つ参加者たち">
         <figcaption class="memory-caption">池の水に入る前、身体が静かに整っていく時間</figcaption>
@@ -979,36 +989,6 @@ p.light { color: rgba(255,255,255,0.82); }
     </div>
   </div>
 </section>
-
-<!-- ══════════════════════════════════
-     08. 座禅後の食事
-══════════════════════════════════ -->
-<section style="background: var(--white);">
-  <div class="wrap pad">
-    <span class="eyebrow">08 — 食事</span>
-    <h2>禊が終わり、座禅が終わり、<br>豚汁と玄米をいただく</h2>
-    <p>不思議なんですが、この一杯が言葉では言い表せないほど深くおいしい。</p>
-    <p>五感が研ぎ澄まされた状態で食べるから、素朴な玄米と豚汁が、そのままぜんぶ体に入ってくる。ご住職を囲んで、みんなで箸を動かす。猫が庭から入ってくる。笑い声が混じる。</p>
-    <div class="quote">
-      あの温かさが、座禅会をちゃんと締めてくれます。
-    </div>
-    <div class="food-grid">
-      <img src="images/food-gathering.jpg" alt="みんなで食事" style="object-position:center;">
-      <img src="images/food-pot.jpg" alt="座禅後にいただいた豚汁" style="object-position:center top;">
-    </div>
-    <div class="reflection-photo">
-      <img src="images/himi-reflection.jpg" alt="豚汁をいただきながら振り返る参加者と猫のひみ">
-      <p class="reflection-caption">豚汁をいただきながら、今日感じたことをぽつぽつ話す時間。ひみもそこにいて、場の空気をふっとやわらかくしてくれました。</p>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════
-     PHOTO: 集合写真
-══════════════════════════════════ -->
-<div class="photo-full">
-  <img src="images/group.jpg" alt="龍泉寺座禅会に集まった仲間たち" style="max-height:620px; object-fit:cover; object-position:center 20%;">
-</div>
 
 <!-- ══════════════════════════════════
      09. コミュニティの意味
@@ -1137,7 +1117,7 @@ p.light { color: rgba(255,255,255,0.82); }
 
 <footer style="background:#0c0c12; padding:24px; text-align:center;">
   <p style="font-size:11px; color:rgba(255,255,255,0.28); letter-spacing:0.1em; margin:0 0 8px; line-height:1.9;">
-    最終更新: 2026年5月1日<br>
+    最終更新: 2026年5月26日<br>
     参加者の声と写真は、少しずつ追加していきます
   </p>
   <p style="font-size:11px; color:rgba(255,255,255,0.2); letter-spacing:0.12em; margin:0;">
