@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>現実の中で、フレームワークが動いた｜かおる塾</title>
+  <style>
+:root{--ink:#2f2b26;--muted:#70685f;--paper:#fbfaf6;--panel:#ffffff;--soft:#f2eee6;--line:#e4ded3;--accent:#9a6a3b;--green:#566c59;--deep:#26312b;--gold:#c19a5b}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;color:var(--ink);background:var(--paper);line-height:1.95;font-size:16px}
+body.kj-auth-locked>*:not(#kj-auth-overlay){display:none!important}
+a{color:inherit}.wrap{width:min(900px,calc(100% - 36px));margin:0 auto}.narrow{width:min(760px,calc(100% - 36px));margin:0 auto}
+.hero{background:linear-gradient(135deg,#26312b 0%,#3d4439 55%,#7f623f 100%);color:#fff8e8;padding:46px 0 44px;border-bottom:1px solid rgba(255,255,255,.18)}
+.back{display:inline-flex;gap:8px;align-items:center;color:rgba(255,248,232,.75);text-decoration:none;font-size:13px;margin-bottom:34px}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#d7bd8e;margin:0 0 12px}
+.hero h1{font-size:clamp(28px,6vw,54px);line-height:1.28;margin:0;font-weight:750}
+.lead{font-size:17px;color:rgba(255,248,232,.86);max-width:760px;margin:22px 0 0}
+.meta{font-size:14px;color:rgba(255,248,232,.72);margin-top:16px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;border-radius:8px;border:1px solid rgba(255,248,232,.45);padding:8px 15px;text-decoration:none;color:#fff8e8;background:rgba(255,255,255,.08);font-size:14px}
+.button.light{background:#fff;color:var(--deep);border-color:#fff}
+main{padding:20px 0 76px}section{padding:42px 0;border-bottom:1px solid var(--line)}section:last-child{border-bottom:0}
+h2{font-size:clamp(22px,4vw,34px);line-height:1.42;margin:0 0 20px;color:var(--deep)}
+h3{font-size:20px;line-height:1.55;margin:30px 0 12px;color:#3d382f}
+p{margin:0 0 18px}strong{color:#241f1a}
+.intro{font-size:18px;color:#4a443d}
+ul,ol{padding-left:1.25em;margin:14px 0 22px}li{margin:7px 0}
+.note-box{background:var(--soft);border:1px solid #ded5c7;border-radius:8px;padding:22px 24px;margin:24px 0}
+.key-box{background:var(--deep);color:#fff8e8;border-radius:8px;padding:28px;margin:28px 0}
+.key-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#d7bd8e;margin-bottom:8px}
+.key-text{font-size:clamp(22px,4vw,38px);line-height:1.36;font-weight:750}
+blockquote{border-left:4px solid var(--accent);background:linear-gradient(90deg,rgba(154,106,59,.1),rgba(154,106,59,0));padding:12px 0 12px 20px;margin:24px 0;color:#463f36;font-size:18px}
+table{width:100%;border-collapse:collapse;margin:24px 0;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;min-width:130px}
+th{background:#f1ece3;color:var(--deep);font-weight:700}
+.work-box{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px 24px;margin:24px 0}
+.step-flow{display:grid;gap:12px;margin:24px 0}
+.step-item{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px 22px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start}
+.step-num{width:40px;height:40px;border-radius:50%;background:var(--deep);color:#fff8e8;display:flex;align-items:center;justify-content:center;font-weight:750;font-size:16px;flex-shrink:0;margin-top:2px}
+.step-content h4{margin:0 0 6px;font-size:16px;color:var(--deep)}
+.step-content p{margin:0;font-size:15px;color:var(--muted)}
+.resource-panel{background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px;margin:24px 0}
+.access-line{background:#f4f0e8;border:1px solid #ded3c2;border-radius:8px;padding:16px 18px;margin:18px 0;display:grid;gap:6px}
+.access-line strong{font-size:13px;color:var(--accent);letter-spacing:.08em}
+.access-line span{font-weight:700;color:var(--deep)}
+.resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+.resource-card{display:block;text-decoration:none;background:#fffdf8;border:1px solid #dfd1bd;border-radius:8px;padding:18px}
+.resource-card:hover{border-color:#b9935a}
+.resource-kind{font-size:11px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+.resource-title{font-size:16px;font-weight:750;line-height:1.45;margin-bottom:6px}
+.resource-desc{font-size:13px;color:var(--muted);line-height:1.7}
+.case-box{background:#fff;border:2px solid var(--line);border-radius:10px;padding:24px;margin:24px 0}
+.case-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;font-weight:700}
+.small{font-size:14px;color:var(--muted)}
+.signature{margin-top:22px;font-weight:700}
+#kj-auth-overlay{position:fixed;inset:0;background:linear-gradient(135deg,#26312b,#5b513f);display:grid;place-items:center;padding:22px;z-index:9999}
+.kj-auth-card{width:min(420px,100%);background:#fbfaf6;color:#2f2b26;border-radius:10px;padding:30px;box-shadow:0 24px 80px rgba(0,0,0,.28)}
+.kj-auth-label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9a6a3b;margin-bottom:10px}
+.kj-auth-card h1{font-size:24px;line-height:1.45;margin:0 0 10px}
+.kj-auth-card p{font-size:14px;color:#70685f}
+.kj-auth-card input{width:100%;min-height:46px;border:1px solid #d4cabd;border-radius:8px;padding:10px 12px;font-size:16px;background:#fff;margin:8px 0 12px}
+.kj-auth-card button{width:100%;min-height:46px;border:0;border-radius:8px;background:#26312b;color:#fff8e8;font-size:15px;font-weight:700}
+.kj-auth-error{min-height:22px;color:#a33;font-size:13px;margin-top:8px}
+@media(max-width:640px){.hero{padding:34px 0 36px}section{padding:34px 0}.resource-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="kj-auth-locked">
+  <header class="hero">
+    <div class="wrap">
+      <a class="back" href="../../">← 一覧へ戻る</a>
+      <p class="eyebrow">Kaoru Juku Archive</p>
+      <h1>現実の中で、フレームワークが動いた</h1>
+      <p class="lead">自分で気づいて、現実が教えてくれた。それが腑に落ちるということ。</p>
+      <p class="meta">2026年5月30日 かおる塾グループコーチング</p>
+      <div class="hero-actions">
+        <a class="button light" href="#flow">今日のプロセス</a>
+        <a class="button" href="#cases">今日の2つの出来事</a>
+      </div>
+    </div>
+  </header>
+  <main class="narrow">
+
+    <section class="note-box">
+      <p class="intro">これは、参加した人にも、アーカイブで見る人にも届くように整理した振り返りページです。答えを急がず、今の自分の反応を見ながら読み進めてください。</p>
+    </section>
+
+    <section id="materials" class="resource-panel">
+      <h2>今回の教材セット</h2>
+      <div class="access-line">
+        <strong>パスワード</strong>
+        <span>kizuki2026</span>
+      </div>
+      <div class="resource-grid">
+        <a class="resource-card" href="#" target="_blank">
+          <div class="resource-kind">Archive Video</div>
+          <div class="resource-title">アーカイブ動画</div>
+          <div class="resource-desc">今日のグループコーチング全編。準備でき次第更新します。</div>
+        </a>
+        <a class="resource-card" href="#" target="_blank">
+          <div class="resource-kind">Audio Material</div>
+          <div class="resource-title">音声教材</div>
+          <div class="resource-desc">移動中・家事の間でも。準備でき次第更新します。</div>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>今日のテーマ</h2>
+      <div class="key-box">
+        <div class="key-label">Core Theme</div>
+        <div class="key-text">フレームワークに気づいた数時間後、現実がその反対側を見せてくれた。</div>
+      </div>
+      <p>中庸思考・天中道は、頭で学ぶだけでは腑に落ちない。今日のセッションでは、日常の中で「自力でプロセスを通過した実例」が持ち込まれた。それを土台に、同じ出来事の中に重なる複数のフレームワークを一つずつ見にいく、高密度な時間でした。</p>
+      <p>一つの出来事の中に、複数のフレームワークが重なって存在します。一度に全部見ようとせず、一つずつ取り出す。今日はそれを実際にやってみた回です。</p>
+    </section>
+
+    <section id="flow">
+      <h2>今日のプロセス（復習）</h2>
+      <p>感情が動いた出来事を、腑に落とすための流れです。</p>
+      <div class="step-flow">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>感情が動いたことをキャッチする</h4>
+            <p>イラッ・悔しい・もやもや・なんか気になる——まず気づく。</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>感情を生んでいるフレームワーク（前提）を言葉にする</h4>
+            <p>「いいこと」と思っているのか、「ダメなこと」と思っているのか。その前提を言葉にする。</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>プラス側かマイナス側かを見る</h4>
+            <p>「〇〇はいいことだ」→ プラス側。「〇〇はダメだ」→ マイナス側。</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>反対側をシンプルに問う</h4>
+            <p><strong>プラス側なら「〇〇のデメリットは何ですか？」</strong><br>
+            <strong>マイナス側なら「〇〇のメリットは何ですか？」</strong></p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h4>片側認知が緩んでから、出来事に含まれるものを見る</h4>
+            <p>ステップ4を踏んでから見に行くと、事実として腑に落ちる。ここを飛ばすとポジティブシンキングになりやすい。</p>
+          </div>
+        </div>
+      </div>
+      <div class="note-box">
+        <strong>重要：一つの出来事に複数のFWが重なっている</strong><br>
+        一つの出来事の中に、感情が動く要素は一つじゃない。複数重なっています。一度に全部見ようとせず、一つずつ取り出して、それぞれに反対側を見にいく。これを積み重ねていく。
+      </div>
+    </section>
+
+    <section id="cases">
+      <h2>今日の2つの出来事</h2>
+
+      <div class="case-box">
+        <div class="case-label">Case A — 自力通過の実例</div>
+        <h3>羊羹事件：フレームワークに気づいた後、現実が教えてくれた</h3>
+        <table>
+          <thead><tr><th>事実</th><th>認知</th><th>感情</th></tr></thead>
+          <tbody>
+            <tr><td>「他の部署には絶対言わないで」というメールが来た</td><td>「言われたことは守らないと」「隠して持ち帰るべき」</td><td>（感情は大きくなかった）</td></tr>
+            <tr><td>上司がミーティングで普通に言ってしまった</td><td>「あ、言っちゃった」</td><td>軽い驚き</td></tr>
+            <tr><td>数時間後、同僚が羊羹をもらえない人たちにも普通に配った</td><td>「守らなくてもよかった。みんなで分け合えた」</td><td>発見・腑に落ちた</td></tr>
+          </tbody>
+        </table>
+        <div class="note-box">
+          <strong>プラス側フレームワーク：</strong>「言われたことは守るべき」「約束を守るべき」<br>
+          → <strong>デメリットを問うと：</strong>守ったら自分だけコソコソ持ち帰ることになる。他の人に行き渡らない。<br><br>
+          <strong>これがすごい点：</strong>コーチに問われてではなく、日常の中で<em>自力で</em>気づき、数時間後に現実がその反対側を見せてくれた。フレームワークに気づいた後、現実が教えてくれる——これが腑に落ちるということです。
+        </div>
+      </div>
+
+      <div class="case-box" style="margin-top:32px">
+        <div class="case-label">Case B — セッション中の素材</div>
+        <h3>資料発表事件：同じ出来事にプラス・マイナス両方のFWが重なっていた</h3>
+        <table>
+          <thead><tr><th>事実</th><th>認知</th><th>感情</th></tr></thead>
+          <tbody>
+            <tr><td>資料を発表した。上司が質問を同僚に向けた</td><td>「ダメと思われてる」「一人でできないと思われた」</td><td>悔しい・なめられたくない</td></tr>
+            <tr><td>同僚が答えた</td><td>「なんで私に聞かないんだ」「分かってないと思われてる」</td><td>強気に出てしまった</td></tr>
+            <tr><td>その場で使う側の話が広がり、知りたかった情報が入ってきた</td><td>「聞けなければ知れなかった話が聞けた」</td><td>腑に落ちた</td></tr>
+          </tbody>
+        </table>
+        <div class="note-box">
+          <strong>プラス側FW：</strong>「発表している人にまず質問するべき」「一人でできることはいい」<br>
+          → <strong>デメリットを問うと：</strong>答えられない時に困る。自分だけに質問が集中すると詰まる。<br><br>
+          <strong>マイナス側FW：</strong>「一人でできないことはダメ」「指示されないとできないことはダメ」<br>
+          → <strong>メリットを問うと：</strong>誰かがいつもいてくれる。責任を一人で抱えなくていい。周りから学べる。みんなで一緒にやれる。<br><br>
+          <strong>出来事から受け取っていたもの：</strong>上司が同僚に聞いたことで、使う側の人たちの話が広がった。自分だけでは知れなかった情報が入ってきた。
+        </div>
+        <p class="small">「両方見れたら、どっちでもいいのかもしれない」——これが片側認知が緩んだ瞬間の言葉です。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>今日の学び</h2>
+
+      <h3>1. 自力で気づいた時、腑に落ちるのが早い</h3>
+      <p>コーチに問われてフレームワークに気づくのと、日常の中で自分で気づくのとでは、定着の深さが違う。今日の羊羹事件は、コーチが介入する前にプロセス全体が現実の中で発動した稀有な実例でした。</p>
+      <p>ジャーナリングを始めたのも、その力を後押しするものです。</p>
+
+      <h3>2. 同じ出来事にプラス・マイナス両方のFWが重なっている</h3>
+      <p>感情が動いた時、一つのフレームワークだけが働いているわけじゃない。複数が重なっています。プラス側のFWもあれば、マイナス側のFWもある。一度に全部見ようとせず、一つずつ取り出して、それぞれに反対側を問う。</p>
+      <p>プラス側ならデメリット。マイナス側ならメリット。この見分けを先に行う。</p>
+
+      <h3>3. 成果・評価に意識が向くと、受け取っているものが見えなくなる</h3>
+      <p>「認めてほしい」「評価されたい」という意識が強くなると、すでに受け取っているものが見えなくなりやすい。成果に意識が向いた時こそ、プロセスを踏んで受け取りを見にいく。</p>
+    </section>
+
+    <section>
+      <h2>今週持ち帰る問い</h2>
+      <div class="work-box">
+        <ol>
+          <li>最近感情が動いた出来事を一つ思い出してください。</li>
+          <li>その感情を生んでいるフレームワークは、プラス側ですか？マイナス側ですか？</li>
+          <li>プラス側なら「〇〇のデメリットは何ですか？」と問う。マイナス側なら「〇〇のメリットは何ですか？」と問う。</li>
+          <li>答えを出さなくてもいい。「どっちでもいいかもしれない」と感じる瞬間があれば、それが腑に落ちた瞬間です。</li>
+        </ol>
+        <p class="small">ジャーナリングを続けている人は、その記録の中にフレームワークが見つかるかもしれません。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>かおるちゃんから</h2>
+      <p>今日一番伝えたかったのは、「現実がフレームワークの反対側を見せてくれる」ということです。</p>
+      <p>頭で学んで「そうか」と思うのと、実際の出来事の中でそれが起きるのは、全然違う。今日の羊羹の話は、まさにそれでした。自分でフレームワークに気づいて、数時間後に現実がその反対側を見せてくれた。あれがJDSを何年も学んでる人でも、日常でパッと気づける人って本当に少ないんです。</p>
+      <p>同じ出来事の中に複数のフレームワークが重なっている、ということも今日見えました。一度に全部見ようとしなくていい。一つずつ取り出して、それぞれに反対側を見にいく。この積み重ねが、腑に落ちることにつながっていきます。</p>
+      <p class="signature">前田薫</p>
+    </section>
+
+  </main>
+
+<script id="kaoru-juku-password-guard-v1">
+(function() {
+  const PASS_HASH = '5ccc5274b688d517a2da7384ca2077c1b95451108b20e9456f0fd32c8e6e928e';
+  const STORAGE_KEY = 'kaoru_juku_auth_v2';
+  function unlock() { document.body.classList.remove('kj-auth-locked'); const o=document.getElementById('kj-auth-overlay'); if(o) o.remove(); }
+  async function sha256(text) { const d=new TextEncoder().encode(text); const h=await crypto.subtle.digest('SHA-256',d); return Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,'0')).join(''); }
+  function checkSaved() { if(localStorage.getItem(STORAGE_KEY)===PASS_HASH) unlock(); }
+  function render() {
+    if(!document.body.classList.contains('kj-auth-locked')) return;
+    const overlay=document.createElement('div'); overlay.id='kj-auth-overlay';
+    overlay.innerHTML=`<div class="kj-auth-card"><div class="kj-auth-label">Kaoru Juku</div><h1>メンバー専用ページ</h1><p>このページを見るには、パスワードを入力してください。</p><input type="password" id="kj-auth-password" autocomplete="current-password" placeholder="パスワード"><button type="button" id="kj-auth-submit">表示する</button><div class="kj-auth-error" id="kj-auth-error"></div></div>`;
+    document.body.appendChild(overlay);
+    const input=document.getElementById('kj-auth-password');
+    const error=document.getElementById('kj-auth-error');
+    async function submit() { const digest=await sha256(input.value||''); if(digest===PASS_HASH){localStorage.setItem(STORAGE_KEY,PASS_HASH);unlock();}else{error.textContent='パスワードが違います。';input.value='';input.focus();} }
+    document.getElementById('kj-auth-submit').addEventListener('click',submit);
+    input.addEventListener('keydown',function(e){if(e.key==='Enter')submit();});
+    setTimeout(()=>input.focus(),50);
+  }
+  checkSaved();
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',render); else render();
+})();
+</script>
+</body>
+</html>
