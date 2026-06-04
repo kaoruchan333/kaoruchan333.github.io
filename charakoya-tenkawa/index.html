@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>天川 再生のいとなみ｜チャラコ屋 共創ドラフト</title>
+  <meta name="description" content="チャラコ屋メンバーと前田薫が、天川村で育てる再生体験企画の共有用ドラフトページ。2026年8月26日 第0期プロトタイプに向けた提案。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #171513;
+      --night: #08120f;
+      --deep: #111d18;
+      --forest: #1d322a;
+      --moss: #506b55;
+      --water: #84a9a1;
+      --paper: #f7f1e8;
+      --shell: #e9ddcc;
+      --gold: #b8975a;
+      --gold-soft: rgba(184, 151, 90, .16);
+      --white-soft: rgba(255,255,255,.72);
+      --muted: #746b61;
+      --line: rgba(255,255,255,.14);
+      --line-dark: rgba(23,21,19,.14);
+      --serif: "Noto Serif JP", serif;
+      --sans: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--night); }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      line-height: 1.95;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    p, h1, h2, h3 { margin-top: 0; }
+
+    .progress {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+      height: 3px;
+      background: rgba(184,151,90,.16);
+    }
+    .progress span {
+      display: block;
+      width: var(--scroll, 0%);
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--water));
+    }
+
+    .nav {
+      position: fixed;
+      inset: 3px 0 auto;
+      z-index: 90;
+      color: rgba(255,255,255,.84);
+      transition: background .25s ease, color .25s ease, border-color .25s ease;
+    }
+    .nav.is-scrolled {
+      color: var(--deep);
+      background: rgba(247,241,232,.9);
+      border-bottom: 1px solid rgba(23,21,19,.1);
+      backdrop-filter: blur(16px);
+    }
+    .nav-inner {
+      width: min(1180px, calc(100% - 32px));
+      min-height: 64px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      white-space: nowrap;
+    }
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(184,151,90,.7);
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-family: var(--serif);
+    }
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a {
+      min-height: 36px;
+      padding: 0 12px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      opacity: .82;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { background: rgba(184,151,90,.13); opacity: 1; }
+
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background: var(--night);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      transform: scale(1.04) translateY(var(--hero-y, 0px));
+      transition: transform .08s linear;
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 52%;
+      filter: saturate(1.02) contrast(1.06);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 72% 22%, rgba(184,151,90,.2), transparent 28%),
+        radial-gradient(circle at 20% 78%, rgba(132,169,161,.18), transparent 30%),
+        linear-gradient(90deg, rgba(8,18,15,.92), rgba(8,18,15,.62) 48%, rgba(8,18,15,.2)),
+        linear-gradient(180deg, rgba(8,18,15,.16), rgba(8,18,15,.82));
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: min(1180px, calc(100% - 32px));
+      min-height: 100svh;
+      margin: 0 auto;
+      padding: 136px 0 78px;
+      display: grid;
+      grid-template-columns: minmax(0, .74fr) minmax(330px, .42fr);
+      gap: clamp(36px, 7vw, 96px);
+      align-items: end;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: rgba(184,151,90,.75);
+    }
+    h1 {
+      max-width: 11em;
+      margin-bottom: 28px;
+      font-family: var(--serif);
+      font-size: clamp(42px, 6.3vw, 84px);
+      font-weight: 400;
+      letter-spacing: .045em;
+      line-height: 1.24;
+      text-wrap: balance;
+    }
+    .hero-lead {
+      max-width: 42em;
+      margin: 0;
+      color: rgba(255,255,255,.82);
+      font-size: clamp(15px, 1.15vw, 18px);
+      line-height: 2.12;
+    }
+    .hero-panel {
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,.23);
+      border-radius: 12px;
+      background: rgba(247,241,232,.1);
+      box-shadow: 0 34px 100px rgba(0,0,0,.28);
+      backdrop-filter: blur(18px);
+    }
+    .hero-panel .label {
+      margin: 0 0 18px;
+      color: rgba(255,255,255,.54);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .hero-panel dl { margin: 0; display: grid; gap: 16px; }
+    .hero-panel div {
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255,255,255,.14);
+    }
+    .hero-panel div:last-child { border-bottom: 0; padding-bottom: 0; }
+    .hero-panel dt {
+      color: rgba(255,255,255,.44);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .hero-panel dd {
+      margin: 4px 0 0;
+      color: rgba(255,255,255,.88);
+      font-family: var(--serif);
+      line-height: 1.7;
+    }
+    .scroll {
+      position: absolute;
+      left: 50%;
+      bottom: 34px;
+      z-index: 2;
+      transform: translateX(-50%);
+      display: grid;
+      justify-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,.24);
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .scroll::after {
+      content: "";
+      width: 1px;
+      height: 46px;
+      background: rgba(255,255,255,.18);
+    }
+
+    .section {
+      position: relative;
+      padding: clamp(84px, 10vw, 132px) 0;
+    }
+    .dark { background: var(--deep); color: #fff; }
+    .forest { background: var(--forest); color: #fff; }
+    .paper { background: var(--paper); color: var(--ink); }
+    .shell { background: var(--shell); color: var(--ink); }
+    .wrap {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .narrow { width: min(760px, calc(100% - 32px)); }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 34px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+    .section-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: currentColor;
+      opacity: .28;
+    }
+    h2 {
+      margin-bottom: 34px;
+      font-family: var(--serif);
+      font-size: clamp(28px, 4.2vw, 52px);
+      font-weight: 400;
+      letter-spacing: .035em;
+      line-height: 1.45;
+      text-wrap: balance;
+    }
+    h3 {
+      margin-bottom: 16px;
+      font-family: var(--serif);
+      font-size: clamp(19px, 2vw, 25px);
+      font-weight: 500;
+      letter-spacing: .03em;
+      line-height: 1.5;
+    }
+    p {
+      margin-bottom: 24px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 2.15;
+    }
+    .dark p, .forest p { color: rgba(255,255,255,.62); }
+    .lead {
+      font-family: var(--serif);
+      font-size: clamp(18px, 2.1vw, 25px);
+      color: inherit;
+      line-height: 2;
+    }
+    .dark .lead, .forest .lead { color: rgba(255,255,255,.86); }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: .86fr 1.14fr;
+      gap: clamp(32px, 5vw, 72px);
+      align-items: center;
+    }
+    .photo-frame {
+      position: relative;
+      min-height: 520px;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 28px 88px rgba(0,0,0,.18);
+      background: var(--deep);
+    }
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      object-fit: cover;
+    }
+    .photo-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 55%, rgba(8,18,15,.58));
+    }
+    .caption {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 20px;
+      z-index: 2;
+      color: rgba(255,255,255,.76);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .quote-band {
+      margin: 48px 0 0;
+      border-left: 1px solid var(--gold);
+      padding: 8px 0 8px 28px;
+    }
+    .quote-band p {
+      margin: 0;
+      color: inherit;
+      font-family: var(--serif);
+      font-size: clamp(20px, 3vw, 36px);
+      line-height: 1.8;
+    }
+
+    .voices {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 46px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.13);
+    }
+    .voice {
+      min-height: 260px;
+      padding: 30px;
+      background: rgba(8,18,15,.26);
+    }
+    .voice .name {
+      margin: 0 0 16px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .voice p { margin: 0; color: rgba(255,255,255,.72); font-size: 14px; }
+
+    .image-strip {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr 1fr;
+      gap: 12px;
+      margin-top: 54px;
+    }
+    .image-strip figure {
+      margin: 0;
+      min-height: 360px;
+      overflow: hidden;
+      border-radius: 10px;
+      background: var(--deep);
+    }
+    .image-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s ease;
+    }
+    .image-strip figure:hover img { transform: scale(1.04); }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(28px, 5vw, 70px);
+      align-items: start;
+    }
+    .panel {
+      border: 1px solid var(--line-dark);
+      border-radius: 10px;
+      padding: 30px;
+      background: rgba(255,255,255,.4);
+    }
+    .dark .panel, .forest .panel {
+      border-color: rgba(255,255,255,.15);
+      background: rgba(255,255,255,.05);
+    }
+    .panel p:last-child { margin-bottom: 0; }
+    .mini-label {
+      margin: 0 0 14px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .program {
+      display: grid;
+      gap: 12px;
+      margin-top: 42px;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 24px;
+      padding: 24px 0;
+      border-top: 1px solid var(--line-dark);
+    }
+    .dark .step, .forest .step { border-color: rgba(255,255,255,.14); }
+    .step .time {
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: 18px;
+    }
+    .step p { margin-bottom: 0; }
+
+    .guesthouse {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: clamp(30px, 5vw, 72px);
+      align-items: center;
+    }
+    .link-button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 46px;
+      padding: 0 22px;
+      margin-top: 12px;
+      border: 1px solid rgba(184,151,90,.58);
+      border-radius: 999px;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .05em;
+      transition: background .2s ease, color .2s ease;
+    }
+    .link-button:hover {
+      background: var(--gold);
+      color: var(--night);
+    }
+
+    .questions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 44px;
+      background: rgba(23,21,19,.13);
+      border: 1px solid rgba(23,21,19,.12);
+    }
+    .question {
+      min-height: 188px;
+      padding: 30px;
+      background: var(--paper);
+    }
+    .question span {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: 28px;
+    }
+    .question p { margin: 0; color: var(--ink); }
+
+    .closing {
+      min-height: 78vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background:
+        linear-gradient(180deg, rgba(8,18,15,.68), rgba(8,18,15,.86)),
+        url("photos/shingetsu.jpg") center/cover;
+      color: #fff;
+    }
+    .closing .wrap { width: min(820px, calc(100% - 32px)); }
+    .closing h2 { margin-bottom: 30px; }
+    .closing p { color: rgba(255,255,255,.72); }
+    footer {
+      padding: 42px 24px;
+      background: var(--night);
+      color: rgba(255,255,255,.48);
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: .04em;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      .hero-inner,
+      .intro-grid,
+      .two-col,
+      .guesthouse {
+        grid-template-columns: 1fr;
+      }
+      .hero-inner { align-items: end; padding-top: 112px; }
+      .hero-panel { max-width: 520px; }
+      .voices { grid-template-columns: 1fr 1fr; }
+      .image-strip { grid-template-columns: 1fr; }
+      .image-strip figure { min-height: 300px; }
+      .questions { grid-template-columns: 1fr; }
+      .photo-frame { min-height: 420px; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 560px) {
+      .hero-inner { padding-bottom: 96px; }
+      h1 { font-size: 38px; }
+      .section { padding: 72px 0; }
+      .voices { grid-template-columns: 1fr; }
+      .voice { min-height: auto; }
+      .step { grid-template-columns: 1fr; gap: 8px; }
+      .photo-frame { min-height: 360px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress"><span></span></div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top"><span class="brand-mark">再</span><span>天川 再生のいとなみ</span></a>
+      <div class="nav-links">
+        <a href="#purpose">意図</a>
+        <a href="#voices">第2回MTG</a>
+        <a href="#prototype">8月26日</a>
+        <a href="#seirokuan">清緑庵</a>
+        <a href="#questions">相談したいこと</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="top" class="hero">
+    <div class="hero-bg"><img src="photos/dorogawa-night-wide.jpg" alt="夜の洞川温泉街"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Draft for Charakoya</div>
+        <h1>積み重ねてきたものを、<br>一度ほどく。</h1>
+        <p class="hero-lead">
+          チャラコ屋のみなさんへ。これは参加募集ページではなく、8月26日に天川村で試せる「再生体験」の見せ方を共有するためのドラフトです。
+          第2回の対話で見えてきた言葉を、天川の写真と体験導線に重ねました。
+        </p>
+      </div>
+      <aside class="hero-panel">
+        <p class="label">Prototype</p>
+        <dl>
+          <div>
+            <dt>Date</dt>
+            <dd>2026年8月26日（水）</dd>
+          </div>
+          <div>
+            <dt>Working Title</dt>
+            <dd>天川 再生のいとなみ<br>Tenkawa Regeneration Retreat</dd>
+          </div>
+          <div>
+            <dt>For</dt>
+            <dd>経営者・リーダー / 日本の精神文化に惹かれる海外ゲスト</dd>
+          </div>
+          <div>
+            <dt>Position</dt>
+            <dd>第0期プロトタイプ。完成商品ではなく、実際に迎えて磨くための一日。</dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+    <div class="scroll">Scroll</div>
+  </header>
+
+  <main>
+    <section id="purpose" class="section paper">
+      <div class="wrap intro-grid">
+        <div class="photo-frame reveal">
+          <img src="photos/benzaiten-torii.jpg" alt="天河大辨財天社の鳥居">
+          <span class="caption">天川には、観光名所としてではなく、人が自分の感覚へ戻るための場の力があります。</span>
+        </div>
+        <div class="reveal">
+          <div class="section-label">Why This Page</div>
+          <h2>これは、売るためのページではありません。</h2>
+          <p class="lead">
+            まずは、チャラコ屋のみなさんと「こういう形で天川の体験を見せられる」という共通イメージを持つためのページです。
+          </p>
+          <p>
+            参加者を集める前に、企画の芯がどこにあるのか。誰に何を届けるのか。天川村という場が、どんな意味でこの企画に必要なのか。
+            その輪郭を、言葉だけではなく、写真、余白、流れとして一度見える形にしています。
+          </p>
+          <div class="quote-band">
+            <p>観光ではなく、感覚を取り戻す。<br>学びではなく、あり方が変わる。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="voices" class="section dark">
+      <div class="wrap reveal">
+        <div class="section-label">From The 2nd Meeting</div>
+        <h2>第2回の対話で、<br>「再生」の中身が深まりました。</h2>
+        <p class="lead">
+          第1回で見えた言葉は「再生」。第2回では、それが「感の再生」「文化を残すこと」「内省」「来た時よりも美しく」「ジャッジを外すあり方」へと開いていきました。
+        </p>
+        <div class="voices">
+          <div class="voice">
+            <p class="name">Takano</p>
+            <p>経済合理性だけでは残せない、文化を大切にする気持ち。修験道を、日本文化の深い根としてもう一度受け取り直す視点。</p>
+          </div>
+          <div class="voice">
+            <p class="name">Ueyama</p>
+            <p>自己の内省の時間。日常に戻ったあと、5分でも自分に戻る時間が生まれること。そして、来た時よりも美しく。</p>
+          </div>
+          <div class="voice">
+            <p class="name">Hokuto</p>
+            <p>感性、感動、感情、身体感覚、神や自然と調和する感覚。それらをまとめた「感」の再生。</p>
+          </div>
+          <div class="voice">
+            <p class="name">Kaoru</p>
+            <p>修験道を道徳にしない。正しくなるためではなく、裁かず、自然とそうしたくなる自分へ戻ること。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell">
+      <div class="wrap">
+        <div class="two-col">
+          <div class="reveal">
+            <div class="section-label">Core</div>
+            <h2>この企画で扱うのは、足し算ではなく、引き算です。</h2>
+            <p>
+              現代の人は、情報、役割、肩書き、正しさ、成果を積み重ねすぎているのかもしれません。
+              だからこそ天川で行うなら、さらに知識を足すのではなく、いったんほどく時間にしたい。
+            </p>
+            <p>
+              呼吸に戻る。水の音を聴く。祈りの場に立つ。言葉になる前の感覚を、自分の中で受け取る。
+              そのあとに、薫のコーチングで体験を自分の言葉に戻す。
+            </p>
+          </div>
+          <div class="panel reveal">
+            <p class="mini-label">Working Concept</p>
+            <h3>天川村という修験道の場で、積み重ねすぎた情報・役割・ジャッジをほどき、失われかけた「感」を取り戻す。</h3>
+            <p>
+              ここでいう「感」は、感情だけではありません。身体で感じる力、自然と調和する感覚、手を合わせたくなる感覚、目の前の出来事を裁かずに受け取る力、自分の内側から湧く判断軸を含みます。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section forest">
+      <div class="wrap reveal">
+        <div class="section-label">Tenkawa Images</div>
+        <h2>体験の言葉は、<br>場の写真からも立ち上がります。</h2>
+        <p class="lead">
+          鳥居、川の光、洞川の夜、大峯の門、坐禅。これらは飾りではなく、企画の意味を支える一次情報です。
+        </p>
+        <div class="image-strip">
+          <figure><img src="photos/morning-water-light.jpg" alt="朝の水辺の光"></figure>
+          <figure><img src="photos/omine-gate.jpg" alt="大峯山の門"></figure>
+          <figure><img src="photos/zazen.jpg" alt="坐禅の場"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="prototype" class="section paper">
+      <div class="wrap">
+        <div class="section-label">August 26</div>
+        <h2>8月26日は、完成版ではなく、<br>第0期として実際に迎える日。</h2>
+        <p class="lead">
+          ただ会議で言葉を整えるだけでは、この企画は育ちません。少人数でも実際に人を迎え、天川で何が起きるのかを見る。そのためのプロトタイプとして置きます。
+        </p>
+        <div class="program">
+          <div class="step reveal">
+            <div class="time">10:00</div>
+            <div>
+              <h3>集合 / 天川に入る</h3>
+              <p>洞川・龍泉寺周辺、または宿泊拠点に集合。観光案内ではなく、今日の場に入るための短いオリエンテーションから始めます。</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="time">11:00</div>
+            <div>
+              <h3>水と祈りの場に触れる</h3>
+              <p>川、橋、祈りの場、洞川の町を歩きながら、身体の速度を落とします。説明よりも、まず感覚を開く時間。</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="time">13:30</div>
+            <div>
+              <h3>坐禅 / 呼吸 / 内省</h3>
+              <p>望月ご住職の関与が可能な場合は、友引という条件を踏まえ、坐禅・読経・祈りの正式性を組み込みます。</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="time">15:00</div>
+            <div>
+              <h3>問いと対話</h3>
+              <p>体験をすぐに説明にしない。何がほどけたのか、何を感じたのか、何を裁いていたのか。薫の問いで言葉に戻します。</p>
+            </div>
+          </div>
+          <div class="step reveal">
+            <div class="time">17:00</div>
+            <div>
+              <h3>次の一歩を置く</h3>
+              <p>日常に戻ったあと、何を変えるのか。大きな決意ではなく、明日から呼吸できる小さな一歩を置いて閉じます。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="seirokuan" class="section dark">
+      <div class="wrap guesthouse">
+        <div class="reveal">
+          <div class="section-label">Possible Base</div>
+          <h2>清緑庵は、<br>対話と滞在の拠点になり得ます。</h2>
+          <p>
+            洞川温泉の上流、大峯山麓にあるゲストハウスSeiroku庵。公式サイトでは、ワークショップ、セミナー、勉強会での利用が案内されています。
+          </p>
+          <p>
+            談話室にはオーナーこだわりのオーディオ設備があり、リビング、キッチン、囲炉裏、寝室、ロフト、共用スペースも整っています。貸切の場合は20人分の食器も用意できるとのこと。
+          </p>
+          <a class="link-button" href="https://darasuke.net/seirokuan/index.html" target="_blank" rel="noopener">清緑庵の公式ページを見る</a>
+        </div>
+        <div class="photo-frame reveal">
+          <img src="photos/dorogawa-bridge-town.png" alt="洞川の橋と町並み">
+          <span class="caption">宿は、単なる寝る場所ではなく、体験後の対話が深まる場所として設計できます。</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell">
+      <div class="wrap">
+        <div class="section-label">Two Gates</div>
+        <h2>出口は二つ。<br>外国人向けにも、経営者向けにも育てられます。</h2>
+        <div class="two-col">
+          <div class="panel reveal">
+            <p class="mini-label">For Global Guests</p>
+            <h3>日本の深層文化に触れたい人へ。</h3>
+            <p>
+              観光地を巡るのではなく、神仏習合、修験道、祈り、坐禅、水、山の感覚を通して、日本人の精神性を身体で受け取る体験。
+              短時間のライト版より、1日以上の深い滞在が自然です。
+            </p>
+          </div>
+          <div class="panel reveal">
+            <p class="mini-label">For Leaders</p>
+            <h3>判断軸を整えたい経営者へ。</h3>
+            <p>
+              情報と役割を積み重ねてきた人が、一度それをほどき、内省と対話によって自分の判断軸に戻る時間。
+              日帰りから始め、継続的なリトリートへ育てられます。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="questions" class="section paper">
+      <div class="wrap reveal">
+        <div class="section-label">Questions For Charakoya</div>
+        <h2>次に、チャラコ屋のみなさんと相談したいこと。</h2>
+        <p class="lead">
+          このページは答えではありません。8月26日に向けて、企画を一緒に現実へ落とすための問いです。
+        </p>
+        <div class="questions">
+          <div class="question">
+            <span>01</span>
+            <p>第0期で、実際に誰を何名迎えるのが自然か。</p>
+          </div>
+          <div class="question">
+            <span>02</span>
+            <p>日帰りで試すのか、清緑庵などを使って宿泊型で試すのか。</p>
+          </div>
+          <div class="question">
+            <span>03</span>
+            <p>参加費は、モニター価格としていくらに置くのか。</p>
+          </div>
+          <div class="question">
+            <span>04</span>
+            <p>チャラコ屋、前田薫、北斗さん、望月ご住職、それぞれの役割をどう分けるのか。</p>
+          </div>
+          <div class="question">
+            <span>05</span>
+            <p>第0期の体験後、どんな声や記録を残せば正式版へ育つのか。</p>
+          </div>
+          <div class="question">
+            <span>06</span>
+            <p>この企画を、チャラコ屋の事業としてどう育てたいのか。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="wrap reveal">
+        <div class="section-label">Closing</div>
+        <h2>これは、チャラコ屋に押し付ける完成案ではありません。</h2>
+        <p class="lead">
+          ただ、天川でやるなら、ここまでの深さで見せられる。<br>
+          ここから先は、チャラコ屋のみなさんの言葉と役割で育てたいです。
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    天川 再生のいとなみ / チャラコ屋 共創ドラフト / 前田薫
+  </footer>
+
+  <script>
+    (function(){
+      var root = document.documentElement;
+      var nav = document.querySelector('.nav');
+      var heroBg = document.querySelector('.hero-bg');
+      function onScroll(){
+        var max = document.body.scrollHeight - window.innerHeight;
+        var pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+        root.style.setProperty('--scroll', pct + '%');
+        root.style.setProperty('--hero-y', Math.min(window.scrollY * 0.12, 80) + 'px');
+        nav.classList.toggle('is-scrolled', window.scrollY > 32);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+    })();
+  </script>
+</body>
+</html>
