@@ -97,6 +97,7 @@
       font-size: .9rem;
     }
     .button.light { background: transparent; border-color: rgba(255,255,255,.62); }
+    .button.paper { background: var(--gold); border-color: var(--gold); }
     .section { padding: 72px 0; }
     .section + .section { border-top: 1px solid var(--line); }
     .section-head {
@@ -226,6 +227,24 @@
       font-size: 1.26rem;
       line-height: 1.8;
     }
+    .source-list {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--paper);
+    }
+    .source-list p {
+      color: var(--soft);
+      font-size: .82rem;
+      line-height: 1.72;
+    }
+    .source-list a {
+      color: var(--green);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
     .table {
       width: 100%;
       border-collapse: collapse;
@@ -270,6 +289,7 @@
       <div class="actions">
         <a class="button" href="#parent">保護者向けを見る</a>
         <a class="button light" href="#coach">指導者向けを見る</a>
+        <a class="button paper" href="downloads/soccer-parent-player-coaching-worksheet.pdf" download>ワークシートPDF</a>
       </div>
     </div>
   </header>
@@ -401,6 +421,34 @@
         </article>
       </div>
       <div class="quote">サッカーのメンタルは、気合いではなく、認知と身体の戻り先を育てる稽古です。</div>
+    </section>
+
+    <section class="section shell" id="worksheet">
+      <div class="section-head">
+        <div>
+          <span class="label">DOWNLOAD WORKSHEET</span>
+          <h2>頭で考えるだけでなく、<br>ペンを持って書く。</h2>
+        </div>
+        <p>このページは読むだけで終わらせません。試合後の出来事、感情、身体反応、片側認知、次に戻る身体の基準点を、紙に書き出すためのPDFワークシートを用意しました。保護者、選手、指導者それぞれが使える構成です。</p>
+      </div>
+      <div class="two">
+        <article class="card">
+          <h3>手で書くことの意味</h3>
+          <p>手書きは、視覚、手指の運動、紙やペンの感覚、言葉の選択を同時に使います。近年のEEG研究では、手書き時にタイピングより広い脳内結合パターンが観察されています。ただし、学習効果が「何千倍」と断定できる研究ではありません。</p>
+        </article>
+        <article class="card">
+          <h3>このワークでやること</h3>
+          <p>何が起きたかを書く。何を感じたかを書く。身体がどう反応したかを書く。ミスや結果を何として見ていたかを書く。最後に、次に戻る身体の基準点を一つ決めます。</p>
+        </article>
+      </div>
+      <div class="actions" style="margin-top:24px;">
+        <a class="button" href="downloads/soccer-parent-player-coaching-worksheet.pdf" download>PDFをダウンロードする</a>
+        <a class="button" href="downloads/soccer-parent-player-coaching-worksheet.html">ブラウザで読む</a>
+        <a class="button light" style="color:var(--green);border-color:var(--green);" href="https://note.com/myuta_soccer" target="_blank" rel="noopener">裕太のnoteを見る</a>
+      </div>
+      <div class="source-list">
+        <p>根拠メモ: Van der Weel & Van der Meer (2024) は、36名の大学生を対象に、手書き時にタイピング時より広い脳内結合パターンを観察しました。一方で、Pinet & Longcamp (2025) のコメント論文は、この研究が直接の学習テストを含まないこと、教育現場への一般化には注意が必要なことを指摘しています。Mueller & Oppenheimer (2014) は、手書きノートがタイピングより逐語的になりにくく、概念理解に有利な可能性を示しました。したがってここでは、「手で書くことは、身体と認知をつなぐ実践として有効な可能性がある」と慎重に扱います。<br>参考: <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2023.1219945/full" target="_blank" rel="noopener">Frontiers 2024 EEG study</a> / <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1517235/full" target="_blank" rel="noopener">Frontiers 2025 commentary</a> / <a href="https://www.psychologicalscience.org/news/taking-notes-by-hand-benefits-recall-researchers-find.html" target="_blank" rel="noopener">APS summary of Mueller & Oppenheimer</a></p>
+      </div>
     </section>
 
     <section class="section shell band" id="parent">
