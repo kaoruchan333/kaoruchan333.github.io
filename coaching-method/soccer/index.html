@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>サッカー・スポーツ指導に活かすコーチング | 前田薫</title>
+  <meta name="description" content="サッカーを頑張る子ども、保護者、指導者のために、技術とメンタルをつなぐコーチング教材。感情を出せる場、身体の基準点、可能性を閉じない関わり方。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #25312f;
+      --soft: #58645f;
+      --green: #254f43;
+      --grass: #567968;
+      --gold: #b08445;
+      --paper: #fffdf8;
+      --base: #f4f3ee;
+      --line: #ddd8cd;
+      --mist: #e8efec;
+      --white: #fff;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--base);
+      font-family: "Noto Sans JP", sans-serif;
+      line-height: 1.85;
+      letter-spacing: 0;
+    }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { font-family: "Noto Serif JP", serif; font-weight: 600; }
+    .shell { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .hero {
+      min-height: min(84svh, 760px);
+      display: grid;
+      align-items: end;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(20,37,32,.84), rgba(20,37,32,.58) 52%, rgba(20,37,32,.26)),
+        url("../../coaching/photos/soccer-gym.jpg") center / cover no-repeat;
+    }
+    .top {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(var(--max), calc(100% - 40px));
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--white);
+      z-index: 2;
+    }
+    .brand { font-family: "Noto Serif JP", serif; font-weight: 700; }
+    .nav { display: flex; flex-wrap: wrap; gap: 16px; font-size: .88rem; }
+    .nav a { opacity: .84; }
+    .nav a:hover { opacity: 1; }
+    .hero-inner { padding: 132px 0 68px; }
+    .eyebrow {
+      margin-bottom: 18px;
+      color: #dac39a;
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+    h1 {
+      max-width: 760px;
+      font-size: clamp(2.1rem, 4vw, 3.55rem);
+      line-height: 1.36;
+    }
+    .hero-copy {
+      max-width: 660px;
+      margin-top: 24px;
+      color: rgba(255,255,255,.9);
+      font-size: 1.02rem;
+      line-height: 2;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 10px 20px;
+      border: 1px solid var(--green);
+      border-radius: 6px;
+      background: var(--green);
+      color: var(--white);
+      font-weight: 700;
+      font-size: .9rem;
+    }
+    .button.light { background: transparent; border-color: rgba(255,255,255,.62); }
+    .section { padding: 72px 0; }
+    .section + .section { border-top: 1px solid var(--line); }
+    .section-head {
+      display: grid;
+      grid-template-columns: .86fr 1.14fr;
+      gap: 44px;
+      margin-bottom: 38px;
+    }
+    .label {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: .73rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+    h2 { font-size: clamp(1.58rem, 2.6vw, 2.2rem); line-height: 1.55; }
+    .section-head p { color: var(--soft); font-size: .96rem; }
+    .principle {
+      padding: 50px max(22px, calc((100% - var(--max)) / 2));
+      background: var(--green);
+      color: var(--white);
+    }
+    .principle blockquote {
+      max-width: var(--max);
+      margin: 0 auto;
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(1.45rem, 3vw, 2.35rem);
+      line-height: 1.75;
+    }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
+    .card {
+      min-height: 100%;
+      padding: 24px 22px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--paper);
+    }
+    .card h3 { margin-bottom: 10px; font-size: 1.08rem; line-height: 1.55; }
+    .card p, .card li { color: var(--soft); font-size: .88rem; line-height: 1.78; }
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .step {
+      padding: 22px 18px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--paper);
+    }
+    .step span {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--gold);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+    .step h3 { margin-bottom: 8px; font-size: 1rem; }
+    .step p { color: var(--soft); font-size: .84rem; }
+    .band { background: var(--mist); }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .quote {
+      margin-top: 22px;
+      padding: 23px 25px;
+      border-left: 4px solid var(--gold);
+      background: var(--paper);
+      font-family: "Noto Serif JP", serif;
+      font-size: 1.26rem;
+      line-height: 1.8;
+    }
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--paper);
+      font-size: .88rem;
+    }
+    th, td { border: 1px solid var(--line); padding: 12px 13px; vertical-align: top; }
+    th { background: #eef3f0; color: var(--green); }
+    footer { padding: 30px 0 52px; border-top: 1px solid var(--line); color: var(--soft); font-size: .83rem; }
+    @media (max-width: 860px) {
+      .top { align-items: flex-start; flex-direction: column; padding-top: 18px; gap: 10px; }
+      .hero-inner { padding-top: 156px; }
+      .section-head, .two { grid-template-columns: 1fr; gap: 28px; }
+      .grid { grid-template-columns: 1fr; }
+      .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 540px) {
+      .shell, .top { width: calc(100% - 30px); }
+      h1 { font-size: 2rem; }
+      .flow { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="top">
+      <a class="brand" href="../../">KAORU MAEDA</a>
+      <nav class="nav" aria-label="主なページ">
+        <a href="../../">ホーム</a>
+        <a href="../">コーチング学習室</a>
+        <a href="../../coaching/">個別コーチング</a>
+        <a href="../../kaoru-juku/">かおる塾</a>
+      </nav>
+    </div>
+    <div class="shell hero-inner">
+      <div class="eyebrow">SOCCER / SPORTS COACHING</div>
+      <h1>子どもの可能性を閉じない、サッカー親と指導者のコーチング</h1>
+      <p class="hero-copy">「周りを見ろ」「判断しろ」「自信を持て」と言う前に、子どもが感情を出せる場と、自分の武器へ戻れる身体の基準点をつくる。技術とメンタルを分けずに育てる、サッカー・スポーツ指導編です。</p>
+      <div class="actions">
+        <a class="button" href="#parent">保護者向けを見る</a>
+        <a class="button light" href="#coach">指導者向けを見る</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="principle">
+      <blockquote>試合後に何を言うかより先に、<br>話しても黙っても大丈夫な場をつくる。</blockquote>
+    </section>
+
+    <section class="section shell">
+      <div class="section-head">
+        <div>
+          <span class="label">CORE IDEA</span>
+          <h2>正しいことを言っても、<br>子どもが変わらない理由。</h2>
+        </div>
+        <p>子どもは「周りを見る」「早く判断する」「ミスを切り替える」が大切だと知らないわけではありません。頭では分かっていても、試合中は身体が先に反応します。だから、知識を足すだけでなく、余計な迷いを減らし、身体が戻れる基準点を作る必要があります。</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>頭で分かること</h3>
+          <p>家や練習後に「次は周りを見よう」と考える力。落ち着いた場面では使いやすい。</p>
+        </article>
+        <article class="card">
+          <h3>身体が反応すること</h3>
+          <p>相手が来る、ミスする、親の声が聞こえる。その瞬間に、身体がいつもの反応へ戻る。</p>
+        </article>
+        <article class="card">
+          <h3>戻れる基準点</h3>
+          <p>利き足のポイント、姿勢、呼吸、帰り道の安心。迷った時に戻れるものが選手を支える。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell band" id="parent">
+      <div class="section-head">
+        <div>
+          <span class="label">FOR PARENTS</span>
+          <h2>サッカー親が、<br>まず整えること。</h2>
+        </div>
+        <p>親が焦っていると、子どもは自分の気持ちではなく、親を安心させる答えを探し始めることがあります。子どもを変える前に、親自身の感情と「いいこと / ダメなこと」を一度見ることが、子どもの可能性を閉じない関わりにつながります。</p>
+      </div>
+      <div class="flow">
+        <article class="step">
+          <span>01</span>
+          <h3>評価を急がない</h3>
+          <p>勝ったか、ミスしたかをすぐ言葉にしない。まず一緒に帰る。</p>
+        </article>
+        <article class="step">
+          <span>02</span>
+          <h3>感情を見る</h3>
+          <p>親自身の焦り、悔しさ、不安、期待を責めずに見る。</p>
+        </article>
+        <article class="step">
+          <span>03</span>
+          <h3>握っている前提を見る</h3>
+          <p>活躍することはいい、ミスはダメ、黙るのはダメ。片側の見方に気づく。</p>
+        </article>
+        <article class="step">
+          <span>04</span>
+          <h3>場をつくる</h3>
+          <p>子どもが話しても黙っても大丈夫な帰り道をつくる。</p>
+        </article>
+      </div>
+      <div class="quote">「試合後に黙ることのメリットは何ですか？」<br>この一問は、子どもを問い詰めるためではなく、まず親自身の見方を緩めるための問いです。</div>
+    </section>
+
+    <section class="section shell" id="coach">
+      <div class="section-head">
+        <div>
+          <span class="label">FOR COACHES</span>
+          <h2>指導者が、<br>言葉で足しすぎないために。</h2>
+        </div>
+        <p>指導者が「分かってほしい」「早く変わってほしい」と思うほど、言葉が増えます。でも、選手が試合で使える力は、説明の量ではなく、身体に戻れる基準と、失敗しても試せる場から育ちます。</p>
+      </div>
+      <table class="table">
+        <tr><th>よくある言葉</th><th>身体の基準へ翻訳する</th></tr>
+        <tr><td>周りを見ろ</td><td>顔を上げられるボールの置き所、身体の向き、準備の姿勢を練習する。</td></tr>
+        <tr><td>判断を早くしろ</td><td>判断を急がせる前に、次のプレーへ移れる置き所を反復する。</td></tr>
+        <tr><td>自信を持て</td><td>声かけで信じ込ませるのではなく、再現できる成功基準を身体に作る。</td></tr>
+        <tr><td>ミスを引きずるな</td><td>ミスを否定せず、身体のどこがずれたかを教えてくれる情報として扱う。</td></tr>
+      </table>
+    </section>
+
+    <section class="section shell">
+      <div class="section-head">
+        <div>
+          <span class="label">KIKIASHI METHOD</span>
+          <h2>利き足のポイントは、<br>迷った時に戻れる身体の基準点。</h2>
+        </div>
+        <p>利き足の小指の前にボールを置くことは、単なるフォームではありません。選手が自分の武器へ戻り、次のプレーに移るための身体化された基準点です。判断力を言葉で求めるのではなく、判断が起きやすい身体の状態を作る。ここに、技術とメンタルの接続があります。</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>余計な迷いを減らす</h3>
+          <p>どちらの足で止めるか、どこに置くか、どう動くか。迷いが減るほど、判断は速くなる。</p>
+        </article>
+        <article class="card">
+          <h3>自分の武器が立ち上がる</h3>
+          <p>両足を否定するのではなく、まず武器を明確にする。武器があるから逆足も意味を持つ。</p>
+        </article>
+        <article class="card">
+          <h3>身体から整える</h3>
+          <p>頭で分かっているのにできない時は、言葉より身体の基準点を反復する。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell">
+      <div class="section-head">
+        <div>
+          <span class="label">WORKSHEET</span>
+          <h2>親・選手・指導者が<br>使える小さなワーク。</h2>
+        </div>
+        <p>専門用語を使わず、日常と試合後に使える形へ落とします。深く掘るより先に、安全に言葉を出せることを大切にします。</p>
+      </div>
+      <div class="two">
+        <article class="card">
+          <h3>保護者向け</h3>
+          <ul>
+            <li>今日、子どものサッカーで感情が動いた場面は何ですか。</li>
+            <li>親自身にどんな感情がありましたか。</li>
+            <li>その奥に、どんな「いいこと」「ダメなこと」がありましたか。</li>
+            <li>子どもを変える前に、次の帰り道で一つ手放せることは何ですか。</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>選手向け</h3>
+          <ul>
+            <li>試合中、一番身体が固まった場面はどこですか。</li>
+            <li>その時、何が怖かったですか。</li>
+            <li>利き足のポイントに戻るとしたら、最初に何を意識しますか。</li>
+            <li>次の練習で、身体に覚えさせたい一つの基準は何ですか。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <p>前田薫 / 認知が動くコーチングを学ぶ。サッカー・スポーツ指導編は、裕太くんの現場実践と薫ちゃんの中庸思考・メンタルコーチングを接続しながら更新していきます。</p>
+    </div>
+  </footer>
+</body>
+</html>
