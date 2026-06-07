@@ -142,6 +142,40 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 12px;
     }
+    .chain {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 22px;
+    }
+    .chain-item {
+      min-height: 112px;
+      padding: 17px 14px;
+      border: 1px solid rgba(37,79,67,.18);
+      border-radius: 7px;
+      background: var(--paper);
+    }
+    .chain-item span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+    .chain-item strong {
+      display: block;
+      color: var(--green);
+      font-family: "Noto Serif JP", serif;
+      font-size: .96rem;
+      line-height: 1.55;
+    }
+    .chain-item p {
+      margin-top: 6px;
+      color: var(--soft);
+      font-size: .78rem;
+      line-height: 1.62;
+    }
     .step {
       padding: 22px 18px;
       border: 1px solid var(--line);
@@ -160,6 +194,29 @@
     .step p { color: var(--soft); font-size: .84rem; }
     .band { background: var(--mist); }
     .two { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .stack { display: grid; gap: 14px; }
+    .note {
+      padding: 24px 25px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--paper);
+    }
+    .note h3 { margin-bottom: 10px; font-size: 1.05rem; }
+    .note p { color: var(--soft); font-size: .9rem; }
+    .split-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .mini {
+      padding: 18px 18px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: rgba(255,255,255,.7);
+    }
+    .mini h3 { margin-bottom: 8px; font-size: .98rem; }
+    .mini p { color: var(--soft); font-size: .84rem; line-height: 1.74; }
     .quote {
       margin-top: 22px;
       padding: 23px 25px;
@@ -184,11 +241,14 @@
       .section-head, .two { grid-template-columns: 1fr; gap: 28px; }
       .grid { grid-template-columns: 1fr; }
       .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .chain { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .split-list { grid-template-columns: 1fr; }
     }
     @media (max-width: 540px) {
       .shell, .top { width: calc(100% - 30px); }
       h1 { font-size: 2rem; }
       .flow { grid-template-columns: 1fr; }
+      .chain { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -241,6 +301,106 @@
           <p>利き足のポイント、姿勢、呼吸、帰り道の安心。迷った時に戻れるものが選手を支える。</p>
         </article>
       </div>
+    </section>
+
+    <section class="section shell">
+      <div class="section-head">
+        <div>
+          <span class="label">NEURO / COGNITION / BODY</span>
+          <h2>頭では理解しているのに、<br>試合で身体が変わらない構造。</h2>
+        </div>
+        <p>選手が同じ反応へ戻るのは、気合いが足りないからとは限りません。出来事をどう見たか、過去に何を覚えてきたか、身体が何を危険と判定したか。その連鎖が、試合中の行動を作ります。</p>
+      </div>
+      <div class="chain" aria-label="反応が起きる流れ">
+        <div class="chain-item">
+          <span>01</span>
+          <strong>出来事</strong>
+          <p>ミス、失点、相手の圧、親の声。</p>
+        </div>
+        <div class="chain-item">
+          <span>02</span>
+          <strong>脅威判定</strong>
+          <p>身体が安全か危険かを先に見る。</p>
+        </div>
+        <div class="chain-item">
+          <span>03</span>
+          <strong>予測</strong>
+          <p>怒られる、外される、評価が下がる。</p>
+        </div>
+        <div class="chain-item">
+          <span>04</span>
+          <strong>身体反応</strong>
+          <p>呼吸が浅い、足が止まる、顔が下がる。</p>
+        </div>
+        <div class="chain-item">
+          <span>05</span>
+          <strong>感情</strong>
+          <p>怖い、恥ずかしい、焦る、悔しい。</p>
+        </div>
+        <div class="chain-item">
+          <span>06</span>
+          <strong>行動</strong>
+          <p>無難になる、視野が狭い、次に入れない。</p>
+        </div>
+      </div>
+      <div class="quote">選手に必要なのは「もっと頑張れ」だけではなく、身体が何に反応しているのかを理解し、その戻り先を育てる練習です。</div>
+    </section>
+
+    <section class="section shell band">
+      <div class="section-head">
+        <div>
+          <span class="label">FIVE MODELS</span>
+          <h2>サッカーのメンタルを、<br>5つの視点で見る。</h2>
+        </div>
+        <p>ここでは専門用語を前面に出すのではなく、現場で使える言葉に翻訳します。根性論でも、精神論でも、ただのポジティブ変換でもなく、認知と身体の反応が変わるプロセスとして扱います。</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>感情を抑えるのではなく、手前を見る</h3>
+          <p>「泣くな」「切り替えろ」だけでは、身体の緊張は残ります。感情が出る前に、選手がミスを何として見ていたかを見ます。</p>
+        </article>
+        <article class="card">
+          <h3>恐れを消すのではなく、見直せる力を育てる</h3>
+          <p>怖さがない子が強いのではありません。怖さが出た時に、本当に危険かを見直し、次に入れる子が育っていきます。</p>
+        </article>
+        <article class="card">
+          <h3>認知は身体反応にも影響する</h3>
+          <p>「ミスは終わり」から「ミスは情報」へ見方が変わると、呼吸、視野、次の一歩も少しずつ変わります。</p>
+        </article>
+        <article class="card">
+          <h3>脳は過去から未来を予測する</h3>
+          <p>同じミスでも固まる子と戻れる子がいます。違いは、過去に身体が何を覚えてきたか、何を予測しているかです。</p>
+        </article>
+        <article class="card">
+          <h3>一回の理解ではなく、反復で身体化する</h3>
+          <p>利き足のポイントも、中庸思考も、一回知って終わりではありません。何度も戻ることで、試合中の反応になります。</p>
+        </article>
+        <article class="card">
+          <h3>戻れる基準点を作る</h3>
+          <p>自信を言葉で持たせるのではなく、迷った時に身体が戻れる場所を作る。そこに技術とメンタルの接続があります。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell">
+      <div class="section-head">
+        <div>
+          <span class="label">NOT POSITIVE THINKING</span>
+          <h2>ポジティブに考える、<br>だけでは根本は変わらない。</h2>
+        </div>
+        <p>「大丈夫」「できる」「気にするな」は、時に支えになります。でも、身体がミスを危険として覚えているままなら、強い場面でまた同じ反応へ戻ります。ここで扱うのは、前向きな言葉ではなく、反応を作っている見方そのものです。</p>
+      </div>
+      <div class="split-list">
+        <article class="mini">
+          <h3>よくある関わり</h3>
+          <p>ミスを気にするな。もっと自信を持て。切り替えろ。強い気持ちで行け。これらは感情が出た後に、反応を変えようとする言葉になりやすい。</p>
+        </article>
+        <article class="mini">
+          <h3>このページで育てる関わり</h3>
+          <p>何が起きたか。何を感じたか。ミスを何として見ていたか。身体はどう反応したか。次に戻れる基準点は何か。ここを一つずつ見る。</p>
+        </article>
+      </div>
+      <div class="quote">サッカーのメンタルは、気合いではなく、認知と身体の戻り先を育てる稽古です。</div>
     </section>
 
     <section class="section shell band" id="parent">
