@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>サッカー親と選手のための書くワークシート</title>
+  <style>
+    @page { size: A4; margin: 14mm; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #24312e;
+      background: #fffdf8;
+      font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      line-height: 1.62;
+      letter-spacing: 0;
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-weight: 700; }
+    .page {
+      page-break-after: always;
+      min-height: 268mm;
+      padding: 0;
+    }
+    .page:last-child { page-break-after: auto; }
+    .label {
+      color: #a77c41;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+    h1 {
+      margin-top: 10px;
+      font-size: 27px;
+      line-height: 1.45;
+    }
+    h2 {
+      margin: 18px 0 10px;
+      font-size: 18px;
+      line-height: 1.45;
+      color: #254f43;
+    }
+    h3 {
+      margin: 14px 0 7px;
+      font-size: 14px;
+      color: #254f43;
+    }
+    p, li {
+      font-size: 11px;
+      color: #43504c;
+    }
+    ul { margin: 8px 0 0; padding-left: 18px; }
+    .lead {
+      margin-top: 13px;
+      padding: 13px 15px;
+      border-left: 4px solid #b08445;
+      background: #f3efe4;
+      font-size: 12px;
+      color: #2d3d39;
+    }
+    .box {
+      margin-top: 12px;
+      padding: 12px;
+      border: 1px solid #d9d4c9;
+      border-radius: 5px;
+      background: #fff;
+    }
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .field {
+      margin-top: 8px;
+      border: 1px solid #d8d1c4;
+      min-height: 36px;
+      background:
+        repeating-linear-gradient(#fff, #fff 26px, #edf0ed 27px);
+    }
+    .field.tall { min-height: 88px; }
+    .field.mid { min-height: 64px; }
+    .check {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px 10px;
+      margin-top: 8px;
+    }
+    .check span {
+      font-size: 11px;
+      color: #43504c;
+    }
+    .check span::before {
+      content: "□";
+      margin-right: 6px;
+      color: #254f43;
+    }
+    .small {
+      font-size: 9px;
+      color: #65716d;
+    }
+    .quote {
+      margin-top: 14px;
+      padding: 14px 16px;
+      background: #254f43;
+      color: #fff;
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+    .footer {
+      margin-top: 18px;
+      padding-top: 8px;
+      border-top: 1px solid #ddd8cd;
+      font-size: 9px;
+      color: #65716d;
+    }
+    .source a { color: #254f43; }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <div class="label">SOCCER COACHING WORKSHEET</div>
+    <h1>サッカー親と選手のための<br>「書いて戻る」ワークシート</h1>
+    <p class="lead">このワークは、頭の中で考えるだけで終わらせないためのものです。ペンを持ち、手で書き、書いた言葉を見て、できれば声に出して読む。身体を使って言葉にすることで、出来事・感情・認知・次の行動を整理しやすくします。</p>
+
+    <h2>なぜ、手で書くのか</h2>
+    <div class="box">
+      <p>手書きは、視覚、手指の運動、紙やペンからの感覚、言葉の選択を同時に使います。2024年の高密度EEG研究では、大学生が手書きした時、タイピングより広い脳内結合パターンが観察されました。一方で、この研究は直接の学習テストを含まないため、「手書きなら必ず学習効果が何倍」とまでは言えません。</p>
+      <p style="margin-top:8px;">また、手書きノートはタイピングより逐語的な記録になりにくく、内容を要約しながら書くことで深い処理を促す可能性がある、という研究もあります。だからこのワークでは、速く入力するより、ゆっくり書いて、自分の言葉を見ることを重視します。</p>
+    </div>
+
+    <div class="quote">サッカーのメンタルは、気合いではなく、認知と身体の戻り先を育てる稽古です。</div>
+
+    <h2>使い方</h2>
+    <div class="grid2">
+      <div class="box">
+        <h3>保護者へ</h3>
+        <p>子どもを変えるためではなく、まず自分の見方を整えるために使います。試合後すぐではなく、帰宅後や翌日に書いても大丈夫です。</p>
+      </div>
+      <div class="box">
+        <h3>選手へ</h3>
+        <p>反省文ではありません。ミスや悔しさを、次の練習で戻れる基準点に変えるためのノートです。</p>
+      </div>
+    </div>
+
+    <div class="footer source">
+      参考: Van der Weel & Van der Meer (2024), Frontiers in Psychology / Pinet & Longcamp (2025) commentary / Mueller & Oppenheimer (2014), Psychological Science.
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="label">WORK 1 / PARENT</div>
+    <h1>保護者のための<br>試合後セルフコーチング</h1>
+    <p class="lead">子どもに声をかける前に、親自身の感情と見方を一度紙に置きます。親の焦りが少し緩むと、子どもが話しても黙っても大丈夫な場を作りやすくなります。</p>
+
+    <h2>1. 何が起きましたか</h2>
+    <p>解釈を混ぜず、見えた出来事だけを書きます。</p>
+    <div class="field tall"></div>
+
+    <h2>2. 親である自分には、どんな感情が出ましたか</h2>
+    <div class="check">
+      <span>悔しい</span><span>焦る</span>
+      <span>不安</span><span>怒り</span>
+      <span>恥ずかしい</span><span>がっかり</span>
+      <span>心配</span><span>期待</span>
+    </div>
+    <div class="field mid"></div>
+
+    <h2>3. その感情の奥に、どんな前提がありましたか</h2>
+    <p>例: 活躍することはいいこと / ミスすることはダメ / 黙ることはダメ / 試合に出ることはいいこと</p>
+    <div class="field tall"></div>
+
+    <h2>4. 反対側を一つだけ見ます</h2>
+    <div class="grid2">
+      <div class="box">
+        <h3>プラス側なら</h3>
+        <p>「〇〇であることのデメリットは何ですか？」</p>
+        <div class="field mid"></div>
+      </div>
+      <div class="box">
+        <h3>マイナス側なら</h3>
+        <p>「〇〇であることのメリットは何ですか？」</p>
+        <div class="field mid"></div>
+      </div>
+    </div>
+
+    <h2>5. 次の帰り道で、手放すことを一つ</h2>
+    <p>評価を急がない、質問を減らす、まず黙って隣にいる、など。</p>
+    <div class="field mid"></div>
+  </section>
+
+  <section class="page">
+    <div class="label">WORK 2 / PLAYER</div>
+    <h1>選手のための<br>ミス後に戻るワーク</h1>
+    <p class="lead">ミスをなくすためではなく、ミスした後に自分の武器へ戻るためのワークです。弱さを探すのではなく、次のプレーに入る身体の基準点を作ります。</p>
+
+    <h2>1. 試合中、身体が固まった場面</h2>
+    <p>どの場面で、何が起きましたか。</p>
+    <div class="field tall"></div>
+
+    <h2>2. その時の身体</h2>
+    <div class="check">
+      <span>足が止まった</span><span>呼吸が浅くなった</span>
+      <span>顔が下がった</span><span>視野が狭くなった</span>
+      <span>声が出なかった</span><span>体が重くなった</span>
+    </div>
+    <div class="field mid"></div>
+
+    <h2>3. その時、何が怖かったですか</h2>
+    <p>例: 怒られる / 外される / 親ががっかりする / 自分には才能がないと思う</p>
+    <div class="field tall"></div>
+
+    <h2>4. ミスを何として見ていましたか</h2>
+    <p>例: 終わり / ダメなこと / 評価が下がること / 恥ずかしいこと</p>
+    <div class="field mid"></div>
+
+    <h2>5. 次に戻る身体の基準点</h2>
+    <p>利き足の小指の前、ボールの置き所、呼吸、顔を上げる前の姿勢、ミス後の一歩。</p>
+    <div class="field tall"></div>
+
+    <h2>6. 次の練習で一つだけ反復すること</h2>
+    <div class="field mid"></div>
+  </section>
+
+  <section class="page">
+    <div class="label">WORK 3 / COACH</div>
+    <h1>指導者のための<br>言葉を足しすぎないチェック</h1>
+    <p class="lead">選手が同じ反応へ戻る時、理解していないのではなく、身体が同じ安全反応へ戻っている可能性があります。言葉を増やす前に、戻れる基準点を見ます。</p>
+
+    <h2>1. 選手に何を変えてほしいと思いましたか</h2>
+    <div class="field tall"></div>
+
+    <h2>2. 自分の中にあった焦り</h2>
+    <div class="check">
+      <span>早く変わってほしい</span><span>勝たせたい</span>
+      <span>理解してほしい</span><span>同じミスを見たくない</span>
+      <span>自分の指導が問われる</span><span>保護者の目が気になる</span>
+    </div>
+    <div class="field mid"></div>
+
+    <h2>3. よく言いたくなる言葉</h2>
+    <p>例: 周りを見ろ / 判断を早くしろ / 切り替えろ / 自信を持て</p>
+    <div class="field mid"></div>
+
+    <h2>4. 身体の基準へ翻訳すると</h2>
+    <p>例: 顔が上がる置き所 / 利き足のポイント / 次の一歩 / ミス後の関わり直し</p>
+    <div class="field tall"></div>
+
+    <h2>5. 次の練習で設計する反復</h2>
+    <div class="field tall"></div>
+
+    <div class="footer">
+      前田薫 / 認知が動くコーチングを学ぶ サッカー・スポーツ指導編
+    </div>
+  </section>
+</body>
+</html>
