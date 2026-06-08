@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026-06-08 JDSコーチ会｜視点をずらす質問の核</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8f7f4;
+      color: #2a2a28;
+      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+      font-size: 16px;
+      line-height: 2;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 58px 28px 96px;
+    }
+    .doc-label {
+      margin-bottom: 6px;
+      color: #aaa;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .doc-badge {
+      display: inline-block;
+      margin-bottom: 24px;
+      padding: 3px 12px;
+      border-radius: 4px;
+      background: #2a2a28;
+      color: #c4a96e;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: 30px;
+      line-height: 1.45;
+    }
+    h2 {
+      margin: 48px 0 14px;
+      padding-top: 18px;
+      border-top: 1px solid #e2ded6;
+      font-size: 21px;
+      line-height: 1.6;
+    }
+    h3 {
+      margin: 32px 0 10px;
+      font-size: 17px;
+      color: #2a2a28;
+    }
+    p {
+      margin: 0 0 18px;
+    }
+    .page-meta {
+      margin-bottom: 44px;
+      font-size: 13px;
+      color: #999;
+    }
+    .hero-quote {
+      margin: 36px 0;
+      padding: 28px 32px;
+      background: #2a2a28;
+      border-radius: 10px;
+      color: #f0ede6;
+      font-size: 19px;
+      line-height: 1.7;
+      font-weight: bold;
+      letter-spacing: 0.02em;
+    }
+    .law-block {
+      margin: 28px 0;
+      padding: 22px 28px;
+      background: #fff;
+      border: 0.5px solid #ddd9d0;
+      border-left: 4px solid #c4a96e;
+      border-radius: 0 8px 8px 0;
+    }
+    .law-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: #c4a96e;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .law-text {
+      font-size: 17px;
+      font-weight: bold;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .step-list {
+      margin: 24px 0;
+      padding: 0;
+      list-style: none;
+    }
+    .step-list li {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #2a2a28;
+      color: #c4a96e;
+      font-size: 13px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .step-content {
+      flex: 1;
+    }
+    .step-title {
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    .step-note {
+      font-size: 13px;
+      color: #888;
+    }
+    .step-q {
+      font-size: 15px;
+      color: #5a4e3a;
+      background: #f0ede6;
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 4px;
+      margin-top: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 14px;
+    }
+    th {
+      background: #2a2a28;
+      color: #c4a96e;
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: bold;
+      letter-spacing: 0.04em;
+    }
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #e8e5de;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td {
+      background: #faf9f6;
+    }
+    .q-block {
+      margin: 16px 0;
+      padding: 16px 20px;
+      background: #fff;
+      border: 0.5px solid #ddd9d0;
+      border-radius: 8px;
+    }
+    .q-label {
+      font-size: 11px;
+      color: #c4a96e;
+      letter-spacing: 0.12em;
+      margin-bottom: 6px;
+    }
+    .q-text {
+      font-size: 17px;
+      font-weight: bold;
+      color: #2a2a28;
+    }
+    .caution {
+      margin: 20px 0;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border: 1px solid #f0c070;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .caution-label {
+      font-size: 11px;
+      color: #c08030;
+      letter-spacing: 0.12em;
+      margin-bottom: 4px;
+      font-weight: bold;
+    }
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .comp-box {
+      padding: 20px 22px;
+      background: #fff;
+      border: 0.5px solid #ddd9d0;
+      border-radius: 8px;
+    }
+    .comp-box h4 {
+      margin: 0 0 10px;
+      font-size: 13px;
+      color: #aaa;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .comp-box p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .highlight {
+      background: linear-gradient(transparent 60%, #f5e9c8 60%);
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #e2ded6;
+      margin: 48px 0;
+    }
+    .tag-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+    .tag {
+      font-size: 12px;
+      background: #f0ede6;
+      color: #5a4e3a;
+      border-radius: 4px;
+      padding: 3px 10px;
+    }
+    .footer-nav {
+      font-size: 12px;
+      color: #aaa;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+    .footer-nav:hover { color: #888; }
+    @media (max-width: 600px) {
+      .comparison { grid-template-columns: 1fr; }
+      h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="doc-label">JDSコーチ会 × 高衣紗彩先生 講義 統合分析</div>
+  <div class="doc-badge">COACHING DOJO — 2026.06.08</div>
+
+  <h1>「その後、何をしましたか？」<br>視点をずらす質問の核</h1>
+
+  <p class="page-meta">2026年6月8日｜JDSコーチ会 高衣紗彩先生 講義 × GPT・Claude・Gemini 3AI統合分析</p>
+
+  <div class="tag-row">
+    <span class="tag">視点移動</span>
+    <span class="tag">事実と認知</span>
+    <span class="tag">3層のプラス</span>
+    <span class="tag">行動を聞く</span>
+    <span class="tag">緩める前に見せない</span>
+    <span class="tag">感謝をゴールにしない</span>
+    <span class="tag">身体の安全確認</span>
+  </div>
+
+  <div class="hero-quote">
+    「その後、何をしましたか？」<br>
+    <span style="font-size:14px;font-weight:normal;color:#c4a96e;">—— この一問が、全てを起こす。</span>
+  </div>
+
+  <!-- ===== 法則1 ===== -->
+  <h2>法則1｜視点移動の核心</h2>
+
+  <div class="law-block">
+    <div class="law-label">核心の一問</div>
+    <p class="law-text">「その後、何をしましたか？」</p>
+  </div>
+
+  <p>感情の渦中、人は「加害者」とドアップで向き合っている（主観・扁桃体優位の状態）。<br>
+  「行動を思い出す」とき、人は必ず<span class="highlight">自分を外から見る</span>——斜め上の観察者視点が物理的に発生する。<br>
+  これが客観視の発動であり、視野の拡張ではなく<strong>視点の移動</strong>である。</p>
+
+  <div class="caution">
+    <div class="caution-label">重要</div>
+    答えが出なくてもいい。質問した時点で、脳はすでに動いている。<br>
+    コーチは答えを焦って回収しない。問いを投げたら委ねる。
+  </div>
+
+  <p><strong>科学的根拠：</strong><br>
+  認知再評価（cognitive reappraisal）× 自己距離化（self-distancing）として妥当。Kross & Aydukらの研究で、出来事を観察者の視点から見ると情動反応と反芻が下がることが示されている。<br>
+  ※「扁桃体↔前頭前野がスイッチで切り替わる」は便利な比喩だが字義通りには使わない。実際は複数の神経ネットワークの相互作用。</p>
+
+  <!-- ===== 法則2 ===== -->
+  <h2>法則2｜事実と認知の切り分けが入口</h2>
+
+  <p>クライアントが話す言葉のほぼ全ては「認知語」である。</p>
+
+  <table>
+    <tr><th>認知語（×）</th><th>→ 事実語に戻す問い</th></tr>
+    <tr><td>「バカにされた」</td><td rowspan="3">「その時、実際に何と言われたのですか？」<br><span style="font-size:12px;color:#999;">（セリフを特定する。「事実は何ですか」では通じない）</span></td></tr>
+    <tr><td>「否定された」</td></tr>
+    <tr><td>「ないがしろにされた」</td></tr>
+  </table>
+
+  <p>事実と認知のギャップそのものが、「この人に見えていない領域の地図」になる。</p>
+
+  <!-- ===== 法則3 ===== -->
+  <h2>法則3｜見えていないプラスは3層ある</h2>
+
+  <table>
+    <tr>
+      <th>層</th>
+      <th>内容</th>
+      <th>深さ</th>
+    </tr>
+    <tr>
+      <td><strong>① 事実そのもののプラス</strong></td>
+      <td>「背が低いこと」のメリット</td>
+      <td>深い・前提フレームワークに乗っている</td>
+    </tr>
+    <tr>
+      <td><strong>② 相手の意図</strong></td>
+      <td>ただ驚いて言っただけかもしれない</td>
+      <td>中間</td>
+    </tr>
+    <tr>
+      <td><strong>③ そう言われたこと自体のプラス</strong></td>
+      <td>場が和んだ・距離が縮まった・ネタになった</td>
+      <td>表層・最初に見えやすい</td>
+    </tr>
+  </table>
+
+  <div class="caution">
+    <div class="caution-label">照準管理（コーチの最重要スキル）</div>
+    「<strong>背が低いことのメリット</strong>」と「<strong>背が低いと言われたことのメリット</strong>」は別物。<br>
+    今どの層のプラスを聞いているか、コーチは絶対に見失わない。<br>
+    ここを混ぜると質問が空転する。
+  </div>
+
+  <!-- ===== 法則4 ===== -->
+  <h2>法則4｜順序——「緩める」が先、「見せる」は後</h2>
+
+  <div class="comparison">
+    <div class="comp-box">
+      <h4>鞘先生のメソッド</h4>
+      <p>「プラスを立ち上げる」へ速く進む。コーチはプラスを予測して持っておく。</p>
+    </div>
+    <div class="comp-box" style="border-color:#c4a96e;">
+      <h4>天中道の補正</h4>
+      <p><strong>緩める（反対側を問う）が先。支援を見るのは後。</strong><br>
+      片側認知が緩まないうちにプラスを見せると、「無理やり良いことにされている」になる。</p>
+    </div>
+  </div>
+
+  <div class="law-block">
+    <div class="law-label">道場に刻む一行</div>
+    <p class="law-text">「見せる」前に「緩める」。<br>反対側を問うてから行動を問う——この順序だけは絶対に崩さない。</p>
+  </div>
+
+  <!-- ===== 法則5 ===== -->
+  <h2>法則5｜感謝はゴールではなく、結果として湧くもの</h2>
+
+  <p>「必ず感謝ができるくらいのプラスを受け取っている」という言い切りは、感謝を<strong>目標（KPI）</strong>に置いている。<br>
+  これは「感謝できない自分は未熟」という新しいフレームワークを生みかねない。</p>
+
+  <div class="law-block">
+    <div class="law-label">天中道の原則</div>
+    <p class="law-text">感謝は結果として湧くもの。<br>コーチは感謝を目指さない。感謝を促さない。</p>
+  </div>
+
+  <!-- ===== 法則6 ===== -->
+  <h2>法則6｜身体の安全確認が前提</h2>
+
+  <p>鞘メソッドに唯一ない構造的な穴。<br>
+  トラウマに近い出来事や高覚醒状態では、「その後何をしましたか？」が<strong>再体験</strong>を強める場合がある。<br>
+  外から見ると「客観視」と「解離」は似ている——これが最大の安全上の注意点。</p>
+
+  <div class="q-block">
+    <div class="q-label">最初に確認する問い</div>
+    <div class="q-text">「今、ここで話して大丈夫そうですか？<br>身体は今どんな感じですか？」</div>
+  </div>
+
+  <p>身体が戦闘モード（心拍・呼吸が乱れている）なら、認知ワークより先に整える。</p>
+
+  <!-- ===== 10ステップ ===== -->
+  <h2>天中道版 10ステップ</h2>
+
+  <ul class="step-list">
+    <li>
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <div class="step-title">場の安全を確認する</div>
+        <div class="step-q">「今、ここで話して大丈夫そうですか？身体はどんな感じですか？」</div>
+        <div class="step-note">身体が戦闘モードなら認知より先に整える。ここが鞘メソッドに無かった一段目。</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <div class="step-title">認知語を事実語に戻す</div>
+        <div class="step-q">「その時、実際に何と言われたのですか？」</div>
+        <div class="step-note">セリフを聞く。解釈をコーチが一緒に強化しない。</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <div class="step-title">感情を確認する</div>
+        <div class="step-q">「その時、何を感じましたか？」</div>
+        <div class="step-note">入口を感情に置く。ここで反対側へ急がない。味わわせる。</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <div class="step-title">感情が動いたポイントを見る</div>
+        <div class="step-q">「どこで一番、心が動きましたか？」</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <div class="step-title">フレームワーク（前提）を特定する</div>
+        <div class="step-q">「その時、何があってはいけなかったのですか？」</div>
+        <div class="step-note">価値観そのものには触れない。派生フレームワークだけを的にする。</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">6</div>
+      <div class="step-content">
+        <div class="step-title">プラス側 / マイナス側を判定する</div>
+        <div class="step-note">コーチの内的作業。「べき / 良い」＝プラス側。「ダメ / べきでない」＝マイナス側。</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">7</div>
+      <div class="step-content">
+        <div class="step-title">反対側だけを問う（緩める）</div>
+        <div class="step-q">マイナス側FW → 「そのことのメリットは何ですか？」</div>
+        <div class="step-note"><strong>説明を足さない。まだ支援へ行かない。</strong>ここが全ての要。</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">8</div>
+      <div class="step-content">
+        <div class="step-title">行動を聞く（視点を物理的に外へ移す）</div>
+        <div class="step-q">「その後、どう行動しましたか？」</div>
+        <div class="step-note">答えが出なくてもよい。トラウマ近接なら無理に過去場面へ戻さず現在の身体に戻す選択肢を持つ。</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">9</div>
+      <div class="step-content">
+        <div class="step-title">片側認知が緩んだ後で支援を見る</div>
+        <div class="step-q">「その出来事の最中、ほかに何が起きていましたか？」</div>
+        <div class="step-note">7が緩んでいなければここへ進まない。感謝を促さない。</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">10</div>
+      <div class="step-content">
+        <div class="step-title">価値観へ戻る</div>
+        <div class="step-q">「この体験は、あなたのどんな価値観を照らしていましたか？」</div>
+        <div class="step-note">価値観は「湧く / 流れる」状態の動詞で語る。感謝が出るならそれは結果であってゴールではない。</div>
+      </div>
+    </li>
+  </ul>
+
+  <!-- ===== 問い一覧 ===== -->
+  <h2>使える問い一覧（カテゴリ別）</h2>
+
+  <h3>事実に戻す問い</h3>
+  <div class="q-block"><div class="q-text">「その時、実際に何と言われたのですか？」</div></div>
+  <div class="q-block"><div class="q-text">「実際に何が起きましたか？」</div></div>
+  <div class="q-block"><div class="q-text">「相手の言葉をそのまま言うと何ですか？」</div></div>
+
+  <h3>感情に戻す問い</h3>
+  <div class="q-block"><div class="q-text">「その時、どんな感情が動きましたか？」</div></div>
+  <div class="q-block"><div class="q-text">「その感情は、体のどこに出ましたか？」</div></div>
+
+  <h3>フレームワークを見る問い</h3>
+  <div class="q-block"><div class="q-text">「その時、何があってはいけなかったのですか？」</div></div>
+  <div class="q-block"><div class="q-text">「何がダメだと感じましたか？」</div></div>
+
+  <h3>反対側を問う問い</h3>
+  <div class="q-block"><div class="q-text">「デリカシーがないことのメリットは何ですか？」</div></div>
+  <div class="q-block"><div class="q-text">「人前で特徴を言われることのメリットは何ですか？」</div></div>
+
+  <h3>行動を聞く問い（視点移動）</h3>
+  <div class="q-block" style="border-color:#c4a96e; border-width:2px;">
+    <div class="q-label">核心の一問</div>
+    <div class="q-text">「その後、何をしましたか？」</div>
+  </div>
+  <div class="q-block"><div class="q-text">「その後、場はどう変わりましたか？」</div></div>
+
+  <h3>支援を見る問い</h3>
+  <div class="q-block"><div class="q-text">「その出来事の最中、ほかに何が起きていましたか？」</div></div>
+  <div class="q-block"><div class="q-text">「その出来事がなければ、生まれなかった関係性はありますか？」</div></div>
+  <div class="q-block"><div class="q-text">「その出来事があったからこそ、見えたものは何ですか？」</div></div>
+
+  <!-- ===== 欠落感→才能 ===== -->
+  <h2>欠落感から才能を立ち上げる構造</h2>
+
+  <p>9歳以下の子どもは「我慢する」という選択肢がまだない。<br>
+  嫌なことが起きた時、子どもは必ず<strong>逃げる</strong>か<strong>補う</strong>かの2択で動く。<br>
+  この行動の反復がトレーニングになり、今の才能・センスになっている。</p>
+
+  <table>
+    <tr><th>ステップ</th><th>問い</th></tr>
+    <tr><td>①欠落感を特定する</td><td>「なくて嫌だったことを教えてください」</td></tr>
+    <tr><td>②行動を聞く（ここが核）</td><td>「その時、どんな行動をしましたか？」</td></tr>
+    <tr><td>③才能が立ち上がる</td><td>（自然に語り始める）</td></tr>
+  </table>
+
+  <!-- ===== フレームワーク外し ===== -->
+  <h2>繰り返しパターンのフレームワークを外す</h2>
+
+  <p>「太っていてがたいの大きい男性にはいつも腹が立つ」——これは単発の出来事ではなく、過去のフレームワークが起動しているサイン。</p>
+
+  <div class="law-block">
+    <div class="law-label">外し方の原則</div>
+    <p class="law-text">「そのフレームワークに当てはまらない反例を一つ思い出させる」だけで消える。<br>過去を深掘りしなくてよい。</p>
+  </div>
+
+  <div class="q-block">
+    <div class="q-label">FWを外す問い</div>
+    <div class="q-text">「体格の大きい人で、あなたに優しくしてくれた経験はありますか？」</div>
+  </div>
+
+  <!-- ===== 危うさ ===== -->
+  <h2>コーチとして注意する3つの危うさ（鞘メソッドから学ぶ）</h2>
+
+  <div class="caution">
+    <div class="caution-label">危うさ① 緩める前に見せる</div>
+    片側認知が緩む前にプラスを提示すると、有害なポジティビティ（Toxic Positivity）に滑る。<br>
+    「でも嫌なものは嫌です」という反発が自然に起きる。
+  </div>
+
+  <div class="caution">
+    <div class="caution-label">危うさ② 感謝をゴールにする</div>
+    「感謝できるまで持っていく」という構えは、感謝できないクライアントを責める構造を作る。<br>
+    感謝は結果として湧くもの。ゴールに置かない。
+  </div>
+
+  <div class="caution">
+    <div class="caution-label">危うさ③ コーチが正解を握りすぎる</div>
+    「プラスが見えている状態」が「見せに行く」に変わると、クライアントはコーチの期待する気づきを演じる。<br>
+    コーチは複数の可能性を内部で持ちながら、答えはクライアントの言葉から立ち上げる。
+  </div>
+
+  <!-- ===== 一行定義 ===== -->
+  <hr>
+
+  <h2>一行定義</h2>
+
+  <div class="law-block">
+    <div class="law-label">鞘メソッドの強み</div>
+    <p class="law-text">視点移動を「説得」ではなく「質問の構造」で起こす再現性。<br>誰でも同じ一問で効き、教えられる。</p>
+  </div>
+
+  <div class="law-block">
+    <div class="law-label">天中道の補完</div>
+    <p class="law-text">感情と身体を入口に置き、価値観とフレームワークを分け、緩んでから支援を見る——<br>同じ視点移動をより安全に、誘導なく起こす。</p>
+  </div>
+
+  <div class="hero-quote">
+    「見せる」前に「緩める」。<br>反対側を問うてから行動を問う。<br>
+    <span style="font-size:14px;font-weight:normal;color:#c4a96e;">—— この順序だけは絶対に崩さない。</span>
+  </div>
+
+  <hr>
+  <a class="footer-nav" href="index.html">← セッション分析一覧へ</a>
+
+</div>
+</body>
+</html>
