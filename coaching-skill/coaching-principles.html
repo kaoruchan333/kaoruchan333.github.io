@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>認知が動くコーチング 実践原則体系｜前田薫</title>
+  <style>
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      line-height: 2;
+      color: #2a2a28;
+      background: #f8f7f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 28px 120px;
+    }
+    .doc-label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: #aaa;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .doc-badge {
+      display: inline-block;
+      font-size: 12px;
+      background: #2a2a28;
+      color: #c4a96e;
+      border-radius: 4px;
+      padding: 3px 12px;
+      margin-bottom: 24px;
+      letter-spacing: 0.08em;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: bold;
+      margin: 0 0 8px;
+      line-height: 1.4;
+    }
+    .page-sub {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 16px;
+    }
+    .intro-box {
+      background: #fff;
+      border: 0.5px solid #ddd9d0;
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+      font-size: 14px;
+      color: #555;
+      line-height: 1.9;
+    }
+    .intro-box strong {
+      color: #2a2a28;
+    }
+
+    /* --- セクション --- */
+    .section-header {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: #c4a96e;
+      text-transform: uppercase;
+      margin: 56px 0 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e8e5de;
+    }
+
+    /* --- フロー図 --- */
+    .flow-block {
+      background: #2a2a28;
+      color: #f0ede6;
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+      font-size: 14px;
+    }
+    .flow-block h3 {
+      color: #c4a96e;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      margin: 0 0 16px;
+    }
+    .flow-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .flow-step:last-child { border-bottom: none; }
+    .flow-num {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      background: #c4a96e;
+      color: #2a2a28;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .flow-arrow {
+      text-align: center;
+      color: #c4a96e;
+      font-size: 12px;
+      padding: 2px 0;
+    }
+
+    /* --- 原則カード --- */
+    .principle-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .principle-card {
+      background: #fff;
+      border: 0.5px solid #ddd9d0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .principle-card.sub {
+      border-left: 3px solid #c4a96e;
+    }
+    .p-head {
+      padding: 18px 24px 16px;
+      border-bottom: 1px solid #f0ede6;
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+    }
+    .p-num {
+      font-size: 11px;
+      font-weight: bold;
+      color: #c4a96e;
+      letter-spacing: 0.1em;
+      flex-shrink: 0;
+    }
+    .p-title {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+    .p-body {
+      padding: 16px 24px 20px;
+      font-size: 14px;
+      color: #444;
+    }
+    .p-def {
+      line-height: 1.8;
+      margin-bottom: 16px;
+      color: #555;
+    }
+    .p-row {
+      margin-bottom: 14px;
+    }
+    .p-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: #c4a96e;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    .p-items {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .p-items li {
+      padding: 4px 0 4px 16px;
+      position: relative;
+      line-height: 1.7;
+    }
+    .p-items li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #c4a96e;
+      font-size: 12px;
+    }
+    .p-items.check li::before {
+      content: '◎';
+      color: #4a8;
+    }
+    .p-highlight {
+      background: #f8f5ef;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: #5a4e3a;
+      border-left: 3px solid #c4a96e;
+      margin-top: 10px;
+    }
+
+    /* --- 仮説表 --- */
+    .hypo-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    .hypo-table th {
+      text-align: left;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: #888;
+      padding: 8px 12px;
+      border-bottom: 1px solid #ddd9d0;
+    }
+    .hypo-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #f0ede6;
+      line-height: 1.7;
+      vertical-align: top;
+    }
+
+    /* --- 記録項目 --- */
+    .record-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    @media(max-width:600px){ .record-grid { grid-template-columns: 1fr; } }
+    .record-item {
+      background: #fff;
+      border: 0.5px solid #ddd9d0;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: #555;
+    }
+    .record-item::before {
+      content: '📝 ';
+    }
+
+    /* --- ナビ --- */
+    .back-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #aaa;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      margin-bottom: 40px;
+    }
+    .back-nav:hover { color: #2a2a28; }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e8e5de;
+      margin: 48px 0;
+    }
+    .footer-note {
+      font-size: 12px;
+      color: #bbb;
+      line-height: 1.8;
+    }
+
+    /* NEW badge */
+    .badge-updated {
+      display: inline-block;
+      font-size: 10px;
+      background: #4a8;
+      color: #fff;
+      border-radius: 4px;
+      padding: 1px 8px;
+      margin-left: 8px;
+      vertical-align: middle;
+      letter-spacing: 0.06em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <a class="back-nav" href="index.html">← 訓練記録一覧に戻る</a>
+
+  <div class="doc-label">認知が動くコーチング</div>
+  <div class="doc-badge">COACHING PRINCIPLES v1</div>
+  <h1>実践原則体系</h1>
+  <p class="page-sub">2026年5月〜6月の実践分析から導き出した、再現可能な観察・問い・検証の原則集</p>
+
+  <div class="intro-box">
+    <strong>この体系の基準</strong><br>
+    「科学」とは「学術的に証明済み」ではなく、以下を満たす実践検証可能な原則として蓄積する。<br><br>
+    ① 観察できるサインがある　② コーチが再現できる行動・問いに変換できる<br>
+    ③ クライアントの言葉・感情・次の反応で変化を確認できる<br>
+    ④ 反例や機能しない条件も記録できる　⑤ 複数の実践で再検証できる
+  </div>
+
+  <!-- ========== 基本フロー ========== -->
+  <div class="section-header">BASIC FLOW — セッションの基本流れ</div>
+
+  <div class="flow-block">
+    <h3>COACHING FLOW — 認知が動くセッションの順序</h3>
+    <div class="flow-step">
+      <div class="flow-num">1</div>
+      <div>安全と扱うテーマの確認（身体状態・身の安全）</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">2</div>
+      <div>感情を出してもいい場づくり</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">3</div>
+      <div>具体的な出来事・実際の言葉（認知語→セリフへ戻す）</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">4</div>
+      <div>感情を聞く</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">5</div>
+      <div>整理モード・説明モードに入っていないか確認</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">6</div>
+      <div>感情を生んでいる片側認知のフレームワークを特定</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">7</div>
+      <div>プラス側 / マイナス側の判定 → 反対側を問う</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">8</div>
+      <div>片側認知が緩んだかを本人の感覚で確認</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">9</div>
+      <div>緩んだ後で、支援・価値観・目的への接続</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">10</div>
+      <div>中庸思考単独 / 身体・修験道領域の判定</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">11</div>
+      <div>同種の出来事への感情と行動で統合を確認</div>
+    </div>
+  </div>
+
+  <!-- ========== 核心ルール ========== -->
+  <div class="flow-block" style="background:#5a3e28;">
+    <h3>絶対に崩さない2つのルール</h3>
+    <div class="flow-step">
+      <div style="color:#f0ede6;font-size:14px;line-height:1.8;">
+        <strong style="color:#c4a96e;">① 緩める → 行動を問う → 見せる の順序</strong><br>
+        片側認知が緩む前にプラスを見せると「無理やり良いことにされている」になる。
+      </div>
+    </div>
+    <div class="flow-step">
+      <div style="color:#f0ede6;font-size:14px;line-height:1.8;">
+        <strong style="color:#c4a96e;">② 感謝はゴールではなく結果</strong><br>
+        「感謝できるまで持っていく」という構えは、感謝できない自分を責める新FWを作る。感謝は結果として湧くもの。
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 中核原則 ========== -->
+  <div class="section-header">CORE PRINCIPLES — 中核原則（01〜12）</div>
+
+  <div class="principle-grid">
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">01</div>
+        <div class="p-title">感情は、認知を特定する入口である</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">出来事から直接構造へ飛ばず、まず感情の種類と向き先を聞くと、本人が何を起きたと捉えたかを特定しやすくなる。</div>
+        <div class="p-row">
+          <div class="p-label">観察サイン</div>
+          <ul class="p-items">
+            <li>怒り・悔しさ・悲しみ・恥・虚しさ・不安などの感情語が出る</li>
+            <li>身体反応が出ているが、本人が意味を言葉にできていない</li>
+          </ul>
+        </div>
+        <div class="p-row">
+          <div class="p-label">再現の問い</div>
+          <ul class="p-items">
+            <li>「その時、一番強かった感情は何でしたか」</li>
+            <li>「その感情は誰に、何に向いていましたか」</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">02</div>
+        <div class="p-title">クライアントの言葉を保持すると、問いの精度と安全性が上がる</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">コーチが別の言葉に置き換えず、本人が使った言葉の意味を確認しながら問うと、定義のずれが小さくなり探索しやすくなる。</div>
+        <div class="p-row">
+          <div class="p-label">再現の問い</div>
+          <ul class="p-items">
+            <li>「その『〇〇』という言葉は、あなたにとってどんな意味ですか」</li>
+            <li>「〇〇という感じだったんですね」と受け取ってから一問置く</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">03</div>
+        <div class="p-title">深く見る前に、受け取る</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">深掘りの問いを連続させる前に、本人の感情と言葉を一度そのまま受け取ることで、問いが詰問として受け取られにくくなる。</div>
+        <div class="p-row">
+          <div class="p-label">観察サイン（受け取りが足りない時）</div>
+          <ul class="p-items">
+            <li>「わからなくなった」「逃げられない感じ」が出る</li>
+            <li>掘る問いが続き、本人の言葉が減る</li>
+          </ul>
+        </div>
+        <div class="p-row">
+          <div class="p-label">再現のセリフ</div>
+          <ul class="p-items">
+            <li>「それはきつかったですね」</li>
+            <li>「そうか、その瞬間そう感じたんですね」</li>
+            <li>「今、言葉にしにくい感じがありますか」</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">04</div>
+        <div class="p-title">見えた構造は説明せず、短い一問に変換する</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">コーチが見抜いた構造を先に説明すると、本人はコーチの答えに沿って考えやすい。短い一問として渡し、本人の口から構造が出る余白を残す。</div>
+        <div class="p-row">
+          <div class="p-label">観察サイン（説明が多すぎる時）</div>
+          <ul class="p-items">
+            <li>コーチが長く説明した後、本人の発話が減る</li>
+            <li>本人が気づきを展開し始めた時、コーチが補足して流れを切る</li>
+          </ul>
+        </div>
+        <div class="p-highlight">「今言いたい構造を、一問にすると何か」をコーチ自身が確認してから問いを置く。</div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">05</div>
+        <div class="p-title">片側認知は、反対側を見た時に緩む</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">「これは良いこと」「これはダメなこと」と片側だけに価値を置いた認知は、反対側の事実を本人が見つけることで緩む。</div>
+        <div class="p-row">
+          <div class="p-label">運用ルール（最重要）</div>
+          <ul class="p-items">
+            <li>プラス固定「〇〇は良いこと」→「〇〇であることのデメリットは何ですか」</li>
+            <li>マイナス固定「〇〇はダメなこと」→「〇〇であることのメリットは何ですか」</li>
+          </ul>
+        </div>
+        <div class="p-highlight">❌ 緩む前に「何を受け取っていますか」「支援は何ですか」へ進まない。</div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">06</div>
+        <div class="p-title">支援を見るのは、前提が緩んだ後である</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">本人の前提が固定されたまま出来事の価値や支援を問うと、前向きな解釈の押しつけになりやすい。</div>
+        <div class="p-row">
+          <div class="p-label">緩みの確認</div>
+          <ul class="p-items">
+            <li>「今、その前提はどんな感じに見えていますか」と緩みを確認してから進む</li>
+            <li>緩みの後に「この出来事があったからこそ見えたものは何ですか」</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">07</div>
+        <div class="p-title">統合は、同種の出来事への感情と行動で確認する</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">理解や学びを述べられるだけでは統合とは限らない。同じ構造の出来事が再び起きた時の感情と対応を聞き、回避か見方の変化かを確認する。</div>
+        <div class="p-row">
+          <div class="p-label">統合確認の問い</div>
+          <ul class="p-items">
+            <li>「同じようなことが起きたら、今はどう感じそうですか」</li>
+            <li>「その時、どんな対応を選びそうですか」</li>
+          </ul>
+        </div>
+        <div class="p-highlight">「もう同じことはしない」は回避。感情の種類・強度が変わったかが統合のサイン。</div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">08</div>
+        <div class="p-title">安全な場は、一人では出せない言葉を生む</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">安心してジャッジされず、本人の言葉が保たれる場では、本人が一人で考えている時には出なかった言葉を語り、自分でその言葉を聞いて気づける。</div>
+        <div class="p-row">
+          <div class="p-label">場の質を確認するサイン</div>
+          <ul class="p-items">
+            <li>「言えた」「整理できた」「自分でも気づかなかった言葉が出た」</li>
+            <li>セッションがコーチの説明ではなく、本人の言葉で満ちている</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">09</div>
+        <div class="p-title">感情を聞く前に、感情を出してもいい場をつくる</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">感情を質問するだけでは、感情は出てこないことがある。クライアントが「ここなら言える」と感じる場ができて初めて、感情は認知の入口として機能する。</div>
+        <div class="p-row">
+          <div class="p-label">場づくりの問い</div>
+          <ul class="p-items">
+            <li>「今、それを言葉にしても大丈夫そうですか」と安全を確認する</li>
+            <li>感情が出ない時は、実際の場面・言われた言葉・身体感覚へ戻る</li>
+          </ul>
+        </div>
+        <div class="p-highlight">統合確認は「話せた」「整理できた」ではなく「出せた」という感覚が残ったか。</div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">10</div>
+        <div class="p-title">整理モードは、防衛のサインであることがある</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">クライアントが出来事をきれいに説明できている時ほど、感情に触れないための整理モードに入っている可能性がある。</div>
+        <div class="p-row">
+          <div class="p-label">整理モードを検知したら</div>
+          <ul class="p-items">
+            <li>「その中で、一番感情が動いた瞬間はどこですか」と戻す</li>
+            <li>「頭では整理できているとして、体はどんな反応ですか」</li>
+            <li>「今話しているのは説明に近いですか、それともその時の感情に近いですか」</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">11</div>
+        <div class="p-title">コーチ自身の安心状態が、場の深さを決める</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">コーチが不安・焦り・正解探しの中にいると、クライアントの感情や沈黙を待てなくなる。</div>
+        <div class="p-row">
+          <div class="p-label">コーチが崩れているサイン</div>
+          <ul class="p-items">
+            <li>コーチの質問が長くなる / 構造説明が増える</li>
+            <li>沈黙を待てず次の問いへ進む</li>
+            <li>クライアントの言葉よりコーチの仮説確認が中心になる</li>
+          </ul>
+        </div>
+        <div class="p-row">
+          <div class="p-label">立て直し</div>
+          <ul class="p-items">
+            <li>セッション中に「今、自分は何を急いでいるか」を確認する</li>
+            <li>「今、少し整理して聞いています」と透明性を持たせる</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">12</div>
+        <div class="p-title">中庸思考単独領域と、身体・修験道領域を分ける</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">問いによって片側認知が緩む領域と、身体感覚・神経系・反復練習を通じて扱った方がよい領域がある（実践仮説として継続検証）。</div>
+        <div class="p-row">
+          <div class="p-label">身体・修験道領域のサイン</div>
+          <ul class="p-items">
+            <li>頭では理解しているが、身体反応が強く残る</li>
+            <li>同じテーマが何度も戻る</li>
+            <li>恥・恐れ・自己像の揺れが強く、言葉だけでは緩まない</li>
+          </ul>
+        </div>
+        <div class="p-highlight">「これは問いで扱う領域か、身体から整える領域か」をセッション記録に残す。</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ========== 2026-06-08 追加：視点移動の核心 ========== -->
+  <div class="section-header">2026-06-08 追加 — 視点をずらす問いの核（JDSコーチ会）<span class="badge-updated">NEW</span></div>
+
+  <div class="principle-grid">
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">13</div>
+        <div class="p-title">「その後、何をしましたか？」で視点を物理的に移動させる</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">行動を思い出す時、人は必ず自分を外から見る（斜め上の観察者視点が物理的に発生する）。これは「視野が広がる」ではなく「視点が動く」こと。</div>
+        <div class="p-row">
+          <div class="p-label">核心の一問</div>
+          <ul class="p-items">
+            <li>「その後、何をしましたか？」</li>
+            <li>「その後、どう行動しましたか？」</li>
+          </ul>
+        </div>
+        <div class="p-highlight">答えが出なくてもよい。問いを投げた時点で脳はすでに動いている。家に帰ってお風呂で「あ」と気づくのが正常。焦って回収しない。<br><br>❌「プラスは何ですか？」は視点がずれない。マイナス側から見ている限りプラスは見えない。</div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">14</div>
+        <div class="p-title">認知語をセリフ（事実語）に戻す</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">クライアントが使う言葉はほぼ全部「認知語」（解釈・評価）。事実の言葉（セリフ）に戻すことで、解釈と出来事を分離できる。</div>
+        <div class="p-row">
+          <div class="p-label">認知語の例</div>
+          <ul class="p-items">
+            <li>「バカにされた」「否定された」「ないがしろにされた」</li>
+          </ul>
+        </div>
+        <div class="p-row">
+          <div class="p-label">事実語への戻し方</div>
+          <ul class="p-items">
+            <li>❌「事実は何ですか？」（切り分けられない人には通じない）</li>
+            <li>◯「その時、実際に何と言われたのですか？」（セリフを特定する）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">15</div>
+        <div class="p-title">照準管理——今どの層のプラスを聞いているかを見失わない</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">見えていないプラスは3層ある。同じ「メリット」という語で問いの層がずれると、質問が空転する。</div>
+        <div class="p-row">
+          <div class="p-label">3層の照準</div>
+          <ul class="p-items">
+            <li>① 深い層：「背が低いこと」のメリット（前提FWに乗っている）</li>
+            <li>② 中間層：「相手がどういう意図で言ったか」（意図の確認）</li>
+            <li>③ 表層：「背が低いですねと言われたこと」のメリット（出来事のプラス）</li>
+          </ul>
+        </div>
+        <div class="p-highlight">「背が低いことのメリット」と「背が低いと言われたことのメリット」は別物。コーチ自身が今どの層を聞いているかを明確にしておく。</div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">16</div>
+        <div class="p-title">フレームワーク（繰り返しパターン）を外す——反例を一つ出す</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">特定のタイプの人・状況でいつも同じ反応が出る場合、過去のFWが起動している。過去を深掘りせず、反例を一つ思い出させるだけでFWが消える。</div>
+        <div class="p-row">
+          <div class="p-label">反例を引き出す問い</div>
+          <ul class="p-items">
+            <li>「体格の大きい人で、あなたに優しくしてくれた経験はありますか？」</li>
+          </ul>
+        </div>
+        <div class="p-highlight">反例が1つ出ればFWは崩れる。深掘り不要。</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ========== 補助原則 ========== -->
+  <div class="section-header">SUPPLEMENTARY — 補助原則（13〜15）</div>
+
+  <div class="principle-grid">
+
+    <div class="principle-card sub">
+      <div class="p-head">
+        <div class="p-num">S1</div>
+        <div class="p-title">目的が言語化されると、選択肢比較の迷いは整理される</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">「どちらが得か」という比較で止まっている時に、「そもそも何のためか」を本人が言えると、判断基準が変わる。</div>
+      </div>
+    </div>
+
+    <div class="principle-card sub">
+      <div class="p-head">
+        <div class="p-num">S2</div>
+        <div class="p-title">「ない」「分からない」は、内側を見る方法がまだないサイン</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">返答がないことを抵抗や意欲不足と決めつけず、体感や具体的場面へ一段だけ降りる。特に若年者や内省に慣れていない対象で検証する。</div>
+      </div>
+    </div>
+
+    <div class="principle-card sub">
+      <div class="p-head">
+        <div class="p-num">S3</div>
+        <div class="p-title">コーチ・指導者の期待は、場の観察を狭める</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">「気づいてほしい」「変わってほしい」「この答えに来てほしい」という期待を持ったまま進むと、本人の言葉よりコーチの道筋が中心になる。</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ========== 継続検証仮説 ========== -->
+  <div class="section-header">HYPOTHESIS — 継続検証仮説</div>
+
+  <div style="background:#fff;border:0.5px solid #ddd9d0;border-radius:10px;overflow:hidden;margin-bottom:48px;">
+    <table class="hypo-table">
+      <tr>
+        <th style="width:55%;">仮説</th>
+        <th>検証したいこと</th>
+      </tr>
+      <tr>
+        <td>身体反応は、守っていた自己像が揺れたサインであることがある</td>
+        <td>体感を聞いた後、本人の自己像が自発的に言語化されるか</td>
+      </tr>
+      <tr>
+        <td>才能の向き先が見えると、本人は才能を使える資源として受け取りやすい</td>
+        <td>才能の再解釈が次の行動選択に現れるか</td>
+      </tr>
+      <tr>
+        <td>強い他者反応には、自分の同型構造が含まれることがある</td>
+        <td>鏡として問うことが自己批判ではなく選択の自由につながる条件は何か</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ========== セッション記録に残す項目 ========== -->
+  <div class="section-header">RECORD — セッション記録に残す7項目</div>
+
+  <div class="record-grid" style="margin-bottom:48px;">
+    <div class="record-item">クライアントが実際に使った中心語</div>
+    <div class="record-item">最初に出た感情と身体反応</div>
+    <div class="record-item">採用した一問と、その直後に出た言葉</div>
+    <div class="record-item">片側認知の種類（プラス固定 / マイナス固定）</div>
+    <div class="record-item">反対側を問った後の変化</div>
+    <div class="record-item">支援へ進んだタイミングの適切さ</div>
+    <div class="record-item">同種の出来事への感情と対応の変化</div>
+    <div class="record-item">コーチ・クライアント・オブザーバーの受け取りのずれ</div>
+  </div>
+
+  <hr>
+
+  <a href="index.html" style="font-size:12px;color:#aaa;text-decoration:none;letter-spacing:0.06em;">← 訓練記録一覧に戻る</a>
+
+  <div class="footer-note" style="margin-top:24px;">
+    参照した一次資産: 2026-05-08〜2026-06-08 全セッション分析（かおる塾GC・コーチング道場・JDSコーチ会）<br>
+    外部公開時は、事例の人物名・生活事情は使用せず、法則と問いだけを公開する。
+  </div>
+
+</div>
+</body>
+</html>
