@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天川サマーキャンプ 2025 実績報告｜天川村地域おこし協力隊</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+  :root {
+    --forest: #2d4a3e;
+    --moss:   #4a7c6f;
+    --water:  #7ba7bc;
+    --ink:    #2a2a2a;
+    --stone:  #5a5a5a;
+    --paper:  #f8f6f2;
+    --white:  #ffffff;
+    --light:  #eef2f0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Serif JP', serif;
+    line-height: 2;
+  }
+
+  /* ── 行政向けヘッダーバー ── */
+  .gov-bar {
+    background: var(--forest);
+    padding: 12px 32px;
+    text-align: center;
+  }
+  .gov-bar p {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.6);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 60vh;
+    background: var(--forest);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-photo {
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 0.28;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(30,50,40,0.97) 0%, rgba(30,50,40,0.4) 60%, transparent 100%);
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    padding: 60px 32px 60px;
+    max-width: 860px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .report-badge {
+    display: inline-block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 4px 16px;
+    margin-bottom: 24px;
+  }
+
+  .hero-meta {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 16px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.5rem, 4.5vw, 2.4rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .hero-sub {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 2;
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--forest);
+    padding: 0 32px;
+  }
+
+  .stats-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .stat {
+    padding: 28px 0;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.06);
+  }
+  .stat:last-child { border-right: none; }
+
+  .stat-num {
+    display: block;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── BODY ── */
+  .page-body {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 80px 32px 120px;
+  }
+
+  .section { margin-bottom: 72px; }
+
+  .section-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.28em;
+    color: var(--moss);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--moss);
+    opacity: 0.18;
+  }
+
+  .section-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 6px;
+    letter-spacing: 0.04em;
+  }
+
+  h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 18px;
+    line-height: 1.7;
+  }
+
+  p {
+    font-size: 0.93rem;
+    color: var(--stone);
+    line-height: 2.3;
+    margin-bottom: 18px;
+  }
+
+  /* ── 事業概要テーブル ── */
+  .overview-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+    font-size: 0.88rem;
+  }
+  .overview-table tr {
+    border-bottom: 1px solid rgba(74,124,111,0.1);
+  }
+  .overview-table th {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    color: var(--forest);
+    text-align: left;
+    padding: 14px 16px 14px 0;
+    white-space: nowrap;
+    width: 120px;
+    vertical-align: top;
+  }
+  .overview-table td {
+    color: var(--stone);
+    padding: 14px 0;
+    line-height: 1.9;
+  }
+
+  /* ── 写真グリッド ── */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    margin: 36px 0;
+  }
+
+  .photo-grid.wide {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .photo-slot {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: rgba(74,124,111,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .photo-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ── プログラムタイムライン ── */
+  .program-day {
+    margin-bottom: 40px;
+  }
+
+  .day-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    color: var(--white);
+    background: var(--forest);
+    padding: 7px 20px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  .program-list {
+    list-style: none;
+    padding: 0;
+    border-left: 1px solid rgba(74,124,111,0.18);
+    margin-left: 8px;
+  }
+
+  .program-list li {
+    display: flex;
+    gap: 24px;
+    padding: 0 0 20px 24px;
+    position: relative;
+    font-size: 0.88rem;
+    color: var(--stone);
+    line-height: 1.9;
+  }
+
+  .program-list li::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 8px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--moss);
+    opacity: 0.45;
+  }
+
+  .program-time {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.7rem;
+    color: var(--moss);
+    min-width: 48px;
+    padding-top: 2px;
+  }
+
+  /* ── 声セクション ── */
+  .voices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2px;
+    margin-top: 28px;
+  }
+
+  .voice-card {
+    background: var(--white);
+    padding: 28px 24px;
+  }
+
+  .voice-tag {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.63rem;
+    letter-spacing: 0.12em;
+    color: var(--moss);
+    border: 1px solid rgba(74,124,111,0.25);
+    padding: 2px 10px;
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+
+  .voice-card p {
+    font-size: 0.88rem;
+    color: var(--ink);
+    line-height: 2;
+    margin-bottom: 10px;
+  }
+
+  .voice-card cite {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.7rem;
+    color: var(--stone);
+    font-style: normal;
+  }
+
+  /* ── 安全管理 ── */
+  .safety-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2px;
+    margin-top: 24px;
+  }
+
+  .safety-item {
+    background: var(--white);
+    padding: 24px 20px;
+  }
+
+  .safety-item .s-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--moss);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .safety-item p {
+    font-size: 0.85rem;
+    color: var(--stone);
+    line-height: 1.9;
+    margin: 0;
+  }
+
+  /* ── メディア掲載 ── */
+  .media-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(74,124,111,0.1);
+  }
+
+  .media-date {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.7rem;
+    color: var(--moss);
+    min-width: 90px;
+  }
+
+  .media-content { font-size: 0.88rem; color: var(--stone); line-height: 1.8; }
+
+  /* ── 展望 ── */
+  .vision-box {
+    background: var(--forest);
+    padding: 44px 40px;
+    margin-top: 32px;
+  }
+
+  .vision-box h3 {
+    font-size: 0.98rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 18px;
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+  }
+
+  .vision-box p {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 2.2;
+    margin-bottom: 0;
+  }
+
+  /* ── フッター ── */
+  .page-footer {
+    background: var(--light);
+    padding: 40px 32px;
+    text-align: center;
+    border-top: 1px solid rgba(74,124,111,0.1);
+  }
+
+  .page-footer p {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.75rem;
+    color: var(--stone);
+    letter-spacing: 0.06em;
+    margin: 0;
+    line-height: 2;
+  }
+
+  @media (max-width: 600px) {
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .photo-grid { grid-template-columns: repeat(2, 1fr); }
+    .photo-grid.wide { grid-template-columns: 1fr; }
+    .safety-grid { grid-template-columns: 1fr; }
+    .page-body { padding: 56px 20px 80px; }
+    .vision-box { padding: 28px 20px; }
+    .gov-bar { padding: 10px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 行政向けヘッダーバー -->
+<div class="gov-bar">
+  <p>天川村地域おこし協力隊　活動実績報告　2025年度</p>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <img class="hero-photo" src="../photos/camp2025/IMG_3621.JPG" alt="天川サマーキャンプ2025 交流の様子">
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <span class="report-badge">実績報告</span>
+    <div class="hero-meta">
+      <span>2025年8月3日（日）〜 4日（月）</span>
+      <span>1泊2日</span>
+      <span>洞川キャンプ場・健民運動場 ほか</span>
+    </div>
+    <h1>天川村青少年交流<br>サマーキャンプ 2025</h1>
+    <p class="hero-sub">
+      天川村の自然・文化・地域住民との交流を通じて、<br>
+      都市と地方の子どもたちが共に育ちあう場をつくる。
+    </p>
+  </div>
+</header>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat">
+      <span class="stat-num">約50</span>
+      <span class="stat-label">総参加人数</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">29</span>
+      <span class="stat-label">参加児童数</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">14</span>
+      <span class="stat-label">ボランティアスタッフ</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">「来年も参加したい」</span>
+    </div>
+  </div>
+</div>
+
+<main class="page-body">
+
+  <!-- 事業概要 -->
+  <div class="section">
+    <p class="section-label">事業概要</p>
+
+    <p>
+      本事業は、天川村地域おこし協力隊の活動として実施した、都市部と農山村の子どもたちによる交流体験プログラムです。
+      大阪府の少年サッカーチーム（21名）と天川村内の児童（8名）が1泊2日を共にし、
+      自然体験・スポーツ交流・地域文化への参加を通じて、相互理解と地域への愛着を育みました。
+    </p>
+    <p>
+      保護者が同行しない環境のもと、異なる地域・年齢・背景をもつ子どもたちが協力しながら活動することで、
+      自立心・協働性・主体性の育成につながる機会を提供しました。
+    </p>
+
+    <table class="overview-table">
+      <tr>
+        <th>事業名</th>
+        <td>天川村青少年交流サマーキャンプ 2025</td>
+      </tr>
+      <tr>
+        <th>実施日</th>
+        <td>2025年8月3日（日）〜 8月4日（月）　1泊2日</td>
+      </tr>
+      <tr>
+        <th>実施場所</th>
+        <td>洞川キャンプ場・健民運動場・天和の里　ほか天川村内各所</td>
+      </tr>
+      <tr>
+        <th>主催</th>
+        <td>天川村地域おこし協力隊（前田薫・前田裕太）</td>
+      </tr>
+      <tr>
+        <th>参加者</th>
+        <td>大阪府少年サッカーチーム 21名・天川村内児童 8名・ボランティアスタッフ 14名　計約50名</td>
+      </tr>
+      <tr>
+        <th>対象年齢</th>
+        <td>小学1年生〜中学3年生</td>
+      </tr>
+    </table>
+
+    <!-- 写真グリッド1 -->
+    <div class="photo-grid">
+      <div class="photo-slot">
+        <img src="../photos/camp2025/IMG_3807.JPG" alt="交流・集合の様子">
+      </div>
+      <div class="photo-slot">
+        <img src="../photos/camp2025/IMG_3851.JPG" alt="川遊びの様子">
+      </div>
+      <div class="photo-slot">
+        <img src="../photos/camp2025/IMG_3708.jpg" alt="行者まつりへの参加">
+      </div>
+    </div>
+  </div>
+
+  <!-- プログラム内容 -->
+  <div class="section">
+    <p class="section-label">プログラム内容</p>
+
+    <div class="program-day">
+      <span class="day-label">8月3日（日）1日目</span>
+      <ul class="program-list">
+        <li>
+          <span class="program-time">午前</span>
+          スポーツ交流①（高学年が低学年に教える異学年指導活動）
+        </li>
+        <li>
+          <span class="program-time">午後</span>
+          テント設営体験 / 川遊び・餅まき / 夕食（地域食材を使用）
+        </li>
+        <li>
+          <span class="program-time">夜</span>
+          行者まつり参加（伝統文化体験）/ 焚き火・振り返りの時間
+        </li>
+      </ul>
+    </div>
+
+    <div class="program-day">
+      <span class="day-label">8月4日（月）2日目</span>
+      <ul class="program-list">
+        <li>
+          <span class="program-time">午前</span>
+          起床・朝食 / 地域清掃活動（洞川地区クリーンキャンペーン）
+        </li>
+        <li>
+          <span class="program-time">昼前</span>
+          魚つかみ取り体験 / 自然素材の採集体験 / 昼食（川魚・地元食材）
+        </li>
+        <li>
+          <span class="program-time">午後</span>
+          スポーツ交流②（天川村児童・都市部児童による合同チーム戦）/ 振り返り・閉会
+        </li>
+      </ul>
+    </div>
+
+    <!-- 写真グリッド2 -->
+    <div class="photo-grid wide">
+      <div class="photo-slot">
+        <img src="../photos/camp2025/IMG_3948.JPG" alt="川遊びの様子">
+      </div>
+      <div class="photo-slot">
+        <img src="../photos/camp2025/IMG_3930.JPG" alt="魚つかみ取り体験">
+      </div>
+    </div>
+  </div>
+
+  <!-- 安全管理 -->
+  <div class="section">
+    <p class="section-label">安全管理体制</p>
+    <p>参加児童の安全を最優先に、以下の体制で実施しました。</p>
+
+    <div class="safety-grid">
+      <div class="safety-item">
+        <span class="s-label">体制</span>
+        <p>子ども5名につき大人1名の班制<br>総合ディレクターによる全体統括</p>
+      </div>
+      <div class="safety-item">
+        <span class="s-label">水辺活動</span>
+        <p>ライフジャケット着用を徹底<br>荒天・増水時は中止基準を設定</p>
+      </div>
+      <div class="safety-item">
+        <span class="s-label">緊急対応</span>
+        <p>救急消耗品・熱中症対策物資を常備<br>緊急搬送先：南奈良総合医療センター</p>
+      </div>
+      <div class="safety-item">
+        <span class="s-label">保護者対応</span>
+        <p>緊急連絡先を事前に確認<br>アレルギー・持病も事前把握</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 参加者の声 -->
+  <div class="section">
+    <p class="section-label">参加者の声</p>
+    <p>参加した子どもたち・保護者・ボランティアスタッフから届いた声の一部です。</p>
+
+    <div class="voices-grid">
+      <div class="voice-card">
+        <span class="voice-tag">児童</span>
+        <p>「川がこわかったけど、最後は楽しかった」</p>
+        <cite>小学6年生</cite>
+      </div>
+      <div class="voice-card">
+        <span class="voice-tag">児童</span>
+        <p>「大阪の子と一緒に遊べてよかった」</p>
+        <cite>小学1年生</cite>
+      </div>
+      <div class="voice-card">
+        <span class="voice-tag">児童</span>
+        <p>「鬼踊りを一緒に踊れて楽しかった」</p>
+        <cite>小学3年生</cite>
+      </div>
+      <div class="voice-card">
+        <span class="voice-tag">児童</span>
+        <p>「星がきれいで、また来たい」</p>
+        <cite>小学5年生</cite>
+      </div>
+      <div class="voice-card">
+        <span class="voice-tag">保護者</span>
+        <p>「普段見られない子どもの成長を感じることができた」</p>
+        <cite>保護者</cite>
+      </div>
+      <div class="voice-card">
+        <span class="voice-tag">保護者</span>
+        <p>「保護者なしで過ごす経験が貴重でした。ぜひ継続してほしい」</p>
+        <cite>保護者</cite>
+      </div>
+      <div class="voice-card">
+        <span class="voice-tag">スタッフ</span>
+        <p>「異年齢・異地域の交流が自然に生まれ、学びの深い場だった」</p>
+        <cite>ボランティアスタッフ</cite>
+      </div>
+      <div class="voice-card">
+        <span class="voice-tag">スタッフ</span>
+        <p>「大人が教える立場ではなく、子どもに寄り添う関わりができた」</p>
+        <cite>ボランティアスタッフ</cite>
+      </div>
+    </div>
+  </div>
+
+  <!-- 写真記録 -->
+  <div class="section">
+    <p class="section-label">活動写真</p>
+    <div class="photo-grid">
+      <div class="photo-slot">
+        <img src="../photos/camp2025/IMG_3778.JPG" alt="集合・整列の様子">
+      </div>
+      <div class="photo-slot">
+        <img src="../photos/camp2025/IMG_3924.JPG" alt="行者まつりの様子">
+      </div>
+      <div class="photo-slot">
+        <img src="../photos/camp2025/IMG_3920.JPG" alt="スタッフが子どもに寄り添う様子">
+      </div>
+      <div class="photo-slot">
+        <img src="../photos/camp2025/IMG_3647.JPG" alt="バスでの到着">
+      </div>
+      <div class="photo-slot">
+        <img src="../photos/camp2025/IMG_3746.JPG" alt="夜の活動の様子">
+      </div>
+      <div class="photo-slot">
+        <img src="../photos/camp2025/IMG_3950.JPG" alt="川遊び・笑顔">
+      </div>
+    </div>
+  </div>
+
+  <!-- メディア掲載 -->
+  <div class="section">
+    <p class="section-label">報道・掲載実績</p>
+    <div class="media-item">
+      <div class="media-date">2025.08.12</div>
+      <div class="media-content">
+        奈良新聞デジタル版にて「天川サマーキャンプで清掃活動」として報道
+      </div>
+    </div>
+  </div>
+
+  <!-- 次年度への展望 -->
+  <div class="section">
+    <p class="section-label">次年度への展開</p>
+    <p>
+      2025年11月、宝塚青年会議所の代表者2名が天川村へ現地視察。
+      プログラム内容・安全管理体制・地域との連携を評価いただき、
+      2026年度からの本格参加が決定しました。
+    </p>
+    <div class="vision-box">
+      <h3>2026年度は、天川の子どもたちも一緒に。</h3>
+      <p>
+        2026年8月、宝塚青年会議所との共催のもと、天川村内の児童も加えた形でのサマーキャンプを実施します。
+        地域おこし協力隊の正式事業として、教育委員会・関係各所のご協力のもと、
+        安全性と教育的効果を高めながら、村内外の子どもたちに継続的な体験の機会を届けていきます。
+      </p>
+    </div>
+  </div>
+
+</main>
+
+<div class="page-footer">
+  <p>天川村地域おこし協力隊　前田薫・前田裕太<br>
+  お問い合わせ：天川村役場 企画観光課</p>
+</div>
+
+</body>
+</html>
