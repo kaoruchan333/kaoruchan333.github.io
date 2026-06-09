@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>認知構造分析シート｜ともちゃん Session 01</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #1E1E2E;
+    --forest: #2C5F2D;
+    --moss: #6E9D52;
+    --earth: #8B6914;
+    --clay: #C4744E;
+    --parchment: #F8F4EE;
+    --cream: #FDFBF7;
+    --mist: #EDF2F0;
+    --border: #D5CBBB;
+    --accent: #4A7090;
+    --highlight: #FFF8E1;
+    --red: #c0392b;
+    --purple: #6C5CE7;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--parchment); color: var(--ink); }
+
+  /* ===== COVER ===== */
+  .cover {
+    background: linear-gradient(160deg, var(--forest) 0%, #1a3d1b 60%, var(--ink) 100%);
+    color: white; padding: 60px 50px 50px; position: relative; overflow: hidden;
+  }
+  .cover::before {
+    content:''; position:absolute; top:-100px; right:-100px;
+    width:400px; height:400px; border-radius:50%; background:rgba(255,255,255,0.03);
+  }
+  .session-badge {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2);
+    border-radius:20px; padding:6px 16px; font-size:12px; color:rgba(255,255,255,0.8); margin-bottom:30px;
+  }
+  .session-dot { width:8px; height:8px; border-radius:50%; background:var(--moss); }
+  .cover-label { font-size:11px; letter-spacing:4px; color:rgba(255,255,255,0.5); margin-bottom:12px; }
+  .cover-title { font-family:'Noto Serif JP',serif; font-size:32px; font-weight:700; line-height:1.4; margin-bottom:8px; }
+  .cover-subtitle { font-size:14px; color:rgba(255,255,255,0.65); margin-bottom:40px; letter-spacing:2px; }
+  .cover-meta { display:grid; grid-template-columns:1fr 1fr; gap:20px; border-top:1px solid rgba(255,255,255,0.15); padding-top:30px; }
+  .meta-item label { display:block; font-size:10px; letter-spacing:3px; color:rgba(255,255,255,0.45); margin-bottom:6px; text-transform:uppercase; }
+  .meta-item span { font-size:15px; color:rgba(255,255,255,0.9); font-weight:500; }
+
+  /* ===== LAYOUT ===== */
+  .content { max-width:860px; margin:0 auto; padding:48px 40px 80px; }
+  .section { margin-bottom:52px; }
+  .section-header {
+    display:flex; align-items:center; gap:12px;
+    margin-bottom:20px; padding-bottom:12px; border-bottom:2px solid var(--border);
+  }
+  .section-icon {
+    width:36px; height:36px; border-radius:8px;
+    display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0;
+  }
+  .icon-forest { background:#e8f0e8; }
+  .icon-earth  { background:#f5ede0; }
+  .icon-accent { background:#e6eef4; }
+  .icon-clay   { background:#f8ebe5; }
+  .icon-gold   { background:#fdf6dc; }
+  .icon-purple { background:#eeebff; }
+  .icon-body   { background:#fdecea; }
+
+  .section-title { font-family:'Noto Serif JP',serif; font-size:18px; font-weight:700; color:var(--ink); }
+  .section-note  { font-size:11px; color:#888; letter-spacing:1px; margin-left:auto; }
+
+  /* ===== BELIEF CARDS ===== */
+  .belief-card { background:var(--cream); border:1px solid var(--border); border-radius:12px; padding:22px 26px; margin-bottom:14px; }
+  .belief-card.core { border-color:var(--clay); background:linear-gradient(135deg,#fff8f5,var(--cream)); border-left:4px solid var(--clay); }
+  .belief-card.deep { border-color:var(--earth); background:linear-gradient(135deg,#fffde8,var(--cream)); border-left:4px solid var(--earth); }
+  .belief-tag { display:inline-block; font-size:10px; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; border-radius:4px; margin-bottom:10px; font-weight:600; }
+  .tag-rule    { background:#fde8e0; color:var(--clay); }
+  .tag-root    { background:#fdf6dc; color:var(--earth); }
+  .tag-value   { background:#e8f0e8; color:var(--forest); }
+  .tag-pattern { background:#e6eef4; color:var(--accent); }
+  .belief-text { font-size:16px; font-weight:500; line-height:1.7; color:var(--ink); margin-bottom:10px; }
+  .belief-note { font-size:13px; color:#666; line-height:1.7; }
+
+  /* ===== FRAMEWORK LIST ===== */
+  .fw-grid { display:grid; gap:14px; }
+  .fw-card {
+    background:var(--cream); border:1px solid var(--border); border-radius:10px;
+    padding:18px 22px; display:grid; grid-template-columns:auto 1fr; gap:0 18px; align-items:start;
+  }
+  .fw-num {
+    width:32px; height:32px; border-radius:50%;
+    background:var(--accent); color:white; font-size:13px; font-weight:700;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;
+  }
+  .fw-body {}
+  .fw-rule { font-size:15px; font-weight:600; color:var(--ink); margin-bottom:6px; line-height:1.5; }
+  .fw-effect { font-size:12px; color:#777; line-height:1.7; }
+  .fw-effect span { color:var(--clay); font-weight:500; }
+  .fw-question {
+    margin-top:10px; padding:10px 14px;
+    background:var(--highlight); border-radius:6px;
+    font-size:12px; color:var(--earth); line-height:1.7;
+  }
+  .fw-question::before { content:"💬 問い　"; font-weight:600; }
+
+  /* ===== CENTRAL STRUCTURE ===== */
+  .structure-flow { display:flex; flex-direction:column; gap:0; }
+  .sf-step {
+    display:grid; grid-template-columns:40px 1fr;
+    gap:0 18px; position:relative;
+  }
+  .sf-step:not(:last-child)::before {
+    content:''; position:absolute;
+    left:19px; top:46px; bottom:-16px; width:2px;
+    background:var(--border); z-index:0;
+  }
+  .sf-num-wrap { display:flex; flex-direction:column; align-items:center; z-index:1; }
+  .sf-num {
+    width:40px; height:40px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px; font-weight:700; color:white; flex-shrink:0;
+  }
+  .sf-num.c1 { background:#4A7090; }
+  .sf-num.c2 { background:#6E9D52; }
+  .sf-num.c3 { background:#C4744E; }
+  .sf-num.c4 { background:#8B6914; }
+  .sf-num.c5 { background:#6C5CE7; }
+  .sf-num.c6 { background:#c0392b; }
+  .sf-num.c7 { background:var(--forest); }
+
+  .sf-content { padding:0 0 28px; }
+  .sf-label { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#888; margin-bottom:6px; margin-top:10px; }
+  .sf-text { font-size:14px; line-height:1.8; color:var(--ink); }
+  .sf-text strong { color:var(--forest); }
+  .sf-sub { font-size:12px; color:#777; line-height:1.8; margin-top:6px; padding-left:12px; border-left:2px solid #ddd; }
+
+  /* ===== EVENTS ===== */
+  .event-list { display:grid; gap:14px; }
+  .event-card { background:var(--cream); border:1px solid var(--border); border-radius:10px; padding:18px 22px; }
+  .event-header { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+  .event-badge { font-size:10px; letter-spacing:2px; font-weight:600; padding:3px 10px; border-radius:4px; background:#e6eef4; color:var(--accent); }
+  .event-title { font-size:14px; font-weight:600; color:var(--ink); }
+  .event-fact, .event-cognition {
+    font-size:13px; line-height:1.7; padding:10px 14px; border-radius:6px; margin-top:8px;
+  }
+  .event-fact      { background:#f0f7ff; border-left:3px solid #7db3d8; }
+  .event-cognition { background:#fff5f0; border-left:3px solid var(--clay); }
+  .event-label { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#888; margin-bottom:4px; }
+
+  /* ===== BODY REACTIONS ===== */
+  .body-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; }
+  .body-card {
+    background:var(--cream); border:1px solid var(--border); border-radius:10px;
+    padding:16px 18px; text-align:center;
+  }
+  .body-phase { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#888; margin-bottom:8px; }
+  .body-icon { font-size:24px; margin-bottom:8px; }
+  .body-title { font-size:13px; font-weight:600; color:var(--ink); margin-bottom:6px; }
+  .body-tags { display:flex; flex-wrap:wrap; gap:4px; justify-content:center; }
+  .body-tag { font-size:11px; padding:2px 8px; background:#eee; border-radius:10px; color:#555; }
+  .body-tag.positive { background:#e8f5e8; color:var(--forest); }
+  .body-tag.warning  { background:#fde8e0; color:var(--clay); }
+
+  /* ===== CONTRADICTION MAP ===== */
+  .contradiction-map { display:grid; grid-template-columns:1fr auto 1fr; gap:16px; align-items:center; margin-bottom:16px; }
+  .contra-box { background:var(--cream); border:1px solid var(--border); border-radius:10px; padding:20px; text-align:center; }
+  .contra-box.rule  { border-color:var(--clay); background:#fff8f5; }
+  .contra-box.value { border-color:var(--forest); background:#f5faf5; }
+  .contra-label { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#888; margin-bottom:8px; }
+  .contra-text  { font-size:14px; font-weight:600; line-height:1.6; color:var(--ink); }
+  .contra-symbol { font-size:28px; color:var(--red); text-align:center; }
+
+  /* ===== DISCOVERY ===== */
+  .discovery-box { background:linear-gradient(135deg,#f0f7f0,#e8f0f8); border:1px solid #c0d8c0; border-radius:12px; padding:24px 28px; margin-bottom:16px; }
+  .discovery-label { font-size:11px; color:var(--forest); letter-spacing:3px; text-transform:uppercase; font-weight:600; margin-bottom:12px; }
+  .discovery-text { font-size:15px; line-height:1.9; color:var(--ink); }
+  .discovery-text strong { color:var(--forest); }
+
+  /* ===== INSIGHTS ===== */
+  .insight-list { list-style:none; }
+  .insight-list li { display:flex; gap:14px; padding:14px 0; border-bottom:1px solid #eee; font-size:14px; line-height:1.7; align-items:flex-start; }
+  .insight-list li:last-child { border-bottom:none; }
+  .insight-num { width:24px; height:24px; border-radius:50%; background:var(--forest); color:white; font-size:11px; font-weight:600; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+
+  /* ===== SELF-MEMO ===== */
+  .self-memo {
+    background:linear-gradient(135deg, #1a3d1b, #2C5F2D);
+    border-radius:16px; padding:36px 40px; color:white;
+  }
+  .self-memo-label { font-size:11px; letter-spacing:4px; color:rgba(255,255,255,0.5); margin-bottom:20px; }
+  .self-memo-text { font-size:15px; line-height:2.1; color:rgba(255,255,255,0.9); }
+  .self-memo-text p { margin-bottom:16px; }
+  .self-memo-text p:last-child { margin-bottom:0; }
+  .self-memo-text strong { color:#a8d5a9; }
+  .self-memo-definition {
+    margin-top:28px; padding:20px 24px;
+    background:rgba(255,255,255,0.1); border-radius:10px;
+    border-left:3px solid var(--moss);
+    font-size:14px; line-height:1.8; color:rgba(255,255,255,0.85);
+    font-style:italic;
+  }
+
+  /* ===== HOMEWORK ===== */
+  .homework-box { background:var(--highlight); border:1px solid #e8d58a; border-radius:12px; padding:28px 32px; }
+  .homework-question { font-family:'Noto Serif JP',serif; font-size:22px; font-weight:700; color:var(--earth); text-align:center; margin:16px 0; line-height:1.6; }
+  .homework-context { font-size:13px; color:#666; line-height:1.8; text-align:center; }
+
+  /* ===== DIVIDER ===== */
+  .divider { height:1px; background:var(--border); margin:10px 0 20px; }
+
+  /* ===== COACH NOTE ===== */
+  .coach-note { background:var(--mist); border-left:3px solid var(--accent); border-radius:0 8px 8px 0; padding:14px 18px; font-size:13px; color:#555; line-height:1.8; margin-top:14px; font-style:italic; }
+
+  /* ===== FOOTER ===== */
+  .footer { text-align:center; padding:40px 0 20px; border-top:1px solid var(--border); font-size:12px; color:#aaa; letter-spacing:1px; }
+
+  @media print {
+    body { background:white; }
+    .cover, .self-memo { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .belief-card, .fw-card, .event-card, .body-card, .discovery-box, .homework-box { -webkit-print-color-adjust:exact; print-color-adjust:exact; break-inside:avoid; }
+    .section { break-inside:avoid; }
+  }
+body.kj-auth-locked>*:not(#kj-auth-overlay){display:none!important}#kj-auth-overlay{position:fixed;inset:0;background:linear-gradient(135deg,#26312b,#5b513f);display:grid;place-items:center;padding:22px;z-index:9999}.kj-auth-card{width:min(420px,100%);background:#fbfaf6;color:#2f2b26;border-radius:10px;padding:30px;box-shadow:0 24px 80px rgba(0,0,0,.28)}.kj-auth-label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9a6a3b;margin-bottom:10px}.kj-auth-card h1{font-size:24px;line-height:1.45;margin:0 0 10px}.kj-auth-card p{font-size:14px;color:#70685f}.kj-auth-card input{width:100%;min-height:46px;border:1px solid #d4cabd;border-radius:8px;padding:10px 12px;font-size:16px;background:#fff;margin:8px 0 12px}.kj-auth-card button{width:100%;min-height:46px;border:0;border-radius:8px;background:#26312b;color:#fff8e8;font-size:15px;font-weight:700;cursor:pointer}.kj-auth-error{min-height:22px;color:#a33;font-size:13px;margin-top:8px}
+</style>
+</head>
+<body class="kj-auth-locked">
+
+<!-- ===== COVER ===== -->
+<div class="cover"><a href="../" style="display:inline-block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;margin-bottom:20px;">← ともちゃん専用ページに戻る</a>
+  <div class="session-badge"><span class="session-dot"></span>SESSION 01　—　2026.06.09</div>
+  <div class="cover-label">Cognitive Structure Analysis</div>
+  <div class="cover-title">認知構造分析シート</div>
+  <div class="cover-subtitle">前田薫 コーチング　｜　ともちゃん</div>
+  <div class="cover-meta">
+    <div class="meta-item"><label>Client</label><span>ともちゃん（OFFICE NOZAWA）</span></div>
+    <div class="meta-item"><label>Coach</label><span>前田薫</span></div>
+    <div class="meta-item"><label>Session</label><span>第1回　オンライン個人セッション</span></div>
+    <div class="meta-item"><label>Date</label><span>2026年6月9日</span></div>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- ===== 1. 結論 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-clay">🎯</div>
+      <div class="section-title">今回のセッションで見えたこと（結論）</div>
+    </div>
+    <div class="discovery-box">
+      <div class="discovery-label">核心</div>
+      <div class="discovery-text">
+        ともちゃんは、<strong>自分の願いを出せない人なのではない。</strong><br>
+        「相手を困らせないために、自分の願いを出す前に自分を止めてきた人」だった。<br><br>
+        その我慢が積み重なり、たくちゃんの自由な行動を「不公平・搾取」と感じる構造が生まれていた。<br>
+        怒りの奥には、ずっと我慢してきた自分への悲しさと、「本当はもっと自分らしく生きたい」という願いがある。
+      </div>
+    </div>
+    <div class="self-memo-definition" style="background:var(--highlight); border-left:3px solid var(--earth); padding:16px 20px; border-radius:0 8px 8px 0; font-size:14px; color:var(--earth); font-style:italic; line-height:1.8;">
+      「ともちゃんの怒りの奥には、相手を困らせないように生きてきた自分の我慢と、自分の地図に戻りたい願いがある」
+    </div>
+  </div>
+
+  <!-- ===== 2. コアビリーフ ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-clay">🧱</div>
+      <div class="section-title">発見されたコアビリーフ</div>
+      <span class="section-note">SESSION 01</span>
+    </div>
+
+    <div class="belief-card core">
+      <span class="belief-tag tag-rule">CORE RULE</span>
+      <div class="belief-text">「相手の状況を見て、配慮してからリクエストすべき。<br>相手の状況を見ずにリクエストするのはダメだ。」</div>
+      <div class="belief-note">→ このルールが、自分の願いや望みを表現することへの「ストッパー」になっている。相手がしんどそう・忙しそうと感じた瞬間に、自分のリクエストを飲み込む行動パターンを形成している。</div>
+    </div>
+
+    <div class="belief-card deep">
+      <span class="belief-tag tag-root">ROOT BELIEF</span>
+      <div class="belief-text">「相手にネガティブな感情を抱かせることはダメだ。」<br>「困らせてはいけない。」</div>
+      <div class="belief-note">→ コアルールの根底にある、より深い信念。頭では「ネガティブな感情も悪いものではない」と理解していても、<strong>身体は「相手にネガティブを感じさせること」を危険として反応している。</strong></div>
+    </div>
+
+    <div class="belief-card">
+      <span class="belief-tag tag-pattern">PATTERN</span>
+      <div class="belief-text">「大人は甘えるべきではない。」「依存してはいけない。」</div>
+      <div class="belief-note">→ 子どもへのリクエストは嫌じゃない。でもたくちゃん（大人）にリクエストされると腹が立つ。「大人なのに甘えるな」というフィルターがかかっている。</div>
+    </div>
+
+    <div class="belief-card">
+      <span class="belief-tag tag-pattern">PATTERN</span>
+      <div class="belief-text">「リクエストには答えなければならない。」</div>
+      <div class="belief-note">→ 相手のリクエストに応えることが「愛の証明」であり「自己価値の確認」になっていた可能性がある。それが同時に「搾取感」の源にもなっている。</div>
+    </div>
+  </div>
+
+  <!-- ===== 3. フレームワーク一覧 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-accent">📋</div>
+      <div class="section-title">発見されたフレームワーク（こうあるべき）一覧</div>
+    </div>
+    <p style="font-size:13px; color:#666; margin-bottom:18px; line-height:1.7;">価値観そのものではなく、価値観を守ろうとして固まった「ルール」です。このルールに気づくことが、自由になる第一歩。</p>
+
+    <div class="fw-grid">
+
+      <div class="fw-card">
+        <div class="fw-num">1</div>
+        <div class="fw-body">
+          <div class="fw-rule">「相手の状態を見て、配慮してリクエストすべき」</div>
+          <div class="fw-effect">→ 自分の願いを言う前に止まる。言えない。我慢する。たくちゃんが「状況を見ずに言ってくる」ことへの怒りが生まれる。</div>
+          <div class="fw-question">相手の状態を見ずにリクエストすることのメリットは何ですか？</div>
+        </div>
+      </div>
+
+      <div class="fw-card">
+        <div class="fw-num">2</div>
+        <div class="fw-body">
+          <div class="fw-rule">「リクエストには答えなければならない」</div>
+          <div class="fw-effect">→ 相手の要求に応えすぎる。自分の仕事が増える。「私ばかり応えている」という不公平感が出る。</div>
+          <div class="fw-question">リクエストに答えないことのメリットは何ですか？</div>
+        </div>
+      </div>
+
+      <div class="fw-card">
+        <div class="fw-num">3</div>
+        <div class="fw-body">
+          <div class="fw-rule">「パートナーは一番大切にするべき」</div>
+          <div class="fw-effect">→ 「用事があって帰ってくる」＝「私はついで」に見える。自分が全力で優先しているのに、たくちゃんはそうしないことへの痛みが生まれる。</div>
+          <div class="fw-question">パートナーを一番にしないことのメリットは何ですか？</div>
+        </div>
+      </div>
+
+      <div class="fw-card">
+        <div class="fw-num">4</div>
+        <div class="fw-body">
+          <div class="fw-rule">「大人は甘えてはいけない・依存してはいけない」</div>
+          <div class="fw-effect">→ 子どもには寛容でいられるが、大人（たくちゃん）へのリクエストに強い怒りが出る。自分も助けを求めることを制限している。</div>
+          <div class="fw-question">大人が甘えることのメリットは何ですか？</div>
+        </div>
+      </div>
+
+      <div class="fw-card">
+        <div class="fw-num">5</div>
+        <div class="fw-body">
+          <div class="fw-rule">「大人は相手のことを思いやるべき」</div>
+          <div class="fw-effect">→ 連絡がないことに怒りが出る。段取りを乱されると「配慮がない」と感じる。「自分は考えているのに相手は考えていない」という不公平感が出る。</div>
+          <div class="fw-question">相手が思いやらないように見えることのメリットは何ですか？</div>
+        </div>
+      </div>
+
+      <div class="fw-card">
+        <div class="fw-num">6</div>
+        <div class="fw-body">
+          <div class="fw-rule">「家族は大切にするべき」</div>
+          <div class="fw-effect">→ たくちゃんの新城・活動への時間が「家族を軽く扱っている」に見える。家族だけの時間が取れないと不満が積み重なる。</div>
+          <div class="fw-question">家族を大切にしないように見えることのメリットは何ですか？</div>
+        </div>
+      </div>
+
+      <div class="fw-card">
+        <div class="fw-num">7</div>
+        <div class="fw-body">
+          <div class="fw-rule">「言ったことはやるべき」</div>
+          <div class="fw-effect">→ たくちゃんが言ったことを覚えていない・実行しないことに「不誠実」「不公平」を感じる。</div>
+          <div class="fw-question">言ったことをやらないことのメリットは何ですか？</div>
+        </div>
+      </div>
+
+      <div class="fw-card">
+        <div class="fw-num">8</div>
+        <div class="fw-body">
+          <div class="fw-rule">「ネガティブな感情を相手に持たせてはいけない」</div>
+          <div class="fw-effect">→ 相手がどう感じるかを先に読もうとする。相手のネガティブを自分の責任として背負う。結果、自分の願いを出せなくなる。</div>
+          <div class="fw-question">相手がネガティブな感情を感じることのメリットは何ですか？</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== 4. 中心構造フロー ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-purple">🔁</div>
+      <div class="section-title">なぜ怒りが生まれるのか（中心構造）</div>
+    </div>
+
+    <div class="structure-flow">
+
+      <div class="sf-step">
+        <div class="sf-num-wrap"><div class="sf-num c1">①</div></div>
+        <div class="sf-content">
+          <div class="sf-label">幼少期に育った力</div>
+          <div class="sf-text">相手を困らせないための<strong>即応力</strong>が育った。<br>母を怒らせないため、場を乱さないため、「本当はどうでもいいけど」答えを出して場を整えてきた。</div>
+        </div>
+      </div>
+
+      <div class="sf-step">
+        <div class="sf-num-wrap"><div class="sf-num c2">②</div></div>
+        <div class="sf-content">
+          <div class="sf-label">才能になった</div>
+          <div class="sf-text">相手の状態を感じる力・ケアする力・本来の美しさを引き出したいという<strong>価値観</strong>として結晶化した。</div>
+        </div>
+      </div>
+
+      <div class="sf-step">
+        <div class="sf-num-wrap"><div class="sf-num c3">③</div></div>
+        <div class="sf-content">
+          <div class="sf-label">同時にフレームワークにもなった</div>
+          <div class="sf-text">「困らせてはいけない」「状態を見て配慮すべき」「リクエストには答えなければ」「大人は甘えてはいけない」という<strong>絶対のルール</strong>として固まった。</div>
+        </div>
+      </div>
+
+      <div class="sf-step">
+        <div class="sf-num-wrap"><div class="sf-num c4">④</div></div>
+        <div class="sf-content">
+          <div class="sf-label">自分の願いを出せなくなった</div>
+          <div class="sf-text">「一緒にいたい」「家族だけの時間が欲しい」「連絡してほしい」「大事にされたい」<br>——本当の願いはあるのに、リクエストする前に相手の状況を読んで<strong>自分を止める</strong>。</div>
+        </div>
+      </div>
+
+      <div class="sf-step">
+        <div class="sf-num-wrap"><div class="sf-num c5">⑤</div></div>
+        <div class="sf-content">
+          <div class="sf-label">たくちゃんは自由に見える</div>
+          <div class="sf-text">やりたいことをやる。ウクレレを弾く。状況を見ずにリクエストする。新城に行く。<br>→「<strong>ずるい。不公平。私は我慢しているのに。</strong>」が立ち上がる。</div>
+          <div class="sf-sub">※たくちゃんはこのフレームワークを持っていないだけで、悪意はない。ただ、「ルールを持っていない」ことが「ルールを破っている」に見えてしまう。</div>
+        </div>
+      </div>
+
+      <div class="sf-step">
+        <div class="sf-num-wrap"><div class="sf-num c6">⑥</div></div>
+        <div class="sf-content">
+          <div class="sf-label">怒りになる</div>
+          <div class="sf-text">本当は寂しい。本当は一緒にいたい。本当は大事にされたい。<br>でも、願いとして出せないから、<strong>怒り・うんざり・搾取感</strong>という形になって出てくる。</div>
+        </div>
+      </div>
+
+      <div class="sf-step">
+        <div class="sf-num-wrap"><div class="sf-num c7">✦</div></div>
+        <div class="sf-content">
+          <div class="sf-label">今日の気づき</div>
+          <div class="sf-text"><strong>「自分の地図を一番上に持ってくる」</strong>ことが、すべての起点になる。<br>他人の地図を否定しなくていい。ただ、順番を戻すだけでいい。</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== 5. 具体的な出来事 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-earth">📍</div>
+      <div class="section-title">セッションで扱った具体的な出来事</div>
+    </div>
+
+    <div class="event-list">
+
+      <div class="event-card">
+        <div class="event-header">
+          <span class="event-badge">出来事 A</span>
+          <span class="event-title">7000号サプライズへの情熱が湧かない</span>
+        </div>
+        <div class="event-fact">
+          <div class="event-label">事実</div>
+          たくちゃんのメルマガが7000回配信になる。過去に1500回・5000回でサプライズをしてきた。今回も動くなら早くしないといけない。
+        </div>
+        <div class="event-cognition">
+          <div class="event-label">認知（本音）</div>
+          「やりたいわけではない」「断れない義務感から始まっている」「本来の美しさを引き出す状態ではない」「喜んでやっていない自分への違和感」
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-header">
+          <span class="event-badge">出来事 B</span>
+          <span class="event-title">たくちゃんが「用事がある時」に帰ってくる</span>
+        </div>
+        <div class="event-fact">
+          <div class="event-label">事実</div>
+          たくちゃんが帰ってくる。帰ってきた時にZoomや研修などの予定がある。新城や仕事の用事もある。
+        </div>
+        <div class="event-cognition">
+          <div class="event-label">認知</div>
+          「用事があるから帰ってきている」「私はついで」「家族や私が一番の目的ではない」「大事にされていない」「薄情だ」
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-header">
+          <span class="event-badge">出来事 C</span>
+          <span class="event-title">新城でも「二人きり・家族だけ」の時間にならない</span>
+        </div>
+        <div class="event-fact">
+          <div class="event-label">事実</div>
+          新城に行っても、ちえちゃん・ゆうまくん・庭師さんなど誰かがいる。二人きり・家族だけの時間になりにくい。
+        </div>
+        <div class="event-cognition">
+          <div class="event-label">認知</div>
+          「せっかく来ているのに部外者がいる」「私のリクエストが大事にされていない」「嫌だと言っているのに変わらない」「改善されない」
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-header">
+          <span class="event-badge">出来事 D</span>
+          <span class="event-title">「6時に帰る」と言って遅くなるが連絡がない</span>
+        </div>
+        <div class="event-fact">
+          <div class="event-label">事実</div>
+          6時ごろ帰ると言われたが、7時半・8時になる。連絡がない。ともちゃんは晩ご飯の段取りをしており、たくちゃんのために献立を変えていた。
+        </div>
+        <div class="event-cognition">
+          <div class="event-label">認知</div>
+          「配慮がない」「思いやりがない」「一言言えばいいだけなのに」「家族が待っていることを考えていない」「大人のくせに」
+        </div>
+      </div>
+
+      <div class="event-card" style="border-color:var(--clay); background:#fff8f5;">
+        <div class="event-header">
+          <span class="event-badge" style="background:#fde8e0; color:var(--clay);">出来事 E ★</span>
+          <span class="event-title">晩ご飯準備中にたくちゃんがウクレレを弾いていた</span>
+        </div>
+        <div class="event-fact">
+          <div class="event-label">事実</div>
+          母が生きていた頃、晩ご飯準備中（母の食べやすいものを作りながら子どもの世話もしていた）に、たくちゃんが帰ってきてウクレレを弾いた。その夜、ウクレレの弦を引きちぎった。
+        </div>
+        <div class="event-cognition">
+          <div class="event-label">認知（フレームワークが最も強く出た場面）</div>
+          「この状況でウクレレを弾くなんて」「私の状況が見えていない」「手伝うべき・我慢すべき大人がなぜ」「配慮がない・思いやりがない・こいつは馬鹿だ」<br><br>
+          ※ たくちゃんにとっては「弾きたいから弾いた」＝<strong>本来の美しさが出ている瞬間</strong>かもしれない。<strong>どちらの地図を一番上に置くかで、見え方が全く変わる。</strong>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== 6. 身体反応 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-body">🫀</div>
+      <div class="section-title">身体で感じていたこと</div>
+    </div>
+    <p style="font-size:13px; color:#666; margin-bottom:18px; line-height:1.7;">認知は思考だけでなく、身体にも刻まれています。この身体サインに気づくことが、パターンに早く気づく鍵になります。</p>
+    <div class="body-grid">
+      <div class="body-card">
+        <div class="body-phase">セッション序盤</div>
+        <div class="body-icon">🌫️</div>
+        <div class="body-title">重さ・モヤモヤ</div>
+        <div class="body-tags">
+          <span class="body-tag warning">気だるい</span>
+          <span class="body-tag warning">モヤモヤ</span>
+          <span class="body-tag warning">重さ</span>
+        </div>
+      </div>
+      <div class="body-card">
+        <div class="body-phase">困る・焦る時</div>
+        <div class="body-icon">⚡</div>
+        <div class="body-title">緊張・早く・焦り</div>
+        <div class="body-tags">
+          <span class="body-tag warning">背中が重い</span>
+          <span class="body-tag warning">焦る</span>
+          <span class="body-tag warning">早くしなきゃ</span>
+          <span class="body-tag warning">余裕がない</span>
+        </div>
+      </div>
+      <div class="body-card">
+        <div class="body-phase">気づいていく中で</div>
+        <div class="body-icon">🌱</div>
+        <div class="body-title">軽さ・動きたい感じ</div>
+        <div class="body-tags">
+          <span class="body-tag positive">軽くなった</span>
+          <span class="body-tag positive">笑けてくる</span>
+          <span class="body-tag positive">動きたい</span>
+          <span class="body-tag positive">清々しい</span>
+        </div>
+      </div>
+    </div>
+    <div class="coach-note">
+      「背中が重くなる」は、<strong>「相手を困らせるかも」というテーマが来た時のサイン</strong>です。このサインを感じたら「あ、フレームワークが動いているな」と気づくチャンスです。
+    </div>
+  </div>
+
+  <!-- ===== 7. 価値観との矛盾 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-forest">💎</div>
+      <div class="section-title">価値観と信念の矛盾マップ</div>
+    </div>
+    <div class="contradiction-map">
+      <div class="contra-box rule">
+        <div class="contra-label">Core Rule</div>
+        <div class="contra-text">「相手の状況を見て<br>配慮してから<br>リクエストすべき」</div>
+      </div>
+      <div class="contra-symbol">⚡</div>
+      <div class="contra-box value">
+        <div class="contra-label">My Value</div>
+        <div class="contra-text">「本来の美しさを<br>引き出す」</div>
+      </div>
+    </div>
+    <div class="discovery-box">
+      <div class="discovery-label">🔍 Session Discovery</div>
+      <div class="discovery-text">
+        「本来の美しさを引き出す」という価値観は、相手にも自分にも向いているはずだった。<br>
+        しかし「相手の状況を見て配慮してからリクエストすべき」というルールは、<strong>自分の本来の美しさ（願い・感情・リクエスト）を抑制すること</strong>を意味している。<br><br>
+        <strong>我慢させることは、本来の美しさを引き出すことではない。</strong><br>
+        ——これは、たくちゃんへだけでなく、<strong>自分自身へも言えること。</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 8. 今日の気づき ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-gold">✨</div>
+      <div class="section-title">今日の気づき</div>
+    </div>
+    <ul class="insight-list">
+      <li>
+        <span class="insight-num">1</span>
+        <span>たくちゃんが「状況を見ずにリクエストする」のは、このルールを持っていないだけで悪意ではない。<strong>自分のルールを相手にも適用しようとすること</strong>から怒りが生まれていた。</span>
+      </li>
+      <li>
+        <span class="insight-num">2</span>
+        <span>さくちゃんの7000号記念へのモヤモヤの正体は「断れない義務感から始まっていた」こと。やりたくないのに「やらないとつまらない」で動こうとしていた。</span>
+      </li>
+      <li>
+        <span class="insight-num">3</span>
+        <span>「自立」の本当の意味は「一人でなんでもやること」ではなく、<strong>「必要な時に助けを求められること」</strong>。甘えることへの強い制限が、真の自立を阻んでいた。</span>
+      </li>
+      <li>
+        <span class="insight-num">4</span>
+        <span>子どもに「自分のリクエストが通る体験」「和やかに要望を伝えられる体験」を提供しようとしているのは、<strong>自分が幼少期に欲しかった体験</strong>。ここに才能の起源がある。</span>
+      </li>
+      <li>
+        <span class="insight-num">5</span>
+        <span>「配慮しすぎている」「自分が思う世界の中で配慮しすぎ」「常識や道徳にとらわれている」——この自己認識が今日の最大のブレイクスルー。</span>
+      </li>
+      <li>
+        <span class="insight-num">6</span>
+        <span>自分の地図を一番上に置くことは、他人の地図を否定することではない。<strong>ただ、順番を戻すだけ。</strong></span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ===== 9. ともちゃんへの言葉 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-forest">🌿</div>
+      <div class="section-title">ともちゃんへの言葉</div>
+    </div>
+    <div class="self-memo">
+      <div class="self-memo-label">SELF-UNDERSTANDING MEMO</div>
+      <div class="self-memo-text">
+        <p>私は、相手の状態をよく見る人。<br>
+        相手が困らないように、相手が嫌な思いをしないように、先に気づいて動いてきた人。</p>
+        <p>それは、私の<strong>優しさでもあり、才能でもある。</strong><br>
+        でも同時に、自分の願いを出す前に、自分を止めてきた理由でもあった。</p>
+        <p>私は、リクエストされると応えようとする。<br>
+        でも、自分がリクエストする時は、相手の自由や時間を奪うように感じて止まってしまう。<br>
+        だから、私の中に不公平感が生まれていた。</p>
+        <p>本当は、もっと一緒にいたい。<br>
+        もっと大事にされたい。<br>
+        もっと自分勝手に生きたい。<br>
+        もっと自然に、やりたいことをやりたい。</p>
+        <p>私の価値観は、<strong>「本来の美しさを引き出す」</strong>。<br>
+        その価値観に戻る時、私は、<br>
+        自分も相手もそれぞれの地図を持っていることを思い出す必要がある。</p>
+        <p>相手の地図を一番上に置きすぎた時、私は苦しくなる。<br>
+        私の地図を一番上に置くことは、相手の地図を否定することではない。</p>
+        <p><strong>ただ、順番を戻すこと。</strong></p>
+      </div>
+      <div class="self-memo-definition">
+        「ともちゃんは、相手を困らせないために自分の願いを脇に置いてきたけれど、<br>その我慢が積み重なって、相手の自由を不公平として感じる構造が生まれていた」
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 10. 宿題 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-forest">📝</div>
+      <div class="section-title">セッション後の実践（宿題）</div>
+    </div>
+    <div class="homework-box">
+      <div class="discovery-label" style="text-align:center;">SESSION 01 QUESTION</div>
+      <div class="homework-question">「果たして、これはダメなことなのか？」</div>
+      <div class="homework-context">
+        以下の場面で、この問いを自分に向けてみてください。<br><br>
+        ① 相手が困るかもしれないと感じて、リクエストを飲み込もうとした時<br>
+        ② 「この状況でリクエストしてくるか」と腹が立った時<br>
+        ③ 相手の状況を見ずに言ってくると感じた時<br>
+        ④ 自分が我慢しようとしていることに気づいた時<br><br>
+        答えを出す必要はありません。<br>
+        <strong>問いを持つだけで、十分です。</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>認知構造分析シート　Session 01　｜　前田薫 コーチング　©2026</p>
+    <p style="margin-top:8px;">このシートはセッションを重ねるごとにページが追加されていきます</p>
+  </div>
+
+</div>
+<script id="kaoru-juku-password-guard-v1">
+(function() {
+  const PASS_HASH = '5c4a49d63d52b735c28d8467cf6c87895fe3d9c7505ead1662b61b9ced2f6d88';
+  const STORAGE_KEY = 'kaoru_juku_member_tomochan_auth_v2';
+  function unlock() { document.body.classList.remove('kj-auth-locked'); const overlay = document.getElementById('kj-auth-overlay'); if (overlay) overlay.remove(); }
+  async function sha256(text) { const data = new TextEncoder().encode(text); const hash = await crypto.subtle.digest('SHA-256', data); return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join(''); }
+  function checkSaved() { if (localStorage.getItem(STORAGE_KEY) === PASS_HASH) unlock(); }
+  function render() {
+    if (!document.body.classList.contains('kj-auth-locked')) return;
+    const overlay = document.createElement('div'); overlay.id = 'kj-auth-overlay';
+    overlay.innerHTML = `<div class="kj-auth-card"><div class="kj-auth-label">Kaoru Juku Members</div><h1>本人専用ページ</h1><p>このページを見るには、本人用パスワードを入力してください。</p><input type="password" id="kj-auth-password" autocomplete="current-password" placeholder="パスワード"><button type="button" id="kj-auth-submit">表示する</button><div class="kj-auth-error" id="kj-auth-error"></div></div>`;
+    document.body.appendChild(overlay);
+    const input = document.getElementById('kj-auth-password'); const error = document.getElementById('kj-auth-error');
+    async function submit() { const digest = await sha256(input.value || ''); if (digest === PASS_HASH) { localStorage.setItem(STORAGE_KEY, PASS_HASH); unlock(); } else { error.textContent = 'パスワードが違います。'; input.value = ''; input.focus(); } }
+    document.getElementById('kj-auth-submit').addEventListener('click', submit);
+    input.addEventListener('keydown', function(e) { if (e.key === 'Enter') submit(); });
+    setTimeout(() => input.focus(), 50);
+  }
+  checkSaved();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render); else render();
+})();
+</script>
+</body>
+</html>
