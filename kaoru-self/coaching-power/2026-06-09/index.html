@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>コーチング力分析シート v2｜前田薫 × ともちゃん Session 01</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+  :root {
+    --ink:       #1E1E2E;
+    --forest:    #2C5F2D;
+    --moss:      #6E9D52;
+    --earth:     #8B6914;
+    --clay:      #C4744E;
+    --navy:      #1E3A5F;
+    --steel:     #4A7090;
+    --parchment: #F8F4EE;
+    --cream:     #FDFBF7;
+    --mist:      #EDF2F0;
+    --border:    #D5CBBB;
+    --gold:      #C9A227;
+    --highlight: #FFF8E1;
+    --red:       #C0392B;
+    --purple:    #6C5CE7;
+  }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Noto Sans JP',sans-serif; background:var(--parchment); color:var(--ink); }
+
+  /* ===== COVER ===== */
+  .cover {
+    background:linear-gradient(160deg, var(--navy) 0%, #0f2236 55%, #1a1a2e 100%);
+    color:white; padding:60px 50px 50px; position:relative; overflow:hidden;
+  }
+  .cover::before { content:''; position:absolute; top:-80px; right:-80px; width:350px; height:350px; border-radius:50%; background:rgba(255,255,255,0.03); }
+  .cover-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); border-radius:20px; padding:6px 16px; font-size:12px; color:rgba(255,255,255,0.8); margin-bottom:28px; }
+  .cover-dot { width:8px; height:8px; border-radius:50%; background:#7db3d8; }
+  .cover-label { font-size:11px; letter-spacing:4px; color:rgba(255,255,255,0.45); margin-bottom:10px; }
+  .cover-title { font-family:'Noto Serif JP',serif; font-size:28px; font-weight:700; line-height:1.4; margin-bottom:6px; }
+  .cover-subtitle { font-size:13px; color:rgba(255,255,255,0.6); margin-bottom:36px; letter-spacing:2px; }
+  .cover-meta { display:grid; grid-template-columns:1fr 1fr; gap:18px; border-top:1px solid rgba(255,255,255,0.15); padding-top:28px; }
+  .meta-item label { display:block; font-size:10px; letter-spacing:3px; color:rgba(255,255,255,0.4); margin-bottom:5px; text-transform:uppercase; }
+  .meta-item span  { font-size:14px; color:rgba(255,255,255,0.88); font-weight:500; }
+
+  /* ===== PURPOSE BAR ===== */
+  .purpose-bar { background:var(--navy); color:white; padding:14px 40px; font-size:13px; letter-spacing:1px; }
+  .purpose-bar span { opacity:.65; margin-right:8px; }
+
+  /* ===== LAYOUT ===== */
+  .content { max-width:880px; margin:0 auto; padding:48px 40px 80px; }
+  .section  { margin-bottom:56px; }
+  .section-header { display:flex; align-items:center; gap:12px; margin-bottom:22px; padding-bottom:12px; border-bottom:2px solid var(--border); }
+  .section-icon { width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+  .icon-navy   { background:#dce8f5; }
+  .icon-forest { background:#e8f0e8; }
+  .icon-clay   { background:#f8ebe5; }
+  .icon-gold   { background:#fdf6dc; }
+  .icon-earth  { background:#f5ede0; }
+  .icon-purple { background:#eeebff; }
+  .icon-red    { background:#fdecea; }
+  .icon-steel  { background:#e6eef4; }
+  .section-title { font-family:'Noto Serif JP',serif; font-size:18px; font-weight:700; color:var(--ink); }
+  .section-note  { font-size:11px; color:#888; letter-spacing:1px; margin-left:auto; }
+
+  /* ===== CONCLUSION BOX ===== */
+  .conclusion-main {
+    background:linear-gradient(135deg,#f0f7f0,#e8f0f8); border:1px solid #c0d8c0;
+    border-radius:14px; padding:28px 32px; margin-bottom:16px;
+  }
+  .conclusion-label { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--forest); font-weight:700; margin-bottom:12px; }
+  .conclusion-text { font-size:16px; line-height:2.0; color:var(--ink); font-weight:500; }
+  .conclusion-text strong { color:var(--forest); }
+  .next-stage-box {
+    background:var(--highlight); border:1px solid #e8d58a; border-radius:12px; padding:20px 26px;
+  }
+  .next-stage-label { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--earth); font-weight:700; margin-bottom:12px; }
+  .next-stage-list { list-style:none; }
+  .next-stage-list li { display:flex; gap:10px; padding:7px 0; border-bottom:1px solid #f0e0a0; font-size:14px; line-height:1.7; }
+  .next-stage-list li:last-child { border-bottom:none; }
+  .next-stage-bullet { color:var(--earth); font-weight:700; flex-shrink:0; }
+
+  /* ===== FLOW STEPS ===== */
+  .flow-steps { display:flex; flex-direction:column; gap:0; }
+  .fs-item { display:grid; grid-template-columns:40px 1fr; gap:0 18px; position:relative; }
+  .fs-item:not(:last-child)::before { content:''; position:absolute; left:19px; top:44px; bottom:-12px; width:2px; background:var(--border); }
+  .fs-num { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:white; flex-shrink:0; z-index:1; }
+  .fs-body { padding:0 0 24px; }
+  .fs-label { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#888; margin-top:10px; margin-bottom:4px; }
+  .fs-text  { font-size:14px; line-height:1.8; color:var(--ink); }
+  .fs-text strong { color:var(--navy); }
+  .fs-sub   { font-size:12px; color:#777; line-height:1.7; margin-top:5px; padding-left:12px; border-left:2px solid #ddd; }
+  .fs-good  { display:inline-block; font-size:11px; background:#e8f0e8; color:var(--forest); padding:2px 8px; border-radius:4px; margin-top:6px; font-weight:600; }
+
+  /* ===== STRENGTH CARDS ===== */
+  .strength-list { display:grid; gap:16px; }
+  .strength-card { background:var(--cream); border:1px solid var(--border); border-radius:12px; padding:22px 26px; border-left:4px solid var(--forest); }
+  .strength-header { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:10px; }
+  .strength-num-title { display:flex; align-items:center; gap:10px; }
+  .snum { width:28px; height:28px; border-radius:50%; background:var(--forest); color:white; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .strength-title { font-size:16px; font-weight:700; color:var(--ink); line-height:1.4; }
+  .strength-star { font-size:13px; color:var(--gold); flex-shrink:0; }
+  .strength-body { font-size:14px; line-height:1.8; color:#444; }
+  .strength-quote { margin-top:10px; padding:10px 14px; background:var(--mist); border-radius:6px; font-size:13px; color:var(--steel); line-height:1.7; font-style:italic; }
+  .strength-key { margin-top:10px; padding:10px 14px; background:#e8f5e8; border-radius:6px; font-size:13px; color:var(--forest); line-height:1.7; font-weight:500; }
+
+  /* ===== BEST QUESTIONS ===== */
+  .bq-list { display:grid; gap:12px; }
+  .bq-card { background:var(--cream); border:1px solid var(--border); border-radius:10px; padding:18px 22px; }
+  .bq-header { display:flex; align-items:flex-start; gap:12px; margin-bottom:8px; }
+  .bq-num { width:28px; height:28px; border-radius:50%; background:var(--navy); color:white; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+  .bq-question { font-family:'Noto Serif JP',serif; font-size:15px; font-weight:600; color:var(--ink); line-height:1.6; }
+  .bq-note { font-size:13px; color:#666; line-height:1.7; }
+
+  /* ===== IMPROVEMENT ===== */
+  .improv-list { display:grid; gap:16px; }
+  .improv-card { background:var(--cream); border:1px solid var(--border); border-radius:12px; padding:22px 26px; border-left:4px solid var(--clay); }
+  .improv-header { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+  .inum { width:28px; height:28px; border-radius:50%; background:var(--clay); color:white; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .improv-title { font-size:15px; font-weight:700; color:var(--ink); }
+  .improv-body { font-size:14px; line-height:1.8; color:#444; }
+  .improv-before { margin-top:10px; padding:10px 14px; background:#fff5f0; border-radius:6px; font-size:13px; color:var(--clay); line-height:1.7; }
+  .improv-before::before { content:"⚠ 現状　"; font-weight:700; }
+  .improv-after { margin-top:8px; padding:10px 14px; background:#e8f5e8; border-radius:6px; font-size:13px; color:var(--forest); line-height:1.7; }
+  .improv-after::before { content:"✓ 改善版　"; font-weight:700; }
+  .improv-question { margin-top:8px; padding:10px 14px; background:var(--highlight); border-radius:6px; font-size:13px; color:var(--earth); line-height:1.7; }
+  .improv-question::before { content:"💬 改善問い　"; font-weight:700; }
+
+  /* ===== CHUYO EVALUATION ===== */
+  .chuyo-grid { display:grid; gap:12px; }
+  .chuyo-card { background:var(--cream); border:1px solid var(--border); border-radius:10px; padding:18px 22px; display:grid; grid-template-columns:auto 1fr auto; gap:0 16px; align-items:start; }
+  .cstep { display:flex; flex-direction:column; align-items:center; gap:4px; flex-shrink:0; }
+  .cstep-num { width:34px; height:34px; border-radius:50%; color:white; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  .cstep-label { font-size:9px; color:#888; letter-spacing:1px; text-align:center; line-height:1.4; white-space:nowrap; }
+  .cbody {}
+  .cbody-title { font-size:14px; font-weight:600; color:var(--ink); margin-bottom:6px; }
+  .cbody-text  { font-size:13px; color:#555; line-height:1.7; }
+  .cbody-sub   { font-size:12px; color:#888; line-height:1.6; margin-top:4px; font-style:italic; }
+  .crating { flex-shrink:0; margin-top:4px; }
+  .crating-badge { padding:4px 12px; border-radius:12px; font-size:11px; font-weight:700; white-space:nowrap; }
+  .r-excellent { background:#e8f5e8; color:var(--forest); }
+  .r-good      { background:#e6eef4; color:var(--steel); }
+  .r-partial   { background:#fdf6dc; color:var(--earth); }
+
+  /* ===== QUESTION UPGRADE ===== */
+  .qu-list { display:grid; gap:14px; }
+  .qu-card { background:var(--cream); border:1px solid var(--border); border-radius:10px; padding:20px 24px; }
+  .qu-before { font-size:13px; color:#888; padding:8px 12px; background:#f5f5f5; border-radius:6px; margin-bottom:8px; }
+  .qu-before::before { content:"元の問い　"; font-weight:600; color:#999; }
+  .qu-after-label { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--forest); font-weight:700; margin-bottom:6px; margin-top:4px; }
+  .qu-after-item { font-size:14px; color:var(--ink); line-height:1.8; padding:6px 0 6px 16px; border-left:2px solid var(--moss); margin-bottom:4px; }
+
+  /* ===== CURRENT STAGE ===== */
+  .stage-box {
+    background:linear-gradient(135deg, #0f2236, #1a3d5c);
+    border-radius:14px; padding:32px 36px; color:white; margin-bottom:16px;
+  }
+  .stage-label  { font-size:11px; letter-spacing:4px; color:rgba(255,255,255,0.45); margin-bottom:16px; }
+  .stage-from   { font-size:14px; color:rgba(255,255,255,0.6); margin-bottom:8px; }
+  .stage-arrow  { font-size:24px; color:var(--moss); margin:8px 0; }
+  .stage-to     { font-size:18px; font-weight:700; color:white; line-height:1.5; margin-bottom:16px; }
+  .stage-next   { font-size:14px; color:rgba(255,255,255,0.8); line-height:1.9; padding:16px 20px; background:rgba(255,255,255,0.08); border-radius:10px; border-left:3px solid var(--moss); }
+  .stage-next strong { color:#a8d5ff; }
+
+  /* ===== NEXT THEME ===== */
+  .next-theme-list { display:grid; gap:14px; }
+  .nt-card { background:var(--cream); border:1px solid var(--border); border-radius:10px; padding:20px 24px; }
+  .nt-header { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+  .nt-num { width:28px; height:28px; border-radius:50%; background:var(--steel); color:white; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .nt-title { font-size:15px; font-weight:700; color:var(--ink); }
+  .nt-questions { margin-top:8px; padding:10px 14px; background:var(--highlight); border-radius:6px; font-size:13px; color:var(--earth); line-height:1.9; }
+
+  /* ===== KEY TAKEAWAY ===== */
+  .key-box {
+    background:linear-gradient(135deg,#2C5F2D,#1a3d1b);
+    border-radius:16px; padding:36px 40px; color:white;
+  }
+  .key-label { font-size:11px; letter-spacing:4px; color:rgba(255,255,255,0.45); margin-bottom:18px; }
+  .key-main { font-family:'Noto Serif JP',serif; font-size:22px; font-weight:700; line-height:1.7; color:white; margin-bottom:20px; }
+  .key-example-label { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:10px; }
+  .key-examples { display:grid; gap:8px; }
+  .key-example-q { font-size:14px; color:rgba(255,255,255,0.85); line-height:1.8; padding:10px 14px; background:rgba(255,255,255,0.08); border-radius:8px; border-left:2px solid var(--moss); }
+
+  /* ===== FINAL RATING ===== */
+  .final-good  { list-style:none; margin-bottom:18px; }
+  .final-good li { display:flex; gap:10px; padding:8px 0; border-bottom:1px solid #eee; font-size:14px; line-height:1.7; }
+  .final-good li:last-child { border-bottom:none; }
+  .fg-check { color:var(--forest); font-weight:700; flex-shrink:0; }
+  .fg-x     { color:var(--clay);   font-weight:700; flex-shrink:0; }
+
+  .definition-box { background:var(--highlight); border:1px solid #e8d58a; border-radius:12px; padding:24px 30px; margin-top:20px; }
+  .def-label { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--earth); font-weight:700; margin-bottom:12px; }
+  .def-main  { font-family:'Noto Serif JP',serif; font-size:16px; line-height:1.9; color:var(--ink); font-weight:500; margin-bottom:12px; }
+  .def-growth { font-size:14px; line-height:1.8; color:#666; font-style:italic; }
+
+  /* ===== FOOTER ===== */
+  .footer { text-align:center; padding:36px 0 16px; border-top:1px solid var(--border); font-size:12px; color:#aaa; letter-spacing:1px; }
+
+  @media print {
+    body, .cover, .stage-box, .key-box { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .strength-card, .improv-card, .chuyo-card, .bq-card { break-inside:avoid; }
+    .section { break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <div class="cover-badge"><span class="cover-dot"></span>COACH ANALYSIS v2　—　SESSION 01 / 2026.06.09</div>
+  <div class="cover-label">Coaching Effectiveness Analysis</div>
+  <div class="cover-title">コーチング力分析シート</div>
+  <div class="cover-subtitle">前田薫　自己成長記録　｜　対象：ともちゃんセッション</div>
+  <div class="cover-meta">
+    <div class="meta-item"><label>Coach</label><span>前田薫（かおるちゃん）</span></div>
+    <div class="meta-item"><label>Client</label><span>ともちゃん（OFFICE NOZAWA）</span></div>
+    <div class="meta-item"><label>Purpose</label><span>コーチとしての自己成長・振り返り</span></div>
+    <div class="meta-item"><label>Version</label><span>v2　GPT × Claude 統合分析</span></div>
+  </div>
+</div>
+<div class="purpose-bar"><span>このシートは</span>コーチ自身が「なぜ効いたか」「何が残ったか」「次に何を持ち込むか」を言語化するための内省ツールです。</div>
+
+<div class="content">
+
+  <!-- ===== 1. 結論 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-navy">🎯</div>
+      <div class="section-title">セッション全体の結論</div>
+      <span class="section-note">SESSION 01</span>
+    </div>
+
+    <div class="conclusion-main">
+      <div class="conclusion-label">TODAY'S CONCLUSION</div>
+      <div class="conclusion-text">
+        今回のかおるちゃんのコーチングは、<br>
+        <strong>【感情を置いていかず、複数のテーマを一つずつ分解し、最後に核フレームまで到達できたセッション】</strong><br>
+        でした。
+      </div>
+    </div>
+
+    <div class="next-stage-box">
+      <div class="next-stage-label">次のステージとしての磨きどころ</div>
+      <ul class="next-stage-list">
+        <li><span class="next-stage-bullet">①</span>価値観に戻すタイミング（フレームの反対側を先に見切る）</li>
+        <li><span class="next-stage-bullet">②</span>支援を見る前に、前提の反対側を見切る順番</li>
+        <li><span class="next-stage-bullet">③</span>コーチの見立てをどこまで出すか（問いで先に待つ）</li>
+        <li><span class="next-stage-bullet">④</span>問いの焦点をもう少し絞ること</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== 2. 全体構造 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-steel">🔄</div>
+      <div class="section-title">今回のコーチング全体構造（6ステップ）</div>
+    </div>
+
+    <div class="flow-steps">
+      <div class="fs-item">
+        <div class="fs-num" style="background:#7db3d8;">①</div>
+        <div class="fs-body">
+          <div class="fs-label">話を止めずに受け取る</div>
+          <div class="fs-text">ともちゃんが複数テーマを一気に話す中で、かおるちゃんは途中で結論に行かず「<strong>まだ話していいので</strong>」「<strong>話しきってないものがあれば言ってください</strong>」と促した。</div>
+          <div class="fs-good">✓ これが今回のセッションの土台</div>
+        </div>
+      </div>
+      <div class="fs-item">
+        <div class="fs-num" style="background:#6E9D52;">②</div>
+        <div class="fs-body">
+          <div class="fs-label">感情を確認する</div>
+          <div class="fs-text">「今、自分で聞いて何か感じていること」「どんな感情があるか」「一番強く感じるものはどれか」と問い、うんざり・悲しい・寂しい・怒り・がっかり・大事にされていない感じ、を引き出した。</div>
+          <div class="fs-sub">→ 中庸思考として正しい入口</div>
+        </div>
+      </div>
+      <div class="fs-item">
+        <div class="fs-num" style="background:#C4744E;">③</div>
+        <div class="fs-body">
+          <div class="fs-label">出来事に戻す</div>
+          <div class="fs-text">「7000回配信記念」という具体的出来事に戻し、「用事があるから帰ってくる」「新城で部外者がいる」「6時に帰ると言って遅れる」「<strong>ウクレレを弾く</strong>」という具体例を引き出した。</div>
+        </div>
+      </div>
+      <div class="fs-item">
+        <div class="fs-num" style="background:#8B6914;">④</div>
+        <div class="fs-body">
+          <div class="fs-label">認知と言葉を具体化する</div>
+          <div class="fs-text">「ほったらかしって、どうしていることをほったらかしと感じているのか」「大人はどうあるべきか」「思いやるとはどうすることか」「困るとはどういう状態か」と抽象語を具体化した。</div>
+          <div class="fs-good">✓ プロコーチとして非常に重要なスキル</div>
+        </div>
+      </div>
+      <div class="fs-item">
+        <div class="fs-num" style="background:#6C5CE7;">⑤</div>
+        <div class="fs-body">
+          <div class="fs-label">フレームワークを抽出する</div>
+          <div class="fs-text">核として「<strong>相手の状態を見て配慮してリクエストすべき</strong>」「相手を困らせてはいけない」「ネガティブな感情を持たせてはいけない」を言語化。今回の最大成果。</div>
+        </div>
+      </div>
+      <div class="fs-item">
+        <div class="fs-num" style="background:var(--forest);">⑥</div>
+        <div class="fs-body">
+          <div class="fs-label">価値観に戻す・地図のメタファーで統合</div>
+          <div class="fs-text">「本来の美しさを引き出す」というともちゃんの価値観に戻し、「<strong>地図の重ねる順番</strong>」というメタファーで全体を統合した。</div>
+          <div class="fs-good">✓ 構造を語っているのに人が消えない ——かおるちゃんの唯一無二の強み</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 3. 強み7つ ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-forest">💪</div>
+      <div class="section-title">今回発揮された強み（7つ）</div>
+    </div>
+
+    <div class="strength-list">
+
+      <div class="strength-card">
+        <div class="strength-header">
+          <div class="strength-num-title">
+            <div class="snum">1</div>
+            <div class="strength-title">複雑な話を急いで整理しない</div>
+          </div>
+          <div class="strength-star">★★★★★</div>
+        </div>
+        <div class="strength-body">テーマが多く複雑な状態でも、「どれを扱いますか」と早く絞りにいかなかった。「まだ話していいので」という声かけが、ともちゃんの「話しすぎると迷惑」というフレームに対して安全を提供した。セッションそのものが、ともちゃんの課題への逆体験になっていた。</div>
+        <div class="strength-quote">「もし喋りすぎてたなぁと思って止めてたとしたならば、まだ話していいので」</div>
+        <div class="strength-key">→ セッションの場そのものが、ともちゃんへの「リクエストして大丈夫」という体験になっていた</div>
+      </div>
+
+      <div class="strength-card">
+        <div class="strength-header">
+          <div class="strength-num-title">
+            <div class="snum">2</div>
+            <div class="strength-title">「全部置いていかない」という場づくり</div>
+          </div>
+          <div class="strength-star">★★★★★</div>
+        </div>
+        <div class="strength-body">「全部大事にする、けれど一つずつ見る」という中庸の場を作った。ともちゃんは複雑なまま話せたからこそ、最後に核まで辿り着けた。今後の型として確立していい。</div>
+        <div class="strength-key">→ これはかおるちゃんらしいコーチングの強み。今後も型にしていい。</div>
+      </div>
+
+      <div class="strength-card">
+        <div class="strength-header">
+          <div class="strength-num-title">
+            <div class="snum">3</div>
+            <div class="strength-title">感情を入口にできていた</div>
+          </div>
+          <div class="strength-star">★★★★★</div>
+        </div>
+        <div class="strength-body">「一番強く感じるものはどれですか」「この怒っているというのは、なぜ怒っていますか」と感情の強度を何度も確認した。「寂しさ」より「怒り」が強いと分かったからこそ、「不公平・搾取・相手の状況を見て配慮すべき」に到達できた。</div>
+        <div class="strength-quote">「何を一番嫌と感じていますか？」「これはどんな感情がありますか？」</div>
+      </div>
+
+      <div class="strength-card">
+        <div class="strength-header">
+          <div class="strength-num-title">
+            <div class="snum">4</div>
+            <div class="strength-title">抽象語をそのままにしなかった</div>
+          </div>
+          <div class="strength-star">★★★★★</div>
+        </div>
+        <div class="strength-body">「大事にされていない」「ほったらかし」「配慮がない」「困る」「自立」「甘える」—— これらはすべてクライアントの認知であり、事実ではない。この抽象語を何度も具体化したことで、構造が見えた。プロコーチとして非常に重要なスキル。</div>
+        <div class="strength-quote">「ほったらかしっていうのは、たくちゃんがどうしてることをほったらかしって感じていますか？」<br>「困るってどういう状態のことですか？」「思いやるってどうすることですか？」</div>
+      </div>
+
+      <div class="strength-card">
+        <div class="strength-header">
+          <div class="strength-num-title">
+            <div class="snum">5</div>
+            <div class="strength-title">フレームワークを丁寧に言語化できた</div>
+          </div>
+          <div class="strength-star">★★★★★</div>
+        </div>
+        <div class="strength-body">「相手の状態を見て配慮してリクエストすべき」という核を言語化した。このフレームが、自分の願いを出せない・我慢する・不公平感・サプライズへの情熱が湧かない——すべてをつないでいた。一点に絞れたことは大きい。</div>
+        <div class="strength-key">→ 今回の最大成果</div>
+      </div>
+
+      <div class="strength-card">
+        <div class="strength-header">
+          <div class="strength-num-title">
+            <div class="snum">6</div>
+            <div class="strength-title">クライマックスを宣言した</div>
+          </div>
+          <div class="strength-star">★★★★☆</div>
+        </div>
+        <div class="strength-body">「今からクライマックスに入っていきますね」という予告は、ともちゃんのような「相手の時間を気にする人」に対して特に有効。どこまで続くか分からないと疲れるクライアントに、安心安全を提供した。</div>
+        <div class="strength-quote">「いつまで続くねんって思うのもしんどいかもわからないから一応言いました」</div>
+      </div>
+
+      <div class="strength-card">
+        <div class="strength-header">
+          <div class="strength-num-title">
+            <div class="snum">7</div>
+            <div class="strength-title">最後にメタファーで統合した</div>
+          </div>
+          <div class="strength-star">★★★★★</div>
+        </div>
+        <div class="strength-body">「地図」のメタファーはセッション全体を美しく統合した。ともちゃん自身の課題「相手の地図を上に置きすぎる」を、責めずに可視化できた。「構造を語っているのに人が消えない」——これがかおるちゃんの唯一無二の強み。</div>
+        <div class="strength-quote">「ともちゃんには、ともちゃんの地図がある。大事なのは重ねる順番。一番上に自分の地図があるかどうか。」</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== 4. ベスト問い ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-navy">🔑</div>
+      <div class="section-title">今回のベスト問い（9選）</div>
+    </div>
+
+    <div class="bq-list">
+      <div class="bq-card">
+        <div class="bq-header">
+          <div class="bq-num">1</div>
+          <div class="bq-question">「もし喋りすぎてたなぁと思って止めてたとしたならば、まだ話していいので」</div>
+        </div>
+        <div class="bq-note">問いではなく、最高の場づくり。ともちゃんのフレームに対して逆体験を提供した今回のベスト発言。</div>
+      </div>
+      <div class="bq-card">
+        <div class="bq-header">
+          <div class="bq-num">2</div>
+          <div class="bq-question">「今自分で聞いて、何か感じていること」</div>
+        </div>
+        <div class="bq-note">クライアントが自分の言葉を聞いた後の内側を見る問い。自己観察を促す。</div>
+      </div>
+      <div class="bq-card">
+        <div class="bq-header">
+          <div class="bq-num">3</div>
+          <div class="bq-question">「この怒ってるっていうのは、なぜ怒っていますか？」</div>
+        </div>
+        <div class="bq-note">感情から認知へつなぐ問い。感情をテーマに変換する鍵。</div>
+      </div>
+      <div class="bq-card">
+        <div class="bq-header">
+          <div class="bq-num">4</div>
+          <div class="bq-question">「ほったらかしっていうのは、たくちゃんがどうしてることをほったらかしって感じていますか？」</div>
+        </div>
+        <div class="bq-note">抽象語を具体化する素晴らしい問い。認知構造の解像度を上げる。</div>
+      </div>
+      <div class="bq-card">
+        <div class="bq-header">
+          <div class="bq-num">5</div>
+          <div class="bq-question">「大人はどうあるべきと思っていますか？」</div>
+        </div>
+        <div class="bq-note">フレームワークを引き出した問い。「大人は甘えてはいけない」が出てきた。</div>
+      </div>
+      <div class="bq-card">
+        <div class="bq-header">
+          <div class="bq-num">6</div>
+          <div class="bq-question">「困るってどういう状態のことですか？」</div>
+        </div>
+        <div class="bq-note">深層フレーム「ネガティブな感情を与えてはいけない」に入る問い。</div>
+      </div>
+      <div class="bq-card">
+        <div class="bq-header">
+          <div class="bq-num">7</div>
+          <div class="bq-question">「本来の美しさを引き出すことと、我慢させることは両立しますか？」</div>
+        </div>
+        <div class="bq-note">価値観とフレームの矛盾を見せる問い。ともちゃんが腹落ちした転換点。</div>
+      </div>
+      <div class="bq-card">
+        <div class="bq-header">
+          <div class="bq-num">8</div>
+          <div class="bq-question">「さくちゃんがウクレレを弾いたから腹が立ったのか、相手の状態を見て配慮すべきというルールがあるから腹が立ったのか」</div>
+        </div>
+        <div class="bq-note">出来事と認知の分離が鮮明に起きた問い。今後の型として使える。</div>
+      </div>
+      <div class="bq-card">
+        <div class="bq-header">
+          <div class="bq-num">9</div>
+          <div class="bq-question">「それは誰の地図？」（地図のメタファーへの接続）</div>
+        </div>
+        <div class="bq-note">今後のともちゃんへのセッションでも繰り返し使える核心的な問い。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 5. 改善ポイント ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-clay">📈</div>
+      <div class="section-title">改善ポイント（6つ）</div>
+    </div>
+    <p style="font-size:13px; color:#666; margin-bottom:18px; line-height:1.7;">コーチング力向上のために、あえて細かく見ます。</p>
+
+    <div class="improv-list">
+
+      <div class="improv-card">
+        <div class="improv-header"><div class="inum">1</div><div class="improv-title">序盤でテーマが広がった時、体の反応で絞ってもよかった</div></div>
+        <div class="improv-body">序盤のテーマの広がりは良く受け取れていた。ただ、もう少し早い段階で身体反応で絞ると、より早く「怒り」に入れた可能性がある。</div>
+        <div class="improv-question">「今たくさん出てきた中で、一番体が反応しているのはどれですか？」<br>「今日一つだけ扱うなら、どこを見たいですか？」</div>
+      </div>
+
+      <div class="improv-card">
+        <div class="improv-header"><div class="inum">2</div><div class="improv-title">価値観に戻すタイミングが少し早い場面があった</div></div>
+        <div class="improv-body">「べき」フレームの反対側が十分に見えていない段階で価値観に戻すと、「価値観に沿っているかどうか」のジャッジになりやすい。今回は結果的に良かったが、順番の精度を上げるならフレームの反対側を先に見切る。</div>
+        <div class="improv-before">価値観に戻す前が少し早かった場面</div>
+        <div class="improv-after">価値観に戻す前に入れる問い：「その"べき"があることで、ともちゃんは何を受け取っていますか？」「その"べき"がなかったら、何が怖いですか？」</div>
+      </div>
+
+      <div class="improv-card">
+        <div class="improv-header"><div class="inum">3</div><div class="improv-title">フレームの反対側を見切る前に価値観側へ移動した</div></div>
+        <div class="improv-body">理想の順番は：①フレーム特定 → ②反対側を見る → ③フレームが緩む → ④価値観に戻す。今回は②を十分に見切る前に④へ移動した。次回の中心テーマにする。</div>
+        <div class="improv-question">「見えないなら問いだけ置く」「答えを急がない」「前提の反対側を宿題にする」でもOK</div>
+      </div>
+
+      <div class="improv-card">
+        <div class="improv-header"><div class="inum">4</div><div class="improv-title">コーチの見立てを出す場面が少し強くなる瞬間があった</div></div>
+        <div class="improv-body">「これはもうストレートに言いますね」「これがあるから全部生まれてるんですよ」は強いフィードバック。関係性があったから大丈夫だったが、一般的には余白を持たせる方が安全。</div>
+        <div class="improv-before">「これがあるから、今日話してくれた試練が全部生まれてるんですよ」</div>
+        <div class="improv-after">「僕には、今日の話の多くがこの前提からつながっているように見えます。決めつけではなく仮説ですが。」</div>
+      </div>
+
+      <div class="improv-card">
+        <div class="improv-header"><div class="inum">5</div><div class="improv-title">「必ずあります」は少し注意</div></div>
+        <div class="improv-body">中庸思考の確信としては分かるが、クライアントの体感が追いついていない時に「必ずある」と言われると「見えない自分がダメ」「見つけなきゃ」になる可能性がある。</div>
+        <div class="improv-before">「必ずあります」</div>
+        <div class="improv-after">「今は見えなくて大丈夫です。出てこないことも大事な情報です。今日は問いだけ置いておきましょう。」</div>
+      </div>
+
+      <div class="improv-card">
+        <div class="improv-header"><div class="inum">6</div><div class="improv-title">身体反応をもっと早く使ってもよかった</div></div>
+        <div class="improv-body">後半に「体と心と頭の状態を教えてください」と聞いたのは良かった。ただ、最初に「怒り」が出た段階で体の場所を聞くと、身体反応からフレームに直接入れた可能性がある。次回以降、ともちゃんには身体感覚が特に有効。</div>
+        <div class="improv-question">「その怒りは、体のどこにありますか？」（感情が出た直後に使う）</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== 6. 中庸思考プロセス評価 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-purple">⚖️</div>
+      <div class="section-title">中庸思考プロセスとしての評価（7ステップ）</div>
+    </div>
+
+    <div class="chuyo-grid">
+
+      <div class="chuyo-card">
+        <div class="cstep">
+          <div class="cstep-num" style="background:#7db3d8;">①</div>
+          <div class="cstep-label">出来事<br>特定</div>
+        </div>
+        <div class="cbody">
+          <div class="cbody-title">出来事の特定</div>
+          <div class="cbody-text">ウクレレの出来事で「たくちゃんがウクレレを弾いた」という事実まで戻せた。ただし序盤は複数テーマが絡んでいたため、もう少し早く具体出来事に絞ってもよかった。</div>
+        </div>
+        <div class="crating"><span class="crating-badge r-good">かなり良い</span></div>
+      </div>
+
+      <div class="chuyo-card">
+        <div class="cstep">
+          <div class="cstep-num" style="background:#6E9D52;">②</div>
+          <div class="cstep-label">感情<br>確認</div>
+        </div>
+        <div class="cbody">
+          <div class="cbody-title">感情の確認</div>
+          <div class="cbody-text">うんざり・悲しい・寂しい・怒り・がっかり・搾取されている感じまで拾えた。特に「一番強いのは怒りかもしれない」を引き出せたのが重要だった。</div>
+        </div>
+        <div class="crating"><span class="crating-badge r-excellent">とても良い</span></div>
+      </div>
+
+      <div class="chuyo-card">
+        <div class="cstep">
+          <div class="cstep-num" style="background:#C4744E;">③</div>
+          <div class="cstep-label">認知<br>特定</div>
+        </div>
+        <div class="cbody">
+          <div class="cbody-title">認知の特定</div>
+          <div class="cbody-text">「ついでか」「不公平」「ずるい」「不誠実」「思いやりがない」「こいつは馬鹿だ」まで具体的に出せた。抽象語の具体化が効いた。</div>
+        </div>
+        <div class="crating"><span class="crating-badge r-excellent">とても良い</span></div>
+      </div>
+
+      <div class="chuyo-card">
+        <div class="cstep">
+          <div class="cstep-num" style="background:#6C5CE7;">④</div>
+          <div class="cstep-label">FW<br>特定</div>
+        </div>
+        <div class="cbody">
+          <div class="cbody-title">フレームワーク特定</div>
+          <div class="cbody-text">「相手の状態を見て配慮してリクエストすべき」まで到達。さらに「困らせてはいけない」「ネガティブな感情を持たせてはいけない」「大人は甘えてはいけない」も見えた。</div>
+        </div>
+        <div class="crating"><span class="crating-badge r-excellent">非常に良い</span></div>
+      </div>
+
+      <div class="chuyo-card">
+        <div class="cstep">
+          <div class="cstep-num" style="background:#8B6914;">⑤</div>
+          <div class="cstep-label">反対側<br>を見る</div>
+        </div>
+        <div class="cbody">
+          <div class="cbody-title">反対側を見る</div>
+          <div class="cbody-text">一部できているが、最終核の「相手の状態を見て配慮することのデメリット」「状態を見ずにリクエストすることのメリット」は十分に見切る前に終了。次回の中心テーマ。</div>
+          <div class="cbody-sub">→ 次回に持ち越しで良い判断だった</div>
+        </div>
+        <div class="crating"><span class="crating-badge r-partial">次回へ</span></div>
+      </div>
+
+      <div class="chuyo-card">
+        <div class="cstep">
+          <div class="cstep-num" style="background:#4A7090;">⑥</div>
+          <div class="cstep-label">支援<br>を見る</div>
+        </div>
+        <div class="cbody">
+          <div class="cbody-title">支援を見る</div>
+          <div class="cbody-text">「アナログの音」「子どもが自由に言える平和さ」「たくちゃんの大らかさ」が出たが、ともちゃんの中では「勝手に弾いた」が強く残っていた。無理に進めず問いを置いた判断は良い。</div>
+          <div class="cbody-sub">→ 無理に完了させなかったのが良かった</div>
+        </div>
+        <div class="crating"><span class="crating-badge r-good">判断良い</span></div>
+      </div>
+
+      <div class="chuyo-card">
+        <div class="cstep">
+          <div class="cstep-num" style="background:var(--forest);">⑦</div>
+          <div class="cstep-label">価値観<br>接続</div>
+        </div>
+        <div class="cbody">
+          <div class="cbody-title">価値観との接続</div>
+          <div class="cbody-text">「本来の美しさを引き出す」に何度も戻せた。注意点：価値観を使ってフレームを裁くようにならないこと。「価値観に生きられていない」という自己否定に向く可能性がある。</div>
+          <div class="cbody-sub">→ 今回は受け取れていた。今後は順番に注意</div>
+        </div>
+        <div class="crating"><span class="crating-badge r-good">良い・注意</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== 7. 問いの精密化 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-gold">✨</div>
+      <div class="section-title">さらに磨ける問いへの変換</div>
+    </div>
+
+    <div class="qu-list">
+
+      <div class="qu-card">
+        <div class="qu-before">なぜ怒っていますか？</div>
+        <div class="qu-after-label">精密版</div>
+        <div class="qu-after-item">その怒りは、何を大事にされていないと感じた怒りですか？</div>
+        <div class="qu-after-item">その怒りは、相手に何を分かってほしかった怒りですか？</div>
+      </div>
+
+      <div class="qu-card">
+        <div class="qu-before">相手の状態を見て配慮することのデメリットは？</div>
+        <div class="qu-after-label">精密版</div>
+        <div class="qu-after-item">相手の状態を見すぎることで、ともちゃん自身は何を失っていますか？</div>
+        <div class="qu-after-item">相手の状態を見すぎることで、相手は何を学ぶ機会を失いましたか？</div>
+        <div class="qu-after-item">相手の状態を見すぎることは、本当に相手の本来の美しさを引き出していますか？</div>
+      </div>
+
+      <div class="qu-card">
+        <div class="qu-before">相手の状態を見ずにリクエストすることのメリットは？</div>
+        <div class="qu-after-label">精密版</div>
+        <div class="qu-after-item">相手の状態を見ずにリクエストされた時、相手にはどんな選択肢が生まれますか？</div>
+        <div class="qu-after-item">相手が断れることには、どんなメリットがありますか？</div>
+        <div class="qu-after-item">相手が自分で選ぶ経験には、どんな価値がありますか？</div>
+      </div>
+
+      <div class="qu-card">
+        <div class="qu-before">困るとはどういうことですか？</div>
+        <div class="qu-after-label">精密版</div>
+        <div class="qu-after-item">相手が困っていると感じた時、ともちゃんの体は何を危険だと判断していますか？</div>
+        <div class="qu-after-item">相手が困ることによって、ともちゃんは何が起きると感じていますか？</div>
+        <div class="qu-after-item">困ることを奪うことのデメリットは何ですか？</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== 8. 現在地 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-navy">🔮</div>
+      <div class="section-title">コーチとしての現在地</div>
+    </div>
+    <div class="stage-box">
+      <div class="stage-label">COACH STAGE</div>
+      <div class="stage-from">【共感型コーチ】</div>
+      <div class="stage-arrow">↓</div>
+      <div class="stage-to">【構造を見抜いて、深層フレームまで降りられるコーチ】<br>にかなり入っています。</div>
+      <div class="stage-next">
+        次に必要なのは：<br><br>
+        「<strong>見抜いた構造を、クライアント自身が見つけた感覚で受け取れるように、もう少し問いで待つ</strong>」<br><br>
+        かおるちゃんは構造が見えるのが速い。だからこそ言いたくなる。<br>
+        でも、クライアントの体が追いつくには少し時間が必要。<br><br>
+        「見えた瞬間に言う」 ではなく、<br>
+        「<strong>見えているけど、相手が見える問いを置く</strong>」
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 9. 次回テーマ候補 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-steel">📋</div>
+      <div class="section-title">次回セッションで扱うテーマ候補</div>
+    </div>
+
+    <div class="next-theme-list">
+
+      <div class="nt-card">
+        <div class="nt-header"><div class="nt-num">1</div><div class="nt-title">相手の状態を見て配慮することのデメリット（最優先）</div></div>
+        <div class="nt-questions">
+          相手の状態を見すぎることで、ともちゃんは何を失ってきましたか？<br>
+          相手の状態を見すぎることで、相手は何を学ぶ機会を失いましたか？<br>
+          相手の状態を見すぎることは、本当に相手の本来の美しさを引き出していますか？
+        </div>
+      </div>
+
+      <div class="nt-card">
+        <div class="nt-header"><div class="nt-num">2</div><div class="nt-title">相手の状態を見ずにリクエストすることのメリット</div></div>
+        <div class="nt-questions">
+          相手の状態を見ずにリクエストされた時、相手にはどんな自由がありますか？<br>
+          相手が断れることには、どんなメリットがありますか？<br>
+          困る経験には、どんなメリットがありますか？
+        </div>
+      </div>
+
+      <div class="nt-card">
+        <div class="nt-header"><div class="nt-num">3</div><div class="nt-title">「困らせてはいけない」の奥を見る</div></div>
+        <div class="nt-questions">
+          困ることのメリットは何ですか？<br>
+          困ることで、人は何を学べますか？<br>
+          相手が困ることを信頼するとは、どういうことですか？
+        </div>
+      </div>
+
+      <div class="nt-card">
+        <div class="nt-header"><div class="nt-num">4</div><div class="nt-title">「ネガティブな感情を持たせてはいけない」の奥を見る</div></div>
+        <div class="nt-questions">
+          相手が嫌な気持ちになることのメリットは何ですか？<br>
+          相手の嫌な気持ちを、ともちゃんが先回りして避けることのデメリットは？<br>
+          相手が嫌だと感じる自由を持つことは、その人の本来の美しさとどうつながりますか？
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== 10. 今日の一点 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-forest">🌿</div>
+      <div class="section-title">かおるちゃんへの今日の一点</div>
+    </div>
+    <div class="key-box">
+      <div class="key-label">TODAY'S ONE POINT</div>
+      <div class="key-main">「核が見えた時ほど、問いを置いて待つ」</div>
+      <div class="key-example-label">たとえば今回なら、こんな問いを置いてから見立てを伝える：</div>
+      <div class="key-examples">
+        <div class="key-example-q">「相手の状態を見て配慮することを、ともちゃんがそんなに大切にしてきたのは、何を守るためだったんでしょうね？」</div>
+        <div class="key-example-q">「もし相手の状態を見ずにリクエストしてもいい世界があるとしたら、ともちゃんは何を失い、何を受け取ると思いますか？」</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 11. 最終評価・一行定義 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-gold">🏆</div>
+      <div class="section-title">最終評価と一行定義</div>
+    </div>
+
+    <p style="font-size:14px; font-weight:600; color:var(--ink); margin-bottom:12px;">今回特に良かったこと</p>
+    <ul class="final-good" style="margin-bottom:28px;">
+      <li><span class="fg-check">✓</span>「全部置いていかない」という場づくり</li>
+      <li><span class="fg-check">✓</span>「一つずつ見る」という中庸の進め方</li>
+      <li><span class="fg-check">✓</span>感情を入口にする</li>
+      <li><span class="fg-check">✓</span>抽象語を具体化する</li>
+      <li><span class="fg-check">✓</span>フレームワークを特定する</li>
+      <li><span class="fg-check">✓</span>「地図」のメタファーで統合する</li>
+    </ul>
+
+    <p style="font-size:14px; font-weight:600; color:var(--ink); margin-bottom:12px;">改善点</p>
+    <ul class="final-good" style="margin-bottom:28px;">
+      <li><span class="fg-x">→</span>価値観に戻す前に、もう少しフレームの反対側を見る</li>
+      <li><span class="fg-x">→</span>見立てを出す前に、もう一つ問いを置く</li>
+      <li><span class="fg-x">→</span>「必ずあります」を少し柔らかくする</li>
+      <li><span class="fg-x">→</span>身体反応をもう少し早めに使う</li>
+    </ul>
+
+    <div class="definition-box">
+      <div class="def-label">SESSION 01 ONE-LINE DEFINITION</div>
+      <div class="def-main">「今回のかおるちゃんのコーチングは、ともちゃんの複雑な感情を置いていかず、最後に"相手を困らせてはいけない"という核フレームまで辿り着いたセッション」</div>
+      <div class="def-growth">成長課題込みで言うなら：「構造を見抜く力は十分に出ていたので、次は見抜いた核を、クライアント自身の内側から立ち上がらせる問いの精度を磨く段階」</div>
+      <div style="margin-top:16px; padding:14px 18px; background:rgba(44,95,45,0.08); border-radius:8px; font-size:14px; line-height:1.8; color:var(--forest); font-weight:500;">
+        「薫ちゃんは、相手の地図に飲まれた人を、自分の地図へ戻す場を作れている。<br>次の課題は、その戻り道をさらに問いで本人の内側から歩かせることです。」
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>コーチング力分析シート v2　Session 01　｜　前田薫　内部記録　©2026</p>
+    <p style="margin-top:8px;">このシートはセッションを重ねるごとにコーチとしての成長を記録していきます</p>
+  </div>
+
+</div>
+</body>
+</html>
