@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ともちゃん専用ページ｜前田薫 コーチング</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans JP',sans-serif;background:#F8F4EE;color:#1E1E2E}
+body.kj-auth-locked>*:not(#kj-auth-overlay){display:none!important}#kj-auth-overlay{position:fixed;inset:0;background:linear-gradient(135deg,#26312b,#5b513f);display:grid;place-items:center;padding:22px;z-index:9999}.kj-auth-card{width:min(420px,100%);background:#fbfaf6;color:#2f2b26;border-radius:10px;padding:30px;box-shadow:0 24px 80px rgba(0,0,0,.28)}.kj-auth-label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9a6a3b;margin-bottom:10px}.kj-auth-card h1{font-size:24px;line-height:1.45;margin:0 0 10px}.kj-auth-card p{font-size:14px;color:#70685f}.kj-auth-card input{width:100%;min-height:46px;border:1px solid #d4cabd;border-radius:8px;padding:10px 12px;font-size:16px;background:#fff;margin:8px 0 12px}.kj-auth-card button{width:100%;min-height:46px;border:0;border-radius:8px;background:#26312b;color:#fff8e8;font-size:15px;font-weight:700;cursor:pointer}.kj-auth-error{min-height:22px;color:#a33;font-size:13px;margin-top:8px}
+a{color:inherit}
+.hero{background:linear-gradient(135deg,#2C5F2D 0%,#1a3d1b 60%,#1E1E2E 100%);color:#fff8e8;padding:54px 0 48px}
+.wrap{width:min(760px,calc(100% - 40px));margin:0 auto}
+.back{display:inline-flex;gap:8px;color:rgba(255,248,232,.7);text-decoration:none;font-size:13px;margin-bottom:30px}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#cdbb8e;margin-bottom:12px}
+.hero h1{font-family:'Noto Serif JP',serif;font-size:26px;font-weight:700;line-height:1.4;margin-bottom:10px}
+.hero .lead{font-size:14px;color:rgba(255,248,232,.7)}
+main{padding:44px 0 70px}
+main h2{font-family:'Noto Serif JP',serif;font-size:17px;margin-bottom:18px;color:#2C5F2D}
+.card{display:block;background:#FDFBF7;border:1px solid #D5CBBB;border-left:4px solid #2C5F2D;border-radius:12px;padding:22px 26px;text-decoration:none;margin-bottom:14px;transition:box-shadow .2s}
+.card:hover{box-shadow:0 8px 24px rgba(44,95,45,.15)}
+.card-date{font-size:12px;color:#8B6914;letter-spacing:1px;margin-bottom:6px}
+.card-title{font-size:16px;font-weight:700;color:#1E1E2E;line-height:1.5;margin-bottom:6px}
+.card-desc{font-size:13px;color:#666;line-height:1.7}
+.note{margin-top:24px;font-size:13px;color:#888;line-height:1.8}
+.footer{text-align:center;padding:30px 0;border-top:1px solid #D5CBBB;font-size:12px;color:#aaa}
+</style>
+</head>
+<body class="kj-auth-locked">
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Kaoru Coaching — Private</p>
+    <h1>ともちゃん専用ページ</h1>
+    <p class="lead">前田薫 コーチング｜個人セッション 認知構造の記録</p>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <h2>セッション記録</h2>
+    <a class="card" href="2026-06-09/">
+      <div class="card-date">2026年6月9日　第1回 個人セッション</div>
+      <div class="card-title">相手を困らせないために、自分の願いを脇に置いてきた</div>
+      <div class="card-desc">怒りの奥にある我慢と、「自分の地図を一番上に戻す」という今日の気づき。</div>
+    </a>
+    <p class="note">このページは、ともちゃんだけが見られる本人専用ページです。<br>セッションを重ねるごとに記録が積み上がっていきます。</p>
+  </div>
+</main>
+<div class="footer">前田薫 コーチング　©2026</div>
+<script id="kaoru-juku-password-guard-v1">
+(function() {
+  const PASS_HASH = '5c4a49d63d52b735c28d8467cf6c87895fe3d9c7505ead1662b61b9ced2f6d88';
+  const STORAGE_KEY = 'kaoru_juku_member_tomochan_auth_v2';
+  function unlock() { document.body.classList.remove('kj-auth-locked'); const overlay = document.getElementById('kj-auth-overlay'); if (overlay) overlay.remove(); }
+  async function sha256(text) { const data = new TextEncoder().encode(text); const hash = await crypto.subtle.digest('SHA-256', data); return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join(''); }
+  function checkSaved() { if (localStorage.getItem(STORAGE_KEY) === PASS_HASH) unlock(); }
+  function render() {
+    if (!document.body.classList.contains('kj-auth-locked')) return;
+    const overlay = document.createElement('div'); overlay.id = 'kj-auth-overlay';
+    overlay.innerHTML = `<div class="kj-auth-card"><div class="kj-auth-label">Kaoru Juku Members</div><h1>本人専用ページ</h1><p>このページを見るには、本人用パスワードを入力してください。</p><input type="password" id="kj-auth-password" autocomplete="current-password" placeholder="パスワード"><button type="button" id="kj-auth-submit">表示する</button><div class="kj-auth-error" id="kj-auth-error"></div></div>`;
+    document.body.appendChild(overlay);
+    const input = document.getElementById('kj-auth-password'); const error = document.getElementById('kj-auth-error');
+    async function submit() { const digest = await sha256(input.value || ''); if (digest === PASS_HASH) { localStorage.setItem(STORAGE_KEY, PASS_HASH); unlock(); } else { error.textContent = 'パスワードが違います。'; input.value = ''; input.focus(); } }
+    document.getElementById('kj-auth-submit').addEventListener('click', submit);
+    input.addEventListener('keydown', function(e) { if (e.key === 'Enter') submit(); });
+    setTimeout(() => input.focus(), 50);
+  }
+  checkSaved();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render); else render();
+})();
+</script>
+</body>
+</html>
