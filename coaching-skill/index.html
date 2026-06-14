@@ -109,6 +109,58 @@
       font-size: 12px;
       color: #bbb;
     }
+    .map-intro {
+      font-size: 13px;
+      color: #8a8170;
+      margin-bottom: 14px;
+      letter-spacing: 0.03em;
+    }
+    .learn-map {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 44px;
+    }
+    .map-card {
+      display: block;
+      text-decoration: none;
+      background: #fff;
+      border: 0.5px solid #ddd9d0;
+      border-radius: 10px;
+      padding: 16px 18px;
+      transition: box-shadow 0.15s;
+    }
+    a.map-card:hover {
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .map-card .mc-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: #c4a96e;
+      margin-bottom: 5px;
+    }
+    .map-card .mc-title {
+      font-size: 15px;
+      font-weight: bold;
+      color: #2a2a28;
+      line-height: 1.45;
+      margin-bottom: 4px;
+    }
+    .map-card .mc-sub {
+      font-size: 12px;
+      color: #999;
+      line-height: 1.6;
+    }
+    .map-soon {
+      opacity: 0.6;
+      cursor: default;
+    }
+    .map-soon .mc-sub {
+      color: #c0a060;
+    }
+    @media (max-width: 560px) {
+      .learn-map { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -118,6 +170,31 @@
   <div class="doc-badge">COACHING SKILL LOG</div>
   <h1>セッション分析<br>訓練記録一覧</h1>
   <p class="page-sub">セッションのたびに積み上げていく、コーチとしての成長記録。</p>
+
+  <!-- ===== 学びの地図（資産化の4つの出口）===== -->
+  <p class="map-intro">1回のセッション（一次情報）から、次の4つへ資産化しています。</p>
+  <div class="learn-map">
+    <a class="map-card" href="coaching-principles.html">
+      <div class="mc-label">原則体系</div>
+      <div class="mc-title">認知が動くコーチング 全27原則</div>
+      <div class="mc-sub">セッション前に見返す核心リファレンス</div>
+    </a>
+    <a class="map-card" href="#log">
+      <div class="mc-label">訓練記録</div>
+      <div class="mc-title">コーチング力 分析シート</div>
+      <div class="mc-sub">各セッションの問いと構造の記録（下に一覧）</div>
+    </a>
+    <a class="map-card" href="/kaoru-self/">
+      <div class="mc-label">自己記録</div>
+      <div class="mc-title">かおる自身の認知構造・コーチング力</div>
+      <div class="mc-sub">コーチ自身の内側の観察記録</div>
+    </a>
+    <span class="map-card map-soon">
+      <div class="mc-label">教材</div>
+      <div class="mc-title">実セッションで学ぶコーチングプロセス</div>
+      <div class="mc-sub">近日公開</div>
+    </span>
+  </div>
 
   <!-- 原則体系ページ（ピン留め） -->
   <a class="entry-card" href="coaching-principles.html" style="border:1.5px solid #c4a96e;background:#fffdf7;">
@@ -135,7 +212,7 @@
 
   <hr style="border:none;border-top:1px solid #e8e5de;margin:8px 0 8px;">
 
-  <div class="entry-list">
+  <div class="entry-list" id="log">
 
     <a class="entry-card" href="2026-06-14_コーチング力分析_コーチング道場_ルールと自由の本丸.html">
       <div class="entry-date">2026年6月14日｜コーチング道場 ブレイクアウト（実名伏せ）</div>
