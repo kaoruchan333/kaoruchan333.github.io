@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>身体が戻る場所を思い出す｜かおる塾 事前資料</title>
+  <style>
+    :root {
+      --ink: #28231f;
+      --muted: #6d665e;
+      --paper: #fbfaf6;
+      --panel: #ffffff;
+      --soft: #f1ece3;
+      --line: #ded7cc;
+      --deep: #26312b;
+      --green: #526857;
+      --accent: #9a6a3b;
+      --gold: #c19a5b;
+      --rose: #8a514f;
+    }
+
+    body.kj-auth-locked > *:not(#kj-auth-overlay) { display: none !important; }
+
+    #kj-auth-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      padding: 22px;
+      background: linear-gradient(135deg, #26312b, #5b513f);
+    }
+
+    .kj-auth-card {
+      width: min(420px, 100%);
+      padding: 30px;
+      color: #2f2b26;
+      background: #fbfaf6;
+      border-radius: 10px;
+      box-shadow: 0 24px 80px rgba(0,0,0,.28);
+    }
+
+    .kj-auth-label {
+      margin-bottom: 10px;
+      color: #9a6a3b;
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .kj-auth-card h1 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      line-height: 1.45;
+    }
+
+    .kj-auth-card p {
+      color: #70685f;
+      font-size: 14px;
+    }
+
+    .kj-auth-card input {
+      width: 100%;
+      min-height: 46px;
+      margin: 8px 0 12px;
+      padding: 10px 12px;
+      border: 1px solid #d4cabd;
+      border-radius: 8px;
+      background: #fff;
+      font-size: 16px;
+    }
+
+    .kj-auth-card button {
+      width: 100%;
+      min-height: 46px;
+      border: 0;
+      border-radius: 8px;
+      color: #fff8e8;
+      background: #26312b;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .kj-auth-error {
+      min-height: 22px;
+      margin-top: 8px;
+      color: #a33;
+      font-size: 13px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(193, 154, 91, 0.16), transparent 32rem),
+        radial-gradient(circle at 90% 10%, rgba(82, 104, 87, 0.14), transparent 30rem),
+        var(--paper);
+      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+      font-size: 16px;
+      line-height: 1.92;
+    }
+
+    .wrap {
+      width: min(880px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .narrow {
+      width: min(760px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      color: #fff8e8;
+      background:
+        linear-gradient(135deg, rgba(38, 49, 43, 0.96), rgba(58, 68, 57, 0.92) 52%, rgba(122, 88, 53, 0.92)),
+        linear-gradient(90deg, #26312b, #6a573b);
+      padding: 54px 0 46px;
+      border-bottom: 1px solid rgba(255, 248, 232, 0.24);
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: #d9bf8f;
+      font-size: 12px;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 6vw, 54px);
+      line-height: 1.24;
+      letter-spacing: 0;
+      font-weight: 780;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 22px 0 0;
+      color: rgba(255, 248, 232, 0.86);
+      font-size: 18px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 26px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      border: 1px solid rgba(255, 248, 232, 0.32);
+      border-radius: 999px;
+      padding: 4px 12px;
+      color: rgba(255, 248, 232, 0.82);
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 13px;
+    }
+
+    main { padding: 30px 0 76px; }
+
+    section {
+      padding: 42px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-child { border-bottom: 0; }
+
+    h2 {
+      margin: 0 0 18px;
+      color: var(--deep);
+      font-size: clamp(22px, 4vw, 34px);
+      line-height: 1.42;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 30px 0 12px;
+      color: #3b352e;
+      font-size: 19px;
+      line-height: 1.5;
+      letter-spacing: 0;
+    }
+
+    p { margin: 0 0 18px; }
+    strong { color: #201a15; }
+    ul, ol { margin: 14px 0 22px; padding-left: 1.25em; }
+    li { margin: 7px 0; }
+
+    .opening-card {
+      margin-top: -28px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 28px;
+      box-shadow: 0 20px 55px rgba(38, 49, 43, 0.10);
+    }
+
+    .opening-card p {
+      font-size: 17px;
+      color: #413a33;
+    }
+
+    .key-box {
+      margin: 26px 0;
+      padding: 28px;
+      color: #fff8e8;
+      background: var(--deep);
+      border-radius: 10px;
+    }
+
+    .key-label {
+      margin-bottom: 8px;
+      color: #d9bf8f;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .key-text {
+      font-size: clamp(23px, 4vw, 36px);
+      line-height: 1.38;
+      font-weight: 780;
+    }
+
+    .two-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 24px 0;
+    }
+
+    .mini-card {
+      min-height: 100%;
+      padding: 20px 22px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+
+    .mini-card h3 {
+      margin-top: 0;
+      font-size: 17px;
+    }
+
+    .mini-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .flow {
+      display: grid;
+      gap: 12px;
+      margin: 26px 0;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 19px 22px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+
+    .num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      margin-top: 3px;
+      border-radius: 50%;
+      color: #fff8e8;
+      background: var(--green);
+      font-weight: 760;
+      font-size: 16px;
+    }
+
+    .step h3 {
+      margin: 0 0 5px;
+      color: var(--deep);
+      font-size: 17px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .work-box {
+      margin: 24px 0;
+      padding: 24px 26px;
+      background: var(--soft);
+      border: 1px solid #d8cebf;
+      border-radius: 10px;
+    }
+
+    .prompt {
+      margin: 14px 0;
+      padding: 16px 18px;
+      background: #fffdf8;
+      border: 1px solid #dfd2bf;
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      font-weight: 680;
+      line-height: 1.75;
+    }
+
+    .quiet {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .script {
+      margin: 24px 0;
+      padding: 24px 26px;
+      color: #fdf5e6;
+      background: linear-gradient(135deg, #2b352e, #4c4234);
+      border-radius: 10px;
+    }
+
+    .script p {
+      margin-bottom: 14px;
+    }
+
+    .science-list {
+      display: grid;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .science-item {
+      padding: 18px 20px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+
+    .science-item b {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--deep);
+    }
+
+    .science-item span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .note {
+      margin: 24px 0;
+      padding: 20px 22px;
+      border: 1px solid rgba(138, 81, 79, 0.24);
+      border-radius: 10px;
+      background: rgba(138, 81, 79, 0.07);
+    }
+
+    .note h3 {
+      margin-top: 0;
+      color: var(--rose);
+      font-size: 17px;
+    }
+
+    .refs {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .refs a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .footer {
+      padding-top: 30px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 680px) {
+      .hero { padding: 38px 0 36px; }
+      h1 { font-size: 28px; }
+      main { padding-top: 22px; }
+      section { padding: 34px 0; }
+      .opening-card, .key-box, .work-box, .script { padding: 22px; }
+      .two-grid { grid-template-columns: 1fr; }
+      .step { grid-template-columns: 38px 1fr; padding: 17px; }
+      .num { width: 38px; height: 38px; }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        font-size: 13px;
+        line-height: 1.65;
+      }
+      .hero {
+        padding: 28px 0;
+        color: #201a15;
+        background: #fff;
+        border-bottom: 2px solid #201a15;
+      }
+      .lead, .pill { color: #333; }
+      .pill { border-color: #bbb; background: #fff; }
+      main { padding: 16px 0 0; }
+      section { padding: 22px 0; }
+      .opening-card, .mini-card, .step, .work-box, .science-item, .note {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+      .script, .key-box {
+        color: #201a15;
+        background: #f4f0e8;
+      }
+    }
+  </style>
+</head>
+<body class="kj-auth-locked">
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Kaoru Juku / Before Session Note</p>
+      <h1>身体が戻る場所を思い出す</h1>
+      <p class="lead">ウサギに気づいた時、本当はどこへ帰りたいのか。今夜は、価値観を言葉で説明するよりも、身体で思い出すワークをします。</p>
+      <div class="meta">
+        <span class="pill">2026年6月14日</span>
+        <span class="pill">かおる塾グループコーチング</span>
+        <span class="pill">事前資料</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="narrow">
+    <section class="opening-card">
+      <p>前回は、「学んでも変われない理由」を扱いました。人は、頭で理解したことへ変わるのではなく、感情が動いた時、身体が慣れ親しんだ場所へ戻ろうとします。</p>
+      <p>今日のワークでは、その「戻ろうとする場所」を見ます。そして、本当は自分が戻りたい状態を、言葉ではなくイメージとして思い出します。</p>
+    </section>
+
+    <section>
+      <h2>今日の核心</h2>
+      <div class="key-box">
+        <div class="key-label">Core</div>
+        <div class="key-text">ウサギになることが問題なのではなく、ウサギに気づいた時に、どこへ帰るか。</div>
+      </div>
+      <p>焦る、急ぐ、責める、正解を出そうとする、相手を動かそうとする。そんな反応が出た時、私たちは「いつもの自分」へ戻ろうとしているのかもしれません。</p>
+      <p>今日はそれを悪者にせず、「あ、今ここに戻ろうとしている」と見つけます。その上で、本当は戻りたい場所を、身体の感覚として思い出します。</p>
+    </section>
+
+    <section>
+      <h2>今日見る2つの我慢</h2>
+      <p>自分の戻りたい地図を明確にするために、今日は我慢を2方向から見ます。</p>
+      <div class="two-grid">
+        <div class="mini-card">
+          <h3>やりたくないのに、やっていること</h3>
+          <p>本当はやめたいのに、続けている反応。ちゃんとしすぎる、合わせすぎる、説明しすぎる、我慢しすぎる、急ぎすぎる。</p>
+        </div>
+        <div class="mini-card">
+          <h3>やりたいのに、やっていないこと</h3>
+          <p>本当はしたいのに、許していないこと。休む、頼る、断る、遊ぶ、受け取る、ゆっくりする、正直に言う。</p>
+        </div>
+      </div>
+      <p>この2つを見ると、「本当は自分がどんな状態へ戻りたいのか」が少しずつ見えてきます。</p>
+    </section>
+
+    <section>
+      <h2>ワークの流れ</h2>
+      <div class="flow">
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <h3>最近、ウサギになった場面を思い出す</h3>
+            <p>焦った、イラッとした、不安になった、なんとかしなきゃと思った場面を一つ選びます。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <h3>身体がどこへ戻ろうとしたかを見る</h3>
+            <p>胸、喉、お腹、肩、呼吸、目線、姿勢。身体の反応から、古い戻り先を見つけます。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <div>
+            <h3>2つの我慢を抽出する</h3>
+            <p>やりたくないのにやっていること。やりたいのにやっていないこと。この両方から見ます。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <div>
+            <h3>本当は戻りたい状態をイメージする</h3>
+            <p>価値観を言葉にしなくて大丈夫です。呼吸、姿勢、表情、距離感、空気感として思い出します。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">5</div>
+          <div>
+            <h3>その状態に戻る時の試練を見る</h3>
+            <p>そこへ戻ろうとした時に出てくる怖さ、抵抗、現実の負荷を見ます。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">6</div>
+          <div>
+            <h3>試練を、価値観に合った負荷として受け取る</h3>
+            <p>それは罰ではなく、自分の価値観へ戻るためのトレーニングかもしれません。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>今夜使う問い</h2>
+      <div class="work-box">
+        <div class="prompt">最近、焦った・イラッとした・不安になった・なんとかしなきゃと思った場面はありますか？</div>
+        <div class="prompt">その時、身体はどんな感じでしたか？</div>
+        <div class="prompt">その時、自分は何を守ろうとしていましたか？</div>
+        <div class="prompt">やりたくないのに、やっていたことは何ですか？</div>
+        <div class="prompt">やりたいのに、やっていなかったことは何ですか？</div>
+        <div class="prompt">本当はどんな状態へ戻りたいですか？ 言葉にしなくてもいいので、イメージしてみてください。</div>
+        <div class="prompt">その状態へ戻ろうとした時、どんな試練が出てきそうですか？</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>価値観は、言葉より先に状態で思い出す</h2>
+      <p>「自由」「安心」「愛」「誠実」「挑戦」のように、価値観を言葉にすることもできます。ただ、今日は無理に言葉にしなくて大丈夫です。</p>
+      <p>言葉にした瞬間に頭で考え始める人もいます。だから今日は、まず状態をイメージします。</p>
+      <div class="script">
+        <p>その状態の自分は、どんな呼吸をしているでしょうか。</p>
+        <p>どんな姿勢でしょうか。</p>
+        <p>どんな表情でしょうか。</p>
+        <p>周りの人や出来事と、どんな距離感でいるでしょうか。</p>
+        <p>その自分に戻った時、何を大切にしている感じがするでしょうか。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>試練の見方</h2>
+      <p>本当に戻りたい場所へ戻ろうとすると、必ず何かしらの試練が出ます。怖さ、抵抗、周囲の反応、損しそうな感じ、罪悪感、孤独感。</p>
+      <p>でもその試練は、自分の価値観から外れた罰ではなく、価値観に戻るために必要な負荷かもしれません。</p>
+      <div class="prompt">この試練は、自分に何を思い出させてくれているのか？</div>
+      <p>支援については、無理に探しに行かなくて大丈夫です。価値観に合った場所へ戻れた時、支援はあとから見えてくることがあります。</p>
+    </section>
+
+    <section>
+      <h2>最後に決めること</h2>
+      <p>今日の最後は、日常で戻るための小さな動作を一つ決めます。</p>
+      <div class="work-box">
+        <p><strong>もし、私はウサギになったと気づいたら、まず _______ します。</strong></p>
+        <p class="quiet">例: 3秒息を吐く / 胸に手を置く / 「今、戻ろうとしている」と心の中で言う / 価値観の状態を一瞬イメージする / すぐ答えを出さず、相手の地図を見る</p>
+      </div>
+      <p>大きな変化を起こす必要はありません。ウサギに気づいて、戻る場所を一瞬思い出す。それを何度も重ねていきます。</p>
+    </section>
+
+    <section>
+      <h2>このワークの背景</h2>
+      <p>このワークは、気合いや根性で自分を変えるものではありません。心理学や情動調整の研究で示されている考え方を、かおる塾の実践に合わせて組み直しています。</p>
+      <div class="science-list">
+        <div class="science-item">
+          <b>価値観を思い出すこと</b>
+          <span>自分にとって大切な価値を思い出すと、ストレス下での防衛反応や問題解決への影響が示されています。</span>
+        </div>
+        <div class="science-item">
+          <b>イメージすること</b>
+          <span>望ましい状態を具体的にイメージすることは、身体感覚・感情・行動準備と結びつきやすくなります。</span>
+        </div>
+        <div class="science-item">
+          <b>望ましい状態と障害を両方見ること</b>
+          <span>理想だけでなく、そこに向かう時の障害も見ることで、現実の行動につながりやすくなります。</span>
+        </div>
+        <div class="science-item">
+          <b>もし- then の形で決めること</b>
+          <span>「もしこの場面が来たら、こうする」と決めておくと、感情が動いた場面で戻る行動を起こしやすくなります。</span>
+        </div>
+        <div class="science-item">
+          <b>意味づけを変えること</b>
+          <span>試練を「嫌なもの」だけでなく「価値観へ戻るための負荷」と見直すことで、感情との関わり方が変わります。</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="note">
+        <h3>安全のために</h3>
+        <p>今日のワークは、自分を責めたり、無理に深掘りしたりするものではありません。強い身体反応が出た時は、そこで止まって大丈夫です。</p>
+        <p>扱い切ることよりも、「あ、今ここに戻ろうとしている」と気づくこと。そして、本当は戻りたい状態を一瞬でも思い出すことを大切にします。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>今日の持ち帰り</h2>
+      <div class="key-box">
+        <div class="key-label">Takeaway</div>
+        <div class="key-text">変わるとは、ウサギを消すことではなく、ウサギに気づいた時に戻れる場所を育てること。</div>
+      </div>
+    </section>
+
+    <section class="refs">
+      <h2>参考にした考え方</h2>
+      <p>Creswell らによる価値観想起とストレス反応の研究、Gollwitzer らによる実装意図、Oettingen らによるメンタル・コントラスティング、Gross らによる情動調整・認知的再評価の研究を参考にしています。</p>
+      <p>参考リンク: <a href="https://en.wikipedia.org/wiki/Self-affirmation">Self-affirmation</a> / <a href="https://en.wikipedia.org/wiki/Implementation_intention">Implementation intention</a> / <a href="https://en.wikipedia.org/wiki/Cognitive_appraisal">Cognitive appraisal and reappraisal</a></p>
+    </section>
+
+    <div class="footer">
+      <p>かおる塾グループコーチング 事前資料 / 2026年6月14日</p>
+    </div>
+  </main>
+<script id="kaoru-juku-password-guard-v1">
+(function() {
+  const PASS_HASH = '5ccc5274b688d517a2da7384ca2077c1b95451108b20e9456f0fd32c8e6e928e';
+  const STORAGE_KEY = 'kaoru_juku_auth_v2';
+  function unlock() { document.body.classList.remove('kj-auth-locked'); const o=document.getElementById('kj-auth-overlay'); if(o) o.remove(); }
+  async function sha256(text) { const d=new TextEncoder().encode(text); const h=await crypto.subtle.digest('SHA-256',d); return Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,'0')).join(''); }
+  function checkSaved() { if(localStorage.getItem(STORAGE_KEY)===PASS_HASH) unlock(); }
+  function render() {
+    if(!document.body.classList.contains('kj-auth-locked')) return;
+    const overlay=document.createElement('div'); overlay.id='kj-auth-overlay';
+    overlay.innerHTML=`<div class="kj-auth-card"><div class="kj-auth-label">Kaoru Juku</div><h1>メンバー専用ページ</h1><p>このページを見るには、パスワードを入力してください。</p><input type="password" id="kj-auth-password" autocomplete="current-password" placeholder="パスワード"><button type="button" id="kj-auth-submit">表示する</button><div class="kj-auth-error" id="kj-auth-error"></div></div>`;
+    document.body.appendChild(overlay);
+    const input=document.getElementById('kj-auth-password');
+    const error=document.getElementById('kj-auth-error');
+    async function submit() { const digest=await sha256(input.value||''); if(digest===PASS_HASH){localStorage.setItem(STORAGE_KEY,PASS_HASH);unlock();}else{error.textContent='パスワードが違います。';input.value='';input.focus();} }
+    document.getElementById('kj-auth-submit').addEventListener('click',submit);
+    input.addEventListener('keydown',function(e){if(e.key==='Enter')submit();});
+    setTimeout(()=>input.focus(),50);
+  }
+  checkSaved();
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',render); else render();
+})();
+</script>
+</body>
+</html>
