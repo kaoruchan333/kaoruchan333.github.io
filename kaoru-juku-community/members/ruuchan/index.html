@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>るーちゃん専用ページ｜前田薫</title>
+  <style>
+:root{--ink:#2f2b26;--muted:#70685f;--paper:#fbfaf6;--panel:#fff;--soft:#f2eee6;--line:#e4ded3;--accent:#9a6a3b;--deep:#26312b}
+*{box-sizing:border-box}body{margin:0;font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;color:var(--ink);background:var(--paper);line-height:1.9;font-size:16px}body.kj-auth-locked>*:not(#kj-auth-overlay){display:none!important}a{color:inherit}.wrap{width:min(860px,calc(100% - 36px));margin:0 auto}
+.hero{background:linear-gradient(135deg,#26312b 0%,#3d4439 55%,#7f623f 100%);color:#fff8e8;padding:46px 0 44px}.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#d7bd8e;margin:0 0 12px}.hero h1{font-size:clamp(30px,6vw,56px);line-height:1.28;margin:0;font-weight:750}.lead{font-size:16px;color:rgba(255,248,232,.86);max-width:760px;margin:20px 0 0}
+main{padding:44px 0 80px}h2{font-size:clamp(24px,4vw,34px);line-height:1.42;margin:0 0 20px;color:var(--deep)}p{margin:0 0 18px}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0}.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:22px;text-decoration:none;display:block}.card:hover{border-color:#b9935a}.card-date{font-size:12px;color:var(--accent);letter-spacing:.08em;margin-bottom:6px}.card-title{font-size:18px;font-weight:750;margin-bottom:8px;line-height:1.5}.card-desc{font-size:14px;color:var(--muted);line-height:1.8}.latest{border-color:#b9935a;background:#fffdf8}.note-box{background:var(--soft);border:1px solid #ded5c7;border-radius:8px;padding:22px 24px;margin:26px 0}.footer{border-top:1px solid var(--line);padding:28px 0;color:#9a9187;font-size:13px;text-align:center}
+#kj-auth-overlay{position:fixed;inset:0;background:linear-gradient(135deg,#26312b,#5b513f);display:grid;place-items:center;padding:22px;z-index:9999}.kj-auth-card{width:min(420px,100%);background:#fbfaf6;color:#2f2b26;border-radius:10px;padding:30px;box-shadow:0 24px 80px rgba(0,0,0,.28)}.kj-auth-label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9a6a3b;margin-bottom:10px}.kj-auth-card h1{font-size:24px;line-height:1.45;margin:0 0 10px}.kj-auth-card p{font-size:14px;color:#70685f}.kj-auth-card input{width:100%;min-height:46px;border:1px solid #d4cabd;border-radius:8px;padding:10px 12px;font-size:16px;background:#fff;margin:8px 0 12px}.kj-auth-card button{width:100%;min-height:46px;border:0;border-radius:8px;background:#26312b;color:#fff8e8;font-size:15px;font-weight:700}.kj-auth-error{min-height:22px;color:#a33;font-size:13px;margin-top:8px}
+@media(max-width:640px){.hero{padding:34px 0 36px}.cards{grid-template-columns:1fr}.card{padding:18px}}
+  </style>
+</head>
+<body class="kj-auth-locked">
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Private Note</p>
+      <h1>るーちゃん専用ページ</h1>
+      <p class="lead">前田薫との対話記録・認知構造の振り返り</p>
+    </div>
+  </header>
+  <main class="wrap">
+    <h2>振り返り一覧</h2>
+    <div class="cards">
+      <a class="card latest" href="2026-06-16/">
+        <div class="card-date">2026年6月16日 雑談・相談レベルの対話</div>
+        <div class="card-title">身体で答え合わせする生き方へ</div>
+        <div class="card-desc">中庸道、AI時代、体の当たり前、感情が動く意味を、今のるーちゃんの現在地と重ねて整理したページです。</div>
+      </a>
+    </div>
+    <div class="note-box">
+      <p>ここは、るーちゃん本人に向けた専用ページです。診断や評価ではなく、対話の中に現れていた気づきの種を、あとから静かに見返すための場所です。</p>
+    </div>
+  </main>
+  <div class="footer">前田薫　©2026</div>
+<script>
+(function(){const PASS_HASH='6be51faf164f3545cd447fd0df8c2bdc026ed7c9e8c5ee1353bd5930c6a9eee6';const STORAGE_KEY='kaoru_private_ruuchan_auth_v1';function unlock(){document.body.classList.remove('kj-auth-locked');const overlay=document.getElementById('kj-auth-overlay');if(overlay)overlay.remove()}async function sha256(text){const data=new TextEncoder().encode(text);const hash=await crypto.subtle.digest('SHA-256',data);return Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,'0')).join('')}function checkSaved(){if(localStorage.getItem(STORAGE_KEY)===PASS_HASH)unlock()}function render(){if(!document.body.classList.contains('kj-auth-locked'))return;const overlay=document.createElement('div');overlay.id='kj-auth-overlay';overlay.innerHTML='<div class="kj-auth-card"><div class="kj-auth-label">Private</div><h1>本人専用ページ</h1><p>このページを見るには、本人用パスワードを入力してください。</p><input type="password" id="kj-auth-password" autocomplete="current-password" placeholder="パスワード"><button type="button" id="kj-auth-submit">表示する</button><div class="kj-auth-error" id="kj-auth-error"></div></div>';document.body.appendChild(overlay);const input=document.getElementById('kj-auth-password');const error=document.getElementById('kj-auth-error');async function submit(){const digest=await sha256(input.value||'');if(digest===PASS_HASH){localStorage.setItem(STORAGE_KEY,PASS_HASH);unlock()}else{error.textContent='パスワードが違います。';input.value='';input.focus()}}document.getElementById('kj-auth-submit').addEventListener('click',submit);input.addEventListener('keydown',e=>{if(e.key==='Enter')submit()});setTimeout(()=>input.focus(),50)}checkSaved();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',render);else render()})();
+</script>
+</body>
+</html>
