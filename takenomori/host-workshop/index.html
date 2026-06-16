@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>竹の杜 主催者研修｜場の価値を自分の言葉で届ける</title>
+  <meta name="description" content="竹の杜の場づくりを、主催者自身が受け取り、自分の言葉で必要な人に届けるための主催者研修。新月会から生まれた協業イベントの教材。">
+  <meta name="robots" content="noindex,nofollow">
+  <style>
+    :root {
+      --ink: #162019;
+      --deep: #0e1711;
+      --forest: #1f3328;
+      --moss: #385644;
+      --sage: #8fa48d;
+      --cream: #f7f2e8;
+      --paper: #fffaf0;
+      --gold: #b99758;
+      --line: rgba(185,151,88,.28);
+      --soft: #d8d0bc;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+      color: var(--cream);
+      background: var(--deep);
+      line-height: 1.95;
+      letter-spacing: 0;
+    }
+    a { color: inherit; }
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      align-items: end;
+      position: relative;
+      padding: 78px 0 66px;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(10,17,12,.86), rgba(10,17,12,.62) 48%, rgba(10,17,12,.28)),
+        url("https://kaoruchan333.github.io/shingetsu-kai/images/bamboo-forest.jpg") center / cover no-repeat;
+    }
+    .wrap { width: min(1060px, calc(100% - 40px)); margin: 0 auto; }
+    .narrow { width: min(820px, calc(100% - 40px)); margin: 0 auto; }
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-weight: 500; letter-spacing: 0; }
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: clamp(38px, 7vw, 76px);
+      line-height: 1.23;
+    }
+    .hero-copy {
+      max-width: 720px;
+      margin: 26px 0 0;
+      color: rgba(247,242,232,.86);
+      font-size: 17px;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 34px;
+    }
+    .pill {
+      padding: 9px 14px;
+      border: 1px solid rgba(247,242,232,.28);
+      background: rgba(14,23,17,.42);
+      border-radius: 999px;
+      color: rgba(247,242,232,.86);
+      font-size: 13px;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 4;
+      border-bottom: 1px solid var(--line);
+      background: rgba(14,23,17,.94);
+      backdrop-filter: blur(14px);
+    }
+    nav .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 13px 0;
+    }
+    nav a {
+      text-decoration: none;
+      padding: 7px 12px;
+      border: 1px solid rgba(185,151,88,.22);
+      border-radius: 4px;
+      color: var(--soft);
+      font-size: 13px;
+    }
+    section {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .label {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin: 0 0 24px;
+      color: var(--cream);
+      font-size: clamp(28px, 4.4vw, 46px);
+      line-height: 1.46;
+    }
+    h3 {
+      margin: 0 0 10px;
+      color: var(--paper);
+      font-size: 22px;
+      line-height: 1.5;
+    }
+    p { margin: 0 0 18px; color: var(--soft); }
+    strong { color: var(--paper); font-weight: 700; }
+    .lead { color: var(--paper); font-size: 18px; }
+    .key-box {
+      margin: 28px 0;
+      padding: 30px;
+      border: 1px solid rgba(185,151,88,.42);
+      background: rgba(185,151,88,.06);
+    }
+    .key-box p {
+      color: var(--paper);
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-size: clamp(22px, 3.3vw, 34px);
+      line-height: 1.65;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card {
+      min-height: 100%;
+      padding: 24px;
+      border: 1px solid rgba(185,151,88,.24);
+      background: rgba(255,255,255,.025);
+    }
+    .card .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .card p, .card li { color: #c9c1ad; font-size: 14px; line-height: 1.85; }
+    .card ul { margin: 12px 0 0; padding-left: 1.2em; }
+    .quote {
+      margin: 34px 0;
+      padding: 24px 28px;
+      border-left: 3px solid var(--gold);
+      background: rgba(185,151,88,.055);
+      color: var(--paper);
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-size: 20px;
+      line-height: 1.8;
+    }
+    .flow {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 132px 1fr;
+      gap: 22px;
+      padding: 24px 0;
+      border-top: 1px solid rgba(185,151,88,.2);
+    }
+    .step:first-child { border-top: 0; }
+    .time {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .questions {
+      margin: 18px 0 0;
+      padding: 18px 22px;
+      border: 1px solid rgba(143,164,141,.22);
+      background: rgba(143,164,141,.05);
+    }
+    .questions ul { margin: 0; padding-left: 1.2em; color: var(--soft); }
+    .questions li { margin: 7px 0; }
+    .output {
+      margin-top: 20px;
+      padding: 18px 20px;
+      background: var(--paper);
+      color: var(--ink);
+      border-radius: 4px;
+      font-size: 14px;
+      line-height: 1.8;
+      white-space: pre-line;
+    }
+    .output strong { color: var(--ink); }
+    .photo-band {
+      min-height: 360px;
+      background:
+        linear-gradient(90deg, rgba(14,23,17,.82), rgba(14,23,17,.2)),
+        url("https://kaoruchan333.github.io/shingetsu-kai/images/hosts-two-shot-no-deer.jpg") center / cover no-repeat;
+    }
+    .cta {
+      text-align: center;
+      background: var(--forest);
+    }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 18px;
+      padding: 10px 22px;
+      border: 1px solid var(--gold);
+      color: var(--ink);
+      background: var(--gold);
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    footer {
+      padding: 30px 0 42px;
+      color: var(--sage);
+      font-size: 12px;
+      text-align: center;
+    }
+    @media (max-width: 760px) {
+      .grid, .three { grid-template-columns: 1fr; }
+      .step { grid-template-columns: 1fr; gap: 8px; }
+      section { padding: 56px 0; }
+      .hero { min-height: 84vh; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Takenomori Host Workshop</p>
+      <h1>竹の杜<br>主催者研修</h1>
+      <p class="hero-copy">イベントを売るためではなく、主催者自身が場の価値を受け取り、自分の言葉で必要な人に届けられる状態をつくる。</p>
+      <div class="hero-meta">
+        <span class="pill">90〜120分</span>
+        <span class="pill">11,000円</span>
+        <span class="pill">共同主催者向け</span>
+        <span class="pill">新月会から生まれた教材</span>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="wrap">
+      <a href="#why">背景</a>
+      <a href="#core">核心</a>
+      <a href="#goal">成果物</a>
+      <a href="#flow">流れ</a>
+      <a href="#stance">心構え</a>
+      <a href="#message">声かけ文</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="why" class="narrow">
+      <span class="label">Why</span>
+      <h2>集客ゼロは、失敗ではなく確認だった。</h2>
+      <p class="lead">新月会は開催には至らなかった。けれど、そこで見えたのはLPの良し悪しだけではありませんでした。</p>
+      <p>満月会や竹の杜ファミリーの人たちは、「楽しい」「人とつながる」「竹の場に来る」「バンブーに会う」という文脈で集まっています。</p>
+      <p>一方で新月会は、静かに自分と向き合い、問いを持ち帰り、長期的に変容していく場です。</p>
+      <p>この二つは、どちらが上でも下でもなく、性質が違います。だからこそ、主催者側がその違いを受け取り、自分の言葉で届けられる状態になる必要があります。</p>
+      <div class="quote">LPを整える前に、主催者の中で価値の受け取り方と言葉を整える。</div>
+    </section>
+
+    <section id="core" class="narrow">
+      <span class="label">Core Definition</span>
+      <h2>主催者研修とは何か。</h2>
+      <div class="key-box">
+        <p>主催者研修とは、イベントを売る技術を身につける時間ではなく、主催者自身が場の価値を受け取り、自分の言葉で必要な人に届けられる状態になるための時間。</p>
+      </div>
+      <p>これは、バンブーを説得する時間ではありません。</p>
+      <p>バンブーを参加者にする時間でもありません。</p>
+      <p>共同主催者として、竹の杜の場、新月会の価値、届けたい人、価格の意味、声のかけ方を一緒に言語化する時間です。</p>
+      <div class="grid">
+        <article class="card">
+          <span class="tag">Not</span>
+          <h3>売り込みの練習ではない</h3>
+          <p>人を動かすための言葉を作るのではなく、主催者自身が本当に受け取った価値を言葉にする。</p>
+        </article>
+        <article class="card">
+          <span class="tag">Yes</span>
+          <h3>価値を受け取る稽古</h3>
+          <p>無料で流さず、ちゃんと価値として受け取り、その価値を必要な人へ届ける準備をする。</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="photo-band" aria-label="竹の杜での対話風景"></div>
+
+    <section id="goal" class="narrow">
+      <span class="label">Outputs</span>
+      <h2>終わった時に、手元に残るもの。</h2>
+      <div class="grid three">
+        <article class="card">
+          <span class="tag">01</span>
+          <h3>主催者の一語</h3>
+          <p>バンブー自身が、新月会や竹の杜で何を守る人なのかを表す仮の一語。</p>
+        </article>
+        <article class="card">
+          <span class="tag">02</span>
+          <h3>届けたい人</h3>
+          <p>抽象的なターゲットではなく、顔が浮かぶ3人。その人に必要な理由。</p>
+        </article>
+        <article class="card">
+          <span class="tag">03</span>
+          <h3>個別メッセージ</h3>
+          <p>実際に送れる、バンブー自身の言葉で書いた声かけ文3通。</p>
+        </article>
+        <article class="card">
+          <span class="tag">04</span>
+          <h3>価格の一文</h3>
+          <p>28,000円は何に対する金額なのか。金額ではなく価値として説明する一文。</p>
+        </article>
+        <article class="card">
+          <span class="tag">05</span>
+          <h3>満月会との違い</h3>
+          <p>満月会が何で、新月会が何なのか。対立ではなく補完として説明する一文。</p>
+        </article>
+        <article class="card">
+          <span class="tag">06</span>
+          <h3>当日の役割</h3>
+          <p>参加者ではなく主催者として、何を見て、何を守り、どう場に立つか。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="flow" class="narrow">
+      <span class="label">Program</span>
+      <h2>90〜120分の流れ。</h2>
+      <div class="flow">
+        <article class="step">
+          <div class="time">10 min</div>
+          <div>
+            <h3>1. 前提共有</h3>
+            <p>今日は参加者体験ではなく、主催者として新月会を受け取る時間だと置く。</p>
+            <div class="questions">
+              <ul>
+                <li>打ち合わせ後、新月会について何が残っていますか。</li>
+                <li>まだしっくりきていないところはどこですか。</li>
+                <li>誰かの顔が浮かんでいますか。</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="time">25 min</div>
+          <div>
+            <h3>2. 主催者自身の羅針盤を見る</h3>
+            <p>新月会を売る前に、バンブー自身が何に反応し、何を守り、何を届けたい人なのかを見る。</p>
+            <div class="questions">
+              <ul>
+                <li>竹の杜を続けている理由は何ですか。</li>
+                <li>満月会で一番うれしかった瞬間はどんな時ですか。</li>
+                <li>場をやっていて違和感が出る瞬間はどんな時ですか。</li>
+                <li>「この人、ほんまはもっと自分らしく生きられるのに」と感じた人は誰ですか。</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="time">25 min</div>
+          <div>
+            <h3>3. 新月会の価値を自分の言葉にする</h3>
+            <p>LPの言葉ではなく、バンブー自身が体感で話せる言葉にする。</p>
+            <div class="questions">
+              <ul>
+                <li>新月会は、満月会と何が違いますか。</li>
+                <li>新月会に来た人に、帰る時どんな状態になっていてほしいですか。</li>
+                <li>28,000円は、何に対する金額だと感じますか。</li>
+                <li>竹炭は、単なるお土産ではなく何のためにありますか。</li>
+              </ul>
+            </div>
+            <div class="output"><strong>作る一文</strong>
+新月会は、〇〇な人が、〇〇するための場です。
+28,000円は、〇〇に対する金額です。
+満月会が〇〇なら、新月会は〇〇です。</div>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="time">20 min</div>
+          <div>
+            <h3>4. 届けたい人を3人出す</h3>
+            <p>抽象的なターゲットではなく、実在する人の顔で考える。</p>
+            <div class="questions">
+              <ul>
+                <li>誰の顔が浮かびますか。</li>
+                <li>その人は今、何に悩んでいそうですか。</li>
+                <li>その人はなぜ普通の講座や飲み会では変わり切れないと思いますか。</li>
+                <li>どんな言葉なら自然に声をかけられますか。</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="time">25 min</div>
+          <div>
+            <h3>5. 個別メッセージを作る</h3>
+            <p>最後は、実際に送れる文面まで作る。きれいな宣伝文ではなく、その人の顔を思い浮かべた言葉にする。</p>
+            <div class="output">〇〇さん、こんにちは。
+
+この前話していた〇〇のことが少し残っていて、
+今度、千早赤阪村の竹の杜でやる新月会が、
+もしかしたら〇〇さんに合うかもしれないと思って連絡しました。
+
+これは楽しいイベントというより、
+静かに自分と向き合って、
+今の自分がどこへ向かいたいのかを言葉にする一泊二日の場です。
+
+無理にすすめたいわけではないけど、
+〇〇さんの今のタイミングには、一度見てもらってもいい気がしています。</div>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="time">10 min</div>
+          <div>
+            <h3>6. 最後の確認</h3>
+            <p>主催者として、何を守る人なのかを一文にする。</p>
+            <div class="quote">バンブーは、新月会で何を守る人ですか。</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="stance" class="narrow">
+      <span class="label">Host Stance</span>
+      <h2>主催者側の心構え。</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="tag">01</span>
+          <h3>LPだけを直しても届かない</h3>
+          <p>ページは大事。ただし主催者が価値を受け取れていない場は、言葉に熱が乗らない。</p>
+        </article>
+        <article class="card">
+          <span class="tag">02</span>
+          <h3>無料で流さない</h3>
+          <p>無料体験にすると、受け取りきれないものがある。お金を払うことは、価値として受け取る準備をつくること。</p>
+        </article>
+        <article class="card">
+          <span class="tag">03</span>
+          <h3>お互いに受け取り合う</h3>
+          <p>かおるは竹炭を購入し、満月会に参加し、竹の杜の価値を体で受け取る。バンブーは新月会の価値を主催者として受け取る。</p>
+        </article>
+        <article class="card">
+          <span class="tag">04</span>
+          <h3>コントロールしない</h3>
+          <p>相手を動かす研修ではない。問いを置き、本人の中から言葉が出てくる場をつくる。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="message" class="narrow">
+      <span class="label">Reusable Asset</span>
+      <h2>これから教材化していく核。</h2>
+      <p>協業イベントで集客が動かない時、最初に見るのはLPだけではありません。</p>
+      <div class="questions">
+        <ul>
+          <li>リストホルダーは価値を受け取れているか。</li>
+          <li>コンテンツホルダーは相手の場を受け取れているか。</li>
+          <li>主催者同士が互いの価値を無料で流していないか。</li>
+          <li>その場を誰に届けたいかが、顔の浮かぶ言葉になっているか。</li>
+          <li>価格の説明が、金額ではなく価値の説明になっているか。</li>
+        </ul>
+      </div>
+      <div class="quote">場は、ページだけでは届かない。主催者の受け取り方と言葉を通って、人に届く。</div>
+    </section>
+
+    <section class="cta">
+      <div class="narrow">
+        <span class="label">Connected Materials</span>
+        <h2>新月会と、天中道教材へ。</h2>
+        <p>この研修は、竹の杜の新月会から生まれた主催者側の教材です。魂の羅針盤とコンフォートゾーンの理解を、場づくりと集客の現場に接続します。</p>
+        <a class="button" href="https://kaoruchan333.github.io/shingetsu-kai/">新月会LPを見る</a>
+        <a class="button" href="https://kaoruchan333.github.io/tenchudo/comfort-zone/" style="margin-left:8px;">コンフォートゾーン教材を見る</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">竹の杜 主催者研修｜前田薫 × 竹の杜 共創教材</div>
+  </footer>
+</body>
+</html>
