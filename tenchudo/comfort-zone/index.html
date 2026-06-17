@@ -4,11 +4,283 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>コンフォートゾーンの移動｜天中道教材</title>
+  <meta name="description" content="コンフォートゾーン、ホメオスタシス、アロスタシス、自律神経、感情のズレを、天中道・中庸思考の実践モデルとして整理した教材ページ。">
   <style>
-:root{--ink:#2f2b26;--muted:#70685f;--paper:#fbfaf6;--panel:#fff;--soft:#f2eee6;--line:#e4ded3;--accent:#9a6a3b;--deep:#26312b;--gold:#c19a5b}
-*{box-sizing:border-box}body{margin:0;font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;color:var(--ink);background:var(--paper);line-height:1.95;font-size:16px;letter-spacing:0}.wrap{width:min(920px,calc(100% - 36px));margin:0 auto}.narrow{width:min(780px,calc(100% - 36px));margin:0 auto}
-.hero{background:linear-gradient(135deg,#26312b 0%,#3e483f 56%,#7b5e3b 100%);color:#fff8e8;padding:58px 0 54px}.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#d7bd8e;margin:0 0 12px}.hero h1{font-size:clamp(32px,7vw,62px);line-height:1.24;margin:0;font-weight:760}.lead{font-size:17px;color:rgba(255,248,232,.86);max-width:780px;margin:22px 0 0}.meta{font-size:13px;color:rgba(255,248,232,.72);margin-top:18px}
-main{padding:24px 0 82px}section{padding:42px 0;border-bottom:1px solid var(--line)}section:last-child{border-bottom:0}h2{font-size:clamp(24px,4vw,36px);line-height:1.42;margin:0 0 20px;color:var(--deep)}h3{font-size:19px;line-height:1.55;margin:28px 0 10px;color:#3d382f}p{margin:0 0 18px}strong{color:#241f1a}ul,ol{padding-left:1.25em;margin:14px 0 22px}li{margin:8px 0}.key-box{background:var(--deep);color:#fff8e8;border-radius:8px;padding:28px;margin:28px 0}.key-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#d7bd8e;margin-bottom:8px}.key-text{font-size:clamp(24px,4.8vw,42px);line-height:1.36;font-weight:760}.note-box{background:var(--soft);border:1px solid #ded5c7;border-radius:8px;padding:22px 24px;margin:24px 0}.truth-box{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px;margin:20px 0}.quote{border-left:4px solid var(--accent);background:linear-gradient(90deg,rgba(154,106,59,.1),rgba(154,106,59,0));padding:12px 0 12px 20px;margin:24px 0;color:#463f36;font-size:18px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:20px}.small{font-size:14px;color:var(--muted)}.footer{border-top:1px solid var(--line);padding:32px 0;color:#9a9187;font-size:13px;text-align:center}@media(max-width:700px){.hero{padding:40px 0}.grid{grid-template-columns:1fr}section{padding:34px 0}}
+    :root {
+      --ink: #2f2b26;
+      --muted: #70685f;
+      --paper: #fbfaf6;
+      --panel: #fff;
+      --soft: #f2eee6;
+      --line: #e4ded3;
+      --accent: #9a6a3b;
+      --deep: #26312b;
+      --forest: #3e483f;
+      --gold: #c19a5b;
+      --green-soft: #e8eee8;
+      --blue-soft: #edf1f4;
+      --danger-soft: #f5ece6;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.95;
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1080px, calc(100% - 36px)); margin: 0 auto; }
+    .narrow { width: min(840px, calc(100% - 36px)); margin: 0 auto; }
+    .hero {
+      color: #fff8e8;
+      padding: 62px 0 48px;
+      background:
+        radial-gradient(circle at 72% 18%, rgba(193,154,91,.36), transparent 34%),
+        linear-gradient(135deg, #26312b 0%, #3e483f 58%, #7b5e3b 100%);
+    }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: #d7bd8e;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      color: var(--deep);
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+    .hero h1 {
+      color: #fff8e8;
+      font-size: clamp(36px, 7vw, 68px);
+      line-height: 1.22;
+    }
+    .lead {
+      max-width: 800px;
+      margin: 22px 0 0;
+      color: rgba(255,248,232,.88);
+      font-size: 18px;
+    }
+    .meta {
+      margin-top: 20px;
+      color: rgba(255,248,232,.72);
+      font-size: 13px;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      border-bottom: 1px solid var(--line);
+      background: rgba(251,250,246,.94);
+      backdrop-filter: blur(14px);
+    }
+    nav .wrap {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 12px 0;
+    }
+    nav a {
+      flex: 0 0 auto;
+      padding: 7px 12px;
+      border: 1px solid rgba(154,106,59,.22);
+      border-radius: 6px;
+      color: #4e463c;
+      text-decoration: none;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    main { padding: 24px 0 86px; }
+    section {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    section:last-child { border-bottom: 0; }
+    h2 {
+      margin-bottom: 22px;
+      font-size: clamp(26px, 4.2vw, 40px);
+      line-height: 1.42;
+    }
+    h3 {
+      margin: 0 0 10px;
+      color: #3d382f;
+      font-size: 20px;
+      line-height: 1.52;
+    }
+    p { margin: 0 0 18px; }
+    strong { color: #241f1a; font-weight: 700; }
+    ul, ol { margin: 14px 0 22px; padding-left: 1.25em; }
+    li { margin: 8px 0; }
+    .section-label {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .key-box {
+      margin: 26px 0;
+      padding: 28px;
+      border-radius: 8px;
+      color: #fff8e8;
+      background: var(--deep);
+    }
+    .key-label {
+      margin-bottom: 8px;
+      color: #d7bd8e;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .key-text {
+      font-size: clamp(23px, 4.4vw, 38px);
+      font-weight: 760;
+      line-height: 1.42;
+    }
+    .note-box, .truth-box, .soft-box {
+      margin: 24px 0;
+      padding: 22px 24px;
+      border: 1px solid #ded5c7;
+      border-radius: 8px;
+      background: var(--soft);
+    }
+    .note-box p:last-child, .truth-box p:last-child, .soft-box p:last-child { margin-bottom: 0; }
+    .truth-box {
+      border-color: var(--line);
+      background: #fff;
+    }
+    .soft-box.green { background: var(--green-soft); border-color: #d4ddd2; }
+    .soft-box.blue { background: var(--blue-soft); border-color: #d5dde3; }
+    .soft-box.caution { background: var(--danger-soft); border-color: #e5d4ca; }
+    .quote {
+      margin: 26px 0;
+      padding: 15px 0 15px 22px;
+      border-left: 4px solid var(--accent);
+      color: #463f36;
+      background: linear-gradient(90deg, rgba(154,106,59,.1), rgba(154,106,59,0));
+      font-size: 18px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 22px 0;
+    }
+    .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card {
+      min-height: 100%;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .card .tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .small { color: var(--muted); font-size: 14px; }
+    .term-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .term {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .term b {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--deep);
+      font-size: 16px;
+    }
+    .term span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+    .example {
+      display: grid;
+      gap: 12px;
+      margin: 26px 0;
+    }
+    .example-step {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 18px;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+    .example-step:first-child { border-top: 0; }
+    .example-label {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .checklist {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+      counter-reset: work;
+    }
+    .check {
+      position: relative;
+      padding: 18px 18px 18px 58px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .check:before {
+      counter-increment: work;
+      content: counter(work);
+      position: absolute;
+      left: 18px;
+      top: 18px;
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 34px 0 42px;
+      color: #9a9187;
+      font-size: 13px;
+      text-align: center;
+    }
+    @media (max-width: 760px) {
+      .hero { padding: 42px 0 38px; }
+      .grid, .three, .term-grid { grid-template-columns: 1fr; }
+      .example-step { grid-template-columns: 1fr; gap: 6px; }
+      section { padding: 38px 0; }
+      .key-box { padding: 22px; }
+    }
   </style>
 </head>
 <body>
@@ -16,66 +288,187 @@ main{padding:24px 0 82px}section{padding:42px 0;border-bottom:1px solid var(--li
     <div class="wrap">
       <p class="eyebrow">Tenchudo Teaching Asset</p>
       <h1>コンフォートゾーンの移動</h1>
-      <p class="lead">変えようとするのではなく、自分にとっての「当たり前」をデザインし直す。中庸道における変容のメカニズム。</p>
+      <p class="lead">変えようとするのではなく、自分にとっての「当たり前」に気づき、本当の価値観に沿った新しい選択を少しずつ育てていく。</p>
       <p class="meta">前田薫｜天中道・中庸思考 教材</p>
     </div>
   </header>
 
+  <nav>
+    <div class="wrap">
+      <a href="#definition">一行定義</a>
+      <a href="#position">立ち位置</a>
+      <a href="#comfort">コンフォートゾーン</a>
+      <a href="#homeostasis">戻る力</a>
+      <a href="#allostasis">適応する力</a>
+      <a href="#autonomic">身体反応</a>
+      <a href="#steps">5ステップ</a>
+      <a href="#example">具体例</a>
+      <a href="#rabbit">ウサギとカメ</a>
+      <a href="#work">ミニワーク</a>
+    </div>
+  </nav>
+
   <main class="narrow">
-    <section>
+    <section id="definition">
+      <span class="section-label">Definition</span>
       <h2>一行定義</h2>
       <div class="key-box">
         <div class="key-label">Definition</div>
-        <div class="key-text">コンフォートゾーンの移動とは、自分を縛っている「現状の当たり前」を解体し、本当の価値観に基づいた「未来の当たり前」を、脳と身体に覚え込ませるプロセス。</div>
+        <div class="key-text">コンフォートゾーンの移動とは、現状の慣れた反応パターンに気づき、本当の価値観に沿った選択を繰り返すことで、新しい当たり前を日々の体験の中で育てていくプロセス。</div>
       </div>
       <p>コーチングの本質は、コンフォートゾーンをずらすことにあります。ただし、それは目標達成のために無理やり自分を変えることではありません。</p>
-      <p>本当の価値観・才能・使命・可能性の場所を、自分にとっての「当たり前」にしていくことです。</p>
+      <p>本当の価値観・才能・使命・可能性の場所を、自分にとっての「当たり前」として少しずつ育てていくことです。</p>
     </section>
 
-    <section>
+    <section id="position">
+      <span class="section-label">Position</span>
+      <h2>このページの立ち位置</h2>
+      <div class="note-box">
+        <p>このページで扱う「コンフォートゾーンの移動」は、医学的な診断や治療理論ではありません。</p>
+        <p>認知・感情・身体反応・習慣・自己イメージが、どのように慣れた状態へ戻りやすいのかを理解し、本当の価値観に沿った新しい選択を育てるための、天中道における実践モデルです。</p>
+      </div>
+      <p>ここでは、かおるちゃんの体験知・コーチング実践・中庸思考を土台にしながら、心理学や身体反応の言葉も使って整理します。</p>
+      <p>大切なのは、科学っぽい言葉で人を決めつけることではありません。感情が動いた時に、自分の中で何が起きているのかを、少し丁寧に見られるようになることです。</p>
+    </section>
+
+    <section id="comfort">
+      <span class="section-label">Comfort Zone</span>
       <h2>1. コンフォートゾーンとは何か</h2>
       <p>コンフォートゾーンとは、単なる安心安全な場所ではありません。</p>
       <p>その人にとっての<strong>慣れ親しんだ当たり前の場所や状態</strong>です。</p>
+      <div class="soft-box green">
+        <p>ここでいうコンフォートゾーンは、厳密な医学用語や神経科学用語ではありません。コーチングや心理教育で使う、実践上のメタファーです。</p>
+        <p>快適かどうかではなく、「慣れている」「予測しやすい」「いつもの自分に戻りやすい」領域を表します。</p>
+      </div>
       <div class="grid">
         <div class="card">
+          <span class="tag">Place</span>
           <h3>物理的な当たり前</h3>
           <p>自分の部屋、家、いつもの場所、慣れた環境。</p>
         </div>
         <div class="card">
+          <span class="tag">Self Image</span>
           <h3>心の当たり前</h3>
           <p>いつも戻ってしまう感情、セルフイメージ、年収や働き方の基準、人間関係の距離感。</p>
         </div>
       </div>
-      <p>人は「安心できる場所」だけでなく、たとえ苦しくても慣れ親しんだ状態へ戻ろうとします。ここが大切です。</p>
+      <p>人は「安心できる場所」だけでなく、たとえ苦しくても、慣れ親しんだ状態へ戻ろうとすることがあります。ここが大切です。</p>
     </section>
 
-    <section>
-      <h2>2. なぜ人生が変わらないのか</h2>
+    <section id="terms">
+      <span class="section-label">Terms</span>
+      <h2>用語を、日常の言葉で整理する</h2>
+      <div class="term-grid">
+        <div class="term">
+          <b>コンフォートゾーン</b>
+          <span>慣れ・自己イメージ・身体反応・人間関係の距離感・お金や仕事の基準などがまとまった「いつもの反応領域」。</span>
+        </div>
+        <div class="term">
+          <b>ホメオスタシス</b>
+          <span>体温、血糖、血圧、心拍、呼吸など、身体の内部環境を一定の範囲に保とうとする働き。</span>
+        </div>
+        <div class="term">
+          <b>アロスタシス</b>
+          <span>変化を通して安定する働き。環境に合わせて身体の設定を少しずつ変えながら適応すること。</span>
+        </div>
+        <div class="term">
+          <b>自律神経</b>
+          <span>心拍、呼吸、消化、発汗、血圧などを無意識に調整している神経系。</span>
+        </div>
+        <div class="term">
+          <b>交感神経</b>
+          <span>挑戦、集中、防衛、行動に向けて身体を動員する働き。悪者ではなく、必要な力でもある。</span>
+        </div>
+        <div class="term">
+          <b>副交感神経</b>
+          <span>休息、回復、消化、調整に関わる働き。ただし、単純に「副交感神経だけが良い」とは見ない。</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="homeostasis">
+      <span class="section-label">Why We Return</span>
+      <h2>2. なぜ人は元に戻るのか</h2>
       <p>多くの人は、理想を掲げます。</p>
       <p>もっと自由に生きたい。もっと自分らしく働きたい。もっと豊かになりたい。もっと人の役に立ちたい。</p>
-      <p>けれど、現状のコンフォートゾーンが変わっていなければ、人は無意識に元の当たり前へ戻ります。</p>
+      <p>けれど、現状のコンフォートゾーンが変わっていなければ、人は無意識に元の当たり前へ戻りやすくなります。</p>
       <div class="quote">
         理想を掲げることと、<br>
         コンフォートゾーンが変わることは別。
       </div>
-      <p>これは意思が弱いからではありません。ホメオスタシス、つまり恒常性維持機能が働いているからです。</p>
-      <p>人間には、自分の意思とは関係なく、慣れ親しんだ状態へ戻ろうとする力があります。だから、知識を足しても、努力を増やしても、当たり前の場所が現状のままなら戻されます。</p>
-    </section>
-
-    <section>
-      <h2>3. ずらすとは、何をすることか</h2>
-      <p>コンフォートゾーンをずらすとは、理想を遠くに掲げることではありません。</p>
-      <p>理想の状態を「未来の特別なこと」ではなく、<strong>本来の自分にとっての当たり前</strong>として、脳と身体に認識させていくことです。</p>
-      <div class="note-box">
-        <p><strong>現状の当たり前</strong><br>外側の評価、欠乏感、べき、会社や人間関係に合わせたセルフイメージ。</p>
-        <p><strong>本来の当たり前</strong><br>本当の価値観、自然に使っている才能、使命、可能性、自分の地図。</p>
+      <p>これは意思が弱いからではありません。</p>
+      <p>人間の身体には、体温・心拍・呼吸・血圧などを一定の範囲に保とうとする恒常性維持の働きがあります。これをホメオスタシスと呼びます。</p>
+      <p>さらに心の領域でも、過去の経験、自己イメージ、慣れた人間関係、いつもの感情パターンが重なり、脳と身体は「よく知っている状態」を安全だと判断しやすくなります。</p>
+      <p>だから、知識を足しても、努力を増やしても、当たり前の場所が現状のままなら、無意識に元の反応へ戻りやすくなるのです。</p>
+      <div class="soft-box blue">
+        <p><strong>予測の働き</strong></p>
+        <p>脳は現実をそのまま受け取るだけではなく、過去の経験をもとに「こうなるはず」と予測しながら現実を理解しています。感情は、出来事そのものだけではなく、身体反応・認知・過去経験・予測が重なって生まれます。</p>
       </div>
-      <p>新しいコンフォートゾーンが育つと、ホメオスタシスは今度はビジョンの方向へ戻す力として働きます。</p>
-      <p>この時、人は「勝手にそっちへ導かれる」ような感覚を持ちます。必要な情報やご縁が集まり、努力感だけで押し進める状態ではなくなります。</p>
     </section>
 
-    <section>
-      <h2>4. 中庸道における5つのステップ</h2>
+    <section id="allostasis">
+      <span class="section-label">Allostasis</span>
+      <h2>3. 人は、変化にも適応できる</h2>
+      <p>人はただ元に戻るだけの存在ではありません。</p>
+      <p>新しい環境、新しい人間関係、新しい行動が繰り返されると、身体はその状態に合わせて少しずつ調整されていきます。</p>
+      <p>これをストレス科学では、アロスタシス、つまり<strong>変化を通して安定する働き</strong>と説明します。</p>
+      <div class="quote">
+        古い安定を無理やり壊すのではなく、<br>
+        新しい安定へ身体が適応していく。
+      </div>
+      <p>コンフォートゾーンの移動とは、根性で別人になることではありません。日々の小さな選択と体験を通して、「この新しい状態も安全かもしれない」と、脳と身体が少しずつ学習していくプロセスでもあります。</p>
+    </section>
+
+    <section id="autonomic">
+      <span class="section-label">Body Response</span>
+      <h2>4. 感情が動いた時、身体では何が起きているのか</h2>
+      <p>感情が動く時、頭の中だけで何かが起きているわけではありません。</p>
+      <p>心拍が上がる。呼吸が浅くなる。肩に力が入る。胃が重くなる。視野が狭くなる。</p>
+      <p>こうした変化には、自律神経が関わっています。</p>
+      <div class="grid">
+        <div class="card">
+          <span class="tag">Sympathetic</span>
+          <h3>交感神経</h3>
+          <p>挑戦・集中・防衛のために身体を動員する働きです。交感神経は悪者ではありません。仕事をする、守る、動くためにも必要です。</p>
+        </div>
+        <div class="card">
+          <span class="tag">Parasympathetic</span>
+          <h3>副交感神経</h3>
+          <p>休息・回復・消化・調整に関わります。こちらも単純に「良いもの」と決めつけるのではなく、状況に応じた働きとして見ます。</p>
+        </div>
+      </div>
+      <p>問題は、必要が終わっても緊張や防衛モードから戻れないことです。</p>
+      <p>感情が動いた時、身体に出る反応を見ることで、自分がどの「いつもの当たり前」に戻ろうとしているのかに気づきやすくなります。</p>
+      <div class="note-box">
+        <p>大切なのは、「今の身体は何を守ろうとしているのか」に気づくことです。責めるためではなく、戻る場所を選び直すために見ます。</p>
+      </div>
+    </section>
+
+    <section id="shift">
+      <span class="section-label">Shift</span>
+      <h2>5. ずらすとは、何をすることか</h2>
+      <p>コンフォートゾーンをずらすとは、理想を遠くに掲げることではありません。</p>
+      <p>現状の慣れた反応に気づき、本当の価値観に沿った選択を、日々の中で少しずつ増やしていくことです。</p>
+      <div class="grid">
+        <div class="card">
+          <span class="tag">Current Pattern</span>
+          <h3>現状の当たり前</h3>
+          <p>外側の評価、欠乏感、べき、会社や人間関係に合わせたセルフイメージ。</p>
+        </div>
+        <div class="card">
+          <span class="tag">New Pattern</span>
+          <h3>本来の当たり前</h3>
+          <p>本当の価値観、自然に使っている才能、使命、可能性、自分の地図。</p>
+        </div>
+      </div>
+      <p>新しい行動・環境・人間関係・自己イメージが繰り返されると、脳と身体はその状態を少しずつ予測しやすいものとして学習していきます。</p>
+      <p>すると、以前は違和感だった選択が、少しずつ自然な選択に変わっていきます。その時、人は「無理に頑張っている」というより、「本来の方向へ戻っている」ような感覚を持つことがあります。</p>
+      <p>ビジョンや価値観が明確になると、注意の向き、選ぶ環境、発する言葉、関わる人が変わります。その結果、以前なら見落としていた情報や機会に気づきやすくなり、「必要なご縁が集まってくる」ように感じられることがあります。</p>
+    </section>
+
+    <section id="steps">
+      <span class="section-label">Tenchudo Steps</span>
+      <h2>6. 中庸道における5つのステップ</h2>
       <div class="truth-box">
         <h3>ステップ1: 外部のフレームワークを引き算する</h3>
         <p>「会社の役に立たねばならない」「人に嫌われてはいけない」「ちゃんとできなければ価値がない」といった、外から入った当たり前を見つけます。</p>
@@ -86,11 +479,11 @@ main{padding:24px 0 82px}section{padding:42px 0;border-bottom:1px solid var(--li
       </div>
       <div class="truth-box">
         <h3>ステップ3: 価値観とビジョンを言語化する</h3>
-        <p>無意識にやってしまうこと、自然に価値を感じること、本当の才能が生きる場所を言葉にします。結果ではなく、あり方を言語化します。</p>
+        <p>無意識にやってしまうこと、自然に価値を感じること、本当の才能が生きる場所を言葉にします。結果だけでなく、あり方を言語化します。</p>
       </div>
       <div class="truth-box">
         <h3>ステップ4: 答え合わせで体感にする</h3>
-        <p>感謝ワークや日常の観察を通して、自分の価値観に沿って現実が動いている事実を確認します。知識ではなく、体験として腑に落としていきます。</p>
+        <p>感謝ワークや日常の観察を通して、自分の価値観に沿って現実が動いている事実を確認します。知識として理解するだけでなく、体験として腑に落としていきます。</p>
       </div>
       <div class="truth-box">
         <h3>ステップ5: ズレたら戻るリズムを育てる</h3>
@@ -98,8 +491,9 @@ main{padding:24px 0 82px}section{padding:42px 0;border-bottom:1px solid var(--li
       </div>
     </section>
 
-    <section>
-      <h2>5. 感情のズレと道</h2>
+    <section id="path">
+      <span class="section-label">Path</span>
+      <h2>7. 感情のズレと道</h2>
       <p>中庸道では、感情が動くことを悪いこととは見ません。</p>
       <p>感情が動くから、ズレに気づけます。ズレるから、戻る道が生まれます。</p>
       <div class="quote">
@@ -107,13 +501,68 @@ main{padding:24px 0 82px}section{padding:42px 0;border-bottom:1px solid var(--li
         ズレた場所から、本来の場所へ戻ろうとする時に生まれる。
       </div>
       <p>だから、感情が動く出来事は、排除すべきエラーではありません。自分自身の可能性や才能を開く入口です。</p>
+      <p>ただし、ここで大切なのは、感情をすぐに良い意味へ変換することではありません。まず、事実と認知を分けます。そのうえで、自分がどの当たり前に戻ろうとしているのかを見ます。</p>
     </section>
 
-    <section>
-      <h2>6. ウサギとカメ</h2>
-      <p>感情が動いた瞬間、先に走り出すのがウサギです。ウサギは扁桃体、つまり恐怖や焦り、不安に反応する神経系の比喩です。</p>
-      <p>少し遅れてやってくるのがカメです。カメは前頭前野、つまり理性や客観視の比喩です。</p>
-      <p>ウサギを止める必要はありません。まず「あ、今ウサギだ」と気づくこと。そして、心の中でこう唱えます。</p>
+    <section id="example">
+      <span class="section-label">Concrete Example</span>
+      <h2>8. 具体例で見る</h2>
+      <p>誰かに「それ、いつできる？」と聞かれた時を例にします。</p>
+      <div class="example">
+        <div class="example-step">
+          <div class="example-label">Fact</div>
+          <div>
+            <h3>事実</h3>
+            <p>相手が「それ、いつできる？」と聞いた。</p>
+          </div>
+        </div>
+        <div class="example-step">
+          <div class="example-label">Cognition</div>
+          <div>
+            <h3>認知</h3>
+            <p>「急かされた」「信用されていない」「早く答えないと迷惑をかける」と感じた。</p>
+          </div>
+        </div>
+        <div class="example-step">
+          <div class="example-label">Body</div>
+          <div>
+            <h3>身体反応</h3>
+            <p>心拍が上がる。肩に力が入る。呼吸が浅くなる。胃が重くなる。</p>
+          </div>
+        </div>
+        <div class="example-step">
+          <div class="example-label">Old Pattern</div>
+          <div>
+            <h3>いつもの当たり前</h3>
+            <p>「人に迷惑をかけてはいけない」「早く応えないと価値がない」「期待に応えないと見捨てられる」。</p>
+          </div>
+        </div>
+        <div class="example-step">
+          <div class="example-label">Tenchudo</div>
+          <div>
+            <h3>中庸道の問い</h3>
+            <ul>
+              <li>これは事実？それとも認知？</li>
+              <li>今、身体は何を守ろうとしている？</li>
+              <li>私はどの当たり前に戻ろうとしている？</li>
+              <li>本来の自分なら、どこに戻りたい？</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p>ここで「そんなふうに受け取る自分はダメ」と責めなくていい。まず、事実と認知を分ける。身体の反応を見る。そこから、本来の自分の選択へ戻る余白が生まれます。</p>
+    </section>
+
+    <section id="rabbit">
+      <span class="section-label">Rabbit and Turtle</span>
+      <h2>9. ウサギとカメ</h2>
+      <p>感情が動いた瞬間、先に走り出すのがウサギです。少し遅れてやってくるのがカメです。</p>
+      <div class="soft-box caution">
+        <p>これは厳密な脳の地図ではなく、体感を理解するための比喩です。</p>
+        <p>ウサギは、素早く立ち上がる防衛反応。カメは、少し遅れてやってくる観察・言語化・選び直しの力。</p>
+      </div>
+      <p>扁桃体や前頭前野という言葉で説明されることもありますが、ここでは「身体で起きる反応を理解するためのたとえ」として扱います。</p>
+      <p>大切なのは、ウサギを否定することではありません。「今、身体が守ろうとしている」と気づき、カメが来る余白をつくることです。</p>
       <div class="key-box">
         <div class="key-label">Small Practice</div>
         <div class="key-text">今、本来の自分に戻ろうとしているな。</div>
@@ -121,8 +570,9 @@ main{padding:24px 0 82px}section{padding:42px 0;border-bottom:1px solid var(--li
       <p>この一言が、反射的な反応から、自分の地図へ戻る入口になります。</p>
     </section>
 
-    <section>
-      <h2>7. あり方をデザインする</h2>
+    <section id="design">
+      <span class="section-label">Design</span>
+      <h2>10. あり方をデザインする</h2>
       <p>あり方をデザインするとは、外側の評価に合わせて自分を作ることではありません。</p>
       <p>すでにある本当の価値観と才能を見つけ、それを日常の中で選び直し続けることです。</p>
       <p>完成した自分を維持するのではありません。ズレることを前提に、戻るリズムを育てることです。</p>
@@ -132,17 +582,50 @@ main{padding:24px 0 82px}section{padding:42px 0;border-bottom:1px solid var(--li
       </div>
     </section>
 
-    <section>
-      <h2>8. ミニワーク</h2>
-      <ol>
-        <li>最近、感情が動いた出来事を一つ書く。</li>
-        <li>その時、体に何が起きたかを書く。心拍、呼吸、肩、胃、目線など。</li>
-        <li>その出来事で、自分は何を「当たり前」として反応していたかを見る。</li>
-        <li>その当たり前は、本当に自分の価値観から来ているか、外側から入ったものかを見る。</li>
-        <li>本来の自分なら、どこへ戻りたいのかを一言で書く。</li>
-        <li>最後に「今、本来の自分に戻ろうとしているな」と唱える。</li>
-      </ol>
+    <section id="work">
+      <span class="section-label">Mini Work</span>
+      <h2>11. ミニワーク</h2>
+      <p>紙に書ける人は、短くでいいので書いてみてください。深掘りしすぎる必要はありません。一つ見える。一つ広がる。それで十分です。</p>
+      <div class="checklist">
+        <div class="check">
+          <h3>最近、感情が動いた出来事を一つ書く</h3>
+          <p>怒り、不安、焦り、恥ずかしさ、落ち込み。小さな出来事で大丈夫です。</p>
+        </div>
+        <div class="check">
+          <h3>事実だけを書く</h3>
+          <p>誰が、何を言ったか。何が起きたか。解釈を足さずに書きます。</p>
+        </div>
+        <div class="check">
+          <h3>その時の認知を書く</h3>
+          <p>自分はどう受け取ったか。どんな意味づけをしたかを書きます。</p>
+        </div>
+        <div class="check">
+          <h3>身体反応を書く</h3>
+          <p>心拍、呼吸、肩、胃、目線、手足、声。身体に出たことを見ます。</p>
+        </div>
+        <div class="check">
+          <h3>いつもの当たり前を見る</h3>
+          <p>その反応は、どんなセルフイメージや「べき」に戻ろうとしていたのかを見ます。</p>
+        </div>
+        <div class="check">
+          <h3>本来の自分なら、どこへ戻りたいかを書く</h3>
+          <p>大きな答えでなくていい。一言で十分です。</p>
+        </div>
+      </div>
       <p class="small">このワークは、感情を消すためではありません。感情が動いた出来事の中にある、自分の可能性・才能・価値観を見つけるための入口です。</p>
+    </section>
+
+    <section id="summary">
+      <span class="section-label">Summary</span>
+      <h2>最後に</h2>
+      <p>自分が変われないように感じる時、それは意思が弱いからとは限りません。</p>
+      <p>身体と心が、慣れた当たり前へ戻ろうとしているだけかもしれません。</p>
+      <p>でも、感情や身体反応を見れば、自分がどの当たり前に戻ろうとしているのかに気づきやすくなります。</p>
+      <p>無理に変わるのではなく、新しい当たり前を育てていく。事実と認知を分け、本当の価値観に沿って、小さく選び直す。</p>
+      <div class="quote">
+        中庸思考は、感情を消すためのものではない。<br>
+        感情が動いた場所から、本来の自分へ戻る道を見つけるためのもの。
+      </div>
     </section>
   </main>
 
