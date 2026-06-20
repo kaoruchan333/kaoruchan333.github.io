@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>今井真央くんと話したこと｜新城と天川をつなぐ人</title>
+  <meta name="description" content="新城市地域おこし協力隊の今井真央さんとの対話記録。新城未来会議、地域企業、若者、協力隊の自立、新城と天川の連携企画について。">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1f241d;
+      --sub: #5d6659;
+      --paper: #fbfaf3;
+      --soft: #eee6d6;
+      --green: #3f6644;
+      --brown: #8a5a35;
+      --line: #ded5c4;
+      --quote: #f4eddf;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 8% 10%, rgba(126, 164, 190, .28), transparent 20rem),
+        radial-gradient(circle at 94% 18%, rgba(127, 163, 106, .24), transparent 18rem),
+        var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+      line-height: 1.95;
+      letter-spacing: 0;
+    }
+
+    main {
+      width: min(780px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 44px 0 72px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 26px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--green);
+      background: #fffdf8;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 800;
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 7vw, 58px);
+      line-height: 1.15;
+      margin: 0 0 12px;
+      font-weight: 900;
+    }
+
+    .subtitle {
+      color: var(--sub);
+      font-size: 18px;
+      margin: 0 0 28px;
+    }
+
+    .hero {
+      margin: 28px 0 18px;
+      border-radius: 28px 28px 28px 8px;
+      overflow: hidden;
+      background: var(--soft);
+      border: 10px solid #fff;
+      box-shadow: 0 18px 48px rgba(64, 83, 55, .15);
+      rotate: .6deg;
+    }
+
+    .hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .meta {
+      color: var(--sub);
+      font-size: 14px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 28px;
+      margin-bottom: 40px;
+    }
+
+    .note {
+      background: var(--soft);
+      border-left: 4px solid var(--green);
+      padding: 14px 16px;
+      font-size: 14px;
+      color: #42483d;
+      margin: 0 0 38px;
+    }
+
+    h2 {
+      font-size: 26px;
+      line-height: 1.35;
+      margin: 54px 0 18px;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+    }
+
+    p {
+      margin: 0 0 18px;
+      font-size: 17px;
+    }
+
+    blockquote {
+      margin: 28px 0;
+      padding: 22px 24px;
+      background: var(--quote);
+      border-left: 4px solid var(--brown);
+      border-radius: 0 8px 8px 0;
+      font-size: 18px;
+      line-height: 1.85;
+    }
+
+    blockquote p { margin: 0; }
+
+    .key-box {
+      margin: 34px 0;
+      padding: 24px;
+      border-radius: 24px 24px 24px 8px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.64), rgba(255,255,255,.18)),
+        #eef2df;
+      border: 1px solid rgba(63, 102, 68, .24);
+      box-shadow: 0 14px 34px rgba(64, 83, 55, .10);
+    }
+
+    .key-box strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--green);
+      font-size: 20px;
+    }
+
+    .list {
+      margin: 22px 0 28px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .list li {
+      margin: 0 0 10px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px 14px 14px 5px;
+      background: #fffdf8;
+      font-size: 16px;
+    }
+
+    .inline-photo {
+      margin: 30px 0 26px;
+      overflow: hidden;
+      border: 8px solid #fff;
+      border-radius: 24px 24px 24px 8px;
+      background: var(--soft);
+      box-shadow: 0 14px 34px rgba(64, 83, 55, .12);
+    }
+
+    .inline-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .caption {
+      margin: 8px 2px 0;
+      color: var(--sub);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .closing {
+      margin-top: 54px;
+      padding: 28px;
+      background: var(--green);
+      color: white;
+      border-radius: 24px 24px 24px 8px;
+    }
+
+    .closing p { margin-bottom: 14px; }
+    .closing p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back-link" href="./index.html">← 聞き書きの小さな森へ戻る</a>
+    <p class="eyebrow">新城と天川をつなぐ対話</p>
+    <h1>次の企画が、<br>ここから生まれた。</h1>
+    <p class="subtitle">今井真央くんと話した、新城未来会議、地域企業、若者、協力隊の自立、そして新城と天川のこれから。</p>
+
+    <figure class="hero">
+      <img src="./assets/mao.jpg" alt="今井真央さん">
+    </figure>
+
+    <div class="meta">
+      聞き手：前田薫<br>
+      対話相手：今井真央さん（新城市地域おこし協力隊）<br>
+      日時：2026年6月18日・19日<br>
+      場所：愛知県新城市、設楽町、フォレストガーデン周辺
+    </div>
+
+    <p class="note">この文章は、新城未来会議、視察中の対話、最終対話、企画書メモをもとに、読みやすさのために整理した記録です。協力隊制度、法人化、行政との役割分担などに関わる細部は、公開前に本人確認を前提としています。</p>
+
+    <p>最後は、マオくんだった。</p>
+    <p>新城未来会議を主催し、地域の事業者さんや関係者さんをつなぎ、若者と仕事、地域企業とキャリア、協力隊の任期後まで見据えて動いている人。</p>
+    <p>フォレストガーデンで出会った人たちの声を聞いた後、僕にとってマオくんとの対話は、「じゃあここから新城と天川をどうつないでいくのか」という、次の扉だった。</p>
+    <p>熱い人だった。</p>
+    <p>でも、勢いだけの人ではない。ちゃんと悩み、制度の線引きを考え、行政との関係を考え、地域に価値を残す形を探している人だった。</p>
+
+    <h2>新城未来会議を開く人</h2>
+    <p>6月18日の夜、新城未来会議に参加した。</p>
+    <p>そこには、地域おこし協力隊、地域の事業者さん、教育、農業、キャリア、スポーツ、地域で挑戦する人たちが集まっていた。</p>
+    <p>この場で見えてきたのは、「地域に仕事がない」という単純な話ではなかった。</p>
+    <p>仕事はある。企業もある。人もいる。</p>
+    <p>でも、それが若者に届いていない。若者が「ここで働きたい」「ここで生きたい」と感じる接点として、まだ見える形になりきっていない。</p>
+
+    <blockquote><p>地域に仕事がないのではなく、ここで働く意味が、若者に届く形に編集されていない。</p></blockquote>
+
+    <p>マオくんは、その間に立とうとしていた。</p>
+    <p>地域企業と若者。行政と民間。協力隊と任期後の自立。新城の中にあるものを、どう見える形にし、どう次の動きにつなげるか。</p>
+    <p>新城未来会議は、そのための入口だった。</p>
+
+    <figure class="inline-photo">
+      <img src="./assets/mao-yamamoto-future-meeting.jpg" alt="新城未来会議後に撮影した前田薫、山本さん、今井真央さん">
+    </figure>
+    <p class="caption">新城未来会議での一コマ。真ん中が、マオくんと一緒に法人を立ち上げた地域おこし協力隊のパートナー、山本さん。</p>
+
+    <h2>協力隊のリアルを話せる人</h2>
+    <p>最後の対話では、地域おこし協力隊としてのリアルな悩みも話題になった。</p>
+    <p>任期後に自立する必要がある。だから、任期中から準備しなければならない。</p>
+    <p>一方で、法人化や有償事業、行政との役割分担、公的活動と民間活動の線引きは、とても繊細になる。</p>
+    <p>これは、マオくん一人の悩みではない。全国の地域おこし協力隊にも通じる構造的なテーマだと感じた。</p>
+
+    <blockquote><p>「行政に今までちゃんと全部報告して、かなり協力的だったんで、地域おこし協力隊の業務に関しては二人三脚でやってきたんです」</p></blockquote>
+
+    <blockquote><p>「でも、法人になって、公式の協力隊という人格と、法人の人格が出てきた時に、こっちの法人格の方は全部が全部報告しなくていいなって思って」</p></blockquote>
+
+    <p>マオくんが話していたのは、行政と距離を置きたいという話ではなかった。</p>
+    <p>むしろ逆だった。</p>
+    <p>これまでいい関係でやってきたからこそ、これから先もいい関係でいるために、線引きを丁寧に考えたいという話だった。</p>
+
+    <blockquote><p>「喧嘩したわけじゃないです。今後いい関係性でいたいからこその線引きが、今後すごく大事になってくるかなって」</p></blockquote>
+
+    <div class="key-box">
+      <strong>自立しろと言われる。けれど、自立の準備には線引きがいる。</strong>
+      <p>だから必要なのは、行政と対立することではなく、協力隊活動と民間事業の間に、きちんと合意形成された「第三の道」をつくることだと感じた。</p>
+    </div>
+
+    <p>マオくんは、制度の中にいながら、制度の外へ逃げるのではなく、制度と対話しながら次の形を探している。</p>
+    <p>その姿勢が、とても大事だと思った。</p>
+
+    <blockquote><p>「目指してるポイントは、多分もう行政も僕らも全く同じゴールを目指してると思うんですけど、この登り方みたいなところで勝ち合っちゃうのが、すごくもったいないなって思うんです」</p></blockquote>
+
+    <p>この言葉に、マオくんの今いる場所がよく出ていた。</p>
+    <p>行政を敵にするのではない。自分たちの動きだけを正解にするのでもない。</p>
+    <p>同じゴールに向かっているからこそ、登り方を対話していく。</p>
+
+    <blockquote><p>「勝ち合わないようにするんじゃなくて、勝ち合った上でいかに対話して、AでもないBでもないCを取っていくみたいな。そこが僕にとっての勉強なんだろうなって」</p></blockquote>
+
+    <p>この「第三の道」を探す感覚は、マオくんの活動そのものだった。</p>
+    <p>行政に合わせきるのでもない。民間として突っ走るだけでもない。地域にとって本当に意味のある形を、対話しながらつくっていく。</p>
+    <p>その難しさを、マオくんはごまかさずに話してくれた。</p>
+
+    <h2>新城と天川がつながる企画の種</h2>
+    <p>対話の後半で、具体的な企画の種が生まれた。</p>
+    <p>新城市の地域企業の若手社員や新人社員が、天川村へ来る。</p>
+    <p>天川村で、山、水、坐禅、修験道的な身体性、対話、自己理解の時間を体験する。</p>
+    <p>そして、「自分は何を大切にして働くのか」「この地域で働く意味は何か」を、自分の身体と言葉で見つめ直す。</p>
+
+    <blockquote><p>「思いつきで喋りますね」</p></blockquote>
+
+    <p>そう言いながら出てきたアイデアが、むしろ一番生きていた。</p>
+
+    <blockquote><p>「昨日の坐禅みたいな話とかって、これから社会に出る新人研修みたいなところと、すごく親和性高いなと思って」</p></blockquote>
+
+    <blockquote><p>「新城の若い子たちと話してて思うのは、すごい高いモチベーションで、ここの企業に入りたいとかじゃなくて、どちらかというと、ちょっと諦めに近い選択で会社を選んでる人たちが多いなって」</p></blockquote>
+
+    <blockquote><p>「でも、それって若い子だけじゃなくて、働いてる大人たちの意識がそうだから。そのお父さん、お母さんを見て、子どもが大人になって働くって、希望があって夢に向かってというより、今の自分の諦めで入っているっていう子たちに対して」</p></blockquote>
+
+    <p>ここに、マオくんの問題意識があった。</p>
+    <p>若者だけを変えようとしているのではない。若者を取り巻く地域企業、大人の働き方、地域で働くことへのまなざしまで含めて、変えていこうとしていた。</p>
+
+    <blockquote><p>新城×天川 若手社員・新人研修。山と祈りを通じて、自分の中心に戻る人材育成プログラム。</p></blockquote>
+
+    <p>これは、単なる社員研修ではない。</p>
+    <p>観光交流でもない。</p>
+    <p>新城の若者、地域企業、地域で働く意味と、天川の山、水、祈り、身体性、中庸思考がつながる企画の種だった。</p>
+
+    <blockquote><p>「1社じゃなくて、複数社、5社の新人が集まって、その子たちとちょっと行くツアーみたいなのをやったら、全然それは地域の人事として行く意味があるんで」</p></blockquote>
+
+    <blockquote><p>「ただの会議室でやるかったるい研修じゃなくて、アウトドアっていう意味で、体感するワークみたいなところで、まずそこで小さくやってみて」</p></blockquote>
+
+    <p>会議室で正解を教える研修ではなく、身体で感じる研修。</p>
+    <p>その言葉が出てきた時、新城と天川がつながる輪郭がかなりはっきりした。</p>
+
+    <h2>頑張らせる研修ではなく、中心に戻る研修</h2>
+    <p>若者に「もっと頑張れ」と言うだけでは届かない。</p>
+    <p>前向きであることだけを求めても、心の奥には届かない。</p>
+    <p>迷うこと、違和感を持つこと、立ち止まることも、人が自分の本音に触れる大切な入口になる。</p>
+    <p>だから、この研修の中心は「頑張らせること」ではなく、「自分の中心に戻ること」になる。</p>
+
+    <ul class="list">
+      <li>山を歩く。</li>
+      <li>水に触れる。</li>
+      <li>坐禅をする。</li>
+      <li>沈黙する。</li>
+      <li>自分の感覚を言葉にする。</li>
+      <li>仲間の言葉を聞く。</li>
+      <li>自分の仕事と人生を結び直す。</li>
+    </ul>
+
+    <p>天川で自分の中心に戻り、新城へ帰って、自分の仕事と地域を見つめ直す。</p>
+    <p>この往復に、新城と天川がつながる意味がある。</p>
+
+    <h2>まずは、マオくんたちに天川へ来てもらう</h2>
+    <p>いきなり企業研修として大きく出す必要はない。</p>
+    <p>まずは、マオくんと山本さんたちに天川村へ来てもらう。</p>
+    <p>坐禅、山、水、祈り、対話、食事、村の空気を、実際に体験してもらう。</p>
+    <p>その上で、「これなら新城の若手社員に届けられる」「ここは企業研修として翻訳できる」という感覚を一緒に確認する。</p>
+
+    <blockquote><p>「自分たちが新人になったと思ってやらないと、なんとも言えないもんね。体験したら、企業に自信持っていいよって言えると思うんですよね」</p></blockquote>
+
+    <p>小さく始める。</p>
+    <p>でも、ただの小さな一回ではない。</p>
+    <p>新城と天川が、地域を越えて若者の育ちと働き方を考えていく最初の一歩になる。</p>
+
+    <blockquote><p>「新城天川未来会議を、最低1ヶ月に1回のペースを守りながらやらせてもらっていいですか」</p></blockquote>
+
+    <p>最後に、マオくんは言ってくれた。</p>
+
+    <blockquote><p>「天川、1回行きます」</p></blockquote>
+
+    <p>僕は思わず、「マジで来てください」と返した。</p>
+
+    <h2>真白と天川をつなぐ人</h2>
+    <p>今回の視察で、僕はフォレストガーデンに集う人たちの声を聞いた。</p>
+    <p>土地を守る人、移住してきた人、自然農をする人、食卓をつくる人、場をデザインする人。</p>
+    <p>その声を聞いた後、マオくんとの対話で、未来への具体的な企画が生まれた。</p>
+    <p>僕にとってマオくんは、新城の中で未来会議を開く人であり、地域企業と若者をつなぐ人であり、そして一緒に天川と新城をつないでいく人だ。</p>
+    <p>真白、フォレストガーデン、新城未来会議、天川村。</p>
+    <p>それぞれ別々に見えていたものが、マオくんとの対話で一本の線になり始めた。</p>
+
+    <div class="closing">
+      <p>マオくんとの対話は、ただの振り返りではなかった。</p>
+      <p>新城と天川が、若者、仕事、地域企業、山、祈り、身体性を通じてつながっていくための、具体的な始まりだった。</p>
+      <p>まずは、天川で会おう。</p>
+      <p>そこから、新城と天川の次の未来会議を始めたい。</p>
+    </div>
+  </main>
+</body>
+</html>
