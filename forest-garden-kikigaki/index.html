@@ -1,0 +1,860 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>フォレストガーデンに関わる人たち｜聞き書きの記録</title>
+  <meta name="description" content="新城市フォレストガーデンで出会った人たちの言葉、写真、暮らしの気配を少しずつ残していく聞き書きの記録。">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #263126;
+      --muted: #687163;
+      --paper: #fffaf0;
+      --leaf: #3f7b4a;
+      --moss: #88a95b;
+      --sky: #b8d9df;
+      --sun: #f5c95b;
+      --peach: #ee9d78;
+      --blue: #5f8fb6;
+      --soil: #8b6a4f;
+      --line: rgba(38, 49, 38, .16);
+      --shadow: 0 18px 50px rgba(64, 83, 55, .15);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(245, 201, 91, .34), transparent 22rem),
+        radial-gradient(circle at 94% 18%, rgba(184, 217, 223, .55), transparent 21rem),
+        radial-gradient(circle at 18% 88%, rgba(238, 157, 120, .26), transparent 24rem),
+        linear-gradient(180deg, #fffdf6 0%, var(--paper) 44%, #f4f1df 100%);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+      line-height: 1.8;
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .35;
+      background-image:
+        linear-gradient(90deg, rgba(38, 49, 38, .035) 1px, transparent 1px),
+        linear-gradient(rgba(38, 49, 38, .028) 1px, transparent 1px);
+      background-size: 38px 38px;
+      mask-image: linear-gradient(180deg, #000, transparent 78%);
+      z-index: 0;
+    }
+
+    .float {
+      position: fixed;
+      z-index: 0;
+      width: 84px;
+      aspect-ratio: 1;
+      border-radius: 999px 999px 999px 32px;
+      opacity: .16;
+      animation: drift 18s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .float.one {
+      background: var(--leaf);
+      left: 4vw;
+      top: 22vh;
+      rotate: -24deg;
+    }
+
+    .float.two {
+      background: var(--peach);
+      right: 7vw;
+      top: 58vh;
+      rotate: 38deg;
+      animation-delay: -6s;
+    }
+
+    .float.three {
+      background: var(--blue);
+      left: 72vw;
+      top: 9vh;
+      rotate: 12deg;
+      animation-delay: -11s;
+    }
+
+    @keyframes drift {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(14px, -22px, 0) scale(1.08); }
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: min(1120px, calc(100% - 34px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 24px 0 12px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      color: var(--leaf);
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 16px 16px 16px 6px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 6px 18px rgba(63, 123, 74, .12);
+      rotate: -4deg;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .66);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(300px, .92fr);
+      gap: 34px;
+      align-items: center;
+      min-height: calc(100vh - 90px);
+      padding: 24px 0 54px;
+    }
+
+    .hero-copy {
+      padding: 18px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 18px;
+      color: var(--soil);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 2px;
+      background: var(--soil);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 8.2vw, 88px);
+      line-height: 1.04;
+      font-weight: 900;
+    }
+
+    .hero h1 span {
+      display: inline-block;
+    }
+
+    .hero h1 span:nth-child(2) {
+      color: var(--leaf);
+    }
+
+    .lead {
+      max-width: 620px;
+      margin: 26px 0 0;
+      font-size: clamp(17px, 2.2vw, 21px);
+      color: #3f493d;
+    }
+
+    .seed-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 22px 0 0;
+      padding: 10px 14px;
+      border: 1px solid rgba(63, 123, 74, .2);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .72);
+      color: var(--leaf);
+      font-size: 15px;
+      font-weight: 900;
+      box-shadow: 0 10px 26px rgba(64, 83, 55, .09);
+      rotate: -1deg;
+    }
+
+    .seed-line::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px 999px 999px 2px;
+      background: var(--moss);
+      rotate: -28deg;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-weight: 800;
+      background: #fff;
+      box-shadow: 0 10px 24px rgba(38, 49, 38, .09);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .button.primary {
+      background: var(--leaf);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 34px rgba(38, 49, 38, .13);
+    }
+
+    .hero-art {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      min-height: 0;
+      padding: 18px 8px;
+    }
+
+    .sign-photo,
+    .portrait-photo {
+      overflow: hidden;
+      border: 10px solid #fff;
+      box-shadow: var(--shadow);
+      background: #fff;
+      margin: 0;
+    }
+
+    .sign-photo {
+      border-radius: 36px 36px 36px 10px;
+      rotate: 4deg;
+      animation: bob 7s ease-in-out infinite;
+    }
+
+    .portrait-photo {
+      width: min(330px, 70vw);
+      justify-self: end;
+      border-radius: 36px 10px 36px 36px;
+      rotate: -5deg;
+      animation: bob 8s ease-in-out infinite reverse;
+    }
+
+    .sign-photo img,
+    .portrait-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .sticker {
+      position: absolute;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 14px;
+      border-radius: 999px;
+      background: #fff7bf;
+      border: 2px solid rgba(38, 49, 38, .12);
+      box-shadow: 0 10px 24px rgba(38, 49, 38, .11);
+      font-size: 14px;
+      font-weight: 900;
+      color: var(--soil);
+      white-space: nowrap;
+    }
+
+    .sticker.s1 { left: -4px; top: 44%; rotate: -12deg; }
+    .sticker.s2 { right: 8px; top: 18px; rotate: 10deg; background: #dff2e4; color: var(--leaf); }
+    .sticker.s3 { left: 38px; bottom: 30px; rotate: 7deg; background: #f8d8c7; color: #8b4b34; }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .section-kicker {
+      color: var(--leaf);
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 8px 0 0;
+      font-size: clamp(30px, 5vw, 54px);
+      line-height: 1.1;
+    }
+
+    .section-note {
+      max-width: 430px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .person-card {
+      position: relative;
+      min-height: 350px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 26px 26px 26px 8px;
+      background: rgba(255, 255, 255, .78);
+      box-shadow: 0 12px 34px rgba(64, 83, 55, .10);
+      overflow: hidden;
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .person-card:nth-child(2n) {
+      border-radius: 26px 8px 26px 26px;
+    }
+
+    .person-card:hover {
+      transform: translateY(-7px) rotate(-1deg);
+      box-shadow: 0 20px 45px rgba(64, 83, 55, .16);
+    }
+
+    .person-card.ready {
+      background: #fff;
+    }
+
+    .person-card::after {
+      content: "";
+      position: absolute;
+      width: 112px;
+      height: 112px;
+      right: -36px;
+      top: -38px;
+      border-radius: 999px;
+      background: var(--accent, var(--sky));
+      opacity: .28;
+    }
+
+    .person-image,
+    .person-initial {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      aspect-ratio: 1 / .82;
+      border-radius: 18px 18px 18px 6px;
+      overflow: hidden;
+      background: #f2ead8;
+      border: 1px solid var(--line);
+    }
+
+    .person-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .person-initial {
+      display: grid;
+      place-items: center;
+      font-size: 44px;
+      font-weight: 900;
+      color: rgba(38, 49, 38, .64);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.58), transparent),
+        var(--accent, #dceec9);
+    }
+
+    .tag-row {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin: 16px 0 12px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--accent, var(--sky)) 26%, white);
+      color: #3f493d;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .person-card h3 {
+      margin: 0 0 6px;
+      font-size: 24px;
+      line-height: 1.22;
+    }
+
+    .role {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .essence {
+      margin: 0;
+      font-size: 15px;
+      color: #3f493d;
+    }
+
+    .read-link {
+      display: inline-flex;
+      margin-top: 18px;
+      font-weight: 900;
+      color: var(--leaf);
+    }
+
+    .read-link::after {
+      content: "→";
+      margin-left: 7px;
+      transition: transform .2s ease;
+    }
+
+    .person-card:hover .read-link::after {
+      transform: translateX(4px);
+    }
+
+    .coming {
+      opacity: .78;
+    }
+
+    .ribbon {
+      position: absolute;
+      z-index: 2;
+      top: 15px;
+      left: 14px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--sun);
+      color: #4e3c16;
+      font-size: 12px;
+      font-weight: 900;
+      box-shadow: 0 8px 20px rgba(78, 60, 22, .12);
+      rotate: -5deg;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .flow-item {
+      padding: 24px;
+      border-radius: 24px 24px 24px 8px;
+      background: rgba(255, 255, 255, .72);
+      border: 1px solid var(--line);
+    }
+
+    .flow-item strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .flow-item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .closing {
+      margin: 30px 0 90px;
+      padding: 34px;
+      border-radius: 32px 32px 32px 10px;
+      background: #31583f;
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .closing p {
+      max-width: 780px;
+      margin: 0;
+      font-size: clamp(18px, 2.2vw, 24px);
+      line-height: 1.8;
+      font-weight: 700;
+    }
+
+    .closing .small {
+      margin-top: 18px;
+      color: rgba(255, 255, 255, .82);
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 920px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .people-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .flow {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .wrap {
+        width: min(100% - 24px, 1120px);
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding-top: 8px;
+      }
+
+      .hero-art {
+        gap: 18px;
+        padding: 8px 0 28px;
+      }
+
+      .portrait-photo {
+        width: min(300px, 86vw);
+      }
+
+      .sticker.s1 { left: 2px; top: 48%; }
+      .sticker.s2 { top: 4px; }
+      .sticker.s3 { display: none; }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .people-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="float one"></div>
+  <div class="float two"></div>
+  <div class="float three"></div>
+
+  <header class="wrap">
+    <nav class="nav" aria-label="サイト内ナビゲーション">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark">芽</span>
+        <span>Forest Garden<br>Listening Notes</span>
+      </a>
+      <div class="nav-links">
+        <a href="#people">人の聞き書き</a>
+        <a href="#flow">このページの育て方</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">新城 フォレストガーデン 聞き書き</p>
+        <h1>
+          <span>人が見えると、</span><br>
+          <span>場が見えてくる。</span>
+        </h1>
+        <p class="lead">
+          フォレストガーデンで出会った人たちの言葉を、少しずつ聞き、残していくページです。
+          その人が何を大切にしているのか。どんな想いで、この場に関わっているのか。
+          説明しすぎるのではなく、言葉の奥にあるものが、自然とにじみ出るように。
+          そんな聞き書きを重ねていきます。
+        </p>
+        <p class="seed-line">聞くこと、残すこと、場に返すこと。その循環の中で、人は関係者になっていく。</p>
+        <div class="actions">
+          <a class="button primary" href="#people">聞き書きを読む</a>
+          <a class="button" href="./kicchan.html">きっちゃんの記事へ</a>
+          <a class="button" href="./takuchan.html">たくちゃんの記事へ</a>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-label="フォレストガーデンの写真">
+        <figure class="sign-photo">
+          <img src="assets/forest-garden-sign.jpg" alt="フォレストガーデンの看板">
+        </figure>
+        <figure class="portrait-photo">
+          <img src="assets/takuchan.jpg" alt="野澤卓央さん">
+        </figure>
+        <span class="sticker s1">聞く</span>
+        <span class="sticker s2">言葉にする</span>
+        <span class="sticker s3">循環する</span>
+      </div>
+    </section>
+
+    <section id="people" class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">People</p>
+          <h2>この場を<br>つくっている人たち</h2>
+        </div>
+        <p class="section-note">
+          出会った順に、一人ずつ。声、写真、大切にしているものを重ねながら、この場の輪郭を少しずつ残していきます。
+        </p>
+      </div>
+
+      <div class="people-grid">
+        <a class="person-card ready" href="./kicchan.html" style="--accent:#b9dbe2">
+          <span class="ribbon">公開中</span>
+          <div class="person-image">
+            <img src="assets/kicchan.jpg" alt="きっちゃんと前田薫">
+          </div>
+          <div class="tag-row">
+            <span class="tag">移住</span>
+            <span class="tag">土台を支える</span>
+            <span class="tag">頼まれる存在</span>
+          </div>
+          <h3>きっちゃん</h3>
+          <p class="role">6月18日 / 福島県から新城へ</p>
+          <p class="essence">
+            仕事を探すだけではなく、自分にできることで誰かの役に立つ循環を探している人。
+          </p>
+          <span class="read-link">読む</span>
+        </a>
+
+        <a class="person-card ready" href="./takuchan.html" style="--accent:#9bc77a">
+          <span class="ribbon">公開中</span>
+          <div class="person-image">
+            <img src="assets/takuchan.jpg" alt="野澤卓央さん">
+          </div>
+          <div class="tag-row">
+            <span class="tag">土地</span>
+            <span class="tag">場を開く</span>
+            <span class="tag">受け取ったもの</span>
+          </div>
+          <h3>たくちゃん</h3>
+          <p class="role">野澤卓央さん / フォレストガーデン主催者</p>
+          <p class="essence">
+            義務ではなく、先祖から受け取ったものとして土地に関わる人。
+          </p>
+          <span class="read-link">読む</span>
+        </a>
+
+        <a class="person-card ready" href="./nonchan.html" style="--accent:#c7d69a">
+          <span class="ribbon">公開中</span>
+          <div class="person-initial">父</div>
+          <div class="tag-row">
+            <span class="tag">土地</span>
+            <span class="tag">暮らしの記憶</span>
+            <span class="tag">特製カレー</span>
+          </div>
+          <h3>のんちゃん</h3>
+          <p class="role">6月18日 / 野澤克仁さん・土地を守ってきた人</p>
+          <p class="essence">
+            代々受け継がれてきた土地と、新しく開かれていく場のあいだにいる人。
+          </p>
+          <span class="read-link">読む</span>
+        </a>
+
+        <a class="person-card ready" href="./jinno.html" style="--accent:#9fb4d8">
+          <span class="ribbon">公開中</span>
+          <div class="person-initial">藍</div>
+          <div class="tag-row">
+            <span class="tag">藍染め</span>
+            <span class="tag">暮らし</span>
+            <span class="tag">微生物</span>
+          </div>
+          <h3>神野さん</h3>
+          <p class="role">6月18日 / 岐阜から新城へ</p>
+          <p class="essence">
+            微生物の命と向き合いながら、仕事、暮らし、好きなことをつないでいく人。
+          </p>
+          <span class="read-link">読む</span>
+        </a>
+
+        <a class="person-card ready" href="./youko.html" style="--accent:#f5c2d0">
+          <span class="ribbon">公開中</span>
+          <div class="person-image">
+            <img src="assets/yoko.jpg" alt="久野陽子さん">
+          </div>
+          <div class="tag-row">
+            <span class="tag">食卓</span>
+            <span class="tag">自然農</span>
+            <span class="tag">夢</span>
+          </div>
+          <h3>久野陽子さん</h3>
+          <p class="role">6月19日 / ようこちゃん・自然農法イベント講師</p>
+          <p class="essence">
+            食卓から夢を語り、人、お金、音楽、本の可能性まで巡らせていく人。
+          </p>
+          <span class="read-link">読む</span>
+        </a>
+
+        <a class="person-card ready" href="./furuhashi.html" style="--accent:#e7c66b">
+          <span class="ribbon">公開中</span>
+          <div class="person-image">
+            <img src="assets/furuhashi.jpg" alt="古橋さん">
+          </div>
+          <div class="tag-row">
+            <span class="tag">移住</span>
+            <span class="tag">古民家</span>
+            <span class="tag">井戸</span>
+          </div>
+          <h3>古橋さん</h3>
+          <p class="role">6月19日 / 移住者</p>
+          <p class="essence">
+            家、畑、井戸、古民家。暮らしに必要な実践知で、移住者を助ける人。
+          </p>
+          <span class="read-link">読む</span>
+        </a>
+
+        <a class="person-card ready" href="./atchan.html" style="--accent:#f3b58f">
+          <span class="ribbon">公開中</span>
+          <div class="person-image">
+            <img src="assets/atchan.jpg" alt="原田淳さん">
+          </div>
+          <div class="tag-row">
+            <span class="tag">教育</span>
+            <span class="tag">デザイン</span>
+            <span class="tag">場の設計</span>
+          </div>
+          <h3>あっちゃん</h3>
+          <p class="role">6月19日 / 原田淳さん</p>
+          <p class="essence">
+            植物、動線、看板、余白。人の身体感覚まで含めて、場の流れを設計する人。
+          </p>
+          <span class="read-link">読む</span>
+        </a>
+
+        <a class="person-card ready" href="./mao.html" style="--accent:#b7a5d8">
+          <span class="ribbon">公開中</span>
+          <div class="person-image">
+            <img src="assets/mao.jpg" alt="今井真央さん">
+          </div>
+          <div class="tag-row">
+            <span class="tag">協力隊</span>
+            <span class="tag">新城と天川</span>
+            <span class="tag">未来会議</span>
+          </div>
+          <h3>今井真央くん</h3>
+          <p class="role">新城市地域おこし協力隊 / つなぐ人</p>
+          <p class="essence">
+            地域の仕事、若者、協力隊の自立。新城と天川の未来を、具体的につなぐ人。
+          </p>
+          <span class="read-link">読む</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="flow" class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">How it grows</p>
+          <h2>このページの育て方</h2>
+        </div>
+      </div>
+      <div class="flow">
+        <div class="flow-item">
+          <strong>1. 聞く</strong>
+          <p>その人が何を大切にしているのか、言葉の奥にあるものまで聞く。</p>
+        </div>
+        <div class="flow-item">
+          <strong>2. 形にする</strong>
+          <p>整えすぎず、作りすぎず、本人の呼吸が残る聞き書きにする。</p>
+        </div>
+        <div class="flow-item">
+          <strong>3. 場に返す</strong>
+          <p>受け取った言葉を、読める形にして場へ返す。その人の存在が、もう一度この場の力になるように。</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap closing">
+      <p>
+        このページは、フォレストガーデンを説明するためのページではありません。
+        ここに関わる人の言葉を通して、この場がどんなふうに育っているのかを残していく記録です。
+      </p>
+      <p class="small">
+        聞くこと。言葉にすること。場に返すこと。その小さな循環の中で、一人ひとりの存在が見えはじめる。
+      </p>
+      <p class="small">
+        その人の言葉を聞くことは、その人の真実を見極め、本来の美しさに触れ、個性を磨く入口でもある。
+      </p>
+      <p class="small">
+        フォレストガーデンは、誰かが用意した場所ではなく、関わる人たちの言葉と手によって、命の輝きが少しずつ見えてくる場なのだと思います。
+      </p>
+    </div>
+  </main>
+</body>
+</html>
