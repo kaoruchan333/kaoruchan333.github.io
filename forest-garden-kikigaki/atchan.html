@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>あっちゃんに聞いたこと｜教育はデザインだった</title>
+  <meta name="description" content="新城市出身でフォレストガーデンに関わる原田淳さんへの聞き書き。教育、デザイン、動線、剪定、ミツバチ看板、場の設計について。">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1f241d;
+      --sub: #5d6659;
+      --paper: #fbfaf3;
+      --soft: #eee6d6;
+      --green: #3f6644;
+      --brown: #8a5a35;
+      --line: #ded5c4;
+      --quote: #f4eddf;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 8% 10%, rgba(127, 163, 106, .30), transparent 20rem),
+        radial-gradient(circle at 94% 18%, rgba(126, 164, 190, .20), transparent 18rem),
+        var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+      line-height: 1.95;
+      letter-spacing: 0;
+    }
+
+    main {
+      width: min(780px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 44px 0 72px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 26px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--green);
+      background: #fffdf8;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 800;
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 7vw, 58px);
+      line-height: 1.15;
+      margin: 0 0 12px;
+      font-weight: 900;
+    }
+
+    .subtitle {
+      color: var(--sub);
+      font-size: 18px;
+      margin: 0 0 28px;
+    }
+
+    .hero {
+      margin: 28px 0 18px;
+      border-radius: 28px 28px 28px 8px;
+      overflow: hidden;
+      background: var(--soft);
+      border: 10px solid #fff;
+      box-shadow: 0 18px 48px rgba(64, 83, 55, .15);
+      rotate: -.7deg;
+    }
+
+    .hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .meta {
+      color: var(--sub);
+      font-size: 14px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 28px;
+      margin-bottom: 40px;
+    }
+
+    .note {
+      background: var(--soft);
+      border-left: 4px solid var(--green);
+      padding: 14px 16px;
+      font-size: 14px;
+      color: #42483d;
+      margin: 0 0 38px;
+    }
+
+    h2 {
+      font-size: 26px;
+      line-height: 1.35;
+      margin: 54px 0 18px;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+    }
+
+    p {
+      margin: 0 0 18px;
+      font-size: 17px;
+    }
+
+    blockquote {
+      margin: 28px 0;
+      padding: 22px 24px;
+      background: var(--quote);
+      border-left: 4px solid var(--brown);
+      border-radius: 0 8px 8px 0;
+      font-size: 18px;
+      line-height: 1.85;
+    }
+
+    blockquote p { margin: 0; }
+
+    .dialogue {
+      margin: 28px 0;
+      padding: 20px 22px;
+      background: #fffdf8;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .dialogue p { margin: 0 0 16px; }
+    .dialogue p:last-child { margin-bottom: 0; }
+
+    .speaker {
+      display: block;
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+
+    .image-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 30px 0 12px;
+    }
+
+    .image-pair figure {
+      margin: 0;
+      overflow: hidden;
+      border: 8px solid #fff;
+      border-radius: 22px 22px 22px 8px;
+      background: var(--soft);
+      box-shadow: 0 14px 34px rgba(64, 83, 55, .12);
+    }
+
+    .image-pair img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .inline-photo {
+      margin: 30px 0 26px;
+      overflow: hidden;
+      border: 8px solid #fff;
+      border-radius: 24px 24px 24px 8px;
+      background: var(--soft);
+      box-shadow: 0 14px 34px rgba(64, 83, 55, .12);
+    }
+
+    .inline-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .caption {
+      margin: 8px 2px 0;
+      color: var(--sub);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .key-box {
+      margin: 34px 0;
+      padding: 24px;
+      border-radius: 24px 24px 24px 8px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.64), rgba(255,255,255,.18)),
+        #eef2df;
+      border: 1px solid rgba(63, 102, 68, .24);
+      box-shadow: 0 14px 34px rgba(64, 83, 55, .10);
+    }
+
+    .key-box strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--green);
+      font-size: 20px;
+    }
+
+    .closing {
+      margin-top: 54px;
+      padding: 28px;
+      background: var(--green);
+      color: white;
+      border-radius: 24px 24px 24px 8px;
+    }
+
+    .closing p { margin-bottom: 14px; }
+    .closing p:last-child { margin-bottom: 0; }
+
+    @media (max-width: 640px) {
+      .image-pair { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back-link" href="./index.html">← 聞き書きの小さな森へ戻る</a>
+    <p class="eyebrow">フォレストガーデンで聞いたこと</p>
+    <h1>教育は、<br>デザインだった。</h1>
+    <p class="subtitle">あっちゃんに聞いた、植物、動線、余白、好奇心、そして人が自然に動き出す場のこと。</p>
+
+    <figure class="hero">
+      <img src="./assets/atchan-garden.jpg" alt="フォレストガーデンの植物を見ながら話すあっちゃん">
+    </figure>
+
+    <div class="meta">
+      聞き手：前田薫<br>
+      語り手：原田淳さん（あっちゃん）<br>
+      日時：2026年6月19日<br>
+      場所：愛知県新城市 フォレストガーデン
+    </div>
+
+    <p class="note">この文章は、インタビュー音声の文字起こしをもとに、読みやすさのために言葉を整えた聞き書きです。歴史、地形、風水、信仰、職歴などに関わる細部は、公開前にご本人確認・事実確認を前提としています。</p>
+
+    <p>あっちゃんの話は、めちゃくちゃ面白かった。</p>
+    <p>最初は、何を聞いているのか追いつくのに必死だった。庭の話をしているようで、暮らしの話でもあり、教育の話でもあり、組織の話でもあり、土地の話でもある。</p>
+    <p>でも、聞いているうちに、フォレストガーデンで僕が身体で感じていたものに、少しずつ言葉が追いついてきた。</p>
+    <p>あっちゃんは、僕から見ると、デザイナーだった。</p>
+    <p>絵をきれいに描く人という意味ではない。人の視点、身体の動き、植物の伸び方、光、影、風、水、好奇心、安心感。その全部を見ながら、場の流れを整える人だった。</p>
+
+    <h2>庭ではなく、場の流れを見ている</h2>
+    <p>あっちゃんは新城生まれ。都市部で働いた経験もあり、今は庭仕事、剪定、家まわりの困りごと、空き家、暮らしの相談まで、かなり幅広く見ている。</p>
+    <p>フォレストガーデンであっちゃんが見ているのは、単なる庭の美しさではなかった。</p>
+
+    <blockquote><p>「鳥の視点で見ると、全部こうなってて。ここが淀んでるよ、とか。ここを流すと、こう流れるからって」</p></blockquote>
+
+    <p>僕が「デザイナーですね」と言うと、あっちゃんは自然にこう返してくれた。</p>
+
+    <blockquote><p>「デザインですね。絵を描くとか、花を生けるとか、庭を作るとか、それと一緒だし、会社とかのチーム作りもする。全部つながるから」</p></blockquote>
+
+    <p>ここで、僕の中のデザインの意味が変わった。</p>
+    <p>デザインとは、見た目を整えることだけではない。人がどう感じ、どこを見て、どう動き、どこで安心し、どこで好奇心が生まれるのか。その流れをつくることだった。</p>
+
+    <h2>配置には、全部意味がある</h2>
+    <p>あっちゃんの話を聞いていて、何度も驚いたのは、配置を見る解像度だった。</p>
+    <p>風がどう通るか。光がどこから入るか。日陰がどこにできるか。水がどこへ流れるか。トイレがどこにあり、キッチンがどこにあり、人がどこで立ち止まり、子どもがどこで遊び、大人がどこから見守れるか。</p>
+    <p>それらは、ただの設備や偶然の配置ではなかった。</p>
+    <p>あっちゃんは、その場所にあるものを一つずつ見ながら、「ここに人が集まったらどうなるか」「子どもがここで遊んだら親は安心して見守れるか」「疲れた人が一人になれる場所はあるか」まで見ていた。</p>
+
+    <blockquote><p>「この光線を考えて、どこを遊び場にするか。そしたら子どもたちは勝手に遊べて、親としては見守りもできる」</p></blockquote>
+
+    <p>この言葉を聞いた時、僕は「場を整える」という言葉の意味を、また一つ深く受け取った。</p>
+    <p>人に何かをさせるのではない。場の配置が、人の安心や好奇心や動きを自然に生み出していく。</p>
+    <p>ここに子どもが集えば、どういう動きが生まれるのか。ここに大人が座れば、どこが見えるのか。ここに影があれば、誰が休めるのか。</p>
+    <p>配置は、問いだった。</p>
+    <p>場所そのものが、人に問いかけていた。</p>
+
+    <h2>スピリチュアルなのに、スピリチュアルじゃない</h2>
+    <p>あっちゃんの話には、風水や易、土地の流れ、神社、信仰の話も出てくる。</p>
+    <p>言葉だけ聞くと、少しスピリチュアルに聞こえるかもしれない。</p>
+    <p>でも、僕が受け取った感覚はまったく逆だった。すごく地に足がついていた。</p>
+    <p>あっちゃんにとって、風水や易は、人を信じ込ませるためのものではない。場を読むための道具であり、羅針盤であり、コンパスだった。</p>
+
+    <blockquote><p>「羅針盤として、易とか風水とか、こういうことをコンパスにしてるだけ」</p></blockquote>
+
+    <blockquote><p>「中心点があって、北はどっちか、ここは今どこかっていう。そしたら迷わないから」</p></blockquote>
+
+    <p>これは、かなり印象深かった。</p>
+    <p>「気の流れ」という言葉を、日当たり、風通し、動線、水の流れ、心理的な安心感として見ていく。</p>
+    <p>「場が淀んでいる」という感覚を、視界、湿気、排水、動きにくさ、人の滞りとして見ていく。</p>
+    <p>見えないものを、見えるものから読む。</p>
+    <p>怪しさではなく、観察の技術として使っている。</p>
+    <p>だからこそ、あっちゃんの話は不思議なのに、現実から浮いていなかった。</p>
+
+    <div class="key-box">
+      <strong>教育は、説明ではなく設計でもある。</strong>
+      <p>危ないよ、と言葉で教えるだけではない。人が自然に気づくように、見る場所、歩く場所、身体の角度、好奇心の入口を整える。あっちゃんの話から、僕はそう受け取った。</p>
+    </div>
+
+    <h2>ミツバチ注意を、宝探しに変える</h2>
+    <p>特に面白かったのが、ミツバチの看板の話だった。</p>
+    <p>普通なら「ミツバチ注意」と四角い看板に書く。だけど、あっちゃんはそれをしない。</p>
+
+    <blockquote><p>「ミツバチ注意看板なんです」</p></blockquote>
+
+    <blockquote><p>「四角い看板でミツバチ注意って書くと、ミツバチに関してすごく硬い感情が生まれる」</p></blockquote>
+
+    <p>だから、割れた樽の底を再生して、ミツバチを絵で見せる。あちこちに置けば、「あ、こっちにもあった」「まだあるんだ」と、宝探しのようになる。</p>
+
+    <blockquote><p>「好奇心と親しみ。まずは親しんで」</p></blockquote>
+
+    <figure class="inline-photo">
+      <img src="./assets/bee-sign.jpg" alt="あっちゃんが見せてくれたミツバチの看板">
+    </figure>
+    <p class="caption">割れた樽の底を再生した、ミツバチの看板。「注意」を「好奇心」に変えるための小さなデザイン。</p>
+
+    <p>これは、注意喚起を消しているわけではない。</p>
+    <p>危険を恐れだけで伝えず、親しみと好奇心に変えている。</p>
+    <p>子どもにも大人にも、先に緊張を与えるのではなく、「あれ、何だろう」と近づく入口をつくっている。</p>
+
+    <h2>危ないよ、ではなく、身体が気づくように</h2>
+    <p>薫ちゃんが一番ビンタを食らったように感じたのは、この感覚だった。</p>
+    <p>枝や葉が少し出ている。通る時には少し頭を下げる。その時、自然と視線が下に向く。すると、足元の注意したい場所が見える。</p>
+    <p>「危ないよ」と注意書きを貼るのではなく、身体が自然に動き、その動きの中で気づくように設計している。</p>
+    <p>これは、教育そのものだった。</p>
+
+    <blockquote><p>「先をきれいにやっちゃうんじゃなくて、あえてここ一本残す」</p></blockquote>
+
+    <p>全部をきれいに整えすぎると、余白がなくなる。</p>
+    <p>余白がないと、人も場も固くなる。あっちゃんは剪定の話をしながら、人の話もしていた。</p>
+
+    <blockquote><p>「余白がないと折れますからね」</p></blockquote>
+
+    <p>この言葉は、植物にも、人にも、組織にも、そのまま当てはまる。</p>
+
+    <h2>藍工房への道も、説明ではなく誘い</h2>
+    <p>神野さんの藍染工房へ向かう道の話も、あっちゃんらしかった。</p>
+    <p>「藍工房はこちらです」と書くのではない。青い矢印を置く。すると、「何だろう」と思う。自然の色の中に青が見える。その先に、秘密の場所があるように感じる。</p>
+
+    <blockquote><p>「青い矢印なんや、この矢印って」</p></blockquote>
+
+    <blockquote><p>「お菓子の家みたいに、こうこぼってくと、秘密のクラフトになる」</p></blockquote>
+
+    <p>ここでも、説明より先に好奇心がある。</p>
+    <p>人は、言われたから動くのではなく、気になったから動く。あっちゃんは、その「気になる」をつくっている。</p>
+
+    <div class="image-pair">
+      <figure>
+        <img src="./assets/atchan.jpg" alt="フォレストガーデンで撮影したあっちゃん">
+      </figure>
+      <figure>
+        <img src="./assets/atchan-garden.jpg" alt="植物の中で場を見ているあっちゃん">
+      </figure>
+    </div>
+
+    <h2>鳥の群れ、中心軸、コミュニティ</h2>
+    <p>あっちゃんの話は、植物や看板だけで終わらない。</p>
+    <p>鳥の群れの動きの話も出てきた。何千羽もいる鳥が、リーダーなしで大きく形を変えながら動いていく。その原理は、三つだけだという。</p>
+
+    <blockquote><p>「まずはぶつからないようにしてる。誰かがこう行ったら、それに沿う。もう一つは中心に向かっておく」</p></blockquote>
+
+    <p>距離感を保つ。隣の動きに寄り添う。中心に戻る。</p>
+    <p>これを聞いた時、フォレストガーデンのコミュニティのあり方と重なった。</p>
+
+    <blockquote><p>「中心軸があるとぶれない」</p></blockquote>
+
+    <p>カリスマ一人で引っ張るのではない。</p>
+    <p>全員が同じ動きをするのでもない。</p>
+    <p>それぞれが違う動きをしながら、中心にあるものをどこかで共有している。</p>
+    <p>だから、場がばらばらにならない。</p>
+
+    <h2>地元の人だからできる橋渡し</h2>
+    <p>あっちゃんは、地元側の人でもある。</p>
+    <p>移住者同士で関係が閉じてしまうこともある。そこに、地元の信用を持つ人が入ると、地域との接続が変わる。</p>
+
+    <blockquote><p>「原田くんが信頼してる人なんでしょ。じゃあ貸すよっていうかな」</p></blockquote>
+
+    <p>これは、とても大きい。</p>
+    <p>地域おこしは、外から人を呼ぶだけでは続かない。来た人が、地元の信用や暮らしの文脈とつながっていく必要がある。</p>
+    <p>あっちゃんは、その翻訳者でもある。</p>
+    <p>植物を読む人であり、家を読む人であり、土地を読む人であり、人の関係性を読む人でもある。</p>
+
+    <h2>主導権は、受け取り側にある</h2>
+    <p>僕は、今回の新城と天川のつながりをどう言葉にしていくかを考えていた。</p>
+    <p>でも、あっちゃんのこの言葉がとても残った。</p>
+
+    <blockquote><p>「デザインに落としても、それは文字にしても、結局主導権は受け取り側にある」</p></blockquote>
+
+    <p>こちらの意図通りに受け取らせようとしない。</p>
+    <p>でも、何も置かないわけでもない。</p>
+    <p>受け取り側が自分で気づけるように、入口を置く。問いを置く。余白を置く。身体が動く導線を置く。</p>
+    <p>そこに、あっちゃんのデザインがある。</p>
+
+    <h2>教育は、教えることではなく、環境を整えること</h2>
+    <p>僕は天川村で寺子屋をつくっている。</p>
+    <p>そこでは、子どもたちに正解を渡すことではなく、その子が自分で感じ、考え、動き出せる場をどう育てるかを大切にしている。</p>
+    <p>僕自身は、問いかけを言葉でしてきた人間だと思う。</p>
+    <p>でも、あっちゃんは言葉だけではなく、デザインで問いを置いていた。身体が動くように、視線が変わるように、自然と気づきが起きるように、場そのものを設計していた。</p>
+    <p>そこに、僕は本当に驚いた。</p>
+    <p>あっちゃんの話を聞いて、僕が天川村でやろうとしていることの奥にある構造が、もう一段はっきり見えた。</p>
+    <p>教育は、教えることだけではない。</p>
+    <p>子どもが自然に見つけるように。身体が動くように。問いが生まれるように。安心して失敗できるように。人の役割が自然に立ち上がるように。</p>
+    <p>場をデザインすることも、教育だった。</p>
+
+    <div class="closing">
+      <p>あっちゃんは、フォレストガーデンの中で、見えない流れを見ている人だった。</p>
+      <p>植物、動線、看板、余白、日陰、水の流れ、子どもの目線、大人の安心、地元との信用。</p>
+      <p>その全部をつなげながら、人が自然に気づき、動き出す場を整えている。</p>
+      <p>教育はデザインだった。</p>
+      <p>あっちゃんの話で、僕はそれを身体ごと理解し始めた。</p>
+    </div>
+  </main>
+</body>
+</html>
