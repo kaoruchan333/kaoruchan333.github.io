@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>神野さんに聞いたこと｜藍も、生き物だから</title>
+  <meta name="description" content="岐阜から新城へ移住し、フォレストガーデンで藍染工房を育てている神野さんへの聞き書き。移住、暮らし、仕事、藍染め、微生物の命について。">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1d211b;
+      --sub: #5e6659;
+      --paper: #fbfaf6;
+      --soft: #efeadd;
+      --indigo: #315b83;
+      --line: #ded7c8;
+      --quote: #eef3f7;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 14% 8%, rgba(49, 91, 131, .22), transparent 19rem),
+        radial-gradient(circle at 90% 20%, rgba(136, 169, 91, .22), transparent 20rem),
+        var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
+      line-height: 1.95;
+      letter-spacing: 0;
+    }
+
+    main {
+      width: min(760px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 44px 0 72px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 26px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--indigo);
+      background: #fffdf8;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .eyebrow {
+      color: var(--indigo);
+      font-size: 14px;
+      font-weight: 800;
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 7vw, 58px);
+      line-height: 1.15;
+      margin: 0 0 12px;
+      font-weight: 900;
+    }
+
+    .subtitle {
+      color: var(--sub);
+      font-size: 18px;
+      margin: 0 0 28px;
+    }
+
+    .name-card {
+      margin: 28px 0 22px;
+      padding: 28px;
+      border-radius: 28px 28px 28px 8px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.72), rgba(255,255,255,.36)),
+        #e8f0f4;
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 48px rgba(49, 91, 131, .13);
+    }
+
+    .name-card strong {
+      display: block;
+      color: var(--indigo);
+      font-size: clamp(28px, 6vw, 48px);
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .name-card span {
+      color: var(--sub);
+      font-weight: 700;
+    }
+
+    .meta {
+      color: var(--sub);
+      font-size: 14px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 28px;
+      margin-bottom: 40px;
+    }
+
+    .note {
+      background: var(--soft);
+      border-left: 4px solid var(--indigo);
+      padding: 14px 16px;
+      font-size: 14px;
+      color: #42483d;
+      margin: 0 0 38px;
+    }
+
+    h2 {
+      font-size: 26px;
+      line-height: 1.35;
+      margin: 54px 0 18px;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+    }
+
+    p {
+      margin: 0 0 18px;
+      font-size: 17px;
+    }
+
+    blockquote {
+      margin: 28px 0;
+      padding: 22px 24px;
+      background: var(--quote);
+      border-left: 4px solid var(--indigo);
+      border-radius: 0 8px 8px 0;
+      font-size: 18px;
+      line-height: 1.85;
+    }
+
+    blockquote p { margin: 0; }
+
+    .dialogue {
+      margin: 28px 0;
+      padding: 20px 22px;
+      background: #fffdf8;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .dialogue p { margin: 0 0 16px; }
+    .dialogue p:last-child { margin-bottom: 0; }
+
+    .speaker {
+      display: block;
+      color: var(--indigo);
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+
+    .indigo-box {
+      margin: 34px 0;
+      padding: 24px;
+      border-radius: 24px 24px 24px 8px;
+      background: #eaf1f6;
+      border: 1px solid rgba(49, 91, 131, .24);
+      box-shadow: 0 14px 34px rgba(49, 91, 131, .10);
+    }
+
+    .indigo-box strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--indigo);
+      font-size: 20px;
+    }
+
+    .closing {
+      margin-top: 54px;
+      padding: 28px;
+      background: var(--indigo);
+      color: white;
+      border-radius: 24px 24px 24px 8px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back-link" href="./index.html">← 聞き書きの小さな森へ戻る</a>
+    <p class="eyebrow">フォレストガーデンで聞いたこと</p>
+    <h1>藍も、<br>生き物だから。</h1>
+    <p class="subtitle">神野さんに聞いた、移住と藍染めと、そのままでいられる場のこと。</p>
+
+    <div class="name-card">
+      <strong>神野さん</strong>
+      <span>岐阜から新城へ / フォレストガーデンで藍染工房を育てる人</span>
+    </div>
+
+    <div class="meta">
+      聞き手：前田薫<br>
+      語り手：神野さん<br>
+      日時：2026年6月18日 夜<br>
+      場所：愛知県新城市 フォレストガーデン
+    </div>
+
+    <p class="note">この文章は、インタビュー音声の文字起こしをもとに、読みやすさのために言葉を整えた聞き書きです。お名前の表記や細かな事実関係は、公開前にご本人確認を前提としています。</p>
+
+    <p>6月18日の夜、フォレストガーデンで神野さんに話を聞かせてもらった。</p>
+    <p>神野さんは、岐阜から新城へ移住してきた人だ。</p>
+    <p>そして、フォレストガーデンの中に藍染工房を作り、これから仕事、生き方、暮らしをつなげていこうとしている人でもある。</p>
+    <p>話の中には、移住の決断、子どもの入学、リモートワーク、たくちゃんのあり方、藍染めへの驚きまで、いろんな層が重なっていた。</p>
+
+    <h2>一日で決めていいんやろか</h2>
+    <p>神野さんが初めてフォレストガーデンに来たのは、イベントがきっかけだった。</p>
+    <p>トランジションタウンの流れの中で、何人かで一緒にこの場所へ来た。</p>
+    <p>もともと、自分でも何かをしたいという思いはあった。</p>
+    <p>でも、フォレストガーデンで触れたのは、ただ場所の可能性だけではなかった。</p>
+    <blockquote><p>「たくちゃんっていう人の人柄に触れて」</p></blockquote>
+    <blockquote><p>「この人に関わって集まってくる人たちが、ここに来る」</p></blockquote>
+    <p>たくちゃんという人がいて、その周りに集まる人がいる。</p>
+    <p>神野さんは、その人たちに会いたい、この近くに身を置きたい、という気持ちになっていった。</p>
+    <blockquote><p>「仲間に会いたい。ここの近くに身を置きたい」</p></blockquote>
+    <p>ただ、それは頭で計画して積み上げた移住というより、身体の方が先に反応していたような話だった。</p>
+
+    <div class="dialogue">
+      <p><span class="speaker">かおる</span>「1日で決めていいやろか、みたいな感じだったんですか？」</p>
+      <p><span class="speaker">神野さん</span>「1日で決めていいやろかっていう」</p>
+    </div>
+
+    <p>移住という大きな決断なのに、感覚としてはもう決まっている。</p>
+    <p>でも、頭では「本当にそれでいいのか」と確認したくなる。</p>
+    <p>その揺れを越えさせたものは何だったのか。</p>
+    <p>神野さんは、周りの後押しと、自分の感覚を頼りにしたことを話してくれた。</p>
+    <blockquote><p>「自分の感覚も頼りに切りました」</p></blockquote>
+
+    <h2>子どもの入学と一緒に、暮らしが動いた</h2>
+    <p>移住のタイミングには、家族の節目も重なっていた。</p>
+    <p>長男が小学校に入るタイミングで、神野さんは新城へ移ってきた。</p>
+    <blockquote><p>「ちょうど長男が小1になるタイミングだったんです」</p></blockquote>
+    <blockquote><p>「去年の3月末から4月に」</p></blockquote>
+    <p>入学に間に合わせるように、暮らしを移していく。</p>
+    <p>それはきっと、静かな決断ではなかったと思う。</p>
+    <p>忙しさも、不安も、段取りもあったはずだ。</p>
+    <p>でも、神野さんの話には、その大変さを大げさに語る感じがなかった。</p>
+    <p>感覚を信じて、タイミングを受け取り、動いた人の言葉だった。</p>
+
+    <h2>難しくなかった、という移住の言葉</h2>
+    <p>移住してきて大変だったことを聞いた時、神野さんの言葉は少し意外だった。</p>
+    <blockquote><p>「難しくなかった」</p></blockquote>
+    <p>移住の話で、この言葉はなかなか聞かない。</p>
+    <p>地域に入ることは難しい。</p>
+    <p>人間関係もある。</p>
+    <p>仕事や暮らしのハードルもある。</p>
+    <p>でも神野さんにとって、この場所は「難しくない」と感じられる場所だった。</p>
+    <p>それは、地域が何もかも整っていたからではない。</p>
+    <p>たくちゃんがいて、フォレストガーデンがあり、周りにいる人たちとの距離感があったからだと思う。</p>
+    <p>暮らしの面では、家からフォレストガーデンまで車で約10分。</p>
+    <p>仕事はリモートワークで、Wi-Fiがあればできる。</p>
+    <p>その現実的な条件も、神野さんの移住を支えていた。</p>
+    <blockquote><p>「ここが近い」</p></blockquote>
+    <blockquote><p>「Wi-Fiさえあれば」</p></blockquote>
+
+    <h2>そのままでいられる場所</h2>
+    <p>神野さんが語ってくれたフォレストガーデンの良さは、派手な言葉ではなかった。</p>
+    <blockquote><p>「ここは、みんなそれぞれが、そのまんま」</p></blockquote>
+    <p>たくちゃんについても、神野さんは「教えるリーダー」というより、やっていることで見せる人として語っていた。</p>
+    <blockquote><p>「先生的リーダーじゃなくて、やってることで見せる人」</p></blockquote>
+    <blockquote><p>「生き方イコールその姿みたいな」</p></blockquote>
+    <blockquote><p>「まだ途中だよ、みたいな感じで、そのままでいいんだって」</p></blockquote>
+    <p>人を変えようとしない。</p>
+    <p>上から引っ張るのでもない。</p>
+    <p>でも、その人のあり方を見ていると、自然と自分もそこにいたくなる。</p>
+    <p>フォレストガーデンには、そういう引力がある。</p>
+
+    <h2>本音で言える場</h2>
+    <p>神野さんの言葉の中で、僕がとても大事だと感じたものがある。</p>
+    <p>それは、たくちゃんの良さを語るだけではなく、欠点も言えるという話だった。</p>
+    <blockquote><p>「たくちゃんの欠点、教えてって言える場」</p></blockquote>
+    <blockquote><p>「本音で言えるから」</p></blockquote>
+    <p>これは、単なる仲の良さではない。</p>
+    <p>誰かを神格化しない。</p>
+    <p>リーダーを完璧な人として祭り上げない。</p>
+    <p>良いところも、足りないところも、本音で言える。</p>
+    <p>その前提があるから、場が健全に続いていく。</p>
+    <p>神野さんは、たくちゃんがみんなを大事にするから、結果として人が集まっているのだと話していた。</p>
+    <blockquote><p>「みんなを大事にするから」</p></blockquote>
+    <p>フォレストガーデンの温かさは、優しい言葉だけでできているのではない。</p>
+    <p>本音が言えること。</p>
+    <p>その人のままでいられること。</p>
+    <p>それも、この場の大きな土台なのだと思う。</p>
+
+    <h2>コミュニティは、作るものではなく生まれるもの</h2>
+    <p>話を聞いていると、神野さんは、フォレストガーデンに人が集まる理由をとても自然に見ていた。</p>
+    <blockquote><p>「人が集まった結果、それがコミュニティになってるだけ」</p></blockquote>
+    <blockquote><p>「作ろうよってできるもんじゃない」</p></blockquote>
+    <p>これは、今回の新城視察全体を通して何度も感じたことだった。</p>
+    <p>コミュニティを作ろうとして、人を集めるのではない。</p>
+    <p>誰かのあり方があり、そこに人が集まり、関係性が生まれ、気づけば場になっている。</p>
+    <p>フォレストガーデンは、まさにそういう場所だった。</p>
+
+    <h2>藍染めは、今年のゴールデンウィークから</h2>
+    <p>神野さんが藍染めを始めたのは、今年のゴールデンウィーク頃だと話してくれた。</p>
+    <blockquote><p>「今年、ゴールデンウィーク」</p></blockquote>
+    <p>始めて間もない。</p>
+    <p>でも、話し始めると、藍染めへの熱が一気に立ち上がってくる。</p>
+    <p>それは「仕事にできそうだから」というより、藍という生き物に出会ってしまった人の話に聞こえた。</p>
+
+    <h2>藍も、生き物だから</h2>
+    <p>神野さんは、フォレストガーデンの中に藍染工房を作ろうとしている。</p>
+    <p>藍染めは、ただ布に色をつける技術ではない。</p>
+    <p>神野さんの話を聞いていると、そこには命の営みがあった。</p>
+
+    <div class="indigo-box">
+      <strong>藍染めは、微生物と一緒にする仕事</strong>
+      <p>藍染めの液体の中には、微生物が住んでいる。葉を発酵させ、時間をかけて準備し、染める時にも生き物の働きがある。</p>
+    </div>
+
+    <blockquote><p>「藍も生き物なので」</p></blockquote>
+    <blockquote><p>「ただの染め物、色付けっていうのじゃなくて」</p></blockquote>
+    <blockquote><p>「液体の中に微生物がいっぱい住んでるんですよ」</p></blockquote>
+    <p>布を液に浸け、出した瞬間は茶色い。</p>
+    <p>それを空気に触れさせていくと、青く変わっていく。</p>
+    <p>神野さんは、その変化に魅せられたと話していた。</p>
+    <blockquote><p>「出して、ぱたぱたって振ってると青くなるんですよ」</p></blockquote>
+    <blockquote><p>「それに魅せられてしまって」</p></blockquote>
+    <p>この話を聞いていると、藍染めは、神野さんにとって趣味や仕事の前に、命と向き合う時間なのだと感じた。</p>
+
+    <h2>発酵と時間が、色になる</h2>
+    <p>藍染めの話は、工程そのものも面白かった。</p>
+    <p>神野さんは、葉っぱを発酵させ、時間をかけて染める準備をしていく話をしてくれた。</p>
+    <blockquote><p>「葉っぱから発酵したやつ」</p></blockquote>
+    <blockquote><p>「3ヶ月かけてやります」</p></blockquote>
+    <blockquote><p>「その後、1年間寝かせます」</p></blockquote>
+    <p>すぐに結果が出るものではない。</p>
+    <p>発酵があり、待つ時間があり、微生物の働きがあり、空気に触れる瞬間がある。</p>
+    <p>その全部が重なって、青になる。</p>
+    <p>これは、フォレストガーデンそのものにも似ていると思った。</p>
+    <p>すぐに成果を出すのではなく、時間をかけて発酵していく。</p>
+    <p>人も、場も、関係性も、すぐに色づくわけではない。</p>
+    <p>でも、ちゃんと生きているものは、ある瞬間に色が立ち上がる。</p>
+
+    <h2>地球にも、人にもやさしいもの</h2>
+    <p>神野さんは、藍染めの効能や、身体へのやさしさについても話していた。</p>
+    <p>そこは公開前に細かな事実確認が必要だけれど、神野さんが感じていたのは、藍染めがただ美しいだけではなく、人や地球にやさしい営みだということだった。</p>
+    <blockquote><p>「地球にも、人にも癒しで、優しい」</p></blockquote>
+    <p>だから、広げていきたい。</p>
+    <p>続けていきたい。</p>
+    <p>自分が好きになったものを、自分だけの楽しみで終わらせず、誰かにも手渡していきたい。</p>
+    <p>神野さんの藍染めには、そんな巡りがある。</p>
+
+    <h2>好きなことが、暮らしと仕事につながっていく</h2>
+    <p>神野さんは、今リモートワークをしながら、新城で暮らしている。</p>
+    <p>仕事のハードルは、Wi-Fiがあれば越えられる部分もある。</p>
+    <p>一方で、フォレストガーデンの近くに身を置き、藍染めの工房を育てていく。</p>
+    <p>それは、いきなり全部を藍染め一本にするという話ではない。</p>
+    <p>今ある仕事をしながら、暮らしを整えながら、好きなことが少しずつ場所を持ちはじめている。</p>
+    <p>好きなこと。</p>
+    <p>暮らし。</p>
+    <p>仕事。</p>
+    <p>人とのつながり。</p>
+    <p>それらが、まだ完全な形になる前の、でも確かに動き始めている状態だった。</p>
+    <p>その未完成さが、とてもリアルだった。</p>
+
+    <h2>ここがあるから楽しみ</h2>
+    <p>神野さんに、ここに住み続けたいと思っているかを聞いた。</p>
+    <blockquote><p>「ここがあるから楽しみ」</p></blockquote>
+    <p>この「ここ」は、フォレストガーデンのことだ。</p>
+    <p>仕事があるから、だけではない。</p>
+    <p>便利だから、だけでもない。</p>
+    <p>この場があるから楽しみ。</p>
+    <p>この場に関わる余白があるから、暮らしが動いていく。</p>
+    <p>神野さんの移住は、場所に移ったというより、場との関係性の中に身を置いたのだと思う。</p>
+
+    <section class="closing">
+      <p>神野さんは、藍染めを通して、命の色が立ち上がる瞬間を見ている人だった。</p>
+      <p>そのままでいられる場に身を置き、好きなことを暮らしと仕事へつなげていく人。</p>
+      <p>フォレストガーデンには、土を耕す人もいれば、人の内側を耕す人もいる。</p>
+      <p>そして、微生物と向き合いながら、藍の青を育てる人もいる。</p>
+      <p>その一人ひとりの個性が、場の彩りになっていく。</p>
+    </section>
+  </main>
+</body>
+</html>
