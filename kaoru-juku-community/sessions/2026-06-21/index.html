@@ -18,6 +18,9 @@ table{width:100%;border-collapse:collapse;margin:24px 0;background:#fff;border:1
 .download{display:inline-flex;align-items:center;justify-content:center;min-height:42px;border-radius:8px;background:var(--deep);color:#fff8e8;text-decoration:none;padding:8px 16px;font-size:14px;font-weight:700}
 #kj-auth-overlay{position:fixed;inset:0;background:linear-gradient(135deg,#26312b,#5b513f);display:grid;place-items:center;padding:22px;z-index:9999}.kj-auth-card{width:min(420px,100%);background:#fbfaf6;color:#2f2b26;border-radius:10px;padding:30px;box-shadow:0 24px 80px rgba(0,0,0,.28)}.kj-auth-label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9a6a3b;margin-bottom:10px}.kj-auth-card h1{font-size:24px;line-height:1.45;margin:0 0 10px}.kj-auth-card p{font-size:14px;color:#70685f}.kj-auth-card input{width:100%;min-height:46px;border:1px solid #d4cabd;border-radius:8px;padding:10px 12px;font-size:16px;background:#fff;margin:8px 0 12px}.kj-auth-card button{width:100%;min-height:46px;border:0;border-radius:8px;background:#26312b;color:#fff8e8;font-size:15px;font-weight:700}.kj-auth-error{min-height:22px;color:#a33;font-size:13px;margin-top:8px}
 @media(max-width:640px){.hero{padding:34px 0 36px}section{padding:34px 0}.step-item{grid-template-columns:1fr}.step-num{width:34px;height:34px}}
+.resource-panel{background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px;margin:24px 0}.access-line{background:#f4f0e8;border:1px solid #ded3c2;border-radius:8px;padding:16px 18px;margin:18px 0;display:grid;gap:6px}.access-line strong{font-size:13px;color:var(--accent);letter-spacing:.08em}.access-line span{font-weight:700;color:var(--deep)}
+.resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}.resource-card{display:block;text-decoration:none;background:#fffdf8;border:1px solid #dfd1bd;border-radius:8px;padding:18px}.resource-card:hover{border-color:#b9935a}.resource-kind{font-size:11px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:8px}.resource-title{font-size:16px;font-weight:750;line-height:1.45;margin-bottom:6px}.resource-desc{font-size:13px;color:var(--muted);line-height:1.7}
+@media(max-width:640px){.resource-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body class="kj-auth-locked">
@@ -31,6 +34,31 @@ table{width:100%;border-collapse:collapse;margin:24px 0;background:#fff;border:1
     </div>
   </header>
   <main class="narrow">
+    <section id="materials" class="resource-panel">
+      <h2>今回の教材セット</h2>
+      <div class="access-line">
+        <strong>パスワード</strong>
+        <span>kizuki2026</span>
+      </div>
+      <div class="resource-grid">
+        <a class="resource-card" href="https://youtu.be/eGJCu_ZduN0" target="_blank" rel="noopener">
+          <div class="resource-kind">Archive Video</div>
+          <div class="resource-title">アーカイブ動画</div>
+          <div class="resource-desc">YouTubeのグループコーチング本編。</div>
+        </a>
+        <a class="resource-card" href="https://drive.google.com/file/d/1RC11RgjaI4DRkSswwgIilDXwnPL2u8hr/view?usp=sharing" target="_blank" rel="noopener">
+          <div class="resource-kind">Audio Material</div>
+          <div class="resource-title">音声教材</div>
+          <div class="resource-desc">Google Driveの音声教材。</div>
+        </a>
+        <a class="resource-card" href="https://kaoruchan333.github.io/kaoru-juku-community/materials/" target="_blank" rel="noopener">
+          <div class="resource-kind">Archive List</div>
+          <div class="resource-title">音声・動画アーカイブ一覧</div>
+          <div class="resource-desc">過去回の教材・音声・動画をまとめて見返せます。</div>
+        </a>
+      </div>
+    </section>
+
     <section class="note-box">
       <p>この回は、前日のコーチング道場で見えた「吐き切るから反対側が見える」という原則を、かおる塾の場で実際に扱った回です。</p>
       <p>大切なのは、無理にプラスを見ることではありません。まず「本当は何が嫌だったのか」を言葉にすること。そこを飛ばすと、反対側は受け取りではなく説得になります。</p>
