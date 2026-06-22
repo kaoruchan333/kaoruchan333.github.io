@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>構造分析 完全版｜2026-06-21 かおる塾</title>
+  <style>
+:root{--ink:#2f2b26;--muted:#70685f;--paper:#fbfaf6;--panel:#fff;--soft:#f2eee6;--line:#e4ded3;--accent:#9a6a3b;--deep:#26312b}
+*{box-sizing:border-box}body{margin:0;font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;color:var(--ink);background:var(--paper);line-height:1.95;font-size:16px}body.kj-auth-locked>*:not(#kj-auth-overlay){display:none!important}
+a{color:inherit}.wrap{width:min(940px,calc(100% - 36px));margin:0 auto}.narrow{width:min(820px,calc(100% - 36px));margin:0 auto}
+.hero{background:linear-gradient(135deg,#26312b 0%,#3d4439 55%,#7f623f 100%);color:#fff8e8;padding:46px 0 44px}.back{display:inline-flex;color:rgba(255,248,232,.75);text-decoration:none;font-size:13px;margin-bottom:34px}.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#d7bd8e;margin:0 0 12px}.hero h1{font-size:clamp(28px,6vw,52px);line-height:1.28;margin:0;font-weight:750}.lead{font-size:17px;color:rgba(255,248,232,.86);max-width:760px;margin:22px 0 0}.meta{font-size:14px;color:rgba(255,248,232,.72);margin-top:16px}
+main{padding:20px 0 76px}section{padding:40px 0;border-bottom:1px solid var(--line)}section:last-child{border-bottom:0}h2{font-size:clamp(22px,4vw,34px);line-height:1.42;margin:0 0 20px;color:var(--deep)}h3{font-size:19px;margin:28px 0 10px;color:#3d382f}p{margin:0 0 18px}strong{color:#241f1a}ul,ol{padding-left:1.25em;margin:14px 0 22px}li{margin:7px 0}
+.note-box,.work-box{background:var(--soft);border:1px solid #ded5c7;border-radius:8px;padding:22px 24px;margin:24px 0}.key-box{background:var(--deep);color:#fff8e8;border-radius:8px;padding:28px;margin:28px 0}.key-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#d7bd8e;margin-bottom:8px}.key-text{font-size:clamp(22px,4vw,38px);line-height:1.36;font-weight:750}
+blockquote{border-left:4px solid var(--accent);background:linear-gradient(90deg,rgba(154,106,59,.1),rgba(154,106,59,0));padding:12px 0 12px 20px;margin:24px 0;color:#463f36;font-size:18px}
+table{width:100%;border-collapse:collapse;margin:24px 0;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;display:block;overflow-x:auto}th,td{border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;min-width:150px}th{background:#f1ece3;color:var(--deep)}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0}.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:20px;text-decoration:none}.card:hover{border-color:#b9935a}.card-title{font-weight:750;font-size:18px;margin-bottom:8px}.card-desc{font-size:14px;color:var(--muted)}.small{font-size:14px;color:var(--muted)}.download{display:inline-flex;align-items:center;justify-content:center;min-height:42px;border-radius:8px;background:var(--deep);color:#fff8e8;text-decoration:none;padding:8px 16px;font-size:14px;font-weight:700}
+#kj-auth-overlay{position:fixed;inset:0;background:linear-gradient(135deg,#26312b,#5b513f);display:grid;place-items:center;padding:22px;z-index:9999}.kj-auth-card{width:min(420px,100%);background:#fbfaf6;color:#2f2b26;border-radius:10px;padding:30px;box-shadow:0 24px 80px rgba(0,0,0,.28)}.kj-auth-label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9a6a3b;margin-bottom:10px}.kj-auth-card h1{font-size:24px;line-height:1.45;margin:0 0 10px}.kj-auth-card p{font-size:14px;color:#70685f}.kj-auth-card input{width:100%;min-height:46px;border:1px solid #d4cabd;border-radius:8px;padding:10px 12px;font-size:16px;background:#fff;margin:8px 0 12px}.kj-auth-card button{width:100%;min-height:46px;border:0;border-radius:8px;background:#26312b;color:#fff8e8;font-size:15px;font-weight:700}.kj-auth-error{min-height:22px;color:#a33;font-size:13px;margin-top:8px}
+@media(max-width:640px){.hero{padding:34px 0 36px}section{padding:34px 0}.cards{grid-template-columns:1fr}}
+  </style>
+</head>
+<body class="kj-auth-locked">
+  <header class="hero">
+    <div class="wrap">
+      <a class="back" href="./">← 振り返り教材へ戻る</a>
+      <p class="eyebrow">Deep Structure Analysis</p>
+      <h1>構造分析 完全版</h1>
+      <p class="lead">よっちゃん昇進回。「吐き切るから反対側が見える」を、コーチング・中庸思考・場づくり・次回引き継ぎまで整理した深掘り資料。</p>
+      <p class="meta">2026年6月21日 かおる塾グループコーチング</p>
+    </div>
+  </header>
+  <main class="narrow">
+    <section class="note-box">
+      <p>このページは、通常の振り返り教材に入れると重くなりすぎる構造分析を、必要な時に辿れるように残した深掘り版です。</p>
+      <p>塾生さん向けの入口は通常教材、コーチング技術・次回設計・note化・天中道教材化のための詳細はこのページ、という二層構造で扱います。</p>
+      <p><a class="download" href="downloads/2026-06-21_kaoru-juku_yocchan_promotion_structural-analysis.docx">元DOCXをダウンロード</a></p>
+    </section>
+
+    <section>
+      <h2>一行定義</h2>
+      <div class="key-box">
+        <div class="key-label">Definition</div>
+        <div class="key-text">反対側を早く見にいくのをやめ、本当は何が嫌だったかを苦しさを伴うところまで吐き切る順序を、かおるちゃん自身の体験とよっちゃんの昇進テーマで確立した回。</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>全体構造</h2>
+      <table>
+        <tr><th>フェーズ</th><th>内容</th><th>構造的意味</th></tr>
+        <tr><td>1. 場を温める</td><td>フォレストガーデン視察、インタビュー資産、よっちゃんが人を繋いだことの共有。</td><td>よっちゃんの能動的な貢献を承認し、関係性を水平にする。</td></tr>
+        <tr><td>2. テーマ提示</td><td>かおるちゃん自身の被セッション体験から「吐き切るから反対側が見える」を導入。</td><td>理論ではなく、コーチ自身の体験からテーマを開いた。</td></tr>
+        <tr><td>3. 自己開示</td><td>借金、お金への抵抗、ひとたんへの申し訳なさを開示。</td><td>コーチが先に吐き切る側に回り、場の安全を作った。</td></tr>
+        <tr><td>4. 実例ワーク</td><td>よっちゃんの昇進・評価・報われなさのテーマ。</td><td>出来事から本丸の3年前へ、段階的に深まった。</td></tr>
+        <tr><td>5. 次回課題</td><td>犠牲・我慢と感じながら、実際に何をしていたかを見る。</td><td>出し切った後に、事実と受け取りへ戻る導線を置いた。</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>中庸思考／天中道の重要更新</h2>
+      <h3>1. 出し切ってから反対側</h3>
+      <p>早すぎるメリット探しは、受け取りではなく説得になる。片側認知が緩む前に反対側を見にいくと、「でも・けど」が残りやすい。</p>
+      <blockquote>「でも・けど」は、反対側を見る力が足りないサインではなく、まだ出し切れていないサイン。</blockquote>
+
+      <h3>2. 回避と統合の区別</h3>
+      <p>回避は、苦しさを最後まで見ないまま、早く意味づけやメリットへ行くこと。統合は、本当に嫌だったことを見た後で、事実の見え方が変わること。</p>
+
+      <h3>3. 呼吸との接続</h3>
+      <p>吐き切ると自然に吸える。出し切るから、反対側は探さなくても入ってくる。この身体感覚は、座禅・呼吸・天中道の教材へ接続できる。</p>
+
+      <h3>4. 水垢の比喩</h3>
+      <p>急に汚れたのではなく、ずっとそこにあったものが視点の変化で見えるようになる。受け取りや才能も同じで、得るものではなく、見えるようになるものとして扱える。</p>
+    </section>
+
+    <section>
+      <h2>よっちゃんの層構造</h2>
+      <table>
+        <tr><th>層</th><th>言葉</th><th>見えてきたもの</th></tr>
+        <tr><td>第一層</td><td>悲しい、悔しい。また上がらなかった。</td><td>今回の昇進に触発された感情。</td></tr>
+        <tr><td>第二層</td><td>頑張ってきたのに、見てもらえなかった。</td><td>評価されなかった痛み。</td></tr>
+        <tr><td>第三層</td><td>いいように使われた。言えばやると思われている。口だけ。</td><td>必要と言われたのに扱いが変わらなかった痛み。</td></tr>
+        <tr><td>第四層</td><td>外に出された。もう見てもらえない。</td><td>場から外れた感覚、忘れられた感覚。</td></tr>
+        <tr><td>本丸</td><td>3年前に昇進したかった。あの頑張りを忘れられている。</td><td>今回の出来事ではなく、3年前の未完了。</td></tr>
+        <tr><td>最深部</td><td>もう取り返せない。今さら昇進しても報われない。</td><td>時間で取り返せない喪失感。</td></tr>
+        <tr><td>自発追加</td><td>理不尽。不公平。男女差があるかもしれない。</td><td>まだ吐き切る余地があるテーマ。</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>推測されるフレームワーク</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="card-title">プラス側の本丸</div>
+          <div class="card-desc">頑張りは報われるべき。見てもらえることはいい。評価されることはいい。我慢・犠牲は報われるべき。公平であるべき。</div>
+        </div>
+        <div class="card">
+          <div class="card-title">マイナス側</div>
+          <div class="card-desc">いいように使われることはダメ。忘れられることはダメ。取り返せないことはダメ。理不尽・不公平はダメ。</div>
+        </div>
+      </div>
+      <p class="small">ここは断定ではなく、次回以降の観察仮説。特に「報われるべき」への反対側の問いは、まだ早い。出し切りが進んでから扱う。</p>
+    </section>
+
+    <section>
+      <h2>かおるちゃんのコーチング力</h2>
+      <h3>強み</h3>
+      <ul>
+        <li>コーチ自身が先に吐き切る側に回った。</li>
+        <li>認知への気づき、愚痴への躊躇を止めず、出し切りを承認した。</li>
+        <li>今回の昇進というきっかけと、3年前という本丸を切り分けた。</li>
+        <li>反対側を見る問いを、出し切った後の宿題として配置した。</li>
+      </ul>
+
+      <h3>改善点</h3>
+      <ul>
+        <li>「取り返せない」の最深部は、もう少し本人の言葉を待つ余地がある。</li>
+        <li>「デメリット」は抽象度が高いので、よっちゃんには「嫌なこと」「マイナス」「何が納得できない？」の方が入りやすい。</li>
+        <li>第一部の説明を圧縮し、ライブでは実例ワークの時間を厚くする余地がある。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>次回引き継ぎ問い</h2>
+      <h3>まず出し切りを完了させる問い</h3>
+      <ul>
+        <li>3年前に昇進しなかったこと、他にも嫌だと感じているところはありますか。</li>
+        <li>理不尽だ、不公平だと感じたこと、他にもありますか。</li>
+        <li>もう取り返せないと感じること、それの何が一番嫌ですか。</li>
+      </ul>
+      <h3>出し切った後に事実へ戻る問い</h3>
+      <ul>
+        <li>犠牲・我慢と感じながら、実際に何をしていましたか。</li>
+        <li>その事実の中で、誰かに支えられたり、声をかけられたことはありましたか。</li>
+        <li>その3年間の事実から、受け取っているものはありますか。</li>
+      </ul>
+      <h3>まだ早い問い</h3>
+      <ul>
+        <li>報われることのデメリットは何ですか。</li>
+        <li>見てもらえないことのメリットは何ですか。</li>
+      </ul>
+      <p class="small">この2つは本丸フレームワークへの問い。出し切りが完了し、片側認知が緩んでから扱う。</p>
+    </section>
+
+    <section>
+      <h2>資産化テーマ</h2>
+      <ul>
+        <li>吐き切るから反対側が見える。</li>
+        <li>でも・けどが残る時、まだ出し切れていない。</li>
+        <li>回避と統合の違い。</li>
+        <li>呼吸と中庸思考。</li>
+        <li>コーチが先に身を切る、場の作り方。</li>
+        <li>反対側が見えない、の正体。</li>
+      </ul>
+    </section>
+  </main>
+
+<script id="kaoru-juku-password-guard-v1">
+(function(){const PASS_HASH='5ccc5274b688d517a2da7384ca2077c1b95451108b20e9456f0fd32c8e6e928e';const STORAGE_KEY='kaoru_juku_auth_v2';function unlock(){document.body.classList.remove('kj-auth-locked');const o=document.getElementById('kj-auth-overlay');if(o)o.remove()}async function sha256(t){const d=new TextEncoder().encode(t);const h=await crypto.subtle.digest('SHA-256',d);return Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,'0')).join('')}function checkSaved(){if(localStorage.getItem(STORAGE_KEY)===PASS_HASH)unlock()}function render(){if(!document.body.classList.contains('kj-auth-locked'))return;const overlay=document.createElement('div');overlay.id='kj-auth-overlay';overlay.innerHTML=`<div class="kj-auth-card"><div class="kj-auth-label">Kaoru Juku Members</div><h1>かおる塾メンバー専用ページ</h1><p>このページを見るには、メンバー用パスワードを入力してください。</p><input type="password" id="kj-auth-password" autocomplete="current-password" placeholder="パスワード"><button type="button" id="kj-auth-submit">表示する</button><div class="kj-auth-error" id="kj-auth-error"></div></div>`;document.body.appendChild(overlay);const input=document.getElementById('kj-auth-password');const error=document.getElementById('kj-auth-error');async function submit(){const digest=await sha256(input.value||'');if(digest===PASS_HASH){localStorage.setItem(STORAGE_KEY,PASS_HASH);unlock()}else{error.textContent='パスワードが違います。';input.value='';input.focus()}}document.getElementById('kj-auth-submit').addEventListener('click',submit);input.addEventListener('keydown',e=>{if(e.key==='Enter')submit()});setTimeout(()=>input.focus(),50)}checkSaved();if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',render);else render()})();
+</script>
+</body>
+</html>
