@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ファシリテーション設計ログ｜前田薫</title>
+  <style>
+    :root { --ink:#2a2a28; --muted:#888; --paper:#f8f7f4; --panel:#fff; --line:#ddd9d0; --gold:#c4a96e; --deep:#26312b; --soft:#f0ede6; }
+    * { box-sizing: border-box; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif; font-size:16px; line-height:2; }
+    .container { max-width:760px; margin:0 auto; padding:60px 28px 100px; }
+    .doc-label { font-size:11px; letter-spacing:.18em; color:#aaa; text-transform:uppercase; margin-bottom:6px; }
+    .doc-badge { display:inline-block; font-size:12px; background:var(--deep); color:var(--gold); border-radius:4px; padding:3px 12px; margin-bottom:24px; letter-spacing:.08em; }
+    h1 { font-size:28px; line-height:1.42; margin:0 0 10px; }
+    .page-sub { color:var(--muted); font-size:14px; margin:0 0 42px; }
+    .map { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:0 0 36px; }
+    .map-card, .entry-card { display:block; text-decoration:none; color:inherit; background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:18px 20px; transition:box-shadow .15s; }
+    .map-card:hover, .entry-card:hover { box-shadow:0 2px 12px rgba(0,0,0,.08); }
+    .mc-label, .entry-date { font-size:11px; letter-spacing:.12em; color:var(--gold); margin-bottom:5px; text-transform:uppercase; }
+    .mc-title, .entry-title { font-weight:700; line-height:1.5; margin-bottom:5px; }
+    .mc-sub, .entry-sub { color:var(--muted); font-size:13px; line-height:1.7; }
+    .entry-list { display:flex; flex-direction:column; gap:16px; margin-top:20px; }
+    .tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+    .tag { font-size:11px; color:#5a4e3a; background:var(--soft); border-radius:4px; padding:2px 8px; }
+    .tag-new { color:var(--gold); background:var(--deep); }
+    hr { border:0; border-top:1px solid #e8e5de; margin:34px 0; }
+    .footer-note { color:#bbb; font-size:12px; margin-top:50px; }
+    @media(max-width:560px){ .container{padding:44px 22px 80px}.map{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="doc-label">Kaoru Facilitation Design Archive</div>
+    <div class="doc-badge">FACILITATION LOG</div>
+    <h1>ファシリテーション設計ログ</h1>
+    <p class="page-sub">かおる塾・講座・ワークショップの進行設計、問いの運び、場づくりを積み上げる場所。</p>
+
+    <div class="map">
+      <a class="map-card" href="../">
+        <div class="mc-label">Coaching Skill</div>
+        <div class="mc-title">コーチング力向上トップ</div>
+        <div class="mc-sub">コーチング分析・原則体系へ戻る。</div>
+      </a>
+      <a class="map-card" href="../coaching-principles.html">
+        <div class="mc-label">Principles</div>
+        <div class="mc-title">認知が動くコーチング原則</div>
+        <div class="mc-sub">場を設計する前に見返す原則体系。</div>
+      </a>
+    </div>
+
+    <hr>
+
+    <div class="entry-list">
+      <a class="entry-card" href="2026-06-28_kaoru-juku_facilitation.html">
+        <div class="entry-date">2026年6月28日｜かおる塾グループコーチング</div>
+        <div class="entry-title">吐き切ったあと、事実に戻る</div>
+        <div class="entry-sub">今月の流れを束ね、感情を吐き切った後に事実と認知を分けるための進行設計。</div>
+        <div class="tags">
+          <span class="tag tag-new">NEW</span>
+          <span class="tag">事実と認知</span>
+          <span class="tag">でも・けど</span>
+          <span class="tag">ライブコーチング分岐</span>
+        </div>
+      </a>
+    </div>
+
+    <p class="footer-note">このページは、ファシリテーション力・講義設計力・コーチング設計力を育てるための資産ログです。</p>
+  </main>
+</body>
+</html>
