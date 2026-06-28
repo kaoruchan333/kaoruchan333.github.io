@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>吐き切ったあと、事実に戻る｜かおる塾 事前教材</title>
+  <style>
+    :root {
+      --ink: #2f2b26;
+      --muted: #70685f;
+      --paper: #fbfaf6;
+      --panel: #fff;
+      --soft: #f2eee6;
+      --line: #e4ded3;
+      --accent: #9a6a3b;
+      --deep: #26312b;
+      --green: #526857;
+      --rose: #8a514f;
+      --gold: #d7bd8e;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 0%, rgba(215, 189, 142, .18), transparent 28rem),
+        radial-gradient(circle at 92% 8%, rgba(82, 104, 87, .13), transparent 30rem),
+        var(--paper);
+      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+      font-size: 16px;
+      line-height: 1.95;
+    }
+
+    body.kj-auth-locked > *:not(#kj-auth-overlay) { display: none !important; }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(900px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .narrow {
+      width: min(780px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      color: #fff8e8;
+      background: linear-gradient(135deg, #26312b 0%, #3d4439 56%, #7f623f 100%);
+      padding: 46px 0 44px;
+    }
+
+    .back {
+      display: inline-flex;
+      margin-bottom: 28px;
+      color: rgba(255, 248, 232, .74);
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 6vw, 54px);
+      line-height: 1.28;
+      letter-spacing: 0;
+      font-weight: 780;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 22px 0 0;
+      color: rgba(255, 248, 232, .86);
+      font-size: 17px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      border: 1px solid rgba(255, 248, 232, .28);
+      border-radius: 999px;
+      padding: 4px 12px;
+      color: rgba(255, 248, 232, .82);
+      background: rgba(255, 255, 255, .08);
+      font-size: 13px;
+    }
+
+    main { padding: 22px 0 76px; }
+
+    section {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-child { border-bottom: 0; }
+
+    h2 {
+      margin: 0 0 18px;
+      color: var(--deep);
+      font-size: clamp(22px, 4vw, 34px);
+      line-height: 1.42;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      color: #3d382f;
+      font-size: 19px;
+      line-height: 1.5;
+      letter-spacing: 0;
+    }
+
+    p { margin: 0 0 18px; }
+    strong { color: #241f1a; }
+    ul, ol { margin: 14px 0 22px; padding-left: 1.25em; }
+    li { margin: 7px 0; }
+
+    .opening-card {
+      margin-top: -24px;
+      padding: 26px 28px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 18px 44px rgba(38, 49, 43, .10);
+    }
+
+    .key-box {
+      margin: 26px 0;
+      padding: 28px;
+      color: #fff8e8;
+      background: var(--deep);
+      border-radius: 8px;
+    }
+
+    .key-label {
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .key-text {
+      font-size: clamp(23px, 4vw, 38px);
+      line-height: 1.36;
+      font-weight: 780;
+    }
+
+    .soft-box, .work-box {
+      margin: 24px 0;
+      padding: 24px 26px;
+      background: var(--soft);
+      border: 1px solid #ded5c7;
+      border-radius: 8px;
+    }
+
+    .quote {
+      margin: 22px 0;
+      padding: 15px 0 15px 20px;
+      color: #463f36;
+      background: linear-gradient(90deg, rgba(154, 106, 59, .10), rgba(154, 106, 59, 0));
+      border-left: 4px solid var(--accent);
+      font-size: 18px;
+    }
+
+    .flow {
+      display: grid;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      padding: 18px 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      margin-top: 3px;
+      color: #fff8e8;
+      background: var(--green);
+      border-radius: 50%;
+      font-weight: 760;
+    }
+
+    .step h3 {
+      margin: 0 0 5px;
+      color: var(--deep);
+      font-size: 17px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .benefit {
+      padding: 20px 22px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .benefit b {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--deep);
+    }
+
+    .benefit span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .prompt {
+      margin: 14px 0;
+      padding: 16px 18px;
+      background: #fffdf8;
+      border: 1px solid #dfd2bf;
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      font-weight: 680;
+      line-height: 1.75;
+    }
+
+    .note {
+      margin: 24px 0;
+      padding: 20px 22px;
+      background: rgba(138, 81, 79, .07);
+      border: 1px solid rgba(138, 81, 79, .24);
+      border-radius: 8px;
+    }
+
+    .note h3 {
+      margin-top: 0;
+      color: var(--rose);
+      font-size: 17px;
+    }
+
+    .footer {
+      padding-top: 28px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    #kj-auth-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      padding: 22px;
+      background: linear-gradient(135deg, #26312b, #5b513f);
+    }
+
+    .kj-auth-card {
+      width: min(420px, 100%);
+      padding: 30px;
+      color: #2f2b26;
+      background: #fbfaf6;
+      border-radius: 10px;
+      box-shadow: 0 24px 80px rgba(0,0,0,.28);
+    }
+
+    .kj-auth-label {
+      margin-bottom: 10px;
+      color: #9a6a3b;
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .kj-auth-card h1 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      line-height: 1.45;
+    }
+
+    .kj-auth-card p {
+      color: #70685f;
+      font-size: 14px;
+    }
+
+    .kj-auth-card input {
+      width: 100%;
+      min-height: 46px;
+      margin: 8px 0 12px;
+      padding: 10px 12px;
+      border: 1px solid #d4cabd;
+      border-radius: 8px;
+      background: #fff;
+      font-size: 16px;
+    }
+
+    .kj-auth-card button {
+      width: 100%;
+      min-height: 46px;
+      border: 0;
+      border-radius: 8px;
+      color: #fff8e8;
+      background: #26312b;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .kj-auth-error {
+      min-height: 22px;
+      margin-top: 8px;
+      color: #a33;
+      font-size: 13px;
+    }
+
+    @media (max-width: 680px) {
+      .hero { padding: 36px 0 34px; }
+      h1 { font-size: 29px; }
+      section { padding: 34px 0; }
+      .opening-card, .key-box, .soft-box, .work-box { padding: 22px; }
+      .benefits { grid-template-columns: 1fr; }
+      .step { grid-template-columns: 38px 1fr; padding: 17px; }
+      .num { width: 38px; height: 38px; }
+    }
+  </style>
+</head>
+<body class="kj-auth-locked">
+  <header class="hero">
+    <div class="wrap">
+      <a class="back" href="../../">← 一覧へ戻る</a>
+      <p class="eyebrow">Kaoru Juku / Before Session Note</p>
+      <h1>吐き切ったあと、<br>事実に戻る</h1>
+      <p class="lead">「でも」「けど」が残る時、まだ反対側へ行く前に見る場所があります。今夜は、本当に嫌だったことを大切にしたあと、事実と認知を分ける練習をします。</p>
+      <div class="meta">
+        <span class="pill">2026年6月28日</span>
+        <span class="pill">かおる塾グループコーチング</span>
+        <span class="pill">事前教材</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="narrow">
+    <section class="opening-card">
+      <p>今月のかおる塾では、「学んでも変われない理由」「感情が動いた時の身体反応」「今ウサギだと気づくこと」「反対側を見る前に吐き切ること」を扱ってきました。</p>
+      <p>今夜はその続きです。感情を否定せず、無理に前向きに変えず、起きていることを小さく分けて見ていきます。</p>
+    </section>
+
+    <section>
+      <h2>今日のテーマ</h2>
+      <div class="key-box">
+        <div class="key-label">Core Theme</div>
+        <div class="key-text">吐き切ったあと、事実に戻る。</div>
+      </div>
+      <p>「報われなかった」「見てもらえなかった」「できていない」「変われていない」。そう感じる時、僕たちは出来事そのものではなく、自分の認知を事実だと思い込んでいることがあります。</p>
+      <p>これは、自分が悪いという話ではありません。人の心と身体は、感情が動いた時、自分を守るためにとても速く意味づけをします。</p>
+      <div class="quote">今日は、その意味づけを否定するのではなく、一度ゆっくり分けて見ます。</div>
+    </section>
+
+    <section>
+      <h2>これができると、何が変わるのか</h2>
+      <div class="benefits">
+        <div class="benefit">
+          <b>自分責めが短くなる</b>
+          <span>「私はダメだ」と結論づける前に、何が起きたのかを落ち着いて見られるようになります。</span>
+        </div>
+        <div class="benefit">
+          <b>感情に飲み込まれにくくなる</b>
+          <span>嫌だったことを無視せず、事実と意味づけを分けることで、心に余白が生まれます。</span>
+        </div>
+        <div class="benefit">
+          <b>受け取っていたものが見えやすくなる</b>
+          <span>無理に感謝するのではなく、事実として支えられていたものや育っていた力が見えてきます。</span>
+        </div>
+        <div class="benefit">
+          <b>日常の出来事をワークにできる</b>
+          <span>大きな問題だけでなく、小さな違和感から自分の認知構造を見られるようになります。</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>今日、大切にしたい順番</h2>
+      <div class="flow">
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <h3>感情が動いた出来事を見る</h3>
+            <p>大きな出来事でなくて大丈夫です。日常の小さな違和感を一つ選びます。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <h3>本当に嫌だったことを出す</h3>
+            <p>何が嫌だったのか、悔しかったのか、悲しかったのか、納得できなかったのかを見ます。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <div>
+            <h3>「でも」「けど」が残っているかを見る</h3>
+            <p>残っているなら、まだ反対側へ行かなくて大丈夫です。そこには未完了の本音があります。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <div>
+            <h3>少し落ち着いたら、事実と認知を分ける</h3>
+            <p>本当に起きたことと、自分が頭の中で足した意味づけを分けます。</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">5</div>
+          <div>
+            <h3>受け取っていたものを見る</h3>
+            <p>嫌だった出来事の中で、事実として自分を支えていたもの、育っていた力を見ます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>事前に少しだけ見ておく問い</h2>
+      <p>今夜までに、最近感情が動いた出来事をひとつだけ思い出してみてください。</p>
+      <div class="work-box">
+        <div class="prompt">1. 何が起きましたか？<br>事実だけを書くなら、何が起きましたか？</div>
+        <div class="prompt">2. その時、何を感じましたか？<br>嫌だった、悔しかった、悲しかった、腹が立った、不安だった、焦った。どんな言葉でも大丈夫です。</div>
+        <div class="prompt">3. その出来事を見て、自分はどんな意味づけをしましたか？<br>例: 私は見てもらえていない／できていない／変われていない／大切にされていない</div>
+        <div class="prompt">4. まだ残っている「でも」「けど」はありますか？<br>もしあるなら、それはとても大事なサインです。</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>今日のゴール</h2>
+      <p>今日のゴールは、きれいな答えを出すことではありません。</p>
+      <p>自分の感情を否定せず、無理に前向きに変えず、起きていることを小さく分けて見ることです。</p>
+      <div class="soft-box">
+        <p><strong>「あ、これは事実そのものではなく、自分の認知だったんだ」</strong></p>
+        <p>と少しでも気づけたら、それが今日の大きな一歩です。</p>
+      </div>
+      <div class="note">
+        <h3>持ち物</h3>
+        <p>ノートとペンを用意してご参加ください。大きな出来事を準備する必要はありません。小さな違和感で十分です。</p>
+      </div>
+      <p class="footer">2026年6月28日 かおる塾グループコーチング 事前教材</p>
+    </section>
+  </main>
+
+<script id="kaoru-juku-password-guard-v1">
+(function(){
+  const PASS_HASH = '5ccc5274b688d517a2da7384ca2077c1b95451108b20e9456f0fd32c8e6e928e';
+  const STORAGE_KEY = 'kaoru_juku_auth_v2';
+  function unlock(){document.body.classList.remove('kj-auth-locked');const o=document.getElementById('kj-auth-overlay');if(o)o.remove();}
+  async function sha256(text){const d=new TextEncoder().encode(text);const h=await crypto.subtle.digest('SHA-256',d);return Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,'0')).join('');}
+  function checkSaved(){if(localStorage.getItem(STORAGE_KEY)===PASS_HASH)unlock();}
+  function render(){
+    if(!document.body.classList.contains('kj-auth-locked'))return;
+    const overlay=document.createElement('div');
+    overlay.id='kj-auth-overlay';
+    overlay.innerHTML=`<div class="kj-auth-card"><div class="kj-auth-label">Kaoru Juku Members</div><h1>かおる塾メンバー専用ページ</h1><p>このページを見るには、メンバー用パスワードを入力してください。</p><input type="password" id="kj-auth-password" autocomplete="current-password" placeholder="パスワード"><button type="button" id="kj-auth-submit">表示する</button><div class="kj-auth-error" id="kj-auth-error"></div></div>`;
+    document.body.appendChild(overlay);
+    const input=document.getElementById('kj-auth-password');
+    const error=document.getElementById('kj-auth-error');
+    async function submit(){
+      const digest=await sha256(input.value||'');
+      if(digest===PASS_HASH){localStorage.setItem(STORAGE_KEY,PASS_HASH);unlock();}
+      else{error.textContent='パスワードが違います。';input.value='';input.focus();}
+    }
+    document.getElementById('kj-auth-submit').addEventListener('click',submit);
+    input.addEventListener('keydown',e=>{if(e.key==='Enter')submit();});
+    setTimeout(()=>input.focus(),50);
+  }
+  checkSaved();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',render);else render();
+})();
+</script>
+</body>
+</html>
