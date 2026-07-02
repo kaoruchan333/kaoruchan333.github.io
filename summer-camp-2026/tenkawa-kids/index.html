@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>天川サマーキャンプ2026 募集案内</title>
+  <style>
+    :root {
+      --ink: #132e38;
+      --text: #34484f;
+      --blue: #dff1ff;
+      --green: #e3f6ef;
+      --mint: #79c9bd;
+      --deep: #164756;
+      --paper: #fbfefd;
+      --line: rgba(77, 142, 158, .22);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #edf8fb 0%, #ffffff 42%, #f2faf6 100%);
+      color: var(--ink);
+      font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      line-height: 1.8;
+    }
+    a { color: inherit; }
+    .hero {
+      position: relative;
+      min-height: 74vh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      background: #dcefee;
+    }
+    .hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.05);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.55) 48%, rgba(255,255,255,.96) 100%),
+        linear-gradient(90deg, rgba(227,246,239,.78), rgba(223,241,255,.30));
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 72px 0 44px;
+    }
+    .pill {
+      display: inline-flex;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.82);
+      color: #24566a;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      border: 1px solid rgba(255,255,255,.8);
+    }
+    h1 {
+      margin: 18px 0 8px;
+      font-size: clamp(36px, 8vw, 76px);
+      line-height: 1.06;
+      letter-spacing: .04em;
+    }
+    .lead {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(16px, 2.8vw, 21px);
+      font-weight: 700;
+      color: #2d4851;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 20px;
+      border-radius: 999px;
+      background: var(--deep);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(22, 71, 86, .18);
+    }
+    .button.secondary {
+      background: #fff;
+      color: var(--deep);
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
+    main {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 44px 0 80px;
+    }
+    .intro {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 24px;
+      align-items: stretch;
+      margin-bottom: 32px;
+    }
+    .card {
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 24px;
+      box-shadow: 0 14px 34px rgba(26, 75, 88, .08);
+    }
+    .card h2, .card h3 {
+      margin: 0 0 10px;
+      line-height: 1.35;
+    }
+    .card p { margin: 0; color: var(--text); }
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin: 24px 0 36px;
+    }
+    .course {
+      border-top: 7px solid var(--mint);
+    }
+    .course:nth-child(2) { border-top-color: #86bde8; }
+    .date {
+      display: inline-block;
+      margin: 6px 0 12px;
+      color: #236175;
+      font-weight: 900;
+    }
+    ul {
+      margin: 12px 0 0;
+      padding-left: 1.2em;
+      color: var(--text);
+    }
+    li { margin: 4px 0; }
+    .photos {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 12px;
+      margin: 18px 0 10px;
+    }
+    .photo {
+      position: relative;
+      min-height: 230px;
+      overflow: hidden;
+      border-radius: 22px;
+      background: #e8f4f3;
+    }
+    .photo.small { min-height: 180px; }
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .photo span {
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.88);
+      color: #173c45;
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .notice {
+      background: linear-gradient(135deg, var(--green), var(--blue));
+      border-radius: 24px;
+      padding: 24px;
+      margin: 30px 0;
+      border: 1px solid var(--line);
+    }
+    .apply-box {
+      text-align: center;
+      background: #ffffff;
+      border: 2px solid rgba(121, 201, 189, .5);
+      border-radius: 28px;
+      padding: 30px 22px;
+      margin-top: 34px;
+    }
+    .apply-box h2 { margin: 0 0 10px; font-size: 28px; }
+    .placeholder {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 16px;
+      min-width: 260px;
+      min-height: 54px;
+      border-radius: 999px;
+      background: #e8f5f9;
+      color: #24586b;
+      font-weight: 900;
+      border: 1px dashed #79aabd;
+    }
+    .fine {
+      font-size: 13px;
+      color: #62747a;
+      margin-top: 14px;
+    }
+    @media (max-width: 760px) {
+      .intro, .course-grid, .photos { grid-template-columns: 1fr; }
+      .hero { min-height: 66vh; }
+      .card { padding: 20px; }
+      .photo, .photo.small { min-height: 210px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <img src="assets/river-landscape-tenkawa.png" alt="天川村の川の風景">
+    <div class="hero-inner">
+      <span class="pill">天川村の小3〜中3対象 / 2026年8月開催</span>
+      <h1>天川サマーキャンプ<br>2026</h1>
+      <p class="lead">村の自然で、外の仲間と出会う夏。川、山、洞窟、行者まつり、サッカー。天川村でしかできない体験を、今年は村の子どもたちにも開きます。</p>
+      <div class="cta-row">
+        <a class="button" href="#apply">申し込み方法を見る</a>
+        <a class="button secondary" href="#last-year">2025年の様子を見る</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="card">
+        <h2>このキャンプについて</h2>
+        <p>天川村の子どもたちが、宝塚・大阪など村外から来る子どもたちと一緒に、天川村の自然や文化を体験する交流プログラムです。子どもたちが新しい仲間と出会い、自分から挑戦する時間をつくります。</p>
+      </div>
+      <div class="card">
+        <h2>対象・参加費</h2>
+        <ul>
+          <li>対象: 天川村在住の小学3年生〜中学3年生</li>
+          <li>小学1・2年生の参加希望は個別にご相談ください</li>
+          <li>各コース: 3,000円</li>
+          <li>両方参加: 6,000円</li>
+          <li>今年度は補助金を活用した特別価格です</li>
+          <li>支払い方法: 銀行振込</li>
+          <li>各コース10名程度 / 定員に達し次第締切</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="course-grid">
+      <article class="card course">
+        <h2>Aコース 自然体験・宿泊交流</h2>
+        <span class="date">8月1日（土）〜2日（日）</span>
+        <p>宝塚JCの子どもたちと、天川村ならではの自然体験を一緒に過ごします。</p>
+        <ul>
+          <li>燈籠の岩屋 洞窟体験</li>
+          <li>川遊び</li>
+          <li>魚つかみ取り</li>
+          <li>BBQ・焚き火・宿泊</li>
+          <li>朝拝・ハイキング</li>
+        </ul>
+      </article>
+      <article class="card course">
+        <h2>Bコース サッカー交流・行者まつり</h2>
+        <span class="date">8月3日（月）〜4日（火）</span>
+        <p>大阪のサッカーチームと、川遊び、行者まつり、サッカー交流を楽しみます。</p>
+        <ul>
+          <li>川遊び</li>
+          <li>BBQ</li>
+          <li>行者まつり参加</li>
+          <li>魚つかみ取り・昼食</li>
+          <li>サッカー交流</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="last-year" class="card">
+      <h2>2025年の様子</h2>
+      <p>昨年は、天川村の子どもたちと大阪のサッカーチームの子どもたちが一緒に過ごしました。写真は、顔がはっきり写りにくいものを中心に掲載しています。</p>
+      <div class="photos">
+        <div class="photo">
+          <img src="assets/soccer-2025.JPG" alt="2025年のサッカー交流">
+          <span>サッカー交流</span>
+        </div>
+        <div class="photo">
+          <img src="assets/fish-2025.JPG" alt="2025年の魚つかみ取り">
+          <span>魚つかみ取り</span>
+        </div>
+        <div class="photo small">
+          <img src="assets/kickboxing-2025.JPG" alt="2025年のミット打ち体験">
+          <span>ミット打ち体験</span>
+        </div>
+        <div class="photo small">
+          <img src="assets/festival-costume-2025.JPG" alt="2025年の行者まつり">
+          <span>行者まつり</span>
+        </div>
+        <div class="photo small">
+          <img src="assets/river-landscape-tenkawa.png" alt="天川村の川">
+          <span>天川村の川</span>
+        </div>
+      </div>
+      <p class="fine">写真つきの実績ページはこちら: <a href="https://kaoruchan333.github.io/terakoya-home/activities/2025-summer-camp.html">2025年 天川サマーキャンプ実績報告</a></p>
+    </section>
+
+    <section class="notice">
+      <h2>安全管理について</h2>
+      <p>川遊び・洞窟・山中の活動を含むため、安全を最優先に実施します。天候、川の水量、体調等により、内容を変更または中止する場合があります。緊急時は119番通報を基本とし、救急隊の判断に従って対応します。</p>
+    </section>
+
+    <section id="apply" class="apply-box">
+      <h2>申し込みについて</h2>
+      <p>学校・教育委員会では受付を行いません。保護者の方が、主催者へ直接お申し込みください。</p>
+      <p>参加費は銀行振込でのお支払いをお願いします。振込先は申込後にご案内します。振込手数料はご負担をお願いします。</p>
+      <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSfQaJ3IciNsjRgg8qIGVNXLScMmKHHiAbshhd9EdmPsLdE2rA/viewform" target="_blank" rel="noopener">申込フォームを開く</a>
+      <p class="fine">申込締切: 2026年7月25日（土）予定 / 定員に達した場合は締切前でも受付終了</p>
+      <p class="fine">問い合わせ: 前田薫 / 080-3031-6952 / nanbodemo.33@gmail.com</p>
+    </section>
+  </main>
+</body>
+</html>
