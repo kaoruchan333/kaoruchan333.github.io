@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2025年 天川サマーキャンプの様子</title>
+  <style>
+    :root {
+      --ink: #12323d;
+      --text: #3b525a;
+      --blue: #dff1ff;
+      --green: #e6f7ef;
+      --mint: #78c7bb;
+      --deep: #164756;
+      --paper: #fbfefd;
+      --line: rgba(77, 142, 158, .22);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #eef9fb 0%, #fff 40%, #f3faf6 100%);
+      color: var(--ink);
+      font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      line-height: 1.8;
+    }
+    a { color: inherit; }
+    .hero {
+      position: relative;
+      min-height: 58vh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      background: #dcefee;
+    }
+    .hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.62) 52%, rgba(255,255,255,.96) 100%),
+        linear-gradient(90deg, rgba(227,246,239,.82), rgba(223,241,255,.22));
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 72px 0 44px;
+    }
+    .pill {
+      display: inline-flex;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.86);
+      color: #24566a;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      border: 1px solid rgba(255,255,255,.8);
+    }
+    h1 {
+      margin: 18px 0 8px;
+      font-size: clamp(34px, 7vw, 68px);
+      line-height: 1.08;
+      letter-spacing: .04em;
+    }
+    .lead {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(16px, 2.6vw, 20px);
+      font-weight: 700;
+      color: #2d4851;
+    }
+    main {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 44px 0 80px;
+    }
+    .card {
+      background: rgba(255,255,255,.9);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 24px;
+      box-shadow: 0 14px 34px rgba(26, 75, 88, .08);
+      margin-bottom: 24px;
+    }
+    .card h2 {
+      margin: 0 0 12px;
+      line-height: 1.35;
+    }
+    .card p { margin: 0 0 12px; color: var(--text); }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: -24px 0 32px;
+      position: relative;
+      z-index: 2;
+    }
+    .stat {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px;
+      text-align: center;
+      box-shadow: 0 12px 28px rgba(26, 75, 88, .08);
+    }
+    .stat strong {
+      display: block;
+      font-size: 30px;
+      line-height: 1.1;
+      color: var(--deep);
+    }
+    .stat span {
+      display: block;
+      margin-top: 6px;
+      font-size: 12px;
+      font-weight: 800;
+      color: #557078;
+    }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .photo {
+      position: relative;
+      min-height: 250px;
+      overflow: hidden;
+      border-radius: 24px;
+      background: #dff1ff;
+    }
+    .photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+    .photo span {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      display: inline-flex;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.92);
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--deep);
+    }
+    .program {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    ul { margin: 10px 0 0; padding-left: 1.2em; color: var(--text); }
+    li { margin: 4px 0; }
+    .notice {
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      border-radius: 26px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      margin-bottom: 24px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 20px;
+      border-radius: 999px;
+      background: var(--deep);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(22, 71, 86, .18);
+    }
+    .fine {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #607780;
+    }
+    @media (max-width: 720px) {
+      .stats, .program, .photo-grid { grid-template-columns: 1fr; }
+      .hero { min-height: 54vh; }
+      .photo { min-height: 210px; }
+      .photo img { min-height: 210px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <img src="../assets/river-landscape-tenkawa.jpg" alt="天川村の川の風景">
+    <div class="hero-inner">
+      <span class="pill">学校配布チラシ用 / 2025年実施時の様子</span>
+      <h1>天川サマーキャンプ<br>2025年の様子</h1>
+      <p class="lead">昨年は、天川村の子どもたちと大阪のサッカーチームの子どもたちが、川遊び、魚つかみ取り、サッカー交流、行者まつりを一緒に体験しました。</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="stats">
+      <div class="stat"><strong>1泊2日</strong><span>2025年8月3日〜4日</span></div>
+      <div class="stat"><strong>29名</strong><span>参加児童</span></div>
+      <div class="stat"><strong>14名</strong><span>ボランティアスタッフ</span></div>
+      <div class="stat"><strong>交流</strong><span>天川村 × 大阪</span></div>
+    </section>
+
+    <section class="card">
+      <h2>どんなキャンプだったのか</h2>
+      <p>天川村の自然や文化を舞台に、村内の子どもたちと村外の子どもたちが一緒に過ごす交流プログラムとして実施しました。</p>
+      <p>保護者が同行しない環境の中で、子どもたちが仲間と協力しながら過ごし、自然体験・スポーツ交流・地域文化への参加を通じて、自分から挑戦する機会をつくりました。</p>
+    </section>
+
+    <section class="card">
+      <h2>活動写真</h2>
+      <p>個人が特定されにくい写真を中心に掲載しています。</p>
+      <div class="photo-grid">
+        <div class="photo">
+          <img src="../assets/soccer-2025.JPG" alt="サッカー交流の様子">
+          <span>サッカー交流</span>
+        </div>
+        <div class="photo">
+          <img src="../assets/fish-2025.JPG" alt="魚つかみ取りの様子">
+          <span>魚つかみ取り</span>
+        </div>
+        <div class="photo">
+          <img src="../assets/festival-costume-2025.JPG" alt="行者まつりの様子">
+          <span>行者まつり</span>
+        </div>
+        <div class="photo">
+          <img src="../assets/river-landscape-tenkawa.jpg" alt="天川村の川の風景">
+          <span>天川村の自然</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>主なプログラム</h2>
+      <div class="program">
+        <div>
+          <h3>1日目</h3>
+          <ul>
+            <li>サッカー交流</li>
+            <li>川遊び</li>
+            <li>夕食・焚き火</li>
+            <li>行者まつり参加</li>
+          </ul>
+        </div>
+        <div>
+          <h3>2日目</h3>
+          <ul>
+            <li>朝食・地域清掃</li>
+            <li>魚つかみ取り</li>
+            <li>昼食</li>
+            <li>サッカー交流・ふりかえり</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="notice">
+      <h2>安全管理について</h2>
+      <p>2026年度は、昨年の実施経験を踏まえ、川遊びの見守り、ライフジャケット、熱中症対策、緊急連絡体制をさらに整理して実施します。天候・川の水量・現地状況により、内容を変更または中止する場合があります。</p>
+    </section>
+
+    <section class="card">
+      <h2>参加した子どもたちの声</h2>
+      <ul>
+        <li>川がこわかったけど、最後は楽しかった。</li>
+        <li>大阪の子と一緒に遊べてよかった。</li>
+        <li>行者まつりに参加できて楽しかった。</li>
+        <li>また来年も参加したい。</li>
+      </ul>
+      <p class="fine">掲載内容は、2025年実施時の記録をもとに、学校配布チラシから確認しやすい形に整理したものです。</p>
+    </section>
+
+    <a class="button" href="../">募集詳細ページへ戻る</a>
+  </main>
+</body>
+</html>
