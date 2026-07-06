@@ -48,8 +48,8 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse at 20% 80%, rgba(74,94,58,0.35) 0%, transparent 55%),
-      radial-gradient(ellipse at 80% 20%, rgba(107,76,53,0.3) 0%, transparent 55%);
+      linear-gradient(rgba(42,31,23,0.68), rgba(42,31,23,0.68)),
+      url('photos/hero.jpg') center/cover no-repeat;
   }
 
   .hero * { position: relative; }
@@ -228,6 +228,100 @@
     font-weight: 300;
     line-height: 2.1;
     color: var(--charcoal);
+  }
+
+  /* FIRST EVENT RECORD */
+  .record-wrap {
+    margin-top: 24px;
+  }
+
+  .record-lead {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 2.2;
+    color: var(--charcoal);
+    margin-bottom: 28px;
+  }
+
+  .record-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 22px 0 34px;
+  }
+
+  .record-pill {
+    border: 1px solid rgba(74,94,58,0.18);
+    background: rgba(255,255,255,0.7);
+    padding: 10px 14px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    color: var(--stone);
+  }
+
+  .record-pill strong {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--sage);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 28px 0 36px;
+  }
+
+  .photo-grid img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+  }
+
+  .photo-grid .photo-main {
+    grid-column: 1 / 3;
+    aspect-ratio: 16/9;
+  }
+
+  .voices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .voice-card {
+    background: white;
+    border-left: 3px solid var(--leaf);
+    padding: 22px 20px;
+  }
+
+  .voice-text {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    line-height: 2;
+    color: var(--charcoal);
+    margin-bottom: 14px;
+  }
+
+  .voice-text::before { content: '「'; color: var(--sage); }
+  .voice-text::after { content: '」'; color: var(--sage); }
+
+  .voice-name {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--stone);
+  }
+
+  @media(max-width:640px){
+    .photo-grid { grid-template-columns: 1fr 1fr; }
+    .photo-grid .photo-main { grid-column: 1 / -1; }
   }
 
   /* SCHEDULE */
@@ -582,10 +676,58 @@
 
 <div class="div"></div>
 
-<!-- 02 こんな気持ちがあれば -->
+<!-- 02 第1回の様子 -->
 <div class="sec-bg">
   <div class="inner">
-    <div class="sec-num">02 — IS THIS FOR YOU?</div>
+    <div class="sec-num">02 — FIRST EVENT</div>
+    <h2>第1回は、こんな様子で行いました</h2>
+
+    <div class="record-wrap">
+      <p class="record-lead">
+        2026年4月28日、天川村洞川の耕作放棄地で、第1回「ほったらかし自然農 体験イベント」を開催しました。<br>
+        土に触れ、Bちゃんを囲み、自然農法の入口を実際に体験する時間になりました。第2回は、この手応えを受けて、ウラマリコさんの民泊裏の畑で開催します。
+      </p>
+
+      <div class="record-meta">
+        <div class="record-pill"><strong>開催日</strong>2026年4月28日</div>
+        <div class="record-pill"><strong>場所</strong>天川村洞川 耕作放棄地</div>
+        <div class="record-pill"><strong>内容</strong>Bちゃん・土づくり・自然農体験</div>
+        <div class="record-pill"><strong>次回</strong>7月14日 ウラさんの畑へ</div>
+      </div>
+
+      <div class="photo-grid">
+        <img src="photos/group-field.jpg" alt="第1回自然農法体験イベントの集合写真" class="photo-main">
+        <img src="photos/farming.jpg" alt="畑で自然農法を実践する様子">
+        <img src="photos/bokashi-circle.jpg" alt="Bちゃんを囲んで説明を聞く様子">
+        <img src="photos/soil-hands.jpg" alt="土に触れる手">
+        <img src="photos/seedling.jpg" alt="育ち始めた苗">
+        <img src="photos/talk-inside.jpg" alt="参加者同士で話す様子">
+      </div>
+
+      <div class="voices-grid">
+        <div class="voice-card">
+          <p class="voice-text">なんか、凄く深い学びをした気持ちです。それでいて、肩の力が抜けたような。皆さんとのお話しも楽しくて、時間を忘れてしまいそうでした。</p>
+          <p class="voice-name">安川真紀子 さん</p>
+        </div>
+        <div class="voice-card">
+          <p class="voice-text">今日は学び＆きづき＆ご縁をたくさんいただいてありがタケ〜です。まずは明日のお昼にBちゃんを蒔きます。</p>
+          <p class="voice-name">池田亮 さん</p>
+        </div>
+        <div class="voice-card">
+          <p class="voice-text">皆さまという仲間に出会えたことがまず財産だなと思います。私も今年はいろんな野菜を試しに作ってみたいなと思いました。</p>
+          <p class="voice-name">うらら さん</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- 03 こんな気持ちがあれば -->
+<div class="sec-bg">
+  <div class="inner">
+    <div class="sec-num">03 — IS THIS FOR YOU?</div>
     <h2>こんな気持ちがあれば、来てほしい</h2>
 
     <div class="highlight">
@@ -624,9 +766,9 @@
 
 <div class="div"></div>
 
-<!-- 03 当日の流れ -->
+<!-- 04 当日の流れ -->
 <div class="sec">
-  <div class="sec-num">03 — SCHEDULE</div>
+  <div class="sec-num">04 — SCHEDULE</div>
   <h2>当日の流れ</h2>
 
   <div class="schedule-item">
@@ -682,10 +824,10 @@
 
 <div class="div"></div>
 
-<!-- 04 参加費 -->
+<!-- 05 参加費 -->
 <div class="sec-bg">
   <div class="inner">
-    <div class="sec-num">04 — PRICING</div>
+    <div class="sec-num">05 — PRICING</div>
     <h2>参加費</h2>
 
     <div class="price-cards">
@@ -719,9 +861,9 @@
 
 <div class="div"></div>
 
-<!-- 05 開催者紹介 -->
+<!-- 06 開催者紹介 -->
 <div class="sec">
-  <div class="sec-num">05 — HOSTS</div>
+  <div class="sec-num">06 — HOSTS</div>
   <h2>開催者</h2>
 
   <div class="host-grid">
@@ -754,10 +896,10 @@
 
 <div class="div"></div>
 
-<!-- 06 概要 -->
+<!-- 07 概要 -->
 <div class="sec-bg">
   <div class="inner">
-    <div class="sec-num">06 — DETAILS</div>
+    <div class="sec-num">07 — DETAILS</div>
     <h2>開催概要</h2>
 
     <table>
