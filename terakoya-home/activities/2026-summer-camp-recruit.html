@@ -45,7 +45,10 @@
   /* ── HERO ── */
   .hero {
     min-height: 65vh;
-    background: var(--forest);
+    background:
+      radial-gradient(circle at 18% 18%, rgba(123, 167, 188, .45), transparent 34%),
+      radial-gradient(circle at 88% 10%, rgba(196, 149, 42, .20), transparent 28%),
+      linear-gradient(145deg, #2d4a3e 0%, #416e62 58%, #7ba7bc 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -53,19 +56,10 @@
     overflow: hidden;
   }
 
-  .hero-photo {
-    position: absolute;
-    inset: 0;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    opacity: 0.3;
-  }
-
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(30,50,40,0.97) 0%, rgba(30,50,40,0.35) 65%, transparent 100%);
+    background: linear-gradient(to top, rgba(30,50,40,0.82) 0%, rgba(30,50,40,0.32) 65%, transparent 100%);
   }
 
   .hero-inner {
@@ -434,7 +428,6 @@
 
 <!-- HERO -->
 <header class="hero">
-  <img class="hero-photo" src="../photos/dorogawa-night.jpg" alt="洞川温泉の夜の街並み">
   <div class="hero-overlay"></div>
   <div class="hero-inner">
     <span class="recruit-badge">参加者募集</span>
@@ -490,11 +483,11 @@
       </tr>
       <tr>
         <th>主催</th>
-        <td>天川村地域おこし協力隊（前田薫・前田裕太）</td>
+        <td>天川村サマーキャンプ実行委員会<br>地域おこし協力隊 前田薫・前田裕太</td>
       </tr>
       <tr>
-        <th>共催</th>
-        <td>宝塚青年会議所 ほか</td>
+        <th>共賛</th>
+        <td>天川村役場企画観光課</td>
       </tr>
       <tr>
         <th>申込締切</th>
@@ -636,8 +629,8 @@
 </main>
 
 <div class="page-footer">
-  <p>天川村地域おこし協力隊　前田薫・前田裕太<br>
-  主催：天川村地域おこし協力隊　共催：宝塚青年会議所　後援：天川村教育委員会</p>
+  <p>主催：天川村サマーキャンプ実行委員会 / 地域おこし協力隊 前田薫・前田裕太<br>
+  共賛：天川村役場企画観光課</p>
 </div>
 
 </body>
