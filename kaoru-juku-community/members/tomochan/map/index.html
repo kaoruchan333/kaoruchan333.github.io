@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>ともちゃん 認知構造マップ｜前田薫 コーチング</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+:root{--ink:#1E1E2E;--forest:#2C5F2D;--moss:#6E9D52;--earth:#8B6914;--clay:#C4744E;--parchment:#F8F4EE;--cream:#FDFBF7;--mist:#EDF2F0;--border:#D5CBBB;--highlight:#FFF8E1}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--parchment);color:var(--ink);line-height:1.9}
+body.kj-auth-locked>*:not(#kj-auth-overlay){display:none!important}
+#kj-auth-overlay{position:fixed;inset:0;background:linear-gradient(135deg,#26312b,#5b513f);display:grid;place-items:center;padding:22px;z-index:9999}.kj-auth-card{width:min(420px,100%);background:#fbfaf6;color:#2f2b26;border-radius:10px;padding:30px;box-shadow:0 24px 80px rgba(0,0,0,.28)}.kj-auth-label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9a6a3b;margin-bottom:10px}.kj-auth-card h1{font-size:24px;line-height:1.45;margin:0 0 10px}.kj-auth-card p{font-size:14px;color:#70685f}.kj-auth-card input{width:100%;min-height:46px;border:1px solid #d4cabd;border-radius:8px;padding:10px 12px;font-size:16px;background:#fff;margin:8px 0 12px}.kj-auth-card button{width:100%;min-height:46px;border:0;border-radius:8px;background:#26312b;color:#fff8e8;font-size:15px;font-weight:700;cursor:pointer}.kj-auth-error{min-height:22px;color:#a33;font-size:13px;margin-top:8px}
+.cover{background:linear-gradient(155deg,var(--forest),#1b3d22 62%,var(--ink));color:#fff8e8;padding:56px 40px 48px}
+.wrap{width:min(860px,calc(100% - 44px));margin:0 auto}
+.back{display:inline-block;color:rgba(255,248,232,.72);text-decoration:none;font-size:13px;margin-bottom:24px}
+.label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,248,232,.48);margin-bottom:10px}
+h1{font-family:'Noto Serif JP',serif;font-size:31px;line-height:1.45;margin-bottom:10px}
+.lead{font-size:14px;color:rgba(255,248,232,.72);line-height:1.8}
+main{padding:46px 0 82px}
+section{margin-bottom:42px}
+.panel{background:var(--cream);border:1px solid var(--border);border-radius:14px;padding:26px 30px}
+.panel.accent{border-left:4px solid var(--forest)}
+.panel.gold{border-left:4px solid var(--earth);background:#fffdf7}
+.section-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--earth);font-weight:700;margin-bottom:8px}
+h2{font-family:'Noto Serif JP',serif;font-size:21px;color:var(--forest);line-height:1.55;margin-bottom:14px}
+h3{font-family:'Noto Serif JP',serif;font-size:17px;color:var(--ink);line-height:1.55;margin-bottom:8px}
+p{color:#3f3b35;margin-bottom:13px}
+p:last-child{margin-bottom:0}
+.timeline{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.time-card{background:#f8f4ee;border:1px solid var(--border);border-radius:12px;padding:19px 20px}
+.time-date{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--earth);font-weight:700;margin-bottom:7px}
+.time-card ul{padding-left:1.2em;margin-top:8px}
+.time-card li{font-size:13px;color:#5d574f;margin:6px 0;line-height:1.75}
+.flow{display:grid;gap:12px;margin-top:18px}
+.flow-step{display:grid;grid-template-columns:42px 1fr;gap:14px;background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:17px 20px}
+.num{width:42px;height:42px;border-radius:50%;background:var(--forest);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+.flow-title{font-weight:700;font-size:15px;margin-bottom:4px}
+.flow-text{font-size:13px;color:#5e584f;line-height:1.8}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.mini{background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+.mini p{font-size:13px;line-height:1.8}
+.quote{background:linear-gradient(135deg,var(--forest),#1a3d1b);border-radius:14px;color:#fff;padding:26px 30px}
+.quote p{color:rgba(255,255,255,.9);font-family:'Noto Serif JP',serif;font-size:18px;line-height:1.8}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.link-card{display:block;text-decoration:none;background:var(--cream);border:1px solid var(--border);border-left:4px solid var(--forest);border-radius:12px;padding:18px 20px;color:inherit}
+.link-card:hover{box-shadow:0 8px 24px rgba(44,95,45,.13)}
+.link-date{font-size:12px;color:var(--earth);letter-spacing:1px;margin-bottom:6px}
+.link-title{font-weight:700;line-height:1.6}
+.footer{text-align:center;border-top:1px solid var(--border);padding-top:28px;color:#aaa;font-size:12px}
+@media(max-width:720px){.timeline,.grid,.links{grid-template-columns:1fr}.cover{padding:44px 24px}.panel{padding:22px 22px}}
+</style>
+</head>
+<body class="kj-auth-locked">
+<header class="cover">
+  <div class="wrap">
+    <a class="back" href="../">← ともちゃん専用ページに戻る</a>
+    <div class="label">Private Cognitive Map</div>
+    <h1>ともちゃん 認知構造マップ</h1>
+    <p class="lead">第1回と第2回を重ねて見た時に浮かび上がる、反応・価値観・自分の地図の記録です。</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="panel accent">
+      <div class="section-label">Overall</div>
+      <h2>2回を通して見えてきた中心構造</h2>
+      <p>ともちゃんの中で繰り返し見えているのは、「相手を困らせないために、自分の願いを脇に置く」という構造です。</p>
+      <p>1回目では、相手の状態を見て配慮してからでないとリクエストしてはいけない、というルールが見えました。2回目では、そのルールがさらに具体化し、相手の反応が読めない時に、自分の願いを出すことが怖くなる構造として現れました。</p>
+    </section>
+
+    <section>
+      <div class="timeline">
+        <div class="time-card">
+          <div class="time-date">2026.06.09 Session 01</div>
+          <h3>相手を困らせないために、自分の願いを脇に置く</h3>
+          <ul>
+            <li>相手の状態を見て配慮してからリクエストすべき</li>
+            <li>相手にネガティブな感情を抱かせてはいけない</li>
+            <li>自分の願いを出す前に、相手の状態を先に見る</li>
+            <li>自分の地図を一番上に置く、という入口が見えた</li>
+          </ul>
+        </div>
+        <div class="time-card">
+          <div class="time-date">2026.07.09 Session 02</div>
+          <h3>言った後に何が起きるかわからないことが怖い</h3>
+          <ul>
+            <li>休む空間に人が入ってくることへの嫌悪感</li>
+            <li>境界線を越えられる、振り回されるという認知</li>
+            <li>我慢できる背景に、誰かが何とかしてくれる期待がある</li>
+            <li>価値観を自分自身へ向ける、という入口が見えた</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel gold">
+      <div class="section-label">Core Shift</div>
+      <h2>同じテーマに見えて、見えている場所は深くなっている</h2>
+      <p>1回目と2回目は、同じような「我慢」や「怒り」に見えるかもしれません。でも、実際には見えている場所が変わっています。</p>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="num">1</div>
+          <div>
+            <div class="flow-title">相手の状態を先に見る</div>
+            <div class="flow-text">相手が困らないか、嫌な気持ちにならないかを先に見て、自分の願いを出す前に止まる。</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="num">2</div>
+          <div>
+            <div class="flow-title">自分の願いを脇に置く</div>
+            <div class="flow-text">本当はこうしたい、こうしてほしくない、という願いがあっても、相手の地図を上に置いて我慢する。</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="num">3</div>
+          <div>
+            <div class="flow-title">相手の自由が不公平に見える</div>
+            <div class="flow-text">自分は止めているのに、相手は自由に見える。ここで怒り、うんざり、搾取感が立ち上がる。</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="num">4</div>
+          <div>
+            <div class="flow-title">言った後の反応が怖いと気づく</div>
+            <div class="flow-text">2回目では、願いを言うこと自体より、言った後に何が起きるかわからないことが怖い、と見えてきた。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="grid">
+        <div class="mini">
+          <h3>今まで守ってきたもの</h3>
+          <p>相手を困らせないこと。場を荒らさないこと。相手にネガティブな感情を持たせないこと。相手の本来の美しさや場の調和を守ること。</p>
+        </div>
+        <div class="mini">
+          <h3>これから自分にも向けるもの</h3>
+          <p>自分の安心。自分の空間。自分の願い。自分の本来の美しさ。自分の地図を一番上に置いて選ぶこと。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote">
+      <p>ともちゃんのテーマは、相手を大切にしないことではありません。相手を大切にしてきた力を、自分自身にも向け直すことです。</p>
+    </section>
+
+    <section class="panel">
+      <div class="section-label">Current Questions</div>
+      <h2>今、持っておきたい問い</h2>
+      <p>答えを急がなくて大丈夫です。感情が動いた時に、静かに戻ってくるための問いです。</p>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="num">?</div>
+          <div>
+            <div class="flow-title">今、誰の地図が一番上に来ているんだろう？</div>
+            <div class="flow-text">相手の地図、場の地図、常識の地図が上に来ていないかを見る。</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="num">?</div>
+          <div>
+            <div class="flow-title">私は、言うことではなく、言った後に何が起きることを怖がっているんだろう？</div>
+            <div class="flow-text">怖さの対象を、出来事と未来予測に分けて見る。</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="num">?</div>
+          <div>
+            <div class="flow-title">「本来の美しさを引き出す」を自分に向けたら、私はどうありたい？</div>
+            <div class="flow-text">価値観を相手だけでなく、自分自身にも戻す。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>各回のシート</h2>
+      <div class="links">
+        <a class="link-card" href="../2026-06-09/">
+          <div class="link-date">Session 01</div>
+          <div class="link-title">相手を困らせないために、自分の願いを脇に置いてきた</div>
+        </a>
+        <a class="link-card" href="../2026-07-09/">
+          <div class="link-date">Session 02</div>
+          <div class="link-title">嫌と思う自分を変えるのではなく、なぜ嫌かを見る</div>
+        </a>
+      </div>
+    </section>
+
+    <div class="footer">ともちゃん 認知構造マップ　｜　前田薫 コーチング　©2026</div>
+  </div>
+</main>
+
+<script id="kaoru-juku-password-guard-v1">
+(function() {
+  const PASS_HASH = '5c4a49d63d52b735c28d8467cf6c87895fe3d9c7505ead1662b61b9ced2f6d88';
+  const STORAGE_KEY = 'kaoru_juku_member_tomochan_auth_v2';
+  function unlock() { document.body.classList.remove('kj-auth-locked'); const overlay = document.getElementById('kj-auth-overlay'); if (overlay) overlay.remove(); }
+  async function sha256(text) { const data = new TextEncoder().encode(text); const hash = await crypto.subtle.digest('SHA-256', data); return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join(''); }
+  function checkSaved() { if (localStorage.getItem(STORAGE_KEY) === PASS_HASH) unlock(); }
+  function render() {
+    if (!document.body.classList.contains('kj-auth-locked')) return;
+    const overlay = document.createElement('div'); overlay.id = 'kj-auth-overlay';
+    overlay.innerHTML = `<div class="kj-auth-card"><div class="kj-auth-label">Kaoru Juku Members</div><h1>本人専用ページ</h1><p>このページを見るには、本人用パスワードを入力してください。</p><input type="password" id="kj-auth-password" autocomplete="current-password" placeholder="パスワード"><button type="button" id="kj-auth-submit">表示する</button><div class="kj-auth-error" id="kj-auth-error"></div></div>`;
+    document.body.appendChild(overlay);
+    const input = document.getElementById('kj-auth-password'); const error = document.getElementById('kj-auth-error');
+    async function submit() { const digest = await sha256(input.value || ''); if (digest === PASS_HASH) { localStorage.setItem(STORAGE_KEY, PASS_HASH); unlock(); } else { error.textContent = 'パスワードが違います。'; input.value = ''; input.focus(); } }
+    document.getElementById('kj-auth-submit').addEventListener('click', submit);
+    input.addEventListener('keydown', function(e) { if (e.key === 'Enter') submit(); });
+    setTimeout(() => input.focus(), 50);
+  }
+  checkSaved();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render); else render();
+})();
+</script>
+</body>
+</html>
