@@ -30,6 +30,27 @@ p{margin-bottom:14px;color:#3a3838}
 .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
 .tag{background:#e8f0e8;color:var(--forest);font-size:13px;border-radius:14px;padding:5px 14px}
 .tag.warm{background:#f8ebe5;color:var(--clay)}
+.bridge{background:linear-gradient(135deg,#f5faf5,var(--cream));border:1px solid #c8d9c8;border-left:4px solid var(--forest);border-radius:12px;padding:24px 28px;margin:0 0 40px}
+.bridge-title{font-family:'Noto Serif JP',serif;font-size:18px;color:var(--forest);margin-bottom:12px;line-height:1.6}
+.bridge-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.bridge-card{background:rgba(255,255,255,.72);border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+.bridge-card label{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--earth);font-weight:700;margin-bottom:6px}
+.bridge-card p{font-size:13px;line-height:1.8;margin:0;color:#4a4438}
+.flow{display:grid;gap:12px;margin-top:16px}
+.flow-step{background:var(--cream);border:1px solid var(--border);border-radius:10px;padding:16px 18px;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+.flow-num{width:34px;height:34px;border-radius:50%;background:var(--forest);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.flow-title{font-weight:700;color:var(--ink);font-size:14px;margin-bottom:3px}
+.flow-text{font-size:13px;line-height:1.8;color:#5d574f}
+.table{width:100%;border-collapse:separate;border-spacing:0;margin:14px 0;background:var(--cream);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.table th,.table td{padding:13px 14px;border-bottom:1px solid var(--border);vertical-align:top;font-size:13px;line-height:1.75;text-align:left}
+.table th{background:#edf2f0;color:var(--forest);font-weight:700;white-space:nowrap}
+.table tr:last-child th,.table tr:last-child td{border-bottom:none}
+.soft-box{background:#fffdf5;border:1px solid #eadb9a;border-left:4px solid var(--earth);border-radius:10px;padding:18px 22px;margin:16px 0}
+.soft-box strong{color:var(--earth)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.mini-card{background:var(--cream);border:1px solid var(--border);border-radius:10px;padding:17px 18px}
+.mini-card h3{font-family:'Noto Serif JP',serif;font-size:16px;color:var(--forest);margin-bottom:8px}
+.mini-card p{font-size:13px;line-height:1.8;margin-bottom:0}
 .key-box{background:linear-gradient(135deg,var(--forest),#1a3d1b);color:#fff;border-radius:14px;padding:28px 30px;margin:20px 0}
 .key-box .kl{font-size:11px;letter-spacing:3px;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:12px}
 .key-box .kt{font-family:'Noto Serif JP',serif;font-size:19px;line-height:1.7;font-weight:500}
@@ -39,6 +60,7 @@ p{margin-bottom:14px;color:#3a3838}
 .homework li{margin:9px 0;color:#4a4438}
 .footer{text-align:center;padding:34px 0 10px;border-top:1px solid var(--border);font-size:12px;color:#aaa}
 hr{border:none;border-top:1px solid var(--border);margin:36px 0}
+@media(max-width:720px){.bridge-grid,.two-col{grid-template-columns:1fr}.table th{white-space:normal;width:34%}}
 </style>
 </head>
 <body class="kj-auth-locked">
@@ -63,6 +85,23 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
     <strong>ここには「こうしなさい」も「あなたはこうだ」もありません。</strong>ともちゃんが自分の中で起きていたことを、あとから静かに眺めるためのものです。嫌だと感じることは、悪いことではありません。
   </div>
 
+  <div class="bridge">
+    <div class="section-label">Session 01 から Session 02 へ</div>
+    <div class="bridge-title">1回目で見えた「自分の願いを脇に置く」が、2回目では「言った後の反応が怖い」として現れました。</div>
+    <p>1回目は、「相手を困らせないために、自分の願いを出す前に自分を止める」という構造が見えていました。相手の状態を見て、配慮して、困らせないようにしてからでないとリクエストしてはいけない。そのルールが、ともちゃん自身の願いを止めていました。</p>
+    <p>2回目は、その続きとして、より具体的な形が見えてきました。今回は「言えない」ことそのものより、<strong>言った後に相手がどう反応するかわからないこと</strong>が怖かった。ここが、1回目から一段深く見えたところです。</p>
+    <div class="bridge-grid">
+      <div class="bridge-card">
+        <label>Session 01</label>
+        <p>相手を困らせないために、自分の願いを脇に置く。相手の状態を見すぎて、自分の地図が下に入る。</p>
+      </div>
+      <div class="bridge-card">
+        <label>Session 02</label>
+        <p>相手の反応が読めない時、自分の願いを出すことが怖くなる。言葉よりも、言った後の未来が怖い。</p>
+      </div>
+    </div>
+  </div>
+
   <div class="section">
     <div class="section-label">今回の大切な前提</div>
     <h2>ともちゃんは、言えない人ではない</h2>
@@ -75,6 +114,13 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
     <h2>休む空間に、人が入ってくる</h2>
     <p>夜、休もうとしている自分の空間に、他の人が入ってくる。近くに留まって、なかなか離れない。ある日、「これからも一緒に長く過ごしたい」という趣旨の連絡が届き、それを見た時、返信ができなかった。</p>
     <p>「またか」と感じ、そこから話したい、という流れになった——それが今回のきっかけでした。</p>
+    <table class="table">
+      <tr><th>事実</th><td>夜、休む空間に人が入ってくる。近くにいる。連絡が届く。返信できない。</td></tr>
+      <tr><th>身体反応</th><td>連絡が来た瞬間に、ぞっとする。頭で考える前に、身体が先に反応している。</td></tr>
+      <tr><th>認知</th><td>境界線を越えられる。プライベートに入られる。何を言い出すかわからない。理解されないかもしれない。</td></tr>
+      <tr><th>感情</th><td>嫌悪感、怖さ、得体の知れなさ、気持ち悪さ、腹立ち、うんざり。</td></tr>
+      <tr><th>行動</th><td>おやすみだけ返す。言わない。逃げる。我慢する。</td></tr>
+    </table>
   </div>
 
   <hr>
@@ -98,9 +144,21 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
       自分の言葉や思いが、受け取られない・理解されないかもしれない。
     </div>
     <p>これらは「事実」ではなく、ともちゃんの中で組み立てられた<strong>解釈（ストーリー）</strong>でした。良い悪いではなく、そういう解釈が動いていた、ということです。</p>
+    <p>ここで大切なのは、その解釈を責めることではありません。身体が「危ない」と感じた時、人はすばやく未来を予測します。ともちゃんの中では、「近くにいる」という出来事が、ただの距離の近さではなく、<strong>自分の空間や家族の境界が守られないかもしれない</strong>というサインとして受け取られていました。</p>
   </div>
 
   <hr>
+
+  <div class="section">
+    <div class="section-label">1回目から続いている構造</div>
+    <h2>相手を困らせないために、自分を止める</h2>
+    <p>1回目に見えていた中心構造は、「相手を困らせてはいけない」「相手の状態を見て配慮してからリクエストすべき」というルールでした。</p>
+    <p>今回も、このルールは形を変えて動いていました。相手に「来ないでほしい」「離れてほしい」と言うことで、相手がどう受け取るかわからない。相手が傷つくかもしれない。問い返されるかもしれない。怒るかもしれない。そう感じた瞬間、ともちゃんの中では、言うよりも我慢する方が安全に見えていました。</p>
+    <div class="soft-box">
+      <strong>2回を通して見えること：</strong><br>
+      ともちゃんは願いがないのではなく、願いを出す前に、相手の反応や場の変化を先に見に行く。その結果、自分の願いを後ろへ置くことが起きていました。
+    </div>
+  </div>
 
   <div class="section">
     <div class="section-label">出てきた反応①</div>
@@ -115,6 +173,29 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
     <p>言えない理由の奥には、<strong>まだ起きていないことへの予測</strong>がありました。「距離を置きたいと伝えたら、"なぜ？"と問い返されるかも」「うまく答えられないかも」「相手の反応が想像できないから怖い」。</p>
     <p>怖いのは、相手そのものではなく、<strong>「何が起きるかわからない」という未来の予測</strong>だった、という点が見えてきました。</p>
     <p>言うことそのものより、言った後に何が起きるか。その見えなさが、ともちゃんを止めていた可能性があります。</p>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <div>
+          <div class="flow-title">言いたいことがある</div>
+          <div class="flow-text">本当は、休む空間には入ってきてほしくない。距離を置きたい。自分の安心を守りたい。</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <div>
+          <div class="flow-title">相手の反応を先に予測する</div>
+          <div class="flow-text">なぜと言われるかもしれない。理解されないかもしれない。相手が傷つくかもしれない。関係がこじれるかもしれない。</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <div>
+          <div class="flow-title">言わない方が安全に見える</div>
+          <div class="flow-text">その場では波風が立たない。けれど安心は戻らず、嫌悪感と怖さは残り続ける。</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="section">
@@ -122,9 +203,43 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
     <h2>意味づけによって耐えようとする</h2>
     <p>もう一つ見えていたのは、「この出来事には意味があるのかもしれない」「味わい尽くさないとまた同じことが来るのかもしれない」と理解しようとする動きでした。</p>
     <p>それは、ともちゃんが弱いからではありません。嫌だ、怖い、でもすぐには言えない。その間をなんとか持ちこたえるために、心が意味を探していたのかもしれません。</p>
+    <p>ただ、意味づけはとても繊細です。意味づけによって自分を支えられることもあります。でも、嫌だ、怖い、気持ち悪い、という感覚に触れる前に意味づけへ行くと、心は「わかったこと」にして耐え続けることがあります。</p>
+    <p>今回大切なのは、出来事に意味を見つけることより先に、<strong>自分の身体と心が何を嫌がっていたのかを、事実として見ること</strong>でした。</p>
   </div>
 
   <hr>
+
+  <div class="section">
+    <div class="section-label">我慢と期待</div>
+    <h2>我慢できる時、そこには期待がある</h2>
+    <p>今回、我慢が続いていた背景には、「いつか誰かが言ってくれるかもしれない」「相手が気づいてくれるかもしれない」という期待がありました。</p>
+    <p>ここでいう期待は、ただの希望や未来予測ではありません。<strong>まだ起きていない未来の出来事に、自分にとってプラスであるという意味を先につけ、その片側の結果を待っている認知状態</strong>です。</p>
+    <div class="quote">
+      たくちゃんが言ってくれたら、私は楽になる。<br>
+      相手が気づいてくれたら、この問題は自然に終わる。<br>
+      そうなれば、自分から動かなくて済む。
+    </div>
+    <p>もちろん、誰かが言ってくれるという出来事そのものは起こるかもしれません。でも、「それが起きれば自分にとってプラスだけの世界になる」という期待世界は、事実ではありません。</p>
+    <p>期待を悪者にする必要はありません。ただ、期待を事実から外す。その時、我慢して待つしかなかった場所に、<strong>私はどうしたいかを選ぶ余白</strong>が戻ってきます。</p>
+  </div>
+
+  <div class="section">
+    <div class="section-label">困る、の事実確認</div>
+    <h2>本当に困るのかを、ゆっくり見る</h2>
+    <p>セッションの中では、「もし相手が来なくなったら困る」という認知も出ていました。農作業の人手が減る。誰かの負担が増える。たくちゃんの時間が取られる。会社や生活に影響が出るかもしれない。</p>
+    <p>でも、ここも事実と認知を分けて見る必要がありました。困る面はあるかもしれない。同時に、来なくなることで場のバランスが整う面や、ともちゃん自身の安心が戻る面もあるかもしれない。</p>
+    <div class="two-col">
+      <div class="mini-card">
+        <h3>来なくなることで失うかもしれないもの</h3>
+        <p>人手、関係性、場の協力、誰かの負担が減っていた部分。</p>
+      </div>
+      <div class="mini-card">
+        <h3>来なくなることで戻るかもしれないもの</h3>
+        <p>夜の安心、自分の空間、家族の境界、場のバランス、自分の地図。</p>
+      </div>
+    </div>
+    <p>どちらか片方だけを見ると、選択肢が一つになります。両方を見ることで、「我慢するしかない」から「選べるかもしれない」に変わります。</p>
+  </div>
 
   <div class="section">
     <div class="section-label">今回いちばん大切だったこと</div>
@@ -141,6 +256,7 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
     <h2>「本来の美しさを引き出す」を、自分に向ける</h2>
     <p>ともちゃんの価値観は「本来の美しさを引き出す」。これまでは相手や場に向けてきたかもしれません。今回見えたのは、<strong>この価値観を、ともちゃん自身に向ける</strong>ということでした。</p>
     <p>夜の空間で、我慢していない自分でいること。それ自体が、ともちゃんの本来の美しさが引き出されている状態です。</p>
+    <p>1回目では、「相手の本来の美しさ」と「自分の願い」がぶつかっているように見えていました。2回目では、その価値観を自分自身にも向ける必要が見えてきました。相手の美しさを引き出すことと、自分を我慢させ続けることは、同じ方向ではありません。</p>
   </div>
 
   <div class="section">
@@ -148,6 +264,18 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
     <h2>自分の地図を、一番上に置く</h2>
     <p>いろんな人の地図（相手の都合、周りの状況、常識）がある中で、<strong>一番上に自分の地図があるか</strong>を、ときどき確認する。感情が動いた時は、「今、誰かの地図が一番上に来ているかも」というサインです。</p>
     <p>今回ともちゃんは、「受け入れる一択」だったところから、<strong>選択肢が複数ある</strong>ことに気づきました。選択肢を複数持てること——それが本当の自由でした。</p>
+  </div>
+
+  <div class="section">
+    <div class="section-label">2回を通して見えてきた変化</div>
+    <h2>自分の地図を思い出す場所が、少し具体的になった</h2>
+    <table class="table">
+      <tr><th>1回目</th><td>相手を困らせないように、自分の願いを脇に置いてきたことが見えた。</td></tr>
+      <tr><th>2回目</th><td>相手の反応が読めない時、自分の願いを出すことが怖くなる構造が見えた。</td></tr>
+      <tr><th>共通</th><td>自分の地図が下に入り、相手の地図や場の地図が上に来ると、我慢・怒り・うんざり・嫌悪感が強くなる。</td></tr>
+      <tr><th>今の入口</th><td>感情を消すことではなく、「今、私は何を嫌がっているのか」「誰の地図が一番上に来ているのか」を見ること。</td></tr>
+    </table>
+    <p>これは後戻りではありません。同じテーマが繰り返されているように見えても、見えている場所は少しずつ深くなっています。1回目は「願いを脇に置く」が見え、2回目は「願いを出した後の反応への怖さ」が見えました。</p>
   </div>
 
   <hr>
