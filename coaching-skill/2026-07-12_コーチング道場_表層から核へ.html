@@ -1,190 +1,186 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>コーチング力分析｜表層から核へ｜前田薫</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500&display=swap');
-  :root{--ink:#20212a;--forest:#285747;--moss:#6f8f69;--gold:#b0904c;--paper:#f7f3ea;--cream:#fffdf8;--mist:#edf1ec;--line:#ded7ca}
-  *{box-sizing:border-box}
-  body{font-family:'Noto Sans JP',sans-serif;color:var(--ink);background:var(--paper);margin:0;line-height:1.95;font-size:16px}
-  .wrap{max-width:780px;margin:0 auto;padding:64px 26px 110px}
-  .kicker{font-size:11px;letter-spacing:.22em;color:var(--moss);text-transform:uppercase;margin-bottom:10px}
-  h1{font-family:'Noto Serif JP',serif;font-weight:700;font-size:29px;line-height:1.5;margin:0 0 8px}
-  .sub{color:#777266;font-size:14px;margin-bottom:34px}
-  .badge{display:inline-block;font-size:12px;background:var(--forest);color:#f6efdf;border-radius:4px;padding:3px 12px;margin-bottom:26px;letter-spacing:.06em}
-  h2{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:600;color:var(--forest);margin:48px 0 14px;padding-bottom:6px;border-bottom:1px solid var(--line)}
-  h3{font-size:16px;color:#3b352e;margin:24px 0 8px}
-  p{margin:0 0 16px;color:#33312c}
-  ul{padding-left:1.2em;margin:8px 0 18px}
-  li{margin:4px 0}
-  .lead{background:var(--ink);color:#f3ead8;border-radius:10px;padding:24px 26px;margin:22px 0}
-  .lead .l{font-size:11px;letter-spacing:.16em;color:#c8b071;text-transform:uppercase;margin-bottom:8px}
-  .lead .t{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:500;line-height:1.65}
-  .pull{border-left:3px solid var(--moss);background:var(--mist);border-radius:0 8px 8px 0;padding:14px 18px;margin:16px 0;font-size:15px}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
-  .box{background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
-  .box h3{margin-top:0;color:var(--forest)}
-  .box ul{margin:0;padding-left:1.2em}.box li{font-size:14px;margin:5px 0}
-  .flow{background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:16px 22px;margin:16px 0;font-size:14px}
-  .flow div{padding:6px 0;border-bottom:1px dashed var(--line)}.flow div:last-child{border:none}.flow b{color:var(--gold)}
-  .question{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 15px;margin:10px 0;font-size:14px}
-  .note{font-size:13px;color:#746c60;background:#fff8ea;border:1px solid #eadcbf;border-radius:8px;padding:13px 15px;margin:16px 0}
-  a.back{font-size:12px;color:#6f8f69;text-decoration:none;letter-spacing:.06em}
-  @media(max-width:600px){.grid{grid-template-columns:1fr}.wrap{padding:44px 20px 80px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コーチング力分析｜JDSコーチング道場｜2026-07-12</title>
+  <style>
+    body{font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Noto Sans JP',sans-serif;font-size:16px;line-height:2;color:#2a2a28;background:#f8f7f4;margin:0;padding:0}
+    .container{max-width:760px;margin:0 auto;padding:60px 28px 100px}
+    .doc-label{font-size:11px;letter-spacing:.18em;color:#aaa;text-transform:uppercase;margin-bottom:6px}
+    .doc-badge{display:inline-block;font-size:12px;background:#2a2a28;color:#c4a96e;border-radius:4px;padding:3px 12px;margin-bottom:24px;letter-spacing:.08em}
+    h1{font-size:24px;font-weight:bold;margin:0 0 6px;line-height:1.5}
+    .doc-sub{font-size:14px;color:#888;margin-bottom:40px}
+    .section{margin-bottom:52px}
+    .section-label{font-size:10px;letter-spacing:.2em;color:#c4a96e;text-transform:uppercase;margin-bottom:6px}
+    h2{font-size:18px;font-weight:bold;margin:0 0 16px;color:#1a1a18}
+    h3{font-size:16px;margin:24px 0 8px;color:#2f2d2a}
+    p{margin:0 0 16px;color:#3a3838}
+    hr{border:none;border-top:1px solid #e0ddd8;margin:40px 0}
+    .info-table{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:28px}
+    .info-table th,.info-table td{padding:10px 14px;border-bottom:1px solid #e8e5e0;text-align:left;vertical-align:top}
+    .info-table th{width:30%;color:#888;font-weight:normal}
+    .highlight-box{background:#2a2a28;color:#f0e8d8;border-radius:8px;padding:24px 28px;margin:24px 0}
+    .highlight-box .label{font-size:11px;letter-spacing:.14em;color:#c4a96e;text-transform:uppercase;margin-bottom:8px}
+    .highlight-box .text{font-size:20px;font-weight:bold;line-height:1.5}
+    ul,ol{padding-left:1.4em;margin:0 0 20px}
+    li{margin:6px 0;color:#3a3838}
+    .tag-good{background:#e8f0e8;color:#3a6a3a;font-size:12px;border-radius:3px;padding:1px 8px;margin-right:4px}
+    .tag-note{background:#f0ece4;color:#8a6a3a;font-size:12px;border-radius:3px;padding:1px 8px;margin-right:4px}
+    .tag-risk{background:#f3e8e3;color:#95573f;font-size:12px;border-radius:3px;padding:1px 8px;margin-right:4px}
+    .q-card{background:#fff;border:1px solid #e0ddd8;border-left:3px solid #c4a96e;border-radius:6px;padding:14px 18px;margin-bottom:10px}
+    .q-card .q{font-weight:700;color:#2a2a28;font-size:15px}
+    .q-card .n{font-size:13px;color:#888;margin-top:4px}
+    .ref-box{background:#f4f0e8;border:1px solid #e0ddd8;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px}
+    .flow{background:#fff;border:1px solid #e0ddd8;border-radius:8px;padding:16px 20px;margin:18px 0;font-size:14px}
+    .flow div{padding:6px 0;border-bottom:1px dashed #e0ddd8}.flow div:last-child{border-bottom:none}.flow b{color:#8a6a3a}
+    .note{background:#fff8ea;border:1px solid #eadcbf;border-radius:8px;padding:14px 18px;color:#746c60;font-size:14px;margin:18px 0}
+  </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="kicker">Coaching Power Analysis</div>
-  <h1>表層から核へ<br>コーチング力分析</h1>
-  <p class="sub">2026年7月12日 JDSコーチング道場｜前田薫</p>
-  <div class="badge">コーチング力向上 訓練記録</div>
+<div class="container">
 
-  <p>今回の道場で扱われた中心テーマは、本質が見えているコーチほど、クライアントの速度をどう尊重するかだった。</p>
+  <div class="doc-label">Coaching Skill Analysis</div>
+  <div class="doc-badge">かおるちゃん専用 · 塾生には非公開 · 実名伏せ</div>
+  <h1>コーチング力分析｜JDSコーチング道場<br>表層から核へ</h1>
+  <p class="doc-sub">2026年7月12日 JDSコーチング道場（前田薫コーチ）</p>
 
-  <div class="lead">
-    <div class="l">今日の一行</div>
-    <div class="t">本質へ行く力を弱めるのではなく、相手が自分の足でそこへ降りられる階段を増やす。</div>
+  <div class="ref-box">
+    このページは、JDSコーチング道場の一次情報から<strong>かおるちゃん自身のコーチング力向上部分だけを分離</strong>したもの。参加者本人へ渡す認知構造分析ではなく、薫ちゃんの技術向上・教材化・原則化のために残す。
   </div>
 
-  <h2>1. 焦点を合わせる</h2>
-  <p>前半のフィードフォワードでは、コーチが扱っている焦点と、クライアントが受け取っている焦点がズレる可能性が共有された。</p>
-  <p>同じ出来事でも、コーチが見ているものは複数に分かれる。</p>
-  <div class="grid">
-    <div class="box">
-      <h3>扱える焦点</h3>
-      <ul>
-        <li>出来事そのもの</li>
-        <li>相手の具体行動</li>
-        <li>相手の特性</li>
-        <li>自分が見ている態度</li>
-        <li>自分のフレームワーク</li>
-      </ul>
-    </div>
-    <div class="box">
-      <h3>ズレた時に起きること</h3>
-      <ul>
-        <li>クライアントが置いていかれる</li>
-        <li>問いは良くても方向が合わない</li>
-        <li>信頼関係に小さなズレが生まれる</li>
-        <li>本人の気づきが途切れる</li>
-      </ul>
-    </div>
-  </div>
-  <div class="pull">反対側を見る前に、今どの焦点を扱っているかを合わせる。</div>
-
-  <h2>2. 表層は浅いのではない</h2>
-  <p>後半の練習では、商店街の理事会後に「後で言ってくる人」への反応が扱われた。</p>
-  <p>かおるちゃんには、早い段階で「これは特性だ」という見立てがあった。しかし今回は、そこへ直接行かず、まず本人が言葉にしている表層から入った。</p>
-  <div class="flow">
-    <div><b>本人の言葉</b>　その場で言えばいいやん、後出し、ずるい、面倒くさい、自分でやれよ。</div>
-    <div><b>感情</b>　怒り、面倒くささ、労力を取られる感じ。</div>
-    <div><b>事実の確認</b>　会議で発言しやすいように席や進行を工夫していた。</div>
-    <div><b>価値観</b>　最適化する、あるものの中に可能性を見出す。</div>
-    <div><b>反対側</b>　その人がいたから、場の改善が進んでいた。</div>
-  </div>
-  <div class="pull">表層とは、本人が今触れられる入口である。</div>
-
-  <h2>3. 出し切ってから反対側を見る</h2>
-  <p>今回よかったのは、すぐにメリットへ行かなかったことだった。</p>
-  <p>まず「後で言ってくること」に対する怒り、面倒くささ、労力、子供じみているという見え方を出してもらった。その後で、後から言ってくることによって受け取っているものを見に行った。</p>
-  <div class="lead">
-    <div class="l">New Principle</div>
-    <div class="t">出し切らない反対側は説得になる。出し切った後の反対側は、本人の事実として受け取られる。</div>
-  </div>
-
-  <h2>4. 価値観に接続する</h2>
-  <p>本人の価値観は「最適化する」「あるものの中に可能性を見出す」だった。</p>
-  <p>後で言ってくる人は、表面上は仕事を増やす人に見える。しかし事実としては、その人がいたから会議の形を変え、発言しやすい場を作り、場の空気が良くなっていた。</p>
-  <div class="pull">相手が問題を増やしたのではなく、自分の価値観を発揮する機会を運んできていた。</div>
-
-  <h2>5. 核へ行く時の圧</h2>
-  <p>全体共有では、核へ入られることについて参加者から重要な声が出た。</p>
-  <p>感情や認知を出し切った後に、コーチと一緒に核へ進むなら見やすい。しかし、いきなり核へ来られると「ちょっと待ってください」となる。</p>
-  <p>また、かおるちゃんの問いはその場で終わらなくても後から効いてくる、という声もあった。これは問いの余白の価値である。</p>
-  <p>一方で、時に抵抗や圧を感じることがある、というフィードバックも出た。「なんでそれを聞くの」「熱すぎる」「分かってほしい感じ」として届くことがある。</p>
-  <div class="lead">
-    <div class="l">Practice Theme</div>
-    <div class="t">見抜くコーチから、階段をつくれるコーチへ。</div>
-  </div>
-
-  <h2>6. ゼロ百はコーチ側にも起きる</h2>
-  <p>別ケースの共有では、「私は合っている」「私のやり方なら良い結果」というゼロ百が話題になった。</p>
-  <p>これはクライアントだけに起きるものではない。コーチ側にも起きる。</p>
-  <div class="pull">「核へ行く方が深い」「表層は浅い」という前提も、コーチ側のゼロ百である。</div>
-  <p>だからこそ、今回の稽古は大きい。かおるちゃんは、自分の中の「深いところへ行きたい」を自覚しながら、表層から入ることを選んだ。</p>
-
-  <h2>7. 価値を見える化する怖さ</h2>
-  <p>最後にかおるちゃん自身から、行政担当者とのやり取りや、大峰山登拝の価値提示についての認知が語られた。</p>
-  <p>ここには、関係性・損得・忖度・自己像が重なっていた。</p>
-  <div class="grid">
-    <div class="box">
-      <h3>出ていた認知</h3>
-      <ul>
-        <li>舐められている</li>
-        <li>雑に扱われている</li>
-        <li>面倒くさがられている</li>
-        <li>相手を不機嫌にさせると不都合がある</li>
-        <li>価値を伝えると関係が崩れるかもしれない</li>
-      </ul>
-    </div>
-    <div class="box">
-      <h3>教材化ポイント</h3>
-      <ul>
-        <li>価値提示への怖さは金額だけではない</li>
-        <li>相手の中の自分の印象が変わる怖さがある</li>
-        <li>関係性を守るために自分の価値を後回しにする</li>
-        <li>ここはコーチ・講師・個人事業主に届くテーマ</li>
-      </ul>
+  <div class="section">
+    <div class="section-label">Overview</div>
+    <h2>セッション概要</h2>
+    <table class="info-table">
+      <tr><th>日付</th><td>2026年7月12日</td></tr>
+      <tr><th>形式</th><td>JDSコーチング道場</td></tr>
+      <tr><th>コーチ</th><td>前田薫（かおるちゃん）</td></tr>
+      <tr><th>クライアント役</th><td>道場参加者（実名伏せ）</td></tr>
+      <tr><th>主題</th><td>商店街理事会後に「後で言ってくる人」への怒り・面倒くささ・ずるさの感覚</td></tr>
+      <tr><th>特記</th><td>かおるちゃんが「核へ早く行く癖」を自覚し、あえて表層から反対側へ入ることを実験した回</td></tr>
+    </table>
+    <div class="highlight-box">
+      <div class="label">今回の一行定義</div>
+      <div class="text">本質を見抜く速さを手放さず、相手が自分の足でそこへ降りられる順番と速度を設計する稽古。</div>
     </div>
   </div>
 
-  <h2>8. 実践の問い</h2>
-  <h3>焦点を合わせる</h3>
-  <div class="question">今扱っているのは、出来事全体ですか。相手の行動ですか。自分の見え方ですか。</div>
-  <div class="question">本人は今、どこに一番反応していますか。</div>
+  <hr>
 
-  <h3>表層から入る</h3>
-  <div class="question">今、本人が触れられる一番具体的な言葉は何ですか。</div>
-  <div class="question">核へ行く前に、まず何を出し切る必要がありますか。</div>
+  <div class="section">
+    <div class="section-label">Strengths</div>
+    <h2>今回の強み</h2>
+    <ul>
+      <li><span class="tag-good">強み</span><strong>自分の癖を自覚してから入った。</strong>「核」「根っこ」「本人が見に行けないところ」へ行きたい自分を自覚した上で、今回は表層から入る実験を選べていた。</li>
+      <li><span class="tag-good">強み</span><strong>感情を出し切る前提を作った。</strong>「洗いざらい言ってほしい」という場の置き方により、クライアント役が普段出しにくい怒り・面倒くささ・かっこ悪さを言葉にできた。</li>
+      <li><span class="tag-good">強み</span><strong>扱う焦点を確認した。</strong>「その人に反応しているのか、後から言ってくることに反応しているのか」を確認し、人物の特性へ急がず、今回扱う出来事を絞ろうとしていた。</li>
+      <li><span class="tag-good">強み</span><strong>特性の核へ急がなかった。</strong>かおるちゃん自身には「これは特性だ」と見えていたが、20分の道場では表層の出来事を扱い、本人が触れられる入口から入った。</li>
+      <li><span class="tag-good">強み</span><strong>価値観に接続した。</strong>クライアント役の価値観「最適化する」「あるものの中に可能性を見出す」を確認してから、後で言ってくる人によって受け取っていたものを見に行った。</li>
+      <li><span class="tag-good">強み</span><strong>現実の行動変化まで起きた。</strong>クライアント役は最後に「今日その人ともう一回ちゃんと聞いてみようと思った」と話しており、認知の変化が現実の一歩につながった。</li>
+    </ul>
+  </div>
 
-  <h3>圧を弱める</h3>
-  <div class="question">これは本人の速度ですか。コーチの見えている速度ですか。</div>
-  <div class="question">本質を弱めずに、階段を一段増やすなら、どんな問いになりますか。</div>
+  <hr>
 
-  <h3>ゼロ百を見る</h3>
-  <div class="question">今、コーチ側に「こっちが深い」「こっちが浅い」という前提はありませんか。</div>
-  <div class="question">どちらにもプラスとマイナスがあるとしたら、今日の入口はどこですか。</div>
+  <div class="section">
+    <div class="section-label">Good Moves</div>
+    <h2>良かった問い・関わり</h2>
+    <div class="q-card"><div class="q">「その人に対して気になっているのか、後から言ってくることに嫌と感じるのか、どっちが強いですか」</div><div class="n">焦点合わせの問い。相手の特性へ行くのか、出来事の構造へ行くのかを確認できた。</div></div>
+    <div class="q-card"><div class="q">「どう感じているのか、全部洗いざらい言ってほしい」</div><div class="n">感情を複数出していい前提を作った問い。本人が「こんなん言ったらかっこ悪い」と思う感情を出せた。</div></div>
+    <div class="q-card"><div class="q">「何が一番面倒くさいと感じてるんですか」</div><div class="n">怒り・面倒くささを抽象語のままにせず、本人の中の具体的な負担へ降ろした。</div></div>
+    <div class="q-card"><div class="q">「チャボさんの価値観を教えてもらっていいですか」</div><div class="n">反対側を見る前に価値観へ接続したことで、単なるポジティブ変換ではなく、価値観を通した事実確認になった。</div></div>
+    <div class="q-card"><div class="q">「後で言ってくることで受け取っているもの、メリットは何ですか」</div><div class="n">感情を出し切った後に反対側へ入った問い。会議の改善・場の空気の変化・相手を知る機会が出てきた。</div></div>
+  </div>
 
-  <h2>9. 今日の法則</h2>
-  <div class="grid">
-    <div class="box">
-      <h3>コーチング技術</h3>
-      <ul>
-        <li>焦点を合わせてから進む</li>
-        <li>表層を入口として扱う</li>
-        <li>出し切ってから反対側を見る</li>
-        <li>反対側を価値観に接続する</li>
-      </ul>
-    </div>
-    <div class="box">
-      <h3>コーチのあり方</h3>
-      <ul>
-        <li>核が見えても急がない</li>
-        <li>圧を階段に変える</li>
-        <li>相手の速度を信頼する</li>
-        <li>自分の自己像も同時に観察する</li>
-        <li>コーチ側のゼロ百にも気づく</li>
-      </ul>
+  <hr>
+
+  <div class="section">
+    <div class="section-label">Improvement</div>
+    <h2>改善点</h2>
+    <ul>
+      <li><span class="tag-note">改善</span><strong>最後に変化確認まで入れる。</strong>かおるちゃん自身も言語化していた通り、反対側を見た後に「最初と比べてどう変わったか」を本人の言葉で確認できると、着地がさらに強くなった。</li>
+      <li><span class="tag-note">改善</span><strong>「自分が解決しなければならない」の確認。</strong>早苗さんのフィードフォワード通り、「その人が言ってきたことを、チャボさんが解決しなければならないと思っていますか」と確認できると、相手の問題と自分の役割を分けられた。</li>
+      <li><span class="tag-note">改善</span><strong>「話しやすく作っている」は事実か認知か。</strong>リオさんの視点として、「話しやすい場を作った」ことと「相手が話しやすいと感じていた」ことは別。ここを確認できると、より事実に戻れた。</li>
+      <li><span class="tag-note">改善</span><strong>特性が見えた時ほど一段手前へ。</strong>「チャボさんにもその特性がある」と見えたとしても、本人の準備より早く入ると圧になる。今回のように表層を入口にする判断を磨く。</li>
+      <li><span class="tag-note">改善</span><strong>圧として届く瞬間の観察。</strong>全体共有で「抵抗」「なんでそれ聞くの」「熱すぎる」「分かってほしい感じ」として届くことがあると出た。問いの鋭さだけでなく、届き方を観察する。</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <div class="section-label">Could Have Asked</div>
+    <h2>本当はもう一歩できた問い</h2>
+    <div class="q-card"><div class="q">「今、最初と比べて、怒りや面倒くささはどう変わっていますか」</div><div class="n">反対側を見た後の変化確認。感情・身体・認知の変化を本人の言葉で回収する。</div></div>
+    <div class="q-card"><div class="q">「その人が言ってきたことを、チャボさんが解決しなければならないと思っていますか」</div><div class="n">早苗さんのフィードフォワード。自分が背負う前提を確認する問い。</div></div>
+    <div class="q-card"><div class="q">「チャボさんとしては話しやすく作っている。では、その人にとっても話しやすい場になっていたかは確認できていますか」</div><div class="n">リオさんのフィードフォワード。自分側の工夫と相手側の体感を分ける問い。</div></div>
+    <div class="q-card"><div class="q">「その人がその場で言えなかったとしたら、どんな理由がありそうですか」</div><div class="n">相手の特性を決めつけず、場の構造・安全性・関係性へ視点を広げる問い。</div></div>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <div class="section-label">Feedback Forward</div>
+    <h2>フィードフォワードから見えたこと</h2>
+    <h3>早苗さんの視点</h3>
+    <p>相手が何か言ってきた時、チャボさんが「自分が調整しなければならない」「自分が解決しなければならない」と思っている可能性がある。ここを確認することで、相手の問題と自分の役割を分けられる。</p>
+    <h3>リオさんの視点</h3>
+    <p>会議の場が本当に発言しやすい場だったのかを確認する余地がある。「話しやすく作っている」ことと、「相手が話しやすいと感じている」ことは別。</p>
+    <h3>チャボさん本人の視点</h3>
+    <p>感情を出し切った後で核へ近づくなら受け取りやすい。いきなり核へ来られると「ちょっと待ってくれ」となる。ここから、表層から核へ降りる順番の重要性が明確になった。</p>
+    <h3>ヒロさんの視点</h3>
+    <p>かおるちゃんの問いが「抵抗」「なんでそれ聞くの」「熱すぎる」「分かってほしい感じ」として届くことがある。これは批判ではなく、問いの強度が相手にどう届くかを知る重要な情報。</p>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <div class="section-label">Risk</div>
+    <h2>今回見えたリスク</h2>
+    <ul>
+      <li><span class="tag-risk">注意</span>「核へ行く方が深い」「表層は浅い」という前提が、コーチ側のゼロ百になる。</li>
+      <li><span class="tag-risk">注意</span>本質が見えている時ほど、本人の速度よりコーチの速度が勝ちやすい。</li>
+      <li><span class="tag-risk">注意</span>反対側へ行く前に、本人がまだ怒り・面倒くささ・労力を出し切れていないと、受け取りではなく説得になる。</li>
+      <li><span class="tag-risk">注意</span>「価値観に接続する」が早すぎると、綺麗なまとめに見える。今回は感情を出した後だったため機能した。</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <div class="section-label">Practice Theme</div>
+    <h2>次回の稽古テーマ</h2>
+    <ol>
+      <li>今扱っているのが、出来事・相手の特性・自分の見え方・フレームワークのどれかを明示する。</li>
+      <li>反対側を見た後、感情・身体・認知の変化確認を入れる。</li>
+      <li>核が見えた時ほど、本人が触れられる表層の言葉を入口にする。</li>
+      <li>問いが「圧」ではなく「階段」として届いているかを観察する。</li>
+      <li>「深い／浅い」のゼロ百をコーチ自身の中で見つける。</li>
+    </ol>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <div class="section-label">Principles</div>
+    <h2>今回生まれた原則</h2>
+    <div class="flow">
+      <div><b>58</b> 反対側を見る前に、扱う焦点を合わせる。</div>
+      <div><b>59</b> 表層は浅いのではなく、本人が触れられる入口である。</div>
+      <div><b>60</b> 出し切らない反対側は説得になる。</div>
+      <div><b>61</b> 圧を感じさせない深掘りとは、階段を増やすことである。</div>
+      <div><b>62</b> 「核へ行く方が深い」もコーチ側のゼロ百である。</div>
+      <div><b>63</b> 価値を見える化する怖さは、金額ではなく関係性と自己像に出る。</div>
     </div>
   </div>
 
-  <div class="note">公開教材では、人物名や固有の生活事情は扱わない。ここで扱うのは、コーチング技術としての「焦点合わせ」「表層から核へ」「圧を感じさせない深掘り」である。</div>
+  <div class="note">
+    今回の公開ページは、当初「教材化された原則」に寄せすぎたため、コーチング力分析シートとしての「良かった点・改善点・ベスト問い・フィードフォワード」が薄くなっていた。これは既存の製本テンプレートから外れたため、2026-07-12に本ページを製本型へ戻して再構成した。
+  </div>
 
-  <hr style="border:none;border-top:1px solid var(--line);margin:36px 0 18px">
-  <a class="back" href="./">← 訓練記録一覧へ</a>
+  <a href="index.html" style="font-size:12px;color:#aaa;text-decoration:none;letter-spacing:0.06em;">← 訓練記録一覧に戻る</a>
+
 </div>
 </body>
 </html>
