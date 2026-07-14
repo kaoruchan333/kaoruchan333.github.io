@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ほったらかし自然農 コミュニティ | 天川村</title>
+<title>ほったらかし自然農コミュニティ | ふかふかの素と育てる、天川村からの実践</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap');
 
@@ -47,8 +47,31 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: url('photos/hero.jpg') center/cover no-repeat;
-    opacity: 0.45;
+    background: url('photos/2026-07-14/IMG_8186.JPG') center 48%/cover no-repeat;
+    opacity: 0.72;
+    transform: scale(1.02);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(24,31,20,0.38) 0%, rgba(32,30,23,0.56) 58%, rgba(32,23,17,0.88) 100%);
+  }
+
+  .hero > * { z-index: 1; }
+
+  .hero-badge {
+    position: relative;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.36);
+    background: rgba(24,31,20,0.28);
+    backdrop-filter: blur(8px);
+    padding: 9px 18px;
+    margin-bottom: 24px;
   }
 
   .hero-eyebrow {
@@ -188,6 +211,119 @@
     height: 1px;
     background: var(--sage);
     margin: 0 0 40px;
+  }
+
+  /* ─── 活動の循環・講義ノート ─── */
+  .story-section,
+  .learning-section {
+    padding: 88px 32px;
+  }
+
+  .story-section { background: var(--cream); }
+  .learning-section { background: #fff; }
+
+  .story-inner,
+  .learning-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: clamp(22px, 3.5vw, 32px);
+    font-weight: 400;
+    color: var(--soil);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .section-lead {
+    max-width: 680px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    line-height: 2.2;
+    color: var(--stone);
+    margin-bottom: 48px;
+  }
+
+  .story-grid,
+  .learning-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .story-card,
+  .learning-card {
+    background: #fff;
+    border: 1px solid rgba(74,94,58,0.16);
+    padding: 30px 28px;
+  }
+
+  .learning-card { background: var(--cream); }
+
+  .story-card .num,
+  .learning-card .num {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--sage);
+    margin-bottom: 12px;
+  }
+
+  .story-card h3,
+  .learning-card h3 {
+    color: var(--soil);
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .story-card p,
+  .learning-card p,
+  .learning-list li {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    line-height: 2;
+    color: var(--charcoal);
+  }
+
+  .story-card.is-next {
+    background: var(--moss);
+    border-color: var(--moss);
+  }
+
+  .story-card.is-next .num { color: var(--leaf); }
+  .story-card.is-next h3 { color: #fff; }
+  .story-card.is-next p { color: rgba(255,255,255,0.72); }
+
+  .learning-list {
+    list-style: none;
+    display: grid;
+    gap: 14px;
+  }
+
+  .learning-list li {
+    position: relative;
+    padding-left: 22px;
+  }
+
+  .learning-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--sage);
+  }
+
+  .note-box {
+    margin-top: 32px;
+    padding: 22px 24px;
+    background: var(--mist);
+    border-left: 3px solid var(--sage);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 12px;
+    line-height: 2;
+    color: var(--stone);
   }
 
   /* ─── 第1回 記録 ─── */
@@ -402,6 +538,127 @@
 
   .btn-apply:hover { background: var(--moss); }
 
+  /* ─── 第2回 特集 ─── */
+  .vol2-section { padding: 104px 32px; background: var(--cream); }
+  .vol2-inner { max-width: 1120px; margin: 0 auto; }
+  .vol2-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+    gap: 64px;
+    align-items: end;
+    margin-bottom: 56px;
+  }
+  .vol2-title {
+    font-size: clamp(28px, 4.4vw, 52px);
+    line-height: 1.5;
+    font-weight: 300;
+    color: var(--soil);
+    letter-spacing: .04em;
+  }
+  .vol2-lead {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    line-height: 2.25;
+    color: var(--stone);
+  }
+  .vol2-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .vol2-meta span {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    color: var(--moss);
+    border: 1px solid rgba(74,94,58,.22);
+    background: rgba(255,255,255,.72);
+    padding: 8px 12px;
+  }
+  .vol2-gallery {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 150px;
+    gap: 12px;
+  }
+  .vol2-gallery figure { position: relative; overflow: hidden; background: var(--mist); }
+  .vol2-gallery img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform .6s ease;
+  }
+  .vol2-gallery figure:hover img { transform: scale(1.025); }
+  .gallery-main { grid-column: 1 / 9; grid-row: span 3; }
+  .gallery-seedlings { grid-column: 9 / 13; grid-row: span 2; }
+  .gallery-field { grid-column: 9 / 13; grid-row: span 2; }
+  .gallery-planting { grid-column: 1 / 5; grid-row: span 3; }
+  .gallery-watering { grid-column: 5 / 9; grid-row: span 3; }
+  .gallery-river { grid-column: 9 / 13; grid-row: span 2; }
+  .photo-caption {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 28px 18px 14px;
+    background: linear-gradient(transparent, rgba(24,24,20,.68));
+    color: rgba(255,255,255,.9);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    letter-spacing: .08em;
+  }
+
+  /* ─── 土・川・身体 ─── */
+  .reset-section {
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 104px 32px;
+    background: url('photos/2026-07-14/IMG_8194.JPG') center/cover no-repeat;
+    color: #fff;
+  }
+  .reset-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(22,30,28,.9) 0%, rgba(22,30,28,.72) 48%, rgba(22,30,28,.14) 100%);
+  }
+  .reset-inner { position: relative; max-width: 1120px; width: 100%; margin: 0 auto; }
+  .reset-copy { max-width: 610px; }
+  .reset-kicker {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 10px; letter-spacing: 4px; color: #c7d7b8; margin-bottom: 20px;
+  }
+  .reset-title {
+    font-size: clamp(30px, 5vw, 56px); font-weight: 300; line-height: 1.55;
+    letter-spacing: .05em; margin-bottom: 32px;
+  }
+  .reset-text {
+    font-family: 'Noto Sans JP', sans-serif; font-size: 14px; line-height: 2.35;
+    color: rgba(255,255,255,.8);
+  }
+  .reset-sign {
+    display: inline-block; margin-top: 34px; padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,.32); font-size: 13px; color: rgba(255,255,255,.92);
+  }
+
+  /* ─── Q&A ─── */
+  .qa-section { background: var(--mist); padding: 96px 32px; }
+  .qa-inner { max-width: 860px; margin: 0 auto; }
+  .qa-list { display: grid; gap: 12px; margin-top: 44px; }
+  .qa-item { background: #fff; border: 1px solid rgba(74,94,58,.14); }
+  .qa-item summary {
+    list-style: none; cursor: pointer; position: relative;
+    padding: 24px 60px 24px 72px; font-size: 15px; line-height: 1.8; color: var(--soil);
+  }
+  .qa-item summary::-webkit-details-marker { display:none; }
+  .qa-item summary::before {
+    content: 'Q'; position: absolute; left: 26px; top: 25px; color: var(--sage);
+    font-family: 'Noto Sans JP', sans-serif; font-size: 13px; font-weight: 600;
+  }
+  .qa-item summary::after {
+    content: '+'; position: absolute; right: 26px; top: 23px; color: var(--sage);
+    font-family: 'Noto Sans JP', sans-serif; font-size: 22px; font-weight: 300;
+  }
+  .qa-item[open] summary::after { content: '−'; }
+  .qa-answer {
+    border-top: 1px solid rgba(74,94,58,.1); margin: 0 26px; padding: 22px 0 28px 46px;
+    position: relative; font-family: 'Noto Sans JP', sans-serif; font-size: 13px;
+    line-height: 2.15; color: var(--charcoal);
+  }
+  .qa-answer::before { content: 'A'; position: absolute; left: 0; color: var(--warm); font-weight: 600; }
+
   /* ─── FOOTER ─── */
   footer {
     background: var(--soil);
@@ -422,22 +679,38 @@
     .photo-grid { grid-template-columns: 1fr 1fr; }
     .photo-grid .photo-main { grid-column: 1 / -1; }
     .report-steps { grid-template-columns: 1fr; }
+    .story-grid, .learning-grid { grid-template-columns: 1fr; }
+    .story-section, .learning-section, .event-record, .report-section, .next-section { padding: 64px 24px; }
+    .vol2-section, .qa-section { padding: 72px 20px; }
+    .vol2-header { grid-template-columns: 1fr; gap: 24px; }
+    .vol2-gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 180px; }
+    .gallery-main { grid-column: 1 / -1; grid-row: span 2; }
+    .gallery-seedlings, .gallery-field, .gallery-planting, .gallery-watering, .gallery-river { grid-column: auto; grid-row: span 1; }
+    .gallery-river { grid-column: 1 / -1; }
+    .reset-section { min-height: 680px; padding: 80px 24px; background-position: 56% center; }
+    .reset-section::before { background: linear-gradient(180deg, rgba(22,30,28,.38), rgba(22,30,28,.9) 72%); }
+    .reset-copy { padding-top: 260px; }
+    .qa-item summary { padding: 20px 48px 20px 54px; }
+    .qa-item summary::before { left: 20px; top: 21px; }
+    .qa-item summary::after { right: 18px; top: 18px; }
+    .qa-answer { margin: 0 20px; padding-left: 34px; }
   }
 </style>
 </head>
 <body>
 
 <!-- HERO -->
-<section class="hero">
-  <p class="hero-eyebrow">Tenkawamurea Natural Farming Community</p>
+<section class="hero" id="top">
+  <p class="hero-eyebrow">Tenkawa Natural Farming Community</p>
+  <p class="hero-badge">VOL.02 — 2026.07.14</p>
   <h1 class="hero-title">
-    自然の循環の中に<br>戻っていく仲間たちへ
-    <span>奈良県天川村 ほったらかし自然農 コミュニティ</span>
+    土に触れ、川に還り、<br>身体をほどく。
+    <span>第2回 ほったらかし自然農法イベント｜天川村</span>
   </h1>
   <p class="hero-sub">
-    土を触り、空気を吸い、自分の手で何かを育てる。<br>
-    その小さな体験が、人生の土台を自分の手に取り戻す<br>
-    最初の一歩になると、わたしたちは信じています。
+    第1回の結果を受け取り、主催者と畑を次の人へ。<br>
+    「ふかふかの素（旧称：Bちゃん）」から始まった実践が、<br>
+    土・水・身体・心をつなぐ一日へ育ちました。
   </p>
   <div class="hero-line"></div>
 </section>
@@ -445,17 +718,125 @@
 <!-- LINE CTA（最重要：一番目立つ場所に） -->
 <section class="line-cta-block">
   <p class="tag">COMMUNITY — 仲間に入る</p>
-  <h2>まず、このグループに入ってください。</h2>
+  <h2>一緒に試し、一緒に育てる仲間へ。</h2>
   <p>
     参加者の実践レポート、次回イベント情報、<br>
-    日々の自然農のやりとりは全てここに集まります。<br>
+    「自分の場所でも主催したい」という相談もここに集まります。<br>
     参加無料・匿名OK・いつでも抜けられます。
   </p>
-  <a href="https://line.me/ti/g2/acRZgNke8HU28j5NyopKRjT649JNVQVg-V2Epg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+  <a href="https://line.me/ti/g2/acRZgNke8HU28j5NyopKRjT649JNVQVg-V2Epg?utm_source=invitation&amp;utm_medium=link_copy&amp;utm_campaign=default"
      target="_blank" class="btn-line">
     💬 LINEオープンチャットに参加する
   </a>
   <span class="btn-line-sub">※ LINEアプリが必要です</span>
+</section>
+
+<!-- 第2回 特集 -->
+<section class="vol2-section" id="vol2">
+  <div class="vol2-inner">
+    <div class="vol2-header">
+      <div>
+        <p class="section-tag">EVENT REPORT — VOL.02</p>
+        <h2 class="vol2-title">主催する人が変わり、<br>新しい畑が生まれた。</h2>
+        <div class="vol2-meta">
+          <span>2026年7月14日（火）</span>
+          <span>天川村洞川</span>
+          <span>主催｜ウラマリコ</span>
+          <span>講師｜今西勉（トムさん）</span>
+          <span>進行・運営｜前田薫</span>
+        </div>
+      </div>
+      <p class="vol2-lead">
+        第1回で出た芽と、育たなかった野菜。その両方を受け取り、今回は苗を先に育ててから畑へ。第1回参加者だったウラさんが主催を引き受け、民泊裏の畑を新しい実践の場所として開いてくれました。
+      </p>
+    </div>
+
+    <div class="vol2-gallery">
+      <figure class="gallery-main">
+        <img src="photos/2026-07-14/IMG_8186.JPG" alt="苗を手に笑顔で集まる第2回参加者" loading="eager">
+        <figcaption class="photo-caption">新しい仲間と、育てた苗を囲んで</figcaption>
+      </figure>
+      <figure class="gallery-seedlings">
+        <img src="photos/2026-07-14/IMG_8140.JPG" alt="紙コップで育てたさまざまな苗" loading="lazy">
+        <figcaption class="photo-caption">第1回の学びから生まれた苗</figcaption>
+      </figure>
+      <figure class="gallery-field">
+        <img src="photos/2026-07-14/IMG_8143.JPG" alt="ウラさんの民泊裏の畑で説明を聞く参加者" loading="lazy">
+        <figcaption class="photo-caption">ウラさんの民泊裏の畑</figcaption>
+      </figure>
+      <figure class="gallery-planting">
+        <img src="photos/2026-07-14/IMG_8158.JPG" alt="トムさんと一緒に苗を植える参加者" loading="lazy">
+        <figcaption class="photo-caption">苗を畑へ。実践で確かめる</figcaption>
+      </figure>
+      <figure class="gallery-watering">
+        <img src="photos/2026-07-14/IMG_8175.JPG" alt="畑で水をまきながら説明を聞く様子" loading="lazy">
+        <figcaption class="photo-caption">ふかふかの素と最初の水</figcaption>
+      </figure>
+      <figure class="gallery-river">
+        <img src="photos/2026-07-14/IMG_8194.JPG" alt="天川の澄んだ川で遊ぶ参加者" loading="lazy">
+        <figcaption class="photo-caption">畑のあとは、天川の水へ</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 土・川・身体のリセット -->
+<section class="reset-section" id="reset">
+  <div class="reset-inner">
+    <div class="reset-copy">
+      <p class="reset-kicker">SOIL・WATER・BODY・MIND</p>
+      <h2 class="reset-title">自然に触れる、から。<br>自然へ還る、へ。</h2>
+      <p class="reset-text">
+        「ふかふかの素」が、目に見えない微生物の働きによって土をほぐしていく。畑のあとに入った天川の水は、火照った身体を冷まし、感覚をひらいてくれました。<br><br>
+        川遊びのあとは、トムさんの整体を参加者それぞれが体験。写真には残っていないけれど、身体のこわばりがほどけると、心まで静かになっていく時間がありました。土を整えること、身体を整えること、心を整えること。それらは別々ではなく、同じ自然の循環の中にあるのかもしれません。<br><br>
+        「浦」という字が水辺を思わせるように、ウラさんの民泊“裏”の畑から、川へ、そして自分の内側へ。第2回は、自然農法を学ぶだけでなく、心身ともに自然へ帰っていく一日になりました。
+      </p>
+      <p class="reset-sign">土から、川へ。川から、身体へ。身体から、心へ。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 第1回から続く活動の循環 -->
+<section class="story-section" id="story">
+  <div class="story-inner">
+    <p class="section-tag">OUR STORY — 第1回から第2回へ</p>
+    <h2 class="section-title">結果を隠さず、次の人と次の畑へ。</h2>
+    <p class="section-lead">
+      この活動は、完成した農法を一方的に教える場ではありません。実際に試し、うまくいかなかったことも共有し、次の実践へつなぐ。その積み重ねを、仲間みんなの知恵にしていきます。
+    </p>
+    <div class="story-grid">
+      <article class="story-card">
+        <p class="num">01 — FIRST PRACTICE</p>
+        <h3>第1回、種から始める</h3>
+        <p>2026年4月28日、前田薫の家の横の畑と耕作放棄地で初開催。「ふかふかの素」を土に置き、種から野菜を育て始めました。</p>
+      </article>
+      <article class="story-card">
+        <p class="num">02 — WHAT WE LEARNED</p>
+        <h3>土は育ち、野菜は雑草に負けた</h3>
+        <p>芽は出たものの、作物より雑草が早く育ち、野菜は十分に育ちませんでした。一方、土は柔らかくなり始めました。この結果を、第2回の改善材料にしました。</p>
+      </article>
+      <article class="story-card">
+        <p class="num">03 — HANDING OVER</p>
+        <h3>ウラさんが主催を引き受ける</h3>
+        <p>第1回に参加したウラマリコさんの「自分の畑でもやりたい」という思いから、民泊裏の畑へ会場と主催を受け渡しました。トムさんが講師、前田薫が進行・運営を支えました。</p>
+      </article>
+      <article class="story-card">
+        <p class="num">04 — SECOND PRACTICE</p>
+        <h3>第2回、苗から植える</h3>
+        <p>第1回の結果を踏まえ、先に苗を育ててから定植。作物が小さい間は雑草を抜かずに刈り、光を確保する方法へブラッシュアップしました。</p>
+      </article>
+      <article class="story-card is-next">
+        <p class="num">05 — NEXT FIELD</p>
+        <h3>主催者と実践場所を増やす</h3>
+        <p>イベントを開くたびに畑が一つ増え、持ち帰った人の庭やプランターにも小さな実践が増える。次に始める人を、これまでの仲間が一緒に支えます。</p>
+      </article>
+      <article class="story-card is-next">
+        <p class="num">06 — SHARED VISION</p>
+        <h3>一人ひとりの天命とつなぐ</h3>
+        <p>土・食・暮らしを入口に、それぞれが描く地域や教育、コミュニティのビジョンともつなぐ。自然農を、誰かの天命を応援し合う活動へ育てます。</p>
+      </article>
+    </div>
+  </div>
 </section>
 
 <!-- 第1回 イベント記録 -->
@@ -466,19 +847,19 @@
     <div class="divider"></div>
 
     <div class="event-meta">
-      <div class="meta-item"><strong>開催日</strong>2026年4月28日（月）</div>
+      <div class="meta-item"><strong>開催日</strong>2026年4月28日（火）</div>
       <div class="meta-item"><strong>場所</strong>奈良県天川村洞川 耕作放棄地 200坪</div>
       <div class="meta-item"><strong>時間</strong>13:00〜17:00</div>
-      <div class="meta-item"><strong>参加者</strong>お持ち帰りBちゃん、全員配布済み</div>
+      <div class="meta-item"><strong>実践</strong>ふかふかの素（旧称：Bちゃん）を全員が持ち帰り</div>
     </div>
 
     <div class="photo-grid">
-      <img src="photos/group-field.jpg" alt="フィールドで笑顔の参加者たち" class="photo-main">
-      <img src="photos/farming.jpg" alt="鍬で自然農を実践">
-      <img src="photos/bokashi-circle.jpg" alt="Bちゃんを囲んで実践中">
-      <img src="photos/soil-hands.jpg" alt="土に触れる手">
-      <img src="photos/seedling.jpg" alt="育ち始めた春大根">
-      <img src="photos/talk-inside.jpg" alt="輪になって話す参加者たち">
+      <img src="../nature-event/photos/group-field.jpg" alt="フィールドで笑顔の参加者たち" class="photo-main">
+      <img src="../nature-event/photos/farming.jpg" alt="鍬で自然農を実践">
+      <img src="../nature-event/photos/bokashi-circle.jpg" alt="ふかふかの素を囲んで実践中">
+      <img src="../nature-event/photos/soil-hands.jpg" alt="土に触れる手">
+      <img src="../nature-event/photos/seedling.jpg" alt="育ち始めた春大根">
+      <img src="../nature-event/photos/talk-inside.jpg" alt="輪になって話す参加者たち">
     </div>
 
     <!-- 参加者の声 -->
@@ -549,15 +930,123 @@
   </div>
 </section>
 
+<!-- 第2回 講義ノート -->
+<section class="learning-section" id="learning">
+  <div class="learning-inner">
+    <p class="section-tag">LEARNING NOTES — 第2回講義の要点</p>
+    <h2 class="section-title">トムさんから共有された、<br>ほったらかし自然農法の大切なこと。</h2>
+    <p class="section-lead">
+      第2回の録音をもとに、実践時に振り返りやすい形へ整理しました。呼び名は「Bちゃん」から「ふかふかの素」へ。まずは小さく試し、土地ごとの変化を仲間で記録していきます。
+    </p>
+
+    <div class="learning-grid">
+      <article class="learning-card">
+        <p class="num">BASIC — 基本の考え方</p>
+        <h3>耕さない・畝を立てない</h3>
+        <p>土の中には、空気を好む微生物と、空気の少ない環境を好む微生物がそれぞれの層にいるため、深く耕して層を反転させない、という考え方が紹介されました。</p>
+      </article>
+      <article class="learning-card">
+        <p class="num">WEEDS — 雑草との付き合い方</p>
+        <h3>抜かずに、作物の周りだけ刈る</h3>
+        <p>雑草の根は土の保湿や微生物の働きに役立つため、根から抜かずに残します。ただし作物が小さい間は、光を奪われないよう周囲を刈ります。</p>
+      </article>
+      <article class="learning-card">
+        <p class="num">PLACEMENT — ふかふかの素の置き方</p>
+        <h3>ばらまかず、三角形の3点へ</h3>
+        <p>講義では、1坪あたり100gを目安に3等分し、三角形になる3か所へ塊で置く方法を実践。微生物が働き始める「基地」をつくるイメージです。</p>
+      </article>
+      <article class="learning-card">
+        <p class="num">WATER — 最初の水</p>
+        <h3>十分に湿らせ、その後は雨を基本に</h3>
+        <p>最初は置いた場所をしっかり湿らせます。講義では上から見て右回りに水をまく方法も共有されました。その後の畑は雨を基本とし、極端に乾く時だけ補います。</p>
+      </article>
+      <article class="learning-card">
+        <p class="num">SEEDLINGS — 第1回からの改善</p>
+        <h3>種からではなく、苗を育てて定植</h3>
+        <p>第1回では発芽後に雑草へ負けたため、第2回は種を事前に水へ浸け、ふかふかの素を活かした土で苗を育ててから植えました。</p>
+      </article>
+      <article class="learning-card">
+        <p class="num">SMALL START — 暮らしから始める</p>
+        <h3>畑がなくても、小さな場所から</h3>
+        <p>庭や小区画から始め、一度に広げすぎないこと。講義ではプランターで試す場合、微生物の環境を保つため底穴のない容器を使う方法が紹介されました。</p>
+      </article>
+    </div>
+
+    <h3 class="section-title" style="font-size:22px;margin-top:64px;">講義で共有された知識・視点</h3>
+    <ul class="learning-list">
+      <li>雑草の根・作物の根・微生物は、それぞれの深さで関わり合い、土の水分や養分の循環を支えるという見方。</li>
+      <li>水や肥料を与えすぎず、作物が自ら深く根を伸ばす環境をつくることで、丈夫に育てるという考え方。</li>
+      <li>虫や雑草を一律に敵とせず、その土の状態を示したり、余分なものを調整したりする役割があると捉える視点。</li>
+      <li>田畑、庭、プランターなど、場所に応じて小さく試し、分からないことは実践後に相談しながら調整すること。</li>
+      <li>農薬や肥料を使っていた土地、田んぼ、畜舎、水環境などへの応用例や、作物の成長・収量・味に関する事例も紹介されました。</li>
+      <li>一つの成功例をそのまま信じるのではなく、各自の場所で変化を観察し、写真や記録をグループで共有して知恵にすること。</li>
+    </ul>
+
+    <div class="note-box">
+      ※この講義ノートは、2026年7月14日の録音から、トムさんが当日共有した考え方・経験談・実践方法を要約したものです。土地や気候によって結果は異なります。数値や効果を保証するものではなく、実践する場合は小さな区画から始め、経過を観察してください。
+    </div>
+  </div>
+</section>
+
+<!-- 質疑応答 -->
+<section class="qa-section" id="qa">
+  <div class="qa-inner">
+    <p class="section-tag">QUESTIONS & ANSWERS — 当日の質疑応答</p>
+    <h2 class="section-title">参加者の「自分の場所では？」に、<br>トムさんが答えました。</h2>
+    <p class="section-lead">
+      録音後半の質疑応答を、質問者名を推測せず「質問／回答」で整理しました。回答は当日の説明を要約したもので、土地の状態に応じて小さく試し、経過を見ながら調整することが前提です。
+    </p>
+
+    <div class="qa-list">
+      <details class="qa-item" open>
+        <summary>すでに稲を植えている田んぼにも使えますか？</summary>
+        <div class="qa-answer">稲が植わっている状態でも、上から置くこと自体はできると説明されました。ただし、毎年トラクターなどで深く耕す場合は、土の層を保つこの農法の考え方とぶつかります。機械を使うか、手作業へ切り替えるかも含め、田んぼごとの方法を考える必要があります。</div>
+      </details>
+      <details class="qa-item">
+        <summary>草だらけの田んぼや休耕田では、どこから始めればいいですか？</summary>
+        <div class="qa-answer">一気に全面を変えようとせず、まず1坪ほどの小さな区画から試す方法が紹介されました。田んぼは下が粘土質で根が入りにくい場合があるため、浅く根を張る作物から始める、畑として使ってみる、陸稲を検討するなど、土地の状態に合わせて選びます。</div>
+      </details>
+      <details class="qa-item">
+        <summary>プランターでも試せますか？</summary>
+        <div class="qa-answer">講義では、底穴のない容器や、内側にビニールを敷いた容器で試す方法が紹介されました。目安量は1坪100g、畳1枚ほどなら約50gという説明でした。最初から大きく始めず、手元の小さな容器で観察することが勧められました。</div>
+      </details>
+      <details class="qa-item">
+        <summary>できた土を別の場所へ移せば、畑を広げられますか？</summary>
+        <div class="qa-answer">育った土を移して広げることもできるものの、変化には1〜2年ほどかかる場合があるという回答でした。短い期間で新しい場所を整えたい場合は、その場所へ改めて「ふかふかの素」を置く方が早い、という説明です。</div>
+      </details>
+      <details class="qa-item">
+        <summary>雑草が多い場所では、新聞紙を使っても大丈夫ですか？</summary>
+        <div class="qa-answer">新聞紙で土を覆い、光を遮って雑草の勢いを抑える方法が紹介されました。根から抜いて土を裸にするのではなく、小さな区画を覆いながら少しずつ進める考え方です。作物の周囲は、育つための光が届くように管理します。</div>
+      </details>
+      <details class="qa-item">
+        <summary>虫や雑草は、すべて取り除いた方がいいのでしょうか？</summary>
+        <div class="qa-answer">虫や雑草を一律に「敵」とせず、その土の状態に応じた役割があると捉える説明でした。雑草の種類は土の状態を映し、虫も環境の偏りを調整している場合がある。まず観察し、作物が小さい間に必要な分だけ手を入れる、という考え方です。</div>
+      </details>
+      <details class="qa-item">
+        <summary>イノシシなどの獣害にも変化はありますか？</summary>
+        <div class="qa-answer">トムさんからは、淡路で最初はイノシシに荒らされたものの、その後は入りにくくなったという自身の経験が共有されました。ただし、原因や再現性はまだ分からず「経験値としての話」とも明言されていました。獣害対策として保証された方法ではなく、今後の観察事項です。</div>
+      </details>
+      <details class="qa-item">
+        <summary>石が多く、野菜が育ちにくい畑でも試せますか？</summary>
+        <div class="qa-answer">石の多い土地でも試せるという説明がありました。まず小さな三角形の配置から始め、土の柔らかさや作物の変化を確かめる。周囲の畑との違いも含めて記録すれば、その土地での実践データになります。</div>
+      </details>
+    </div>
+
+    <div class="note-box">
+      ※音声認識の都合で質問者名は特定していません。専門用語や数値は、実践前にトムさんへ確認できるよう、LINEグループでも質問を受け付けています。
+    </div>
+  </div>
+</section>
+
 <!-- 実践レポート -->
 <section class="report-section">
   <div class="report-inner">
     <p class="section-tag">PRACTICE — 実践レポート</p>
-    <h2>持ち帰ったBちゃん、<br>どうなりましたか？</h2>
+    <h2>持ち帰った「ふかふかの素」、<br>どうなりましたか？</h2>
     <p class="lead">
-      全員にお渡しした「Bちゃん（ボカシ肥）」の使い方と、<br>
+      参加者へお渡しした「ふかふかの素（旧称：Bちゃん）」の使い方と、<br>
       その後の変化を教えてください。<br>
-      プランター1坪でも、庭でも、畑でも。<br>
+      プランター1つでも、庭でも、畑でも。<br>
       どんな小さな報告でも、ここに積み重ねていきます。
     </p>
 
@@ -582,33 +1071,32 @@
     <!-- 実践レポートが届いたらここに追加 -->
     <div style="border:1px solid rgba(255,255,255,0.1);padding:32px;text-align:center;">
       <p style="font-family:'Noto Sans JP',sans-serif;font-size:13px;color:rgba(255,255,255,0.4);line-height:2;">
-        最初の実践レポートを待っています。<br>
-        あなたの報告がここに積み重なっていきます。
+        第1回・第2回参加者の実践レポートを募集中です。<br>
+        あなたの畑、庭、プランターでの変化をここに積み重ねていきます。
       </p>
     </div>
   </div>
 </section>
 
-<!-- 次回イベント -->
+<!-- 次の主催者へ -->
 <section class="next-section">
   <div class="next-inner">
-    <p class="section-tag" style="margin-bottom:16px;">NEXT — 次回イベント</p>
-    <h2>次回は、2026年7月14日。<br>天川村でまた土に触れます。</h2>
+    <p class="section-tag" style="margin-bottom:16px;">NEXT — 次の主催者へ</p>
+    <h2>次は、あなたの場所で。<br>仲間と一緒に育てませんか。</h2>
     <p>
-      第2回は、ウラマリコさん主催、今西トムさん講師、前田薫サポートの形で開催予定です。<br>
-      自然農法体験を中心に、土・微生物・食・身体を整える流れとして育てていきます。<br><br>
-      はじめての方も、前回参加された方も歓迎です。<br>
-      参加希望の方は、募集ページからお申し込みください。
+      「自分の畑や地域でも開催したい」「まずは小さく試したい」<br>
+      そんな声から、次の回を一緒につくります。<br><br>
+      主催する人が一人で抱えるのではなく、これまでの参加者が、<br>
+      準備・草刈り・記録・当日の進行を持ち寄って支え合います。
     </p>
-    <a href="../nature-event/" class="btn-apply" style="margin-bottom:20px;">
-      ▶ 7月14日の募集ページを見る
-    </a>
-    <br>
-    <a href="https://line.me/ti/g2/acRZgNke8HU28j5NyopKRjT649JNVQVg-V2Epg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+    <a href="https://line.me/ti/g2/acRZgNke8HU28j5NyopKRjT649JNVQVg-V2Epg?utm_source=invitation&amp;utm_medium=link_copy&amp;utm_campaign=default"
        target="_blank" class="btn-apply">
-      💬 オープンチャットで次回情報を受け取る
+      💬 主催・実践についてグループで相談する
     </a>
     <p style="margin-top:32px;font-size:13px;">
+      <a href="../nature-event/" style="color:var(--stone);font-family:'Noto Sans JP',sans-serif;font-size:12px;letter-spacing:1px;">
+        ▶ 第2回の募集ページアーカイブを見る
+      </a><br><br>
       <a href="../nature-event/2026-04-28/" style="color:var(--stone);font-family:'Noto Sans JP',sans-serif;font-size:12px;letter-spacing:1px;">
         ▶ 第1回の募集ページアーカイブを見る
       </a>
@@ -620,9 +1108,9 @@
   <p style="margin-bottom:8px;">
     <a href="https://kaoruchan333.github.io/">前田薫 ホームページ</a>
     　｜
-    <a href="../nature-event/">自然農イベント申し込み</a>
+    <a href="../nature-event/">第2回イベント記録</a>
   </p>
-  <p>© 2026 前田薫・今西トム　天川村ほったらかし自然農コミュニティ</p>
+  <p>© 2026 天川村ほったらかし自然農コミュニティ</p>
 </footer>
 
 </body>
