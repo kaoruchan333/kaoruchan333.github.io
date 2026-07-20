@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>苦手・時間がかかるの正体を確かめる｜よっちゃんワークシート</title>
+  <style>
+    :root{--ink:#302b25;--muted:#746b61;--paper:#f6f3ec;--panel:#fff;--soft:#f1ece1;--line:#ddd4c6;--accent:#946538;--deep:#26322c;--gold:#d8bd88}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.85;font-size:16px}body.kj-auth-locked>*:not(#kj-auth-overlay){display:none!important}
+    .toolbar{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px max(18px,calc((100% - 820px)/2));background:rgba(38,50,44,.96);color:#fff}.toolbar a{color:#fff;text-decoration:none;font-size:13px}.actions{display:flex;gap:8px}.actions button{min-height:38px;padding:8px 13px;border:1px solid rgba(255,255,255,.4);border-radius:6px;background:transparent;color:#fff;cursor:pointer}.actions .primary{border-color:var(--gold);background:var(--gold);color:var(--deep);font-weight:700}
+    .hero{padding:56px 0 50px;background:linear-gradient(135deg,#26322c,#505544 64%,#876640);color:#fff8e9}.wrap{width:min(820px,calc(100% - 36px));margin:auto}.eyebrow{margin:0 0 12px;color:var(--gold);font-size:12px;letter-spacing:.12em}.hero h1{margin:0;font-size:clamp(30px,6vw,52px);line-height:1.35}.lead{max-width:700px;margin:16px 0 0;color:#eee5d4;font-size:17px}
+    main{padding:28px 0 80px}.intro,.step,.formula,.notice{border-radius:8px}.intro{padding:24px;margin-bottom:22px;background:var(--panel);border:1px solid var(--line)}.notice{padding:16px 18px;background:#fff8df;border:1px solid #e5d6a8;color:#5f502b}.step{margin:18px 0;padding:28px;background:var(--panel);border:1px solid var(--line)}.step-no{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.12em}.step h2{margin:4px 0 8px;color:var(--deep);font-size:clamp(22px,4vw,31px);line-height:1.4}.help{margin:0 0 18px;color:var(--muted);font-size:14px}.prompt{margin:22px 0}.prompt label{display:block;margin-bottom:7px;font-weight:700}.prompt small{display:block;margin:-3px 0 8px;color:var(--muted)}textarea,input[type="text"]{width:100%;border:1px solid #cfc5b6;border-radius:6px;background:#fffdf9;color:var(--ink);font:inherit;line-height:1.65}textarea{min-height:112px;padding:12px;resize:vertical}textarea.short{min-height:72px}textarea.tall{min-height:168px}input[type="text"]{min-height:46px;padding:9px 12px}.checks{display:flex;flex-wrap:wrap;gap:8px 18px}.checks label{font-weight:400}.formula{padding:20px;background:var(--deep);color:#fff8e9}.formula strong{display:block;color:var(--gold);font-size:18px}.formula p{margin:8px 0 0}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.box{padding:18px;border:1px solid var(--line);border-radius:7px;background:var(--soft)}.box h3{margin:0 0 7px;font-size:18px}.status{min-height:24px;color:var(--accent);font-size:13px}.footer-note{margin-top:22px;color:var(--muted);font-size:13px}
+    #kj-auth-overlay{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:20px;background:linear-gradient(135deg,#26322c,#685943)}.auth{width:min(420px,100%);padding:28px;background:#fff;border-radius:10px}.auth input,.auth button{width:100%;min-height:46px;margin-top:10px;padding:10px 12px;border-radius:7px;font-size:16px}.auth input{border:1px solid #ccc}.auth button{border:0;background:var(--deep);color:#fff}.err{min-height:20px;color:#a33;font-size:13px}
+    @media(max-width:680px){.toolbar{align-items:flex-start}.actions{flex-wrap:wrap;justify-content:flex-end}.actions button{min-height:36px;padding:7px 10px}.two{grid-template-columns:1fr}.step{padding:22px 18px}.hero{padding:42px 0}}
+    @media print{body{background:#fff;font-size:12px}.toolbar,.status{display:none!important}.hero{padding:12mm 0;background:#fff;color:var(--ink);border-bottom:2px solid var(--deep)}.hero .eyebrow,.hero .lead{color:var(--ink)}main{padding:5mm 0}.wrap{width:auto;margin:0 12mm}.intro,.step{break-inside:avoid;margin:4mm 0;padding:5mm;border-color:#aaa}.notice{border-color:#aaa;background:#fff}.formula{background:#fff;color:var(--ink);border:2px solid var(--deep)}.formula strong{color:var(--ink)}textarea,input[type="text"]{border-color:#888;background:#fff}.step:nth-of-type(4),.step:nth-of-type(7){break-before:page}}
+  </style>
+</head>
+<body class="kj-auth-locked">
+  <header class="toolbar">
+    <a href="../">← 7月19日の振り返りへ</a>
+    <div class="actions"><button type="button" onclick="clearWorkbook()">記入を消す</button><button class="primary" type="button" onclick="window.print()">印刷する</button></div>
+  </header>
+  <section class="hero"><div class="wrap"><p class="eyebrow">YOCCHAN PRIVATE WORKBOOK</p><h1>苦手・時間がかかるの<br>正体を確かめる</h1><p class="lead">「進んでいない」と自分を評価する前に、何が起き、何を嫌だと感じ、実際には何をしていたのかを一つずつ見るワークシート。</p></div></section>
+  <main class="wrap">
+    <div class="intro">
+      <p><strong>よっちゃんへ</strong></p>
+      <p>これは、7月19日のセッションで約束していたワークシートです。正しい答えを出すためでも、無理に前向きになるためでもありません。</p>
+      <p>まず、嫌だったことを具体的にします。そのあとで、今まで見えていなかった反対側を確かめます。一度に全部書かず、今日は一つのテーマだけで大丈夫です。</p>
+      <div class="notice">気持ちや身体の負担が強くなる時は、途中で止めてください。強い動悸が続く、長引く、日常生活に支障がある場合は、このワークだけで抱えず医療機関など専門家へ相談してください。</div>
+      <p class="footer-note">入力した内容は送信されません。この端末のブラウザ内だけに自動保存されます。</p>
+    </div>
+
+    <section class="step">
+      <div class="step-no">STEP 01</div><h2>今日扱うことを一つにする</h2>
+      <p class="help">今回は「研修報告書」から始めても、別の出来事を扱っても大丈夫です。</p>
+      <div class="prompt"><label for="theme">今、苦手・時間がかかる・進んでいないと感じていることは何ですか。</label><textarea class="short" id="theme" data-save="theme"></textarea></div>
+      <div class="prompt"><label>今、このテーマを扱える余裕はありますか。</label><div class="checks"><label><input type="radio" name="safety" value="扱える" data-save="safety"> 扱える</label><label><input type="radio" name="safety" value="少しだけ" data-save="safety"> 少しだけ扱う</label><label><input type="radio" name="safety" value="今日は扱わない" data-save="safety"> 今日は扱わない</label></div></div>
+    </section>
+
+    <section class="step">
+      <div class="step-no">STEP 02</div><h2>評価を入れず、事実を書く</h2>
+      <p class="help">「全然できていない」ではなく、見たこと・したこと・まだ完成していないものを分けます。</p>
+      <div class="prompt"><label for="done">実際にしたことは何ですか。</label><small>時間を取った、動画を選んだ、言葉を書いた、誰かやAIに聞いた、見直した、など。自分に当てはまる事実だけを書きます。</small><textarea class="tall" id="done" data-save="done"></textarea></div>
+      <div class="prompt"><label for="notdone">まだできていないこと、完成していないものは何ですか。</label><textarea id="notdone" data-save="notdone"></textarea></div>
+      <div class="prompt"><label for="timefact">使った時間について、確認できる事実は何ですか。</label><small>「かけすぎ」ではなく、何日に、何時間くらい取り組んだかを書きます。</small><textarea class="short" id="timefact" data-save="timefact"></textarea></div>
+    </section>
+
+    <section class="step">
+      <div class="step-no">STEP 03</div><h2>自分が下した評価を、そのまま出す</h2>
+      <p class="help">きれいに直さず、頭の中に出ている言葉をそのまま書きます。</p>
+      <div class="prompt"><label for="judgment">その事実を見て、自分に何と言っていますか。</label><small>例：苦手。遅い。時間をかけすぎ。進んでいない。書けない。</small><textarea id="judgment" data-save="judgment"></textarea></div>
+      <div class="prompt"><label for="compare">その評価は、誰・何・どんな基準との比較で生まれていますか。</label><small>普通の人、早くできる人、平均時間、予定していた自分、以前の自分など。浮かぶものを書きます。</small><textarea id="compare" data-save="compare"></textarea></div>
+      <div class="formula"><strong>ここでの確認</strong><p>「苦手」「遅い」「進んでいない」は、起きた出来事そのものではなく、ある基準と比べた時に生まれた評価です。</p></div>
+    </section>
+
+    <section class="step">
+      <div class="step-no">STEP 04</div><h2>本当は何が嫌なのかを見る</h2>
+      <p class="help">ここを飛ばしてメリットへ行きません。「時間がかかる」の奥で、何が嫌なのかを具体的にします。</p>
+      <div class="prompt"><label for="hate1">時間がかかると、何が嫌ですか。</label><textarea id="hate1" data-save="hate1"></textarea></div>
+      <div class="prompt"><label for="hate2">それによって、何ができなくなる、何を失う、何が起きると感じていますか。</label><textarea class="tall" id="hate2" data-save="hate2"></textarea></div>
+      <div class="prompt"><label for="hate3">「時間がかかる」以外の言葉にすると、本当に嫌なのは何ですか。</label><textarea id="hate3" data-save="hate3"></textarea></div>
+      <div class="prompt"><label for="feeling">そのことを、どんな気持ちだと感じていますか。</label><textarea class="short" id="feeling" data-save="feeling"></textarea></div>
+    </section>
+
+    <section class="step">
+      <div class="step-no">STEP 05</div><h2>片側認知を一文にする</h2>
+      <p class="help">今出ている言葉を、「〇〇はダメ」または「〇〇すべき」の短い一文にします。</p>
+      <div class="prompt"><label for="framework">今回、自分が事実だと思っていた一文は何ですか。</label><small>例：時間がかかることはダメ。文章は自分で書くべき。</small><textarea class="short" id="framework" data-save="framework"></textarea></div>
+      <div class="formula"><strong>反対側を見る方程式</strong><p>マイナス側の認知「〇〇はダメ」なら、〇〇のメリットを見る。</p><p>プラス側の認知「〇〇はいい・〇〇すべき」なら、〇〇のデメリットを見る。</p></div>
+    </section>
+
+    <section class="step">
+      <div class="step-no">STEP 06</div><h2>反対側を、一問だけ見る</h2>
+      <p class="help">良い答えを作らなくて大丈夫です。出てこない時は「今は分からない」と書いて止まります。</p>
+      <div class="two">
+        <div class="box"><h3>マイナス側だった場合</h3><p>「〇〇することのメリットは何ですか」</p><textarea class="tall" data-save="opposite-minus" aria-label="マイナス側の反対側"></textarea></div>
+        <div class="box"><h3>プラス側だった場合</h3><p>「〇〇することのデメリットは何ですか」</p><textarea class="tall" data-save="opposite-plus" aria-label="プラス側の反対側"></textarea></div>
+      </div>
+      <div class="prompt"><label for="notdo">今回の課題をもしやらなかったら、どんなデメリットがありますか。</label><small>セッションで確認した問いです。脅すためではなく、やる・やらないの両方にある事実を見るために書きます。</small><textarea id="notdo" data-save="notdo"></textarea></div>
+      <div class="prompt"><label>問いを置く前と比べて、最初の一文はどう感じますか。</label><div class="checks"><label><input type="radio" name="loosen" value="緩んだ" data-save="loosen"> 緩んだ</label><label><input type="radio" name="loosen" value="少し緩んだ" data-save="loosen"> 少し緩んだ</label><label><input type="radio" name="loosen" value="まだ動かない" data-save="loosen"> まだ動かない</label><label><input type="radio" name="loosen" value="分からない" data-save="loosen"> 分からない</label></div></div>
+    </section>
+
+    <section class="step">
+      <div class="step-no">STEP 07</div><h2>緩んだあとで、受け取っている事実を見る</h2>
+      <p class="help">まだ動かない時は、このステップへ進まず、STEP 04へ戻ります。</p>
+      <div class="prompt"><label for="received">この作業へ取り組んだことで、実際に得た経験・情報・方法・選択肢はありますか。</label><small>無理に感謝や学びを作らず、事実として確認できるものだけを書きます。</small><textarea class="tall" id="received" data-save="received"></textarea></div>
+      <div class="prompt"><label for="newfact">最初は「何も進んでいない」と見えていた中に、今はどんな事実が見えますか。</label><textarea id="newfact" data-save="newfact"></textarea></div>
+    </section>
+
+    <section class="step">
+      <div class="step-no">STEP 08</div><h2>自分の願いと、義務を分ける</h2>
+      <div class="prompt"><label for="want">私は本当は、どう書きたい、どう進めたいですか。</label><small>「自分の言葉で書きたい」など、自分の願いとして出てくる言葉を書きます。</small><textarea id="want" data-save="want"></textarea></div>
+      <div class="prompt"><label for="must">その周りにある「〇〇しなければならない」は何ですか。</label><small>願いと同じにせず、別の欄へ書きます。</small><textarea id="must" data-save="must"></textarea></div>
+      <div class="prompt"><label for="help">人や道具やAIへ任せられる部分と、自分で確かめたい部分を分けるとどうなりますか。</label><textarea class="tall" id="help" data-save="help"></textarea></div>
+    </section>
+
+    <section class="step">
+      <div class="step-no">STEP 09</div><h2>今の一動作へ戻る</h2>
+      <div class="prompt"><label for="実況">私は今、何をしようとして、実際には何をしていますか。</label><input type="text" id="実況" data-save="実況" placeholder="私は今、〇〇しようとして、実際には△△している。"></div>
+      <div class="prompt"><label for="next">このあと選ぶ、次の一動作は何ですか。</label><small>一つの動画を開く、一文だけ書く、AI案と動画の一箇所を照合する、今日は終える、など、一動作にします。</small><textarea class="short" id="next" data-save="next"></textarea></div>
+      <div class="formula"><strong>ウサギに気づいた時の合図</strong><p>息を吐きながら「今、私は戻ろうとしている」と、息が続くところまで声に出す。すぐ落ち着くことを合格にせず、気づいて戻ろうとした事実を見る。</p></div>
+      <p class="footer-note">2026年7月19日 かおる塾グループコーチング / 前田薫</p>
+      <div class="status" id="save-status">入力内容は自動保存されます。</div>
+    </section>
+  </main>
+  <script>
+    (function(){
+      const AUTH_HASH='1d3327e0df4257470c17e90db4c8651c840277973efc58a7ee5943f86c279b7b';
+      const AUTH_KEY='kaoru_juku_member_yocchan_auth_v2';
+      const SAVE_KEY='yocchan_20260719_workbook_v1';
+      async function hash(text){const data=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text));return[...new Uint8Array(data)].map(v=>v.toString(16).padStart(2,'0')).join('')}
+      function unlock(){document.body.classList.remove('kj-auth-locked');document.getElementById('kj-auth-overlay')?.remove()}
+      if(localStorage.getItem(AUTH_KEY)===AUTH_HASH){unlock()}else{const overlay=document.createElement('div');overlay.id='kj-auth-overlay';overlay.innerHTML='<div class="auth"><h2>よっちゃん本人専用</h2><p>パスワードを入力してください。</p><input id="pw" type="password"><button id="go">表示する</button><div class="err" id="er"></div></div>';document.body.appendChild(overlay);async function go(){if(await hash(document.getElementById('pw').value)===AUTH_HASH){localStorage.setItem(AUTH_KEY,AUTH_HASH);unlock()}else document.getElementById('er').textContent='パスワードが違います。'}document.getElementById('go').onclick=go;document.getElementById('pw').onkeydown=e=>{if(e.key==='Enter')go()}}
+      function read(){try{return JSON.parse(localStorage.getItem(SAVE_KEY)||'{}')}catch(e){return{}}}
+      function write(){const data={};document.querySelectorAll('[data-save]').forEach(el=>{const key=el.dataset.save;if(el.type==='radio'){if(el.checked)data[key]=el.value}else data[key]=el.value});localStorage.setItem(SAVE_KEY,JSON.stringify(data));const s=document.getElementById('save-status');if(s){s.textContent='保存しました';setTimeout(()=>s.textContent='入力内容は自動保存されます。',1200)}}
+      const saved=read();document.querySelectorAll('[data-save]').forEach(el=>{const value=saved[el.dataset.save];if(value!==undefined){if(el.type==='radio')el.checked=el.value===value;else el.value=value}el.addEventListener(el.type==='radio'?'change':'input',write)});
+      window.clearWorkbook=function(){if(!confirm('このワークシートの記入内容をすべて消しますか？'))return;localStorage.removeItem(SAVE_KEY);document.querySelectorAll('[data-save]').forEach(el=>{if(el.type==='radio')el.checked=false;else el.value=''});document.getElementById('save-status').textContent='記入内容を消しました。'};
+    })();
+  </script>
+</body>
+</html>
