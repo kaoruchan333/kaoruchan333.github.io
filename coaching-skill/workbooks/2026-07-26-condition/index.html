@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>他者と状況を「自分の安心の条件」にした時｜両面化ワーク</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;background:#f5f4ef;color:#292925;font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;line-height:1.85}
+    main{max-width:840px;margin:0 auto;padding:48px 24px 96px}
+    .eyebrow{font-size:11px;letter-spacing:.16em;color:#94713a}
+    h1{font-size:clamp(27px,5vw,40px);line-height:1.42;letter-spacing:0;margin:10px 0 12px}
+    h2{font-size:21px;letter-spacing:0;margin:0 0 18px}
+    h3{font-size:16px;letter-spacing:0;margin:0 0 10px}
+    p{margin:0 0 15px}
+    .lead{font-size:17px;border-left:4px solid #b38b49;padding-left:18px;margin:28px 0 40px}
+    section{margin:0 0 44px}
+    .core{background:#252621;color:#f8f4e9;border-radius:8px;padding:24px;margin:20px 0}
+    .core strong{font-size:19px}
+    .step{background:#fff;border:1px solid #ddd9cf;border-radius:8px;padding:22px;margin:14px 0}
+    .step-num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#a77e3d;color:#fff;font-weight:700;margin-bottom:12px}
+    label{display:block;font-weight:700;margin:16px 0 7px}
+    textarea{width:100%;min-height:100px;padding:13px;border:1px solid #bbb7ad;border-radius:6px;background:#fffefa;color:#292925;font:inherit;line-height:1.65;resize:vertical}
+    textarea:focus{outline:3px solid rgba(167,126,61,.2);border-color:#a77e3d}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .card{background:#fff;border:1px solid #ddd9cf;border-radius:8px;padding:18px}
+    .card.seen{border-top:4px solid #72776a}.card.unseen{border-top:4px solid #b38b49}
+    .hint{font-size:13px;color:#6f695f}
+    .notice{background:#f6eddc;border:1px solid #ddc89d;border-radius:7px;padding:17px 19px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+    button,.back{border:1px solid #777268;border-radius:5px;background:#fff;color:#302f2b;padding:10px 15px;font:inherit;text-decoration:none;cursor:pointer}
+    button.primary{background:#292925;color:#fff;border-color:#292925}
+    .saved{font-size:12px;color:#767166;align-self:center}
+    @media(max-width:680px){main{padding:34px 18px 70px}.grid{grid-template-columns:1fr}.step{padding:18px}}
+    @media print{body{background:#fff}main{max-width:none;padding:0}.actions,.saved{display:none}.step,.card{break-inside:avoid}textarea{min-height:80px;border:1px solid #aaa;background:#fff}}
+  </style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">TENCHUDO / SELF COACHING WORK</div>
+  <h1>他者と状況を<br>「自分の安心の条件」にした時</h1>
+  <p class="lead">原因を探すためのワークではありません。他者、状況、環境、その場の状態を「よい・悪い」と見ている自分のフレームワークを両面化し、選択を自分へ戻すためのワークです。</p>
+
+  <section>
+    <h2>最初に確認すること</h2>
+    <div class="core"><strong>相手や状況のメリット・デメリットではなく、その状態が「自分にとって」何をもたらすのかを見る。</strong></div>
+    <p>課題の分離は、無関心になることではありません。相手の選択は相手へ返し、自分の認知と行動は自分へ戻します。</p>
+  </section>
+
+  <section class="step">
+    <div class="step-num">1</div>
+    <h2>事実と想像を分ける</h2>
+    <label for="fact">録画に映る事実だけを書く</label>
+    <textarea id="fact" data-save placeholder="相手が実際に言った言葉、実際にしたこと。状況や環境で実際に起きたこと。"></textarea>
+    <label for="image">その瞬間、自分が頭の中で足した想像を書く</label>
+    <textarea id="image" data-save placeholder="この先こうなるかもしれない、何もしていないかもしれない、失敗するかもしれない、など。"></textarea>
+  </section>
+
+  <section class="step">
+    <div class="step-num">2</div>
+    <h2>理想と「よくない状態」を具体化する</h2>
+    <p class="hint">「幸せ」「きちんと」「よい状態」などの抽象語ではなく、行動として見える一文にします。</p>
+    <label for="ideal">〇〇は、どのような状態でいる方がよいと思っていますか</label>
+    <textarea id="ideal" data-save></textarea>
+    <label for="negative">〇〇が、どのような状態でいるのはよくないと思っていますか</label>
+    <textarea id="negative" data-save></textarea>
+    <label for="selfjudge">その状態を見て反応している自分を、どう見ていますか</label>
+    <textarea id="selfjudge" data-save></textarea>
+  </section>
+
+  <section class="step">
+    <div class="step-num">3</div>
+    <h2>四つとも「自分にとって」で見る</h2>
+    <div class="grid">
+      <div class="card seen">
+        <h3>見えている側 1</h3>
+        <label for="idealplus">理想の状態であることは、自分にとってどんなメリットがありますか</label>
+        <textarea id="idealplus" data-save></textarea>
+      </div>
+      <div class="card seen">
+        <h3>見えている側 2</h3>
+        <label for="negativeminus">よくないと感じる状態であることは、自分にとってどんなデメリットがありますか</label>
+        <textarea id="negativeminus" data-save></textarea>
+      </div>
+      <div class="card unseen">
+        <h3>反対側 1</h3>
+        <label for="idealminus">理想の状態であることは、自分にとってどんなデメリットがありますか</label>
+        <textarea id="idealminus" data-save></textarea>
+      </div>
+      <div class="card unseen">
+        <h3>反対側 2</h3>
+        <label for="negativeplus">よくないと感じる状態であることは、自分にとってどんなメリットがありますか</label>
+        <textarea id="negativeplus" data-save></textarea>
+      </div>
+    </div>
+    <div class="notice"><strong>順番の注意：</strong>嫌さや損失がまだ出ている間は、反対側へ急ぎません。見えている側を吐き切ってから、まだ見えていない側を見ます。</div>
+  </section>
+
+  <section class="step">
+    <div class="step-num">4</div>
+    <h2>課題を分ける</h2>
+    <label for="other-task">相手、状況、環境の側にあること</label>
+    <textarea id="other-task" data-save placeholder="相手がどう過ごすか、何を選ぶか。自分には直接決められない状況や環境。"></textarea>
+    <label for="my-task">自分の側にあること</label>
+    <textarea id="my-task" data-save placeholder="どう認知したか、何を想像したか、何を伝えるか、どう行動するか。"></textarea>
+  </section>
+
+  <section class="step">
+    <div class="step-num">5</div>
+    <h2>不安を消す行動から、選ぶ行動へ</h2>
+    <p>不安は悪ではありません。危険を察知し、準備、管理、段取りをつくる働きもあります。同じ行動でも、何を目的にしているかを確認します。</p>
+    <label for="fear-action">不安を消すために、相手や状況をどう変えようとしていますか</label>
+    <textarea id="fear-action" data-save></textarea>
+    <label for="value-action">不安が残っていても、自分が大切にしたいあり方から選べる一動作は何ですか</label>
+    <textarea id="value-action" data-save></textarea>
+    <label for="next-action">今日する、具体的な一動作</label>
+    <textarea id="next-action" data-save></textarea>
+  </section>
+
+  <section>
+    <h2>このワークの着地点</h2>
+    <div class="core"><strong>不安をなくすことでも、相手を理想へ動かすことでもない。不安があっても、相手の課題を奪わず、自分の価値観から行動を選べる状態へ戻る。</strong></div>
+  </section>
+
+  <div class="actions">
+    <button class="primary" type="button" onclick="window.print()">印刷する</button>
+    <button type="button" id="clearButton">入力を消去</button>
+    <a class="back" href="../../2026-07-26_コーチング道場_価値観ではなく付着したべきを見る.html">教材へ戻る</a>
+    <span class="saved" id="savedState">入力内容はこのブラウザに自動保存されます</span>
+  </div>
+</main>
+<script>
+  const storageKey = 'tenchudo_condition_bilateral_work_20260726';
+  const fields = [...document.querySelectorAll('[data-save]')];
+  const savedState = document.getElementById('savedState');
+  const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
+  fields.forEach((field) => {
+    field.value = saved[field.id] || '';
+    field.addEventListener('input', () => {
+      const values = Object.fromEntries(fields.map((item) => [item.id, item.value]));
+      localStorage.setItem(storageKey, JSON.stringify(values));
+      savedState.textContent = '保存しました';
+      window.clearTimeout(window.savedTimer);
+      window.savedTimer = window.setTimeout(() => {
+        savedState.textContent = '入力内容はこのブラウザに自動保存されます';
+      }, 1400);
+    });
+  });
+  document.getElementById('clearButton').addEventListener('click', () => {
+    if (!window.confirm('入力内容をすべて消去しますか？')) return;
+    fields.forEach((field) => { field.value = ''; });
+    localStorage.removeItem(storageKey);
+    savedState.textContent = '入力内容を消去しました';
+  });
+</script>
+</body>
+</html>
