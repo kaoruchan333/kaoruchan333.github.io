@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>7月26日 Chatwork送信センター</title><style>body{margin:0;background:#f6f4ee;color:#2e2a25;font-family:"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}.wrap{width:min(920px,calc(100% - 28px));margin:auto;padding:38px 0 70px}h1{font-size:clamp(28px,5vw,44px);line-height:1.3}.lead{color:#6e675f}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{background:#fff;border:1px solid #ddd7cc;border-radius:8px;padding:22px}h2{margin-top:0;font-size:21px}.notice{padding:11px 13px;background:#eee9df;border-radius:6px;font-size:13px}.message{width:100%;min-height:500px;padding:15px;border:1px solid #d4cdc1;border-radius:7px;background:#fffdf9;font:15px/1.75 "Hiragino Sans","Noto Sans JP",sans-serif;resize:vertical}button{width:100%;min-height:48px;margin-top:12px;border:0;border-radius:7px;background:#29352f;color:#fff;font-size:15px;font-weight:700;cursor:pointer}.done{min-height:24px;color:#39704a;font-size:13px;margin-top:6px}@media(max-width:720px){.grid{grid-template-columns:1fr}.message{min-height:420px}}</style></head><body><main class="wrap"><h1>7月26日 Chatwork送信センター</h1><p class="lead">送りたい方の「全文をコピー」を押し、Chatworkへ貼り付けてください。</p><div class="notice">グループ用と、よっちゃん本人用は別です。個人URLと個人パスワードをグループへ送らないでください。</div><div class="grid">
+<section class="panel"><h2>かおる塾グループ</h2><textarea class="message" id="group" readonly>かおる塾のみなさんへ
+
+7月26日のグループコーチング振り返り教材が完成しました。
+
+今回のテーマは、
+「どうしたいか分からない時」です。
+
+答えがないのではなく、
+したいこと、したくないこと、
+しなければならないと思っていること、
+今はできないと思っていることが、
+同時にある場合があります。
+
+一つの答えを急ぐ前に、
+今の自分の中にある複数の声を分けて見る教材です。
+
+振り返り教材
+https://kaoruchan333.github.io/kaoru-juku-community/sessions/2026-07-26/
+
+パスワード
+kizuki2026
+
+録画・音声は、URLを受け取り次第追加します。</textarea><button onclick="copyText('group','gdone')">全文をコピー</button><div class="done" id="gdone"></div></section>
+<section class="panel"><h2>よっちゃん本人</h2><textarea class="message" id="member" readonly>よっちゃんへ
+
+今回のグループコーチングの、よっちゃん本人専用の振り返りページが完成しました。
+
+今回は一つの答えにまとめず、
+よっちゃんが実際に話してくれた、
+
+「関わりたくない」
+「本当は綺麗にしたい」
+「綺麗にできない」
+「気持ち悪いけど、よくしたい」
+
+という複数の言葉を、そのまま現在地として残しています。
+
+今すぐ答えを出すためではなく、
+今回の自分に何が起きていたのかを、ゆっくり見返すために受け取ってください。
+
+よっちゃん本人専用ページ
+https://kaoruchan333.github.io/kaoru-juku-community/members/yocchan/2026-07-26/
+
+パスワード
+kj-uuqk6zon8f</textarea><button onclick="copyText('member','mdone')">全文をコピー</button><div class="done" id="mdone"></div></section></div></main><script>async function copyText(id,done){const el=document.getElementById(id),out=document.getElementById(done);try{await navigator.clipboard.writeText(el.value);out.textContent='コピーしました。Chatworkへ貼り付けてください。'}catch(e){el.focus();el.select();document.execCommand('copy');out.textContent='コピーしました。Chatworkへ貼り付けてください。'}}</script></body></html>
