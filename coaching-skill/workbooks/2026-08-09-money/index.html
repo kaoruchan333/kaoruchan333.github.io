@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>お金が絡むと一歩が止まる時｜天中道ワーク</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f4f2ec;color:#292a25;font-family:"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}main{max-width:780px;margin:auto;padding:46px 22px 90px}h1{font-size:clamp(27px,6vw,40px);letter-spacing:0;line-height:1.4}h2{font-size:20px;letter-spacing:0;margin-top:44px}.lead,.note{background:#fff;border:1px solid #ddd8ca;border-radius:6px;padding:18px}.note{background:#eee6d6}label{display:block;font-weight:700;margin:16px 0 6px}textarea,input{width:100%;font:inherit;border:1px solid #c9c4b7;border-radius:5px;padding:12px;background:#fff}textarea{min-height:100px;resize:vertical}.four{display:grid;grid-template-columns:1fr 1fr;gap:12px}.actions{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}button,a.button{border:0;border-radius:5px;padding:11px 16px;background:#272923;color:#fff;text-decoration:none;font:inherit;cursor:pointer}.secondary{background:#77756f}small{color:#746f65}@media(max-width:620px){.four{grid-template-columns:1fr}}</style></head>
+<body><main>
+<small>TENCHUDO WORKSHEET · 2026.08.09</small><h1>お金が絡むと<br>一歩が止まる時</h1>
+<div class="lead">原因を当てるためのワークではありません。一つの具体的な場面で、事実、認知、ジャッジ、四つの側、価値観、次の一動作を分けます。</div>
+<form id="work">
+<h2>1. 一つの場面</h2><label>誰に、何を伝える／相談する直前でしたか</label><textarea name="scene"></textarea><label>実際に言ったこと・しなかったこと</label><textarea name="action"></textarea>
+<h2>2. 事実と認知</h2><label>録画に映る事実</label><textarea name="facts" placeholder="誰が、何を言い、何をしたか。金額や条件。"></textarea><label>自分が付けた意味・未来予測</label><textarea name="cognition" placeholder="相手はどう思う、自分はどんな人に見える、この先どうなる。"></textarea>
+<h2>3. 身体</h2><label>呼吸、胸、腹、喉、肩、動作に何が起きましたか</label><textarea name="body"></textarea>
+<h2>4. フレームワーク</h2><label>私は、＿＿するなら、＿＿すべきだと思っている</label><textarea name="framework"></textarea><div class="note">「格好悪い」「器が小さい」「奪う」「損」などの評価語は、今回どの言葉・金額・行動を指すのかへ戻します。</div><label>評価語を具体的な行動へ戻す</label><textarea name="neutral"></textarea>
+<h2>5. 四つの側</h2><label>両面化する一つの行動</label><input name="target"><div class="four"><div><label>することで受け取るもの</label><textarea name="do_gain"></textarea></div><div><label>することで失う・引き受けるもの</label><textarea name="do_cost"></textarea></div><div><label>しないことで受け取るもの</label><textarea name="not_gain"></textarea></div><div><label>しないことで失う・引き受けるもの</label><textarea name="not_cost"></textarea></div></div>
+<h2>6. 価値観と条件</h2><label>本当に大切にしたい価値観</label><textarea name="value"></textarea><label>価値観へ付着していた「べき」</label><textarea name="condition"></textarea><label>同じ価値観を生きる別の方法</label><textarea name="options"></textarea>
+<h2>7. 記憶をたどる問い</h2><div class="note">欲しい、助けて、支払ってほしいと言うと誰かを困らせると感じた記憶。価値あるものが当然扱いされた記憶。お金の話で関係が変わった記憶。浮かばなければ、答えを作りません。</div><textarea name="memory"></textarea>
+<h2>8. 今日の一動作</h2><label>相手の反応をコントロールせず、価値観から選ぶ最小の一動作</label><textarea name="next"></textarea>
+<div class="actions"><button type="button" onclick="window.print()">印刷する</button><button type="button" class="secondary" onclick="clearWork()">入力を消す</button><a class="button secondary" href="../../2026-08-09_コーチング道場_根を抜くか実を一つ扱うか.html">教材へ戻る</a></div></form>
+<script>const f=document.getElementById('work'),key='tenchudo-20260809-money';const saved=JSON.parse(localStorage.getItem(key)||'{}');[...f.elements].forEach(e=>{if(e.name&&saved[e.name]!=null)e.value=saved[e.name]});f.addEventListener('input',()=>{const o={};[...f.elements].forEach(e=>{if(e.name)o[e.name]=e.value});localStorage.setItem(key,JSON.stringify(o))});function clearWork(){if(confirm('入力内容を消しますか？')){f.reset();localStorage.removeItem(key)}}</script>
+</main></body></html>
+
