@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天中道テラコヤ ｜ 問いと対話</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sumi:#0e0d0b; --sumi-panel:#16130f; --sumi-raise:#1e1a14;
+    --kin:#c6a15b; --kin-soft:#9a7d44; --shiro:#efe9dd; --usu:#8b8275;
+    --line:rgba(198,161,91,0.22);
+    --mincho:"Shippori Mincho","Yu Mincho","Hiragino Mincho ProN",serif;
+    --gothic:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--sumi);color:var(--shiro);font-family:var(--mincho);line-height:1.9;-webkit-font-smoothing:antialiased;min-height:100vh;}
+  .wrap{max-width:620px;margin:0 auto;padding:48px 22px 80px;}
+  .eyebrow{font-family:var(--gothic);font-size:11px;letter-spacing:.42em;color:var(--kin);text-transform:uppercase;text-indent:.42em;margin:0 0 18px;}
+  h1.title{font-family:var(--mincho);font-weight:800;font-size:clamp(34px,9vw,52px);letter-spacing:.06em;margin:0 0 14px;line-height:1.25;}
+  .sub{color:var(--usu);font-size:15px;margin:0 0 34px;letter-spacing:.03em;}
+  .tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin-bottom:34px;}
+  .tab{flex:1;background:none;border:none;cursor:pointer;font-family:var(--gothic);font-size:14px;font-weight:500;color:var(--usu);padding:14px 8px;letter-spacing:.08em;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .25s,border-color .25s;}
+  .tab:hover{color:var(--shiro);}
+  .tab.on{color:var(--kin);border-bottom-color:var(--kin);}
+  .tab:focus-visible{outline:2px solid var(--kin);outline-offset:3px;border-radius:3px;}
+  .panel{display:none;animation:fade .5s ease;}
+  .panel.on{display:block;}
+  @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+  .lead{font-size:17px;margin:0 0 14px;letter-spacing:.02em;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;}
+  .chip{background:var(--sumi-panel);border:1px solid var(--line);color:var(--usu);font-family:var(--gothic);font-size:12.5px;padding:8px 13px;border-radius:20px;cursor:pointer;letter-spacing:.02em;transition:border-color .2s,color .2s;}
+  .chip:hover{border-color:var(--kin-soft);color:var(--shiro);}
+  .chip:focus-visible{outline:2px solid var(--kin);outline-offset:2px;}
+  textarea{width:100%;min-height:118px;resize:vertical;background:var(--sumi-panel);border:1px solid var(--line);color:var(--shiro);font-family:var(--mincho);font-size:16px;line-height:1.85;padding:16px 17px;border-radius:2px;letter-spacing:.02em;}
+  textarea::placeholder{color:#5f5850;}
+  textarea:focus{outline:none;border-color:var(--kin-soft);}
+  .ai-pick{display:flex;align-items:center;gap:12px;margin:18px 0 4px;font-family:var(--gothic);font-size:12.5px;color:var(--usu);letter-spacing:.04em;}
+  .ai-pick .seg{display:inline-flex;border:1px solid var(--line);border-radius:2px;overflow:hidden;}
+  .ai-pick .seg button{background:none;border:none;color:var(--usu);font-family:var(--gothic);font-size:12.5px;padding:7px 15px;cursor:pointer;letter-spacing:.06em;}
+  .ai-pick .seg button.on{background:var(--kin);color:var(--sumi);}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:transparent;color:var(--kin);border:1px solid var(--kin);cursor:pointer;font-family:var(--gothic);font-size:14px;font-weight:500;letter-spacing:.12em;padding:14px 26px;border-radius:2px;transition:background .25s,color .25s;text-decoration:none;}
+  .btn:hover{background:var(--kin);color:var(--sumi);}
+  .btn:focus-visible{outline:2px solid var(--kin);outline-offset:3px;}
+  .btn.primary{background:var(--kin);color:var(--sumi);width:100%;font-size:15px;padding:16px;margin-top:8px;}
+  .btn.primary:hover{background:#d8b46e;}
+  .btn.small{padding:9px 16px;font-size:12.5px;letter-spacing:.08em;}
+  .btn.ghost{border-color:var(--kin-soft);color:var(--kin-soft);}
+  .btn.ghost:hover{background:var(--kin-soft);color:var(--sumi);}
+  .out{margin-top:26px;display:none;}
+  .out.show{display:block;animation:fade .5s ease;}
+  .out .cap{font-family:var(--gothic);font-size:12px;color:var(--usu);letter-spacing:.04em;margin:0 0 10px;}
+  .out .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+  .out details{margin-top:16px;}
+  .out summary{font-family:var(--gothic);font-size:12px;color:var(--usu);cursor:pointer;letter-spacing:.04em;}
+  .out details textarea{margin-top:10px;min-height:150px;border-color:var(--kin-soft);background:var(--sumi-raise);}
+  .disclaimer{font-family:var(--gothic);font-size:11.5px;color:var(--usu);margin-top:30px;line-height:1.7;letter-spacing:.02em;}
+  .mikuji{text-align:center;padding-top:8px;}
+  .enso-box{position:relative;width:220px;height:220px;margin:6px auto 4px;}
+  .enso{width:100%;height:100%;display:block;}
+  .enso circle{fill:none;stroke:var(--kin);stroke-width:5;stroke-linecap:round;stroke-dasharray:560 660;transform:rotate(128deg);transform-origin:center;opacity:.85;}
+  .draw-out{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:38px;}
+  .draw-out p{margin:0;font-family:var(--mincho);font-weight:600;font-size:16px;line-height:1.75;color:var(--shiro);letter-spacing:.03em;opacity:0;transition:opacity .7s ease;}
+  .draw-out p.show{opacity:1;}
+  .mikuji .btn{margin-top:26px;}
+  .mikuji-hint{font-family:var(--gothic);font-size:12px;color:var(--usu);margin-top:20px;letter-spacing:.06em;}
+  @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">天中道 ・ Tenchudō</p>
+  <h1 class="title">問いと対話</h1>
+  <p class="sub">前田薫（かおるちゃん）の考え方をうつした、相談とみくじ。</p>
+
+  <div class="tabs" role="tablist">
+    <button class="tab on" id="t1" role="tab" aria-selected="true">薫ちゃんに相談</button>
+    <button class="tab" id="t2" role="tab" aria-selected="false">天中道みくじ</button>
+  </div>
+
+  <!-- 相談 -->
+  <section class="panel on" id="p1" role="tabpanel" aria-labelledby="t1">
+    <p class="lead">いま、どんなことが起きてる？</p>
+
+    <div class="chips" id="chips">
+      <button class="chip" data-t="活動の切り替わりで、気持ちの切り替えが難しい子がパニックになる。">切り替えでパニック</button>
+      <button class="chip" data-t="子ども同士のトラブルが起きて、どう間に入ったらいいか迷っている。">子ども同士のトラブル</button>
+      <button class="chip" data-t="かんしゃくが強く出て、なかなかおさまらない子への関わり方に悩んでいる。">かんしゃくが強い</button>
+      <button class="chip" data-t="指示が通りにくく、こちらも余裕がなくなって、つい強い言い方になってしまう。">つい強く言ってしまう</button>
+      <button class="chip" data-t="今日はいろいろ重なって、自分自身がしんどくて余裕がない。">自分がしんどい</button>
+    </div>
+
+    <textarea id="q" placeholder="ここに状況を書く。上のボタンから選んで、直してもOK。"></textarea>
+
+    <div class="ai-pick">
+      <span>送り先：</span>
+      <span class="seg" id="seg">
+        <button class="on" data-ai="chatgpt">ChatGPT</button>
+        <button data-ai="gemini">Gemini</button>
+      </span>
+    </div>
+
+    <button class="btn primary" id="send">薫ちゃんの問いをAIに送る</button>
+
+    <div class="out" id="out">
+      <p class="cap">AIが開いたはず。開かへん／中身が入ってなかったら、下の予備を使ってな。</p>
+      <div class="row">
+        <button class="btn ghost small" id="copy">プロンプトをコピー</button>
+        <a class="btn ghost small" id="reopen" href="#" target="_blank" rel="noopener">もう一度ひらく</a>
+      </div>
+      <details>
+        <summary>中身を見る（手で貼りたいとき）</summary>
+        <textarea id="prompt" readonly></textarea>
+      </details>
+    </div>
+
+    <p class="disclaimer">答えを決めるためやなく、あなたが一息ついて、次の一歩のヒントを得るために。子どもを診断・ラベル付けするものではありません。安全に関わる深刻なこと（自傷・他害・虐待の疑いなど）は、問いより先に、チームや専門機関につないでください。</p>
+  </section>
+
+  <!-- みくじ -->
+  <section class="panel" id="p2" role="tabpanel" aria-labelledby="t2">
+    <div class="mikuji">
+      <div class="enso-box">
+        <svg class="enso" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="42"/></svg>
+        <div class="draw-out"><p id="mk"></p></div>
+      </div>
+      <button class="btn" id="draw">今日の一つを引く</button>
+      <p class="mikuji-hint">ボタンを押すと、今日の問い・中庸の一言がひとつ。</p>
+    </div>
+  </section>
+</div>
+
+<script>
+/* tabs */
+const tabs=[["t1","p1"],["t2","p2"]];
+tabs.forEach(([tid,pid])=>{
+  document.getElementById(tid).addEventListener("click",()=>{
+    tabs.forEach(([t,p])=>{
+      const on=t===tid;
+      document.getElementById(t).classList.toggle("on",on);
+      document.getElementById(t).setAttribute("aria-selected",on);
+      document.getElementById(p).classList.toggle("on",on);
+    });
+  });
+});
+
+/* 核ペルソナ: 前田薫の一次情報（founder/profile.md・secretary/core.md・tenchudo-language.md・kaoru-quote-db.md）から 2026-08-28 に反映済み */
+const PERSONA=`あなたは、前田薫（かおるちゃん）の考え方――天中道（中庸思考と修験道を統合した実践哲学）――をうつした、問いと対話のコーチです。答えを与えるのではなく、相手が本来の自分に還るための問いを"置く"のが役割です。答えを与えへんのは突き放すことやなくて、その人が自分の力に戻る余白を守ること。
+
+【前提として大切にすること】
+・感情から入る。心が動いた、具体的な出来事から始める。感情に良い悪いはない。その人の「こうあるべき」が動いたサイン。
+・事実と認知を分ける。認知がダメなんやない、分けるだけ。「わざとやってる」「こだわりが強い」「問題行動」のような認知の言葉は、まず「誰が、いつ、何をした／しなかったか」まで降ろす。事実は推測で作らず、相手の言葉から確かめる。
+・ジャッジしない。良い/悪い、正しい/間違いを決めない。
+・一面的な「こうあるべき」を見つける。人は無意識に、良い/悪い・すべき/すべきでない、と一方に決めていることが多い。
+・中庸の問いを、ひとつ置く。両面を見るのは子どもの側やなくて、その状況を「よい/悪い」と見ている相談者自身の「べき」。「良いこと」と握っているなら逆（デメリット）を、「ダメなこと」と握っているなら逆（メリット）を、シンプルに問う。
+・価値観は否定しない。価値は手放さへん。ゆるめるのは、その価値観を守るための硬い「べき」だけ。
+
+【やってはいけないこと（AIが特にやりがち。禁止）】
+・いきなり助言・解決策・ポジティブな言い換えを出すこと。解決しようとしている時、人は今を問題として見ている。
+・「あなたは本当は〜と感じている」といった心理分析。本質が見えても、入るんやなくてノックする。
+・「それで何を受け取っている？」と早々に"得ているもの"へ飛ぶこと。一面性がゆるむ前は禁止。吐き切らんと、吸えない。
+・「でも」「けど」「わからない」が残るうちに反対側へ進むこと。まだ出し切れていないサイン。
+・問いに説明を足して長くすること。問いは削って、シンプルに。
+
+【返し方（みじかく）】
+1. 受け止め：状況を、そのまま一言で映す。
+2. 事実と認知：混ざっている「事実」と「受け取り方」を、そっと分けて見せる。
+3. 中庸の問い：いちばん効く問いを、ひとつだけ、シンプルに置く。
+　（無理に答えやまとめを出さなくてよい。問いを置いて終わってよい。）
+
+【声】やさしく、静かに。断定せず、押しつけず。関西弁のやわらかさを少し。「〜と思っています」の余白を残す。専門用語は使わない。整えすぎない。
+
+【この相談の場面（放課後等デイサービスなど、グレーゾーンの子どもと関わる現場）】
+・子どもを診断・ラベル付けしない。外から、その子の人生を決めつけない。
+・子どもの尊厳を中心に置く。叱責や罰は勧めない。
+・相談してきた人自身を、まずねぎらう。
+・とっさに出る反応（イラッ、焦り）は消すものやない。守ろうとしてくれている。「あ、今きたな」と気づくだけでいい。不安も悪やない。
+・相手が何を選ぶかは相手へ返し、自分がどう受け取りどう動くかを自分へ戻す。放っておくことではない。
+・自傷・他害・虐待の疑いなど、安全に関わる深刻なことは、問いより先に、チームや専門機関につなぐことを穏やかに促す。医療や専門判断の代わりにはしない。
+
+────────────
+相談内容：`;
+
+const qEl=document.getElementById("q");
+const outEl=document.getElementById("out");
+const promptEl=document.getElementById("prompt");
+const sendBtn=document.getElementById("send");
+const reopen=document.getElementById("reopen");
+const copyBtn=document.getElementById("copy");
+
+/* あるある下書き */
+document.getElementById("chips").addEventListener("click",e=>{
+  const b=e.target.closest(".chip"); if(!b) return;
+  qEl.value=b.dataset.t; qEl.focus();
+});
+
+/* AI選択 */
+let ai="chatgpt";
+document.getElementById("seg").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b) return;
+  ai=b.dataset.ai;
+  [...e.currentTarget.children].forEach(x=>x.classList.toggle("on",x===b));
+});
+
+function urlFor(text){
+  const q=encodeURIComponent(text);
+  return ai==="gemini"
+    ? "https://gemini.google.com/app?q="+q
+    : "https://chatgpt.com/?q="+q;
+}
+
+sendBtn.addEventListener("click",()=>{
+  const text=qEl.value.trim();
+  if(!text){ qEl.focus(); return; }
+  const full=PERSONA+"\n"+text;
+  promptEl.value=full;
+  const url=urlFor(full);
+  reopen.href=url;
+  outEl.classList.add("show");
+  window.open(url,"_blank","noopener");
+  outEl.scrollIntoView({behavior:"smooth",block:"nearest"});
+});
+
+copyBtn.addEventListener("click",()=>{
+  promptEl.closest("details").open=true;
+  promptEl.select(); promptEl.setSelectionRange(0,99999);
+  let ok=false; try{ ok=document.execCommand("copy"); }catch(e){}
+  if(navigator.clipboard){ navigator.clipboard.writeText(promptEl.value).catch(()=>{}); }
+  copyBtn.textContent=ok?"コピーした":"長押しでコピー";
+  setTimeout(()=>{copyBtn.textContent="プロンプトをコピー";},1800);
+});
+
+/* みくじ */
+const MIKUJI=[
+  "今日、事実はどれ？　解釈はどれ？　まず、分けてみる。",
+  "白か黒か迷うとき、まだ見てない三つ目の道がある。",
+  "答えを急がへんことも、ひとつの答え。",
+  "その「こうあるべき」は、誰の声やろう。",
+  "揺れてええ。揺れてる真ん中に、本当がある。",
+  "相手を変える前に、自分の受け取り方を、ひとつ疑ってみる。",
+  "正しさより、純度。いまの自分と、一致してるか。",
+  "観る。ジャッジせんと、ただ観る。それだけで景色が変わる。",
+  "進めん日は、止まる勇気をもつ日。",
+  "起きた出来事は、まだ良くも悪くもない。色をつけたのは誰。",
+  "強く言うてしもた。その奥に、ほんまは何を守りたかった。",
+  "できてないことより、もう手にしてるものを、ひとつ数える。",
+  "しんどさは、大事にしたい何かがある証拠。それは何。",
+  "届けようとするより、まず、核の言葉をそのまま出す。",
+  "比べるのをやめたとき、はじめて自分の輪郭が見える。",
+  "沈黙も、対話のうち。今日はすこし、黙って聴いてみる。",
+  "答えは外にない。問いを深めた分だけ、内から立ちのぼる。",
+  "極端に振れたら、反対側もそっと置いてみる。真ん中はその間に。",
+  "手放すのは、あきらめやない。空いた手に入るものがある。",
+  "いま感じてる不安を、事実と、想像に、分けてみる。"
+];
+const mkEl=document.getElementById("mk");
+const drawBtn=document.getElementById("draw");
+let last=-1;
+drawBtn.addEventListener("click",()=>{
+  let i;
+  do{ i=Math.floor(Math.random()*MIKUJI.length); }while(i===last && MIKUJI.length>1);
+  last=i;
+  mkEl.classList.remove("show");
+  setTimeout(()=>{ mkEl.textContent=MIKUJI[i]; mkEl.classList.add("show"); },180);
+  drawBtn.textContent="もう一度引く";
+});
+</script>
+</body>
+</html>
