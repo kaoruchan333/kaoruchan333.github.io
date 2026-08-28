@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>天川浄化リトリート｜心音に耳を澄ませる3日間 - よっちゃん×かおるちゃん共同開催</title>
-  <meta name="description" content="仲川よしのお呼びかけによる天川浄化リトリート。日常の役割を一度置き、天川の豊かな自然・水・祈りの場で自分の『心音（こころね）』を聴き直す3日間。">
+  <title>天川浄化リトリート｜心音に耳を澄ませる3日間 - よっちゃん・かおるちゃん・ひとたん</title>
+  <meta name="description" content="仲川よしの、前田薫、ひとたんが共に守る天川浄化リトリート。天川の自然・水・祈り、対話、手作りの食を通して、自分の『心音（こころね）』を聴き直す3日間。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -407,7 +407,7 @@
       object-fit: cover;
     }
 
-    /* Co-Hosts Dual Section */
+    /* Three Guides Section */
     .hosts-dual-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -422,6 +422,24 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.03);
       display: flex;
       flex-direction: column;
+    }
+    .host-card-wide {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.45fr);
+      gap: 32px;
+    }
+    .host-card-wide .host-card-header {
+      align-self: start;
+      margin-bottom: 0;
+    }
+    .host-avatar-letter {
+      display: grid;
+      place-items: center;
+      background: var(--forest);
+      color: var(--gold-light);
+      font-family: var(--serif);
+      font-size: 28px;
     }
     .host-card-header {
       display: flex;
@@ -696,6 +714,11 @@
       .hosts-dual-grid {
         grid-template-columns: 1fr;
       }
+      .host-card-wide {
+        grid-column: auto;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
       .timeline {
         grid-template-columns: 1fr;
       }
@@ -728,12 +751,12 @@
     <div class="nav-inner">
       <div class="brand">
         <div class="brand-mark">天</div>
-        <span>天川浄化リトリート｜よっちゃん×かおるちゃん</span>
+        <span>天川浄化リトリート｜三人で守る心音の場</span>
       </div>
       <div class="nav-links">
         <a href="#letter">よっちゃんの手紙</a>
         <a href="#concept">天川と天中道</a>
-        <a href="#hosts">二人の案内人</a>
+        <a href="#hosts">三人の案内人</a>
         <a href="#journey">三日間の流れ</a>
         <a href="#overview">開催概要</a>
         <a href="#contact">ご相談・お問合せ</a>
@@ -748,7 +771,7 @@
     </div>
     <div class="hero-container">
       <div class="hero-title-area fade-in">
-        <span class="sub">仲川よしの × 前田薫 共同企画</span>
+        <span class="sub">仲川よしの × 前田薫 共同企画｜食と暮らしの伴走：ひとたん</span>
         <h1>天川浄化リトリート<br><span style="font-size: 0.72em; color: var(--gold-light);">心音（こころね）に耳を澄ませる3日間</span></h1>
         <p>
           日常のいくつもの役割を一度そっと置き、<br>
@@ -848,13 +871,13 @@
     </div>
   </section>
 
-  <!-- Section 3: Dual Co-Hosts Alignment -->
+  <!-- Section 3: Three Guides -->
   <section class="section shell" id="hosts">
     <div class="wrap">
-      <div class="kicker">CO-HOSTS</div>
-      <h2>ふたりの役割と、重なる想い</h2>
+      <div class="kicker">THREE GUIDES</div>
+      <h2>三人で守る、心音を聴くための場</h2>
       <p class="lead">
-        どちらか一人の世界観に染めるのではなく、よっちゃんの感性と言葉の力、かおるちゃんの天川の場づくりと実践体系が重なり合って、このリトリートは成り立っています。
+        よっちゃんが心音を聴き、未来を言葉にする。かおるちゃんが天川と天中道の場を守る。ひとたんが食と暮らしから、心と身体が緩む土台をつくる。三人の違いが重なることで、このリトリートは成り立っています。
       </p>
 
       <div class="hosts-dual-grid">
@@ -911,6 +934,34 @@
             <span>#答えを渡さない場</span>
           </div>
         </div>
+
+        <!-- Guide 3: Hitotan -->
+        <div class="host-card host-card-wide fade-in" style="transition-delay: 0.3s;">
+          <div class="host-card-header">
+            <div class="host-avatar host-avatar-letter" aria-hidden="true">食</div>
+            <div class="host-title-group">
+              <span class="role">FOOD, DAILY LIFE & COACHING</span>
+              <h3>ひとたん</h3>
+              <p style="font-size: 12px; color: var(--muted); margin-top: 6px;">食と暮らしの伴走者／コーチ</p>
+            </div>
+          </div>
+          <div>
+            <div class="host-card-body">
+              <p>
+                かおるちゃんが「自分にとってナンバーワンのコーチ」と心から信頼する人。発酵と手仕事のある暮らしを、日々実践しています。
+              </p>
+              <p>
+                自家製のぬか漬け、味噌、梅干し。時間をかけて育ててきた発酵食と、天川の季節や素材を生かした手作りの精進料理で、三日間の食卓を整えます。食べること、待つこと、共に暮らすことも、人が自分へ戻るための大切な伴走です。
+              </p>
+            </div>
+            <div class="host-tags">
+              <span>#自分を置いていかない</span>
+              <span>#発酵と手仕事</span>
+              <span>#心と身体を整える食卓</span>
+              <span>#暮らしの中のコーチング</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -935,7 +986,7 @@
             <li>天河大辨財天社 参拝（天川の土地へのご挨拶）</li>
             <li>洞川温泉「清緑庵」チェックイン</li>
             <li>望月ご住職による坐禅 <span class="status-badge pending">日程調整中</span></li>
-            <li>身体を緩める夜のオリエンテーション＆夕食</li>
+            <li>ひとたんの手作り料理を囲む、身体を緩める夜の食卓とオリエンテーション</li>
           </ul>
         </div>
 
@@ -946,6 +997,7 @@
           <div class="day-theme">10月17日（土）｜浄化と未来の統合ワーク</div>
           <ul class="day-list">
             <li>朝の静けさ・清流散策と空気への触れ合い</li>
+            <li>自家製のぬか漬け、味噌、梅干しと精進料理を中心にした、心と身体を整える食事</li>
             <li>ジャノクラ登拝または自然体験 <span class="status-badge pending">安全最優先</span></li>
             <li>温泉・水の浄化（身体を深く緩める）</li>
             <li>【よっちゃんメインワーク】<br>自分の心音（こころね）に耳を澄ませ、未来の自分を言語化する</li>
@@ -985,7 +1037,7 @@
         </p>
         <p style="margin-bottom: 0;">
           ⭕ <strong>私たちが約束するのは、安心して鎧を脱げる「本物の場と余白」です。</strong><br>
-          答えを教え込むのではなく、天川の場とふたりの伴走を通じて、あなた自身が自分の言葉を聴き、納得のいく未来の一歩を選び取れる環境を全力で守ります。
+          答えを教え込むのではなく、天川の場と三人の伴走を通じて、あなた自身が自分の言葉を聴き、納得のいく未来の一歩を選び取れる環境を全力で守ります。
         </p>
       </div>
     </div>
@@ -1036,12 +1088,19 @@
             <tr>
               <th>主な体験</th>
               <td>
-                天河大辨財天社、温泉、清緑庵滞在、望月ご住職坐禅（調整中）、登拝/水体験（天候優先）、よっちゃん未来統合ワーク
+                天河大辨財天社、温泉、清緑庵滞在、望月ご住職坐禅（調整中）、登拝/水体験（天候優先）、よっちゃん未来統合ワーク、ひとたんの食と暮らしの場づくり
+              </td>
+            </tr>
+            <tr>
+              <th>三日間の食</th>
+              <td>
+                ひとたんの自家製ぬか漬け・味噌・梅干しと、手作りの精進料理を中心に設計
+                <span class="status-badge pending">献立・アレルギー対応調整中</span>
               </td>
             </tr>
             <tr>
               <th>案内人</th>
-              <td>仲川よしの（よっちゃん）、前田薫（かおるちゃん）</td>
+              <td>仲川よしの（よっちゃん）、前田薫（かおるちゃん）、ひとたん</td>
             </tr>
           </tbody>
         </table>
@@ -1077,14 +1136,14 @@
       </h2>
       <p class="lead" style="margin-left: auto; margin-right: auto; max-width: 40em; margin-bottom: 32px;">
         忙しい日常からほんの少しだけ離れて、自分を愛し、新しい一歩を自分の言葉にする3日間。<br>
-        天川の地で、よっちゃんとかおるちゃんが笑顔でお待ちしています。
+        天川の地で、よっちゃん、かおるちゃん、ひとたんが笑顔でお待ちしています。
       </p>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2026 天川浄化リトリート 共同プロジェクト（仲川よしの × 前田薫）. All Rights Reserved.</p>
+    <p>© 2026 天川浄化リトリート（仲川よしの × 前田薫｜食と暮らしの伴走：ひとたん）. All Rights Reserved.</p>
   </footer>
 
   <!-- Simple Interactivity JS -->
