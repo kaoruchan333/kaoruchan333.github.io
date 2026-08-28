@@ -1,0 +1,1120 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>天川浄化リトリート｜心音に耳を澄ませる3日間 - よっちゃん×かおるちゃん共同開催</title>
+  <meta name="description" content="仲川よしのお呼びかけによる天川浄化リトリート。日常の役割を一度置き、天川の豊かな自然・水・祈りの場で自分の『心音（こころね）』を聴き直す3日間。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1c1816;
+      --deep: #111a16;
+      --night: #0a110e;
+      --forest: #1e3a32;
+      --moss: #4d6349;
+      --water: #5b8e8c;
+      --paper: #fcf9f4;
+      --shell: #f3eae0;
+      --mist: #e5ded4;
+      --warm-bg: #f7f2ea;
+      --rose: #a86264;
+      --gold: #9e7d43;
+      --gold-light: #d4b475;
+      --muted: #6e645a;
+      --line: rgba(28, 24, 22, 0.12);
+      --serif: "Noto Serif JP", serif;
+      --sans: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      --shadow: 0 20px 50px rgba(10, 17, 14, 0.15);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--night); }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      line-height: 1.95;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    ::selection { background: rgba(158, 125, 67, 0.25); }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    p, h1, h2, h3, h4 { margin-top: 0; }
+
+    /* Progress bar */
+    .progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      z-index: 300;
+      width: 100%;
+      height: 3px;
+      background: rgba(158, 125, 67, 0.15);
+    }
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--rose), var(--water));
+      transition: width 0.1s linear;
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 3px;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      color: rgba(255,255,255,0.88);
+      transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+    }
+    .nav.is-scrolled {
+      color: var(--deep);
+      background: rgba(252, 249, 244, 0.92);
+      border-bottom: 1px solid rgba(28,24,22,0.08);
+      backdrop-filter: blur(16px);
+    }
+    .nav-inner {
+      width: min(1180px, calc(100% - 32px));
+      min-height: 64px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      font-size: 14px;
+    }
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 13px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      opacity: 0.85;
+      transition: opacity 0.2s ease, background 0.2s ease;
+    }
+    .nav-links a:hover { opacity: 1; background: rgba(158, 125, 67, 0.12); }
+
+    /* Layout Components */
+    .wrap {
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+    .narrow {
+      width: min(780px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+    .section {
+      position: relative;
+      padding: clamp(80px, 10vw, 130px) 0;
+      background: var(--paper);
+    }
+    .section.warm { background: var(--warm-bg); }
+    .section.shell { background: var(--shell); }
+    .section.dark {
+      color: #fff;
+      background: var(--deep);
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 20px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .kicker::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+    h2 {
+      margin-bottom: 24px;
+      font-family: var(--serif);
+      font-size: clamp(28px, 3.8vw, 48px);
+      font-weight: 400;
+      line-height: 1.45;
+      letter-spacing: 0.04em;
+    }
+    .lead {
+      max-width: 44em;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: clamp(15px, 1.25vw, 17px);
+      line-height: 2.1;
+    }
+    .dark .lead { color: rgba(255,255,255,0.75); }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      color: #fff;
+      background: var(--night);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      filter: brightness(0.7) contrast(1.05);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 75% 25%, rgba(158, 125, 67, 0.2), transparent 40%),
+        linear-gradient(180deg, rgba(10, 17, 14, 0.4), rgba(10, 17, 14, 0.88));
+    }
+    .hero-container {
+      position: relative;
+      z-index: 2;
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 120px 0 60px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+      gap: clamp(32px, 5vw, 64px);
+      align-items: center;
+    }
+    .hero-title-area .sub {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: var(--gold-light);
+      font-size: clamp(13px, 1.1vw, 15px);
+      letter-spacing: 0.16em;
+      font-weight: 500;
+    }
+    .hero-title-area h1 {
+      font-family: var(--serif);
+      font-size: clamp(36px, 5.2vw, 68px);
+      font-weight: 400;
+      line-height: 1.3;
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+      text-wrap: balance;
+    }
+    .hero-title-area p {
+      max-width: 38em;
+      color: rgba(255,255,255,0.85);
+      font-size: clamp(14px, 1.1vw, 16px);
+      line-height: 2;
+      margin-bottom: 32px;
+    }
+    .hero-meta-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.92);
+    }
+    .meta-pill strong { color: var(--gold-light); }
+
+    /* Hero Profile Card */
+    .hero-profile-card {
+      background: rgba(252, 249, 244, 0.94);
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 8px;
+      padding: 24px;
+      color: var(--ink);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+      backdrop-filter: blur(16px);
+    }
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    .profile-img-wrap {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex: 0 0 auto;
+      border: 2px solid var(--gold);
+    }
+    .profile-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .profile-info h3 {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0 0 4px;
+    }
+    .profile-info p {
+      margin: 0;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+    .profile-quote {
+      font-family: var(--serif);
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--forest);
+      margin: 0 0 16px;
+      padding: 12px 14px;
+      background: var(--warm-bg);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+    }
+    .profile-card-note {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.8;
+    }
+
+    /* Letter Section */
+    .letter-box {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: clamp(32px, 6vw, 64px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+      position: relative;
+    }
+    .letter-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .letter-title {
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.5vw, 32px);
+      font-weight: 500;
+      color: var(--forest);
+      margin-bottom: 8px;
+    }
+    .letter-subtitle {
+      font-size: 13px;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+    }
+    .letter-body p {
+      font-size: clamp(15px, 1.2vw, 17px);
+      line-height: 2.15;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+    .letter-body p strong {
+      color: var(--forest);
+      background: linear-gradient(transparent 65%, rgba(158, 125, 67, 0.15) 65%);
+    }
+    .letter-signature {
+      margin-top: 40px;
+      text-align: right;
+      font-family: var(--serif);
+      font-size: 18px;
+      color: var(--forest);
+    }
+
+    /* Concept & Tenchudo Grid */
+    .concept-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(32px, 5vw, 64px);
+      align-items: center;
+    }
+    .concept-text h3 {
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.8vw, 34px);
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      color: var(--deep);
+    }
+    .concept-text p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 2.1;
+      margin-bottom: 20px;
+    }
+    .concept-img-frame {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      aspect-ratio: 4 / 3;
+    }
+    .concept-img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Co-Hosts Dual Section */
+    .hosts-dual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 40px;
+    }
+    .host-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+    }
+    .host-card-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .host-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex: 0 0 auto;
+      border: 2px solid var(--gold);
+    }
+    .host-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .host-title-group .role {
+      font-size: 11px;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .host-title-group h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 600;
+      margin: 0;
+    }
+    .host-card-body p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 2;
+      margin-bottom: 16px;
+    }
+    .host-tags {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--line);
+    }
+    .host-tags span {
+      font-size: 12px;
+      background: var(--warm-bg);
+      color: var(--forest);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    /* Program 3-Day Journey */
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .day-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 32px 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+    }
+    .day-badge {
+      font-family: var(--serif);
+      font-size: 38px;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .day-card h3 {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--deep);
+      line-height: 1.4;
+    }
+    .day-theme {
+      font-size: 13px;
+      color: var(--forest);
+      font-weight: 700;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+    .day-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .day-list li {
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 16px;
+    }
+    .day-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 16px;
+    }
+
+    /* Status & Overview Table */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 380px);
+      gap: 40px;
+      align-items: start;
+    }
+    .overview-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .overview-table th,
+    .overview-table td {
+      padding: 16px 20px;
+      text-align: left;
+      font-size: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .overview-table th {
+      background: var(--warm-bg);
+      color: var(--forest);
+      font-weight: 700;
+      width: 140px;
+      white-space: nowrap;
+    }
+    .overview-table td {
+      color: var(--ink);
+      line-height: 1.8;
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-left: 8px;
+    }
+    .status-badge.confirmed {
+      background: rgba(30, 58, 50, 0.1);
+      color: var(--forest);
+    }
+    .status-badge.pending {
+      background: rgba(168, 98, 100, 0.12);
+      color: var(--rose);
+    }
+
+    .price-box {
+      background: var(--deep);
+      color: #fff;
+      border-radius: 8px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 100px;
+    }
+    .price-header {
+      font-size: 12px;
+      color: var(--gold-light);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .price-amount {
+      font-family: var(--serif);
+      font-size: 42px;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .price-amount span {
+      font-size: 16px;
+      color: rgba(255,255,255,0.7);
+    }
+    .price-desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .cta-button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 24px;
+      background: linear-gradient(135deg, var(--gold), #8a6a32);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.25);
+      font-weight: 500;
+      font-size: 14px;
+      border-radius: 6px;
+      transition: background 0.2s ease;
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.18);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--night);
+      color: rgba(255,255,255,0.5);
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 12px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Scroll Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .fade-in.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        padding-top: 100px;
+      }
+      .concept-grid {
+        grid-template-columns: 1fr;
+      }
+      .hosts-dual-grid {
+        grid-template-columns: 1fr;
+      }
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+      .overview-grid {
+        grid-template-columns: 1fr;
+      }
+      .price-box {
+        position: static;
+      }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 640px) {
+      .section { padding: 60px 0; }
+      .letter-box { padding: 24px 18px; }
+      .overview-table th, .overview-table td {
+        padding: 12px;
+        font-size: 13px;
+      }
+      .overview-table th { width: 100px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+
+  <!-- Navigation Bar -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-mark">天</div>
+        <span>天川浄化リトリート｜よっちゃん×かおるちゃん</span>
+      </div>
+      <div class="nav-links">
+        <a href="#letter">よっちゃんの手紙</a>
+        <a href="#concept">天川と天中道</a>
+        <a href="#hosts">二人の案内人</a>
+        <a href="#journey">三日間の流れ</a>
+        <a href="#overview">開催概要</a>
+        <a href="#contact">ご相談・お問合せ</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-bg">
+      <img src="../assets/tenkawa/benzaiten-torii.jpg" alt="天河大辨財天社 鳥居">
+    </div>
+    <div class="hero-container">
+      <div class="hero-title-area fade-in">
+        <span class="sub">仲川よしの × 前田薫 共同企画</span>
+        <h1>天川浄化リトリート<br><span style="font-size: 0.72em; color: var(--gold-light);">心音（こころね）に耳を澄ませる3日間</span></h1>
+        <p>
+          日常のいくつもの役割を一度そっと置き、<br>
+          1300年の祈りと豊かな水の湧く天川村へ。<br>
+          忘れていた自分自身の声を取り戻し、未来の一歩を言葉にする時間。
+        </p>
+        <div class="hero-meta-pills">
+          <div class="meta-pill">日程: <strong>2026年10月16日(金)〜18日(日)</strong></div>
+          <div class="meta-pill">場所: <strong>奈良県吉野郡 天川村（洞川温泉）</strong></div>
+          <div class="meta-pill">対象: <strong>女性限定 / 最大8名</strong></div>
+        </div>
+      </div>
+
+      <!-- Hero Profile Card (Yocchan) -->
+      <div class="hero-profile-card fade-in" style="transition-delay: 0.2s;">
+        <div class="profile-header">
+          <div class="profile-img-wrap">
+            <img src="../assets/yocchan-profile.png" alt="仲川よしの">
+          </div>
+          <div class="profile-info">
+            <h3>仲川よしの（よっちゃん）</h3>
+            <p>共同発起人 / 変容伴走・未来統合ワーク</p>
+          </div>
+        </div>
+        <div class="profile-quote">
+          「天川じゃなきゃ耳を傾けられなかった心の声を、いま“わたし”が受け止める」
+        </div>
+        <p class="profile-card-note">
+          これまで伴走してきたあなたへ。<br>
+          いつも頑張ってきた身体と心を緩め、天川の静寂の中で一緒に『心音』を聴きましょう。
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Section 1: Letter from Yocchan -->
+  <section class="section warm" id="letter">
+    <div class="wrap narrow">
+      <div class="letter-box fade-in">
+        <div class="letter-header">
+          <span class="letter-subtitle">A LETTER FROM YOCCHAN</span>
+          <h2 class="letter-title">よっちゃんから、大切なあなたへ</h2>
+        </div>
+        <div class="letter-body">
+          <p>
+            いつも私と出会ってくれて、本当にありがとうございます。
+          </p>
+          <p>
+            ふと立ち止まったとき、心の奥でこんなことを感じたことはありませんか？<br>
+            <strong>「お母さんとしての私」「妻としての私」「仕事での私」「頼られる私」</strong>……。<br>
+            周囲の期待に応え、誰かのために懸命に役割を果たしてきた日々。それは決して間違っていなかったし、誇れる大切な時間です。
+          </p>
+          <p>
+            だけど40代、50代を迎えた今、理由のない疲れや「これから私はどう生きたいんだろう」という静かな問いが聴こえてくることがあります。
+          </p>
+          <p>
+            何かを新しく付け足す必要はありません。これまでの役割を否定する必要もありません。<br>
+            ただ、<strong>日常の重い「鎧」を一度そっと横に置いて、童心にかえり、あなた自身の「心音（こころね）」を聴き直す時間</strong>をつくりたい。
+          </p>
+          <p>
+            だからこそ、いつものセッションルームではなく、私自身が深く感応した特別な場所——<strong>天川村</strong>で、少人数の大切な皆さんとこの3日間を過ごしたいと願っています。
+          </p>
+        </div>
+        <div class="letter-signature">
+          仲川よしの
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Why Tenkawa & Tenchudo -->
+  <section class="section" id="concept">
+    <div class="wrap">
+      <div class="kicker">WHY TENKAWA & TENCHUDO</div>
+      <h2>なぜ、いま天川村なのか</h2>
+      <p class="lead" style="margin-bottom: 48px;">
+        天川村は、単なる映える観光地でも、安易な癒やしを消費する場所でもありません。<br>
+        修験道1300年の祈りと、清らかな水・山・風の音が満ちる土地です。
+      </p>
+
+      <div class="concept-grid">
+        <div class="concept-text fade-in">
+          <h3>感じようとしなくても、身体が感じてしまう場所</h3>
+          <p>
+            都心の忙しない情報の中で、私たちの脳と身体は「どう振る舞うべきか」の認知で緊張し続けています。<br>
+            天川の清流に触れ、冷涼な森の空気と静寂に身体をあずけると、理屈ではなく身体の緊張が解けていきます。
+          </p>
+          <p>
+            前田薫が探求する<strong>「天中道（てんちゅうどう）」</strong>では、無理に自分を変えようとはしません。<br>
+            身体の反応に気づき、事実と認知の意味づけを分け、自分の内側にある「本当の価値観」から未来を選び直すこと。天川の場は、そのための純粋な余白と心理的安全性を守ってくれます。
+          </p>
+        </div>
+        <div class="concept-img-frame fade-in" style="transition-delay: 0.2s;">
+          <img src="../assets/tenkawa/morning-water-light-web.jpg" alt="天川村の清流と光">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Dual Co-Hosts Alignment -->
+  <section class="section shell" id="hosts">
+    <div class="wrap">
+      <div class="kicker">CO-HOSTS</div>
+      <h2>ふたりの役割と、重なる想い</h2>
+      <p class="lead">
+        どちらか一人の世界観に染めるのではなく、よっちゃんの感性と言葉の力、かおるちゃんの天川の場づくりと実践体系が重なり合って、このリトリートは成り立っています。
+      </p>
+
+      <div class="hosts-dual-grid">
+        <!-- Host 1: Yocchan -->
+        <div class="host-card fade-in">
+          <div class="host-card-header">
+            <div class="host-avatar">
+              <img src="../assets/yocchan-profile.png" alt="仲川よしの">
+            </div>
+            <div class="host-title-group">
+              <span class="role">CO-HOST / TRANSFORMATIONAL COACH</span>
+              <h3>仲川よしの（よっちゃん）</h3>
+            </div>
+          </div>
+          <div class="host-card-body">
+            <p>
+              女性たちの心の奥にある「心音（こころね）」を捉え、感情の壁を一緒に越えていく変容支援の専門家。
+            </p>
+            <p>
+              リトリートでは、一人ひとりが自分の心音を聴き取り、未来のセルフイメージを言葉にして仲間と分かち合い、互いに応援し合う安全で温かいワークを担当します。
+            </p>
+          </div>
+          <div class="host-tags">
+            <span>#心音を聴く</span>
+            <span>#鎧を脱ぐ</span>
+            <span>#童心にかえる</span>
+            <span>#未来の統合</span>
+          </div>
+        </div>
+
+        <!-- Host 2: Kaoru Maeda -->
+        <div class="host-card fade-in" style="transition-delay: 0.2s;">
+          <div class="host-card-header">
+            <div class="host-avatar">
+              <img src="../assets/kaoru/kaoru-pray-snow.jpg" alt="前田薫">
+            </div>
+            <div class="host-title-group">
+              <span class="role">CO-HOST / FIELD DESIGN & TENCHUDO</span>
+              <h3>前田薫（かおるちゃん）</h3>
+            </div>
+          </div>
+          <div class="host-card-body">
+            <p>
+              天川村の拠点づくりと、中庸道・修験道・天中道の実践体系を探求する場の設計者。
+            </p>
+            <p>
+              答えを与えるのではなく、天川の自然、地域、寺社、坐禅、対話をつなぎ、参加者が自分自身の言葉を安全に聴き出せる「場の構造と余白」をしっかりと守ります。
+            </p>
+          </div>
+          <div class="host-tags">
+            <span>#天川の場の設計</span>
+            <span>#事実と認知の分離</span>
+            <span>#修験道と天中道</span>
+            <span>#答えを渡さない場</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: 3-Day Journey -->
+  <section class="section" id="journey">
+    <div class="wrap">
+      <div class="kicker">PROGRAM & ITINERARY</div>
+      <h2>3日間の歩み</h2>
+      <p class="lead">
+        観光ツアーのように予定を詰め込むのではなく、身体を預け、静けさへ還り、自分の言葉を取り戻す順番を大切に設計しています。
+      </p>
+
+      <div class="timeline">
+        <!-- Day 1 -->
+        <div class="day-card fade-in">
+          <div class="day-badge">Day 1</div>
+          <h3>入る・鎮まる<br>天川の場に身体を預ける</h3>
+          <div class="day-theme">10月16日（金）｜日常を離れ、静けさへの入り口</div>
+          <ul class="day-list">
+            <li>13:00 下市口駅 集合案・送迎</li>
+            <li>天河大辨財天社 参拝（天川の土地へのご挨拶）</li>
+            <li>洞川温泉「清緑庵」チェックイン</li>
+            <li>望月ご住職による坐禅 <span class="status-badge pending">日程調整中</span></li>
+            <li>身体を緩める夜のオリエンテーション＆夕食</li>
+          </ul>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="day-card fade-in" style="transition-delay: 0.15s;">
+          <div class="day-badge">Day 2</div>
+          <h3>脱ぐ・聴く<br>身体を解きほぐし心音を聴く</h3>
+          <div class="day-theme">10月17日（土）｜浄化と未来の統合ワーク</div>
+          <ul class="day-list">
+            <li>朝の静けさ・清流散策と空気への触れ合い</li>
+            <li>ジャノクラ登拝または自然体験 <span class="status-badge pending">安全最優先</span></li>
+            <li>温泉・水の浄化（身体を深く緩める）</li>
+            <li>【よっちゃんメインワーク】<br>自分の心音（こころね）に耳を澄ませ、未来の自分を言語化する</li>
+            <li>未来の自分として語り、応援し合う夜</li>
+          </ul>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="day-card fade-in" style="transition-delay: 0.3s;">
+          <div class="day-badge">Day 3</div>
+          <h3>統合する・歩み出す<br>自分の言葉で日常へ還る</h3>
+          <div class="day-theme">10月18日（日）｜選び直した一歩を胸に</div>
+          <ul class="day-list">
+            <li>朝の静けさ・未来の自分からの手紙</li>
+            <li>【統合クロージング】<br>3日間で浮き彫りになった「これからの私の一歩」を宣言</li>
+            <li>振り返り・記念共有</li>
+            <li>15:00 下市口駅にて解散案</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Our Promise -->
+  <section class="section warm">
+    <div class="wrap narrow">
+      <div class="kicker">OUR PROMISE</div>
+      <h2>参加者へのお約束</h2>
+      <p class="lead" style="margin-bottom: 32px;">
+        私たちは、このリトリートにおいて誠実でありたいと考えています。
+      </p>
+
+      <div style="background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 32px; line-height: 2;">
+        <p style="margin-bottom: 16px;">
+          ❌ <strong>「人生が劇的に変わる」といった誇大広告や変化の保証はいたしません。</strong><br>
+          あなたを「欠けている人」として扱うこともありません。これまで生きてきたすべての時間は、あなたにとって大切な財産です。
+        </p>
+        <p style="margin-bottom: 0;">
+          ⭕ <strong>私たちが約束するのは、安心して鎧を脱げる「本物の場と余白」です。</strong><br>
+          答えを教え込むのではなく、天川の場とふたりの伴走を通じて、あなた自身が自分の言葉を聴き、納得のいく未来の一歩を選び取れる環境を全力で守ります。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Overview & Specs Table -->
+  <section class="section" id="overview">
+    <div class="wrap">
+      <div class="kicker">OUTLINE & STATUS</div>
+      <h2>開催概要と現在の状況</h2>
+      <p class="lead" style="margin-bottom: 40px;">
+        比較検討用v1案としての現時点の開催スペックです。未確定事項は「調整中」として誠実に記載しています。
+      </p>
+
+      <div class="overview-grid">
+        <!-- Specs Table -->
+        <table class="overview-table fade-in">
+          <tbody>
+            <tr>
+              <th>開催日程</th>
+              <td>
+                2026年10月16日（金）〜 10月18日（日）［2泊3日］
+                <span class="status-badge confirmed">日程案確定</span>
+              </td>
+            </tr>
+            <tr>
+              <th>開催場所</th>
+              <td>
+                奈良県吉野郡天川村 洞川温泉（宿泊候補：清緑庵）
+                <span class="status-badge pending">予約・料金調整中</span>
+              </td>
+            </tr>
+            <tr>
+              <th>参加対象</th>
+              <td>
+                女性限定 / 最大8名 （最小催行人数 3名案）
+                <span class="status-badge confirmed">少人数設計</span>
+              </td>
+            </tr>
+            <tr>
+              <th>集合・解散</th>
+              <td>
+                集合: 10月16日(金) 13:00 近鉄「下市口駅」案<br>
+                解散: 10月18日(日) 15:00 同駅 案
+                <span class="status-badge pending">送迎調整中</span>
+              </td>
+            </tr>
+            <tr>
+              <th>主な体験</th>
+              <td>
+                天河大辨財天社、温泉、清緑庵滞在、望月ご住職坐禅（調整中）、登拝/水体験（天候優先）、よっちゃん未来統合ワーク
+              </td>
+            </tr>
+            <tr>
+              <th>案内人</th>
+              <td>仲川よしの（よっちゃん）、前田薫（かおるちゃん）</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Price Box -->
+        <div class="price-box fade-in" style="transition-delay: 0.2s;">
+          <div class="price-header">PROPOSED INVESTMENT</div>
+          <div class="price-amount">
+            158,000 <span>円（税込）案</span>
+          </div>
+          <div class="price-desc">
+            ※2泊3日の宿泊費、体験費、ワーク指導料、現地案内を含みます。<br>
+            ※交通費・一部実費の扱いについては現在確定作業を行っております。
+          </div>
+          <div class="cta-button-group" id="contact">
+            <a href="#contact-note" class="btn-primary">よっちゃんに直接相談してみる</a>
+            <a href="#contact-note" class="btn-secondary">詳細・日程について質問する</a>
+          </div>
+          <p id="contact-note" style="font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 14px; text-align: center;">
+            ※申込URLは調整中のため、現在はよっちゃんへの直接連絡・事前相談を承っております。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Final Closing Message -->
+  <section class="section dark">
+    <div class="wrap narrow text-center" style="text-align: center;">
+      <div class="kicker" style="justify-content: center;">FINAL WORDS</div>
+      <h2 style="margin-left: auto; margin-right: auto; max-width: 14em;">
+        天川の風と水の中で、<br>あなたの「心音」を聴きに行きましょう。
+      </h2>
+      <p class="lead" style="margin-left: auto; margin-right: auto; max-width: 40em; margin-bottom: 32px;">
+        忙しい日常からほんの少しだけ離れて、自分を愛し、新しい一歩を自分の言葉にする3日間。<br>
+        天川の地で、よっちゃんとかおるちゃんが笑顔でお待ちしています。
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 天川浄化リトリート 共同プロジェクト（仲川よしの × 前田薫）. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Simple Interactivity JS -->
+  <script>
+    // Scroll progress bar
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progressBar').style.width = scrolled + '%';
+
+      // Nav scroll class
+      const nav = document.getElementById('mainNav');
+      if (winScroll > 60) {
+        nav.classList.add('is-scrolled');
+      } else {
+        nav.classList.remove('is-scrolled');
+      }
+    });
+
+    // Intersection Observer for fade-in elements
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
