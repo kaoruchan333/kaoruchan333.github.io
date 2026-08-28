@@ -497,6 +497,73 @@
       font-weight: 500;
     }
 
+    /* Opening Zazen */
+    .zazen-section {
+      background: var(--deep);
+      color: #fff;
+    }
+    .zazen-section .kicker { color: var(--gold-light); }
+    .zazen-section h2 { color: #fff; }
+    .zazen-grid {
+      display: grid;
+      grid-template-columns: minmax(300px, 0.85fr) minmax(0, 1.15fr);
+      gap: clamp(36px, 6vw, 76px);
+      align-items: center;
+    }
+    .zazen-photo {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.28);
+    }
+    .zazen-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 22%;
+    }
+    .zazen-name {
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.7vw, 32px);
+      margin: 8px 0 22px;
+    }
+    .zazen-copy {
+      color: rgba(255,255,255,0.78);
+      font-size: 15px;
+      line-height: 2.05;
+      margin-bottom: 18px;
+    }
+    .zazen-core {
+      margin: 28px 0;
+      padding: 22px 24px;
+      border-left: 2px solid var(--gold-light);
+      background: rgba(255,255,255,0.06);
+      font-family: var(--serif);
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.75;
+    }
+    .zazen-voices {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .zazen-voice {
+      min-height: 118px;
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.78);
+      font-size: 12.5px;
+      line-height: 1.8;
+    }
+    .zazen-source {
+      margin-top: 12px;
+      color: rgba(255,255,255,0.46);
+      font-size: 11px;
+    }
+
     /* Program 3-Day Journey */
     .timeline {
       display: grid;
@@ -719,6 +786,9 @@
         grid-template-columns: 1fr;
         gap: 20px;
       }
+      .zazen-grid { grid-template-columns: 1fr; }
+      .zazen-photo { aspect-ratio: 4 / 3; }
+      .zazen-voices { grid-template-columns: 1fr; }
       .timeline {
         grid-template-columns: 1fr;
       }
@@ -757,6 +827,7 @@
         <a href="#letter">よっちゃんの手紙</a>
         <a href="#concept">天川と天中道</a>
         <a href="#hosts">三人の案内人</a>
+        <a href="#zazen">初日の坐禅</a>
         <a href="#journey">三日間の流れ</a>
         <a href="#overview">開催概要</a>
         <a href="#contact">ご相談・お問合せ</a>
@@ -966,7 +1037,39 @@
     </div>
   </section>
 
-  <!-- Section 4: 3-Day Journey -->
+  <!-- Section 4: Opening Zazen -->
+  <section class="section zazen-section" id="zazen">
+    <div class="wrap zazen-grid">
+      <div class="zazen-photo fade-in">
+        <img src="../assets/mochizuki/mochizuki-priest-talk.jpg" alt="龍泉寺で坐禅と呼吸について語る望月宏済ご住職">
+      </div>
+      <div class="fade-in" style="transition-delay: 0.15s;">
+        <div class="kicker">OPENING ZAZEN</div>
+        <h2>初日、まず坐る。<br>ここから三日間が始まります。</h2>
+        <div class="zazen-name">望月宏済ご住職</div>
+        <p class="zazen-copy">
+          京都・臨済宗 興聖寺のご住職。禅を日常として生きながら、形を教えるだけではない本来の坐禅を、天川の場で静かに導いてくださいます。
+        </p>
+        <p class="zazen-copy">
+          望月ご住職が伝える坐禅は、無になることや、うまく坐ることが目的ではありません。呼吸と姿勢へ戻り、情報や思考をいったん降ろし、人間に本来備わる組み立てる力、処理する力、予測する力、そして判断する力を整える時間です。
+        </p>
+        <div class="zazen-core">
+          心音を聴く前に、静けさへ還る。<br>
+          初日の坐禅は、三日間を頭だけの理解で終わらせないための入口です。
+        </div>
+        <p class="zazen-copy">
+          天川の祈りの場、望月ご住職の導き、そして初日に坐るという順番。この三つが重なるからこそ、このリトリートでしか成立しない体験になります。
+        </p>
+        <div class="zazen-voices" aria-label="これまでの天川村座禅会の記録から">
+          <div class="zazen-voice">場所の力を想像以上に感じ、冷気の中で感覚が研ぎ澄まされた。<div class="zazen-source">これまでの参加者の振り返り</div></div>
+          <div class="zazen-voice">自分でも驚くほど息を吐けて、身体の内側が開き、呼吸が楽になった。<div class="zazen-source">これまでの参加者の振り返り</div></div>
+          <div class="zazen-voice">日常に戻ってから、反応するまでに少し余白が生まれた。<div class="zazen-source">これまでの参加者の振り返り</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: 3-Day Journey -->
   <section class="section" id="journey">
     <div class="wrap">
       <div class="kicker">PROGRAM & ITINERARY</div>
@@ -985,7 +1088,7 @@
             <li>13:00 下市口駅 集合案・送迎</li>
             <li>天河大辨財天社 参拝（天川の土地へのご挨拶）</li>
             <li>洞川温泉「清緑庵」チェックイン</li>
-            <li>望月ご住職による坐禅 <span class="status-badge pending">日程調整中</span></li>
+            <li>望月宏済ご住職による、三日間の入口となる坐禅</li>
             <li>ひとたんの手作り料理を囲む、身体を緩める夜の食卓とオリエンテーション</li>
           </ul>
         </div>
@@ -1021,7 +1124,7 @@
     </div>
   </section>
 
-  <!-- Section 5: Our Promise -->
+  <!-- Section 6: Our Promise -->
   <section class="section warm">
     <div class="wrap narrow">
       <div class="kicker">OUR PROMISE</div>
@@ -1049,7 +1152,7 @@
       <div class="kicker">OUTLINE & STATUS</div>
       <h2>開催概要と現在の状況</h2>
       <p class="lead" style="margin-bottom: 40px;">
-        比較検討用v1案としての現時点の開催スペックです。未確定事項は「調整中」として誠実に記載しています。
+        現時点の開催内容です。未確定事項は「調整中」として誠実に記載しています。
       </p>
 
       <div class="overview-grid">
@@ -1088,7 +1191,7 @@
             <tr>
               <th>主な体験</th>
               <td>
-                天河大辨財天社、温泉、清緑庵滞在、望月ご住職坐禅（調整中）、登拝/水体験（天候優先）、よっちゃん未来統合ワーク、ひとたんの食と暮らしの場づくり
+                天河大辨財天社、温泉、清緑庵滞在、望月ご住職による初日の坐禅、登拝/水体験（天候優先）、よっちゃん未来統合ワーク、ひとたんの食と暮らしの場づくり
               </td>
             </tr>
             <tr>
@@ -1101,6 +1204,10 @@
             <tr>
               <th>案内人</th>
               <td>仲川よしの（よっちゃん）、前田薫（かおるちゃん）、ひとたん</td>
+            </tr>
+            <tr>
+              <th>初日の坐禅</th>
+              <td>望月宏済ご住職（京都・臨済宗 興聖寺）</td>
             </tr>
           </tbody>
         </table>
