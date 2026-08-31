@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>よっちゃん 自己理解プロファイル｜かおる塾</title>
+  <style>
+    :root {
+      --ink: #272b29;
+      --muted: #6b716d;
+      --paper: #f8f7f2;
+      --white: #fff;
+      --green: #2f5a49;
+      --green-soft: #dfeae4;
+      --gold: #a9783f;
+      --gold-soft: #f0e5d5;
+      --red: #8a4d48;
+      --line: #d9d9d1;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+      line-height: 1.7;
+      letter-spacing: 0;
+    }
+    body.kj-auth-locked > *:not(#kj-auth-overlay) { display: none !important; }
+    .sheet { width: min(1180px, calc(100% - 32px)); margin: 28px auto 56px; }
+    .utility { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 14px; font-size: 13px; }
+    .utility a { color: var(--green); text-decoration: none; }
+    .utility button { border: 0; background: none; color: var(--green); font: inherit; cursor: pointer; padding: 0; }
+    header { border-top: 6px solid var(--green); border-bottom: 1px solid var(--line); padding: 26px 0 22px; }
+    .eyebrow { color: var(--gold); font-size: 12px; font-weight: 700; }
+    h1 { margin: 4px 0 6px; font-size: clamp(28px, 4vw, 46px); line-height: 1.25; }
+    .lead { margin: 0; color: var(--muted); font-size: 15px; }
+    .core { display: grid; grid-template-columns: 1.15fr .85fr; gap: 28px; padding: 26px 0; border-bottom: 1px solid var(--line); }
+    .core h2, section h2 { margin: 0 0 10px; font-size: 18px; color: var(--green); }
+    .value { font-size: clamp(22px, 3vw, 34px); font-weight: 800; line-height: 1.45; margin: 8px 0 12px; }
+    .formula { background: var(--green); color: white; padding: 18px 20px; border-radius: 6px; font-weight: 700; }
+    .formula span { color: #f4d7a9; }
+    .note { font-size: 13px; color: var(--muted); margin: 10px 0 0; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 26px; }
+    section { padding: 24px 0; border-bottom: 1px solid var(--line); }
+    section:nth-child(3n+1) { }
+    ul { margin: 8px 0 0; padding-left: 1.25em; }
+    li { margin: 6px 0; }
+    .talents { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 22px; }
+    .talent { padding-left: 14px; border-left: 3px solid var(--gold); }
+    .talent strong { display: block; margin-bottom: 3px; }
+    .talent p { margin: 0; color: var(--muted); font-size: 14px; }
+    .two-way { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+    .two-way > div { padding: 16px; background: var(--white); }
+    .two-way > div + div { border-left: 1px solid var(--line); }
+    .two-way h3 { margin: 0 0 8px; font-size: 15px; }
+    .two-way .out h3 { color: var(--green); }
+    .two-way .in h3 { color: var(--red); }
+    .loop { display: flex; align-items: stretch; gap: 7px; margin-top: 14px; }
+    .step { flex: 1; background: var(--white); border: 1px solid var(--line); border-radius: 5px; padding: 12px 9px; font-size: 13px; text-align: center; display: grid; place-items: center; min-height: 74px; }
+    .arrow { display: grid; place-items: center; color: var(--gold); font-weight: 800; }
+    .frameworks { columns: 2; column-gap: 28px; }
+    .frameworks li { break-inside: avoid; }
+    .signal { display: inline-block; margin: 4px 5px 4px 0; padding: 5px 9px; border: 1px solid #c9d7cf; background: var(--green-soft); border-radius: 4px; font-size: 13px; }
+    .return { counter-reset: path; list-style: none; padding: 0; }
+    .return li { counter-increment: path; display: grid; grid-template-columns: 30px 1fr; gap: 8px; align-items: start; }
+    .return li::before { content: counter(path); width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; color: white; background: var(--green); font-size: 12px; font-weight: 700; }
+    .current { background: var(--gold-soft); border-left: 5px solid var(--gold); padding: 18px 20px; margin-top: 12px; }
+    .current strong { display: block; font-size: 18px; margin-bottom: 4px; }
+    .evidence { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
+    .badge { padding: 4px 8px; border-radius: 4px; font-size: 12px; border: 1px solid var(--line); background: white; }
+    footer { padding-top: 18px; color: var(--muted); font-size: 12px; }
+    #kj-auth-overlay { position: fixed; inset: 0; background: linear-gradient(135deg,#26312b,#5b513f); display: grid; place-items: center; padding: 22px; z-index: 9999; }
+    .kj-auth-card { width: min(420px,100%); background:#fbfaf6; color:#2f2b26; border-radius:10px; padding:30px; box-shadow:0 24px 80px rgba(0,0,0,.28); }
+    .kj-auth-label { font-size:12px; color:#9a6a3b; margin-bottom:10px; }
+    .kj-auth-card h1 { font-size:24px; margin:0 0 10px; }
+    .kj-auth-card p { font-size:14px; color:#70685f; }
+    .kj-auth-card input { width:100%; min-height:46px; border:1px solid #d4cabd; border-radius:8px; padding:10px 12px; font-size:16px; background:#fff; margin:8px 0 12px; }
+    .kj-auth-card button { width:100%; min-height:46px; border:0; border-radius:8px; background:#26312b; color:#fff8e8; font-size:15px; font-weight:700; }
+    .kj-auth-error { min-height:22px; color:#a33; font-size:13px; margin-top:8px; }
+    @media (max-width: 820px) {
+      .core, .grid, .talents { grid-template-columns: 1fr; }
+      .loop { display: grid; grid-template-columns: 1fr; }
+      .arrow { transform: rotate(90deg); min-height: 14px; }
+      .frameworks { columns: 1; }
+    }
+    @media (max-width: 560px) {
+      .sheet { width: min(100% - 24px, 1180px); margin-top: 14px; }
+      .two-way { grid-template-columns: 1fr; }
+      .two-way > div + div { border-left: 0; border-top: 1px solid var(--line); }
+      .utility { align-items: flex-start; }
+    }
+    @media print {
+      @page { size: A4 landscape; margin: 8mm; }
+      body { background: white; font-size: 10px; line-height: 1.45; }
+      .sheet { width: auto; margin: 0; }
+      .utility { display: none; }
+      header { padding: 10px 0 8px; }
+      h1 { font-size: 25px; }
+      .lead, .note, .talent p { font-size: 9px; }
+      .core { padding: 10px 0; gap: 16px; }
+      .value { font-size: 18px; }
+      .formula { padding: 9px 12px; }
+      section { padding: 9px 0; break-inside: avoid; }
+      section h2, .core h2 { font-size: 13px; margin-bottom: 5px; }
+      .grid { gap: 0 16px; }
+      .talents { gap: 6px 14px; }
+      .talent { padding-left: 8px; }
+      li { margin: 2px 0; }
+      .loop { margin-top: 7px; }
+      .step { min-height: 48px; padding: 5px; font-size: 9px; }
+      .two-way > div { padding: 8px; }
+      .signal, .badge { padding: 2px 5px; font-size: 9px; }
+      .current { padding: 8px 10px; margin-top: 6px; }
+      footer { padding-top: 8px; }
+    }
+  </style>
+</head>
+<body class="kj-auth-locked">
+  <main class="sheet">
+    <nav class="utility">
+      <a href="../map/">← 認知構造マップへ</a>
+      <button type="button" onclick="window.print()">印刷する</button>
+    </nav>
+
+    <header>
+      <div class="eyebrow">KAORU JUKU / SELF-UNDERSTANDING PROFILE</div>
+      <h1>よっちゃん 自己理解プロファイル</h1>
+      <p class="lead">経歴・本人の言葉・繰り返し起きている反応から、現在地を一枚で見渡す記録</p>
+    </header>
+
+    <div class="core">
+      <div>
+        <h2>これまで一緒に確認してきた価値観</h2>
+        <p class="value">できないものの穴を見つけ、<br>できる形に整えていく。</p>
+        <p class="note">以前の価値観セッションで言葉になり、最近の仕事の話と重ねて、もう一度見直している大切な軸です。</p>
+      </div>
+      <div>
+        <h2>今回の記録で確認できたこと</h2>
+        <div class="formula"><span>見にくい・古い・変だと気づく</span><br>→ このままではまずいと感じる<br>→ より見やすく、直したいと思う</div>
+        <p class="note">ここでは「直せるかどうか」ではなく、実際に何へ気づき、どう感じたかを残しています。</p>
+      </div>
+    </div>
+
+    <section>
+      <h2>まず、事実として積み重ねてきたこと</h2>
+      <div class="talents">
+        <div class="talent"><strong>プログラミングの専門職として、実務と役割を積み重ねてきた</strong><p>開発実務に加え、プロジェクトをまとめる役割も経験してきました。</p></div>
+        <div class="talent"><strong>動いているプログラムの「変」に気づいた</strong><p>既存の処理を仕様書へ起こす途中で、不具合の可能性を見つけました。</p></div>
+        <div class="talent"><strong>違いを具体的に見ていた</strong><p>まとまり、命名規則、見やすさ、古い手法、後から扱う人への伝わりにくさを挙げていました。</p></div>
+        <div class="talent"><strong>分かることと、まだ分からないことを分けていた</strong><p>「見にくいのは分かる。でも、どう直せばいいかまでは分からない」と話していました。</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>よっちゃん自身から出ていた言葉</h2>
+      <div class="two-way">
+        <div class="out"><h3>具体的な仕事について</h3><p>「見にくい」<br>「古いやり方」<br>「変だと気づいた」<br>「本当に何とかしたい」</p></div>
+        <div class="in"><h3>自由に答える問いについて</h3><p>「何を言えばいいんだ」<br>「何を聞かれたか忘れた」<br>「分からない」</p></div>
+      </div>
+      <p class="note">どちらも、よっちゃんの中で実際に起きていたことです。良い・悪いを決めるために並べているのではありません。</p>
+    </section>
+
+    <section>
+      <h2>プログラミングと、自由な言葉の違い</h2>
+      <div class="two-way">
+        <div class="out"><h3>確かめる基準がある</h3><p>プログラミングには文法やルールがあり、正常に動くかを確認できます。他のプログラムと比較し、違いや不具合を具体的に見ることもできます。</p></div>
+        <div class="in"><h3>一つの正解がない</h3><p>自分の気持ちや考えは、何を話すか、どこから話すか、どの言葉を選ぶかを自分で決めます。相手の受け取りも完全には確かめられません。</p></div>
+      </div>
+      <p class="note">だから「コミュニケーションが苦手」と一括りにはできません。具体的な対象や基準がある時には、よっちゃんは細部まで言葉にしています。</p>
+    </section>
+
+    <section>
+      <h2>一つだけ、これから一緒に確かめたいこと</h2>
+      <p>答えが一つではない場面で、もしかすると「正しい答えを出さなければ」と感じ、言葉を選びにくくなることがあるのかもしれません。</p>
+      <p class="note">これは答えではなく、今ある事実をつなぐ一つの仮説です。違うと感じたら、「違う」が大切な答えです。</p>
+      <div class="current">
+        <strong>言葉が止まった時の、小さな問い</strong>
+        正しい答えを出さなくていいとしたら、今、最初に浮かぶ一言は何ですか。<br>「分からない」でも大丈夫です。
+      </div>
+    </section>
+
+    <section>
+      <h2>この一枚の読み方</h2>
+      <p>これは性格や才能を決める診断書ではありません。よっちゃんが実際に話したことと、積み重ねてきた経験を並べ、自分の実感と照らすための一枚です。</p>
+      <div class="evidence">
+        <span class="badge">事実：経歴と実際の出来事</span>
+        <span class="badge">本人の言葉：セッションで出た表現</span>
+        <span class="badge">仮説：一つだけ、今後一緒に確かめること</span>
+      </div>
+    </section>
+
+    <footer>作成：かおる塾 / 認知構造分析記録　更新日：2026年8月31日</footer>
+  </main>
+
+  <script>
+  (() => {
+    const EXPECTED_HASH = '1d3327e0df4257470c17e90db4c8651c840277973efc58a7ee5943f86c279b7b';
+    const STORAGE_KEY = 'kaoru_juku_member_yocchan_auth_v2';
+    function unlock() {
+      document.body.classList.remove('kj-auth-locked');
+      document.getElementById('kj-auth-overlay')?.remove();
+    }
+    async function sha256(text) {
+      const bytes = new TextEncoder().encode(text);
+      const hash = await crypto.subtle.digest('SHA-256', bytes);
+      return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+    if (localStorage.getItem(STORAGE_KEY) === EXPECTED_HASH) { unlock(); return; }
+    const overlay = document.createElement('div');
+    overlay.id = 'kj-auth-overlay';
+    overlay.innerHTML = '<div class="kj-auth-card"><div class="kj-auth-label">Kaoru Juku Members</div><h1>本人専用ページ</h1><p>このページを見るには、本人用パスワードを入力してください。</p><input type="password" id="kj-auth-password" autocomplete="current-password" placeholder="パスワード"><button type="button" id="kj-auth-submit">表示する</button><div class="kj-auth-error" id="kj-auth-error"></div></div>';
+    document.body.appendChild(overlay);
+    const input = document.getElementById('kj-auth-password');
+    const submit = async () => {
+      if (await sha256(input.value || '') === EXPECTED_HASH) {
+        localStorage.setItem(STORAGE_KEY, EXPECTED_HASH);
+        unlock();
+      } else {
+        document.getElementById('kj-auth-error').textContent = 'パスワードが違います。';
+      }
+    };
+    document.getElementById('kj-auth-submit').addEventListener('click', submit);
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') submit(); });
+    input.focus();
+  })();
+  </script>
+</body>
+</html>
