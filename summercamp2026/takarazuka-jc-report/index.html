@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>宝塚JCのみなさまへ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+
+<style>
+:root{
+  --paper:#F7F6F3;
+  --card:#FFFFFF;
+  --ink:#1F2420;
+  --ink-soft:#4C534B;
+  --muted:#6E756D;
+  --rule:#DFDDD6;
+  --rule-soft:#EAE8E2;
+  --river:#2C5F6B;
+  --river-wash:#EAF1F2;
+  --earth:#8A6D3B;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#151815; --card:#1C201B; --ink:#E9EBE6; --ink-soft:#B6BCB4;
+    --muted:#8A9189; --rule:#2E332C; --rule-soft:#232722;
+    --river:#6FA8B5; --river-wash:#1A2426; --earth:#C0A06A;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#151815; --card:#1C201B; --ink:#E9EBE6; --ink-soft:#B6BCB4;
+  --muted:#8A9189; --rule:#2E332C; --rule-soft:#232722;
+  --river:#6FA8B5; --river-wash:#1A2426; --earth:#C0A06A;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Zen Kaku Gothic New",-apple-system,"Hiragino Sans","Yu Gothic",sans-serif;
+  font-size:15.5px; line-height:1.95; -webkit-font-smoothing:antialiased;
+}
+.sheet{max-width:700px;margin:0 auto;padding:60px 24px 110px;display:flex;flex-direction:column;gap:52px}
+
+.top{display:flex;flex-direction:column;gap:18px}
+.eyebrow{font-size:11px;letter-spacing:.24em;color:var(--muted);font-weight:500}
+h1{
+  font-family:"Shippori Mincho",serif; font-weight:600;
+  font-size:clamp(25px,5.4vw,34px); line-height:1.5; margin:0;
+  letter-spacing:.02em; text-wrap:balance;
+}
+.lede{margin:0;color:var(--ink-soft);font-size:15px}
+.lede + .lede{margin-top:-30px}
+
+.stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));
+  gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;
+}
+.stat{background:var(--card);padding:16px 18px;display:flex;flex-direction:column;gap:3px}
+.stat .k{font-size:11.5px;color:var(--muted);letter-spacing:.04em}
+.stat .v{
+  font-family:"Shippori Mincho",serif;font-size:25px;font-weight:600;
+  line-height:1.2;color:var(--river);font-variant-numeric:tabular-nums;
+}
+.stat .n{font-size:11.5px;color:var(--muted)}
+
+section{display:flex;flex-direction:column;gap:20px}
+h2{
+  font-family:"Shippori Mincho",serif;font-weight:600;font-size:19px;margin:0;
+  letter-spacing:.04em;padding-bottom:11px;border-bottom:1px solid var(--rule);
+}
+h3{
+  font-size:13px;font-weight:700;margin:0;color:var(--river);
+  letter-spacing:.06em;
+}
+.q-group{display:flex;flex-direction:column;gap:14px}
+.voices{display:flex;flex-direction:column;gap:0}
+.voice{
+  font-family:"Shippori Mincho",serif;font-size:16px;line-height:1.95;
+  margin:0;padding:15px 0 15px 20px;border-left:2px solid var(--river-wash);
+}
+.voice + .voice{border-top:1px solid var(--rule-soft)}
+
+p{margin:0}
+.body-copy{color:var(--ink-soft)}
+
+.pairs{display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden}
+.pair{background:var(--card);padding:18px 20px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pair .said{font-size:14.5px}
+.pair .said::before{
+  content:"いただいたご意見";display:block;font-size:10.5px;letter-spacing:.1em;
+  color:var(--muted);margin-bottom:5px;font-weight:500;
+}
+.pair .do{font-size:14.5px;color:var(--ink-soft)}
+.pair .do::before{
+  content:"これから直します";display:block;font-size:10.5px;letter-spacing:.1em;
+  color:var(--river);margin-bottom:5px;font-weight:700;
+}
+
+.offer{
+  background:var(--river-wash);border-radius:3px;padding:26px 24px;
+  display:flex;flex-direction:column;gap:14px;
+}
+.offer h2{border-bottom-color:rgba(44,95,107,.25)}
+.offer p{font-size:15px;color:var(--ink-soft)}
+.offer strong{color:var(--ink);font-weight:700}
+
+.closing{
+  display:flex;flex-direction:column;gap:22px;
+  padding-top:44px;border-top:2px solid var(--ink);
+}
+.closing .voice{
+  font-size:17.5px;border-left:none;padding:0;
+  color:var(--ink);
+}
+.attrib{font-size:12.5px;color:var(--muted);letter-spacing:.04em}
+.sign{
+  display:flex;flex-direction:column;gap:4px;align-items:flex-end;
+  font-size:14px;color:var(--ink-soft);padding-top:12px;
+}
+.sign .name{font-family:"Shippori Mincho",serif;font-size:17px;color:var(--ink);letter-spacing:.08em}
+
+.note{font-size:12.5px;color:var(--muted);line-height:1.85}
+
+@media (max-width:560px){
+  .sheet{padding:40px 18px 80px;gap:40px}
+  .pair{grid-template-columns:1fr;gap:14px}
+  .voice{font-size:15.5px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+</head>
+<body>
+<div class="sheet">
+
+  <header class="top">
+    <p class="eyebrow">天川サマーキャンプ2026 ／ 振り返りアンケート 結果報告</p>
+    <h1>宝塚JCのみなさま、<br>ありがとうございました。</h1>
+    <p class="lede">8月1日・2日の第51回青少年セミナーにご一緒いただき、そのうえ振り返りのアンケートまでお答えいただきました。9月1日をもって締め切りましたので、集まったお声をお返しいたします。</p>
+    <p class="lede">お一人おひとりのお名前は伏せ、いただいた言葉はそのまま載せております。</p>
+  </header>
+
+  <div class="stats">
+    <div class="stat">
+      <span class="k">ご回答</span>
+      <span class="v">8</span>
+      <span class="n">名さま</span>
+    </div>
+    <div class="stat">
+      <span class="k">全体の体験</span>
+      <span class="v">5.0</span>
+      <span class="n">8名全員が最高評価</span>
+    </div>
+    <div class="stat">
+      <span class="k">他団体への推奨</span>
+      <span class="v">9.4</span>
+      <span class="n">10点満点</span>
+    </div>
+    <div class="stat">
+      <span class="k">継続のご意向</span>
+      <span class="v">8</span>
+      <span class="n">ぜひ6・条件が合えば2</span>
+    </div>
+  </div>
+
+  <section>
+    <h2>子どもたちに見られた変化</h2>
+    <div class="voices">
+      <p class="voice">各自の役割を、子どもたち自身が判断していく。</p>
+      <p class="voice">積極性、協調性、自主性が養われたと感じた。</p>
+      <p class="voice">助け合う姿が見られるようになった。</p>
+      <p class="voice">人と話すことに積極的だった。</p>
+      <p class="voice">積極的にチャレンジする姿、普段は異なる学校にいる子たちと協力する姿が印象的でした。</p>
+      <p class="voice">地元の子どもたちとの触れ合いを通じて、ふるまいが逞しくなったと感じました。</p>
+      <p class="voice">天川村の子たちから学び、主体的に動くようになった。</p>
+      <p class="voice">自ら進んで行動できるようになったと思う。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>天川の子どもたちとの交流について</h2>
+    <div class="voices">
+      <p class="voice">対外の子どもたちとの交流は、短い時間であっても友情やコミュニケーションを、より闊達に育む機会を生む。</p>
+      <p class="voice">自然の中で臆することなく遊ぶ勇気。</p>
+      <p class="voice">違う考え方や習慣に触れることになり、相手を大切に思う気持ちが、これまで以上に大きくなったと思う。</p>
+      <p class="voice">天川の子どもたちのアクティブな姿勢が、宝塚の子どもたちにも伝わっていったように思います。どんどん宝塚の子どもたちもアクティブになっていきました。</p>
+      <p class="voice">良い意味でのある種の田舎らしさと自分たちを比較することで、参加前よりもアクティブになったと思います。</p>
+      <p class="voice">宝塚の子たちはかなり消極的な部分がありましたが、天川の子たちと交流を持つことで、積極的に動くようになったと思います。</p>
+      <p class="voice">もっと攻めて良いんだ、みたいな価値観が生まれたのではと思う。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>印象に残った場面</h2>
+    <div class="voices">
+      <p class="voice">最初は引っ込み思案だった子もいたが、最後の発表では自分の言葉で発表ができていたことは印象的だった。</p>
+      <p class="voice">子どもたちの楽しそうな姿や、思いっきり遊ぶ姿がとても印象に残っています。</p>
+      <p class="voice">自然と触れ合い自分と向き合う経験は、現代の子どもにはより必要だと感じました。また、自分自身もリフレッシュできたのでとても良かったです。</p>
+      <p class="voice">修験道という特殊な地域資源を、子どもたちがどのように受け取り、感じるのかを体験させたいと思いました。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>ご家庭からのお声</h2>
+    <p class="body-copy">保護者のみなさま向けのアンケートにも、宝塚からご参加のご家庭より1件のご回答をいただきました。</p>
+    <div class="voices">
+      <p class="voice">「1人で大丈夫だった？」ときくと、「うん！　子供がおったら行ける！」と答えてくれました。離れる時、少し不安げにしていましたが、楽しめていたんだなと思いました。</p>
+      <p class="voice">楽しい思い出をありがとうございます！　お泊まりで地域の子どもたちと交流しながら自立をはかる、とても良いプログラムだと思います。</p>
+    </div>
+    <p class="note">※ ご家庭からのご回答は1件のため、ご参加いただいた保護者のみなさま全体のお声ではありません。<br>※ 天川の子どもたちとご家庭にも別途アンケートをお願いしておりますが、8月1日・2日と3日・4日を分けておうかがいしていなかったため、今回ご一緒した回のお声として区別してお伝えすることができませんでした。次回は必ず日程を分けてお聞きし、双方のお声をお返しできるようにいたします。</p>
+  </section>
+
+  <section>
+    <h2>いただいたご指摘</h2>
+    <p class="body-copy">改善のお声もいただきました。天川側で手配した部分について、次にどう直すかを添えております。</p>
+    <div class="pairs">
+      <div class="pair">
+        <p class="said">キャンプファイヤーの内容</p>
+        <p class="do">共同で企画した部分です。子どもたちが自分で動ける進行に組み直します。</p>
+      </div>
+      <div class="pair">
+        <p class="said">川遊びが2回あったので、1回は他のアクティビティに変えても良いかと思いました</p>
+        <p class="do">2日間の行程を見直します。同じ場所を繰り返さない組み方にします。</p>
+      </div>
+      <div class="pair">
+        <p class="said">2泊ぐらいしたほうが、さらに子どもの成長が見られて良いと思った</p>
+        <p class="do">日程の案として検討いたします。宿泊と安全の体制から逆算して組み立てます。</p>
+      </div>
+      <div class="pair">
+        <p class="said">もう少し子どもたちの中で役割を与えても良いかなと思う</p>
+        <p class="do">役割を書いたカードを用意し、子どもが自分で選べるようにします。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer">
+    <h2>女性スタッフについて</h2>
+    <p>「女性側のサポートが少し弱かった」というお声をいただきました。ここは、宝塚JCさま側だけの課題ではなく、<strong>合同で開催したからこそ見えたこと</strong>だと受け止めております。</p>
+    <p>今年、天川側のボランティアとして参加してくださった方の中に、<strong>女子児童と小学生男児の見守りを担当してくださった女性スタッフ</strong>がおられました。就寝時の設備について、具体的な危険のご指摘もいただいています。</p>
+    <p>またご一緒できる機会がありましたら、<strong>天川側からも女性スタッフを含めた体制でお迎えできるよう準備してまいります。</strong></p>
+    <p>あわせて、当日の連絡と判断の流れを事前に一枚の紙にまとめ、<strong>誰が対応しても同じように動ける形</strong>にしておきたいと考えております。特定の誰かに集中しない運びにいたします。</p>
+  </section>
+
+  <section class="closing">
+    <p class="voice">現地の子たちと交流を持つことは、これまでの青少年セミナーであまりなかったことです。今回久々に現地の子たちと交流を持つことができ、宝塚の子たちへの刺激にもなったと感じますし、今後も続けていきたいと思います。</p>
+    <p class="attrib">いただいたご回答より</p>
+
+    <p class="body-copy">51回の歴史の中で「久々」だったこと。それを教えていただけたのが、私たちにとって何よりの学びでした。天川の子どもたちにとっても、村の外から来た同世代と過ごす夏は、めったにない時間でした。</p>
+    <p class="body-copy">この夏、宝塚と天川の子どもたちが同じ川に入り、同じ火を囲んだこと。それを支えてくださったのは、みなさまお一人おひとりです。</p>
+    <p class="body-copy">本当に、ありがとうございました。</p>
+
+    <div class="sign">
+      <span class="name">前田 薫</span>
+      <span>天川村地域おこし協力隊</span>
+      <span>天川サマーキャンプ実行委員会</span>
+    </div>
+
+    <p class="note">※ ご回答は、匿名でのご使用に同意いただいたもののみ掲載しております。<br>※ 数値は8名さまのご回答の平均です。</p>
+  </section>
+
+</div>
+
+</body>
+</html>
