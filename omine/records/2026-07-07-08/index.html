@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="2026年7月7日〜8日、奈良県天川村・大峯山で実施した第1回大峯登拝の記録。参加者3名の異なる声と、場のコーチングとして受け取った学びを紹介します。">
+<meta name="theme-color" content="#0e1a14">
+<title>第1回 大峯登拝 実施記録｜天川村で、身体と問いに向き合った2日間</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+  :root {
+    --deep: #0e1a14;
+    --forest: #182a22;
+    --forest-soft: #21372d;
+    --moss: #527568;
+    --gold: #c2a367;
+    --gold-soft: rgba(194, 163, 103, 0.18);
+    --paper: #f2efe8;
+    --ink: #18201c;
+    --white: #fff;
+    --line: rgba(194, 163, 103, 0.2);
+    --muted: rgba(255, 255, 255, 0.58);
+    --muted-low: rgba(255, 255, 255, 0.36);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--deep);
+    color: var(--white);
+    font-family: 'Noto Serif JP', serif;
+    line-height: 2;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; width: 100%; }
+  a { color: inherit; }
+
+  .skip-link {
+    position: fixed;
+    left: 16px;
+    top: -80px;
+    z-index: 100;
+    padding: 10px 18px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: top 0.2s;
+  }
+  .skip-link:focus { top: 16px; }
+
+  .topbar {
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px clamp(22px, 5vw, 72px);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.62);
+  }
+  .topbar a { text-decoration: none; }
+  .topbar a:hover,
+  .topbar a:focus-visible { color: var(--white); }
+  .topbar-mark { color: var(--gold); }
+
+  .hero {
+    min-height: 94svh;
+    position: relative;
+    display: grid;
+    place-items: end center;
+    padding: 120px 28px 92px;
+    overflow: hidden;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom, rgba(7, 14, 10, 0.26), rgba(7, 14, 10, 0.28) 35%, rgba(7, 14, 10, 0.94)),
+      url('../../photos/hero.jpg') center 40% / cover no-repeat;
+    transform: scale(1.01);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 60%, transparent 0, rgba(8, 16, 12, 0.34) 72%);
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    width: min(820px, 100%);
+  }
+  .eyebrow,
+  .section-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.28em;
+    color: var(--gold);
+  }
+  .hero h1 {
+    margin: 28px 0 26px;
+    font-size: clamp(2rem, 6vw, 4.1rem);
+    font-weight: 300;
+    line-height: 1.55;
+    letter-spacing: 0.06em;
+    text-wrap: balance;
+  }
+  .hero h1 span {
+    display: block;
+    margin-top: 18px;
+    font-size: 0.42em;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.1em;
+  }
+  .hero-lead {
+    width: min(650px, 100%);
+    margin: 0 auto;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(0.82rem, 2vw, 0.95rem);
+    font-weight: 300;
+    line-height: 2.25;
+    color: rgba(255, 255, 255, 0.65);
+  }
+  .hero-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 42px;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 26px;
+    border: 1px solid rgba(194, 163, 103, 0.56);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .button:hover,
+  .button:focus-visible {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--deep);
+  }
+  .button.secondary {
+    border-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.66);
+  }
+
+  .section {
+    padding: clamp(84px, 11vw, 140px) 26px;
+  }
+  .container { width: min(820px, 100%); margin: 0 auto; }
+  .container.wide { width: min(1120px, 100%); }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 32px;
+  }
+  .section-label::after {
+    content: '';
+    width: 72px;
+    height: 1px;
+    background: var(--line);
+  }
+  h2 {
+    margin-bottom: 34px;
+    font-size: clamp(1.45rem, 4vw, 2.35rem);
+    font-weight: 300;
+    line-height: 1.75;
+    letter-spacing: 0.04em;
+    text-wrap: balance;
+  }
+  h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.8;
+  }
+  p {
+    margin-bottom: 22px;
+    color: var(--muted);
+    font-size: 0.93rem;
+    line-height: 2.25;
+  }
+  p:last-child { margin-bottom: 0; }
+
+  .intro { background: var(--forest); }
+  .intro-copy {
+    max-width: 700px;
+    padding-left: clamp(20px, 5vw, 54px);
+    border-left: 1px solid rgba(194, 163, 103, 0.5);
+  }
+  .intro-copy strong {
+    color: rgba(255, 255, 255, 0.86);
+    font-weight: 400;
+  }
+
+  .outline-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+  }
+  .outline-item {
+    min-height: 140px;
+    padding: 26px 24px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .outline-item dt {
+    margin-bottom: 12px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    color: var(--gold);
+  }
+  .outline-item dd {
+    font-size: 0.88rem;
+    line-height: 1.95;
+    color: rgba(255, 255, 255, 0.72);
+  }
+  .note {
+    margin-top: 26px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.72rem;
+    color: var(--muted-low);
+  }
+
+  .process { background: var(--paper); color: var(--ink); }
+  .process .section-label { color: #866b38; }
+  .process .section-label::after { background: rgba(134, 107, 56, 0.26); }
+  .process h2 { color: var(--ink); }
+  .process-list {
+    margin-top: 54px;
+    border-top: 1px solid rgba(24, 32, 28, 0.14);
+  }
+  .process-item {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 28px;
+    padding: 34px 0;
+    border-bottom: 1px solid rgba(24, 32, 28, 0.14);
+  }
+  .process-num {
+    padding-top: 5px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+    color: #92743e;
+  }
+  .process-body h3 { margin-bottom: 8px; color: var(--ink); }
+  .process-body p { color: rgba(24, 32, 28, 0.62); }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 160px;
+    gap: 6px;
+    margin-top: 50px;
+  }
+  .gallery figure { position: relative; overflow: hidden; background: var(--forest); }
+  .gallery figure:nth-child(1) { grid-column: span 7; grid-row: span 2; }
+  .gallery figure:nth-child(2) { grid-column: span 5; }
+  .gallery figure:nth-child(3) { grid-column: span 5; }
+  .gallery figure:nth-child(4) { grid-column: span 4; }
+  .gallery figure:nth-child(5) { grid-column: span 4; }
+  .gallery figure:nth-child(6) { grid-column: span 4; }
+  .gallery img {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.82) saturate(0.88);
+    transition: transform 0.45s, filter 0.45s;
+  }
+  .gallery figure:hover img { transform: scale(1.025); filter: brightness(0.96) saturate(1); }
+  .gallery figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 28px 18px 14px;
+    background: linear-gradient(transparent, rgba(5, 12, 8, 0.78));
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.66rem;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .voices { background: var(--forest); }
+  .voices-intro { max-width: 680px; }
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+    margin-top: 54px;
+  }
+  .voice-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 560px;
+    padding: 38px 32px;
+    background: rgba(255, 255, 255, 0.035);
+    border-top: 1px solid rgba(194, 163, 103, 0.46);
+  }
+  .voice-index {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    opacity: 0.78;
+  }
+  .voice-card h3 {
+    margin: 24px 0 24px;
+    font-size: 1.12rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  .voice-card blockquote {
+    margin-bottom: 26px;
+    padding-left: 18px;
+    border-left: 1px solid rgba(194, 163, 103, 0.44);
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 0.91rem;
+    line-height: 2.15;
+  }
+  .voice-card p { font-size: 0.82rem; line-height: 2.05; }
+  .voice-followup {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(233, 220, 194, 0.18);
+    color: rgba(250, 245, 232, 0.82);
+  }
+  .voice-followup strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--gold);
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+  }
+  .voice-name {
+    margin-top: auto;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--gold);
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+  }
+
+  .followup {
+    background: linear-gradient(180deg, rgba(248, 243, 231, 0.96), rgba(238, 231, 212, 0.96));
+  }
+  .followup-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 32px;
+  }
+  .followup-item {
+    border-left: 3px solid var(--accent);
+    padding: 18px 20px;
+    background: rgba(255, 255, 255, 0.42);
+  }
+  .followup-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.03rem;
+  }
+  .followup-item p {
+    color: rgba(43, 53, 47, 0.78);
+    font-size: 0.9rem;
+    line-height: 2;
+  }
+
+  .common-quote {
+    margin: 48px 0;
+    padding: clamp(28px, 5vw, 52px);
+    border: 1px solid var(--line);
+    background: linear-gradient(135deg, rgba(194, 163, 103, 0.06), transparent);
+    text-align: center;
+  }
+  .common-quote p {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    line-height: 2.15;
+  }
+
+  .reflection { background: var(--paper); color: var(--ink); }
+  .reflection .section-label { color: #866b38; }
+  .reflection .section-label::after { background: rgba(134, 107, 56, 0.26); }
+  .reflection h2 { color: var(--ink); }
+  .reflection p { color: rgba(24, 32, 28, 0.65); }
+  .reflection-sign {
+    margin-top: 44px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    color: #765f34;
+  }
+
+  .learning-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 48px;
+  }
+  .learning-item {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(194, 163, 103, 0.13);
+  }
+  .learning-item h3 { margin-bottom: 10px; color: rgba(255, 255, 255, 0.84); }
+  .learning-item p { font-size: 0.8rem; line-height: 2; }
+
+  .return {
+    position: relative;
+    background:
+      linear-gradient(rgba(8, 17, 12, 0.82), rgba(8, 17, 12, 0.94)),
+      url('../../photos/gate.jpg') center 46% / cover no-repeat;
+    text-align: center;
+  }
+  .return .container { width: min(720px, 100%); }
+  .return .section-label { justify-content: center; }
+  .return .section-label::after { display: none; }
+  .return p { color: rgba(255, 255, 255, 0.65); }
+
+  .hosts { background: var(--forest); }
+  .host-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 48px;
+  }
+  .host-card {
+    padding: 34px;
+    background: rgba(255, 255, 255, 0.035);
+  }
+  .host-role {
+    display: block;
+    margin-bottom: 12px;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--gold);
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+  }
+  .host-card h3 { margin-bottom: 18px; font-size: 1.02rem; }
+  .host-card p { font-size: 0.8rem; line-height: 2.05; }
+
+  .cta {
+    text-align: center;
+  }
+  .cta .container { width: min(680px, 100%); }
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 38px;
+  }
+
+  footer {
+    padding: 52px 24px;
+    border-top: 1px solid rgba(194, 163, 103, 0.1);
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.66rem;
+    line-height: 2;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.28);
+  }
+  footer a { color: rgba(194, 163, 103, 0.72); text-decoration: none; }
+
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+
+  @media (max-width: 860px) {
+    .voice-grid { grid-template-columns: 1fr; }
+    .voice-card { min-height: 0; }
+    .followup-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 700px) {
+    .topbar { align-items: flex-start; gap: 18px; }
+    .topbar-mark { max-width: 150px; }
+    .hero { min-height: 90svh; padding-bottom: 68px; }
+    .outline-grid { grid-template-columns: 1fr 1fr; }
+    .gallery { grid-auto-rows: 120px; }
+    .gallery figure:nth-child(1) { grid-column: span 12; }
+    .gallery figure:nth-child(2),
+    .gallery figure:nth-child(3),
+    .gallery figure:nth-child(4),
+    .gallery figure:nth-child(5),
+    .gallery figure:nth-child(6) { grid-column: span 6; }
+    .learning-grid,
+    .host-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    .section { padding-left: 21px; padding-right: 21px; }
+    .outline-grid { grid-template-columns: 1fr; }
+    .process-item { grid-template-columns: 46px 1fr; gap: 14px; }
+    .gallery figure:nth-child(n) { grid-column: span 12; grid-row: span 1; }
+    .gallery figure:first-child { grid-row: span 2; }
+    .voice-card { padding: 32px 25px; }
+    .button { width: 100%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">本文へ移動</a>
+
+<nav class="topbar" aria-label="ページナビゲーション">
+  <a class="topbar-mark" href="../../index.html">大峯登拝・場のコーチング</a>
+  <a href="#voices">参加者の声</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">FIRST PILOT RECORD — 2026.07.07–08</p>
+    <h1>
+      第1回 大峯登拝 実施記録
+      <span>身体を通して、それぞれの問いに出会った2日間</span>
+    </h1>
+    <p class="hero-lead">
+      同じ場所を歩き、同じ行に入り、同じ時間を過ごしても、<br>
+      受け取ったものは一人ひとり違いました。<br>
+      参加者の言葉と、主催者として受け取った学びを記録します。
+    </p>
+    <div class="hero-actions">
+      <a class="button" href="#main">2日間の記録を見る</a>
+      <a class="button secondary" href="../../index.html">取り組みについて</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section intro">
+    <div class="container">
+      <p class="section-label">WHY WE GATHERED</p>
+      <h2>答えを教えるためではなく、<br>自分の内側にある問いへ戻るために。</h2>
+      <div class="intro-copy">
+        <p>
+          今回の企画は、天川・大峯という場所へ人を案内するだけのツアーとして始まったものではありません。
+        </p>
+        <p>
+          日常では、仕事、役割、情報、周囲からの期待に応えることが先になり、自分の身体が何を感じ、何を本当に大切にしたいのかが見えにくくなることがあります。
+        </p>
+        <p>
+          そこで、北斗さんが大切な仲間を招き、僕が天川側の受入れと現地での場づくりを担い、少人数で大峯へ入りました。
+        </p>
+        <p>
+          <strong>何か特定の答えへ導くのではなく、身体を動かし、仲間の姿を見て、立ち止まり、言葉を交わす。</strong>その中で、一人ひとりに何が残るのかを大切にしました。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="outline-title">
+    <div class="container wide">
+      <p class="section-label">OUTLINE</p>
+      <h2 id="outline-title">第1回プレオープン概要</h2>
+      <dl class="outline-grid">
+        <div class="outline-item">
+          <dt>DATE</dt>
+          <dd>2026年7月7日〜8日</dd>
+        </div>
+        <div class="outline-item">
+          <dt>PLACE</dt>
+          <dd>奈良県吉野郡天川村<br>大峯山</dd>
+        </div>
+        <div class="outline-item">
+          <dt>STYLE</dt>
+          <dd>少人数<br>プレオープン</dd>
+        </div>
+        <div class="outline-item">
+          <dt>PARTICIPANTS</dt>
+          <dd>北斗さんが招いた<br>3名の仲間</dd>
+        </div>
+        <div class="outline-item">
+          <dt>INVITATION</dt>
+          <dd>芦田北斗</dd>
+        </div>
+        <div class="outline-item">
+          <dt>LOCAL HOST</dt>
+          <dd>前田薫</dd>
+        </div>
+      </dl>
+      <p class="note">行の内容は、季節、天候、参加者の体調、現地の判断等によって変わります。すべての参加者が同じ行を行うものではありません。</p>
+    </div>
+  </section>
+
+  <section class="section process" aria-labelledby="process-title">
+    <div class="container">
+      <p class="section-label">THE PROCESS</p>
+      <h2 id="process-title">場、身体、仲間、言葉。<br>そのつながりを大切にしました。</h2>
+      <div class="process-list">
+        <article class="process-item">
+          <p class="process-num">01</p>
+          <div class="process-body">
+            <h3>日常から離れ、身体へ戻る</h3>
+            <p>天川へ入り、水、火、静けさ、食事などを通して、思考だけではなく身体の感覚へ注意を戻していきました。</p>
+          </div>
+        </article>
+        <article class="process-item">
+          <p class="process-num">02</p>
+          <div class="process-body">
+            <h3>自分の足で大峯へ入る</h3>
+            <p>山道と行場では、参加者ごとに異なる身体反応や感情が起きました。感じ方を揃えず、怖さも、静けさも、何も感じないことも、その人の体験として扱いました。</p>
+          </div>
+        </article>
+        <article class="process-item">
+          <p class="process-num">03</p>
+          <div class="process-body">
+            <h3>仲間と同じ時間を越える</h3>
+            <p>誰かが先に挑む姿が、後に続く人の集中を生む。自分一人の体験だけでなく、互いの姿が互いの学びになる時間でした。</p>
+          </div>
+        </article>
+        <article class="process-item">
+          <p class="process-num">04</p>
+          <div class="process-body">
+            <h3>すぐに答えを出さず、振り返る</h3>
+            <p>行を終えた後、仲間と感じたことを言葉にしました。山で身体を動かした直後だったからこそ、普段の室内とは違う対話が生まれました。</p>
+          </div>
+        </article>
+        <article class="process-item">
+          <p class="process-num">05</p>
+          <div class="process-body">
+            <h3>日常へ問いを持ち帰る</h3>
+            <p>体験をその場だけの感動で終わらせず、仕事、家族、習慣、生き方の中で何を試してみたいかを、それぞれが持ち帰りました。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="scenes-title">
+    <div class="container wide">
+      <p class="section-label">SCENES</p>
+      <h2 id="scenes-title">言葉になる前に、身体に残った風景。</h2>
+      <div class="gallery">
+        <figure>
+          <img src="../../photos/hero.jpg" alt="霧の中を進む大峯の山道" loading="lazy">
+          <figcaption>霧の中を、自分の足で進んでいく</figcaption>
+        </figure>
+        <figure>
+          <img src="../../photos/suigyo.jpg" alt="水行の場で身体を整える様子" loading="lazy">
+          <figcaption>思考から、身体の感覚へ</figcaption>
+        </figure>
+        <figure>
+          <img src="../../photos/gate.jpg" alt="大峯山寺の山門" loading="lazy">
+          <figcaption>大峯へ、自分の足で入る</figcaption>
+        </figure>
+        <figure>
+          <img src="../../photos/goma.jpg" alt="大峯山寺の祈りの場" loading="lazy">
+          <figcaption>祈りの場に、静かに身を置く</figcaption>
+        </figure>
+        <figure>
+          <img src="../../photos/nozoki.jpg" alt="山上の祠と行場" loading="lazy">
+          <figcaption>感じ方も、受け取る言葉も一人ひとり違う</figcaption>
+        </figure>
+        <figure>
+          <img src="../../photos/zazen.jpg" alt="白衣で同じ場へ入った参加者たち" loading="lazy">
+          <figcaption>同じ場へ入り、それぞれの問いを持ち帰る</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section voices" id="voices" aria-labelledby="voices-title">
+    <div class="container wide">
+      <p class="section-label">THREE VOICES</p>
+      <h2 id="voices-title">同じ山から、<br>三つの異なる言葉が生まれました。</h2>
+      <p class="voices-intro">実施後、一人ひとりと振り返りインタビューを行い、約2か月後には全員でシェア会も行いました。強く感じた人も、同じようには感じなかった人もいます。すぐに言葉になったことも、日常へ戻ってから少しずつ意味を持ちはじめたこともありました。それぞれの違いを揃えずに、本人の言葉から受け取りました。</p>
+
+      <div class="voice-grid">
+        <article class="voice-card">
+          <p class="voice-index">VOICE 01</p>
+          <h3>燃え上がる炎から、<br>静かな熾火へ</h3>
+          <blockquote>
+            これまでは周囲を巻き込み、燃え上がる炎のようにゼロから一を立ち上げてきた。今は、静かだけれど確かに熱く、深まっていく熾火のようなエネルギーへ移っている感覚がある。
+          </blockquote>
+          <p>飯島さんは、他の参加者と同じような強い感覚を得たわけではありませんでした。だからこそ、感じ方に正解を置かず、朝の静けさ、護摩の火、仲間の姿、山上で過ごした時間を、自分の体験として丁寧に受け取っていました。</p>
+          <p>山の道中で受け取った問いをノートに残し、帰宅後も持ち歩いていました。仏教への関心を周囲へ話し、知人の縁から僧侶に会うという行動へ。親に物を贈るだけでなく、共に過ごす時間を大切にしたいという問いも残りました。</p>
+          <p class="voice-followup"><strong>約2か月後のシェア会</strong>自分では大きな変化として捉えていなくても、周囲からは「以前より話を聞いてくれる」「一度受け入れてくれるようになった」と言われるようになったと語ってくれました。人に期待をかけるのではなく、信じて関わる。その小さな変化が、日常の関係性の中に表れていました。</p>
+          <p class="voice-name">飯島 佑介さん</p>
+        </article>
+
+        <article class="voice-card">
+          <p class="voice-index">VOICE 02</p>
+          <h3>恐怖の手前で、<br>覚悟を選ぶ</h3>
+          <blockquote>
+            恐怖は、動く前が一番大きかった。実際に登り始めると薄れていった。仕事でも人生でも、選び、行動する覚悟と重なった。
+          </blockquote>
+          <p>難所で意識的に先頭へ。後に続く仲間が見て判断できるよう、自分の恐怖に向き合う姿を先に見せました。その姿は、別の参加者の集中も高めていました。</p>
+          <p>本人は、場所だけではなく、前田と北斗さんからその場で受け取った言葉が強く残っていると話してくれました。用意されたツアーとして案内されるより、全員で一緒に行へ入った感覚が価値として残っていました。</p>
+          <p>特に残っていたのは、動く前に大きくなる恐怖と、動き始めることで変わっていく身体の実感でした。呼吸へ戻りながら一歩を出すことが、仕事や人生で覚悟を決める感覚と重なっていました。</p>
+          <p>参加費についても、本人の体験としては「むしろ安い」と受け取っていました。ただし、この評価を全員の答えとはせず、一人の率直な証言として記録します。</p>
+          <p class="voice-followup"><strong>約2か月後のシェア会</strong>天川に一度入った後、今度は自分が別の人を連れて再訪しました。天川ではできていた気持ちの切り替えが、東京へ戻ると薄れることも率直に話しながら、それでも「あの場所で、この5人で出会ったから今の感覚がある」と受け取っていました。</p>
+          <p class="voice-name">大谷 幸輝さん</p>
+        </article>
+
+        <article class="voice-card">
+          <p class="voice-index">VOICE 03</p>
+          <h3>怖さの中で、<br>別の感覚にも気づく</h3>
+          <blockquote>
+            怖さはあった。それでも一度止まり、呼吸して周りの音を聞くと、怖がっている自分だけでなく、自然を感じている自分もいることに気づいた。
+          </blockquote>
+          <p>恐怖が消えたのではなく、恐怖以外の感覚も同時に観察できたこと。行場の前に渡した短い比喩が、実際の場面で呼吸や注意の向け方につながっていました。</p>
+          <p>強く残っていたのは、行そのものだけではありません。一緒に越えた仲間と、直後に感じたことを話した時間。山で身体を動かした後だからこそ、普段の室内とは違う深さの対話になっていました。</p>
+          <p>その後のインタビューでは、苦行をただ耐えるものではなく、何に向かうのかというビジョンと結びついた実践として捉え直していました。</p>
+          <p class="voice-followup"><strong>約2か月後のシェア会</strong>登拝前に北斗さんから受け取った「発言」という一語が、今も問いとして残っていると話してくれました。発言の内容だけでなく、発言することそのもの、自分の考えを外へ出すこと、それが世界の中で形になっていくことへの向き合い方が変わり始めていました。</p>
+          <p class="voice-name">高野 信太朗さん</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section followup" aria-labelledby="followup-title">
+    <div class="container">
+      <p class="section-label">AFTER TWO MONTHS</p>
+      <h2 id="followup-title">体験は、終わった後の日常で、<br>少しずつ意味を持ちはじめました。</h2>
+      <p>約2か月後、参加者と北斗さん、前田でオンラインのシェア会を行いました。そこで見えたのは、劇的に人生が変わったという物語ではありません。普段の言葉、仕事、人との関わり方、天川へ戻りたい感覚の中に、体験が静かに残っているということでした。</p>
+      <p>直後の感想だけでは見えなかった変化もありました。本人が大きな変化だと捉えていないことを、周囲が先に感じ取っている。天川で受け取った感覚が、東京へ戻ると薄れながらも、また戻る理由になる。そうした時間差のある変化を確かめること自体が、この企画の大切な一部になりました。</p>
+
+      <div class="followup-grid">
+        <article class="followup-item">
+          <h3>言葉が残り続ける</h3>
+          <p>登拝前に受け取った一語が、終わった後も問いとして残り続ける。答えを渡すのではなく、その人の中で熟成し、発言や仕事への向き合い方を照らす言葉が生まれていました。</p>
+        </article>
+        <article class="followup-item">
+          <h3>関わり方が変わる</h3>
+          <p>相手に期待をかけて変えようとするのではなく、まず受け入れ、信じる方へ。本人が強く意識していなくても、周囲の反応として変化が返ってきていました。</p>
+        </article>
+        <article class="followup-item">
+          <h3>もう一度帰りたくなる</h3>
+          <p>天川は一度行って終わる場所ではなく、誰かを連れて戻りたくなる場所になりました。実際に、参加後に別の人を連れて天川へ戻る動きも生まれました。</p>
+        </article>
+        <article class="followup-item">
+          <h3>主催者側にも変化が起きる</h3>
+          <p>北斗さん自身も、瞑想や呼吸を自然に行うようになり、社会に自分を合わせるより、自分のあり方から社会へ関わる感覚が強くなったと語りました。場を開く人にも、場は作用していました。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="common-title">
+    <div class="container">
+      <p class="section-label">WHAT WE LEARNED</p>
+      <h2 id="common-title">同じ答えではなく、<br>自分の問いを持ち帰ること。</h2>
+      <p>三人の答えは、熾火、覚悟、恐怖の観察、そして日常の中で続く小さな変化として、それぞれ異なりました。</p>
+      <div class="common-quote">
+        <p>場が身体を開き、身体経験が仲間との信頼を生み、問いと言葉が体験を本人固有の意味へ変え、時間を置いた振り返りが日常の変化を見つける入口をつくる。</p>
+      </div>
+      <p>三人に共通していたのは、北斗さんとの信頼を入口に天川へ来たこと。そして、山や行場だけでなく、仲間の姿、食事、火、水、道中の言葉、終わった後の振り返りまで含めて、体験が残っていたことでした。</p>
+      <p>一方で、同じように感じなかった人もいました。未知を楽しめた人もいれば、事前情報の少なさに不安を感じた人もいました。概要を受け取っていた人も、細かな行程や現地の体制までは知らなかった人もいました。その違いを消さずに残すことが、第1回の実績を誠実な学びに変えてくれます。</p>
+      <p>だから次回に必要なのは、すべてを説明して余白を消すことではありません。参加判断に必要な現実情報は全員へ渡し、その上で、どこまで知らずに入るかは本人が選べるようにすることです。</p>
+      <p>次回も残したいのは、特定の答えへ導くプログラムではありません。本人自身の言葉が生まれるための、場と関係と時間です。</p>
+    </div>
+  </section>
+
+  <section class="section reflection" aria-labelledby="reflection-title">
+    <div class="container">
+      <p class="section-label">KAORU'S REFLECTION</p>
+      <h2 id="reflection-title">用意したものを、すべて実施することが、<br>場をつくることではありませんでした。</h2>
+      <p>今回、僕は天川側の受入れ、現地の流れ、問い、対話、振り返りの設計を担いました。事前にはワークブックや問いも準備していました。</p>
+      <p>ただ、現場で大切だったのは、準備した内容をすべて参加者へ行わせることではありませんでした。身体の状態、場の空気、仲間同士の関係を見ながら、何を出すか、何を出さないか、いつ待つかを選ぶことでした。</p>
+      <p>三人へのインタビューを通して、僕が届けていたものは、山の案内や長い講義だけではなかったと気づきました。</p>
+      <p>体験前に観察のための短い補助線を置くこと。体験中は本人の選択を奪わないこと。体験後に、その人自身の言葉が生まれる時間を整えること。そして、時間を置いてもう一度集まり、日常の中で何が残っているのかを確かめること。</p>
+      <p>同時に、改善すべきことも明確でした。信頼があるからこそ成立した部分を、次回そのまま繰り返してはいけない。参加者が自分で選べるだけの情報、安全に関する合意、体験を味わう余白、誰がどの役割を担うのかは、事前に整える必要があります。</p>
+      <p>僕は、この働きを「場のコーチング」として、これからさらに磨いていきます。</p>
+      <p class="reflection-sign">前田 薫</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="next-title">
+    <div class="container wide">
+      <p class="section-label">FOR THE NEXT SESSION</p>
+      <h2 id="next-title">第1回が良かったからこそ、<br>同じやり方を繰り返さない。</h2>
+      <p>今回は、北斗さんと参加者の間にあった強い信頼、少人数の関係、現場での即興によって成立した部分が多くありました。次回は、即興性や未知の余白を消すのではなく、それを安全に選べる土台を整えます。</p>
+      <div class="learning-grid">
+        <article class="learning-item">
+          <h3>必要情報を、全員へ</h3>
+          <p>日時、行程、費用、宿泊、役割、身体負荷、主要なリスクなど、参加判断に必要な情報を統一して共有します。</p>
+        </article>
+        <article class="learning-item">
+          <h3>未知を、自分で選べる</h3>
+          <p>詳細まで知るか、核心部分を知らずに入るかを、参加者自身が選べるようにします。</p>
+        </article>
+        <article class="learning-item">
+          <h3>安全と不参加の選択</h3>
+          <p>安全責任者、中止判断、体調確認、行への参加・不参加の選択を明確にします。</p>
+        </article>
+        <article class="learning-item">
+          <h3>感じ方に、正解を置かない</h3>
+          <p>強く感じても、何も感じなくてもよい。その人に起きていることを、そのまま扱います。</p>
+        </article>
+        <article class="learning-item">
+          <h3>一人で味わう余白</h3>
+          <p>主要な体験後に、書く、座る、歩く、何もしないことを選べる時間を確保します。</p>
+        </article>
+        <article class="learning-item">
+          <h3>時間を置いて確かめる</h3>
+          <p>直後の感動だけでなく、一か月後・三か月後にも日常の変化を確認し、体験を本人の言葉として記録します。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section return" aria-labelledby="return-title">
+    <div class="container">
+      <p class="section-label">A PLACE TO RETURN</p>
+      <h2 id="return-title">一度参加して終わる場所ではなく、<br>人生の節目に帰ってこられる場所へ。</h2>
+      <p>インタビューとシェア会では、人生の転換点に帰りたい、来年も大峯へ行きたい、大阪へ戻る時に天川へ足を運びたい、誰かを連れてもう一度訪れたい、という言葉が生まれました。</p>
+      <p>参加者を囲い込むためのコミュニティを急いでつくるのではなく、もう一度帰りたい時に帰れること。仲間と再会できること。前回とは違う自分で、同じ山へ入れること。</p>
+      <p>その積み重ねの先に、天川を第二の故郷と感じる人たちのつながりが、結果として育っていくと考えています。</p>
+    </div>
+  </section>
+
+  <section class="section hosts" aria-labelledby="hosts-title">
+    <div class="container wide">
+      <p class="section-label">HOSTS</p>
+      <h2 id="hosts-title">企画・招待と、現地の場づくり。</h2>
+      <div class="host-grid">
+        <article class="host-card">
+          <span class="host-role">LOCAL HOST / PLACE COACHING / RECORD</span>
+          <h3>前田 薫</h3>
+          <p>天川村を拠点に、人と土地、身体経験、問い、対話をつなぐ「場のコーチング」を実践。参加者が決められた答えを受け取るのではなく、自分自身の言葉と日常の一歩を持ち帰れる場を設計している。株式会社なんぼでも代表。</p>
+        </article>
+        <article class="host-card">
+          <span class="host-role">PLANNING / INVITATION / RELATIONSHIP</span>
+          <h3>芦田 北斗</h3>
+          <p>若者の挑戦や海外経験を支援しながら、人と人、人と場所の縁をつないでいる。今回、大切な仲間へ声をかけ、天川・大峯へ入る理由と関係をつくった。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta" aria-labelledby="cta-title">
+    <div class="container">
+      <p class="section-label">WHAT'S NEXT</p>
+      <h2 id="cta-title">次回募集を急ぐ前に、<br>第1回から受け取ったことを整えます。</h2>
+      <p>現在、次回の安全、事前案内、体験設計、振り返り、継続導線を見直しています。次回の日程と募集方法は、決まり次第お知らせします。</p>
+      <div class="cta-actions">
+        <a class="button" href="../../index.html#contact">次回開催の案内を希望する</a>
+        <a class="button secondary" href="../../index.html">取り組みについて見る</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p><a href="../../index.html">大峯登拝・場のコーチングへ戻る</a></p>
+  <p>第1回 大峯登拝 実施記録 — 2026年7月7日〜8日 / 奈良県天川村</p>
+</footer>
+</body>
+</html>
