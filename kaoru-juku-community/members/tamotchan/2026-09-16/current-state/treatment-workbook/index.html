@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>認知のツボ別・手当てワーク｜たもっちゃん</title>
+  <style>
+    :root{--bg:#f2f5f1;--paper:#fff;--ink:#24302c;--muted:#66716c;--line:#d2ddd7;--deep:#173f32;--green:#2f7257;--mint:#e5f1e9;--gold:#a87524;--amber:#fff2ce;--rose:#fae7e1;--blue:#e9f2f6;--shadow:0 12px 32px rgba(25,55,44,.08)}
+    *{box-sizing:border-box;letter-spacing:0}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;line-height:1.8}body.locked> :not(.auth){display:none!important}.auth{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;background:linear-gradient(135deg,#173f32,#74613e)}body:not(.locked) .auth{display:none}.auth-card{width:min(460px,100%);padding:28px;border-radius:8px;background:#fff}.auth input,.auth button{width:100%;min-height:46px;margin-top:10px;padding:10px 12px;border-radius:6px;font:inherit}.auth input{border:1px solid var(--line)}.auth button{border:0;background:var(--deep);color:#fff;font-weight:800}.error{min-height:22px;color:#a33}
+    .toolbar{position:sticky;top:0;z-index:20;background:rgba(23,63,50,.97);color:#fff}.toolbar-inner{width:min(980px,calc(100% - 28px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}.toolbar a{color:#fff;text-decoration:none;font-size:13px}.actions{display:flex;gap:8px}.actions button{padding:8px 11px;border:1px solid #ffffff70;border-radius:6px;background:transparent;color:#fff;font:inherit;font-size:13px;cursor:pointer}.actions .primary{border-color:#d8a34d;background:#d8a34d;color:#173127;font-weight:900}
+    header,main{width:min(980px,calc(100% - 28px));margin:auto}header{padding:42px 0 28px}h1{margin:6px 0;font-size:clamp(33px,6vw,56px);line-height:1.14;color:var(--deep)}h2{margin:0 0 12px;font-size:clamp(23px,3vw,29px);line-height:1.5;color:var(--deep)}h3{margin:0 0 8px;color:var(--deep)}p{margin:7px 0}.eyebrow{color:var(--gold);font-size:12px;font-weight:900}.lead{max-width:800px;color:var(--muted);font-size:17px}.notice{margin-top:20px;padding:17px;border:1px solid #dac99e;border-left:6px solid var(--gold);border-radius:7px;background:#fffaf0}
+    section{margin:0 0 18px;padding:26px;border:1px solid var(--line);border-radius:8px;background:var(--paper);box-shadow:var(--shadow)}.step{display:inline-grid;place-items:center;width:34px;height:34px;margin-right:8px;border-radius:50%;background:var(--deep);color:#fff;font-weight:900}.guide{margin:12px 0 18px;padding:13px 15px;border-radius:6px;background:var(--blue);color:#34515d}.guide strong{color:#183e4c}.candidate{margin-top:14px;padding:16px;border:1px solid #e2ce98;border-radius:7px;background:var(--amber)}.candidate-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.candidate-item{padding:10px;border-radius:5px;background:#fff}.candidate-item small{display:block;color:var(--muted);font-weight:800}.candidate-item b{color:var(--deep)}
+    label.question{display:block;margin:20px 0 7px;font-weight:800;color:var(--deep)}textarea,input[type="text"],input[type="number"],select{width:100%;padding:12px 13px;border:1px solid #afc1b8;border-radius:6px;background:#fffefa;color:var(--ink);font:inherit}textarea{min-height:112px;resize:vertical}select{background:#fff;font-weight:700}.measure{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.measure label{font-size:13px;font-weight:800;color:var(--muted)}.measure input{margin-top:5px}.checks{display:flex;flex-wrap:wrap;gap:8px}.check{display:inline-flex;align-items:center;gap:5px;padding:7px 9px;border:1px solid var(--line);border-radius:5px;background:#fff}.voice{display:flex;align-items:center;gap:9px;margin-top:7px}.voice button{padding:7px 10px;border:1px solid #9eb6aa;border-radius:5px;background:#fff;color:#255f48;font:inherit;font-size:12px;font-weight:800}.voice button.recording{border-color:#b44;color:#9d2727}.voice span{font-size:12px;color:var(--muted)}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.side{padding:15px;border-radius:7px;background:#f6f8f6}.side.good{border-top:5px solid var(--green)}.side.hard{border-top:5px solid #c2795e}.save{min-height:24px;color:var(--green);font-size:13px}.finish{background:var(--mint)}
+    @media(max-width:720px){.toolbar-inner{align-items:flex-start}.actions{flex-direction:column}.actions button{padding:7px 9px}.candidate-grid,.two,.measure{grid-template-columns:1fr}section{padding:21px 16px}}
+    @media print{.toolbar,.auth,.voice{display:none!important}body{background:#fff}header,main{width:100%}section{box-shadow:none;break-inside:avoid}textarea{min-height:28mm}}
+  </style>
+</head>
+<body class="locked">
+  <div class="auth"><div class="auth-card"><h2>たもっちゃん専用ページ</h2><p>これまでと同じパスワードを入力してください。</p><input id="password" type="password" autocomplete="current-password"><button id="unlock">開く</button><p id="error" class="error"></p></div></div>
+  <nav class="toolbar"><div class="toolbar-inner"><a href="../">← 認知整体図へ</a><div class="actions"><button id="copy" class="primary">回答をまとめてコピー</button><button id="print">印刷・PDF</button></div></div></nav>
+  <header>
+    <p class="eyebrow">心の整体｜一点施術・再評価</p>
+    <h1>認知のツボ別<br>手当てワーク</h1>
+    <p class="lead">九つ全部を一度に扱いません。今いちばん反応する一つだけを選び、思考を酷使させていた固定を確かめ、選択肢が戻るかを見ます。</p>
+    <div class="notice"><strong>これは答え合わせではありません。</strong><br>候補が違えば外すことが成果です。価値観はほぐしません。価値観に付着した「べき」「禁止」「条件固定」だけを扱います。</div>
+  </header>
+  <main>
+    <section>
+      <h2><span class="step">0</span>今日の認知のツボを一つ選ぶ</h2>
+      <p>読んだ時に「近い」「少し引っかかる」と感じるものを一つ選びます。分からなければ、最初にすすめるT4からで大丈夫です。</p>
+      <select id="point" data-field="point">
+        <option value="">選んでください</option>
+        <option value="T1">T1 覚悟を決めたら、方法まで変えてはいけない</option>
+        <option value="T2">T2 成果がないうちは、条件を言う資格がない</option>
+        <option value="T3">T3 指標がなければ、話し合いは主張合戦になる</option>
+        <option value="T4">T4 自分で追加したことも、責任として完遂する</option>
+        <option value="T5">T5 制作の価値は、結果で証明される</option>
+        <option value="T6">T6 使った時間には、見合う対価や成果が必要</option>
+        <option value="T7">T7 難しいものだから、自分が担う価値がある</option>
+        <option value="T8">T8 反応がなければ、自分の判断は独りよがりかもしれない</option>
+        <option value="T9">T9 お金を基準にすると、使命が濁る</option>
+        <option value="OTHER">どれも違う</option>
+      </select>
+      <div id="candidate" class="candidate" hidden></div>
+      <label class="question" for="own-point">違う場合は、今の自分の言葉へ直してください。</label>
+      <textarea id="own-point" data-field="own-point"></textarea><div class="voice"><button data-voice="own-point">● 音声入力</button><span>押して話す</span></div>
+    </section>
+
+    <section>
+      <h2><span class="step">1</span>一場面へ固定する</h2>
+      <div class="guide"><strong>全体を扱いません。</strong>「動画活動」「仕事」ではなく、いつ・誰と・何をしようとした瞬間かを一つにします。</div>
+      <label class="question" for="event">いつ、誰と、何をしようとした時ですか。</label>
+      <textarea id="event" data-field="event"></textarea><div class="voice"><button data-voice="event">● 音声入力</button><span>押して話す</span></div>
+      <label class="question" for="camera-fact">録音やカメラで確認できる事実だけなら、何が起きていましたか。</label>
+      <textarea id="camera-fact" data-field="camera-fact"></textarea><div class="voice"><button data-voice="camera-fact">● 音声入力</button><span>押して話す</span></div>
+    </section>
+
+    <section>
+      <h2><span class="step">2</span>施術前の症状を測る</h2>
+      <p>たもっちゃんの場合、今回よく使われていたのは思考です。身体反応は未確認なので、分からなければ空欄で大丈夫です。</p>
+      <div class="checks">
+        <label class="check"><input type="checkbox" data-check="symptom" value="損得計算">損得計算</label><label class="check"><input type="checkbox" data-check="symptom" value="正解探し">正解探し</label><label class="check"><input type="checkbox" data-check="symptom" value="未来予測">未来予測</label><label class="check"><input type="checkbox" data-check="symptom" value="自己評価">自己評価</label><label class="check"><input type="checkbox" data-check="symptom" value="二択化">二択化</label><label class="check"><input type="checkbox" data-check="symptom" value="反芻">反芻</label>
+      </div>
+      <label class="question" for="loop-word">頭の中で、どんな言葉を繰り返していましたか。</label>
+      <textarea id="loop-word" data-field="loop-word"></textarea><div class="voice"><button data-voice="loop-word">● 音声入力</button><span>押して話す</span></div>
+      <div class="measure"><label>思考の強さ 0〜10<input id="before-score" data-field="before-score" type="number" min="0" max="10"></label><label>考え続けた時間<input id="before-time" data-field="before-time" type="text"></label><label>今見える選択肢の数<input id="before-options" data-field="before-options" type="number" min="0"></label></div>
+      <label class="question" for="body-emotion">身体・感情・行動に出ていたことはありますか。</label>
+      <textarea id="body-emotion" data-field="body-emotion"></textarea><div class="voice"><button data-voice="body-emotion">● 音声入力</button><span>押して話す</span></div>
+    </section>
+
+    <section>
+      <h2><span class="step">3</span>固定部を触診する</h2>
+      <div class="guide"><strong>触診とは言い当てることではありません。</strong>候補を声に出し、自分の反応で近さを確かめます。</div>
+      <label class="question">選んだ候補は、今の自分にどれくらい近いですか。</label>
+      <div class="checks"><label class="check"><input type="radio" name="fit" value="近い">近い</label><label class="check"><input type="radio" name="fit" value="一部近い">一部近い</label><label class="check"><input type="radio" name="fit" value="違う">違う</label><label class="check"><input type="radio" name="fit" value="分からない">分からない</label></div>
+      <label class="question" for="lost-choice">この認知によって、何が選べなくなっていましたか。</label>
+      <textarea id="lost-choice" data-field="lost-choice"></textarea><div class="voice"><button data-voice="lost-choice">● 音声入力</button><span>押して話す</span></div>
+      <label class="question" for="compensation">その代わりに、何を考え、我慢し、頑張り、追加していましたか。</label>
+      <textarea id="compensation" data-field="compensation"></textarea><div class="voice"><button data-voice="compensation">● 音声入力</button><span>押して話す</span></div>
+    </section>
+
+    <section>
+      <h2><span class="step">4</span>抽象語を具体へ戻す</h2>
+      <div class="guide"><strong>例</strong>「変える」ではなく「一般公開を毎月から隔月にする」、「相談する」ではなく「作業範囲と報酬の認識を文章で確認する」と書きます。</div>
+      <label class="question" for="concrete">今回の「変える・成果・相談・甘え・責任・価値」は、具体的にどんな行動や状態ですか。</label>
+      <textarea id="concrete" data-field="concrete"></textarea><div class="voice"><button data-voice="concrete">● 音声入力</button><span>押して話す</span></div>
+    </section>
+
+    <section>
+      <h2><span class="step">5</span>両側を見て、固定を緩める</h2>
+      <p>良い話へ変えるためではありません。固定していた側と、その反対側の両方にあるものを見ます。</p>
+      <div class="two">
+        <div class="side good"><h3>今の認知を持ち続ける側</h3><label class="question" for="keep-help">助かっている面</label><textarea id="keep-help" data-field="keep-help"></textarea><div class="voice"><button data-voice="keep-help">● 音声入力</button><span>押して話す</span></div><label class="question" for="keep-hard">難しくなる面</label><textarea id="keep-hard" data-field="keep-hard"></textarea><div class="voice"><button data-voice="keep-hard">● 音声入力</button><span>押して話す</span></div></div>
+        <div class="side hard"><h3>反対の選択をする側</h3><label class="question" for="other-help">助かる面</label><textarea id="other-help" data-field="other-help"></textarea><div class="voice"><button data-voice="other-help">● 音声入力</button><span>押して話す</span></div><label class="question" for="other-hard">難しくなる面</label><textarea id="other-hard" data-field="other-hard"></textarea><div class="voice"><button data-voice="other-hard">● 音声入力</button><span>押して話す</span></div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="step">6</span>価値観と固定した方法を分ける</h2>
+      <label class="question" for="protected-value">この認知で、本当に守りたかったものは何ですか。</label>
+      <textarea id="protected-value" data-field="protected-value"></textarea><div class="voice"><button data-voice="protected-value">● 音声入力</button><span>押して話す</span></div>
+      <label class="question" for="changeable-method">その価値を守ったまま、変えてよい方法・頻度・役割・条件は何ですか。</label>
+      <textarea id="changeable-method" data-field="changeable-method"></textarea><div class="voice"><button data-voice="changeable-method">● 音声入力</button><span>押して話す</span></div>
+    </section>
+
+    <section>
+      <h2><span class="step">7</span>可動域を戻す</h2>
+      <p>続ける／やめる以外も含め、最低三つ出します。まだ選ばなくて大丈夫です。</p>
+      <label class="question" for="options">今選べる選択肢を、三つ以上書いてください。</label>
+      <textarea id="options" data-field="options"></textarea><div class="voice"><button data-voice="options">● 音声入力</button><span>押して話す</span></div>
+      <label class="question" for="value-choice">今の自分が、価値観から選びたいものはどれですか。</label>
+      <textarea id="value-choice" data-field="value-choice"></textarea><div class="voice"><button data-voice="value-choice">● 音声入力</button><span>押して話す</span></div>
+    </section>
+
+    <section>
+      <h2><span class="step">8</span>現実で一つだけ実験する</h2>
+      <label class="question" for="experiment">実際に行う、小さな一歩は何ですか。</label>
+      <textarea id="experiment" data-field="experiment"></textarea><div class="voice"><button data-voice="experiment">● 音声入力</button><span>押して話す</span></div>
+      <label class="question" for="observe">いつ行い、実行後にどの事実を確認しますか。</label>
+      <textarea id="observe" data-field="observe"></textarea><div class="voice"><button data-voice="observe">● 音声入力</button><span>押して話す</span></div>
+    </section>
+
+    <section class="finish">
+      <h2><span class="step">9</span>施術後を再評価する</h2>
+      <div class="measure"><label>思考の強さ 0〜10<input id="after-score" data-field="after-score" type="number" min="0" max="10"></label><label>考え続ける時間<input id="after-time" data-field="after-time" type="text"></label><label>今見える選択肢の数<input id="after-options" data-field="after-options" type="number" min="0"></label></div>
+      <label class="question">このツボの仮説は、どうでしたか。</label>
+      <div class="checks"><label class="check"><input type="radio" name="result" value="合っていた">合っていた</label><label class="check"><input type="radio" name="result" value="一部だけ合っていた">一部だけ</label><label class="check"><input type="radio" name="result" value="違っていた">違っていた</label><label class="check"><input type="radio" name="result" value="まだ分からない">まだ分からない</label></div>
+      <label class="question" for="reword">修正した認知の言葉、または次に残った一問を書いてください。</label>
+      <textarea id="reword" data-field="reword"></textarea><div class="voice"><button data-voice="reword">● 音声入力</button><span>押して話す</span></div>
+      <p id="save" class="save">入力内容は、この端末のブラウザ内だけに保存されます。</p>
+      <p><strong>書き終えたら、上の「回答をまとめてコピー」を押し、薫ちゃんとのLINEまたはチャットへ貼り付けてください。</strong>未記入があっても大丈夫です。</p>
+    </section>
+    <section><p>このワークは医学的・心理学的な診断や治療ではありません。天中道・心の整体で、認知の固定と選択肢の変化を本人が確かめるための実践シートです。変化がなければ、原因と決めつけず仮説を修正します。</p></section>
+  </main>
+  <script>
+    const POINTS={
+      T1:{e:'「覚悟を決めたら続けないといけない」「一度決めたら変えるのはだめ」',l:'頻度・工程・条件を選び直すこと',c:'我慢、長時間作業、続ける／やめるの二択',q:'覚悟を守ることと、二年前の方法を固定することは本当に同じですか。'},
+      T2:{e:'「成果を上げてないのに言うのは甘え」「後ろめたい」',l:'相談、希望表明、契約確認',c:'成果が出るまで作業で埋め、自己評価と売上監視を続ける',q:'相談することと、成果なしに要求を通すことは本当に同じですか。'},
+      T3:{e:'「交渉が苦手」「指標がないと主張合戦になるのが怖い」',l:'感覚、希望、限界、分からなさを会話へ出すこと',c:'数字、根拠、正解探しと反論予測',q:'事実・希望・質問を分けても、話し合いは主張合戦になりますか。'},
+      T4:{e:'「頼まれてやってると錯覚」「勝手に自分で選択してやっていた」',l:'減らす、休む、任せる、今月は公開しない選択',c:'20数時間の自主追加工程を、自分の努力で埋める',q:'全工程のうち、実際に依頼されたものはどこまでですか。'},
+      T5:{e:'「自分がやらない方がうまくいく」「独りよがり」「動画編集と営業は違う」',l:'影響と全責任を分け、自分の担当を定めること',c:'結果監視、自己価値の点検、売上まで頭で背負う',q:'制作が結果へ影響することと、結果へ全責任を負うことは同じですか。'},
+      T6:{e:'「時間を使う以上は費用対効果が必要」「時給換算すると恐ろしくなる」',l:'金銭以外の価値と最低限必要な物理条件を同時に見ること',c:'時給換算、別の仕事との比較、失った時間の計算',q:'30時間から受け取ったものを、金銭・学び・関係・才能・未来資産に分けると何がありますか。'},
+      T7:{e:'「すぐに伝わらないものを選んでいる証明」「簡単にうまくいったら自分がやる必要があるのか」',l:'簡単にする、効率化する、任せる、早く成果を受け取ること',c:'困難や長時間を役割の証明として残す可能性',q:'対象がニッチであることと、届け方まで難しくすることは同じですか。'},
+      T8:{e:'「独りよがりなのかな」「何も言われへん」「これでいいのか」',l:'自分の意図を仮説として試し、具体的な反応を聞くこと',c:'視聴者やチームの評価を頭の中で予測する',q:'頭の中で反応を予測する代わりに、何を一つ聞けば事実が増えますか。'},
+      T9:{e:'「お金でやらない」「金額の上下によってやめない」「自分の使命と思ってやる」',l:'使命と持続可能な条件を同時に置くこと',c:'使命か採算かの二択と、条件相談の遅れ',q:'金額で使命を決めないことと、使命を続ける条件を整えないことは同じですか。'}
+    };
+    const H='fa83fc827f86a6f4ccda3ad40a116e1f8bbaea432bf40b429162fb5405bf5784',AUTH='kaoru_juku_member_tamotchan_auth_v1',STORE='tamotchan_cognitive_treatment_20260916_v1';
+    async function hash(v){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(v));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+    function openPage(){document.body.classList.remove('locked');localStorage.setItem(AUTH,H)}if(localStorage.getItem(AUTH)===H||localStorage.getItem(AUTH)==='1')openPage();unlock.onclick=async()=>{if(await hash(password.value.trim())===H)openPage();else error.textContent='パスワードが違います。'};
+    const controls=[...document.querySelectorAll('[data-field],input[type=checkbox],input[type=radio]')],saveEl=document.getElementById('save');
+    function save(){const v={};controls.forEach(x=>{const k=x.dataset.field||x.name||x.dataset.check;if(x.type==='checkbox'){(v[k]??=[]);if(x.checked)v[k].push(x.value)}else if(x.type==='radio'){if(x.checked)v[k]=x.value}else v[k]=x.value});localStorage.setItem(STORE,JSON.stringify(v));if(saveEl){saveEl.textContent='この端末に保存しました。';clearTimeout(save.t);save.t=setTimeout(()=>saveEl.textContent='入力内容は、この端末のブラウザ内だけに保存されています。',1500)}}
+    function load(){try{const v=JSON.parse(localStorage.getItem(STORE)||'{}');controls.forEach(x=>{const k=x.dataset.field||x.name||x.dataset.check;if(x.type==='checkbox')x.checked=(v[k]||[]).includes(x.value);else if(x.type==='radio')x.checked=v[k]===x.value;else if(v[k]!=null)x.value=v[k]});showPoint()}catch(e){}}
+    function showPoint(){const p=POINTS[point.value];if(!p){candidate.hidden=true;return}candidate.hidden=false;candidate.innerHTML=`<strong>触診候補</strong><div class="candidate-grid"><div class="candidate-item"><small>本人語の根拠</small><b>${p.e}</b></div><div class="candidate-item"><small>動かなくなった選択</small>${p.l}</div><div class="candidate-item"><small>代償として酷使したもの</small>${p.c}</div><div class="candidate-item"><small>最初の一問</small>${p.q}</div></div><p>この一文が本人の答えではありません。声に出して、近い・一部近い・違う・分からないで確かめます。</p>`}
+    controls.forEach(x=>x.addEventListener('input',()=>{save();if(x===point)showPoint()}));point.addEventListener('change',()=>{showPoint();save()});
+    print.onclick=()=>window.print();
+    copy.onclick=async()=>{const lines=['【たもっちゃん・認知のツボ別手当てワーク回答】',''];document.querySelectorAll('section').forEach(sec=>{const title=sec.querySelector('h2')?.textContent.trim();if(title)lines.push(`\n【${title}】`);sec.querySelectorAll('[data-field],input[type=radio]:checked,input[type=checkbox]:checked').forEach(x=>{if((x.type==='radio'||x.type==='checkbox')&&!x.checked)return;const label=x.closest('label')?.textContent.trim()||x.previousElementSibling?.textContent.trim()||x.dataset.field||x.name;lines.push(label);lines.push(x.value?.trim()||'（未記入）')})});const text=lines.join('\n');try{await navigator.clipboard.writeText(text)}catch(e){const t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}saveEl.textContent='回答をコピーしました。薫ちゃんとのLINEまたはチャットへ貼り付けてください。'};
+    const Rec=window.SpeechRecognition||window.webkitSpeechRecognition;let activeRec=null,activeBtn=null;document.querySelectorAll('[data-voice]').forEach(btn=>{const status=btn.nextElementSibling;if(!Rec){btn.disabled=true;status.textContent='ブラウザ非対応。端末の音声入力を使えます';return}btn.onclick=()=>{if(activeRec){activeRec.stop();return}const target=document.getElementById(btn.dataset.voice),r=new Rec();r.lang='ja-JP';r.continuous=true;r.interimResults=true;let base=target.value.trim();r.onstart=()=>{activeRec=r;activeBtn=btn;btn.classList.add('recording');btn.textContent='■ 停止';status.textContent='聞いています'};r.onresult=e=>{let f='',i='';for(let n=e.resultIndex;n<e.results.length;n++){const s=e.results[n][0].transcript;e.results[n].isFinal?f+=s:i+=s}if(f){base+=(base?' ':'')+f.trim();target.value=base;target.dispatchEvent(new Event('input',{bubbles:true}))}status.textContent=i||'聞いています'};r.onerror=()=>{status.textContent='音声を受け取れませんでした。もう一度押してください'};r.onend=()=>{btn.classList.remove('recording');btn.textContent='● 音声入力';if(status.textContent==='聞いています')status.textContent='押して話す';activeRec=null;activeBtn=null};r.start()}});load();
+  </script>
+</body>
+</html>
