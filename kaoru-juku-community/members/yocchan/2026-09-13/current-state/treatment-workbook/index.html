@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="data:,">
+  <title>よっちゃん 認知のツボ別ワーク</title>
+  <style>
+    :root{--ink:#202923;--deep:#263a32;--paper:#f6f4ee;--panel:#fff;--line:#d9d6cc;--gold:#b58a40;--green:#397359;--muted:#68716c;--soft:#eeece5;letter-spacing:0}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.8}body.locked>*:not(#gate){display:none!important}.wrap{width:min(900px,calc(100% - 30px));margin:auto}.hero{padding:36px 0;background:var(--deep);color:#fff;border-bottom:5px solid var(--gold)}.back{display:inline-block;margin-bottom:15px;color:#ddcc9f;text-decoration:none;font-size:13px}.hero h1{margin:5px 0;font-size:clamp(29px,5vw,46px);line-height:1.35}.hero p{margin:10px 0 0;color:#dfe8e2}.tools{position:sticky;top:0;z-index:10;padding:10px 0;background:rgba(246,244,238,.96);border-bottom:1px solid var(--line)}.toolrow{display:flex;flex-wrap:wrap;gap:8px}.toolrow button{min-height:42px;padding:8px 12px;border:0;border-radius:5px;background:var(--deep);color:#fff;font-weight:800}.toolrow button.alt{background:#fff;color:var(--deep);border:1px solid #aab8b0}main{padding:24px 0 76px}section{margin:0 0 18px;padding:clamp(18px,4vw,34px);background:#fff;border:1px solid var(--line);border-radius:7px}h2{margin:0 0 16px;color:var(--deep);font-size:clamp(22px,4vw,30px)}h3{color:var(--deep)}p{margin:0 0 14px}.step{display:inline-grid;place-items:center;width:31px;height:31px;margin-right:8px;border-radius:50%;background:var(--deep);color:#fff;font-size:14px}.guide{margin:14px 0 20px;padding:14px 16px;background:#f8f2e5;border-left:5px solid var(--gold)}.guide strong{display:block}.question{display:block;margin:19px 0 6px;font-weight:800}.question small{display:block;color:var(--muted);font-weight:400}textarea,input[type=text],input[type=number],select{width:100%;padding:12px;border:1px solid #c9c7bf;border-radius:5px;background:#fff;font:inherit;color:inherit}textarea{min-height:105px;resize:vertical}.voice{display:flex;align-items:center;gap:8px;margin-top:6px}.voice button{padding:6px 10px;border:1px solid #9eaaa4;border-radius:4px;background:#fff;color:var(--deep);font-weight:800}.voice button.recording{background:#8f453a;color:#fff}.voice span{color:var(--muted);font-size:12px}.measure{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.checks{display:flex;flex-wrap:wrap;gap:8px}.check{padding:8px 10px;border:1px solid var(--line);border-radius:4px;background:#f9f8f4}.candidate{margin-top:16px;padding:18px;background:#eef4f0;border:1px solid #bbcdc2;border-radius:6px}.candidate-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.candidate-item{padding:12px;background:#fff;border:1px solid #d2ded6;border-radius:5px}.candidate-item small{display:block;color:var(--muted)}.candidate-item b{display:block}.word-grid{display:grid;gap:12px}.word-card{border:1px solid var(--line);border-radius:6px;overflow:hidden}.word-title{display:flex;align-items:center;gap:9px;padding:10px 13px;background:var(--deep);color:#fff}.word-title span{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:var(--gold);color:#1d291f;font-weight:900}.word-fields{display:grid;grid-template-columns:1fr 1fr;padding:14px;gap:12px}.word-fields>div:first-child{grid-column:1/-1}.word-fields label{display:block;font-size:13px;font-weight:800}.word-fields textarea{min-height:78px}.gate-check{margin-top:15px;padding:13px;border:2px solid var(--gold);background:#fff9eb}.two{display:grid;grid-template-columns:1fr 1fr;gap:13px}.side{padding:16px;border:1px solid var(--line);border-radius:6px;background:#f8f7f3}.save{padding:11px;background:#eef4f0;color:#315b49;border-radius:4px}.finish{border-top:6px solid var(--green)}#gate{position:fixed;inset:0;z-index:999;display:grid;place-items:center;padding:20px;background:var(--deep)}.gatebox{width:min(420px,100%);padding:28px;background:#fff;border-radius:8px}.gatebox input,.gatebox button{width:100%;min-height:46px;margin-top:10px;padding:10px;font-size:16px}.gatebox button{border:0;background:var(--deep);color:#fff;font-weight:800}#er{color:#a33;min-height:22px;margin-top:7px}@media(max-width:700px){.measure,.candidate-grid,.word-fields,.two{grid-template-columns:1fr}.word-fields>div:first-child{grid-column:auto}.toolrow{display:grid;grid-template-columns:1fr 1fr}.toolrow button{width:100%}}
+  </style>
+</head>
+<body class="locked">
+  <header class="hero"><div class="wrap"><a class="back" href="../">← 認知整体図へ戻る</a><h1>認知のツボ別<br>手当てワーク</h1><p>一度に全部を直しません。候補を一つだけ選び、言葉を具体に戻し、両側を見た後の変化で仮説を確かめます。</p></div></header>
+  <div class="tools"><div class="wrap toolrow"><button id="copy">回答をまとめてコピー</button><button id="print" class="alt">印刷・PDF</button></div></div>
+  <main class="wrap">
+    <section>
+      <h2><span class="step">0</span>どこで止まったかを先に選ぶ</h2>
+      <div class="guide"><strong>三つは別の場所です。</strong>質問の意味が分からない／答えたい内容が浮かばない／内容はあるが言葉につながらない。今回はどこを扱うか一つ選びます。</div>
+      <label class="question" for="stop-place">今回いちばん近い停止点</label>
+      <select id="stop-place" data-field="stop-place"><option value="">選んでください</option><option>質問の意味が分からない</option><option>意味は分かるが、答えたい内容が浮かばない</option><option>内容はあるが、言葉や文章につながらない</option></select>
+      <label class="question" for="point">今回触診するツボ候補</label>
+      <select id="point" data-field="point"><option value="">一つ選んでください</option><option value="Y3" selected>Y3 学びの場では、何かに気づいて言いたい</option><option value="Y1">Y1 見える答えが出て、初めて進める</option><option value="Y2">Y2 時間をかけたなら、大したものが出てほしい</option><option value="Y4">Y4 答えが浮かばないと、やっぱり自分はできない</option></select>
+      <div id="candidate" class="candidate"></div>
+    </section>
+    <section>
+      <h2><span class="step">1</span>一つの場面に戻る</h2>
+      <label class="question" for="scene">いつ、どこで、どの質問を見た時ですか。</label><textarea id="scene" data-field="scene"></textarea><div class="voice"><button data-voice="scene">● 音声入力</button><span>押して話す</span></div>
+      <label class="question" for="observable">その時、実際にしたことを順番に書いてください。<small>例: スマホで読む→頭の中で考える→数分後に次へ移る。</small></label><textarea id="observable" data-field="observable"></textarea><div class="voice"><button data-voice="observable">● 音声入力</button><span>押して話す</span></div>
+    </section>
+    <section>
+      <h2><span class="step">2</span>手当前を測る</h2>
+      <div class="measure"><label>嫌・負荷 0〜10<input type="number" min="0" max="10" data-field="before-score"></label><label>考え続けた時間<input type="text" data-field="before-time"></label><label>見えた選択肢の数<input type="number" min="0" data-field="before-options"></label></div>
+      <label class="question" for="thought">頭の中で出ていた言葉</label><textarea id="thought" data-field="thought"></textarea><div class="voice"><button data-voice="thought">● 音声入力</button><span>押して話す</span></div>
+      <label class="question" for="body">身体に起きていたこと<small>なければ「分からない」「確認していない」で大丈夫です。</small></label><textarea id="body" data-field="body"></textarea><div class="voice"><button data-voice="body">● 音声入力</button><span>押して話す</span></div>
+    </section>
+    <section>
+      <h2><span class="step">3</span>候補を触診する</h2>
+      <p>上の候補文は答えではありません。今の自分にどれくらい近いかを選びます。</p>
+      <div class="checks"><label class="check"><input type="radio" name="fit" value="近い">近い</label><label class="check"><input type="radio" name="fit" value="一部近い">一部近い</label><label class="check"><input type="radio" name="fit" value="違う">違う</label><label class="check"><input type="radio" name="fit" value="分からない">分からない</label></div>
+      <label class="question" for="lost">この認知がある時、何が選べなくなっていますか。</label><textarea id="lost" data-field="lost"></textarea><div class="voice"><button data-voice="lost">● 音声入力</button><span>押して話す</span></div>
+      <label class="question" for="compensation">その代わりに、頭の中で何を探し、何を繰り返していますか。</label><textarea id="compensation" data-field="compensation"></textarea><div class="voice"><button data-voice="compensation">● 音声入力</button><span>押して話す</span></div>
+    </section>
+    <section>
+      <h2><span class="step">4</span>認知語を一語ずつ具体に戻す</h2>
+      <div class="guide"><strong>ここが最重要です。</strong>たとえば「気づき」をそのままにしません。新しい考え、感情、身体反応、疑問、行動したいことのどれを指すのかを確かめます。</div>
+      <div id="word-grid" class="word-grid"></div>
+      <label class="question" for="concrete">具体化した言葉だけで、今回の認知を一文に組み直してください。</label><textarea id="concrete" data-field="concrete"></textarea><div class="voice"><button data-voice="concrete">● 音声入力</button><span>押して話す</span></div>
+      <label class="question" for="remaining">まだ意味を確認していない言葉は残っていますか。</label><textarea id="remaining" data-field="remaining"></textarea><div class="voice"><button data-voice="remaining">● 音声入力</button><span>押して話す</span></div>
+      <label class="gate-check"><input type="checkbox" data-check="word-gate" value="具体化を確認した"> 本人固有の意味、第三者が確認できる状態、境界、根拠を確認した。まだなら両側へ進まない。</label>
+    </section>
+    <section>
+      <h2><span class="step">5</span>両側を見て、固定を緩める</h2>
+      <p>良い話に変えるのではありません。今の側と反対側の両方にあるものを見ます。</p>
+      <div class="two">
+        <div class="side"><h3>今の認知を持つ側</h3><label class="question" for="keep-help">助かる面</label><textarea id="keep-help" data-field="keep-help"></textarea><div class="voice"><button data-voice="keep-help">● 音声入力</button><span>押して話す</span></div><label class="question" for="keep-hard">難しくなる面</label><textarea id="keep-hard" data-field="keep-hard"></textarea><div class="voice"><button data-voice="keep-hard">● 音声入力</button><span>押して話す</span></div></div>
+        <div class="side"><h3>反対の選択をする側</h3><label class="question" for="other-help">助かる面</label><textarea id="other-help" data-field="other-help"></textarea><div class="voice"><button data-voice="other-help">● 音声入力</button><span>押して話す</span></div><label class="question" for="other-hard">難しくなる面</label><textarea id="other-hard" data-field="other-hard"></textarea><div class="voice"><button data-voice="other-hard">● 音声入力</button><span>押して話す</span></div></div>
+      </div>
+    </section>
+    <section>
+      <h2><span class="step">6</span>価値と方法を分ける</h2>
+      <label class="question" for="value">この認知で、本当は何を大切にしたかったですか。<small>分からなければ空欄で大丈夫です。</small></label><textarea id="value" data-field="value"></textarea><div class="voice"><button data-voice="value">● 音声入力</button><span>押して話す</span></div>
+      <label class="question" for="method">それを大切にしたまま、変えてよい方法は何ですか。</label><textarea id="method" data-field="method"></textarea><div class="voice"><button data-voice="method">● 音声入力</button><span>押して話す</span></div>
+    </section>
+    <section>
+      <h2><span class="step">7</span>可動域を戻す</h2>
+      <label class="question" for="options">今選べることを三つ以上書いてください。<small>例: 今はないと書く／単語一つだけ置く／分からない質問をそのまま送る／5分で区切る。</small></label><textarea id="options" data-field="options"></textarea><div class="voice"><button data-voice="options">● 音声入力</button><span>押して話す</span></div>
+      <label class="question" for="choice">今の自分が一つ選ぶならどれですか。</label><textarea id="choice" data-field="choice"></textarea><div class="voice"><button data-voice="choice">● 音声入力</button><span>押して話す</span></div>
+    </section>
+    <section>
+      <h2><span class="step">8</span>小さく実験する</h2>
+      <label class="question" for="experiment">次のワークで一つだけ試すこと</label><textarea id="experiment" data-field="experiment"></textarea><div class="voice"><button data-voice="experiment">● 音声入力</button><span>押して話す</span></div>
+      <label class="question" for="observe">試した後、何を事実として確認しますか。</label><textarea id="observe" data-field="observe"></textarea><div class="voice"><button data-voice="observe">● 音声入力</button><span>押して話す</span></div>
+    </section>
+    <section class="finish">
+      <h2><span class="step">9</span>手当て後を測る</h2>
+      <div class="measure"><label>嫌・負荷 0〜10<input type="number" min="0" max="10" data-field="after-score"></label><label>考え続ける時間<input type="text" data-field="after-time"></label><label>見えた選択肢の数<input type="number" min="0" data-field="after-options"></label></div>
+      <label class="question">このツボ候補はどうでしたか。</label><div class="checks"><label class="check"><input type="radio" name="result" value="合っていた">合っていた</label><label class="check"><input type="radio" name="result" value="一部だけ">一部だけ</label><label class="check"><input type="radio" name="result" value="違っていた">違っていた</label><label class="check"><input type="radio" name="result" value="まだ分からない">まだ分からない</label></div>
+      <label class="question" for="next">修正した認知の言葉、または次に残った一問</label><textarea id="next" data-field="next"></textarea><div class="voice"><button data-voice="next">● 音声入力</button><span>押して話す</span></div>
+      <p id="save" class="save">入力内容は、この端末のブラウザ内だけに保存されます。</p>
+      <p><strong>書き終えたら、上の「回答をまとめてコピー」を押し、そのまま薫ちゃんとのLINEまたはチャットへ貼り付けてください。</strong>未記入があっても大丈夫です。</p>
+    </section>
+  </main>
+  <script>
+    const POINTS={
+      Y1:{e:'「見える形に出てきとるもん」「出せた感じが出る」',l:'今はないと書く／単語だけ置く／分からない箇所だけ質問する',c:'頭の中で、出力できる形になるまで探す',q:'どこからを「答えた」「進んだ」と数えますか。',w:['答え','見える形','出せた感じ','次に進む']},
+      Y2:{e:'「時間かけて大したもの出てこない」',l:'小さく区切る／少量を残す／今日は答えがないと記録する',c:'時間と出力を比較し、さらに考えるか中断する',q:'何分かけて、何がどれだけ出た時を「大したもの」と呼びますか。',w:['時間がかかる','大したもの','出てくる','割に合う']},
+      Y3:{e:'「そればっかもいかんな」「もうちょい何か気づいて何か言いたい」',l:'今はないと答える／後から気づく／質問だけを持ち帰る',c:'何かあるはずだと、答えたいこと自体を探す',q:'「一つもない」と言う時、何を数えてゼロですか。',w:['学びの場','何かに気づく','一つもない','良くない','言いたい']},
+      Y4:{e:'「あ、やっぱできないなって思って」',l:'今回はまだ浮かばないと記録する／条件を変える／支援を使う',c:'一場面ではなく、自分全体を評価する',q:'この場面で具体的に、何ができなかったことを「できない」と呼びますか。',w:['やっぱり','できない','自分で考える','苦手']}
+    };
+    const H='1d3327e0df4257470c17e90db4c8651c840277973efc58a7ee5943f86c279b7b',AUTH='kaoru_juku_member_yocchan_auth_v2',STORE='yocchan_cognitive_treatment_20260913_v1';
+    async function hash(v){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(v));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+    function openPage(){document.body.classList.remove('locked');localStorage.setItem(AUTH,H)}if(localStorage.getItem(AUTH)===H||localStorage.getItem(AUTH)==='1')openPage();else{const d=document.createElement('div');d.id='gate';d.innerHTML='<div class="gatebox"><h2>よっちゃん本人専用</h2><p>いつものパスワードを入力してください。</p><input id="password" type="password"><button id="unlock">表示する</button><div id="er"></div></div>';document.body.appendChild(d);unlock.onclick=async()=>{if(await hash(password.value.trim())===H){openPage();d.remove()}else er.textContent='パスワードが違います。'};password.onkeydown=e=>{if(e.key==='Enter')unlock.click()}}
+    let saved={};const saveEl=document.getElementById('save');
+    function controls(){return[...document.querySelectorAll('[data-field],input[type=checkbox],input[type=radio]')]}
+    function save(){controls().forEach(x=>{const k=x.dataset.field||x.name||x.dataset.check;if(x.type==='checkbox')saved[k]=[...document.querySelectorAll('input[type=checkbox][data-check="'+x.dataset.check+'"]:checked')].map(c=>c.value);else if(x.type==='radio'){if(x.checked)saved[k]=x.value}else saved[k]=x.value});localStorage.setItem(STORE,JSON.stringify(saved));if(saveEl)saveEl.textContent='この端末に保存しました。'}
+    function applySaved(){controls().forEach(x=>{const k=x.dataset.field||x.name||x.dataset.check;if(x.type==='checkbox')x.checked=(saved[k]||[]).includes(x.value);else if(x.type==='radio')x.checked=saved[k]===x.value;else if(saved[k]!=null)x.value=saved[k]})}
+    function wordCard(term,index,key){const p='word-'+key+'-'+index;const area=(s,l)=>'<div><label>'+l+'</label><textarea id="'+p+'-'+s+'" data-field="'+p+'-'+s+'"></textarea><div class="voice"><button data-voice="'+p+'-'+s+'">● 音声入力</button><span>押して話す</span></div></div>';return '<article class="word-card"><div class="word-title"><span>'+(index+1)+'</span><b>'+term+'</b></div><div class="word-fields">'+area('meaning','自分にとって、誰・何がどうなる状態ですか')+area('observable','第三者が確認できる出来事・発言・行動・数値は何ですか')+area('boundary','どこから該当し、どこまでは該当しませんか')+'<label>根拠の種類<select data-field="'+p+'-source"><option value="">選んでください</option><option>実際の出来事</option><option>相手が言った言葉</option><option>文章で確認した内容</option><option>数値・記録</option><option>自分の予測・想像</option><option>まだ分からない</option></select></label></div></article>'}
+    function showPoint(){const p=POINTS[point.value];if(!p)return;candidate.innerHTML='<strong>触診候補</strong><div class="candidate-grid"><div class="candidate-item"><small>本人語</small><b>'+p.e+'</b></div><div class="candidate-item"><small>選べなくなった可能性</small>'+p.l+'</div><div class="candidate-item"><small>代わりに酷使したもの</small>'+p.c+'</div><div class="candidate-item"><small>最初の一問</small>'+p.q+'</div></div><p>この候補が本人の答えではありません。近い・一部近い・違う・分からないで確かめます。</p>';document.getElementById('word-grid').innerHTML=p.w.map((w,i)=>wordCard(w,i,point.value)).join('');applySaved()}
+    try{saved=JSON.parse(localStorage.getItem(STORE)||'{}')}catch(e){}applySaved();if(!point.value)point.value='Y3';showPoint();applySaved();point.addEventListener('change',()=>{save();showPoint()});document.addEventListener('input',e=>{if(e.target.matches('[data-field],input[type=checkbox],input[type=radio]'))save()});print.onclick=()=>window.print();
+    copy.onclick=async()=>{const lines=['【よっちゃん・認知のツボ別手当てワーク回答】'];document.querySelectorAll('section').forEach(sec=>{const title=sec.querySelector('h2')?.textContent.trim();if(title)lines.push('\n【'+title+'】');sec.querySelectorAll('[data-field],input[type=radio]:checked,input[type=checkbox]:checked').forEach(x=>{if((x.type==='radio'||x.type==='checkbox')&&!x.checked)return;const label=x.closest('label')?.childNodes[0]?.textContent.trim()||x.dataset.field||x.name;lines.push(label);lines.push((x.value||'').trim()||'（未記入）')})});const text=lines.join('\n');try{await navigator.clipboard.writeText(text)}catch(e){const t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}saveEl.textContent='回答をコピーしました。薫ちゃんとのLINEまたはチャットへ貼り付けてください。'};
+    const Rec=window.SpeechRecognition||window.webkitSpeechRecognition;let active=null;document.addEventListener('click',e=>{const btn=e.target.closest('[data-voice]');if(!btn)return;e.preventDefault();const status=btn.nextElementSibling;if(!Rec){status.textContent='端末の音声入力を使ってください';return}if(active){active.stop();return}const target=document.getElementById(btn.dataset.voice),r=new Rec();r.lang='ja-JP';r.continuous=true;r.interimResults=true;let base=target.value.trim();r.onstart=()=>{active=r;btn.classList.add('recording');btn.textContent='■ 停止';status.textContent='聞いています'};r.onresult=ev=>{let f='',i='';for(let n=ev.resultIndex;n<ev.results.length;n++){const s=ev.results[n][0].transcript;ev.results[n].isFinal?f+=s:i+=s}if(f){base+=(base?' ':'')+f.trim();target.value=base;target.dispatchEvent(new Event('input',{bubbles:true}))}status.textContent=i||'聞いています'};r.onend=()=>{btn.classList.remove('recording');btn.textContent='● 音声入力';status.textContent='押して話す';active=null};r.start()});
+  </script>
+</body>
+</html>
