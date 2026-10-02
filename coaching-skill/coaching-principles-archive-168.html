@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>認知が動くコーチング 実践原則体系｜前田薫</title>
+  <style>
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      line-height: 2;
+      color: #2a2a28;
+      background: #f8f7f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 28px 120px;
+    }
+    .doc-label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: #aaa;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .doc-badge {
+      display: inline-block;
+      font-size: 12px;
+      background: #2a2a28;
+      color: #c4a96e;
+      border-radius: 4px;
+      padding: 3px 12px;
+      margin-bottom: 24px;
+      letter-spacing: 0.08em;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: bold;
+      margin: 0 0 8px;
+      line-height: 1.4;
+    }
+    .page-sub {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 16px;
+    }
+    .intro-box {
+      background: #fff;
+      border: 0.5px solid #ddd9d0;
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+      font-size: 14px;
+      color: #555;
+      line-height: 1.9;
+    }
+    .intro-box strong {
+      color: #2a2a28;
+    }
+
+    /* --- セクション --- */
+    .section-header {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: #c4a96e;
+      text-transform: uppercase;
+      margin: 56px 0 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e8e5de;
+    }
+
+    /* --- フロー図 --- */
+    .flow-block {
+      background: #2a2a28;
+      color: #f0ede6;
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+      font-size: 14px;
+    }
+    .flow-block h3 {
+      color: #c4a96e;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      margin: 0 0 16px;
+    }
+    .flow-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .flow-step:last-child { border-bottom: none; }
+    .flow-num {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      background: #c4a96e;
+      color: #2a2a28;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .flow-arrow {
+      text-align: center;
+      color: #c4a96e;
+      font-size: 12px;
+      padding: 2px 0;
+    }
+
+    /* --- 原則カード --- */
+    .principle-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .principle-card {
+      background: #fff;
+      border: 0.5px solid #ddd9d0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .principle-card.sub {
+      border-left: 3px solid #c4a96e;
+    }
+    .p-head {
+      padding: 18px 24px 16px;
+      border-bottom: 1px solid #f0ede6;
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+    }
+    .p-num {
+      font-size: 11px;
+      font-weight: bold;
+      color: #c4a96e;
+      letter-spacing: 0.1em;
+      flex-shrink: 0;
+    }
+    .p-title {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+    .p-body {
+      padding: 16px 24px 20px;
+      font-size: 14px;
+      color: #444;
+    }
+    .p-def {
+      line-height: 1.8;
+      margin-bottom: 16px;
+      color: #555;
+    }
+    .p-row {
+      margin-bottom: 14px;
+    }
+    .p-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: #c4a96e;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    .p-items {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .p-items li {
+      padding: 4px 0 4px 16px;
+      position: relative;
+      line-height: 1.7;
+    }
+    .p-items li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #c4a96e;
+      font-size: 12px;
+    }
+    .p-items.check li::before {
+      content: '◎';
+      color: #4a8;
+    }
+    .p-highlight {
+      background: #f8f5ef;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: #5a4e3a;
+      border-left: 3px solid #c4a96e;
+      margin-top: 10px;
+    }
+
+    /* --- 仮説表 --- */
+    .hypo-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    .hypo-table th {
+      text-align: left;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: #888;
+      padding: 8px 12px;
+      border-bottom: 1px solid #ddd9d0;
+    }
+    .hypo-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #f0ede6;
+      line-height: 1.7;
+      vertical-align: top;
+    }
+
+    /* --- 記録項目 --- */
+    .record-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    @media(max-width:600px){ .record-grid { grid-template-columns: 1fr; } }
+    .record-item {
+      background: #fff;
+      border: 0.5px solid #ddd9d0;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: #555;
+    }
+    .record-item::before {
+      content: '📝 ';
+    }
+
+    /* --- ナビ --- */
+    .back-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #aaa;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      margin-bottom: 40px;
+    }
+    .back-nav:hover { color: #2a2a28; }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e8e5de;
+      margin: 48px 0;
+    }
+    .footer-note {
+      font-size: 12px;
+      color: #bbb;
+      line-height: 1.8;
+    }
+
+    /* NEW badge */
+    .badge-updated {
+      display: inline-block;
+      font-size: 10px;
+      background: #4a8;
+      color: #fff;
+      border-radius: 4px;
+      padding: 1px 8px;
+      margin-left: 8px;
+      vertical-align: middle;
+      letter-spacing: 0.06em;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <a class="back-nav" href="index.html">← 訓練記録一覧に戻る</a>
+
+  <div class="doc-label">認知が動くコーチング</div>
+  <div class="doc-badge">COACHING PRINCIPLES v1</div>
+  <h1>実践原則体系</h1>
+  <p class="page-sub">2026年5月〜7月の実践分析から導き出した、再現可能な観察・問い・検証の原則集</p>
+
+  <div class="intro-box">
+    <strong>この体系の基準</strong><br>
+    「科学」とは「学術的に証明済み」ではなく、以下を満たす実践検証可能な原則として蓄積する。<br><br>
+    ① 観察できるサインがある　② コーチが再現できる行動・問いに変換できる<br>
+    ③ クライアントの言葉・感情・次の反応で変化を確認できる<br>
+    ④ 反例や機能しない条件も記録できる　⑤ 複数の実践で再検証できる
+  </div>
+
+  <!-- ========== 基本フロー ========== -->
+  <div class="section-header">BASIC FLOW — セッションの基本流れ</div>
+
+  <div class="flow-block">
+    <h3>COACHING FLOW — 認知が動くセッションの順序</h3>
+    <div class="flow-step">
+      <div class="flow-num">1</div>
+      <div>安全と扱うテーマの確認（身体状態・身の安全）</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">2</div>
+      <div>感情を出してもいい場づくり</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">3</div>
+      <div>具体的な出来事・実際の言葉（認知語→セリフへ戻す）</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">4</div>
+      <div>感情を聞く</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">5</div>
+      <div>整理モード・説明モードに入っていないか確認</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">6</div>
+      <div>感情を生んでいる片側認知のフレームワークを特定</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">7</div>
+      <div>プラス側 / マイナス側の判定 → 反対側を問う</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">8</div>
+      <div>片側認知が緩んだかを本人の感覚で確認</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">9</div>
+      <div>緩んだ後で、支援・価値観・目的への接続</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">10</div>
+      <div>中庸思考単独 / 身体・修験道領域の判定</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">11</div>
+      <div>同種の出来事への感情と行動で統合を確認</div>
+    </div>
+  </div>
+
+  <!-- ========== 核心ルール ========== -->
+  <div class="flow-block" style="background:#5a3e28;">
+    <h3>絶対に崩さない2つのルール</h3>
+    <div class="flow-step">
+      <div style="color:#f0ede6;font-size:14px;line-height:1.8;">
+        <strong style="color:#c4a96e;">① 緩める → 行動を問う → 見せる の順序</strong><br>
+        片側認知が緩む前にプラスを見せると「無理やり良いことにされている」になる。
+      </div>
+    </div>
+    <div class="flow-step">
+      <div style="color:#f0ede6;font-size:14px;line-height:1.8;">
+        <strong style="color:#c4a96e;">② 感謝はゴールではなく結果</strong><br>
+        「感謝できるまで持っていく」という構えは、感謝できない自分を責める新FWを作る。感謝は結果として湧くもの。
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 中核原則 ========== -->
+  <div class="section-header">CORE PRINCIPLES — 中核原則（01〜12）</div>
+
+  <div class="principle-grid">
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">01</div>
+        <div class="p-title">感情は、認知を特定する入口である</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">出来事から直接構造へ飛ばず、まず感情の種類と向き先を聞くと、本人が何を起きたと捉えたかを特定しやすくなる。</div>
+        <div class="p-row">
+          <div class="p-label">観察サイン</div>
+          <ul class="p-items">
+            <li>怒り・悔しさ・悲しみ・恥・虚しさ・不安などの感情語が出る</li>
+            <li>身体反応が出ているが、本人が意味を言葉にできていない</li>
+          </ul>
+        </div>
+        <div class="p-row">
+          <div class="p-label">再現の問い</div>
+          <ul class="p-items">
+            <li>「その時、一番強かった感情は何でしたか」</li>
+            <li>「その感情は誰に、何に向いていましたか」</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">02</div>
+        <div class="p-title">クライアントの言葉を保持すると、問いの精度と安全性が上がる</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">コーチが別の言葉に置き換えず、本人が使った言葉の意味を確認しながら問うと、定義のずれが小さくなり探索しやすくなる。</div>
+        <div class="p-row">
+          <div class="p-label">再現の問い</div>
+          <ul class="p-items">
+            <li>「その『〇〇』という言葉は、あなたにとってどんな意味ですか」</li>
+            <li>「〇〇という感じだったんですね」と受け取ってから一問置く</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">03</div>
+        <div class="p-title">深く見る前に、受け取る</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">深掘りの問いを連続させる前に、本人の感情と言葉を一度そのまま受け取ることで、問いが詰問として受け取られにくくなる。</div>
+        <div class="p-row">
+          <div class="p-label">観察サイン（受け取りが足りない時）</div>
+          <ul class="p-items">
+            <li>「わからなくなった」「逃げられない感じ」が出る</li>
+            <li>掘る問いが続き、本人の言葉が減る</li>
+          </ul>
+        </div>
+        <div class="p-row">
+          <div class="p-label">再現のセリフ</div>
+          <ul class="p-items">
+            <li>「それはきつかったですね」</li>
+            <li>「そうか、その瞬間そう感じたんですね」</li>
+            <li>「今、言葉にしにくい感じがありますか」</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">04</div>
+        <div class="p-title">見えた構造は説明せず、短い一問に変換する</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">コーチが見抜いた構造を先に説明すると、本人はコーチの答えに沿って考えやすい。短い一問として渡し、本人の口から構造が出る余白を残す。</div>
+        <div class="p-row">
+          <div class="p-label">観察サイン（説明が多すぎる時）</div>
+          <ul class="p-items">
+            <li>コーチが長く説明した後、本人の発話が減る</li>
+            <li>本人が気づきを展開し始めた時、コーチが補足して流れを切る</li>
+          </ul>
+        </div>
+        <div class="p-highlight">「今言いたい構造を、一問にすると何か」をコーチ自身が確認してから問いを置く。</div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">05</div>
+        <div class="p-title">片側認知は、反対側を見た時に緩む</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">「これは良いこと」「これはダメなこと」と片側だけに価値を置いた認知は、反対側の事実を本人が見つけることで緩む。</div>
+        <div class="p-row">
+          <div class="p-label">運用ルール（最重要）</div>
+          <ul class="p-items">
+            <li>プラス固定「〇〇は良いこと」→「〇〇であることのデメリットは何ですか」</li>
+            <li>マイナス固定「〇〇はダメなこと」→「〇〇であることのメリットは何ですか」</li>
+          </ul>
+        </div>
+        <div class="p-highlight">❌ 緩む前に「何を受け取っていますか」「支援は何ですか」へ進まない。</div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">06</div>
+        <div class="p-title">支援を見るのは、前提が緩んだ後である</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">本人の前提が固定されたまま出来事の価値や支援を問うと、前向きな解釈の押しつけになりやすい。</div>
+        <div class="p-row">
+          <div class="p-label">緩みの確認</div>
+          <ul class="p-items">
+            <li>「今、その前提はどんな感じに見えていますか」と緩みを確認してから進む</li>
+            <li>緩みの後に「この出来事があったからこそ見えたものは何ですか」</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">07</div>
+        <div class="p-title">統合は、同種の出来事への感情と行動で確認する</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">理解や学びを述べられるだけでは統合とは限らない。同じ構造の出来事が再び起きた時の感情と対応を聞き、回避か見方の変化かを確認する。</div>
+        <div class="p-row">
+          <div class="p-label">統合確認の問い</div>
+          <ul class="p-items">
+            <li>「同じようなことが起きたら、今はどう感じそうですか」</li>
+            <li>「その時、どんな対応を選びそうですか」</li>
+          </ul>
+        </div>
+        <div class="p-highlight">「もう同じことはしない」は回避。感情の種類・強度が変わったかが統合のサイン。</div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">08</div>
+        <div class="p-title">安全な場は、一人では出せない言葉を生む</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">安心してジャッジされず、本人の言葉が保たれる場では、本人が一人で考えている時には出なかった言葉を語り、自分でその言葉を聞いて気づける。</div>
+        <div class="p-row">
+          <div class="p-label">場の質を確認するサイン</div>
+          <ul class="p-items">
+            <li>「言えた」「整理できた」「自分でも気づかなかった言葉が出た」</li>
+            <li>セッションがコーチの説明ではなく、本人の言葉で満ちている</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">09</div>
+        <div class="p-title">感情を聞く前に、感情を出してもいい場をつくる</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">感情を質問するだけでは、感情は出てこないことがある。クライアントが「ここなら言える」と感じる場ができて初めて、感情は認知の入口として機能する。</div>
+        <div class="p-row">
+          <div class="p-label">場づくりの問い</div>
+          <ul class="p-items">
+            <li>「今、それを言葉にしても大丈夫そうですか」と安全を確認する</li>
+            <li>感情が出ない時は、実際の場面・言われた言葉・身体感覚へ戻る</li>
+          </ul>
+        </div>
+        <div class="p-highlight">統合確認は「話せた」「整理できた」ではなく「出せた」という感覚が残ったか。</div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">10</div>
+        <div class="p-title">整理モードは、防衛のサインであることがある</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">クライアントが出来事をきれいに説明できている時ほど、感情に触れないための整理モードに入っている可能性がある。</div>
+        <div class="p-row">
+          <div class="p-label">整理モードを検知したら</div>
+          <ul class="p-items">
+            <li>「その中で、一番感情が動いた瞬間はどこですか」と戻す</li>
+            <li>「頭では整理できているとして、体はどんな反応ですか」</li>
+            <li>「今話しているのは説明に近いですか、それともその時の感情に近いですか」</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">11</div>
+        <div class="p-title">コーチ自身の安心状態が、場の深さを決める</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">コーチが不安・焦り・正解探しの中にいると、クライアントの感情や沈黙を待てなくなる。</div>
+        <div class="p-row">
+          <div class="p-label">コーチが崩れているサイン</div>
+          <ul class="p-items">
+            <li>コーチの質問が長くなる / 構造説明が増える</li>
+            <li>沈黙を待てず次の問いへ進む</li>
+            <li>クライアントの言葉よりコーチの仮説確認が中心になる</li>
+          </ul>
+        </div>
+        <div class="p-row">
+          <div class="p-label">立て直し</div>
+          <ul class="p-items">
+            <li>セッション中に「今、自分は何を急いでいるか」を確認する</li>
+            <li>「今、少し整理して聞いています」と透明性を持たせる</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">12</div>
+        <div class="p-title">中庸思考単独領域と、身体・修験道領域を分ける</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">問いによって片側認知が緩む領域と、身体感覚・神経系・反復練習を通じて扱った方がよい領域がある（実践仮説として継続検証）。</div>
+        <div class="p-row">
+          <div class="p-label">身体・修験道領域のサイン</div>
+          <ul class="p-items">
+            <li>頭では理解しているが、身体反応が強く残る</li>
+            <li>同じテーマが何度も戻る</li>
+            <li>恥・恐れ・自己像の揺れが強く、言葉だけでは緩まない</li>
+          </ul>
+        </div>
+        <div class="p-highlight">「これは問いで扱う領域か、身体から整える領域か」をセッション記録に残す。</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ========== 2026-06-08 追加：視点移動の核心 ========== -->
+  <div class="section-header">2026-06-08 追加 — 視点をずらす問いの核（JDSコーチ会）<span class="badge-updated">NEW</span></div>
+
+  <div class="principle-grid">
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">13</div>
+        <div class="p-title">「その後、何をしましたか？」で視点を物理的に移動させる</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">行動を思い出す時、人は必ず自分を外から見る（斜め上の観察者視点が物理的に発生する）。これは「視野が広がる」ではなく「視点が動く」こと。</div>
+        <div class="p-row">
+          <div class="p-label">核心の一問</div>
+          <ul class="p-items">
+            <li>「その後、何をしましたか？」</li>
+            <li>「その後、どう行動しましたか？」</li>
+          </ul>
+        </div>
+        <div class="p-highlight">答えが出なくてもよい。問いを投げた時点で脳はすでに動いている。家に帰ってお風呂で「あ」と気づくのが正常。焦って回収しない。<br><br>❌「プラスは何ですか？」は視点がずれない。マイナス側から見ている限りプラスは見えない。</div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">14</div>
+        <div class="p-title">認知語をセリフ（事実語）に戻す</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">クライアントが使う言葉はほぼ全部「認知語」（解釈・評価）。事実の言葉（セリフ）に戻すことで、解釈と出来事を分離できる。</div>
+        <div class="p-row">
+          <div class="p-label">認知語の例</div>
+          <ul class="p-items">
+            <li>「バカにされた」「否定された」「ないがしろにされた」</li>
+          </ul>
+        </div>
+        <div class="p-row">
+          <div class="p-label">事実語への戻し方</div>
+          <ul class="p-items">
+            <li>❌「事実は何ですか？」（切り分けられない人には通じない）</li>
+            <li>◯「その時、実際に何と言われたのですか？」（セリフを特定する）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">15</div>
+        <div class="p-title">照準管理——今どの層のプラスを聞いているかを見失わない</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">見えていないプラスは3層ある。同じ「メリット」という語で問いの層がずれると、質問が空転する。</div>
+        <div class="p-row">
+          <div class="p-label">3層の照準</div>
+          <ul class="p-items">
+            <li>① 深い層：「背が低いこと」のメリット（前提FWに乗っている）</li>
+            <li>② 中間層：「相手がどういう意図で言ったか」（意図の確認）</li>
+            <li>③ 表層：「背が低いですねと言われたこと」のメリット（出来事のプラス）</li>
+          </ul>
+        </div>
+        <div class="p-highlight">「背が低いことのメリット」と「背が低いと言われたことのメリット」は別物。コーチ自身が今どの層を聞いているかを明確にしておく。</div>
+      </div>
+    </div>
+
+    <div class="principle-card">
+      <div class="p-head">
+        <div class="p-num">16</div>
+        <div class="p-title">フレームワーク（繰り返しパターン）を外す——反例を一つ出す</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">特定のタイプの人・状況でいつも同じ反応が出る場合、過去のFWが起動している。過去を深掘りせず、反例を一つ思い出させるだけでFWが消える。</div>
+        <div class="p-row">
+          <div class="p-label">反例を引き出す問い</div>
+          <ul class="p-items">
+            <li>「体格の大きい人で、あなたに優しくしてくれた経験はありますか？」</li>
+          </ul>
+        </div>
+        <div class="p-highlight">反例が1つ出ればFWは崩れる。深掘り不要。</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ========== 補助原則 ========== -->
+  <div class="section-header">SUPPLEMENTARY — 補助原則（13〜15）</div>
+
+  <div class="principle-grid">
+
+    <div class="principle-card sub">
+      <div class="p-head">
+        <div class="p-num">S1</div>
+        <div class="p-title">目的が言語化されると、選択肢比較の迷いは整理される</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">「どちらが得か」という比較で止まっている時に、「そもそも何のためか」を本人が言えると、判断基準が変わる。</div>
+      </div>
+    </div>
+
+    <div class="principle-card sub">
+      <div class="p-head">
+        <div class="p-num">S2</div>
+        <div class="p-title">「ない」「分からない」は、内側を見る方法がまだないサイン</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">返答がないことを抵抗や意欲不足と決めつけず、体感や具体的場面へ一段だけ降りる。特に若年者や内省に慣れていない対象で検証する。</div>
+      </div>
+    </div>
+
+    <div class="principle-card sub">
+      <div class="p-head">
+        <div class="p-num">S3</div>
+        <div class="p-title">コーチ・指導者の期待は、場の観察を狭める</div>
+      </div>
+      <div class="p-body">
+        <div class="p-def">「気づいてほしい」「変わってほしい」「この答えに来てほしい」という期待を持ったまま進むと、本人の言葉よりコーチの道筋が中心になる。</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ========== 継続検証仮説 ========== -->
+  <div class="section-header">HYPOTHESIS — 継続検証仮説</div>
+
+  <div style="background:#fff;border:0.5px solid #ddd9d0;border-radius:10px;overflow:hidden;margin-bottom:48px;">
+    <table class="hypo-table">
+      <tr>
+        <th style="width:55%;">仮説</th>
+        <th>検証したいこと</th>
+      </tr>
+      <tr>
+        <td>身体反応は、守っていた自己像が揺れたサインであることがある</td>
+        <td>体感を聞いた後、本人の自己像が自発的に言語化されるか</td>
+      </tr>
+      <tr>
+        <td>才能の向き先が見えると、本人は才能を使える資源として受け取りやすい</td>
+        <td>才能の再解釈が次の行動選択に現れるか</td>
+      </tr>
+      <tr>
+        <td>強い他者反応には、自分の同型構造が含まれることがある</td>
+        <td>鏡として問うことが自己批判ではなく選択の自由につながる条件は何か</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ========== セッション記録に残す項目 ========== -->
+  <div class="section-header">RECORD — セッション記録に残す7項目</div>
+
+  <div class="record-grid" style="margin-bottom:48px;">
+    <div class="record-item">クライアントが実際に使った中心語</div>
+    <div class="record-item">最初に出た感情と身体反応</div>
+    <div class="record-item">採用した一問と、その直後に出た言葉</div>
+    <div class="record-item">片側認知の種類（プラス固定 / マイナス固定）</div>
+    <div class="record-item">反対側を問った後の変化</div>
+    <div class="record-item">支援へ進んだタイミングの適切さ</div>
+    <div class="record-item">同種の出来事への感情と対応の変化</div>
+    <div class="record-item">コーチ・クライアント・オブザーバーの受け取りのずれ</div>
+  </div>
+
+  <div class="section-header">2026-06-09 INTEGRATION — 統合原則（17〜22）「答えを与えないコーチング」四資産より</div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">17</div><div class="p-title">あり方が、問いより先に場を決める</div></div>
+    <div class="p-body">
+      <div class="p-def">クライアントの神経系は、言葉より先にコーチの表情・声・間を読む。コーチが安全・信頼の状態にいるほど相手の警戒が解け、問いが届く。問いの技術より、コーチのあり方が先に結果を決める（安全が先、あり方が先、問いは後）。</div>
+      <div class="p-row"><div class="p-label">コーチ自身への問い</div><ul class="p-items"><li>私は今、コントロールしようとしているか、信頼しているか?</li><li>この場は、相手にとって安全か?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">18</div><div class="p-title">脅威反応は、理解より速い（ウサギと亀）</div></div>
+    <div class="p-body">
+      <div class="p-def">緊張・恐れの反応は一瞬で立ち上がり、考え直す前に出る。「分かっているのにできない」のは意志でなく速度の問題。だから正論や説明だけでは反応は変わらない。変わるのは、安全な状態のなかで繰り返したときだけ。</div>
+      <div class="p-def">この速度は、コーチ自身にも起きる。相手を動かそう・気づかせよう・すっきりさせようとした瞬間、コーチはウサギ（脅威反応）に寄っている。相手の中で何が起きているのかと関心を向けているとき、コーチは亀（中庸）に近い。ウサギには二種類ある——「コントロールのウサギ（こう気づかせたい）」と「同意・共感のウサギ（そうだよね、悪いよね）」。後者は相手と同じ立場に飲まれて抜けられなくなる。どちらにも飲まれず「あなたの中で何が起きていますか?」に留まるのが亀。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、頭ではなく体が先に反応していませんか?</li><li>その反応は、緊張するといつも戻る“戻る場所”ですか?</li></ul></div>
+      <div class="p-row"><div class="p-label">コーチ自身への問い</div><ul class="p-items"><li>今、相手を動かそう（ウサギ）としているか、相手の世界を知ろう（亀）としているか?</li><li>相手に同意して、同じ立場に飲まれていないか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">19</div><div class="p-title">出来事と認知を分けると、感情の源が見える</div></div>
+    <div class="p-body">
+      <div class="p-def">怒りや不安は相手の行動が起こしているように見えて、実は本人の「こうすべき」から生まれている。事実と解釈を切り離すと、源が相手側ではなく自分のフレーム側にあると分かる。これが転換の決定的な一手。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>相手がある行動をしたから腹が立ったのか、“こうすべき”があるから腹が立ったのか、どっちでしょう?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">20</div><div class="p-title">問いは、因数分解できる</div></div>
+    <div class="p-body">
+      <div class="p-def">良い問いは思いつきではなく順番。①事実に戻す → ②身体感覚に触れる → ③反対側（メリット/デメリット）を見る → ④価値観へ。脅威状態の相手にいきなり「どうしたい?」は重い。順番に分解すれば、安全に核へ降りられる。</div>
+      <div class="p-row"><div class="p-label">再現の問い（順番）</div><ul class="p-items"><li>何が起きた?（事実）→ 体のどこが反応?（身体）→ その反対側は?（両面）→ 本当はどうしたい?（価値観）</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">21</div><div class="p-title">地図の重ねる順番が、主体性を決める</div></div>
+    <div class="p-body">
+      <div class="p-def">自分の地図・相手の地図・社会の地図は、全部ある。消さなくていい。やれるのは重ねる順番だけ。一番上に自分の地図があるかを確認するだけで、主体性が戻る。できているかではなく、今どの地図が一番上かに気づくだけでいい。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、一番上に来ているのは、誰の地図ですか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">22</div><div class="p-title">価値観は裁かない。問うのは“べき”の片側だけ</div></div>
+    <div class="p-body">
+      <div class="p-def">価値観は源泉なので触らない・揺るがさない。緩めるのは、価値観から派生した「こうあるべき」というフレームの片側だけ。価値観とフレームが矛盾していることは、コーチが指摘するのではなく、本人の口から言わせる。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>あなたの価値観と、その“べき”は、両立していますか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="section-header">2026-06-14 INTEGRATION — 統合原則（23〜27）「コーチの内側を扱う」コーチング道場より</div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">23</div><div class="p-title">フレームワークが見えている人ほど、その奥の「我慢」を聞く</div></div>
+    <div class="p-body">
+      <div class="p-def">学びが進んだ人は“べき”を自分で言える。それでも反応は残る。その奥には「我慢」がある。我慢には二つの向きがある——<b>やりたいのに、やっていないこと</b>と、<b>やりたくないのに、やっていること</b>。この二つを束ねているのが「<b>自分に許していないもの</b>」。フレームワークが見えているときは、ここへ進む。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>それを守るために、やりたいのに、やっていないことはありますか?</li><li>それを守るために、やりたくないのに、やっていることはありますか?</li><li>あなたが自分に許していないものは、何ですか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">24</div><div class="p-title">コーチの興味は、相手の地図に照合してから掘る</div></div>
+    <div class="p-body">
+      <div class="p-def">興味には二種類ある。本当に相手を知りたい興味は亀。自分の見立てを確かめたい興味はウサギ。興味は深掘りの力にもなり、相手の地図からズレる危険にもなる。湧いたら、まず相手に返して照合する。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、私はここに興味が湧いています。あなたの中で、そこは大事なところですか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">25</div><div class="p-title">同じ出来事で反応が違うとき、その違いにフレームワークがある</div></div>
+    <div class="p-body">
+      <div class="p-def">現象が同じなのに、ある相手には反応し、別の相手には反応しない。その差にこそ“べき”が宿っている。差を聞けば、隠れていたフレームワークが浮かぶ。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>結果は同じなのに、こちらは許せて、あちらは許せない。その違いは何ですか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">26</div><div class="p-title">価値観には反対側を当てない。掘れない感覚は、相手を間違えたサイン</div></div>
+    <div class="p-body">
+      <div class="p-def">「〜したい」「安心したい」「解放されたい」という“状態”は価値観＝源泉。これに「デメリットは?」は当たらない。両面化するのは「〜すべき」「〜してはダメ」のフレームだけ。掘れない・進まない感覚が出たら、それは価値観に問いを当てているサイン。フレームへ戻す。</div>
+      <div class="p-row"><div class="p-label">コーチ自身への問い</div><ul class="p-items"><li>今あてている問いは、“べき”に当たっているか、それとも価値観そのものに当たっているか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">27</div><div class="p-title">本丸まで一気に降りない。表のフレーム一枚を緩めると、次の層が開く</div></div>
+    <div class="p-body">
+      <div class="p-def">反対側は、本丸を特定してから当てるのではない。今いちばん表に出ているフレーム一枚に当て、少し緩める。その緩みが、次の層を自然に開けてくれる。事実とフレームの間には分厚い認知の層がある。階段は一段ずつ降りる。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今いちばん表に出ている“べき”はどれですか? まず、それの反対側を見てみましょう。</li></ul></div>
+    </div>
+  </div>
+
+  <div class="section-header">2026-06-28 INTEGRATION — 統合原則（28〜32）「本質の入口でノックする」コーチング道場より</div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">28</div><div class="p-title">本質が見えていることと、今そこへ行くべきことは違う</div></div>
+    <div class="p-body">
+      <div class="p-def">コーチには相手の本質の入口が見えることがある。しかし、本人がその深さに触れられる準備があるとは限らない。本質に近い問いが、今必要な問いとは限らない。</div>
+      <div class="p-row"><div class="p-label">コーチ自身への問い</div><ul class="p-items"><li>私は今、相手が見られる深さを見ているか、自分に見えている深さを見せようとしているか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">29</div><div class="p-title">知的理解は浅さではなく、心を守る働きである</div></div>
+    <div class="p-body">
+      <div class="p-def">クライアントが分析・一般論・学びの言葉へ移動するとき、それは生の感情に直接触れすぎないための守りであることがある。コーチはそれを剥がすのではなく、守りごと尊重する。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今は分析のまま見ますか? それとも少し感情に戻ってみますか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">30</div><div class="p-title">本質の入口では、入るのではなくノックする</div></div>
+    <div class="p-body">
+      <div class="p-def">本質の入口が見えた時、コーチが扉を開けて入ると、相手は暴かれたように感じることがある。本人の言葉を置き、見るかどうかを本人に委ねる。許可を取ることが安全をつくる。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>ここ、少し深いところに触れそうですが、見てみても大丈夫ですか?</li><li>今日はここまでにしますか? それとも、もう一歩見てみますか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">31</div><div class="p-title">深掘りとは、相手が自分で降りられる階段をつくること</div></div>
+    <div class="p-body">
+      <div class="p-def">深掘りは、奥まで掘ることではない。相手が自分で降りられる階段をつくること。クライアントの本質を見抜くことではなく、クライアントが自分で見られる状態をつくることがコーチングである。</div>
+      <div class="p-row"><div class="p-label">コーチ自身への問い</div><ul class="p-items"><li>私は今、見抜いたものを渡そうとしているか、相手が自分で見られる階段を作っているか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">32</div><div class="p-title">保留は逃げではなく、次の深掘りの準備になる</div></div>
+    <div class="p-body">
+      <div class="p-def">一旦ワークへ進むことは逃げではない。上滑りに見える体験が、本人に「まだしっくりこない」「まだ感情に触れていない」と気づかせることがある。深掘りと保留は対立せず、順序である。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>しっくりこなかったら後で戻れるので、まず今見えているフレームで一度ワークしてみますか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="section-header">2026-06-28 INTEGRATION — 統合原則（33〜37）「目に見える結果と見えない受け取り」かおる塾GCより</div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">33</div><div class="p-title">一回の結果を、将来全体への判決にしない</div></div>
+    <div class="p-body">
+      <div class="p-def">「これで評価されなかったなら、もう評価されない」は、一回の出来事を未来全体へ拡張する認知である。コーチはその絶望感を否定せず、まず「その一回で、何が決まったように感じたのか」を見る。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>その出来事で、未来の何が決まってしまったように感じましたか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">34</div><div class="p-title">年数 = 能力は、環境によって変わる</div></div>
+    <div class="p-body">
+      <div class="p-def">年数を重ねれば見えるものが増える環境もある。しかし、仕事内容・役割・評価基準が変わる環境では、年数と能力は直線的に結びつかない。本人の努力を否定せず、「それはこの環境でも事実か」を照合する。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>年数を重ねるほどできるようになる、はこの環境でも事実ですか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">35</div><div class="p-title">見えない評価を、見える結果で代用している</div></div>
+    <div class="p-body">
+      <div class="p-def">人は、他者が本当は自分をどう見ているかを直接確認できない。そのため、昇進・給料・役職・表彰などの見える結果を、評価の代理指標にしやすい。結果が出ないと「評価されていない」と感じる時、そこには代用が起きている。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、評価そのものではなく、評価の代理指標を見ていませんか?</li><li>目に見える結果がない時、何が「ない」と感じていますか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">36</div><div class="p-title">出し切りが先、反対側は後</div></div>
+    <div class="p-body">
+      <div class="p-def">「でも」「けど」「わからない」が残っている時、反対側へ急ぐと受け取りではなく説得になる。まず嫌だったこと、悔しかったこと、見てほしかったことを出し切る。反対側は、本人の内側に余白ができた後に自然に見に行く。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>反対側を見る前に、まだ言い切れていない嫌なことはありますか?</li><li>今の「わからない」は、説明が足りないのか、まだ出し切れていないサインなのか、どちらに近いですか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">37</div><div class="p-title">価値は手放さない。べきだけゆるめる</div></div>
+    <div class="p-body">
+      <div class="p-def">公平さ、誠実さ、責任感、積み重ねへの敬意は、その人の源泉である。ゆるめる対象は価値ではなく、「その価値は必ず目に見える結果で返ってこなければならない」という片側認知。価値を守ったまま、固着だけをほどく。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>手放したくない価値は何ですか?</li><li>その価値が、必ずその形で返ってこなければならない、という“べき”はありますか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="section-header">2026-07-05 INTEGRATION — 統合原則（38〜45）「問いで終わる勇気」JDSコーチング道場より</div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">38</div><div class="p-title">問いで終わる余白は、未回収ではなく変容の入口である</div></div>
+    <div class="p-body">
+      <div class="p-def">セッションがスッキリ終わらないことは失敗ではない。本人がより明確な問いを持って帰るなら、その問いは日常の中で育ち続ける。閉じることより、育つ問いを残す方が深い成果になることがある。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今日、答えではなく問いとして持って帰るなら、どんな問いになりそうですか?</li><li>今すぐ閉じるより、少し揺れたまま持って帰る方がよさそうですか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">39</div><div class="p-title">同じ角度で詰まったら、反対側から聞く</div></div>
+    <div class="p-body">
+      <div class="p-def">「嫌ですか?」「ネガティブですか?」で動かない時は、同じ方向から押さない。「それは嬉しいですか?」と反対側から照らすことで、本人の中の感情の輪郭が浮かぶことがある。これは説得ではなく、角度の変更である。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>それは嫌ではないんですね。では、嬉しいに近いですか?</li><li>嬉しいでも嫌でもないとしたら、どんな感じですか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">40</div><div class="p-title">クライアントが自分の言葉を聞く時間そのものがコーチングになる</div></div>
+    <div class="p-body">
+      <div class="p-def">コーチが急いで整理しなくても、本人が話し、自分の言葉を自分で聞くことで、内側の構造が立ち上がることがある。漠然とした不安やもやもやでは、まず話してもらう時間が、問いの入口になる。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今話してみて、自分の言葉の中で一番残っているのはどこですか?</li><li>今の言葉を自分で聞いてみて、何が見えてきましたか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">41</div><div class="p-title">分からないから聞く</div></div>
+    <div class="p-body">
+      <div class="p-def">コーチはクライアントの世界を分からない。分かると思う方が危うい。分かってから質問するのではなく、分からないから質問する。相手の言葉を聞き、その言葉を使ってまた聞く。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今の言葉は、もう少し言うとどういう感じですか?</li><li>その言葉を使った時、体のどこに反応がありますか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">42</div><div class="p-title">コーチのベクトルが自分に向くと、クライアントの世界が見えなくなる</div></div>
+    <div class="p-body">
+      <div class="p-def">「どうにかしなきゃ」「気づかせなきゃ」が強くなると、コーチは相手の答えではなく、自分の進行や出来を見始める。焦った時ほど、相手の最後の言葉へ戻る。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、私は何とかしようとしていないか?</li><li>相手の最後の言葉は何だったか?</li><li>その言葉をそのまま使って聞くなら、何と聞けるか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">43</div><div class="p-title">質問の後に最も重要なのは、次の質問ではなく返ってきた答えを聞くことである</div></div>
+    <div class="p-body">
+      <div class="p-def">コーチングは、質問を重ねる技術ではなく、返ってきた言葉を受け取るキャッチボールである。質問の直後に次の質問を探すと、相手の言葉を聞き逃す。本人が使った言葉を、そのまま次の入口にする。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、相手は何と言ったか?</li><li>その言葉をそのまま使って聞くなら、何と聞けるか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">44</div><div class="p-title">問いの質が変わること自体が、認知の変容である</div></div>
+    <div class="p-body">
+      <div class="p-def">答えが出ていなくても、問いの解像度・抽象度・本質との距離が変わっていれば、セッションは進んでいる。「なぜ嫌なのか」から「私は何を問われているように感じているのか」へ問いが変わることは、明確な変容である。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>最初の問いは何でしたか? 今、問いはどう変わっていますか?</li><li>答えはまだ出ていなくても、問いの質は変わっていますか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">45</div><div class="p-title">見抜くコーチから、待てるコーチへ</div></div>
+    <div class="p-body">
+      <div class="p-def">本質を見る力が速いコーチほど、見えた本質に急ぎやすい。次の稽古は、見抜いたものへ相手を連れていくことではなく、相手が自分の速度でそこへ近づく時間を信頼すること。答えを与えない勇気とは、相手がまだ答えを出せない時間を一緒にいられる力である。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今見えている本質に、相手は自分の速度で近づけていますか?</li><li>ここで答えを渡すのではなく、どんな余白を残せますか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="section-header">2026-07-05 INTEGRATION — 統合原則（46〜51）「問いの向きを変える」かおる塾GCより</div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">46</div><div class="p-title">外側への問いは、答えのない方向へ向かう</div></div>
+    <div class="p-body">
+      <div class="p-def">「なんで相手はそう言うんだろう」「なんで分かってくれないんだろう」は、答えが相手の中にあるように見える問いである。自分の答えはそこにはない。まず問いがどちらを向いているかを見る。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、その問いは誰に向いていますか?</li><li>その問いの答えは、自分の中にありますか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">47</div><div class="p-title">本質的な問いは、原因探しではなく、あるもの探しである</div></div>
+    <div class="p-body">
+      <div class="p-def">原因探しは外側へ向かいやすい。「なぜこうなったか」より、「私は何を大切にしているからここで反応しているのか」と問う。これは過去の原因を探す問いではなく、今すでに自分の中にある価値を見る問いである。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>これは原因探しですか、あるもの探しですか?</li><li>何を大切にしているから、ここで反応していますか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">48</div><div class="p-title">できる/できないの問いには、ジャッジが隠れる</div></div>
+    <div class="p-body">
+      <div class="p-def">「なんでできないんだろう」「なんで言えないんだろう」は内側に向いているようで、できる自分は良い、できない自分はダメという前提を含むことがある。問いに責めのエネルギーがないかを見る。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>その問いには、自分責めが入っていませんか?</li><li>責めを抜くなら、どんな問いになりますか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">49</div><div class="p-title">戻ったら探さなくても見える</div></div>
+    <div class="p-body">
+      <div class="p-def">ウサギが走っている時は、受け取っているものが見えにくい。まず体を戻す。息を吐き、今の反応に気づく。戻ってすぐ答えを探すと、今度はプラス側に偏る。戻ったら、問いを持ったまま待つ。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今は答えを探す前に、体を戻すタイミングではありませんか?</li><li>戻った後、探さずに持てる問いは何ですか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">50</div><div class="p-title">自分に向いた問いなら、何でも中庸な問いとは限らない</div></div>
+    <div class="p-body">
+      <div class="p-def">「なんで私はできないんだろう」「なんで言えないんだろう」は、自分に向いている問いに見える。しかし、そこに「できる自分は良い」「できない自分はダメ」という前提が入ると、自己理解ではなく自己否定へ向かう。問いの向きだけでなく、問いの中にジャッジがあるかを見る。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>その問いは、自分を知ろうとしていますか? それとも、自分を直そうとしていますか?</li><li>問いの中に「今の自分ではダメ」という前提はありませんか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">51</div><div class="p-title">わからないは、失敗ではなく到達点になりうる</div></div>
+    <div class="p-body">
+      <div class="p-def">クライアントが「わからない」と言った時、それを答えの欠如として扱うと、コーチは急いで説明や解決へ向かいやすい。しかし、問いの向きが変わった直後の「わからない」は、まだ問いの途中にいる証拠でもある。わからないまま持ち帰れること自体が、問いで終わる勇気の実践になる。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>この「わからない」は、失敗ですか? それとも問いの途中ですか?</li><li>今、答えを出すより持ち帰った方がよい問いは何ですか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="section-header">2026-07-09 INTEGRATION — 統合原則（52〜57）「期待という幻想」個人セッションより</div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">52</div><div class="p-title">嫌いを消すのではなく、なぜ嫌かを見る</div></div>
+    <div class="p-body">
+      <div class="p-def">目的は「嫌だと思う自分」を変える・消すことではない。嫌をなくそうとするほど曖昧になり、同じことが繰り返される。「本当は何が嫌なのか」を明確にすると、結果として振り回されなくなる。ただし、嫌じゃなくなることと、相手を好きになる・許すことは別。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>その相手を嫌と思う自分を変えるのではなく——本当は、何が嫌なんでしょう?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">53</div><div class="p-title">期待を事実だと思うから、我慢が生まれる</div></div>
+    <div class="p-body">
+      <div class="p-def">期待とは、まだ起きていない未来の出来事に「自分にとってプラスである」という意味を先につけ、その片側の結果を待っている認知状態である。起きるのは出来事であり、「期待通りだった」は起きた出来事への認知である。期待を悪者にせず、期待を事実から外すことで、待つ人生から選ぶ人生に戻る。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>その期待は、出来事そのものですか? それとも、その出来事にプラスの意味を先につけた認知ですか?</li><li>その未来を待つことで、自分の選択を外側に預けていませんか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">54</div><div class="p-title">我慢は一時的な安心をくれるが、本当の安心ではない</div></div>
+    <div class="p-body">
+      <div class="p-def">我慢はその場では安心をくれる。しかし想像すると不安になり、「嫌だ・気持ち悪い」という安心のない状態が続く。我慢がくれるのは本当の安心ではない、と本人が気づくと、我慢以外の選択肢を見に行ける。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>我慢することで、本当に安心できていますか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">55</div><div class="p-title">本当の自由とは、選択肢を複数持てる状態である</div></div>
+    <div class="p-body">
+      <div class="p-def">選択肢が一つしかない状態は「反応」（そうせざるを得ないと思い込んでいる）。距離を取ってもプラスマイナス、取らなくてもプラスマイナス——どちらにも両面があると見えると、正解探しから解放され、複数の選択肢から選べる。この状態が自由。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、選択肢はいくつありますか? 「こうするしかない」になっていませんか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">56</div><div class="p-title">相手がかわいそうなのではなく、「かわいそう」と認知している自分を見る</div></div>
+    <div class="p-body">
+      <div class="p-def">「相手が傷つく／かわいそう」は事実ではなく、そう認知している自分がいる（相手はそこで必ず両面を受け取る）。だから変えるのは現象や自分の行動のコントロールではなく、「両方あるよね」と見える自分になること。同じく「振り回される」も認知であり、舵＝自分の価値は自分しか握れない。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>相手がかわいそうなのか、それを「かわいそう」と認知しているのは誰ですか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">57</div><div class="p-title">「言えない」の奥では、言葉よりその後を怖がっていることがある</div></div>
+    <div class="p-body">
+      <div class="p-def">クライアントは本音を言えない人なのではなく、言った後に相手がどう反応するかを怖がっている場合がある。この時、「なぜ言えないのか」だけを聞くと能力や勇気の問題に見えやすい。焦点は、言葉そのものではなく、言った後に起きると予測している未来にある。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>言うこと自体ではなく、言った後に何が起きることを怖がっていますか?</li><li>その予測は、事実ですか? それともまだ起きていない未来ですか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="section-header">2026-07-12 INTEGRATION — 統合原則（58〜67）「表層から核へ」JDSコーチング道場より</div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">58</div><div class="p-title">反対側を見る前に、扱う焦点を合わせる</div></div>
+    <div class="p-body">
+      <div class="p-def">同じ出来事でも、出来事全体・相手の具体行動・相手の特性・自分の見え方・自分のフレームワークなど、扱える焦点は複数ある。コーチの焦点とクライアントの焦点がズレると、問いが良くても「そっちへ行くんですね」と感じさせる。反対側を見る前に、今どこを扱っているかを合わせる。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今扱っているのは、出来事全体ですか? 相手の行動ですか? 自分の見え方ですか?</li><li>本人は今、どこに一番反応していますか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">59</div><div class="p-title">表層は浅いのではなく、本人が触れられる入口である</div></div>
+    <div class="p-body">
+      <div class="p-def">本質が見えているコーチほど、表層を浅いものとして通過したくなる。しかし表層は、本人が今安全に触れられる言葉である。表層を丁寧に扱うことで、本人が自分の速度で核へ降りられる。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、本人が触れられる一番具体的な言葉は何ですか?</li><li>核へ行く前に、まず何を出し切る必要がありますか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">60</div><div class="p-title">出し切らない反対側は説得になる</div></div>
+    <div class="p-body">
+      <div class="p-def">怒り・面倒くささ・嫌悪・労力を取られる感覚など、本人が感じている片側を出し切る前にメリットへ行くと、反対側は説得として届きやすい。出し切った後に見る反対側は、本人の事実として受け取られる。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>反対側へ行く前に、今の片側は十分に言葉になっていますか?</li><li>まだ綺麗にまとめず、そのまま出す必要がある感情は何ですか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">61</div><div class="p-title">圧を感じさせない深掘りとは、階段を増やすことである</div></div>
+    <div class="p-body">
+      <div class="p-def">コーチが見えている本質へ、本人の準備より早く向かうと、問いは深掘りではなく圧として届くことがある。圧をなくすとは、本質を弱めることではない。本人が自分で歩ける階段を増やすことである。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>これは本人の速度ですか? コーチの見えている速度ですか?</li><li>本質を弱めずに、階段を一段増やすならどんな問いになりますか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">62</div><div class="p-title">「核へ行く方が深い」もコーチ側のゼロ百である</div></div>
+    <div class="p-body">
+      <div class="p-def">「核へ行く方が深い」「表層は浅い」という前提が入ると、コーチングそのものがゼロ百になる。深さとは、コーチがどこまで見えているかではなく、本人が自分の足でどこまで歩けるかを支えること。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、コーチ側に「こっちが深い」「こっちが浅い」という前提はありませんか?</li><li>どちらにもプラスとマイナスがあるとしたら、今日の入口はどこですか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">63</div><div class="p-title">価値を見える化する怖さは、金額ではなく関係性と自己像に出る</div></div>
+    <div class="p-body">
+      <div class="p-def">価値提示への抵抗は、単にお金を受け取る怖さではない。相手の中にある自分の印象が変わる怖さ、関係が崩れる怖さ、「細かい人」と思われる怖さとして現れることがある。価値を見える化するには、金額と関係性と自己像を分けて見る必要がある。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>価値を伝えることで、何が変わることを怖がっていますか?</li><li>金額の話と、相手からの見られ方の話が混ざっていませんか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">64</div><div class="p-title">核は突くものではなく、一緒に近づくものである</div></div>
+    <div class="p-body">
+      <div class="p-def">コーチが核を見抜いても、それを突きつけるとクライアントは守りに入りやすい。核は、本人の感情を出し切り、本人の言葉を拾いながら、本人が受け取れる深さで一緒に近づくもの。深掘りとは、コーチの到達速度ではなく、クライアントが自分で近づける道を作ること。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今これは、核を突いていますか? それとも一緒に近づいていますか?</li><li>本人の言葉から、次の一段を作るならどんな問いになりますか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">65</div><div class="p-title">「自分が解決しなければならない」は、役割と責任が癒着しているサインである</div></div>
+    <div class="p-body">
+      <div class="p-def">「時間を取られる」「仕事が増える」「面倒くさい」の奥には、相手が言ってきたら自分が解決しなければならない、という認知が隠れていることがある。ここを確認すると、相手の問題、自分の役割、場に戻すべき課題を分けやすくなる。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>その人が言ってきたことを、自分が解決しなければならないと思っていますか?</li><li>それは事実として自分の役割ですか? それとも自分が背負っている感じがありますか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">66</div><div class="p-title">価値観に接続すると、嫌な出来事が価値観の発揮機会として見え直す</div></div>
+    <div class="p-body">
+      <div class="p-def">反対側を見る時、ただメリットを探すだけではポジティブ変換になりやすい。本人の価値観に接続すると、その出来事が本人の価値観をどう発揮させていたかが見える。嫌な人・嫌な出来事が、価値観の実践機会として見え直す。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>その出来事は、あなたの価値観をどう発揮させていましたか?</li><li>この出来事があったからこそ、どんな価値観を使うことになりましたか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">67</div><div class="p-title">コーチは、クライアントを見る前に自分のゼロ百を見る</div></div>
+    <div class="p-body">
+      <div class="p-def">クライアントの片側認知を見る前に、コーチ自身の「良いセッションとはこう」「本質まで行くべき」「スッキリさせるべき」「表層は浅い」というゼロ百を観察する。コーチの前提は、問いの方向・速度・圧としてセッションに混ざる。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、私は相手を変えたいのか? 相手の世界を知りたいのか?</li><li>今日、私は何を「良いセッション」だと思っていますか?</li></ul></div>
+    </div>
+  </div>
+
+
+
+  <div class="section-header">2026-07-12 KAORU JUKU — 統合原則（68〜70）「自分の地図を一番上に置く」より</div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">68</div><div class="p-title">成果物が止まると、自分が止まっているように見える</div></div>
+    <div class="p-body">
+      <div class="p-def">目に見える成果物が進んでいない時、人は「何もしていない」「自分は進んでいない」と認知しやすい。しかし、調べたこと、相談したこと、試したこと、見に行ったことは消えていない。成果物と実際の行動を分けて見る。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>成果物ではなく、今日実際にやったことは何ですか?</li><li>「何も進んでいない」は事実ですか? それとも成果物だけを見た認知ですか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">69</div><div class="p-title">自分の地図に戻るには、まず体を戻す</div></div>
+    <div class="p-body">
+      <div class="p-def">ウサギが走っている時は、自分の地図、受け取っているもの、実際にやったことが見えにくい。認知を変えようとする前に、息を吐き切り、呼吸・心拍・視野を戻す。体が戻ると、事実を見るカメが追いつく。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、体のどこに重さや苦しさがありますか?</li><li>息を吐き切った後で、もう一度事実を見ると何が見えますか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">70</div><div class="p-title">短期のやり方と長期のあり方を分ける</div></div>
+    <div class="p-body">
+      <div class="p-def">AIを使う、誰かに相談する、資料を作る方法を変えることは短期のやり方である。一方、その状況の中で自分がどうあるか、どう体を戻し、どう自分の地図を見るかは長期のあり方である。やり方の改善とあり方の育成を混同しない。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>これは今すぐ終わらせるためのやり方の話ですか? それとも長期的なあり方の話ですか?</li><li>やり方を変える前に、今の自分の状態は戻っていますか?</li></ul></div>
+    </div>
+  </div>
+
+
+  <div class="section-header">2026-07-12 KAORU JUKU — 追加統合原則（71〜73）「構造の再演と比較の二層」より</div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">71</div><div class="p-title">構造は安全な場でも再演される</div></div>
+    <div class="p-body">
+      <div class="p-def">会社で「お願いできない」と話している構造は、コーチの支援申し出に対する「いやいや」として、その場で同じ形を取ることがある。再演は失敗ではなく、構造が観察可能になった瞬間である。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、会社で起きている構造と同じ動きが、この場でも起きていませんか?</li><li>受け取れないことを責めずに見るなら、今何を守ろうとしていましたか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">72</div><div class="p-title">比較には二層ある</div></div>
+    <div class="p-body">
+      <div class="p-def">人は他者と比べるだけではなく、朝の自分と帰りの自分、理想の自分と今の自分を比べる。成果物の差分だけを測る時、時間軸の自分比較が苦しさを強める。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、誰と比べていますか?</li><li>それは他人との比較ですか? それとも朝の自分と今の自分の比較ですか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">73</div><div class="p-title">分かってもらえた言葉は、問題解決前でも体を緩める</div></div>
+    <div class="p-body">
+      <div class="p-def">「路頭に迷わせてごめんね」のような理解の言葉は、実務上の問題がまだ解決していなくても身体を緩める。コーチは解決だけでなく、理解された体感を軽く扱わない。</div>
+      <div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>その言葉を聞いた時、体は少し緩みましたか?</li><li>問題は解決していないのに体が緩んだとしたら、何が受け取られていましたか?</li></ul></div>
+    </div>
+  </div>
+
+  <div class="section-header">2026-07-19 JDS DOJO — 統合原則（74〜78）「ジャッジがある場所に不自然が生まれる」より</div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">74</div><div class="p-title">解決しようとする時、コーチは今を問題として見ている</div></div>
+    <div class="p-body"><div class="p-def">「何とかしてあげたい」が強くなると、今の状態を解決されるべき問題として見やすい。コーチの解決欲が、クライアントの感情より先へ走っていないかを観察する。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、私は何を解決しようとしていますか?</li><li>解決する前に、この感情と一緒にいられますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">75</div><div class="p-title">感情の玄関に着いたら、一つの部屋へ入る</div></div>
+    <div class="p-body"><div class="p-def">複雑な背景をすべて扱わず、一番感情が動く場面と一言を選ぶ。感情の入口へ着いた後に説明・分析・メリットへ移らず、本人の速度でそこに留まる。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今の話の中で、一番感情が動く場面はどこですか?</li><li>その場面の、どの一言が一番悲しかったですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">76</div><div class="p-title">本人の当たり前は、短く返すと見える</div></div>
+    <div class="p-body"><div class="p-def">「本当の友達なら正直に言う」のような前提は、本人には当然すぎて認知として見えない。解釈を足さず一文で返すと、本人が修正・追加しながら自分の前提を見られる。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>あなたにとって、正直に伝えることは相手を大切にすることでもあるんですね。</li><li>今の返しで違うところ、足したいところはありますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">77</div><div class="p-title">似た体験は、共感にも解決欲にもなる</div></div>
+    <div class="p-body"><div class="p-def">コーチの類似体験は理解の助けになる一方、未完了な痛みがあると「この人だけは解決させたい」という速度として混ざる。類似体験がある時ほど、自分の反応を確認する。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、相手の体験を聴いていますか? 自分の過去を解決しようとしていますか?</li><li>この焦りは、誰のものですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">78</div><div class="p-title">魅力的な法則ほど、確定せず検証候補に置く</div></div>
+    <div class="p-body"><div class="p-def">一つの事例から生まれた洞察は、すぐ普遍法則にしない。本人の解釈、相関の候補、確認済みの因果を分け、反証できる形で積み重ねる。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>これは事実、本人の解釈、コーチの仮説のどれですか?</li><li>この仮説が当てはまらない事例はありますか?</li></ul></div></div>
+  </div>
+
+  <div class="section-header">2026-07-19 KAORU JUKU — 統合原則（79〜83）「結果より、今していることを見る」より</div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">79</div><div class="p-title">抽象語は、本人の合格条件まで聞く</div></div>
+    <div class="p-body"><div class="p-def">「集中できない」「進んでいない」「ちゃんとできない」は、事実ではなく本人の判定を含むことがある。何が起きたら「できた」と言えるのかを本人の言葉で具体化すると、苦しさを作る基準が見える。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>どんな状態なら、集中できたと言えますか?</li><li>何が終わったら、進んだと判断しますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">80</div><div class="p-title">結果への自己評価から、今の一動作へ戻る</div></div>
+    <div class="p-body"><div class="p-def">完成・成功・集中という結果だけを見ていると、選んだ、見た、確かめた、書き留めたという行動が消える。現在の一動作を一文にすると、事実へ戻りやすい。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>結果ではなく、今していることを一文で言うと何ですか?</li><li>今日、実際にしたことを動詞で挙げると何がありますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">81</div><div class="p-title">守りたいものと、自分に課している基準を分ける</div></div>
+    <div class="p-body"><div class="p-def">手段への抵抗には、大切にしたい価値と「こうしなければならない」という基準が重なっていることがある。「自分の言葉で届けたい」と「文章を全部自分で書かなければならない」は分けて確認する。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>ここで大切にしたいものは何ですか?</li><li>そのために、自分が全部しなければならないのは事実ですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">82</div><div class="p-title">一回一技術は、時間配分でも守る</div></div>
+    <div class="p-body"><div class="p-def">中心技術が見えた後に新しい論点を重ねると、本人が持ち帰る一歩が薄まりやすい。基本時間内に一つの体験と一つの実践を完了させ、残りは次回へ渡す。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今日、持ち帰ってもらう一つの技術は何ですか?</li><li>この説明は今日必要ですか? 次回へ渡せますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">83</div><div class="p-title">本人が言葉を生んだ後に、理論を置く</div></div>
+    <div class="p-body"><div class="p-def">理論を先に渡すと、理解はできても本人の体験との接続が弱くなることがある。本人が自分の体験を言葉にした後、理論を補助線として置くことで、説明が答えの押しつけになりにくい。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今の体験を、本人はどんな言葉で表しましたか?</li><li>理論は、その言葉を支える補助線になっていますか?</li></ul></div></div>
+  </div>
+
+  <div class="section-header">2026-07-26 JDS DOJO — 統合原則（84〜89）「価値観ではなく付着したべきを見る」より</div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">84</div><div class="p-title">価値観と、価値観を実現する条件を分ける</div></div>
+    <div class="p-body"><div class="p-def">「真実を見極める」は価値観でも、「全部自分で確認すべき」は実現条件である。大切にしたい方向と、そのための方法を一枚にしない。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>ここで本当に大切にしているものは何ですか?</li><li>そのために、何をしなければならないと置いていますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">85</div><div class="p-title">両側を見る対象は、価値観ではなく付着したフレームワーク</div></div>
+    <div class="p-body"><div class="p-def">価値観そのものを機械的にメリット・デメリットへかけない。「〇〇すべき」「〇〇はよい・悪い」と具体化されたフレームワークの両側を見る。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今出たのは価値観ですか、それとも価値観を実現する条件ですか?</li><li>その条件を守る側と外す側に、何がありますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">86</div><div class="p-title">評価語を、具体的な行動へ戻してから両面化する</div></div>
+    <div class="p-body"><div class="p-def">「愚痴」「我慢」「責任」「効率」などの認知用語のまま反対側を見ると、認知が認知を生みやすい。誰が何を言い、何をし、何をしなかったかへ戻す。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>それを録画に映る事実だけで言うと何ですか?</li><li>ここでの「責任を持つ」は、具体的に何をすることですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">87</div><div class="p-title">矛盾する二つの願いを、急いで一つにしない</div></div>
+    <div class="p-body"><div class="p-def">「今のまま進みたい」と「一つに集中して分担したい」は同時に存在できる。片方を本音、片方を逃げと決めず、まず両方を置く。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、同時にある二つの願いは何ですか?</li><li>どちらかを消さずに置くと、体はどう感じますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">88</div><div class="p-title">行動改善の前に、その行動を支えるフレームワークを見る</div></div>
+    <div class="p-body"><div class="p-def">SNSをやめる、呼吸する、仕事を任せるという戦略を先に正解にすると、新しい「べき」が生まれる。まず今の行動で得ているものと避けているものを見る。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>この行動は、今の自分を何から守っていますか?</li><li>別の行動を正解にしようとしていませんか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">89</div><div class="p-title">使命との一致と身体の負荷は、別軸で確認する</div></div>
+    <div class="p-body"><div class="p-def">価値観に沿う活動でも、疲労、睡眠への影響、身体の痛みは起こり得る。使命の言葉で身体のサインを美化せず、休息、分担、安全管理、必要な相談を別に扱う。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>価値を感じていることと、身体に起きている事実を分けると何ですか?</li><li>認知のワークとは別に、現実的に必要な対応は何ですか?</li></ul></div></div>
+  </div>
+
+  <div class="section-header">2026-07-26 JDS DOJO — 追加統合原則（90〜94）「課題を分け、選択を自分へ戻す」より</div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">90</div><div class="p-title">誰にとっての損得かを固定してから両面化する</div></div>
+    <div class="p-body"><div class="p-def">クライアントが他者について感情を動かしている時、他者にとってのメリット・デメリットを問うと、他者分析のまま課題が混ざる。今回のクライアントにとって、その状態が何をもたらすのかを見る。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>それは誰にとってのメリット・デメリットですか?</li><li>その状態であることは、あなたに何をもたらしますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">91</div><div class="p-title">相手の状態ではなく、その状態を見ている自分のフレームワークを扱う</div></div>
+    <div class="p-body"><div class="p-def">相手や環境を両面化するのではない。その状態を「よい・悪い」と見ている自分のフレームワークを具体化し、その両側を見る。相手の人生へ答えを置かない。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>相手の状態を、あなたはどのように評価していますか?</li><li>その評価を「〇〇はよい・悪い」の一文にすると何ですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">92</div><div class="p-title">他者・状況・環境を自分の安心の条件にすると、願いは期待へ変わる</div></div>
+    <div class="p-body"><div class="p-def">価値観から生まれた願いでも、相手、状況、環境、その場が理想どおりになることを自分の安心の条件にすると、外れた情報が脅威となり、回避、管理、コントロールが起動しやすい。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>外側がどの状態になれば、自分は安心できると思っていますか?</li><li>その状態にならない時、どんな未来を想像しますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">93</div><div class="p-title">課題の分離は、無関心ではなく選択権を返すこと</div></div>
+    <div class="p-body"><div class="p-def">相手がどう生きるかを相手へ返し、自分がどう認知し、何を伝え、どう行動するかを自分へ戻す。関心や支援を捨てるのではなく、相手の自律性を奪わずに関わる。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>ここで相手が選ぶことは何ですか?</li><li>相手を変えなくても、自分が選べることは何ですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">94</div><div class="p-title">不安と愛を善悪にせず、行動の起点を確認する</div></div>
+    <div class="p-body"><div class="p-def">不安は危険察知、準備、管理、仕組み化を支える。愛を正解、不安を不正解にすると新しい片側認知になる。同じ行動でも、不安を消すための自動反応か、不安があっても価値観から選んだ行動かを確認する。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>この行動で、何を見なくて済むようにしたいですか?</li><li>不安が残っていても、大切にしたいあり方から選べる一動作は何ですか?</li></ul></div></div>
+  </div>
+
+  <div class="section-header">2026-07-26 KAORU JUKU — 統合原則（95〜100）「分からないの前で待つ」より</div>
+
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">95</div><div class="p-title">答えが出ない時、複数の本音と現実制約が同時に成立していることがある</div></div>
+    <div class="p-body"><div class="p-def">「どうしたいか分からない」を、意思の欠如や抵抗と決めない。したい、したくない、必要、今はできないが同時に存在し、どの選択にも本人にとってのメリットとデメリットがあると、一つの答えへまとめにくくなる。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>したいこと、したくないこと、必要なこと、今はできないことを別々に言うと何ですか?</li><li>今は、一つに決めずに並べるだけでもよいですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">96</div><div class="p-title">質問を理解できることと、答えへアクセスできることは別である</div></div>
+    <div class="p-body"><div class="p-def">問いの意味が分かっていても、身体反応、情報不足、複数の本音、言語化前の感覚によって答えが出ないことがある。答えが出ない時に、問いの角度や説明量を増やさない。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>問いの意味が分からないですか、それとも意味は分かるけれど答えが出ない感じですか?</li><li>答えを探さず、今ある言葉だけを置いてみますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">97</div><div class="p-title">相づちの連続は、統合の証拠ではない</div></div>
+    <div class="p-body"><div class="p-def">コーチの説明に「うん」「そう」と返ることは、聞こえた、理解した、場を保ったなど複数の意味を持つ。本人の言葉で言い直せるか、身体に変化があるか、選択が生まれたかを別に確認する。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今の話から、自分の言葉で残るものはありますか?</li><li>出てこなければ、今日は仮説として置いておきますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">98</div><div class="p-title">実務問題・責任境界・未来予測・自己評価・身体反応を分ける</div></div>
+    <div class="p-body"><div class="p-def">現実の不備や権限不足がある場面を、認知だけの問題にしない。一方で、まだ起きていない評価予測も事実にしない。五つの層に分けて、それぞれ別の対応を選ぶ。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>現実に起きている問題は何ですか?</li><li>責任、未来予測、自分への評価、身体反応を分けると、それぞれ何ですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">99</div><div class="p-title">言葉にならない時は、問いを増やす前に、すでに出た言葉を並べる</div></div>
+    <div class="p-body"><div class="p-def">別角度の問いや比喩を足すほど、本人の処理が追いつかなくなることがある。本人がすでに話した三つ以内の言葉を短く返し、矛盾したまま置く。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、〇〇したい、〇〇したくない、でも〇〇できない、が同時にありますね。</li><li>この三つで違うところ、足したいところはありますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">100</div><div class="p-title">解決しない回でも、矛盾する声を分けて持ち帰れれば成果になる</div></div>
+    <div class="p-body"><div class="p-def">一つの答え、気づき、行動が出ない回を失敗にしない。混ざっていた複数の声や現実条件が分かれ、本人の現在地として見えるなら、次の選択の土台ができている。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今日、答えではなく、分けて持ち帰れる言葉は何ですか?</li><li>今は決めずに置いておくものは何ですか?</li></ul></div></div>
+  </div>
+
+  <div class="section-header">2026-08-09 JDS DOJO — 統合原則（101〜105）「根を抜くか、実を一つ扱うか」より</div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">101</div><div class="p-title">根と実に、深い・浅いの序列はない</div></div>
+    <div class="p-body"><div class="p-def">根幹を扱う方が深く、今の一場面を扱う方が浅いわけではない。本人の準備、時間、身体、言語化の状態に応じて、今自分で観察できる入口を選ぶ。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今見えているのは根ですか、それとも根に付いた実ですか?</li><li>本人は今、どちらを自分の言葉で観察できますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">102</div><div class="p-title">根が見えるコーチほど、一つの実へ戻る技術を持つ</div></div>
+    <div class="p-body"><div class="p-def">コーチに複数の構造が見えても、一度に全部を扱わない。感情が動いた一瞬、止まった一言、選ばなかった一動作へ戻し、本人が構造を見られる大きさにする。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今出た中で、今日一つだけ扱うならどれですか?</li><li>その言葉が止まった具体的な一瞬はどこですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">103</div><div class="p-title">価値と金額の不均衡には、関係性と自己像が重なる</div></div>
+    <div class="p-body"><div class="p-def">金額を伝えられない時、計算だけでなく「奪う人に見られる」「条件を変える自分は格好悪い」「仲間が離れる」という自己評価と未来予測が重なることがある。収支、相手の認知、自分のジャッジを分ける。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>金額を伝える自分を、どんな人だと見ていますか?</li><li>確認できる収支と、相手がどう思うという予測を分けると何が残りますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">104</div><div class="p-title">受け取ることと奪うことが癒着すると、価値交換が止まる</div></div>
+    <div class="p-body"><div class="p-def">支払うことを「自分から失われる」、受け取ることを「相手から取る」と認知すると、どちらの方向でも価値交換に抵抗が生じる。誰が何を合意し、何を交換するのかを事実へ戻す。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今回「奪う」と呼んでいるのは、誰から何を、どの合意で受け取ることですか?</li><li>受け取ることと奪うことを分ける事実は何ですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">105</div><div class="p-title">反対側の型を試すと、コーチのスタイルは選択肢になる</div></div>
+    <div class="p-body"><div class="p-def">長く聴く、早く絞る、核へ行く、実へ留まる。いつもの型は強みだが、無意識なら偏りになる。反対側を意図的に稽古し、本人の状態に応じて選べる技術へ変える。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今日は、いつもの型と反対側を一つ試すなら何ですか?</li><li>今の進み方は、本人の状態から選んでいますか、自分の得意から選んでいますか?</li></ul></div></div>
+  </div>
+
+  <div class="section-header">2026-08-09 KAORU JUKU — 統合原則（106〜109）「過去の記憶と未来予測を分ける」より</div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">106</div><div class="p-title">過去に続いて結果が起きても、一つの発言との因果は確定しない</div></div>
+    <div class="p-body"><div class="p-def">相談した後に相手の処遇が変わった、という時間的順序だけで、「自分の発言が処遇を変えた」とは確定できない。組織の判断、以前からの評価、契約、複数の出来事を分ける。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>確認できる順序と、推測している因果を分けると何ですか?</li><li>その結果に影響した可能性のある他の要因は何ですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">107</div><div class="p-title">過去の記憶が出た瞬間は、原因確定ではなく現在の予測構造が見えた瞬間</div></div>
+    <div class="p-body"><div class="p-def">本人が似た過去を思い出しても、「それが原因です」と閉じない。過去の記憶が、今回どの未来を予測させ、何を事実らしく見せているかを観察する。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>その過去を思い出すと、今回は何が起きると感じますか?</li><li>過去と今回で、同じ事実と違う事実は何ですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">108</div><div class="p-title">ジャッジを消そうとすると、ジャッジする自分への裁定が増える</div></div>
+    <div class="p-body"><div class="p-def">相手を評価した自分に気づいた時、「ジャッジしてはいけない」と消そうとすると、自分への新しい片側認知になる。評価語を禁止せず、何を見てその言葉を付けたかを事実へ戻す。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>ジャッジしている自分を、今どのようにジャッジしていますか?</li><li>その評価語を使わず、確認できる状態として言うと何ですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">109</div><div class="p-title">影響への責任と、相手の評価・処遇を決める責任を分ける</div></div>
+    <div class="p-body"><div class="p-def">自分の言葉に影響があっても、相手の受け取り、組織の評価、未来の処遇まで一人で決めたことにはならない。意図・表現・必要な修正は自分へ、判断と選択は相手や組織へ返す。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>ここで自分が選べたことは何ですか?</li><li>相手・組織が判断したことまで、自分の責任にしていませんか?</li></ul></div></div>
+  </div>
+
+  <div class="section-header">2026-08-10 RESEARCH — 統合原則（110〜114）「お金・時間・数字と失う認知」より</div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">110</div><div class="p-title">「失う」は、反対側を見る前に事実へ戻す</div></div>
+    <div class="p-body"><div class="p-def">残高や状態が変化した事実と、「失った」という意味づけを一枚にしない。まだ得ていない未来、相手の内面、関係の変化を、質問側が所有物や喪失として先に置かない。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>「失う」を使わず、誰が見ても確認できる変化として言うと何ですか?</li><li>それはすでに起きた事実ですか、これから起きる予測ですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">111</div><div class="p-title">数字は事実を圧縮するが、価値全体を表さない</div></div>
+    <div class="p-body"><div class="p-def">金額、時刻、回数は比較と合意に役立つ。一方、それだけで愛、関係、経験、身体、文化の価値まで判定すると片側認知になる。数字の事実と、数字に表れない事実を別々に記録する。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>数字として確認できることは何ですか?</li><li>数字には出ていないが、観察できる変化は何ですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">112</div><div class="p-title">愛で会計を消さず、会計で愛を測らない</div></div>
+    <div class="p-body"><div class="p-def">見えない価値を理由に誰かの支出・時間・労力を曖昧にしない。同時に、金額だけで関係、感謝、物語の価値を決めない。物質と精神を別の台帳で見て、同時に扱う。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>金融上、誰が何を提供し、何に合意していますか?</li><li>金額とは別に、何が循環し、誰に何が生まれましたか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">113</div><div class="p-title">形成原因は一つに閉じず、現在の選択へ戻る</div></div>
+    <div class="p-body"><div class="p-def">幼少期、家族文化、社会環境、身体学習、家系や先祖の記憶という本人の感覚など、複数の形成仮説を置ける。ただし原因を確定せず、現在の一場面で何が起き、何を選べるかへ戻る。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>これは確認済みの出来事ですか、形成仮説ですか?</li><li>起源が確定しなくても、今日選べる一動作は何ですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">114</div><div class="p-title">科学・認知モデル・霊性の言葉を同じ強さで断定しない</div></div>
+    <div class="p-body"><div class="p-def">研究で支持されること、現場の事例から生まれた構造仮説、魂・先祖・エネルギーという霊性上のモデルを区分する。科学で未証明だから切り捨てず、体感が強いから科学的事実とも呼ばない。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>この言葉は、観察事実、科学研究、分析仮説、霊性モデルのどれですか?</li><li>受け手が区別できる表記になっていますか?</li></ul></div></div>
+  </div>
+
+
+  <div class="section-header">2026-08-23 KAORU JUKU — 統合原則（115〜119）「問いで静まった後を聴く」より</div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">115</div><div class="p-title">一時的に静まることと、認知の統合を分ける</div></div>
+    <div class="p-body"><div class="p-def">問いや呼吸の後に反応が弱まっても、意味づけが見直され、本人の選択が変わったとは限らない。注意の切り替え、休息、回避など複数の可能性を残し、何が変わり何が残ったかを確認する。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、身体のどこがどのように変わりましたか?</li><li>静まった後にも残っている言葉、映像、反応は何ですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">116</div><div class="p-title">現実の安全確認と、未来予測の認知ワークを分ける</div></div>
+    <div class="p-body"><div class="p-def">危険を示す可能性のある情報がある時、それを認知として消さない。観察情報の確認、連絡、安全策という現実対応と、未確認の解釈や未来予測による反応を、別の線で扱う。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、現実に確認できることは何ですか?</li><li>確認や対応をした後にも残る予測と身体反応は何ですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">117</div><div class="p-title">「それは事実か」の二択より、事実の範囲を具体化する</div></div>
+    <div class="p-body"><div class="p-def">本人にとって予測がすでに事実らしく感じられる時、事実か認知かの二択だけでは説得になることがある。直接見たこと、伝聞、意味づけ、未来予測へ分け、どこまでが確認済みかを具体化する。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>自分が直接見たことと、人から聞いたことを分けると何ですか?</li><li>そこから先に、何が起きると予測しましたか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">118</div><div class="p-title">問いは答えを得るためではなく、思考との間をつくる</div></div>
+    <div class="p-body"><div class="p-def">思考に問いかける目的を、正解や本音の発見に固定しない。思考そのものになっていた状態から、思考を観察できる位置へ戻るための間として使う。何も出ないことも観察結果である。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今浮かんでいる思考へ、一つだけ尋ねるなら何ですか?</li><li>答えではなく、問いの前後で何が変わりましたか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">119</div><div class="p-title">身体反応が残ったままでも、価値観から一動作を選べる</div></div>
+    <div class="p-body"><div class="p-def">恐れや不安が消えることを行動の条件にしない。危険確認と安全を保った上で、反応があることを認めながら、本当に大切にしたい方向から今できる一動作を選ぶ。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>不安が残ったままでも、大切にしたいあり方は何ですか?</li><li>安全を保ちながら、今選べる一動作は何ですか?</li></ul></div></div>
+  </div>
+
+  <div class="section-header">2026-08-30 JDS DOJO — 統合原則（120〜125）「中庸に戻ることと現実を変えないことは同じではない」より</div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">120</div><div class="p-title">中庸に戻ることと、現実を変えないことは別の層である</div></div>
+    <div class="p-body"><div class="p-def">両側を見ることは、現状を良いと認めて行動を止めることではない。まず感情・認知・未来予測を分けて中庸へ戻る。次に本人の希望、共有事実、境界、役割を確認する。その上で、伝える、相談する、待つ、仕組みを変えるなどを本当の価値観から選び直す。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今扱っているのは、中庸へ戻る層、現実確認の層、選択の層のどこですか?</li><li>中庸に戻った上で、現実に確認し、選びたい行動は何ですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">121</div><div class="p-title">ワークへの抵抗には、ワーク後の結論予測が隠れている</div></div>
+    <div class="p-body"><div class="p-def">本人が拒んでいるのはワークそのものではなく、「両側を見たら今のままでよいと認めることになる」「必要な働きかけができなくなる」という未来予測である場合がある。手順を勧める前に予測を言葉にする。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>このワークをすると、どんな結論になると感じていますか?</li><li>その結論になった後、何が起きると予測していますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">122</div><div class="p-title">課題の分離は、相手との関係を切るためではなく、自分の選択へ戻るために行う</div></div>
+    <div class="p-body"><div class="p-def">相手が困っているか、何を望むか、今後どう選ぶかを本人へ返す。分離後も相手にとってのメリット・デメリットを本人へ答えさせず、自分が伝える、引き受ける、相談する、待つという具体的行動を主語にする。共有課題は、その後に当事者同士で事実・境界・役割を確認する。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>相手本人から確認できていることは何ですか?</li><li>いま両側を見ている行動の主語は、誰ですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">123</div><div class="p-title">「ジャッジしていない」という理解と、身体に残る評価反応は両立する</div></div>
+    <div class="p-body"><div class="p-def">相手の状態を良い・悪いと見ていなくても、感情の表現方法、関係の上下、自分の理想像へ評価が残ることがある。身体反応をジャッジの証明にせず、別の層の前提を具体化する入口にする。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>状態ではなく、どの言葉・態度・表現に反応しましたか?</li><li>その表現方法を、どのように評価していますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">124</div><div class="p-title">嫌な対象のメリットより、本人が繰り返し選ぶ行動の意味を聞く</div></div>
+    <div class="p-body"><div class="p-def">不快な相手や出来事へ無理にメリットを探すと説得になり得る。嫌だと感じながらも本人が現実に続けている行動へ注目し、その行動で本人に何が起き、何を大切にしているかを聞く。ただし、まだ言葉になっていない嫌さやデメリットを飛ばして、メリットだけを積み上げない。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>この行動で嫌なこと、負担になっていることは、まだ残っていますか?</li><li>それでもその行動を続けているのはなぜですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">125</div><div class="p-title">統合は説明への同意ではなく、同じ現実での選択に現れる</div></div>
+    <div class="p-body"><div class="p-def">分かった、納得した、感謝できたという言葉だけで統合を確定しない。今回の選択を大切にしながら、同じ場面が再び来た時の反応と選択を次の一次情報として見る。反応が戻っても、今回の気づきが無効になったわけではない。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今日、同じ場面が来たらどうしたいですか?</li><li>次に反応が動いた時、何を新しい一次情報として見ますか?</li></ul></div></div>
+  </div>
+
+  <div class="section-header">2026-08-30 KAORU JUKU — 統合原則（126〜130）「安心を評価と成果感に預ける構造」より</div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">126</div><div class="p-title">外部評価を外しても、自己評価の合格条件が残ることがある</div></div>
+    <div class="p-body"><div class="p-def">相手からどう見られるかを手放しても、「今日はやったと思えた日だけ安心してよい」という自己評価が残れば、安心はなお成果へ条件づけられる。他者評価と自己評価を別々に見る。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>相手の評価を横に置いた時、自分は何を基準に自分へ合格を出していますか?</li><li>その条件が満たされない日、自分をどう評価していますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">127</div><div class="p-title">仕事の充実感と、どう見られるかは、同時にあっても別々に扱う</div></div>
+    <div class="p-body"><div class="p-def">仕事そのものへの退屈や関心の薄さと、上司からの評価予測は影響し合うが同じではない。一つを原因、もう一つを結果と急いで決めず、本人が両方あると言える状態を守る。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>仕事そのものについて感じていることは何ですか?</li><li>それとは別に、相手からどう見られると予測していますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">128</div><div class="p-title">「やった感」は事実ではなく、本人の成果判定である</div></div>
+    <div class="p-body"><div class="p-def">作業量や完成物と、「今日はやった」という感覚は同じではない。感覚を否定せず、何が起きた時にそう判定するのかを具体化する。区切り、完成、変化、難しさ、影響などの条件は本人に確認する。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>「やった」と思えた最近の一日は、具体的に何をしていましたか?</li><li>その日の何を見て、やったと判定しましたか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">129</div><div class="p-title">本人が生んだ中心語を、理論より先に保持する</div></div>
+    <div class="p-body"><div class="p-def">本人が「自分でやったと思えた時が安心」のような中心語を生んだら、すぐ理論へ接続しない。具体的な一場面、合格条件、身体、選択を聴き、本人の体験の厚みを先に育てる。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>その言葉が当てはまる具体的な一日はどんな日でしたか?</li><li>その時、身体と行動はどう違いましたか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">130</div><div class="p-title">現在地の言語化と、コンフォートゾーンの移動を同じにしない</div></div>
+    <div class="p-body"><div class="p-def">安心条件を言葉にできたことは重要だが、それだけで未来側へ移動したとは確定できない。本当の価値観から選び、同じ場面で新しい選択を重ねたかを次の一次情報として見る。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今日見えたのは現在地ですか、選び直しですか、日常での定着ですか?</li><li>次の同じ場面で、何を観察しますか?</li></ul></div></div>
+  </div>
+
+  <div class="section-header">2026-08-31 EXTERNAL AI AUDIT — 統合原則（131〜133）「コーチの理解と本人の理解を分ける」より</div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">131</div><div class="p-title">コーチが構造を理解した瞬間と、本人が構造を理解した瞬間は同じではない</div></div>
+    <div class="p-body"><div class="p-def">コーチに全体構造が見えても、本人の現在地がまだ具体的な言葉になっていないことがある。理論を完成形で渡さず、本人がその構造を見つけられる一段手前の問いへ変換する。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今見えている構造は、本人も自分の言葉で話したものですか?</li><li>この説明を、具体的な一場面を聞く一問へ変えると何ですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">132</div><div class="p-title">「分からない」は、問いや説明を増やす前に情報量を減らす合図として扱う</div></div>
+    <div class="p-body"><div class="p-def">本人が「難しい」「分からない」「気づきはない」と返した時、理解力や意欲の問題にしない。直前の問いの数、抽象度、比喩、自己開示、講義量を確認し、本人が最後に出した一文へ戻る。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今の話で分かったところと、難しくなったところはどこですか?</li><li>新しい説明を足さず、最後の本人語へ戻ると何ですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">133</div><div class="p-title">実際にしたことと、本人が出した採点を別の欄へ置く</div></div>
+    <div class="p-body"><div class="p-def">何もしていない、大したことをしていない、聞いているだけ、という言葉は行動そのものではなく本人の採点を含む。採点を否定せず、確認できる動作・量・時間と並べ、何を基準に評価したかを具体化する。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>評価語を抜いて、実際にしたことだけ言うと何ですか?</li><li>その事実のどこを見て、その採点を付けましたか?</li></ul></div></div>
+  </div>
+
+  <div class="section-header">2026-09-06 JDS DOJO — 統合原則（134〜140）「問いが届かなくなった時、何をするか」より</div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">134</div><div class="p-title">問いと返答の対象がずれたら、次の問いより対話の現在地を共有する</div></div>
+    <div class="p-body"><div class="p-def">本人について尋ねた問いに他者の分析が返り続けるなど、問いと返答の対象がずれた時は、言い換えた問いを重ね続けない。「今、誰について話しているか」「何を一緒に確認しようとしているか」を二人で確かめる。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今の問いと返答は、誰の体験について話していますか?</li><li>次の問いを足す前に、共有した方がよいずれはありますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">135</div><div class="p-title">焦点を提案することと、答えを指定することを分ける</div></div>
+    <div class="p-body"><div class="p-def">コーチが「今はここを一緒に見ませんか」と焦点を提案することは、本人の答えを決めることと同じではない。扱う場面や主語は共同確認し、そこから何を感じ、どう捉えるかは本人に残す。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今しているのは、見る場所の提案ですか、見える答えの指定ですか?</li><li>本人が別の焦点を選べる余地は残っていますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">136</div><div class="p-title">直接性は強い口調ではなく、対象の明瞭さである</div></div>
+    <div class="p-body"><div class="p-def">直接的な介入は、強く言うことでも結論を押しつけることでもない。今扱う人物、場面、言葉、感情を一文で明確にし、本人がそこへ戻れるようにすることである。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、何を明確にしたくてカットインしますか?</li><li>強くせず、対象だけを明瞭に言うとどんな一文になりますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">137</div><div class="p-title">主語を本人へ戻すことにも、コーチの見立てが入っている</div></div>
+    <div class="p-body"><div class="p-def">「あなた自身はどう感じますか」という問いも完全に中立ではなく、本人の内面を見るというコーチの見立てを含む。最初の依頼へ戻り、問いを提案として置き、本人が訂正・拒否・変更できる余地を守る。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>この問いは、本人が最初に扱いたいと言ったことと一致していますか?</li><li>本人が「そこではない」と言える形になっていますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">138</div><div class="p-title">問いを撤回して戻れることも、コーチング力である</div></div>
+    <div class="p-body"><div class="p-def">本人が「分からない」「その問いではない」と示した時、説明を重ねて問いを成立させようとしない。見立てが外れた可能性を認め、問いを一度置き、本人が最後に話した言葉や最初の依頼へ戻る。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今の問いを一度撤回すると、どこへ戻れますか?</li><li>本人が最後に自分の言葉で話した一文は何でしたか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">139</div><div class="p-title">短時間の成果を、ワークの完了だけに置かない</div></div>
+    <div class="p-body"><div class="p-def">限られた時間では、一場面、主語、感情、事実と認知の一つが明確になったことも成果である。ワークが完了しなかったことを失敗とせず、今回確認できた現在地と、次に扱う入口を残す。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今日、本人と一緒に確認できた一つは何ですか?</li><li>次に扱える具体的な入口はどこですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">140</div><div class="p-title">カットインは、相手の反応で修正できる提案として置く</div></div>
+    <div class="p-body"><div class="p-def">介入の強度は固定の段階表や属性で決めない。これまでの返答、沈黙、表情、訂正のしやすさを観察して選び、介入後の反応から見立てを組み直す。本人の内面やタイプを、観察だけで断定しない。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>相手が訂正した時、すぐに見立てを変えられますか?</li><li>介入後のどの反応を、次の一次情報として見ますか?</li></ul></div></div>
+  </div>
+
+  <div class="section-header">2026-09-13 JDS DOJO — 統合原則（141〜146）「一語で分かったことにしない」より</div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">141</div><div class="p-title">深さは、今触れられる一層を両面から見ることからも生まれる</div></div>
+    <div class="p-body"><div class="p-def">最深部へ直行することだけが深掘りではない。今触れられている感情と認知の両側を見て、何が変わり何が残ったかを本人へ返す。残ったものは次の入口になり得る。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今、本人が自分の言葉で触れられている一つは何ですか?</li><li>ここまで見て、何が変わり、何が残っていますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">142</div><div class="p-title">反対側の問いの順序は、感情名ではなく認知構造で決める</div></div>
+    <div class="p-body"><div class="p-def">罪悪感だから必ず相手側から、と固定しない。誰に何をした／できなかったと見ているかを確かめ、相手への不利益と本人の役割評価のどちらが中心かに合わせて入口を選ぶ。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>誰に対して、何をした／できなかったと感じていますか?</li><li>今見ているのは相手への影響ですか、自分の役割への評価ですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">143</div><div class="p-title">表情の明るさは変化の兆候であり、統合の証明ではない</div></div>
+    <div class="p-body"><div class="p-def">非言語の変化は大切な一次情報だが、それだけで完了とは決めない。結論を含まない問いで現在地を本人へ返し、変わったものと残ったものを確認する。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>ここまで話して、今はどうですか?</li><li>最初と比べて変わったもの、まだ残っているものはありますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">144</div><div class="p-title">「苦手」は能力の結論ではなく、工程を圧縮したラベルとして読む</div></div>
+    <div class="p-body"><div class="p-def">苦手の一語を、場面、判断、身体、注意、予測、行動へ分ける。本人が繰り返し自己説明に使う時は自己像としても働き得るが、最初から人格の問題とは決めない。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>最初に手が止まるのは、何をしようとした瞬間ですか?</li><li>その直前と直後に、実際には何をしていますか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">145</div><div class="p-title">受容と現実改善を分ける</div></div>
+    <div class="p-body"><div class="p-def">受容は肯定への反転ではなく、今そうなっていることを評価せず見ること。現実改善は自己否定の罰ではなく、望む生活や関係を選ぶための設計である。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>評価語を外すと、今は何が起きていますか?</li><li>その現在地を否定せず、それでもどうしたいですか?</li></ul></div></div>
+  </div>
+  <div class="principle-card">
+    <div class="p-head"><div class="p-num">146</div><div class="p-title">価値観との接続は、因果説明ではなく行動実験にする</div></div>
+    <div class="p-body"><div class="p-def">価値観を作業へ貼れば必ず動けるとは限らない。作業結果だけでなく、判断するプロセスに価値観を使った時、注意、身体、選択、行動がどう変わるかを小さく試す。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>この一工程で、大切な価値をどう使えるか試すとしたら?</li><li>試した後、身体・注意・行動の何を観察しますか?</li></ul></div></div>
+  </div>
+
+  <hr>
+
+  <div class="section-header">2026-09-20 JDS DOJO — 統合原則（147〜157）「状態と価値観を、正解にしない」より</div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">147</div><div class="p-title">身体状態と人格評価を同一にしない</div></div><div class="p-body"><div class="p-def">疲れている、重い、反応が遅いという状態と、丁寧でない、駄目な自分という評価を分ける。</div></div></div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">148</div><div class="p-title">価値観は方向であり、固定した方法ではない</div></div><div class="p-body"><div class="p-def">価値観を守りながら、行動量、担い方、頻度、方法は今の状態に合わせて選び直せる。</div></div></div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">149</div><div class="p-title">両面化では主語・対象・時間軸を揃える</div></div><div class="p-body"><div class="p-def">嫌と置いた対象を別対象の利点ですり替えず、同じ状態が持つ両側を確かめる。</div></div></div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">150</div><div class="p-title">反応が残ったら本人ではなく設計を見直す</div></div><div class="p-body"><div class="p-def">再評価で反応が変わらない時は、対象のずれ、言葉の抽象度、反対側の不足、別のツボを見直す。</div></div></div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">151</div><div class="p-title">傾聴は聞いた量ではなく焦点で決まる</div></div><div class="p-body"><div class="p-def">何を明らかにするために聞くかを定め、必要な事実が取れたら一度止まる。</div></div></div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">152</div><div class="p-title">価値観を処方箋にしない</div></div><div class="p-body"><div class="p-def">クライアントの価値観を「だからこうすべき」という提案の根拠にせず、本人の選択へ返す。</div></div></div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">153</div><div class="p-title">コーチのジャッジも次の一次情報にする</div></div><div class="p-body"><div class="p-def">他者のコーチングへの強い評価が動いたら、自分が握る理想像と期待へ主語を戻す。</div></div></div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">154</div><div class="p-title">認知語を拾うことと、事実へ降ろすことを分ける</div></div><div class="p-body"><div class="p-def">認知語を発見しただけで具体化できたとは限らない。本人が観察できる行動・場面・言葉まで一つを降ろし切る。</div></div></div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">155</div><div class="p-title">行き詰まりでは二つの主題を分ける</div></div><div class="p-body"><div class="p-def">問いやプラスを増やす前に、一つの訴えへ二つの嫌さが混在していないかを本人と確認する。</div></div></div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">156</div><div class="p-title">工程を変える時は本人と共有する</div></div><div class="p-body"><div class="p-def">認知を扱う工程から現実解決へ移る時は、現在地と目的を伝え、どちらを続けるか本人へ返す。</div></div></div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">157</div><div class="p-title">ジャッジを自分へ戻しても、技術課題まで消さない</div></div><div class="p-body"><div class="p-def">コーチ自身の認知を内観しながら、対話で実際に起きた焦点移動や未確認事項も両側に保持する。</div></div></div>
+
+  <hr>
+
+  <div class="section-header">2026-09-20 KAORU JUKU — 統合原則（158〜162）「成果物ではなく、向き合っている事実を見る」より</div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">158</div><div class="p-title">成果物がないことと、何も起きていないことを同一化しない</div></div><div class="p-body"><div class="p-def">回答が画面に残っていなくても、開いた、見た、考えた、止まった、違和感に気づいたという過程は起きている。結果の有無と、向き合った事実を分けて扱う。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>答え以外に、実際には何をしましたか?</li><li>止まったのは、どの問いのどの言葉でしたか?</li></ul></div></div></div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">159</div><div class="p-title">同じ抽象質問を重ねる前に、本人語を並べて入口を小さくする</div></div><div class="p-body"><div class="p-def">「本当はどうしたい」「何を感じる」が出ない時、問いを繰り返さない。本人がすでに話した言葉を候補として並べ、近い・違う・分からないから始める。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>この中で少し近いものはありますか?</li><li>選べなければ、どれも違うで大丈夫です。</li></ul></div></div></div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">160</div><div class="p-title">フレームワーク候補は見える化し、採否・両側・選択は本人へ返す</div></div><div class="p-body"><div class="p-def">一次情報から候補を言語化する作業はAIとコーチが担える。ただし、それが本人に近いか、反対側をどう見るか、何を選ぶかは本人の領域として残す。</div></div></div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">161</div><div class="p-title">「そのままでいい」は、現実設計を変えないという意味ではない</div></div><div class="p-body"><div class="p-def">存在や現在地を否定しないことと、資料量、問い方、環境、行動を調整しないことは別である。受容の後に、本人が動きやすい現実を設計する。</div></div></div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">162</div><div class="p-title">クライアントが言葉を探す時間は、コーチの観察と設計も育てる</div></div><div class="p-body"><div class="p-def">沈黙を失敗や停滞と決めず、何が出ていて何が出ていないかを観察する。待つことと、答えやすい足場を差し出すことを両立する。</div></div></div>
+
+  <hr>
+
+  <div class="section-header">2026-09-30 KAORU JUKU — 統合原則（163〜168）「観測者は、本人がすでにしている行為から見つける」より</div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">163</div><div class="p-title">抽象概念は、本人がすでに行った具体的行為へ接続する</div></div><div class="p-body"><div class="p-def">観測者や本来の私を定義から教える前に、録画を見て自分の反応に気づいたなど、本人がすでにしていた観察行為を示す。概念名は後から付ける。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>今の話の中で、すでに自分を外から見ていた瞬間はどこですか?</li></ul></div></div></div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">164</div><div class="p-title">自己評価のゼロ化を、観察可能な事実でほどく</div></div><div class="p-body"><div class="p-def">「全くできていない」という自己評価を否定せず、本人が実際に行った一つの観察・選択・修正を示す。評価を別の評価で反転せず、事実へ戻す。</div></div></div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">165</div><div class="p-title">復唱への違和感は、抵抗と決めず意味の固定予測を確認する</div></div><div class="p-body"><div class="p-def">本人が復唱へ「違う」と反応する時、自分を守っていると解釈して終えない。「そう」と言った後に何が確定し、何を直せなくなると予測しているかを具体化する。</div><div class="p-row"><div class="p-label">再現の問い</div><ul class="p-items"><li>「そう」と答えたら、その後どう進む気がしますか?</li><li>後から言い直せると分かれば、何が変わりますか?</li></ul></div></div></div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">166</div><div class="p-title">仮の言葉を、確定ではなく共同検証の材料として扱う</div></div><div class="p-body"><div class="p-def">言葉にならない段階では、七割近い、一部だけ近い、今は分からないという中間回答を認める。仮置き後も本人が訂正できることを対話の前提にする。</div></div></div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">167</div><div class="p-title">講師の自己開示は、成功談ではなく戻る過程を渡す</div></div><div class="p-body"><div class="p-def">強い出来事に直面した時、事実・未来予測・感情・身体・価値観・選択をどう分け直したかを示す。講師の結論を正解として渡さず、受講者が自分の現在地へ戻れる材料にする。</div></div></div>
+  <div class="principle-card"><div class="p-head"><div class="p-num">168</div><div class="p-title">長い講義は、途中で本人の受け取りへ往復する</div></div><div class="p-body"><div class="p-def">講義の深さを削るだけでなく、一定間隔で「今どこが残ったか」「自分の経験では何に近いか」を確かめる。講師の世界だけで完結させない。</div></div></div>
+
+  <a href="index.html" style="font-size:12px;color:#aaa;text-decoration:none;letter-spacing:0.06em;">← 訓練記録一覧に戻る</a>
+
+  <div class="footer-note" style="margin-top:24px;">
+    参照した一次資産: 2026-05-08〜2026-09-30 全セッション分析・研究記録（かおる塾GC・コーチング道場・JDSコーチ会・外部AI比較監査）／全168原則<br>
+    外部公開時は、事例の人物名・生活事情は使用せず、法則と問いだけを公開する。
+  </div>
+
+</div>
+</body>
+</html>
