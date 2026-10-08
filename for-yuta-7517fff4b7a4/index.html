@@ -20,8 +20,36 @@ details{background:#fff;border:2px solid #e5e7eb;border-radius:16px;padding:14px
 <div class="card"><b>① 動画で見る</b>
 <video controls preload="metadata" src="media/video_yuta_v2.mp4"></video>
 <p style="font-size:16px;color:#4b5563">※ 動かない時は、下の「文字で読む」をひらいてください。</p></div>
-<div class="card"><b>② スライドで見る</b>
-<a class="btn" href="media/slides_yuta_v2.pdf" target="_blank">スライドをひらく</a></div>
+<div class="card" style="padding: 20px;">
+  <div style="font-size: 20px; font-weight: 800; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+    <span>② スライドで見る</span>
+    <span id="slideCounter" style="font-size: 15px; font-weight: 600; color: #4b5563;">1 / 14</span>
+  </div>
+  <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; background: #e5e7eb; box-shadow: 0 4px 16px rgba(0,0,0,0.06); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
+    <img id="currentSlideImg" src="media/slides/slide_01.png" alt="ユータさん専用スライド" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+  </div>
+  <div style="display: flex; gap: 12px; margin-top: 14px;">
+    <button type="button" class="slide-btn" onclick="prevSlide()" style="flex: 1; background: #374151; color: #fff; border: none; padding: 12px; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer;">◀ 前のスライド</button>
+    <button type="button" class="slide-btn" onclick="nextSlide()" style="flex: 1; background: #c2410c; color: #fff; border: none; padding: 12px; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer;">次のスライド ▶</button>
+  </div>
+  <a class="btn" style="background: transparent; color: #4b5563; border: 2px solid #e5e7eb; font-size: 16px; padding: 10px; margin-top: 12px;" href="media/slides_yuta_v2.pdf" download="ユータさんAI参謀チーム戦略.pdf">スライドPDFを保存する (15MB)</a>
+</div>
+<div style="display:none">
+  <img src="media/slides/slide_01.png" alt="">
+  <img src="media/slides/slide_02.png" alt="">
+  <img src="media/slides/slide_03.png" alt="">
+  <img src="media/slides/slide_04.png" alt="">
+  <img src="media/slides/slide_05.png" alt="">
+  <img src="media/slides/slide_06.png" alt="">
+  <img src="media/slides/slide_07.png" alt="">
+  <img src="media/slides/slide_08.png" alt="">
+  <img src="media/slides/slide_09.png" alt="">
+  <img src="media/slides/slide_10.png" alt="">
+  <img src="media/slides/slide_11.png" alt="">
+  <img src="media/slides/slide_12.png" alt="">
+  <img src="media/slides/slide_13.png" alt="">
+  <img src="media/slides/slide_14.png" alt="">
+</div>
 <details><summary>③ 文字で読む</summary>
 <p>この資料は、ユータさんのために作りました。ここに書いてある提案は、すべて「試してみる案」です。結果をお約束するものではありません。月平均およそ5万円という数字は、薫さんから伺ったものです。期間や内訳は、まだ確かめていません。だから、この資料には、それ以外の数字は書いていません。</p>
 <h2>1. いまのユータさん</h2>
@@ -144,7 +172,32 @@ details{background:#fff;border:2px solid #e5e7eb;border-radius:16px;padding:14px
 </details>
 </div>
 
-<script>function cp(id,b){var t=document.getElementById(id);t.select();try{navigator.clipboard.writeText(t.value);}catch(e){document.execCommand("copy");}b.textContent="コピーしました ✔";}</script>
+<script>
+function cp(id,b){var t=document.getElementById(id);t.select();try{navigator.clipboard.writeText(t.value);}catch(e){document.execCommand("copy");}b.textContent="コピーしました ✔";}
+
+let currentSlide = 1;
+const totalSlides = 14;
+
+function updateSlide() {
+  const padded = String(currentSlide).padStart(2, '0');
+  document.getElementById('currentSlideImg').src = `media/slides/slide_${padded}.png`;
+  document.getElementById('slideCounter').innerText = `${currentSlide} / ${totalSlides}`;
+}
+
+function nextSlide() {
+  if (currentSlide < totalSlides) {
+    currentSlide++;
+    updateSlide();
+  }
+}
+
+function prevSlide() {
+  if (currentSlide > 1) {
+    currentSlide--;
+    updateSlide();
+  }
+}
+</script>
 <h2>ひとこと、教えてください</h2>
 <p>見て、聴いて、感じたことを、そのまま。分かりにくいところ、心配なところを先に教えてもらえると、いちばん助かります。</p>
 </div></body></html>
