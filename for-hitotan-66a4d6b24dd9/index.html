@@ -201,7 +201,7 @@
 
   <div class="slide-viewer">
     <div class="slide-img-wrap">
-      <img id="currentSlideImg" src="media/slides/slide_01.png" alt="スライド">
+      <img id="currentSlideImg" src="media/slides_v3/slide_01.png" alt="スライド">
     </div>
     <div class="slide-controls">
       <button class="slide-btn" onclick="prevSlide()">◀ 前へ</button>
@@ -305,18 +305,18 @@
 
 <!-- Preload hidden references for all slides -->
 <div style="display:none" aria-hidden="true">
-  <img src="media/slides/slide_01.png" alt="">
-  <img src="media/slides/slide_02.png" alt="">
-  <img src="media/slides/slide_03.png" alt="">
-  <img src="media/slides/slide_04.png" alt="">
-  <img src="media/slides/slide_05.png" alt="">
-  <img src="media/slides/slide_06.png" alt="">
-  <img src="media/slides/slide_07.png" alt="">
-  <img src="media/slides/slide_08.png" alt="">
-  <img src="media/slides/slide_09.png" alt="">
-  <img src="media/slides/slide_10.png" alt="">
-  <img src="media/slides/slide_11.png" alt="">
-  <img src="media/slides/slide_12.png" alt="">
+  <img src="media/slides_v3/slide_01.png" alt="">
+  <img src="media/slides_v3/slide_02.png" alt="">
+  <img src="media/slides_v3/slide_03.png" alt="">
+  <img src="media/slides_v3/slide_04.png" alt="">
+  <img src="media/slides_v3/slide_05.png" alt="">
+  <img src="media/slides_v3/slide_06.png" alt="">
+  <img src="media/slides_v3/slide_07.png" alt="">
+  <img src="media/slides_v3/slide_08.png" alt="">
+  <img src="media/slides_v3/slide_09.png" alt="">
+  <img src="media/slides_v3/slide_10.png" alt="">
+  <img src="media/slides_v3/slide_11.png" alt="">
+  <img src="media/slides_v3/slide_12.png" alt="">
 </div>
 
 </div>
@@ -327,7 +327,7 @@
 
   function updateSlide() {
     const padded = String(currentSlide).padStart(2, '0');
-    document.getElementById('currentSlideImg').src = `media/slides/slide_${padded}.png`;
+    document.getElementById('currentSlideImg').src = `media/slides_v3/slide_${padded}.png`;
     document.getElementById('slideCounter').innerText = `${currentSlide} / ${totalSlides}`;
   }
 
