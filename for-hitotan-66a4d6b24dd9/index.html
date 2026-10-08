@@ -1,83 +1,379 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
 <title>ひとたんさんへ｜ご機嫌さんの世界を、ひとたんさんの時間で</title>
-<meta name="description" content="ひとたんさん専用のご提案資料です。音声・スライド・文字でお届けします。">
+<meta name="description" content="ひとたんさん専用のご提案資料です。絵のスライド・動画・音声・文字でお届けします。">
 <meta property="og:title" content="ひとたんさんへ｜ご機嫌さんの世界を、ひとたんさんの時間で">
-<meta property="og:description" content="ひとたんさん専用のご提案資料です。音声・スライド・文字でお届けします。">
+<meta property="og:description" content="ひとたんさん専用のご提案資料です。絵のスライド・動画・音声・文字でお届けします。">
 <style>
-body{margin:0;font-family:-apple-system,"Hiragino Sans",sans-serif;background:#fcfbf9;color:#1f2937;font-size:20px;line-height:2}
-.w{max-width:740px;margin:0 auto;padding:28px 18px 80px}
-.n{background:#f3f4f6;border-left:4px solid #9ca3af;padding:10px 16px;font-size:16px;color:#4b5563;border-radius:4px;margin-bottom:22px}
-h1{font-size:30px;line-height:1.5;margin:6px 0 18px} h2{font-size:25px;margin:28px 0 8px}
-.card{background:#fff7ed;border:2px solid #fed7aa;border-radius:20px;padding:24px;margin:22px 0}
-audio{width:100%;margin-top:10px}
-.btn{display:block;text-align:center;background:#c2410c;color:#fff;text-decoration:none;font-weight:700;font-size:22px;padding:18px;border-radius:14px;margin:12px 0}
-.btn.sub{background:#1e3a8a} p{margin:0 0 14px}
-details{background:#fff;border:2px solid #e5e7eb;border-radius:16px;padding:14px 20px;margin:22px 0} summary{font-weight:700;cursor:pointer;font-size:22px}
-</style></head><body><div class="w">
-<div class="n">これは、ひとたんさんひとりのために作った資料です。ここにあるのは「試す案」で、結果をお約束するものではありません。</div>
-<h1>ご機嫌さんの世界を、ひとたんさんの時間で ― ひとたんさんへ</h1>
+  :root {
+    --primary: #c2410c;
+    --primary-bg: #fff7ed;
+    --border: #fed7aa;
+    --text-main: #1f2937;
+    --text-sub: #4b5563;
+    --card-radius: 20px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
+    background: #fbfaf8;
+    color: var(--text-main);
+    font-size: 19px;
+    line-height: 1.9;
+  }
+  .w {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 32px 20px 100px;
+  }
+  .notice {
+    background: #f3f4f6;
+    border-left: 4px solid #9ca3af;
+    padding: 12px 18px;
+    font-size: 15px;
+    color: var(--text-sub);
+    border-radius: 6px;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+  h1 {
+    font-size: 28px;
+    line-height: 1.45;
+    margin: 8px 0 24px;
+    font-weight: 800;
+    color: #111827;
+  }
+  h2 {
+    font-size: 23px;
+    margin: 32px 0 12px;
+    color: #111827;
+    border-bottom: 2px solid #fed7aa;
+    padding-bottom: 6px;
+  }
+  .card {
+    background: #ffffff;
+    border: 2px solid #f3f4f6;
+    border-radius: var(--card-radius);
+    padding: 24px;
+    margin: 28px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  }
+  .card.highlight {
+    background: #fffbf5;
+    border-color: #fde68a;
+  }
+  .card-title {
+    font-size: 21px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .card-desc {
+    font-size: 15px;
+    color: var(--text-sub);
+    margin: 0 0 16px;
+    line-height: 1.6;
+  }
+  
+  /* Slide Viewer */
+  .slide-viewer {
+    position: relative;
+    background: #111827;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 16px 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+  .slide-img-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+  }
+  .slide-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.2s ease;
+  }
+  .slide-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #1f2937;
+    color: #fff;
+  }
+  .slide-btn {
+    background: #374151;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .slide-btn:hover { background: #4b5563; }
+  .slide-counter {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  
+  /* Media elements */
+  audio { width: 100%; margin-top: 8px; }
+  video { width: 100%; border-radius: 12px; margin-top: 8px; background: #000; }
+  
+  .btn {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    background: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 16px;
+    border-radius: 12px;
+    margin: 12px 0 4px;
+    transition: opacity 0.2s;
+  }
+  .btn:hover { opacity: 0.9; }
 
-<div class="card"><b>① 音声で聴く（約5分）</b>
-<audio controls preload="metadata" src="media/audio_hitotan_v2.m4a"></audio>
-<p style="font-size:16px;color:#4b5563;margin-top:8px">※ 家事や移動の合間に、耳だけでゆっくり聴いていただけます。</p></div>
+  details {
+    background: #fff;
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 18px 24px;
+    margin: 32px 0;
+  }
+  summary {
+    font-weight: 800;
+    cursor: pointer;
+    font-size: 21px;
+    color: #111827;
+  }
+  p { margin: 0 0 16px; }
+  
+  /* Tabs for videos */
+  .tab-buttons {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .tab-btn {
+    flex: 1;
+    padding: 10px;
+    background: #f3f4f6;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #4b5563;
+  }
+  .tab-btn.active {
+    background: #fff;
+    border-color: #ec4899;
+    color: #be185d;
+  }
+</style>
+</head>
+<body>
+<div class="w">
 
-<div class="card" style="background:#f0fdf4;border-color:#bbf7d0"><b>② スライド資料を見る（PDF）</b>
-<p style="font-size:16px;color:#166534;margin:8px 0 12px">※ 大きな文字と図解で、全体の流れをパラパラとご覧いただけます。</p>
-<a class="btn" style="background:#15803d" href="media/slides_hitotan_v2.pdf" target="_blank">スライドを開く（PDF）</a></div>
+<div class="notice">
+  これは、ひとたんさんひとりのために作った資料です。ここにあるのは「試す案」で、結果をお約束するものではありません。
+</div>
 
-<div class="card" style="background:#fdf2f8;border-color:#fbcfe8"><b>③ ビジョン動画解説（約1分）</b>
-<video controls preload="metadata" style="width:100%;margin-top:10px;border-radius:10px" src="media/video_hitotan_v2.mp4"></video>
-<p style="font-size:16px;color:#831843;margin:8px 0 0">※ AIが守る「ご機嫌さん」の余白について、1分ほどの動画でお届けします。</p></div>
+<h1>ご機嫌さんの世界を、ひとたんさんの時間で<br><span style="font-size:20px;font-weight:600;color:#6b7280">― ひとたんさんへ</span></h1>
 
+<!-- ① 絵のスライド資料 -->
+<div class="card highlight">
+  <div class="card-title" style="color:#b45309">
+    <span>🎨</span> ① 絵のスライドを見る（全12枚）
+  </div>
+  <p class="card-desc">
+    水彩画の温かい絵と言葉で、全体の物語をパラパラとご覧いただけます。<br>
+    ※ 画面下のボタンでめくっていただけます。
+  </p>
 
+  <div class="slide-viewer">
+    <div class="slide-img-wrap">
+      <img id="currentSlideImg" src="media/slides/slide_01.png" alt="スライド">
+    </div>
+    <div class="slide-controls">
+      <button class="slide-btn" onclick="prevSlide()">◀ 前へ</button>
+      <span class="slide-counter" id="slideCounter">1 / 12</span>
+      <button class="slide-btn" onclick="nextSlide()">次へ ▶</button>
+    </div>
+  </div>
 
-<details open><summary>③ 文字で読む</summary>
-<p>この資料には、三つの種類の言葉があります。①ひとたんさんが以前話したこと、②最近の様子として薫さんから聞いたこと、③これから試せる案。混ぜずに、分けて書きます。違うところは、直します。「いまは必要ない」も、そのまま大切な答えです。</p>
+  <a class="btn" style="background:#b45309" href="media/slides_hitotan_v2.pdf" target="_blank">
+    スライド資料をまとめて開く（PDF版 15MB）
+  </a>
+</div>
 
-<h2>1. 以前、ひとたんさん自身が話していたこと（2026年5月）</h2>
-<p>ひとたんさんは、AIに、「想いの交通整理」や、発信の下書き、イベントの前後の整理を手伝ってほしい、と話していました。人と向き合う時間と、自分の余白を守るためでした。</p>
-<p>そして、いちばん大切にしているのは、「ご機嫌さん」であること。笑顔になること。いいことも悪いことも、そのまま受け止めること。この言葉は、9月にも、あらためて語られていました。</p>
-<p>禅タロットは、本音と出会う場。味噌づくりは、季節を感じ、みんなで笑い、手を動かして、安心を思い出す場。</p>
-<p>「母ちゃん」という言葉は、実際に子育てをしている女性だけを指すものではありません。ひとたんさんは、「命を包める器を持った人」という意味でも語っていました。</p>
+<!-- ② 音声解説 -->
+<div class="card">
+  <div class="card-title" style="color:#15803d">
+    <span>🎙</span> ② 音声で聴く（約5分）
+  </div>
+  <p class="card-desc">
+    家事や移動の合間に、耳だけでゆっくり聴いていただけます。
+  </p>
+  <audio controls preload="metadata" src="media/audio_hitotan_v2.m4a"></audio>
+</div>
 
-<h2>2. 最近の様子として、薫さんから聞いたこと</h2>
-<p>いまは、パソコンやAIを、ほとんど使っていない。AI秘書「こはる」でのブログも、止まっている。今回の提案にも、いまのところ前向きではない、と聞いています。</p>
-<p>その理由は、まだ、本人に確かめられていません。気持ちが変わったのか。使い方が合わなかったのか。いまは、休みたいのか。どれでも、大丈夫です。</p>
+<!-- ③ 動画解説 -->
+<div class="card" style="background:#fdf2f8;border-color:#fbcfe8">
+  <div class="card-title" style="color:#be185d">
+    <span>🎬</span> ③ 動画で見る
+  </div>
+  <p class="card-desc">
+    動画でご覧になりたい方は、お好みの長さをお選びください。
+  </p>
 
-<h2>3. 薫さんからの提案（仮説です）</h2>
-<p>薫さんからは、こんな提案があります。</p>
-<p>お仕事の時間と、自分の時間のバランスの中で、禅タロットや味噌づくりのような、ひとたんさんの大切なことに、ひとたんさん自身の時間を、ご機嫌に使える仕組みを、一緒に考えたい。</p>
-<p>これを望むかどうかは、ひとたんさんに確かめてから、決めます。</p>
+  <div class="tab-buttons">
+    <button class="tab-btn active" id="tabBtn1" onclick="switchVideo(1)">短編まとめ（約1分）</button>
+    <button class="tab-btn" id="tabBtn2" onclick="switchVideo(2)">本編ストーリー（約7分）</button>
+  </div>
 
-<h2>4. 思い描く姿（たとえ話です）</h2>
-<p>家事、子育て、仕事などが重なって、自分のための時間を取りにくい人は、たくさんいます。</p>
-<p>そんなとき、AIが、ひとたんさんの代わりに、心を込める部分を決めることは、ありません。</p>
-<p>メモの整理、案内文の最初の下書き、候補の一覧づくりなど、ひとたんさんが望む範囲だけ、AIに手伝ってもらう。最後に、選んで、直して、出すかどうかを決めるのは、いつも、ひとたんさんです。</p>
-<p>その分の時間を、ひとたんさんが、ご機嫌でいられることに使えたら。それが、この提案の、ただひとつの願いです。</p>
+  <div id="videoContainer1">
+    <video controls preload="metadata" src="media/video_hitotan_v2.mp4"></video>
+    <p class="card-desc" style="margin-top:8px">AIが守る「ご機嫌さん」の余白について、1分ほどの短編でお届けします。</p>
+  </div>
 
-<h2>5. もう一つ、とても大事なこと ― 相棒AIチームと育てる未来</h2>
-<p>これまでのAIの使い方では、人間がAIごとに指示を出し、返ってきた答えを別の場所へ運ぶ「伝言係」になってしまい、かえって疲れてしまうことがありました。</p>
-<p>これからは、ひとたんさんは「方向」や「違和感」を伝えるだけ。面倒な調べ物や下書きの比較は、AI同士が裏で直接教え合って整えます。</p>
-<p>ゼロから毎回やり直すのではなく、一度整理した手順や下書きが、次にも使える「資産」として残っていく。自分が現場を離れている時間も、整えた仕組みが支えてくれる。そんな「複利のように積み上がる安心」を一緒に育てていけます。</p>
+  <div id="videoContainer2" style="display:none">
+    <video controls preload="metadata" src="media/video_hitotan_story_full.mp4"></video>
+    <p class="card-desc" style="margin-top:8px">ひとたんさんへのやさしい物語（本編・約7分35秒）です。</p>
+  </div>
+</div>
 
-<h2>6. 試すなら、一回だけ（試す案）</h2>
-<p>もし、試すなら、一回だけです。</p>
-<p>スマホに、30秒、「次に伝えたいこと」を話す。AIは、外には出さずに、短い案内文を、二つだけ作る。</p>
-<p>ひとたんさんは、「どちらも違う」と言って、終わってもいい。</p>
-<p>元の「こはる」の設定や、過去の文章は、変えません。公開も、送信も、削除も、しません。</p>
+<!-- ④ 文字で読む -->
+<details open>
+  <summary>📖 ④ 文字で読む</summary>
+  <p style="margin-top:14px;color:#6b7280;font-size:16px">
+    この資料には、三つの種類の言葉があります。①ひとたんさんが以前話したこと、②最近の様子として薫さんから聞いたこと、③これから試せる案。混ぜずに、分けて書きます。違うところは、直します。「いまは必要ない」も、そのまま大切な答えです。
+  </p>
 
-<h2>7. 先に、聞かせてください</h2>
-<p>本編のあとで、三つだけ、教えてもらえたら嬉しいです。答えたくなければ、答えなくて大丈夫です。</p>
-<p>ひとつめ。いまは、AIを使いたくないのか、使い方が難しいのか、必要を感じないのか。</p>
-<p>ふたつめ。5月に話したAIへの希望は、いまも、一部、残っているか。</p>
-<p>みっつめ。いま、いちばん守りたい時間と、減らしたい作業は、何か。</p>
+  <h2>1. 以前、ひとたんさん自身が話していたこと（2026年5月）</h2>
+  <p>ひとたんさんは、AIに、「想いの交通整理」や、発信の下書き、イベントの前後の整理を手伝ってほしい、と話していました。人と向き合う時間と、自分の余白を守るためでした。</p>
+  <p>そして、いちばん大切にしているのは、「ご機嫌さん」であること。笑顔になること。いいことも悪いことも、そのまま受け止めること。この言葉は、9月にも、あらためて語られていました。</p>
+  <p>禅タロットは、本音と出会う場。味噌づくりは、季節を感じ、みんなで笑い、手を動かして、安心を思い出す場。</p>
+  <p>「母ちゃん」という言葉は、実際に子育てをしている女性だけを指すものではありません。ひとたんさんは、「命を包める器を持った人」という意味でも語っていました。</p>
 
-<h2>8. 守ること</h2>
-<p>ひとたんさんの言葉を、AIが勝手に作りません。続けるなら、変えるファイルを、ひとたんさんに見せて、「いいよ」と言われたものだけ、反映します。外に出す、お金に関わる、何かを消す、というときは、毎回、ひとたんさんに確かめます。いつでも、やめられます。</p>
+  <h2>2. 最近の様子として、薫さんから聞いたこと</h2>
+  <p>いまは、パソコンやAIを、ほとんど使っていない。AI秘書「こはる」でのブログも、止まっている。今回の提案にも、いまのところ前向きではない、と聞いています。</p>
+  <p>その理由は、まだ、本人に確かめられていません。気持ちが変わったのか。使い方が合わなかったのか。いまは、休みたいのか。どれでも、大丈夫です。</p>
 
-<h2>最後に</h2>
-<p>これは、まだ試している段階です。見て、聴いて、感じたことを、そのまま、教えてください。</p>
-<p>ひとたんさんのペースで。ひとたんさんの言葉で。</p>
+  <h2>3. 薫さんからの提案（仮説です）</h2>
+  <p>薫さんからは、こんな提案があります。</p>
+  <p>お仕事の時間と、自分の時間のバランスの中で、禅タロットや味噌づくりのような、ひとたんさんの大切なことに、ひとたんさん自身の時間を、ご機嫌に使える仕組みを、一緒に考えたい。</p>
+  <p>これを望むかどうかは、ひとたんさんに確かめてから、決めます。</p>
 
+  <h2>4. 思い描く姿（たとえ話です）</h2>
+  <p>家事、子育て、仕事などが重なって、自分のための時間を取りにくい人は、たくさんいます。</p>
+  <p>そんなとき、AIが、ひとたんさんの代わりに、心を込める部分を決めることは、ありません。</p>
+  <p>メモの整理、案内文の最初の下書き、候補の一覧づくりなど、ひとたんさんが望む範囲だけ、AIに手伝ってもらう。最後に、選んで、直して、出すかどうかを決めるのは、いつも、ひとたんさんです。</p>
+  <p>その分の時間を、ひとたんさんが、ご機嫌でいられることに使えたら。それが、この提案の、ただひとつの願いです。</p>
+
+  <h2>5. もう一つ、とても大事なこと ― 相棒AIチームと育てる未来</h2>
+  <p>これまでのAIの使い方では、人間がAIごとに指示を出し、返ってきた答えを別の場所へ運ぶ「伝言係」になってしまい、かえって疲れてしまうことがありました。</p>
+  <p>これからは、ひとたんさんは「方向」や「違和感」を伝えるだけ。面倒な調べ物や下書きの比較は、AI同士が裏で直接教え合って整えます。</p>
+  <p>ゼロから毎回やり直すのではなく、一度整理した手順や下書きが、次にも使える「資産」として残っていく。自分が現場を離れている時間も、整えた仕組みが支えてくれる。そんな「複利のように積み上がる安心」を一緒に育てていけます。</p>
+
+  <h2>6. 試すなら、一回だけ（試す案）</h2>
+  <p>もし、試すなら、一回だけです。</p>
+  <p>スマホに、30秒、「次に伝えたいこと」を話す。AIは、外には出さずに、短い案内文を、二つだけ作る。</p>
+  <p>ひとたんさんは、「どちらも違う」と言って、終わってもいい。</p>
+  <p>元の「こはる」の設定や、過去の文章は、変えません。公開も、送信も、削除も、しません。</p>
+
+  <h2>7. 先に、聞かせてください</h2>
+  <p>本編のあとで、三つだけ、教えてもらえたら嬉しいです。答えたくなければ、答えなくて大丈夫です。</p>
+  <p>ひとつめ。いまは、AIを使いたくないのか、使い方が難しいのか、必要を感じないのか。</p>
+  <p>ふたつめ。5月に話したAIへの希望は、いまも、一部、残っているか。</p>
+  <p>みっつめ。いま、いちばん守りたい時間と、減らしたい作業は、何か。</p>
+
+  <h2>8. 守ること</h2>
+  <p>ひとたんさんの言葉を、AIが勝手に作りません。続けるなら、変えるファイルを、ひとたんさんに見せて、「いいよ」と言われたものだけ、反映します。外に出す、お金に関わる、何かを消す、というときは、毎回、ひとたんさんに確かめます。いつでも、やめられます。</p>
+
+  <h2>最後に</h2>
+  <p>これは、まだ試している段階です。見て、聴いて、感じたことを、そのまま、教えてください。</p>
+  <p>ひとたんさんのペースで。ひとたんさんの言葉で。</p>
 </details>
-</div></body></html>
+
+<!-- Preload hidden references for all slides -->
+<div style="display:none" aria-hidden="true">
+  <img src="media/slides/slide_01.png" alt="">
+  <img src="media/slides/slide_02.png" alt="">
+  <img src="media/slides/slide_03.png" alt="">
+  <img src="media/slides/slide_04.png" alt="">
+  <img src="media/slides/slide_05.png" alt="">
+  <img src="media/slides/slide_06.png" alt="">
+  <img src="media/slides/slide_07.png" alt="">
+  <img src="media/slides/slide_08.png" alt="">
+  <img src="media/slides/slide_09.png" alt="">
+  <img src="media/slides/slide_10.png" alt="">
+  <img src="media/slides/slide_11.png" alt="">
+  <img src="media/slides/slide_12.png" alt="">
+</div>
+
+</div>
+
+<script>
+  let currentSlide = 1;
+  const totalSlides = 12;
+
+  function updateSlide() {
+    const padded = String(currentSlide).padStart(2, '0');
+    document.getElementById('currentSlideImg').src = `media/slides/slide_${padded}.png`;
+    document.getElementById('slideCounter').innerText = `${currentSlide} / ${totalSlides}`;
+  }
+
+  function nextSlide() {
+    if (currentSlide < totalSlides) {
+      currentSlide++;
+      updateSlide();
+    }
+  }
+
+  function prevSlide() {
+    if (currentSlide > 1) {
+      currentSlide--;
+      updateSlide();
+    }
+  }
+
+  function switchVideo(tab) {
+    const v1 = document.getElementById('videoContainer1');
+    const v2 = document.getElementById('videoContainer2');
+    const b1 = document.getElementById('tabBtn1');
+    const b2 = document.getElementById('tabBtn2');
+
+    if (tab === 1) {
+      v1.style.display = 'block';
+      v2.style.display = 'none';
+      b1.classList.add('active');
+      b2.classList.remove('active');
+    } else {
+      v1.style.display = 'none';
+      v2.style.display = 'block';
+      b2.classList.add('active');
+      b1.classList.remove('active');
+    }
+  }
+</script>
+</body>
+</html>
