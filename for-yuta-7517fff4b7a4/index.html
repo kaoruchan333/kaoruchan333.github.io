@@ -1,40 +1,329 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
 <title>ユータさんへ｜AI参謀チームと育てる事業設計図</title>
-<meta name="description" content="ユータさん専用の事業設計図とAI参謀チームの提案です。動画・スライド・文字でお届けします。">
+<meta name="description" content="ユータさん専用の事業設計図と相棒AIチームの動かし方です。動画・スライド・文字でお届けします。">
 <meta property="og:title" content="ユータさんへ｜AI参謀チームと育てる事業設計図">
-<meta property="og:description" content="ユータさん専用の事業設計図とAI参謀チームの提案です。動画・スライド・文字でお届けします。">
+<meta property="og:description" content="ユータさん専用の事業設計図と相棒AIチームの動かし方です。動画・スライド・文字でお届けします。">
 <style>
-body{margin:0;font-family:-apple-system,"Hiragino Sans",sans-serif;background:#fcfbf9;color:#1f2937;font-size:20px;line-height:2}
-.w{max-width:740px;margin:0 auto;padding:28px 18px 80px}
-.n{background:#f3f4f6;border-left:4px solid #9ca3af;padding:10px 16px;font-size:16px;color:#4b5563;border-radius:4px;margin-bottom:22px}
-h1{font-size:30px;line-height:1.5;margin:6px 0 18px} h2{font-size:25px;margin:28px 0 8px}
-.card{background:#fff7ed;border:2px solid #fed7aa;border-radius:20px;padding:24px;margin:22px 0}
-video{width:100%;border-radius:14px;background:#000}
-.btn{display:block;text-align:center;background:#c2410c;color:#fff;text-decoration:none;font-weight:700;font-size:22px;padding:18px;border-radius:14px;margin:12px 0}
-.btn.sub{background:#1e3a8a} p{margin:0 0 14px}
-textarea{width:100%;box-sizing:border-box;font-size:17px;line-height:1.7;border:2px solid #e5e7eb;border-radius:12px;padding:12px;font-family:inherit}
-details{background:#fff;border:2px solid #e5e7eb;border-radius:16px;padding:14px 20px;margin:22px 0} summary{font-weight:700;cursor:pointer;font-size:22px}
-</style></head><body><div class="w">
-<div class="n">これは、ユータさんひとりのために作った提案です。ここにあるのは「試す案」で、結果をお約束するものではありません。</div>
-<h1>ひとりで発信する人から、AI参謀チームと事業を育てる人へ ― ユータさんへ</h1>
-<div class="card"><b>① 動画で見る</b>
-<video controls preload="metadata" src="media/video_yuta_v2.mp4"></video>
-<p style="font-size:16px;color:#4b5563">※ 動かない時は、下の「文字で読む」をひらいてください。</p></div>
-<div class="card" style="padding: 20px;">
-  <div style="font-size: 20px; font-weight: 800; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
-    <span>② スライドで見る</span>
-    <span id="slideCounter" style="font-size: 15px; font-weight: 600; color: #4b5563;">1 / 14</span>
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
+    background: #fcfbf9;
+    color: #1f2937;
+    font-size: 20px;
+    line-height: 2;
+  }
+  .w {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 28px 18px 80px;
+  }
+  .n {
+    background: #f3f4f6;
+    border-left: 4px solid #9ca3af;
+    padding: 12px 18px;
+    font-size: 16px;
+    color: #4b5563;
+    border-radius: 6px;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+  h1 {
+    font-size: 30px;
+    line-height: 1.5;
+    margin: 6px 0 20px;
+    font-weight: 800;
+  }
+  h2 {
+    font-size: 24px;
+    margin: 30px 0 10px;
+    font-weight: 800;
+  }
+  .card {
+    background: #fff7ed;
+    border: 2px solid #fed7aa;
+    border-radius: 20px;
+    padding: 24px;
+    margin: 26px 0;
+  }
+  .card.emerald {
+    background: #f0fdf4;
+    border: 2px solid #86efac;
+  }
+  video {
+    width: 100%;
+    border-radius: 14px;
+    background: #000;
+  }
+  .btn {
+    display: block;
+    text-align: center;
+    background: #c2410c;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 16px;
+    border-radius: 12px;
+    margin: 12px 0;
+    transition: opacity 0.2s;
+  }
+  .btn:hover { opacity: 0.9; }
+  .btn.emerald {
+    background: #059669;
+  }
+  .btn.sub {
+    background: #1e3a8a;
+    font-size: 18px;
+    padding: 12px;
+  }
+  p { margin: 0 0 14px; }
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.7;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 14px;
+    font-family: inherit;
+  }
+  details {
+    background: #fff;
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 16px 20px;
+    margin: 22px 0;
+  }
+  summary {
+    font-weight: 800;
+    cursor: pointer;
+    font-size: 21px;
+    color: #111827;
+  }
+</style>
+</head>
+<body>
+<div class="w">
+
+<div class="n">
+  これは、ユータさんひとりのために作った提案です。ここにあるのは「試す案」で、結果をお約束するものではありません。
+</div>
+
+<h1>ひとりで発信する人から、AI参謀チームと事業を育てる人へ<br><span style="font-size:22px;color:#6b7280;font-weight:600">― ユータさんへ</span></h1>
+
+<!-- ① 動画で見る（事業設計図） -->
+<div class="card">
+  <div style="font-size:22px;font-weight:800;margin-bottom:10px;color:#c2410c">① 動画で見る（事業設計図）</div>
+  <video controls preload="metadata" src="media/video_yuta_v2.mp4"></video>
+  <p style="font-size:16px;color:#4b5563;margin-top:8px">※ 動かない時は、下の「文字で読む」をひらいてください。</p>
+</div>
+
+<!-- ② スライドで見る（事業設計図 14枚） -->
+<div class="card" style="padding: 24px;">
+  <div style="font-size: 22px; font-weight: 800; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; color:#c2410c">
+    <span>② スライドで見る（事業設計図 全14枚）</span>
+    <span id="slideCounter1" style="font-size: 16px; font-weight: 700; color: #9a3412;">1 / 14</span>
   </div>
-  <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; background: #e5e7eb; box-shadow: 0 4px 16px rgba(0,0,0,0.06); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
-    <img id="currentSlideImg" src="media/slides/slide_01.png" alt="ユータさん専用スライド" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+  <div style="position: relative; width: 100%; border-radius: 14px; overflow: hidden; background: #000; box-shadow: 0 4px 16px rgba(0,0,0,0.1); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
+    <img id="currentSlideImg1" src="media/slides/slide_01.png" alt="ユータさん専用事業設計図スライド" style="width: 100%; height: 100%; object-fit: contain; display: block;">
   </div>
   <div style="display: flex; gap: 12px; margin-top: 14px;">
-    <button type="button" class="slide-btn" onclick="prevSlide()" style="flex: 1; background: #374151; color: #fff; border: none; padding: 12px; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer;">◀ 前のスライド</button>
-    <button type="button" class="slide-btn" onclick="nextSlide()" style="flex: 1; background: #c2410c; color: #fff; border: none; padding: 12px; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer;">次のスライド ▶</button>
+    <button type="button" onclick="prevSlide1()" style="flex: 1; background: #374151; color: #fff; border: none; padding: 12px; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer;">◀ 前のスライド</button>
+    <button type="button" onclick="nextSlide1()" style="flex: 1; background: #c2410c; color: #fff; border: none; padding: 12px; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer;">次のスライド ▶</button>
   </div>
-  <a class="btn" style="background: transparent; color: #4b5563; border: 2px solid #e5e7eb; font-size: 16px; padding: 10px; margin-top: 12px;" href="media/slides_yuta_v2.pdf" download="ユータさんAI参謀チーム戦略.pdf">スライドPDFを保存する (15MB)</a>
+  <a class="btn" style="background: transparent; color: #4b5563; border: 2px solid #fed7aa; font-size: 16px; padding: 10px; margin-top: 14px;" href="media/slides_yuta_v2.pdf" download="ユータさん_AI参謀チーム事業設計図.pdf">
+    事業設計図スライドPDFを保存する (15MB)
+  </a>
 </div>
-<div style="display:none">
+
+<!-- ③ 文字で読む（事業設計図） -->
+<details>
+  <summary>📖 ③ 文字で読む（事業設計図の全体構想）</summary>
+  <p style="margin-top:14px">この資料は、ユータさんのために作りました。ここに書いてある提案は、すべて「試してみる案」です。結果をお約束するものではありません。月平均およそ5万円という数字は、薫さんから伺ったものです。期間や内訳は、まだ確かめていません。だから、この資料には、それ以外の数字は書いていません。</p>
+  
+  <h2>1. いまのユータさん</h2>
+  <p>薫さんから伺っているユータさんは、もう、自分で走っている人です。</p>
+  <p>Claude Codeを自分で動かしています。Threads、インスタグラム、ストーリーズ、note。自分で戦略を立てて、ストレスなく、自分らしく発信しています。noteからの収入は、月に平均でおよそ5万円（薫さんから伺った数字です。期間や内訳は、これから一緒に確かめます）。パソコンには、AntigravityもClaude Codeも入っています。</p>
+  <p>ここに、新しく教えることは、ありません。</p>
+
+  <h2>2. これからの問い</h2>
+  <p>次の問いは、「もっと書けるようになるには」ではありません。</p>
+  <p><b>「何を、どう届けたら、応援と収益が、いまより伸びるか」</b> です。</p>
+  <p>まず、いまの5万円が、どこから生まれているのかを確かめる。そこから、伸ばせそうな点を、ひとつずつ試していく。その先を、どうしたいか。いまの形を育てたいのか、本業にしていきたいのか。それは、最初に、ユータさんに確かめます。そのための、最初の話をします。</p>
+
+  <h2>3. すでに持っている宝物</h2>
+  <p>ゼロからではありません。</p>
+  <p>サッカーの現場で見てきた「一瞬」の言葉。親御さんに読まれてきた記事。5月時点の記録では、何本も売れた記事と、リピーターの親御さんがいました（いまの状況は、最初のAI会議で確かめます）。いくつもの発信の場所。</p>
+  <p>そして、5月時点の記録では、売上を天川のサッカーの活動につなげる構想がありました。いまの使い道と、その伝え方は、ユータさんに確かめます。</p>
+
+  <h2>4. 詰まりそうな場所（仮説です）</h2>
+  <p>ここは、ユータさんに確かめてもらう「仮説」です。</p>
+  <p>記事は、1本ずつ並んでいる。まとめて見せる棚が、まだ足りないかもしれない。価格は、いまの形が一番いいのか。発信の入口から、noteの購入ページまで、道がつながっているか。もう一度買ってくれる人に、次の一歩を用意できているか。</p>
+  <p>どれが本当の詰まりかは、ユータさんの数字を見て、決めます。</p>
+
+  <h2>5. 2つのAIに、役割を分ける</h2>
+  <p>ユータさんの手元には、AIが2つあります。</p>
+  <p><b>Claude Code</b> は、ユータさんが移した記事や記録を読んで、事実を整理する「記録係の参謀」です（どこまで移せているかは、最初に確かめます）。</p>
+  <p><b>Antigravity</b> は、初めて読む親御さんの目、ほかの人の目で見て、「それ、本当に伝わる？」と別の角度から言ってくれる「もうひとりの参謀」です。</p>
+  <p>一人のAIに聞くより、考えの違う二人に聞く。ここが大事です。</p>
+
+  <h2>6. 毎週30分の「AI会議」</h2>
+  <p>流れは、5つだけです。</p>
+  <p>ひとつめ。この1週間の数字と投稿を、ユータさんが並べる。</p>
+  <p>ふたつめ。Claude Codeが、事実を整理して、案を出す。</p>
+  <p>みっつめ。Antigravityが、別の目で、反対や代わりの案を言う。</p>
+  <p>よっつめ。二人の案から、次の実験を、多くて3つに絞る。</p>
+  <p>いつつめ。<b>ユータさんが、1つだけ選ぶ。</b> 決めるのは、いつも、ユータさんです。</p>
+  <p>この会議は、AIに答えを決めてもらう場所ではありません。ユータさん自身が、マーケティングを学び、自分で判断できるようになる場所です。</p>
+
+  <h2>7. noteの「棚」を作る（試す案）</h2>
+  <p>まず、新しい記事を書く前に、いままでの有料記事を、全部ひとつの表にします。タイトル、テーマ、いつ出したか、どれだけ売れたか、どこから来た人か。</p>
+  <p>すると、見えてきます。いまも売れる記事。入口が切れている記事。同じ悩みの親御さんに向けて、まとめられる記事。</p>
+  <p>そのまとまりを、「マガジン」という棚にする。順番をつけて、読みやすく見せる。単品で買った人が、次に手に取れる棚をつくる。価格は、最初は、変えません。まず、並べ方と入口だけを試します。</p>
+
+  <h2>8. ひとつの「現場の一瞬」を、4つの場所で役割分担</h2>
+  <p>同じ文章を、4つの場所に貼るのではありません。</p>
+  <p>Threadsは、現場の一言と問いかけ。反応を見て、仮説を集める。</p>
+  <p>インスタグラムは、保存したくなる図や、親御さんが見返せる判断の基準。</p>
+  <p>ストーリーズは、つくっている途中と、期間を決めた案内。</p>
+  <p>noteは、背景、具体的な方法、深い理解。</p>
+  <p>そして、全部、同じ着地点（その週に伝えたいひとつの記事かマガジン）につなげます。</p>
+
+  <h2>9. 天川への循環を、まっすぐ伝える</h2>
+  <p>5月時点の記録では、売上を天川のサッカー教室や、将来のチームづくりにつなげる構想がありました。いまの使い道と、どこまで読者に見せたいかは、ユータさんに確かめます。そのうえで、もし伝えるなら、次の形がおすすめです。</p>
+  <p>だから、売り込みの言葉にしません。ユータさんが決めた短い一文を、記事の最後に置く。何に使えたのかを、見せられる範囲で、報告する。子どもたちが特定される情報は、使わない。「買えば、救える」とは言わない。静かに、事実で伝えます。</p>
+
+  <h2>10. 毎週見る数字</h2>
+  <p>見るのは、少しだけです。</p>
+  <p>どの場所から、noteに来たか。どの記事が、買われたか。初めての人か、もう一度の人か。商品ごとの売上。かかった時間。</p>
+  <p>数字は、勝ち負けのためではなく、「次に、何を試すか」を決めるために見ます。</p>
+
+  <h2>11. 守ること</h2>
+  <p>ユータさんの言葉を、AIが勝手に作りません。公開するのは、いつも、ユータさんです。外に出す、お金に関わる、何かを消す、というときは、「ユータさんが「いいよ」と言うまで待つ」というルールをAIに渡して、毎回、確かめます。子どもたちが誰か分かる書き方は、しません。結果は、約束しません。</p>
+
+  <h2>12. 最初の一歩（2週間）</h2>
+  <p>ひとつめ。いまの有料記事を、棚卸しの表にする。AIに手伝ってもらって大丈夫。</p>
+  <p>ふたつめ。30分、AI会議をひらく。ユータさんのAIに貼るだけで始まる「会議の最初の言葉」を、一緒に渡します。</p>
+  <p>みっつめ。一番売れているテーマを、ひとつだけ選んで、2週間、並べ方と入口だけを変えて試す。値段や、ほかのものは、変えない。</p>
+  <p>2週間後に、数字を見て、続ける、変える、やめる、を、ユータさんが決める。</p>
+  <p>これが、ユータさんの5万円が、次の段階へ進むための、最初のひとつです。</p>
+</details>
+
+<!-- ④ 今日からできる：AI会議のプロンプト -->
+<div class="card">
+  <div style="font-size:22px;font-weight:800;margin-bottom:10px;color:#c2410c">④ 今日からできる：AI会議の「最初の言葉」</div>
+  <p>手元のClaude CodeとAntigravityに、そのまま貼るだけで、会議が始まります。</p>
+  
+  <h2>Claude Codeに貼る（提案役）</h2>
+  <textarea id="p0" readonly rows="9">【AI会議（マーケティング会議）をはじめます。あなたは提案役の参謀です】
+【薫さんから共有された未確認情報（本人確認が済むまで、事実として扱わないでください）】
+- ユータさんは、Threads・インスタ・ストーリーズ・noteで発信していると聞いている。
+- noteの収入は月平均およそ5万円と聞いているが、期間と内訳は未確認。
+- 今の目標（本業にしたいか、いまの形を育てたいか）と、天川への現在の使い道は未確認。
+まず、ユータさん本人に質問して確かめてください。本人が答えたことだけを「本人確認済み」として、以後の会議に使ってください。
+【決まりごと】
+1. 僕の言葉を、勝手に作らない。
+2. 外に出す・お金・削除は、僕が「いいよ」と言うまで待つ（毎回、僕に確認する）。
+3. 子どもが誰か分かる情報は使わない。
+4. 数字は、僕が出したものだけ使う。ないものは「未確認」と書く。
+5. 「事実」「仮説」「未確認」を分けて書く。
+【今日の議題】
+僕のnoteの有料記事を、1つの表にして棚卸ししたい。「今も売れる記事」「入口が切れている記事」「同じ悩みでまとめられる記事」に分けたい。
+まず、足りない情報を、僕に質問してください（5つまで。月平均約5万円の集計範囲、今の目標、天川への使い道も含めて）。そのあとで、表の作り方と、次の2週間で試す実験を、多くて3案に絞って提案してください。</textarea>
+  <button class="btn sub" onclick="cp('p0',this)">この文をコピーする</button>
+
+  <h2>Antigravityに貼る（別の目・反対役）</h2>
+  <textarea id="p1" readonly rows="9">【AI会議（マーケティング会議）です。あなたは「別の目」の参謀です】
+【薫さんから共有された未確認情報（本人確認が済むまで、事実として扱わないでください）】ユータさんは複数の場所で発信していると聞いている。noteの収入は月平均およそ5万円と聞いているが、期間と内訳は未確認。今の目標と天川への使い道も未確認。
+いま、もうひとつのAI（Claude Code）が、次の2週間の実験案を出しました。（ここに、Claude Codeの案を貼ります）
+あなたの役目は、初めて読む親御さんの目で、「それ、本当に伝わる？」「別のやり方は？」と、反対や代わりの案を言うことです。
+【決まりごと】僕の言葉を作らない／外に出す・お金・削除は僕が決める（毎回確認）／子どもが分かる情報は使わない／数字は僕が出したものだけ／「事実・仮説・未確認」を分ける。
+最後に、2つのAIの案を比べて、僕が選びやすいように、違いを表にしてください。</textarea>
+  <button class="btn sub" onclick="cp('p1',this)">この文をコピーする</button>
+</div>
+
+<!-- ⑤ もう一つの贈り物：ユータ専用・相棒AIチームの動かし方 -->
+<div class="card emerald" style="padding: 24px;">
+  <div style="font-size: 24px; font-weight: 800; margin-bottom: 8px; color: #065f46;">
+    ⚡ ⑤ もう一つの贈り物：相棒AIチームの動かし方
+  </div>
+  <p style="font-size: 17px; color: #047857; margin-bottom: 16px; font-weight: 600;">
+    伝言係をやめ、2つの参謀AIと事業をスケールさせる設計図（全10枚）
+  </p>
+
+  <!-- AIチームスライドビューア -->
+  <div style="position: relative; width: 100%; border-radius: 14px; overflow: hidden; background: #0f172a; box-shadow: 0 4px 20px rgba(0,0,0,0.15); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
+    <img id="currentSlideImg2" src="media/ai_team_slides/ai_team_slide_01.png" alt="ユータさん専用相棒AIチームスライド" style="width: 100%; height: 100%; object-fit: contain; display: block;">
+  </div>
+  
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+    <button type="button" onclick="prevSlide2()" style="flex: 1; background: #1e293b; color: #fff; border: none; padding: 12px; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; margin-right: 12px;">◀ 前のスライド</button>
+    <span id="slideCounter2" style="font-size: 17px; font-weight: 700; color: #059669; min-width: 80px; text-align: center;">1 / 10</span>
+    <button type="button" onclick="nextSlide2()" style="flex: 1; background: #059669; color: #fff; border: none; padding: 12px; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; margin-left: 12px;">次のスライド ▶</button>
+  </div>
+
+  <a class="btn emerald" style="margin-top: 16px;" href="media/slides_yuta_ai_team.pdf" download="ユータさん専用_相棒AIチームの動かし方.pdf">
+    相棒AIチームスライドPDFを保存する (1.6MB)
+  </a>
+
+  <!-- 文字で読む：相棒AIチームの物語 -->
+  <details style="margin-top: 20px; background: #ffffff; border-color: #a7f3d0;">
+    <summary style="color: #065f46;">📖 相棒AIチームの動かし方を文字で読む（全10章）</summary>
+    
+    <div style="margin-top: 14px; font-size: 17px; line-height: 1.8; color: #065f46; background: #f0fdf4; padding: 14px 18px; border-radius: 10px; margin-bottom: 20px;">
+      構想・違和感・判断だけを話せば、裏でAI同士が調査・下書き・検証を往復する。薫ちゃんが日々実践している「相棒AIチーム体制」をユータさんの手元へ。
+    </div>
+
+    <h2>1. ユータさんの現在地と、確かな才能</h2>
+    <p>すでにClaude Codeを自分で走らせ、Threads、Instagram、ストーリーズ、noteで戦略的に発信しています。noteからの収益は月平均およそ5万円。</p>
+    <p>分析する力、戦略を立てる力、子どもたちや保護者に向き合う情熱は、すでに本物です。ゼロから教えることは何もない。すでにある強みを何倍にも広げるためのステップです。</p>
+
+    <h2>2. 一人で走る限界と「AIの伝言係」の罠</h2>
+    <p>AIを使おうとすればするほど、指示書（プロンプト）作りに追われ、AIごとの出力を別のAIへ運ぶ「伝言係」になってしまう罠があります。</p>
+    <p>記事を書き、発信を整え、サッカー現場に立ち、事業を考える……すべてを一人で抱え込むと、一番大切な「戦略」を練る時間が削られてしまいます。</p>
+
+    <h2>3. 薫ちゃんがAIチームと実際にやっていること</h2>
+    <p>薫ちゃんはAIに上手なプロンプトを書いていません。伝えるのは4つだけです：</p>
+    <ol style="padding-left:24px;margin-bottom:14px">
+      <li><b>構想</b>：どんな形にしていきたいか</li>
+      <li><b>優先順位</b>：いま、どれを先にやりたいか</li>
+      <li><b>こだわり・違和感</b>：ここだけは外せない／なんか引っかかる</li>
+      <li><b>最後の判断</b>：並んだ選択肢から「これで行く」と決める</li>
+    </ol>
+    <p>残りの調査・比較・下書き・実装・検証は、AIチームが裏で直接往復させています。</p>
+
+    <h2>4. ユータさんの手元に置く「2つの参謀AI」</h2>
+    <p><b>Claude Code（記録・事実整理の参謀）</b>：note記事の棚卸し、過去の数字の整理、事実に基づいたロジカルな提案を行う。</p>
+    <p><b>Antigravity（初めて読む人の目・別の視点の参謀）</b>：保護者の目線で「本当に伝わるか？」を検証し、別の切り口や反対意見を提示する。</p>
+    <p>同じ意見を出すAIではなく、異なる個性を持つ2つのAIが裏で議論します。</p>
+
+    <h2>5. ユータを伝言係にしない連携の仕組み</h2>
+    <p>ユータさんが「こんな企画をやりたい」「ここがなんか引っかかる」と話す。Claude Codeが事実を整理し、裏でAntigravityに「どう思う？」と投げる。</p>
+    <p>Antigravityが別の角度から反論や改善案を出し、練り上げられた「選べる3案」がユータさんの机に戻ってくる。ユータさんは社長として、最後に1つを選ぶだけです。</p>
+
+    <h2>6. 1つが止まっても、別のAIが引き継ぐ</h2>
+    <p>AIには利用上限があり、途中で止まることがあります。その時、進んだふりをせず「ここまで完了、次はこれ」と記録に残して止まる。</p>
+    <p>別のAIがその記録を読んで続きから再開する（耐障害性の引き継ぎ）。一人のAIに依存しない、頑牢なチーム運営基盤です。</p>
+
+    <h2>7. 使うほど積み上がる「無形の資産」</h2>
+    <p>毎回ゼロからやり直さない。記事の棚卸しデータ、読者の反応、成功パターン、失敗した理由がすべて蓄積されます。</p>
+    <p>ユータさんがサッカーの現場で子どもたちと向き合っている間も、整えた仕組みが価値を生み出し続けます。</p>
+
+    <h2>8. 天川のサッカー教室と、描く未来へ</h2>
+    <p>noteの収益化はゴールではありません。得られた収益と時間を、天川でのサッカー教室や、子どもたちの才能を解き放つ未来へ循環させていく。</p>
+    <p>ユータさんのビジョンを実現するために、この相棒AIチームが存在します。</p>
+
+    <h2>9. 決めるのは、いつもユータさんです</h2>
+    <p>外部への公開、送信、お金、削除は、ユータさんが「よし」と言うまでAIは一切触れません。</p>
+    <p>AIはユータさんの手足を何倍にも増やす相棒。経営者として舵を握るのは、ずっとユータさんです。</p>
+  </details>
+<!-- Preload hidden references for all slides -->
+<div style="display:none" aria-hidden="true">
   <img src="media/slides/slide_01.png" alt="">
   <img src="media/slides/slide_02.png" alt="">
   <img src="media/slides/slide_03.png" alt="">
@@ -49,155 +338,73 @@ details{background:#fff;border:2px solid #e5e7eb;border-radius:16px;padding:14px
   <img src="media/slides/slide_12.png" alt="">
   <img src="media/slides/slide_13.png" alt="">
   <img src="media/slides/slide_14.png" alt="">
+  <img src="media/ai_team_slides/ai_team_slide_01.png" alt="">
+  <img src="media/ai_team_slides/ai_team_slide_02.png" alt="">
+  <img src="media/ai_team_slides/ai_team_slide_03.png" alt="">
+  <img src="media/ai_team_slides/ai_team_slide_04.png" alt="">
+  <img src="media/ai_team_slides/ai_team_slide_05.png" alt="">
+  <img src="media/ai_team_slides/ai_team_slide_06.png" alt="">
+  <img src="media/ai_team_slides/ai_team_slide_07.png" alt="">
+  <img src="media/ai_team_slides/ai_team_slide_08.png" alt="">
+  <img src="media/ai_team_slides/ai_team_slide_09.png" alt="">
+  <img src="media/ai_team_slides/ai_team_slide_10.png" alt="">
 </div>
-<details><summary>③ 文字で読む</summary>
-<p>この資料は、ユータさんのために作りました。ここに書いてある提案は、すべて「試してみる案」です。結果をお約束するものではありません。月平均およそ5万円という数字は、薫さんから伺ったものです。期間や内訳は、まだ確かめていません。だから、この資料には、それ以外の数字は書いていません。</p>
-<h2>1. いまのユータさん</h2>
-<p>薫さんから伺っているユータさんは、もう、自分で走っている人です。</p>
-<p>Claude Codeを自分で動かしています。Threads、インスタグラム、ストーリーズ、note。自分で戦略を立てて、ストレスなく、自分らしく発信しています。noteからの収入は、月に平均でおよそ5万円（薫さんから伺った数字です。期間や内訳は、これから一緒に確かめます）。パソコンには、AntigravityもClaude Codeも入っています。</p>
-<p>ここに、新しく教えることは、ありません。</p>
-<h2>2. これからの問い</h2>
-<p>次の問いは、「もっと書けるようになるには」ではありません。</p>
-<p><b>「何を、どう届けたら、応援と収益が、いまより伸びるか」</b> です。</p>
-<p>まず、いまの5万円が、どこから生まれているのかを確かめる。そこから、伸ばせそうな点を、ひとつずつ試していく。その先を、どうしたいか。いまの形を育てたいのか、本業にしていきたいのか。それは、最初に、ユータさんに確かめます。そのための、最初の話をします。</p>
-<h2>3. すでに持っている宝物</h2>
-<p>ゼロからではありません。</p>
-<p>サッカーの現場で見てきた「一瞬」の言葉。親御さんに読まれてきた記事。5月時点の記録では、何本も売れた記事と、リピーターの親御さんがいました（いまの状況は、最初のAI会議で確かめます）。いくつもの発信の場所。</p>
-<p>そして、5月時点の記録では、売上を天川のサッカーの活動につなげる構想がありました。いまの使い道と、その伝え方は、ユータさんに確かめます。</p>
-<h2>4. 詰まりそうな場所（仮説です）</h2>
-<p>ここは、ユータさんに確かめてもらう「仮説」です。</p>
-<p>記事は、1本ずつ並んでいる。まとめて見せる棚が、まだ足りないかもしれない。価格は、いまの形が一番いいのか。発信の入口から、noteの購入ページまで、道がつながっているか。もう一度買ってくれる人に、次の一歩を用意できているか。</p>
-<p>どれが本当の詰まりかは、ユータさんの数字を見て、決めます。</p>
-<h2>5. 2つのAIに、役割を分ける</h2>
-<p>ユータさんの手元には、AIが2つあります。</p>
-<p><b>Claude Code</b> は、ユータさんが移した記事や記録を読んで、事実を整理する「記録係の参謀」です（どこまで移せているかは、最初に確かめます）。</p>
-<p><b>Antigravity</b> は、初めて読む親御さんの目、ほかの人の目で見て、「それ、本当に伝わる？」と別の角度から言ってくれる「もうひとりの参謀」です。</p>
-<p>一人のAIに聞くより、考えの違う二人に聞く。ここが大事です。</p>
-<h2>6. 毎週30分の「AI会議」</h2>
-<p>流れは、5つだけです。</p>
-<p>ひとつめ。この1週間の数字と投稿を、ユータさんが並べる。</p>
-<p>ふたつめ。Claude Codeが、事実を整理して、案を出す。</p>
-<p>みっつめ。Antigravityが、別の目で、反対や代わりの案を言う。</p>
-<p>よっつめ。二人の案から、次の実験を、多くて3つに絞る。</p>
-<p>いつつめ。<b>ユータさんが、1つだけ選ぶ。</b> 決めるのは、いつも、ユータさんです。</p>
-<p>この会議は、AIに答えを決めてもらう場所ではありません。ユータさん自身が、マーケティングを学び、自分で判断できるようになる場所です。</p>
-<h2>7. noteの「棚」を作る（試す案）</h2>
-<p>まず、新しい記事を書く前に、いままでの有料記事を、全部ひとつの表にします。タイトル、テーマ、いつ出したか、どれだけ売れたか、どこから来た人か。</p>
-<p>すると、見えてきます。いまも売れる記事。入口が切れている記事。同じ悩みの親御さんに向けて、まとめられる記事。</p>
-<p>そのまとまりを、「マガジン」という棚にする。順番をつけて、読みやすく見せる。単品で買った人が、次に手に取れる棚をつくる。価格は、最初は、変えません。まず、並べ方と入口だけを試します。</p>
-<h2>8. ひとつの「現場の一瞬」を、4つの場所で役割分担</h2>
-<p>同じ文章を、4つの場所に貼るのではありません。</p>
-<p>Threadsは、現場の一言と問いかけ。反応を見て、仮説を集める。</p>
-<p>インスタグラムは、保存したくなる図や、親御さんが見返せる判断の基準。</p>
-<p>ストーリーズは、つくっている途中と、期間を決めた案内。</p>
-<p>noteは、背景、具体的な方法、深い理解。</p>
-<p>そして、全部、同じ着地点（その週に伝えたいひとつの記事かマガジン）につなげます。</p>
-<h2>9. 天川への循環を、まっすぐ伝える</h2>
-<p>5月時点の記録では、売上を天川のサッカー教室や、将来のチームづくりにつなげる構想がありました。いまの使い道と、どこまで読者に見せたいかは、ユータさんに確かめます。そのうえで、もし伝えるなら、次の形がおすすめです。</p>
-<p>だから、売り込みの言葉にしません。ユータさんが決めた短い一文を、記事の最後に置く。何に使えたのかを、見せられる範囲で、報告する。子どもたちが特定される情報は、使わない。「買えば、救える」とは言わない。静かに、事実で伝えます。</p>
-<h2>10. 毎週見る数字</h2>
-<p>見るのは、少しだけです。</p>
-<p>どの場所から、noteに来たか。どの記事が、買われたか。初めての人か、もう一度の人か。商品ごとの売上。かかった時間。</p>
-<p>数字は、勝ち負けのためではなく、「次に、何を試すか」を決めるために見ます。</p>
-<h2>11. 守ること</h2>
-<p>ユータさんの言葉を、AIが勝手に作りません。公開するのは、いつも、ユータさんです。外に出す、お金に関わる、何かを消す、というときは、「ユータさんが「いいよ」と言うまで待つ」というルールをAIに渡して、毎回、確かめます。子どもたちが誰か分かる書き方は、しません。結果は、約束しません。</p>
-<h2>12. 最初の一歩（2週間）</h2>
-<p>ひとつめ。いまの有料記事を、棚卸しの表にする。AIに手伝ってもらって大丈夫。</p>
-<p>ふたつめ。30分、AI会議をひらく。ユータさんのAIに貼るだけで始まる「会議の最初の言葉」を、一緒に渡します。</p>
-<p>みっつめ。一番売れているテーマを、ひとつだけ選んで、2週間、並べ方と入口だけを変えて試す。値段や、ほかのものは、変えない。</p>
-<p>2週間後に、数字を見て、続ける、変える、やめる、を、ユータさんが決める。</p>
-<p>これが、ユータさんの5万円が、次の段階へ進むための、最初のひとつです。</p>
-<h2>最後に</h2>
-<p>これは、まだ試している段階です。うまくいかないことも、あると思います。</p>
-<p>見て、聴いて、感じたことを、そのまま、教えてください。分かりにくいところ、心配なところを、先に教えてもらえると、いちばん助かります。</p>
-<p>ユータさんのペースで。ユータさんの言葉で。</p>
-</details>
-<div class="card"><b>④ 今日からできる：AI会議の「最初の言葉」</b><p>手元のClaude CodeとAntigravityに、そのまま貼るだけで、会議が始まります。</p><h2>Claude Codeに貼る（提案役）</h2><textarea id="p0" readonly rows="9">【AI会議（マーケティング会議）をはじめます。あなたは提案役の参謀です】
-【薫さんから共有された未確認情報（本人確認が済むまで、事実として扱わないでください）】
-- ユータさんは、Threads・インスタ・ストーリーズ・noteで発信していると聞いている。
-- noteの収入は月平均およそ5万円と聞いているが、期間と内訳は未確認。
-- 今の目標（本業にしたいか、いまの形を育てたいか）と、天川への現在の使い道は未確認。
-まず、ユータさん本人に質問して確かめてください。本人が答えたことだけを「本人確認済み」として、以後の会議に使ってください。
-【決まりごと】
-1. 僕の言葉を、勝手に作らない。
-2. 外に出す・お金・削除は、僕が「いいよ」と言うまで待つ（毎回、僕に確認する）。
-3. 子どもが誰か分かる情報は使わない。
-4. 数字は、僕が出したものだけ使う。ないものは「未確認」と書く。
-5. 「事実」「仮説」「未確認」を分けて書く。
-【今日の議題】
-僕のnoteの有料記事を、1つの表にして棚卸ししたい。「今も売れる記事」「入口が切れている記事」「同じ悩みでまとめられる記事」に分けたい。
-まず、足りない情報を、僕に質問してください（5つまで。月平均約5万円の集計範囲、今の目標、天川への使い道も含めて）。そのあとで、表の作り方と、次の2週間で試す実験を、多くて3案に絞って提案してください。</textarea><button class="btn sub" onclick="cp('p0',this)">この文をコピーする</button><h2>Antigravityに貼る（別の目・反対役）</h2><textarea id="p1" readonly rows="9">【AI会議（マーケティング会議）です。あなたは「別の目」の参謀です】
-【薫さんから共有された未確認情報（本人確認が済むまで、事実として扱わないでください）】ユータさんは複数の場所で発信していると聞いている。noteの収入は月平均およそ5万円と聞いているが、期間と内訳は未確認。今の目標と天川への使い道も未確認。
-いま、もうひとつのAI（Claude Code）が、次の2週間の実験案を出しました。（ここに、Claude Codeの案を貼ります）
-あなたの役目は、初めて読む親御さんの目で、「それ、本当に伝わる？」「別のやり方は？」と、反対や代わりの案を言うことです。
-【決まりごと】僕の言葉を作らない／外に出す・お金・削除は僕が決める（毎回確認）／子どもが分かる情報は使わない／数字は僕が出したものだけ／「事実・仮説・未確認」を分ける。
-最後に、2つのAIの案を比べて、僕が選びやすいように、違いを表にしてください。</textarea><button class="btn sub" onclick="cp('p1',this)">この文をコピーする</button></div>
 
-<div class="card" style="background:#f0fdf4;border-color:#bbf7d0">
-<b>⑤ もう一つ、とても大事なこと ― 相棒AIチームと育てる未来</b>
-<p style="margin-top:12px">さきほどの話は「何をどう届けるか」でした。もう一つは、<b>「それを誰と、どうやってやるのか」</b>というお話です。</p>
+<h2>ひとこと、教えてください</h2>
+<p>見て、聴いて、感じたことを、そのまま。分かりにくいところ、心配なところを先に教えてもらえると、いちばん助かります。</p>
 
-<details open style="background:#fff;border:1px solid #dcfce7;margin:16px 0;padding:16px 20px">
-<summary style="font-size:20px;color:#166534">ユータさんが伝えるのは4つだけ（やることが減る）</summary>
-<p style="margin-top:12px">ユータさんがやることは、増えません。むしろ、減ります。</p>
-<p>上手なプロンプトを書く必要はありません。「こうしたい」「これは違う気がする」「今はこっちが大事」と、普段の言葉で話してください。</p>
-<p>AIが受け取りたいのは、主に4つだけです：</p>
-<ol style="padding-left:24px;margin-bottom:14px">
-<li><b>構想</b>：どんな形にしていきたいか</li>
-<li><b>優先順位</b>：今、どれを先にやりたいか</li>
-<li><b>大切にしたいこと</b>：これは絶対に外したくないこと</li>
-<li><b>判断</b>：最後に、どれでいくか</li>
-</ol>
-<p>この4つは、ユータさんにしか言えません。それ以外の「指示作り」「調査」「下書き」「比較」はAIチームが裏で回します。</p>
-</details>
-
-<details style="background:#fff;border:1px solid #dcfce7;margin:16px 0;padding:16px 20px">
-<summary style="font-size:20px;color:#166534">伝言係にならない、AI同士の連携</summary>
-<p style="margin-top:12px">一般的なAIの使い方では、本人がAIごとに指示を書き、返ってきた答えを別のAIへ運ぶ「伝言係」になってしまいます。</p>
-<p>これからは、ユータさんは社長として方向と違和感を話すだけ。Claude Code（記録・事実整理）とAntigravity（初めて読む人の目・別の視点）が、裏で直接教え合い、質問と回答を往復させます。</p>
-<p>AIには使える量の限りがあり、途中で止まることもあります。その時は「どこまで進み、次に何をするか」を記録に残して止まり、別のAIが続きを引き継ぎます。<b>進んだふりはしません。</b></p>
-</details>
-
-<details style="background:#fff;border:1px solid #dcfce7;margin:16px 0;padding:16px 20px">
-<summary style="font-size:20px;color:#166534">使うほど複利のように残る「資産」</summary>
-<p style="margin-top:12px">ゼロからやり直すのではなく、記事の棚卸し、マガジンの組み方、判断基準、試したこと、完成した文章が、次にも使える記録として育っていきます。</p>
-<p>自分が現場にいない時間や、他の大切なことに集中している間も、整えた仕組みや資産が働き続け、複利のように価値を積み上げていく。将来もっと新しいAIが出た時にも、この蓄積をそのまま引き継いで、自分らしい歩みを前に進めていけます。</p>
-</details>
-
-<details style="background:#fff;border:1px solid #dcfce7;margin:16px 0;padding:16px 20px">
-<summary style="font-size:20px;color:#166534">最後に：決めるのは、ユータさんです</summary>
-<p style="margin-top:12px">外に出すこと。公開すること。お金を払うこと。消すこと。</p>
-<p>これらは、<b>ユータさんが「これでいく」と言うまで、AIは一切行いません。</b> AIは案を整えて机の上に並べるまで。選ぶのは、いつもユータさんです。</p>
-<p>やることが増えるのではなく、<b>頼もしい手を動かす役が増える。</b> そう感じてもらえたら嬉しいです。</p>
-</details>
 </div>
 
 <script>
 function cp(id,b){var t=document.getElementById(id);t.select();try{navigator.clipboard.writeText(t.value);}catch(e){document.execCommand("copy");}b.textContent="コピーしました ✔";}
 
-let currentSlide = 1;
-const totalSlides = 14;
+// Slider 1: 事業設計図
+let currentSlide1 = 1;
+const totalSlides1 = 14;
 
-function updateSlide() {
-  const padded = String(currentSlide).padStart(2, '0');
-  document.getElementById('currentSlideImg').src = `media/slides/slide_${padded}.png`;
-  document.getElementById('slideCounter').innerText = `${currentSlide} / ${totalSlides}`;
+function updateSlide1() {
+  const padded = String(currentSlide1).padStart(2, '0');
+  document.getElementById('currentSlideImg1').src = `media/slides/slide_${padded}.png`;
+  document.getElementById('slideCounter1').innerText = `${currentSlide1} / ${totalSlides1}`;
 }
 
-function nextSlide() {
-  if (currentSlide < totalSlides) {
-    currentSlide++;
-    updateSlide();
+function nextSlide1() {
+  if (currentSlide1 < totalSlides1) {
+    currentSlide1++;
+    updateSlide1();
   }
 }
 
-function prevSlide() {
-  if (currentSlide > 1) {
-    currentSlide--;
-    updateSlide();
+function prevSlide1() {
+  if (currentSlide1 > 1) {
+    currentSlide1--;
+    updateSlide1();
+  }
+}
+
+// Slider 2: 相棒AIチーム
+let currentSlide2 = 1;
+const totalSlides2 = 10;
+
+function updateSlide2() {
+  const padded = String(currentSlide2).padStart(2, '0');
+  document.getElementById('currentSlideImg2').src = `media/ai_team_slides/ai_team_slide_${padded}.png`;
+  document.getElementById('slideCounter2').innerText = `${currentSlide2} / ${totalSlides2}`;
+}
+
+function nextSlide2() {
+  if (currentSlide2 < totalSlides2) {
+    currentSlide2++;
+    updateSlide2();
+  }
+}
+
+function prevSlide2() {
+  if (currentSlide2 > 1) {
+    currentSlide2--;
+    updateSlide2();
   }
 }
 </script>
-<h2>ひとこと、教えてください</h2>
-<p>見て、聴いて、感じたことを、そのまま。分かりにくいところ、心配なところを先に教えてもらえると、いちばん助かります。</p>
-</div></body></html>
+</body>
+</html>
