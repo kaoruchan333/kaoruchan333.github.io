@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>【進行教本】知ってるだけでは、川に入れない。｜かおる塾 2026-10-18</title>
+  <style>
+    :root {
+      --ink: #222821;
+      --green: #285447;
+      --gold: #b8944f;
+      --paper: #f4f5f0;
+      --white: #ffffff;
+      --line: #d5ded4;
+      --soft: #eaf1ec;
+      --clay: #a95f4a;
+      --blue: #3b6279;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+      line-height: 1.85;
+      font-size: 16px;
+    }
+    body.kj-auth-locked > *:not(#kj-auth-overlay) { display: none !important; }
+    main {
+      max-width: 920px;
+      margin: auto;
+      padding: 40px 20px 100px;
+    }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: .12em;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: clamp(28px, 5.5vw, 42px);
+      line-height: 1.35;
+      margin: 0 0 10px;
+      color: var(--green);
+      font-weight: 800;
+    }
+    .sub {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 24px;
+    }
+    .core {
+      background: #252d27;
+      color: #fff;
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin: 24px 0 36px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.08);
+    }
+    .core strong {
+      font-size: 20px;
+      color: #f7e3ba;
+      display: block;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .core p {
+      margin: 0;
+      color: rgba(255,255,255,.9);
+      font-size: 15px;
+    }
+    h2 {
+      font-size: 22px;
+      color: var(--green);
+      margin: 44px 0 16px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 8px;
+    }
+    h3 {
+      font-size: 17px;
+      margin: 20px 0 10px;
+      color: #333;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .do {
+      border-top: 5px solid #3c7d5c;
+    }
+    .dont {
+      border-top: 5px solid var(--clay);
+    }
+    .card h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+    .do h3 { color: #2e6449; }
+    .dont h3 { color: var(--clay); }
+    ul {
+      margin: 10px 0 0;
+      padding-left: 1.3em;
+    }
+    li { margin: 8px 0; }
+    
+    /* タイムライン */
+    .flow {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 24px;
+      display: grid;
+      gap: 12px;
+    }
+    .flow-step {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #f0f0eb;
+    }
+    .flow-step:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .cue {
+      background: var(--green);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 6px;
+      min-width: 68px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .flow-text {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .flow-text strong {
+      font-size: 16px;
+      color: #222;
+    }
+
+    /* 台本ブロック */
+    .script {
+      background: #eef4f0;
+      border: 1px solid #c9d8ce;
+      border-left: 6px solid var(--green);
+      border-radius: 8px;
+      padding: 22px 24px;
+      margin: 18px 0;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+    .script p { margin: 0 0 12px; }
+    .script p:last-child { margin-bottom: 0; }
+
+    /* 問いブロック（目立つカード） */
+    .q-box {
+      margin: 18px 0;
+    }
+    .question {
+      background: #fff;
+      border: 1px solid #d5ded4;
+      border-left: 5px solid var(--gold);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #1f3328;
+      box-shadow: 0 2px 6px rgba(0,0,0,.03);
+    }
+    .q-desc {
+      font-size: 14px;
+      color: #666;
+      margin-left: 6px;
+      margin-bottom: 14px;
+    }
+
+    /* 注意点 */
+    .note {
+      background: #fff9ed;
+      border: 1px solid #ebd5ab;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin: 18px 0;
+      font-size: 15px;
+    }
+    .note strong { color: #8c5d18; }
+
+    /* 比較表 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+    th, td {
+      padding: 12px 16px;
+      border: 1px solid var(--line);
+      text-align: left;
+      font-size: 15px;
+    }
+    th {
+      background: var(--soft);
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    /* パスワード保護オーバーレイ */
+    #kj-auth-overlay {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: var(--green);
+      z-index: 9999;
+    }
+    .kj-auth-card {
+      width: min(420px, 100%);
+      padding: 30px 28px;
+      background: #fffdf8;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 22px 70px rgba(0,0,0,.28);
+    }
+    .kj-auth-label { font-size: 11px; color: var(--clay); }
+    .kj-auth-card h1 { margin: 8px 0 10px; color: var(--green); font-size: 24px; }
+    .kj-auth-card p { color: #666; font-size: 14px; }
+    .kj-auth-card input {
+      width: 100%;
+      margin: 10px 0 12px;
+      padding: 13px;
+      border: 1px solid #d8d1c7;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    .kj-auth-card button {
+      width: 100%;
+      padding: 12px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--green);
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .kj-auth-error { min-height: 22px; margin-top: 10px; color: #a33; font-size: 13px; }
+
+    @media (max-width: 680px) {
+      main { padding: 24px 16px 60px; }
+      .grid { grid-template-columns: 1fr; }
+      .flow-step { flex-direction: column; gap: 6px; }
+      .cue { align-self: flex-start; }
+      .question { font-size: 16px; }
+    }
+  </style>
+</head>
+<body class="kj-auth-locked">
+
+<main>
+  <div class="eyebrow">KAORU JUKU ｜ 2026.10.18（日）20:00〜 ｜ コーチ専用ファシリテーション教本</div>
+  <h1>知ってるだけでは、川に入れない。</h1>
+  <div class="sub">〜分かってるのに、できへん。知識と実践の両輪〜（非公開・カンペ用）</div>
+
+  <div class="core">
+    <strong>今日ゆるめるのは、「動けない自分への責め心」。<br>川の水が冷たい時に足が止まるのは、命を守る当たり前の反応。<br>知識（地図）と身体感覚（現在地）を戦わせない。</strong>
+    <p>「なんで動かれへんの？」と原因を探すのではなく、「足が止まることで、自分は何を守っているのか？」を丁寧に並べます。</p>
+  </div>
+
+  <h2>1. 今日、薫ちゃんが守る軸</h2>
+  <div class="grid">
+    <div class="card do">
+      <h3>今日すること（守る軸）</h3>
+      <ul>
+        <li>問いは<strong>一問ずつ</strong>・扱う場面を一つに固定する</li>
+        <li>本人の「足が止まる感覚（恐れ・緊張）」をそのまま尊重する</li>
+        <li>動かないことで<strong>「守れているもの（慎重さ）」</strong>を先に出し切る</li>
+        <li>もし動くなら<strong>「指先で1ミリ触れるレベル」</strong>の極小行動を聞く</li>
+        <li>理論は<strong>一つだけ・3分以内</strong></li>
+        <li>最後の5分で「自分のことば」を一人ひとこと</li>
+      </ul>
+    </div>
+    <div class="card dont">
+      <h3>今日はしないこと</h3>
+      <ul>
+        <li>「なんで動けないの？」と<strong>原因探しや叱咤をする</strong></li>
+        <li>「気合いでやってみよう」と<strong>行動を強要する</strong></li>
+        <li>「知識なんて意味がない」と<strong>理屈を全否定する</strong></li>
+        <li>出し切る前に<strong>ポジティブ変換やアドバイスへ進む</strong></li>
+        <li>「本当は怖いんですよね」と<strong>内面を決めつける</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>2. 60分の進行タイムライン</h2>
+  <div class="flow">
+    <div class="flow-step">
+      <span class="cue">0〜5分</span>
+      <div class="flow-text">
+        <strong>枠を閉じる（安心していい時間だと宣言）</strong><br>
+        参加方法の選択（話す・聞く・パス・チャットどれでもOK）。「動けない自分を責める時間やない」と先に伝える。
+      </div>
+    </div>
+    <div class="flow-step">
+      <span class="cue">5〜12分</span>
+      <div class="flow-text">
+        <strong>薫ちゃんの体験談（川と寺子屋の話）</strong><br>
+        真冬の川に入る前の怖さ。そして天川寺子屋や事業で、薫ちゃん自身にも苦手意識や腰が引ける感覚があることを共有する。
+      </div>
+    </div>
+    <div class="flow-step">
+      <span class="cue">12〜22分</span>
+      <div class="flow-text">
+        <strong>参加者の小さな場面を一つ（頭と体の乖離）</strong><br>
+        「頭では分かっているのに、足が止まった場面」。頭の声と体の感覚を分けて聞き出す。
+      </div>
+    </div>
+    <div class="flow-step">
+      <span class="cue">22〜32分</span>
+      <div class="flow-text">
+        <strong>立ち止まることで「守れているもの」を出し切る</strong><br>
+        慎重さ、リスク回避、エネルギー温存。本人の経験から得てきたものを出し切るまで急かさない。
+      </div>
+    </div>
+    <div class="flow-step">
+      <span class="cue">32〜42分</span>
+      <div class="flow-text">
+        <strong>「指先を1ミリ触れる」としたら何ができるか</strong><br>
+        川に飛び込む必要はない。水温を確かめるような極小の行動を一問だけ問う。
+      </div>
+    </div>
+    <div class="flow-step">
+      <span class="cue">42〜50分</span>
+      <div class="flow-text">
+        <strong>今どう見えるかの確認</strong><br>
+        見え方の変化を確かめる。「変化なし」「まだ動けない」も100点として受け止める。
+      </div>
+    </div>
+    <div class="flow-step">
+      <span class="cue">50〜55分</span>
+      <div class="flow-text">
+        <strong>理論を一つだけ（3分解説）</strong><br>
+        「知識は地図、体は現在地。地図と足は戦わせない」。
+      </div>
+    </div>
+    <div class="flow-step">
+      <span class="cue">55〜60分</span>
+      <div class="flow-text">
+        <strong>自分のことばを一人ひとこと</strong><br>
+        パスもOK。次回のテーマや希望を一言聞いて終了。
+      </div>
+    </div>
+  </div>
+
+  <h2>3. 冒頭でそのまま話す言葉（台本）</h2>
+  <div class="script">
+    <p>今夜も集まってくれてありがとう。薫です。</p>
+    <p>今日のテーマは「知ってるだけでは、川に入れない。――分かってるのに、できへん」です。</p>
+    <p>先に言っておきますね。<strong>今日は「なんで行動できへんの？」と自分を責める時間やないです。</strong></p>
+    <p>川の水が冷たい時に足が止まるのは、命を守る当たり前の反応です。頭で分かってることと、体が感じていること、どっちも大事な自分なんよね。</p>
+    <p>僕自身、天川寺子屋や事業のことで「やらなきゃ」と思いつつ、足がすくむことが毎日のようにあります。</p>
+    <p>今日は、そのモヤモヤを焦って解決するのではなく、頭の声と体の声をゆっくり並べて眺めてみましょう。聞くだけでも、途中でパスしても全然大丈夫です。</p>
+  </div>
+
+  <h2>4. そのまま口に出せる「ライブの問い」</h2>
+
+  <div class="q-box">
+    <h3>① 場面を一つに決める問い</h3>
+    <div class="question">「最近、頭では分かっているのに、足が止まった場面、一つ思い出せますか？」</div>
+    <div class="q-desc">※抽象的な話になったら「その日の何時頃の出来事でしたか？」と具体的な場面へ戻す。</div>
+
+    <h3>② 頭と体を分ける問い</h3>
+    <div class="question">「その時、頭の中ではどんな声が鳴っていて、体や感情はどうなっていましたか？」</div>
+    <div class="q-desc">※「こうすべき（頭）」と「怖い、重い、緊張（体）」を別々に受け止める。</div>
+
+    <h3>③ 守れているものを出し切る問い（★一番大切）</h3>
+    <div class="question">「その時、動かなかったことで、自分は何を守っていましたか？」</div>
+    <div class="q-desc">※動かないことの価値（失敗の回避、安全の確保）を本人の言葉で出し切ってもらう。</div>
+
+    <h3>④ 極小の一歩を問う（※本人が望む場合のみ）</h3>
+    <div class="question">「もし、川の水を指先で1ミリ触れるとしたら、今できる一番小さな動きは何ですか？」</div>
+    <div class="q-desc">※「何もしない」という答えでもOK。「今は触らないでおく」も立派な選択。</div>
+  </div>
+
+  <h2>5. 詰まった時の分岐</h2>
+  <table>
+    <tr><th>状況</th><th>薫ちゃんの返し（切り替え）</th></tr>
+    <tr><td><strong>「動けない自分が嫌になる」</strong></td><td>「その『嫌になる』という声も、頭が一生懸命出してる声やね。一度その声を横に置いて、体の感覚だけ見てみよう」</td></tr>
+    <tr><td><strong>「何が怖いのか分からない」</strong></td><td>「分からんで大丈夫。身体のどこがぎゅっと縮こまってる感じがする？ 胸かな、お腹かな」</td></tr>
+    <tr><td><strong>話がどんどん広がる</strong></td><td>「ありがとう。今日のセッションでは、その中の一つの場面だけに絞って見てみてもいいですか？」</td></tr>
+    <tr><td><strong>メリットが出ない</strong></td><td>「無理に出さんで大丈夫。『今はまだ分からん』という場所から次に進もう」</td></tr>
+  </table>
+
+  <h2>6. 今日は使わない問い（赤信号）</h2>
+  <div class="note">
+    <strong>❌「なぜ行動できないんですか？」</strong> ➔ 原因探しになり、自責が深まります。<br>
+    <strong>❌「やる気の問題じゃないですか？」</strong> ➔ 体が発している危険信号を無視することになります。<br>
+    <strong>❌「気合いで乗り越えましょう！」</strong> ➔ 真冬の川に無理やり飛び込ませるような危険なアプローチです。
+  </div>
+
+  <h2>7. 締めの一言（台本）</h2>
+  <div class="script">
+    <p>今日、すぐに動けなくても何の問題もありません。</p>
+    <p>分かっている自分も、立ち止まっている自分も、両方いていいんです。</p>
+    <p>川の水温を指先で確かめながら、自分のペースで一歩ずつ進んでいきましょう。今日もお疲れ様でした！</p>
+  </div>
+</main>
+
+<script id="kaoru-juku-password-guard-v1">
+(function(){
+  const PASS_HASH='5ccc5274b688d517a2da7384ca2077c1b95451108b20e9456f0fd32c8e6e928e';
+  const STORAGE_KEY='kaoru_juku_auth_v2';
+  function unlock(){
+    document.body.classList.remove('kj-auth-locked');
+    const o=document.getElementById('kj-auth-overlay');
+    if(o)o.remove();
+  }
+  async function sha256(text){
+    const d=new TextEncoder().encode(text);
+    const h=await crypto.subtle.digest('SHA-256',d);
+    return Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,'0')).join('');
+  }
+  function checkSaved(){
+    if(localStorage.getItem(STORAGE_KEY)===PASS_HASH) unlock();
+  }
+  function render(){
+    if(!document.body.classList.contains('kj-auth-locked')) return;
+    const overlay=document.createElement('div');
+    overlay.id='kj-auth-overlay';
+    overlay.innerHTML=`<div class="kj-auth-card"><div class="kj-auth-label">Kaoru Juku Coach Only</div><h1>進行シート（教本）</h1><p>パスワードを入力してください。</p><input type="password" id="kj-auth-password" autocomplete="current-password" placeholder="パスワード"><button type="button" id="kj-auth-submit">表示する</button><div class="kj-auth-error" id="kj-auth-error"></div></div>`;
+    document.body.appendChild(overlay);
+    const input=document.getElementById('kj-auth-password');
+    const error=document.getElementById('kj-auth-error');
+    async function submit(){
+      const digest=await sha256(input.value||'');
+      if(digest===PASS_HASH){
+        localStorage.setItem(STORAGE_KEY,PASS_HASH);
+        unlock();
+      }else{
+        error.textContent='パスワードが違います。';
+        input.value='';
+        input.focus();
+      }
+    }
+    document.getElementById('kj-auth-submit').addEventListener('click',submit);
+    input.addEventListener('keydown',e=>{if(e.key==='Enter')submit()});
+    setTimeout(()=>input.focus(),50);
+  }
+  checkSaved();
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',render);
+  else render();
+})();
+</script>
+</body>
+</html>
