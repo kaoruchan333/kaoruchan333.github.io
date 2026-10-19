@@ -249,6 +249,16 @@
   <div class="action-panel">
     <button class="btn-action" onclick="copyAnswers()">回答をまとめてクリップボードにコピー</button>
     <div id="copyStatus" class="copy-status"></div>
+
+    <div style="background:#ffffff; border:1px solid var(--border); border-radius:10px; padding:20px; margin-top:24px; text-align:left;">
+      <strong style="font-size:14px; color:var(--primary);">📬 あなたの書いた大切な気づきを、手元（メール）に残しておきますか？</strong>
+      <p style="margin:6px 0 12px; color:#666; font-size:13px; line-height:1.6;">
+        売り込みや営業メールは一切送りません。入力した内容をあなた専用の記録としてメールクライアントへ呼び出し、日常で迷ったときにいつでも読み返せるよう保管できます。
+      </p>
+      <button onclick="sendToEmail()" style="background:#2a2a28; color:#c4a96e; border:none; border-radius:6px; padding:10px 18px; font-weight:bold; font-size:13px; cursor:pointer;">
+        ✉️ 自分のメール宛てに内容を転送・保管する
+      </button>
+    </div>
   </div>
 
   <!-- Next Bridge -->
@@ -298,6 +308,27 @@
     }).catch(() => {
       document.getElementById('copyStatus').innerText = '⚠️ コピーに失敗しました。手動で選択してコピーしてください。';
     });
+  }
+
+  function sendToEmail() {
+    const f1 = document.getElementById('q1_fact').value.trim();
+    const g1 = document.getElementById('q1_guess').value.trim();
+    const h2 = document.getElementById('q2_highest').value.trim();
+    const o3 = document.getElementById('q3_optimal').value.trim();
+
+    const bodyText = `【私の「最適」発見ワークシート記録】\n\n` +
+      `■ STEP 1｜事実と予想\n` +
+      `・客観的事実：${f1 || '（未記入）'}\n` +
+      `・頭の予想/恐れ：${g1 || '（未記入）'}\n\n` +
+      `■ STEP 2｜手放したい最高\n` +
+      `・背負っていた基準：${h2 || '（未記入）'}\n\n` +
+      `■ STEP 3｜私にとっての最適\n` +
+      `・ホッとする一歩：${o3 || '（未記入）'}\n\n` +
+      `――\n前田薫「最適」発見ワークシート\nhttps://kaoruchan333.github.io/worksheet/`;
+
+    const subject = encodeURIComponent("【保管用】私の「最適」発見セルフワークシート記録");
+    const body = encodeURIComponent(bodyText);
+    window.location.href = `mailto:?subject=${subject}&body=${body}`;
   }
 </script>
 </body>
