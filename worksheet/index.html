@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>「最適」発見セルフワークシート｜前田薫（かおるちゃん）</title>
+  <meta name="description" content="誰かと比べる「最高」を手放し、自分だけの「最適」で息をする。20年の現場と対話から生まれた、心を整える3つの問い。登録不要・完全無料。">
+  <style>
+    :root {
+      --bg: #f8f7f4;
+      --card: #ffffff;
+      --text: #2a2a28;
+      --text-muted: #666660;
+      --accent: #c4a96e;
+      --accent-dark: #9e7f3b;
+      --border: #e2dfd8;
+      --primary: #2a2a28;
+    }
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--text);
+      background: var(--bg);
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 20px 100px;
+    }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      color: var(--accent-dark);
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 26px;
+      line-height: 1.45;
+      margin: 0 0 16px;
+      color: var(--primary);
+    }
+    .intro-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 22px;
+      margin-bottom: 32px;
+    }
+    .intro-card p {
+      margin: 0 0 14px;
+      font-size: 15px;
+      color: #444;
+    }
+    .intro-card p:last-child { margin: 0; }
+    .quote-box {
+      border-left: 3px solid var(--accent);
+      background: #faf8f5;
+      padding: 14px 18px;
+      margin: 18px 0;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #333;
+    }
+    .step-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 22px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .step-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-size: 18px;
+      margin: 0 0 10px;
+      color: var(--primary);
+    }
+    .step-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 0 0 16px;
+      line-height: 1.7;
+    }
+    .field-label {
+      display: block;
+      font-size: 13px;
+      font-weight: bold;
+      color: #444;
+      margin-bottom: 6px;
+    }
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-family: inherit;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text);
+      background: #fafaf8;
+      resize: vertical;
+      min-height: 90px;
+      margin-bottom: 14px;
+      transition: border-color 0.15s;
+    }
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent-dark);
+      background: #ffffff;
+    }
+    .action-panel {
+      text-align: center;
+      margin: 36px 0 48px;
+    }
+    .btn-action {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--accent);
+      font-size: 15px;
+      font-weight: bold;
+      padding: 16px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.15s;
+    }
+    .btn-action:hover { opacity: 0.85; }
+    .copy-status {
+      font-size: 13px;
+      color: var(--accent-dark);
+      margin-top: 10px;
+      min-height: 20px;
+      font-weight: bold;
+    }
+    .next-bridge {
+      background: #ffffff;
+      border: 1px solid var(--accent);
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .next-bridge h3 {
+      font-size: 18px;
+      margin: 0 0 12px;
+      color: var(--primary);
+    }
+    .next-bridge p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.8;
+      margin: 0 0 20px;
+    }
+    .btn-consult {
+      display: block;
+      background: var(--primary);
+      color: var(--accent);
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 18px 24px;
+      border-radius: 8px;
+      transition: opacity 0.15s;
+    }
+    .btn-consult:hover { opacity: 0.85; }
+    .footer-note {
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="eyebrow">Self-Inquiry Worksheet · Free & Open</div>
+  <h1>「最適」発見セルフワークシート</h1>
+
+  <div class="intro-card">
+    <p>誰かと比べて苦しくなったとき、自分を責めて前に進めなくなったとき。<br>
+    このワークシートは、あなたが背負いすぎた「最高にならなきゃ」という荷物を降ろし、あなただけの「最適」で呼吸を取り戻すための3つの問いです。</p>
+    <div class="quote-box">
+      「最高を目指すより、最適が好い(^^)<br>
+      最高には、比較があるけど、最適に、比較はないからね(^^)<br>
+      最適って、自分にとってのオリジナルな状態だから」<br>
+      <small style="color:#777;">―― 前田薫（2016年 アメブロ『最適が好い(^^)』より）</small>
+    </div>
+    <p style="font-size:13px; color:#666;">※入力した内容は外部に送信されません。お使いのスマホ・ブラウザの中だけで安心して整理していただけます。</p>
+  </div>
+
+  <!-- Step 1 -->
+  <div class="step-card">
+    <span class="step-badge">STEP 1</span>
+    <h2>「起きた事実」と「頭の予想」を分ける</h2>
+    <p class="step-desc">
+      心が苦しくなる時、私たちは「起きたこと（事実）」と「頭の中で膨らんだ不安（予想）」をごちゃ混ぜにしています。まずは事実だけをテーブルの上に置いてみましょう。
+    </p>
+
+    <label class="field-label" for="q1_fact">① ビデオカメラに映る「客観的な事実」は何ですか？（感情や解釈を入れずに書く）</label>
+    <textarea id="q1_fact" placeholder="例：上司から『この資料の数字を確認して』と言われた。返信が半日返ってきていない。"></textarea>
+
+    <label class="field-label" for="q1_guess">② 頭の中で膨らんでいる「予想や恐れ」は何ですか？</label>
+    <textarea id="q1_guess" placeholder="例：怒られているに違いない。信用を失った。自分はダメな人間だと思われている。"></textarea>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="step-card">
+    <span class="step-badge">STEP 2</span>
+    <h2>背負いすぎた「最高」を手放す</h2>
+    <p class="step-desc">
+      「最高」を目指すほど、必ず他者との比較が生まれます。あなたが無意識に合わせていた「誰かの期待」や「こうあるべき基準」に気づき、そっと降ろしてみましょう。
+    </p>
+
+    <label class="field-label" for="q2_highest">いま、あなたが自分に課して苦しくなっている「最高（基準・理想）」は何ですか？</label>
+    <textarea id="q2_highest" placeholder="例：一度もミスをしてはいけない。あの人より成果を出さなきゃいけない。常に笑顔で期待に応えなければならない。"></textarea>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="step-card">
+    <span class="step-badge">STEP 3</span>
+    <h2>身体がホッとする「最適」を1行見つける</h2>
+    <p class="step-desc">
+      他人の目や勝敗をゼロにしたとき、あなたの心と身体が一番自然に、無理なく息ができる「オリジナルな状態」は何ですか？ 今日できる小さな一歩を書いてみましょう。
+    </p>
+
+    <label class="field-label" for="q3_optimal">あなたにとっての「最適」な状態・今日の一歩は何ですか？</label>
+    <textarea id="q3_optimal" placeholder="例：今日はまず温かいお茶を飲んで深呼吸する。事実だけを確認して、できる範囲で誠実に返信する。自分のペースを取り戻す。"></textarea>
+  </div>
+
+  <!-- Action -->
+  <div class="action-panel">
+    <button class="btn-action" onclick="copyAnswers()">回答をまとめてクリップボードにコピー</button>
+    <div id="copyStatus" class="copy-status"></div>
+  </div>
+
+  <!-- Next Bridge -->
+  <div class="next-bridge">
+    <h3>ひとりで考えても言葉にならないときは</h3>
+    <p>
+      ワークをやってみて心が軽くなったら、それだけで充分です。<br>
+      もし「どうしても思考がぐるぐるしてしまう」「自分の本音がよく分からない」と感じたら、無理に一人で抱え込まなくて大丈夫です。<br>
+      20年間、凍結した深夜のトラックや泥のグラウンドで少年たちの話を聴き続けてきた薫ちゃんに、そのままの気持ちを話してみませんか？
+    </p>
+    <a class="btn-consult" href="https://kaoruchan333.github.io/consult/">
+      30分 無料相談（オンライン対話）のご案内
+    </a>
+    <p style="font-size:12px; color:#888; margin-top:12px;">完全無料 · Google Meet · 無理な勧誘は一切ありません</p>
+  </div>
+
+  <div class="footer-note">
+    © 株式会社なんぼでも · 前田薫（天川寺子屋主宰 / 心の整体）
+  </div>
+
+</div>
+
+<script>
+  function copyAnswers() {
+    const f1 = document.getElementById('q1_fact').value.trim();
+    const g1 = document.getElementById('q1_guess').value.trim();
+    const h2 = document.getElementById('q2_highest').value.trim();
+    const o3 = document.getElementById('q3_optimal').value.trim();
+
+    if (!f1 && !g1 && !h2 && !o3) {
+      document.getElementById('copyStatus').innerText = '※入力欄に記入してからコピーしてください。';
+      return;
+    }
+
+    const text = `【「最適」発見セルフワークシート回答】\n\n` +
+      `■ STEP 1｜事実と予想\n` +
+      `・客観的事実：${f1 || '（未記入）'}\n` +
+      `・頭の予想/恐れ：${g1 || '（未記入）'}\n\n` +
+      `■ STEP 2｜手放したい最高\n` +
+      `・背負っていた基準：${h2 || '（未記入）'}\n\n` +
+      `■ STEP 3｜私にとっての最適\n` +
+      `・ホッとする一歩：${o3 || '（未記入）'}\n\n` +
+      `（出典：https://kaoruchan333.github.io/worksheet/）`;
+
+    navigator.clipboard.writeText(text).then(() => {
+      document.getElementById('copyStatus').innerText = '✅ 回答をクリップボードにコピーしました！メモ帳やLINEに貼り付けて保管できます。';
+    }).catch(() => {
+      document.getElementById('copyStatus').innerText = '⚠️ コピーに失敗しました。手動で選択してコピーしてください。';
+    });
+  }
+</script>
+</body>
+</html>
