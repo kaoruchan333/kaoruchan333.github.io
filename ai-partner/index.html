@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世間のAIブームに流されず、自分らしく生きるための「相棒AIチーム」構築 5つのチェックリスト | 前田薫公式</title>
+  <style>
+    :root {
+      --bg-color: #f7f5f0;
+      --text-main: #2b333a;
+      --text-sub: #5f6c7b;
+      --primary: #1b2a38;
+      --accent-gold: #c59b27;
+      --accent-gold-light: #f4ecd8;
+      --card-bg: #ffffff;
+      --border-color: #e2ddd3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.85;
+      padding-bottom: 80px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header & Badge */
+    header {
+      padding: 40px 0 24px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--accent-gold-light);
+      color: #7d5e13;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(197, 155, 39, 0.3);
+      margin-bottom: 16px;
+      letter-spacing: 0.05em;
+    }
+
+    h1 {
+      font-size: 26px;
+      line-height: 1.45;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    h1 span {
+      color: #9e2a2b;
+      background: linear-gradient(transparent 65%, #ffd166 65%);
+    }
+
+    .lead-text {
+      font-size: 15px;
+      color: var(--text-sub);
+      margin-bottom: 30px;
+      text-align: left;
+    }
+
+    /* Hero Card */
+    .hero-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      padding: 28px 24px;
+      margin-bottom: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, var(--primary), var(--accent-gold));
+    }
+
+    /* Checklist Highlights */
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 18px;
+      background: var(--accent-gold);
+      border-radius: 2px;
+    }
+
+    .check-list {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .check-item {
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      background: #fbfaf7;
+      border-radius: 8px;
+      border-left: 3px solid var(--primary);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .check-item strong {
+      color: #9e2a2b;
+    }
+
+    /* Form Container */
+    .form-box {
+      background: var(--primary);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      margin-bottom: 40px;
+      box-shadow: 0 12px 35px rgba(27, 42, 56, 0.2);
+    }
+
+    .form-box h2 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .form-box p {
+      font-size: 13px;
+      color: #b0c4de;
+      margin-bottom: 24px;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: #ffffff;
+      color: var(--text-main);
+      font-size: 16px;
+      margin-bottom: 14px;
+      outline: none;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #e6af2e, #c59b27);
+      color: #1b2a38;
+      border: none;
+      padding: 18px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(197, 155, 39, 0.4);
+      transition: all 0.2s ease;
+      letter-spacing: 0.05em;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(197, 155, 39, 0.6);
+    }
+
+    .privacy-note {
+      font-size: 11px;
+      color: #8da4be;
+      margin-top: 14px;
+    }
+
+    /* Future Benefits */
+    .future-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      padding: 24px 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .future-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent-gold);
+      background: rgba(197, 155, 39, 0.12);
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    .benefit-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .benefit-item:last-of-type {
+      border-bottom: none;
+      margin-bottom: 12px;
+      padding-bottom: 0;
+    }
+
+    .benefit-num {
+      width: 28px;
+      height: 28px;
+      background: var(--primary);
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .benefit-content h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0 0 6px 0;
+    }
+
+    .benefit-content p {
+      font-size: 13px;
+      color: var(--text-main);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .mentor-promise {
+      background: rgba(197, 155, 39, 0.08);
+      border-left: 3px solid var(--accent-gold);
+      padding: 14px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--text-main);
+      margin-top: 16px;
+    }
+
+    .mentor-promise-title {
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Profile Section */
+    .profile-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      padding: 24px;
+      margin-top: 20px;
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .profile-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #e2ddd3;
+      object-fit: cover;
+      border: 2px solid var(--accent-gold);
+    }
+
+    .profile-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .profile-role {
+      font-size: 12px;
+      color: var(--text-sub);
+    }
+
+    .profile-bio {
+      font-size: 13.5px;
+      color: var(--text-main);
+      line-height: 1.75;
+    }
+
+    .profile-lead {
+      font-size: 13.5px;
+      color: var(--text-main);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .profile-highlights {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .profile-highlights li {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.6);
+      padding: 10px 14px;
+      border-radius: 8px;
+      border-left: 3px solid var(--accent-gold);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-sub);
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="badge">完全無料・期間限定プレゼント</div>
+      <h1>世間のAIブームに流されず、<br>自分らしく生きるための<span>「相棒AIチーム」構築 5つのチェックリスト</span></h1>
+      <p class="lead-text">
+        プロンプト集を買っても、AIを使っても、なぜか心が満たされないあなたへ。<br>
+        20年間の対話と山での修行を重ねてきた前田薫が、AIを「ただの下請け」から一生の「阿吽の相棒」へと変えた実践の知恵を、5つの問いに凝縮しました。
+      </p>
+    </header>
+
+    <div class="hero-card">
+      <div class="section-title">このチェックリストでわかること</div>
+      <ul class="check-list">
+        <li class="check-item">□ <strong>チェック1</strong>：あなたの「カッコ悪い失敗や一次情報」をAIに渡しているか？（世間のテンプレプロンプトの罠）</li>
+        <li class="check-item">□ <strong>チェック2</strong>：AIを道具として酷使せず、「阿吽の呼吸」で向き合っているか？</li>
+        <li class="check-item">□ <strong>チェック3</strong>：1つのAIにすべてをやらせて「自爆」させていないか？（複数AIのハドル戦術）</li>
+        <li class="check-item">□ <strong>チェック4</strong>：AIの暴走を止め、あなたの魂を守る「承認境界」があるか？</li>
+        <li class="check-item">□ <strong>チェック5</strong>：手に入れたいのは「効率」か、それとも「命の自由」か？</li>
+      </ul>
+      <p style="font-size: 13px; color: var(--text-sub); text-align: center;">
+        ※ダウンロード後、すぐにスマホやPCでPDFとしてご覧いただけます。
+      </p>
+    </div>
+
+    <!-- Future Benefits / The Permanent Cycle of Living Authentically -->
+    <div class="future-card">
+      <div class="future-badge">この仕組みを手に入れた先の未来</div>
+      <div class="section-title">「自分らしく生きるだけ」で循環する、3つの自由</div>
+
+      <div class="benefit-item">
+        <div class="benefit-num">1</div>
+        <div class="benefit-content">
+          <h4>「好きなことを話すだけ」でAIが分身となって仕組み化</h4>
+          <p>あなたの体験、葛藤、心からワクワクする好きなこと（一次情報）を一言AIに話すだけ。面倒な文章化、人の心を動かすライティング、マーケティング動線、SNS発信まで、すべて相棒AIチームがあなたの分身となって形にしてくれます。</p>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <div class="benefit-num">2</div>
+        <div class="benefit-content">
+          <h4>パソコン作業から解放され「魂が震えること」だけに命を使う</h4>
+          <p>画面に張り付いて疲弊する日々から卒業。あなたにしかできないリアルな対話・相談・施術、家族との時間、大自然の静寂など、本当に命を使いたい「ここだけは譲れないコア」だけに全身全霊で集中できます。</p>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <div class="benefit-num">3</div>
+        <div class="benefit-content">
+          <h4>リアルな体験が資産になり豊かさが巡る「永久循環」</h4>
+          <p>目の前の人と向き合い、笑い合った生身の体験が、またAIによって新しい記事や教材に育ち、次の人へ届いていく。自分らしく生きれば生きるほど、オンラインで自動的に価値と収益が巡り続ける循環が手に入ります。</p>
+        </div>
+      </div>
+
+      <div class="mentor-promise">
+        <div class="mentor-promise-title">🤝 前田薫からの約束</div>
+        「AIに任せられる仕組みや工程は、すべてAIチームが担います。僕があなたに直接届けるのは、あなた自身の『価値観・ミッション・天命』を浮き彫りにし、世界にひとつだけのビジョンを言語化することです。」
+      </div>
+    </div>
+
+    <!-- Opt-in Form -->
+    <div class="form-box">
+      <h2>今すぐ無料チェックリストを受け取る</h2>
+      <p>ご登録いただいたメールアドレスへ、PDFのダウンロードリンクと、<br>相棒AIと生きるための限定メール講座（全14回）をお届けします。</p>
+
+      <form action="#" method="POST" onsubmit="event.preventDefault(); alert('ご登録ありがとうございます！PDFのダウンロードリンクをお送りしました。');">
+        <input type="text" class="input-field" placeholder="お名前（名字のみでも可）" required>
+        <input type="email" class="input-field" placeholder="メールアドレス（PC・スマホ対応）" required>
+        <button type="submit" class="submit-btn">無料でチェックリストを受け取る 👉</button>
+      </form>
+
+      <div class="privacy-note">
+        ※ご入力いただいた個人情報は厳重に管理し、迷惑メール等は一切送信いたしません。<br>いつでも配信解除いただけます。
+      </div>
+    </div>
+
+    <!-- Profile -->
+    <div class="profile-card">
+      <div class="profile-header">
+        <img src="https://kaoruchan333.github.io/kaoru-self/images/profile.jpg" alt="前田薫" class="profile-avatar" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'64\' height=\'64\' fill=\'%23c59b27\' viewBox=\'0 0 24 24\'><path d=\'M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z\'/></svg>'">
+        <div>
+          <div class="profile-name">前田 薫（かおるちゃん）</div>
+          <div class="profile-role">株式会社なんぼでも 代表取締役 / かおる塾 主宰 / 天川寺子屋 代表</div>
+        </div>
+      </div>
+      <div class="profile-bio">
+        <p class="profile-lead">
+          20年間でのべ1,000人以上の人生に伴走してきたメンタルコーチ。奈良県・天川村で愛猫「ヒミ」と暮らしながら、自身の魂と20年の資産を宿らせた「相棒AIチーム」と共に生きる新しいライフスタイルを実践・提唱中。
+        </p>
+        <ul class="profile-highlights">
+          <li><strong>【指導・育成】</strong> 息子と歩んだサッカー指導から<strong>日本代表・真川紫音選手</strong>を育成。プロアカデミーで多数のJリーガー輩出に伴走。</li>
+          <li><strong>【対話・発信】</strong> 日本初ネットラジオ局立ち上げに参画、<strong>1,000番組以上</strong>をプロデュース。YouTube対話動画633本以上。</li>
+          <li><strong>【暗闇と再生】</strong> 20〜30代の<strong>10年間に及ぶ重度のうつ病</strong>を経験。「完璧」を求め心が崩壊した暗闇から、等身大の自己受容に辿り着く。</li>
+          <li><strong>【天川村の今】</strong> 親子で100年先へ続く「天川寺子屋」を創設。毎朝の愛猫ヒミとお散歩ライブは<strong>Instagramフォロワー1.2万人</strong>のアイドル猫に。</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2026 前田薫（かおるちゃん） / 天川寺子屋プロジェクト All Rights Reserved.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
