@@ -428,9 +428,9 @@
       <h2>今すぐ無料チェックリストを受け取る</h2>
       <p>ご登録いただいたメールアドレスへ、PDFのダウンロードリンクと、<br>相棒AIと生きるための限定メール講座（全14回）をお届けします。</p>
 
-      <form action="#" method="POST" onsubmit="event.preventDefault(); alert('ご登録ありがとうございます！PDFのダウンロードリンクをお送りしました。');">
-        <input type="text" class="input-field" placeholder="お名前（名字のみでも可）" required>
-        <input type="email" class="input-field" placeholder="メールアドレス（PC・スマホ対応）" required>
+      <form action="checklist.html" method="GET" onsubmit="return true;">
+        <input type="text" name="name" class="input-field" placeholder="お名前（名字のみでも可）" required>
+        <input type="email" name="email" class="input-field" placeholder="メールアドレス（PC・スマホ対応）" required>
         <button type="submit" class="submit-btn">無料でチェックリストを受け取る 👉</button>
       </form>
 
