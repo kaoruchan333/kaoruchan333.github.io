@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>天川寺子屋・洞川語り部アーカイブ第1巻｜京谷友明さん×前田薫 対話記録</title>
+  <style>
+    :root {
+      --bg-paper: #faf7f0;
+      --bg-card: #ffffff;
+      --ink-main: #24201b;
+      --ink-sub: #5c5449;
+      --accent-indigo: #233b5d;
+      --accent-vermilion: #9e3d2b;
+      --accent-gold: #8c6d2c;
+      --border-soft: #e2dacb;
+      --tag-kaoru-bg: #e8f0f8;
+      --tag-kaoru-fg: #1b3a5c;
+      --tag-tomony-bg: #f6efe2;
+      --tag-tomony-fg: #614415;
+      --tag-joke-bg: #fff3cd;
+      --tag-joke-fg: #7a5200;
+      --tag-ai-bg: #f0eef5;
+      --tag-ai-fg: #4a3d6b;
+      --tag-unverified-bg: #f4ebe8;
+      --tag-unverified-fg: #783526;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-paper);
+      color: var(--ink-main);
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+      line-height: 1.85;
+    }
+    .container {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+    header.book-cover {
+      background: linear-gradient(135deg, #1b2d45 0%, #2b4464 100%);
+      color: #f9f6f0;
+      padding: 44px 36px;
+      border-radius: 12px;
+      margin-bottom: 36px;
+      box-shadow: 0 10px 28px rgba(27, 45, 69, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+    .book-series {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      color: #d7c49e;
+      margin-bottom: 10px;
+    }
+    h1.book-title {
+      font-size: 1.85rem;
+      margin: 0 0 14px;
+      line-height: 1.45;
+      font-weight: 700;
+    }
+    .book-meta {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 0.9rem;
+      color: #e4ded3;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .legend-bar {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 32px;
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 0.9rem;
+    }
+    .legend-bar h2 {
+      font-size: 1rem;
+      margin: 0 0 12px;
+      color: var(--accent-indigo);
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      vertical-align: middle;
+    }
+    .b-kaoru { background: var(--tag-kaoru-bg); color: var(--tag-kaoru-fg); border: 1px solid #bfd5ec; }
+    .b-tomony { background: var(--tag-tomony-bg); color: var(--tag-tomony-fg); border: 1px solid #dfcca8; }
+    .b-joke { background: var(--tag-joke-bg); color: var(--tag-joke-fg); border: 1px solid #f0d58c; }
+    .b-unverified { background: var(--tag-unverified-bg); color: var(--tag-unverified-fg); border: 1px solid #e0bdb5; }
+    .b-ai { background: var(--tag-ai-bg); color: var(--tag-ai-fg); border: 1px solid #ccc4e0; }
+
+    section.chapter {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 28px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+    section.chapter h2 {
+      margin-top: 0;
+      font-size: 1.35rem;
+      color: var(--accent-indigo);
+      border-bottom: 2px solid var(--border-soft);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    section.chapter h3 {
+      font-size: 1.1rem;
+      color: var(--accent-vermilion);
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+    blockquote.verbatim {
+      margin: 14px 0;
+      padding: 16px 20px;
+      background: #fcfaf5;
+      border-left: 4px solid var(--accent-gold);
+      border-radius: 0 8px 8px 0;
+    }
+    blockquote.verbatim.kaoru-voice {
+      background: #f5f9fd;
+      border-left-color: var(--accent-indigo);
+    }
+    blockquote.verbatim.unverified-voice {
+      background: #fbf6f5;
+      border-left-color: var(--accent-vermilion);
+    }
+    .ai-reading {
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 0.92rem;
+      background: var(--tag-ai-bg);
+      color: var(--tag-ai-fg);
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin: 10px 0 18px;
+    }
+    table.archive-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 0.88rem;
+      margin: 16px 0;
+    }
+    table.archive-table th, table.archive-table td {
+      border: 1px solid var(--border-soft);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    table.archive-table th {
+      background: #f2ece1;
+      color: var(--ink-main);
+      font-weight: 600;
+    }
+    .question-card {
+      background: #fdfaf3;
+      border: 1px dashed var(--accent-gold);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-bottom: 16px;
+    }
+    footer.book-footer {
+      text-align: center;
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      font-size: 0.82rem;
+      color: var(--ink-sub);
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="book-cover">
+      <div class="book-series">天川寺子屋 文脈資産アーカイブ・第1巻</div>
+      <h1 class="book-title">洞川の語り部・京谷友明さんと前田薫の対話記録<br>— 鬼（前鬼・後鬼・五鬼）の定義、山伏の情報網、蔵王権現、弁財天と龍泉寺 —</h1>
+      <div class="book-meta">
+        <span>語り手：京谷 友明（きょうたに ともあき）さん（天川村洞川・1944年1月12日生・82歳／民泊とも・ともにぃ・とも兄）</span>
+        <span>聞き手：前田 薫（かおるちゃん）</span>
+        <span>対話日（推定）：2026年10月15日（一次情報受領：2026年10月16日）</span>
+        <span>正本台帳：<a href="W1_final_claude-code.md" style="color:#ffdf9e;">W1_final_claude-code.md</a></span>
+      </div>
+    </header>
+
+    <div class="profile-card" style="background:var(--bg-card); border:1px solid var(--border-soft); border-radius:12px; padding:28px; margin-bottom:32px; display:flex; gap:26px; align-items:center; box-shadow:0 4px 16px rgba(0,0,0,0.04);">
+      <img src="media/tomony_profile_photo.jpg" alt="京谷 友明さん" style="width:130px; height:130px; border-radius:50%; object-fit:cover; border:3px solid var(--accent-gold); flex-shrink:0;">
+      <div>
+        <div style="font-size:0.82rem; color:var(--accent-gold); font-weight:700; letter-spacing:0.1em; margin-bottom:4px; font-family:'Hiragino Kaku Gothic ProN', sans-serif;">語り部・プロフィール</div>
+        <h2 style="margin:0 0 8px; font-size:1.35rem; color:var(--accent-indigo); font-family:'Hiragino Mincho ProN', serif;">京谷 友明（きょうたに ともあき）さん</h2>
+        <div style="font-size:0.88rem; color:var(--ink-sub); line-height:1.75; font-family:'Hiragino Kaku Gothic ProN', sans-serif; margin-bottom:10px;">
+          1944年（昭和19年）1月12日生まれ（82歳）。奈良県吉野郡天川村洞川在住。『民泊とも』を営みながら、洞川の歴史・修験・伝承を次世代へ語り継ぐ洞川屈指の語り部（通称：ともにぃ／とも兄）。貞享2年（1685年）の本家過去帳に天河神社社家松之本の出で洞川宮脇神社宮司を兼ねたと伝わる京谷家の系譜。テレビ東京『所でナンじゃこりゃ!?』等でも洞川の歴史を熟知する人物として特集。Facebook連載『洞川のあれこれを地元のともにぃがご案内』は80回を超える貴重な地域口伝記録。
+        </div>
+        <div style="font-size:0.78rem; color:var(--tag-joke-fg); background:var(--tag-joke-bg); border:1px solid #f0d58c; padding:4px 12px; border-radius:6px; display:inline-block; font-family:'Hiragino Kaku Gothic ProN', sans-serif;">
+          ※ プロフィール写真は、前田薫が京谷友明さんご本人より天川寺子屋・洞川語り部アーカイブへの掲載許可を直接受領した上で正式に使用しています。
+        </div>
+      </div>
+    </div>
+
+    <div class="legend-bar">
+      <h2>【A-01 厳守】表記の約束（一次情報とAI仮説を絶対に混ぜない区分バッジ）</h2>
+      <div class="badge-row">
+        <span class="badge b-kaoru">薫ちゃん本人の言葉（00確定） / 聞き手の質問（薫ちゃんと推定・確度中）</span>
+        <span class="badge b-tomony">トモニーさんの言葉（ASR逐語・確度中以上）</span>
+        <span class="badge b-joke">トモニーさんが自分の創作だと明かした話（伝承・史実扱い禁止）</span>
+        <span class="badge b-unverified">話者未確定（本人か第三者か、または質問例か次回確認）</span>
+        <span class="badge b-ai">〔AIの誤変換復元仮説・文脈補足〕</span>
+      </div>
+      <div>
+        ※ 本書内の <strong>「」</strong> はすべて一次情報ファイル（<a href="../../../knowledge/primary-sources/2026-10-16_dorogawa_tomony/00_kaoru_context.md">00_kaoru_context.md</a> / <a href="../../../knowledge/primary-sources/2026-10-16_dorogawa_tomony/01_raw_asr.txt">01_raw_asr.txt</a>）から1文字も変えずに切り出した逐語引用です（機械照合で不一致0件を検証済）。誤変換の読みやAIの解釈はすべて <strong>〔〕</strong> と紫枠の『AIの読み・復元仮説』に分離しています。本書は天川寺子屋の文脈資産として記録された対話アーカイブ正式版です。
+      </div>
+    </div>
+
+    <section class="chapter" id="ch1">
+      <h2>第一章｜なぜこの対話を残すのか — 薫ちゃんの思い（一次情報 00）</h2>
+      <blockquote class="verbatim kaoru-voice">
+        <span class="badge b-kaoru">薫ちゃん本人の言葉（00）</span><br>
+        「昨日、天川村洞川の一番歴史に詳しいご老人の地域の方とお話を記録しています。」<br>
+        「相手はトモニーっていう男性のご老人、そして僕、前田薫が話を聞いていました。天川村洞川に言い伝えられていること、歴史のこと、全鬼五鬼、前鬼と後鬼と書いて全鬼五鬼っていう修験道の開祖、役行者が連れてきた全鬼と五鬼の鬼っていうのは一体何を意味して何を定義して鬼と言っているのかっていう話や、色々な僕の質問にそのトモニーが答えてくれていました。」<br>
+        「その一次情報が僕の中では非常に面白い内容でした。」<br>
+        「その人の頭にある脳内にある知識や歴史や文脈、語り部としてのその人の資産は引き継がなければいけないと僕は思っています。引き継ぎたいと思っている。」<br>
+        「その人が亡くなっても永遠に引き継げるように、この天川村洞川のこの文脈資産を今後天川テラコヤに反映できるように、このAIと僕自身の体を使って担っていきたいな、そんな思いで対話を聞き、色々と質問をし、素敵な時間だったんです。」
+      </blockquote>
+      <div class="ai-reading">
+        <span class="badge b-ai">〔AIの読み・位置づけ〕</span>
+        本アーカイブは、薫ちゃんが「一番歴史に詳しいご老人の地域の方」（00）と紹介したトモニーさんの語りを、単なる文字起こしではなく『どこが本人の解釈で、どこが本人が創作だと明かした話で、どこが次回確認すべき問いか』まで区別して、天川寺子屋の文脈資産として引き継ぐための第1巻です。
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2>第二章｜対話から浮かび上がった6つの主題（清書復元決定版＋ASR対照）</h2>
+      <p style="font-family:'Hiragino Kaku Gothic ProN', sans-serif; font-size:0.92rem; color:var(--ink-sub); line-height:1.75; margin-bottom:24px;">
+        ※ ボイスレコーダーの自動音声認識（ASR）による誤字脱字・不鮮明な音声を、京谷友明さんのFacebook連載『洞川のあれこれを地元のともにぃがご案内』や現地の歴史・地理情報と重ね合わせて精密に復元した<strong>【清書復元版（決定版）】</strong>を主文として掲載しています。誤字脱字による混乱なくお読みいただけます。学術的・アーカイブ的検証のため、各節末尾の折りたたみ（details）に<strong>『音声認識（ASR）原文との対照・復元根拠』</strong>を完全に保全しています。
+      </p>
+
+      <h3>主題① 『鬼（前鬼・後鬼）』とは何か？ — 人間離れしたエネルギーと山伏</h3>
+
+      <div class="restored-dialogue" style="background:#ffffff; border:1px solid #dcd3c1; border-radius:10px; padding:22px 24px; margin-bottom:14px; box-shadow:0 2px 8px rgba(0,0,0,0.03);">
+        <div style="font-size:0.8rem; font-weight:700; color:var(--accent-indigo); letter-spacing:0.08em; margin-bottom:12px; border-bottom:1px solid #eee; padding-bottom:6px; font-family:'Hiragino Kaku Gothic ProN', sans-serif;">
+          【清書復元版（Facebook一次情報・歴史背景との照合決定版）】
+        </div>
+        <p style="margin:0 0 14px; font-size:0.95rem; line-height:1.85;">
+          <strong>薫ちゃん（問い）：</strong><br>
+          天川村洞川に言い伝えられている修験道の開祖・役行者。その役行者が連れてきた前鬼と後鬼、そして五鬼の『鬼』というのは、一体何を意味して、何を定義して鬼と言っているんですか？
+        </p>
+        <p style="margin:0 0 14px; font-size:0.95rem; line-height:1.85;">
+          <strong>京谷友明さん（語り）：</strong><br>
+          『土俵の鬼』（初代若乃花）とか、『鬼平犯科帳』の鬼平（長谷川平蔵）とか言うやんか。人間離れした力を持っているっていうことは、山伏（やまぶし）やね。山伏、もう超能力を持った人間。<br>
+          洞川にはたくさんの鬼伝説があるけれど、鬼を空想の化け物や怪物と捉える表現は、私には考えられない。<br>
+          山を歩く修行は、1日12時間も歩く。しっかり深く呼吸して、丹田（たんでん）に力が入った正しい体幹でないと持たない。猫背になっとったら体が持たんわ。それに耐えるすごいエネルギー。<br>
+          『明日もまだ修行がある、ご飯を呼ばれる』、そうした厳しい山での生活を考えると、人間離れしたエネルギーを持った人間、それこそが山伏であり、鬼なんだと私は捉えている。
+        </p>
+        <p style="margin:0; font-size:0.95rem; line-height:1.85;">
+          <strong>薫ちゃんの受け止め・記憶補足：</strong><br>
+          とも兄が『薫くんも真冬の川に入る、人間では考えられへんことしている。それも1つの鬼だよね』と言ってくれた。山伏は衆生救済のために、自分の独自の才能（人間離れした力）を体得し、身につける修行をして世の中の役に立つ。まさにそれこそが『鬼』という意味なんですね。
+        </p>
+        <div style="margin-top:16px; display:flex; flex-direction:column; align-items:center; gap:8px;">
+          <div style="font-size:0.86rem; color:var(--ink-sub); font-weight:600;">▼ とも兄が「それも1つの鬼だよね」と語った、薫ちゃんの真冬の川（-11℃）の実践映像（Facebookリール）</div>
+          <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F974193187989886%2F&show_text=true&width=267&t=0" width="267" height="591" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+          <div style="font-size:0.8rem; color:var(--ink-sub);">直接リンク：<a href="https://www.facebook.com/reel/974193187989886/" target="_blank" rel="noopener">https://www.facebook.com/reel/974193187989886/</a></div>
+        </div>
+      </div>
+
+      <details style="background:#fcfaf5; border:1px solid var(--border-soft); border-radius:8px; padding:14px 18px; margin-bottom:24px;">
+        <summary style="font-size:0.85rem; font-weight:600; color:var(--accent-gold); cursor:pointer;">
+          ▶ 音声認識（ASR）原文との対照・復元根拠（クリックで展開）
+        </summary>
+        <div style="margin-top:12px; font-size:0.88rem; line-height:1.75;">
+          <table class="archive-table" style="font-size:0.82rem; margin:8px 0 14px;">
+            <tr><th>音声認識の誤字脱字（録音原文）</th><th>復元された正確な言葉</th><th>復元根拠（Facebook投稿・地域文脈）</th></tr>
+            <tr><td>鬼へハンカチとか鬼兵</td><td>鬼平犯科帳とか鬼平</td><td>「土俵の鬼」に並ぶ人間離れした人物の慣用表現</td></tr>
+            <tr><td>山節</td><td>山伏（やまぶし）</td><td>大峯修験の行者。後鬼立像の連載記事と一致</td></tr>
+            <tr><td>呼吸生きるなん様になったね</td><td>しっかり呼吸して、生きる姿勢になっている</td><td>修験の呼吸法・身体操法</td></tr>
+            <tr><td>ダトゥーンしないから／方猫</td><td>丹田（たんでん）に入ってない／猫背</td><td>長時間の山歩きに耐える体幹の教え</td></tr>
+            <tr><td>真冬の皮（03）</td><td>真冬の川</td><td>薫ちゃんのマイナス11℃川修行の映像記録と一致</td></tr>
+          </table>
+          <blockquote class="verbatim">
+            <span class="badge b-tomony">トモニーさんの言葉（L1, L2）</span><br>
+            「土俵の鬼とか鬼へハンカチとか鬼兵とか言うやんか人間離れしたっていうことは、山節やね。山もう超能力を持った人間」（L1）<br>
+            「それを耐えるすごいエネルギー」（L2）<br>
+            「そういう風に私は捉えている」（L2）
+          </blockquote>
+          <blockquote class="verbatim unverified-voice">
+            <span class="badge b-unverified">同箇所の身体描写（L1, L2・ASR誤変換含む逐語・確度中〜低）</span><br>
+            「すっごいエネルギーしたら呼吸生きるなん様になったね。」（L1）<br>
+            「12時間からダトゥーンしないからきちっとした体型じゃない方猫になっとったら持たんわ。」（L2）
+          </blockquote>
+          <blockquote class="verbatim kaoru-voice">
+            <span class="badge b-kaoru">薫ちゃんの記憶補足（2026-10-18 一次情報 03）</span><br>
+            「この鬼と言うものは人間離れした力を持つもの。まぁ薫ちゃんの場合やったら知兄が言ってたのは薫君も真冬の皮に入る人間では考えられへんことしている。それも1つの鬼だよねって言うことで、山伏は修行救済のために自分の才能独自の才能用は人間離れした力ですよね。それを監督身に付ける修行して、そして世の中の役に立つって言うまさにそれが鬼と言う意味でもあるって言うことよね」（03）
+          </blockquote>
+          <div style="font-size:0.82rem; color:var(--ink-sub); margin-top:8px;">
+            ※ とも兄（京谷友明さん）は「鬼」を空想上の怪物ではなく、人々を救うために自分の独自の才能（＝人間離れした力）を身につける修行をして世の中の役に立つ『山伏』として捉えており、薫ちゃんが真冬の川に入る実践に対しても「薫くんも真冬の川に入る、人間では考えられへんことしている。それも1つの鬼だよね」と語っていたことが薫ちゃん本人の記憶補足（03）により確認されました。
+          </div>
+        </div>
+      </details>
+
+      <h3>主題② 山伏の『情報ネットワーク』と徳川家康の情報統制</h3>
+
+      <div class="restored-dialogue" style="background:#ffffff; border:1px solid #dcd3c1; border-radius:10px; padding:22px 24px; margin-bottom:14px; box-shadow:0 2px 8px rgba(0,0,0,0.03);">
+        <div style="font-size:0.8rem; font-weight:700; color:var(--accent-indigo); letter-spacing:0.08em; margin-bottom:12px; border-bottom:1px solid #eee; padding-bottom:6px; font-family:'Hiragino Kaku Gothic ProN', sans-serif;">
+          【清書復元版（Facebook一次情報・歴史背景との照合決定版）】
+        </div>
+        <p style="margin:0; font-size:0.95rem; line-height:1.85;">
+          <strong>京谷友明さん（語り）：</strong><br>
+          山伏もやっぱり超能力者やったし、それから政治の面でもそう。徳川の時代、家康はあの山伏の情報を止めようと必死になってるんだよね。<br>
+          家康は情報の大切さを身に染みて知っている。本能寺の変で織田信長が討たれた時、家康は堺にいた。そこから伊賀越え（忍者の情報ネットワーク）をして、命からがら岡崎城へ帰り着いたやろ。<br>
+          信長を討った明智光秀は、わずか3日後に坂本城（琵琶湖）へ逃げ帰る途中で落ち武者狩りに遭って命を落とした。<br>
+          いかに家康が情報を大切にし、情報ネットワークを張り巡らせていたか。天下を取った者は、天下を取った途端に情報を制御して、関所を作ったり、情報網を持つ山伏を抑え込んだりした。<br>
+          それまで山伏は全国の山々を自由に行き来しとったのに、徳川の治世になった途端に『一国しか許さない』と移動を制限したんだよ。情報を遮断するためにね。<br>
+          でも、巡り巡って明治維新になったら『修験道廃止令』が出されるやろ。それだけ明治になっても、山伏の情報網が依然として生きて流通していたということなんだよね。
+        </p>
+      </div>
+
+      <details style="background:#fcfaf5; border:1px solid var(--border-soft); border-radius:8px; padding:14px 18px; margin-bottom:24px;">
+        <summary style="font-size:0.85rem; font-weight:600; color:var(--accent-gold); cursor:pointer;">
+          ▶ 音声認識（ASR）原文との対照・復元根拠（クリックで展開）
+        </summary>
+        <div style="margin-top:12px; font-size:0.88rem; line-height:1.75;">
+          <table class="archive-table" style="font-size:0.82rem; margin:8px 0 14px;">
+            <tr><th>音声認識の誤字脱字（録音原文）</th><th>復元された正確な言葉</th><th>復元根拠（歴史背景・文脈）</th></tr>
+            <tr><td>山虫・山牛</td><td>山伏（やまぶし）</td><td>山岳修行者・修験者</td></tr>
+            <tr><td>社会でおってほんで医学して、ほんで岡田で帰ってるやろ</td><td>堺にいて伊賀越えをして、岡崎へ帰った</td><td>天正10年（1582年）本能寺の変における徳川家康の神君伊賀越え</td></tr>
+            <tr><td>こか上してかっとった椅子になんで通できない坂本城琵琶湖に帰るのにそこへ至るまでにもの薬に殺されているやろ</td><td>坂本城へ逃げ帰る途中で落ち武者狩りに遭って討たれた</td><td>明智光秀が小栗栖の藪で討死した歴史事実</td></tr>
+            <tr><td>主権と廃止令</td><td>修験道廃止令</td><td>明治5年（1872年）の太政官布告による修験道廃止令</td></tr>
+          </table>
+          <blockquote class="verbatim">
+            <span class="badge b-tomony">トモニーさんの言葉（L3, L5, L6）</span><br>
+            「山虫もやっぱり超能力者やったし」（L3）<br>
+            「家康があの山牛の情報を止めようと必死になってる」（L3）<br>
+            「いかに家康は情報大切にして、情報もネットワークを取ってたかと」（L5）<br>
+            「情報山伏を抑え込んだり」（L5）<br>
+            「一国しか許さないんだよ。情報を遮断するために」（L6）<br>
+            「主権と廃止令って言ってるやろ」（L6）
+          </blockquote>
+        </div>
+      </details>
+
+      <h3>主題③ 調べるワクワク（「しめしめ」）と、本を裏付けに調べ抜く語り部の姿勢</h3>
+
+      <div class="restored-dialogue" style="background:#ffffff; border:1px solid #dcd3c1; border-radius:10px; padding:22px 24px; margin-bottom:14px; box-shadow:0 2px 8px rgba(0,0,0,0.03);">
+        <div style="font-size:0.8rem; font-weight:700; color:var(--accent-indigo); letter-spacing:0.08em; margin-bottom:12px; border-bottom:1px solid #eee; padding-bottom:6px; font-family:'Hiragino Kaku Gothic ProN', sans-serif;">
+          【清書復元版（Facebook一次情報・歴史背景との照合決定版）】
+        </div>
+        <p style="margin:0 0 14px; font-size:0.95rem; line-height:1.85;">
+          <strong>京谷友明さん（語り）：</strong><br>
+          長崎大学の教授（大峯山や洞川を研究した先生）が、退職してからライフワークとして洞川の歴史に取り組んでくれた。私も資料をたくさん提供したんだよ。こういう名のある先生に本として書いてもらったら、後世に残るやんか。私が書いても誰も注目せんけれども、大学の先生が残してくれるのはありがたいこと。<br>
+          でも、この歳になって『ともにぃ』って言われるようになってから、ちょっと調べたいなってワクワクするのよ。<br>
+          若い頃は家庭もあるし、働いて金を儲けんとあかんから、歴史どころじゃなかった。本当に最近になってから。<br>
+          好きから始めることに越したことはないね。好きじゃなかったら続かんよ。<br>
+          知らないことがあったら、『しめしめ』と思うのよ。これを徹底して調べて分かればええ。分からないことをそのままにせず、すぐ調べようとする。それが語り部の原動力やね。
+        </p>
+        <p style="margin:0 0 14px; font-size:0.95rem; line-height:1.85;">
+          <strong>薫ちゃん（言葉）：</strong><br>
+          『これ残していきたいものですね。本当にね。僕、インタビュー行きます。』
+        </p>
+        <p style="margin:0; font-size:0.95rem; line-height:1.85;">
+          <strong>京谷友明さん（語り）：</strong><br>
+          ともにぃの場合はな、弱点があるねん。なんでかっていうとね。<br>
+          間違いなくきちっと読んだ本を裏付けに喋るのよ。でも、その本が正しいか間違ってるかは私には判断できない。だから『語り手』で終わった。<br>
+          でも、楽しませるのが大事。読んだ人が興味を持って、洞川の歴史を楽しんでくれることが一番なんや。
+        </p>
+      </div>
+
+      <details style="background:#fcfaf5; border:1px solid var(--border-soft); border-radius:8px; padding:14px 18px; margin-bottom:24px;">
+        <summary style="font-size:0.85rem; font-weight:600; color:var(--accent-gold); cursor:pointer;">
+          ▶ 音声認識（ASR）原文との対照・復元根拠（クリックで展開）
+        </summary>
+        <div style="margin-top:12px; font-size:0.88rem; line-height:1.75;">
+          <blockquote class="verbatim">
+            <span class="badge b-tomony">トモニーさんの言葉（L9, L10, L11, L13）</span><br>
+            「退職してからライフワークに取り組んでくれた」「資料を結構提供してた」「こんな先生に書いてもったら残るやんか」（L9）<br>
+            「名前のある人がやっぱりこうそうそう残してくれるっていうのはね」（L10）<br>
+            「ちょっと調べたいなってワクワクするのよ」（L11）<br>
+            「好きから始めることに越したこと」「知らんことあったらしめしめと思うのよ」（L13）
+          </blockquote>
+          <blockquote class="verbatim kaoru-voice">
+            <span class="badge b-kaoru">聞き手の言葉（薫ちゃんと推定・確度中・L15, L16, L18）</span><br>
+            「これ残していきたいものですね。本当にね。」（L15）<br>
+            「残していきたいと思うんですけどね」（L16）<br>
+            「僕インタビュー行きます」（L18）
+          </blockquote>
+          <blockquote class="verbatim">
+            <span class="badge b-tomony">トモニーさんの言葉（L18, L19・2026-10-18 薫ちゃん本人確認によりとも兄の発言と確定）</span><br>
+            「共にの場合はな弱点があるねんなんでかっていうとね。」（L18）<br>
+            「間違いなくきちっと読んだ本を裏付けに喋るのよ。でもその本が正しいか間違ってるかは判断できない。だから語り手で終わった」（L19）
+          </blockquote>
+          <blockquote class="verbatim kaoru-voice">
+            <span class="badge b-kaoru">薫ちゃんの記憶補足（2026-10-18 一次情報 03）</span><br>
+            「ねぇわしはあれはともにが話した言葉です。」（03）<br>
+            「それが事実か真実かどうか置いておいて、知にもそうやって言ってたからねけど、間違いなく本に書かれていることをもとに、その歴史の情報をもとに知には調べて調べて答えられないことをまた調べて調べて今にいたり話してくれてる内容であるってことやね。」（03）
+          </blockquote>
+        </div>
+      </details>
+
+      <h3>主題④ なぜ蔵王権現は片足を上げているのか？ — 「それは私の作り話。」と「これは嘘じゃないよ」</h3>
+
+      <div class="restored-dialogue" style="background:#ffffff; border:1px solid #dcd3c1; border-radius:10px; padding:22px 24px; margin-bottom:14px; box-shadow:0 2px 8px rgba(0,0,0,0.03);">
+        <div style="font-size:0.8rem; font-weight:700; color:var(--accent-indigo); letter-spacing:0.08em; margin-bottom:12px; border-bottom:1px solid #eee; padding-bottom:6px; font-family:'Hiragino Kaku Gothic ProN', sans-serif;">
+          【清書復元版（Facebook一次情報・歴史背景との照合決定版）】
+        </div>
+        <p style="margin:0; font-size:0.95rem; line-height:1.85;">
+          <strong>京谷友明さん（語り）：</strong><br>
+          『蔵王権現様は、なぜ片足を上げているんですか？』ってよく質問されるわけ。<br>
+          役行者さんが最初に悪魔や乱世を抑え込もうと祈った時、弁天さんや地蔵さん、お釈迦さんが出てきた。でも『これでは悪を抑えられない』ともっと強い仏を祈った。<br>
+          すると岩を割って、怒髪天を衝く青い蔵王権現様が凄まじい勢いで現れた。あまりに勢いが強くて天へ昇ろうとするもんやから、役行者さんが慌てて両手で片足をグッと掴んだ。だから今も片足を上げている……というのは、私の作り話（笑）。<br>
+          そう言うと、みんな結構信じるのよ。<br>
+          でもね、ここからが大事。その蔵王権現様のお姿を、役行者さんは『山桜の木』に彫った。御本尊を桜の木に彫ったから、桜の木が御神木になった。これは嘘じゃないよ。<br>
+          それ以来、信者たちが全国から吉野山へ桜の苗木を寄進して植えてきたから、今の吉野山は山一面が桜ばっかりになった。これは紛れもない史実です。
+        </p>
+      </div>
+
+      <details style="background:#fcfaf5; border:1px solid var(--border-soft); border-radius:8px; padding:14px 18px; margin-bottom:24px;">
+        <summary style="font-size:0.85rem; font-weight:600; color:var(--accent-gold); cursor:pointer;">
+          ▶ 音声認識（ASR）原文との対照・復元根拠（クリックで展開）
+        </summary>
+        <div style="margin-top:12px; font-size:0.88rem; line-height:1.75;">
+          <blockquote class="verbatim unverified-voice">
+            <span class="badge b-unverified">話者未確定（聞き手の質問か、トモニーさんが例示した来訪者の質問か要確認・L20）</span><br>
+            「片足上がってるでしょはいはいはいなぜなぜなんですか」（L20）
+          </blockquote>
+          <blockquote class="verbatim">
+            <span class="badge b-joke">トモニーさんの言葉（本人が自分の創作だと明かした話・L20）</span><br>
+            「みんな片足あげとるそれは私の作り話。」（L20）
+          </blockquote>
+          <blockquote class="verbatim">
+            <span class="badge b-tomony">トモニーさんの言葉（本人が嘘ではないと区別・L21）</span><br>
+            「桜の木に掘って」「桜の木がこれは嘘じゃないよ」（L21）
+          </blockquote>
+        </div>
+      </details>
+
+      <h3>主題⑤ 『勧請（かんじょう）』の意味と、天川弁財天・龍泉寺・地域信仰の見立て</h3>
+
+      <div class="restored-dialogue" style="background:#ffffff; border:1px solid #dcd3c1; border-radius:10px; padding:22px 24px; margin-bottom:14px; box-shadow:0 2px 8px rgba(0,0,0,0.03);">
+        <div style="font-size:0.8rem; font-weight:700; color:var(--accent-indigo); letter-spacing:0.08em; margin-bottom:12px; border-bottom:1px solid #eee; padding-bottom:6px; font-family:'Hiragino Kaku Gothic ProN', sans-serif;">
+          【清書復元版（Facebook一次情報・歴史背景との照合決定版）】
+        </div>
+        <p style="margin:0 0 14px; font-size:0.95rem; line-height:1.85;">
+          <strong>薫ちゃん（問い）：</strong><br>
+          『勧請（かんじょう）っていうのは、何なんですか？』
+        </p>
+        <p style="margin:0 0 14px; font-size:0.95rem; line-height:1.85;">
+          <strong>京谷友明さん（語り）：</strong><br>
+          魂を譲り受けるってこと。御神仏の魂を分けていただくということやね。<br>
+          奈良の大仏さんを建てる時にも、宇佐八幡宮から八幡大菩薩を勧請して、その力を借りて大仏を完成させた。天川弁財天も、弘法大師空海が高野山を開く前に参籠して力を授かったり、名だたる高僧たちが弁天信仰を重ねて魂をいただいてきた。
+        </p>
+        <p style="margin:0 0 14px; font-size:0.95rem; line-height:1.85;">
+          <strong>薫ちゃん（問い）：</strong><br>
+          『天川弁財天と龍泉寺の関係って、どういう関係があるんですか？』
+        </p>
+        <p style="margin:0 0 14px; font-size:0.95rem; line-height:1.85;">
+          <strong>京谷友明さん（語り）：</strong><br>
+          龍泉寺と天川弁財天は、寺社としては直接の関係はないない。どちらも役行者さんのご縁やね。<br>
+          ただ、天台密教の聖護院（しょうごいん）さんと、真言密教の醍醐寺三宝院（さんぼういん）さんの両方が、大峯修験の重要な拠点・大切なポジションとして位置づけてきたことは間違いない。修験の修行の過程としてどちらも大切に使われてきた。
+        </p>
+        <p style="margin:0 0 14px; font-size:0.95rem; line-height:1.85;">
+          <strong>薫ちゃん（問い）：</strong><br>
+          『洞川の人って、天川弁財天にはあんまりお参りされないですよね？』
+        </p>
+        <p style="margin:0; font-size:0.95rem; line-height:1.85;">
+          <strong>京谷友明さん（語り）：</strong><br>
+          そうやね。天川村の中で真言宗なのは、弁天さんのお膝元である坪内と、その手前の平浦という地区だけ。<br>
+          洞川をはじめ、村の他の多くの地域は『浄土真宗』なんよ。<br>
+          浄土真宗と密教の世界というのは、阿弥陀仏一筋の一神教的な世界と、八百万の神仏を敬う多神教的な世界で、信仰のあり方が真逆。<br>
+          浄土真宗の教えでは『何でも阿弥陀様にすがりなさい』やから、洞川の人たちが弁天さんに手を合わせて帰依するというのは、宗派の歴史としてあり得ないことなんよ。
+        </p>
+      </div>
+
+      <details style="background:#fcfaf5; border:1px solid var(--border-soft); border-radius:8px; padding:14px 18px; margin-bottom:24px;">
+        <summary style="font-size:0.85rem; font-weight:600; color:var(--accent-gold); cursor:pointer;">
+          ▶ 音声認識（ASR）原文との対照・復元根拠（クリックで展開）
+        </summary>
+        <div style="margin-top:12px; font-size:0.88rem; line-height:1.75;">
+          <table class="archive-table" style="font-size:0.82rem; margin:8px 0 14px;">
+            <tr><th>音声認識の誤字脱字（録音原文）</th><th>復元された正確な言葉</th><th>復元根拠（現地地理・寺院構成）</th></tr>
+            <tr><td>監督</td><td>勧請（かんじょう）</td><td>神仏の分霊を迎える儀礼</td></tr>
+            <tr><td>泥棒の人</td><td>洞川（どろかわ）の人</td><td>天川村洞川地区の住民</td></tr>
+            <tr><td>天下は弁財点と竜泉寺</td><td>天川（天河）弁財天と龍泉寺</td><td>天川村の代表的二大寺社</td></tr>
+            <tr><td>天下は信言集</td><td>天川は真言宗</td><td>坪内・平浦地区の宗派（天河社は真言密教と神仏習合）</td></tr>
+            <tr><td>天代密教の小護員さん</td><td>天台密教の聖護院（しょうごいん）さん</td><td>本山修験宗本山。洞川龍泉寺と奥駈け本山</td></tr>
+            <tr><td>信号密教の大護士参謀員さん</td><td>真言密教の醍醐寺三宝院（さんぼういん）さん</td><td>当山派修験道本山</td></tr>
+            <tr><td>天下の人たちが弁天さんに敬しとる</td><td>洞川の人たちが弁天さんに帰依している</td><td>阿弥陀一筋の真宗と多神密教の差異</td></tr>
+          </table>
+          <blockquote class="verbatim kaoru-voice">
+            <span class="badge b-kaoru">聞き手の質問（薫ちゃんと推定・確度中・L21, L23, L25）</span><br>
+            「監督っていうのは何なんですか」（L21）<br>
+            「天下は弁財点と竜泉寺の関係ってどういう関係があるんですか ？」（L23）<br>
+            「なんか泥棒の人って弁天さんまりお参りされないですよね」（L25）
+          </blockquote>
+          <blockquote class="verbatim">
+            <span class="badge b-tomony">トモニーさんの言葉（L21, L22, L23, L24, L25, L26）</span><br>
+            「魂を譲る受けるってこと魂を譲り受ける。」（L21）<br>
+            「八幡の力を借りて完成して魂をいただく」（L22）<br>
+            「竜泉寺と直接の関係はないないどちらもけど縁の業者さんがい」（L23）<br>
+            「天代密教の小護員さんと信号密教の大護士参謀員さんの両番があの両方ともあれ基地基地っていうか大切なポジションとしてしたっていうことは間違いない。」（L24）<br>
+            「修行の過程として使われてる」（L24）<br>
+            「天下は信言集はあの坪内とその橋の手前の平浦っていう地区だけやね。」（L25）<br>
+            「浄土なら浄土真宗と密教の世界っていうのは」「一神教と多神教の真逆のポジションでしょ」「天下の人たちが弁天さんに敬しとるっていうのはあり得ない」（L26）
+          </blockquote>
+        </div>
+      </details>
+
+      <h3>主題⑥ 『前鬼の里・後鬼の里』と、次回インタビューへ繋ぐ問い</h3>
+
+      <div class="restored-dialogue" style="background:#ffffff; border:1px solid #dcd3c1; border-radius:10px; padding:22px 24px; margin-bottom:14px; box-shadow:0 2px 8px rgba(0,0,0,0.03);">
+        <div style="font-size:0.8rem; font-weight:700; color:var(--accent-indigo); letter-spacing:0.08em; margin-bottom:12px; border-bottom:1px solid #eee; padding-bottom:6px; font-family:'Hiragino Kaku Gothic ProN', sans-serif;">
+          【清書復元版（Facebook一次情報・歴史背景との照合決定版）】
+        </div>
+        <p style="margin:0 0 14px; font-size:0.95rem; line-height:1.85;">
+          <strong>薫ちゃん（問い・記憶補足）：</strong><br>
+          『前鬼の里（下北山村）と、後鬼の里（天川・洞川）と分かれていますよね。でも前鬼と後鬼って夫婦ですよね。じゃあ、前鬼の末裔も後鬼の末裔も同じはずなのに、なぜ前鬼の里と後鬼の里で分かれているんですか？』
+        </p>
+        <p style="margin:0; font-size:0.95rem; line-height:1.85;">
+          <strong>京谷友明さん（語り・次回への課題）：</strong><br>
+          前鬼の里（下北山村前鬼）が実際にあり、天川・洞川は『後鬼の里』と言われている。しかし、夫婦である前鬼と後鬼の末裔がなぜ地域として分かれているのかという明確な理由は、歴史の深い謎。<br>
+          本や伝承をさらに調べ直し、次回の対話でともにぃならではの知見をじっくり語り明かしたい。
+        </p>
+      </div>
+
+      <details style="background:#fcfaf5; border:1px solid var(--border-soft); border-radius:8px; padding:14px 18px; margin-bottom:24px;">
+        <summary style="font-size:0.85rem; font-weight:600; color:var(--accent-gold); cursor:pointer;">
+          ▶ 音声認識（ASR）原文との対照・復元根拠（クリックで展開）
+        </summary>
+        <div style="margin-top:12px; font-size:0.88rem; line-height:1.75;">
+          <table class="archive-table" style="font-size:0.82rem; margin:8px 0 14px;">
+            <tr><th>音声認識の誤字脱字（録音原文）</th><th>復元された正確な言葉</th><th>復元根拠（薫ちゃん記憶補足03・地域伝承）</th></tr>
+            <tr><td>前期の差（03）</td><td>前鬼の里</td><td>下北山村前鬼（前鬼集落・小仲坊）</td></tr>
+            <tr><td>天下ド側（03）</td><td>天川・洞川</td><td>天川村洞川地区（後鬼の里）</td></tr>
+            <tr><td>5期の里（03）</td><td>後鬼の里</td><td>役行者に従った後鬼（妙童鬼）の伝承地</td></tr>
+          </table>
+          <blockquote class="verbatim kaoru-voice">
+            <span class="badge b-kaoru">聞き手の質問（薫ちゃんと推定・確度中・L28）</span><br>
+            「前期の末裔 5期の末裔って分けてるじゃないですかけど、前期 5期って夫婦でしょ。」（L28）<br>
+            「じゃあ前期の末裔も 5期の末裔も一緒なんじゃないですか」（L28）
+          </blockquote>
+          <blockquote class="verbatim kaoru-voice">
+            <span class="badge b-kaoru">薫ちゃんの記憶補足（2026-10-18 一次情報 03）</span><br>
+            「前期の差っていうのも、実際にあって、5期はこの天下ド側が5期の里と言われてるんよね。で、その明確な前期後期は夫婦なのに、前期の末5期の末裔って別れてるのはなんでだって言う所の回答は特になかったですけれども」（03）<br>
+            「次回インタビューはまだ未定だけれども、また知ににインタビューさしてもらって知にのね。この事件歴史ともにしか語れないことを僕は残していきたいと思っている。」（03）
+          </blockquote>
+          <div style="font-size:0.82rem; color:var(--ink-sub); margin-top:8px;">
+            ※ 「前鬼の里」が実際にあり、天川村・洞川は「後鬼の里」と言われていること、そして「前鬼と後鬼は夫婦なのに、なぜ前鬼の末裔・後鬼の末裔と分かれているのか」への明確な回答は今回は特になかったことが薫ちゃんの記憶補足（03）で確認されました。次回インタビュー（日程未定）にて、とも兄にしか語れない知見・歴史を引き続き収録していきます。
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2>第三章｜語り部の知の構造マップ（W1 3者円卓で合意した6候補と反証条件）</h2>
+      <p>
+        ※ 個人の悩み・認知の偏りについては、W1正本（<code>W1_final_claude-code.md</code> §3）にてトモニーさん・薫ちゃんともに<strong>『候補なし／今回未観察』</strong>と判定されたため、受講生向け6章ワークも今回は対象外と記録しています。以下は天川寺子屋で引き継ぐべき『語り部の知の構造』の仮説（K1〜K6）です。
+      </p>
+      <table class="archive-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>語り部の知の構造（AI仮説）</th>
+            <th>根拠（原文逐語）</th>
+            <th>反証条件</th>
+            <th>別の説明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>K1</strong></td>
+            <td>話を『自分の解釈／自分の創作』の二層に分けて語っている可能性（※『本の裏付け』層はL18-19の話者確定後に検討）</td>
+            <td>「そういう風に私は捉えている」（L2）<br>「それは私の作り話。」（L20）</td>
+            <td>再聞き取りで創作と伝承を区別しない語りが多数ある／L20の「作り話」が別人の発言だった</td>
+            <td>たまたま一話だけ冗談で明かしただけで、普段は層を意識していない（「これは嘘じゃないよ」（L21）も強調表現にすぎない）</td>
+          </tr>
+          <tr>
+            <td><strong>K2</strong></td>
+            <td>「鬼」を超常の存在でなく『人間離れした力を持つ山の人（山伏）』として読む＝神話を人の営みへ翻訳する語り方</td>
+            <td>「人間離れしたっていうことは、山節やね。」（L1）<br>「山虫もやっぱり超能力者やったし」（L3）</td>
+            <td>本人が前鬼後鬼を実在の鬼・霊的存在として語る箇所が見つかる</td>
+            <td>地元で一般に流通している解釈を紹介しただけで、本人固有の読みではない</td>
+          </tr>
+          <tr>
+            <td><strong>K3</strong></td>
+            <td>信仰と地理を『情報と権力のネットワーク』の視点で語る</td>
+            <td>「情報を遮断するために」（L6）<br>「情報山伏を抑え込んだり」（L5）</td>
+            <td>この視点が本や他者の説の紹介にすぎないと本人が言う</td>
+            <td>時代劇・歴史番組等で得た一般的な物語の再話</td>
+          </tr>
+          <tr>
+            <td><strong>K4</strong></td>
+            <td>語り部の役割を『正誤の判定者』でなく『関心をつなぐ人』と位置づけている（※根拠行が話者未確定のため最も弱い候補）</td>
+            <td>「だから語り手で終わった」（L19・話者未確定）<br>「その楽しませるのが大事。」（L27・混在）</td>
+            <td>L19・L27が第三者の発言だった／本人が自分を研究者として扱ってほしいと言う</td>
+            <td>謙遜として言っただけで、本人は正確さを重く見ている</td>
+          </tr>
+          <tr>
+            <td><strong>K5</strong></td>
+            <td>知の継承は『名のある人が書いて残す』ことに頼ってきた（自分は資料を提供する側）</td>
+            <td>「資料を結構提供してた」（L9）<br>「名前のある人がやっぱりこうそうそう残してくれるっていうのはね」（L10）<br>「文で書き起こそうとほんま暇ないわ」（L17）</td>
+            <td>本人自身が書いた記録・資料が存在する</td>
+            <td>一人の先生との思い出話で、継承観一般ではない</td>
+          </tr>
+          <tr>
+            <td><strong>K6</strong></td>
+            <td>天川（または洞川）の宗派構成と弁財天の距離に関する地域の見立て（※地域名は誤変換の読みを含むため要確認）</td>
+            <td>「坪内とその橋の手前の平浦っていう地区だけやね。」（L25）<br>「天下の人たちが弁天さんに敬しとるっていうのはあり得ない」（L26）<br>「大切なポジションとしてしたっていうことは間違いない。」（L24）</td>
+            <td>対象地域の寺院・檀家構成の確定情報が本人の話と食い違う</td>
+            <td>本人の個人的な見立て、または誤変換で地区名・宗派がずれている</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="chapter" id="ch-oral-gallery">
+      <h2>第四章｜京谷友明の洞川口伝回廊 — Facebook連載『洞川のあれこれを地元のともにぃがご案内』より</h2>
+      <p style="font-family:'Hiragino Kaku Gothic ProN', sans-serif; font-size:0.92rem; color:var(--ink-sub); line-height:1.75;">
+        ※ 本章は、京谷友明さん（ともにぃ）が長年にわたりFacebook上で綴ってきた連載『洞川のあれこれを地元のともにぃがご案内』（全80回超）および関連記事から、薫ちゃんとの対話の背景にある【鬼・修験・行場・村の暮らし】の一次証言を抽出・体系化した回廊です。本人が本や古文書（『吉野郡群山記』『宇下の洞話』等）を調べ抜き、自らの身体感覚とともに語った貴重な記録です。
+      </p>
+
+      <h3>一、鬼・前鬼・後鬼・五鬼の系譜と『笈（おい）』に宿る祈り</h3>
+      <div style="background:#fcfaf5; border:1px solid var(--border-soft); border-radius:10px; padding:20px; margin-bottom:18px;">
+        <h4 style="margin:0 0 10px; font-size:1.05rem; color:var(--accent-indigo); font-family:'Hiragino Mincho ProN', serif;">【龍泉寺の前鬼・後鬼立像】（連載第18回・第19回より）</h4>
+        <p style="margin:0 0 10px; font-size:0.9rem; line-height:1.8; font-family:'Hiragino Kaku Gothic ProN', sans-serif;">
+          龍泉寺本堂の手前、向かって右側に斧を持って立つのが『前鬼立像』、左側に水瓶を持って立つのが『後鬼立像』。前鬼は善童鬼・義覚とも呼ばれ、下北山村前鬼に住して吉野〜熊野の奥駈け修行をする山伏のサポート（山先達）を担った。
+        </p>
+        <h4 style="margin:14px 0 10px; font-size:1.05rem; color:var(--accent-indigo); font-family:'Hiragino Mincho ProN', serif;">【後鬼が背負う『笈（おい）』と『鬼滅の刃』】（2022年12月2日 ひとりごと より）</h4>
+        <p style="margin:0 0 10px; font-size:0.9rem; line-height:1.8; font-family:'Hiragino Kaku Gothic ProN', sans-serif;">
+          後鬼が背中に背負っている箱は『笈（おい）』という山伏の修行道具。各地を行脚する山伏が背負うもので、笈の中には護摩供養や祈祷に使われる不動明王様や祈祷法具が納められている。<br>
+          京谷さんは、『鬼滅の刃』の主人公が愛する妹を背中の木箱に入れて背負い、助け合いながら戦う姿について、作者は『笈』を背負った後鬼をモチーフにしたのではないかと勝手に思って眺めている、と独自の深い視点を記している。
+        </p>
+        <h4 style="margin:14px 0 10px; font-size:1.05rem; color:var(--accent-indigo); font-family:'Hiragino Mincho ProN', serif;">【五鬼の宿坊守護と洞川『九鬼祭』】</h4>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; font-family:'Hiragino Kaku Gothic ProN', sans-serif;">
+          前鬼と後鬼の夫婦から生まれた5人の子どもたち（五鬼助・五鬼継・五鬼上・五鬼童・五鬼肉）は、大峯修験の宿坊を守護し続けた。洞川では2023年秋、詩人・谷川俊太郎とアーティスト9名により、役行者と後鬼の伝承からインスパイアされた地域協創型芸術祭『九鬼祭（くかみまつり）』が開催され、京谷さんも地域の大切な語り手として深く関わっている。
+        </p>
+      </div>
+
+      <h3>二、行場と『擬死再生』— 母胎の闇に入り、死んで無垢に生まれ直す</h3>
+      <div style="background:#fcfaf5; border:1px solid var(--border-soft); border-radius:10px; padding:20px; margin-bottom:18px;">
+        <h4 style="margin:0 0 10px; font-size:1.05rem; color:var(--accent-indigo); font-family:'Hiragino Mincho ProN', serif;">【蟷螂の窟（とうろうのいわや）と擬死再生】（連載第76回より）</h4>
+        <p style="margin:0 0 10px; font-size:0.9rem; line-height:1.8; font-family:'Hiragino Kaku Gothic ProN', sans-serif;">
+          蟷螂の窟は修験の『一の行場』。カマキリのように頭を低く屈めて進むことからその名がある。古くは大峯修行に入る新客が必ず受ける『擬死再生』の場であった。母胎に見立てた漆黒の洞窟に籠もることで一度死を疑似体験し、無垢の身体で生まれ直して（再生）大峯山へと挑む。京谷さん自身、少年の頃に蟷螂の窟への案内をしてお小遣いをもらった身体的記憶を語っている。<br>
+          ※ これは薫ちゃんが展開するコーチング（かおる塾・天中道）の『自己否定や囚われを一度手放し、本当の自分として生まれ直す』精神的プロセスとも深く共鳴している。
+        </p>
+        <h4 style="margin:14px 0 10px; font-size:1.05rem; color:var(--accent-indigo); font-family:'Hiragino Mincho ProN', serif;">【地名『洞川（どろかわ）』の起源】（連載第75回より）</h4>
+        <p style="margin:0 0 10px; font-size:0.9rem; line-height:1.8; font-family:'Hiragino Kaku Gothic ProN', sans-serif;">
+          蟷螂の窟は古くは『洞籠（ほらごもり）の窟』と呼ばれ、行者たちが窟に籠もって修行した場所であった。その窟の前を流れる川が『洞籠川（ほらごもりかわ）』と呼ばれ、これが現在の地名『洞川（どろかわ）』の語源となった（江戸末期の畔田翠山著『吉野郡群山記』や古文書『宇下の洞話』にも記録）。
+        </p>
+        <h4 style="margin:14px 0 10px; font-size:1.05rem; color:var(--accent-indigo); font-family:'Hiragino Mincho ProN', serif;">【笙の窟（しょうのいわや）の越冬行と修験の目的】（連載第77回より）</h4>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; font-family:'Hiragino Kaku Gothic ProN', sans-serif;">
+          平安期、9月9日から翌年3月3日までの厳冬期に行われた笙の窟での籠山行。命がけの厳しい修行の究極の目的は、自らの力を誇示することではなく『験（げん）を修めて民衆救済にあたる』ことにあった。
+        </p>
+      </div>
+
+      <h3>三、村と暮らし・記憶の証</h3>
+      <div style="background:#fcfaf5; border:1px solid var(--border-soft); border-radius:10px; padding:20px; margin-bottom:18px;">
+        <h4 style="margin:0 0 10px; font-size:1.05rem; color:var(--accent-indigo); font-family:'Hiragino Mincho ProN', serif;">【終戦直後の大火と『生き続ける三本杉』】（生き続ける杉 第1回より）</h4>
+        <p style="margin:0 0 10px; font-size:0.9rem; line-height:1.8; font-family:'Hiragino Kaku Gothic ProN', sans-serif;">
+          龍泉寺山門を入って右、水の行場の行者尊の後ろに立つ杉。1946年（昭和21年）3月31日、洞川と龍泉寺を焼き尽くした終戦直後の大火災で上部を焼失した。しかし杉は堂々と天を貫き、不動明王の剣のように立ち続けている。京谷さんは『多くの先人達の努力に敬意をもって、半枯半生のこの大木にありがとうと合掌』と綴る。
+        </p>
+        <h4 style="margin:14px 0 10px; font-size:1.05rem; color:var(--accent-indigo); font-family:'Hiragino Mincho ProN', serif;">【貝初地蔵と黒門・嫁が茶屋】（連載第79回・第80回より）</h4>
+        <p style="margin:0 0 10px; font-size:0.9rem; line-height:1.8; font-family:'Hiragino Kaku Gothic ProN', sans-serif;">
+          大峯修行の入峯始めに山伏が安全を祈願し法螺貝を吹いて通った『黒門』と『貝初地蔵』。そして結婚後3年間は山伏へのおもてなしと行儀見習いとして新婚女性が茶屋で接待を務めた『嫁が茶屋』。古くから洞川の人々が山伏を敬い、共に生きてきた祈りと生活の証である。
+        </p>
+        <h4 style="margin:14px 0 10px; font-size:1.05rem; color:var(--accent-indigo); font-family:'Hiragino Mincho ProN', serif;">【ホタル池を守り続ける心】</h4>
+        <p style="margin:0; font-size:0.9rem; line-height:1.8; font-family:'Hiragino Kaku Gothic ProN', sans-serif;">
+          今は亡き洞川のホタルおじさん・久保彰守さんの志を継ぎ、毎年ホタルの幼虫やカワニナの住み処となる落ち葉を池に入れ続けている京谷さん。『来年も再来年もたくさんのホタルが飛んでほしいと願いながら、自分の出来る事を今年もした』という、静かで温かい生命への眼差しがある。
+        </p>
+      </div>
+
+      <div style="background:linear-gradient(135deg, #f7f3ea 0%, #efe7d5 100%); border-left:4px solid var(--accent-gold); padding:16px 20px; border-radius:0 8px 8px 0; margin-top:20px;">
+        <div style="font-size:0.92rem; font-weight:700; color:var(--accent-indigo); margin-bottom:6px; font-family:'Hiragino Kaku Gothic ProN', sans-serif;">語り部・京谷友明さんの結びの言葉（身体に刻まれた二つの定型句）</div>
+        <div style="font-size:1.05rem; color:var(--accent-vermilion); font-family:'Hiragino Mincho ProN', serif; font-weight:600; line-height:1.8;">
+          『ここは、いにしえの行者様の、修行の場所です。』<br>
+          『ここは、いにしえの洞川びとの、生きて来た証を示すところです。』
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2>第五章｜対話を動かした聞き手の4つの問いの分析と、次回への接続（A-02）</h2>
+      <div class="ai-reading">
+        <span class="badge b-ai">〔AIの読み・聞き手の問いの分析（問いの話者はASRからの推定・確度中）〕</span>
+        <p style="margin-top:8px;">
+          ASR上で聞き手（薫ちゃんと推定・確度中）から投げかけられた4つの質問（L21, L23, L25, L28）と、話者未確定の1問（L20：トモニーさんが例示した質問の可能性）を整理すると、以下の構造が見えます。
+        </p>
+        <ol>
+          <li><strong>言葉の定義への問い（L21・薫ちゃんと推定）</strong>：「監督っていうのは何なんですか」（L21）→ 〔勧請〕の意味を尋ねたことで、「魂を譲り受ける。」（L21）という定義が語られた。</li>
+          <li><strong>二寺社間の関係への問い（L23・薫ちゃんと推定）</strong>：「弁財点と竜泉寺の関係ってどういう関係があるんですか ？」（L23）→ 「直接の関係はないない」（L23）としつつ、聖護院・醍醐寺三宝院の両方が「大切なポジション」（L24）としてきたという見立てが語られた。</li>
+          <li><strong>地域住民の参拝習慣への問い（L25・薫ちゃんと推定）</strong>：「なんか泥棒の人って弁天さんまりお参りされないですよね」（L25）→ 坪内・平浦の真言宗と他地区の浄土真宗という宗派構成の見立て（L25〜L26）が語られた。</li>
+          <li><strong>夫婦と末裔の区分への問い（L28・薫ちゃんと推定）</strong>：「前期 5期って夫婦でしょ。」「じゃあ前期の末裔も 5期の末裔も一緒なんじゃないですか」（L28）→ 前鬼と後鬼が夫婦であることから末裔の区分を問うた質問（回答は雑音で欠落したため次回最優先回収）。</li>
+        </ol>
+        <p style="margin-bottom:0;">
+          ※ なお、L20の「片足上がってるでしょはいはいはいなぜなぜなんですか」は、直後に「っていう質問があるわけで、どうやって答えるかっていうで」と続くため、トモニーさんが来訪者からよく受ける質問を例示した可能性が高く、薫ちゃんの質問数からは除外して要確認としています。
+        </p>
+      </div>
+
+      <div class="question-card">
+        <h3>【次の一手・一次情報への還流ポート】次回対面インタビュー取材質問設計</h3>
+        <p style="margin-bottom:12px;">
+          受け口ファイル：<a href="../../../knowledge/primary-sources/2026-10-16_dorogawa_tomony/02_followup_intake_template.md"><code>knowledge/primary-sources/2026-10-16_dorogawa_tomony/02_followup_intake_template.md</code></a><br>
+          詳細取材カード：<a href="tomony_interview_question_card.md"><code>tomony_interview_question_card.md</code></a>
+        </p>
+        <div style="font-size:0.9rem; line-height:1.8; color:var(--ink-main);">
+          <strong>薫ちゃんが現場で京谷友明さんとお茶を飲みながら自然に聞く5つの質問設計：</strong><br>
+          ① <strong>前鬼と後鬼の末裔</strong>：前鬼と後鬼は夫婦なのに、なぜ下北山村が『前鬼の里』、天川村洞川が『後鬼の里』と分かれて伝承されているのか？<br>
+          ② <strong>後鬼の背負う笈（おい）</strong>：後鬼が背負う笈の中には不動明王や祈祷道具が入っていると書かれていたが、昔の洞川の山伏たちも実際に笈を背負って歩いていたのか？<br>
+          ③ <strong>蟷螂の窟と擬死再生</strong>：新客が洞窟（母胎）に籠もって一度死に、生まれ直す『擬死再生』について、少年時代に窟を案内されていた頃の洞川の空気はどうだったか？<br>
+          ④ <strong>龍泉寺の大火と生き続ける杉</strong>：昭和21年の大火災から洞川の人々が立ち上がった時のこと、そして今も天を突く三本杉への思いについて。<br>
+          ⑤ <strong>京谷家の歴史と洞川の心</strong>：貞享2年（1685年）から続く宮司の系譜や、新婚女性が山伏をもてなした『嫁が茶屋』のように、洞川の人が山伏を迎えてきた根底の心について。
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2>第六章｜note・SNSへ育てる発信の種（W3への引き継ぎ）と証拠リンク一覧</h2>
+      <div class="ai-reading">
+        <span class="badge b-ai">〔AIの提案・W3（4媒体発信）へ渡す3つの種と純度制約〕</span>
+        <ul>
+          <li><strong>発信の種①（鬼の再定義）</strong>：「人間離れしたっていうことは、山節やね。」（L1）「それを耐えるすごいエネルギー」（L2）— トモニーさんは「鬼」を、人間離れした力を持つ〔山伏〕の側から読む見方を「そういう風に私は捉えている」（L2）と自分の解釈として示した。発信では史実の断定にせず、トモニーさんの見方として紹介する。</li>
+          <li><strong>発信の種②（語り部の知の層）</strong>：「それは私の作り話。」（L20）と「桜の木がこれは嘘じゃないよ」（L21）— 同じ流れの中で、トモニーさんは片足の話を自分の創作だと明かし、桜の話は「嘘じゃない」と区別した。創作の意図や動機は語られていないので、発信では推測で補わない。</li>
+          <li><strong>発信の種③（AIと生身の体による継承）</strong>：「その人が亡くなっても永遠に引き継げるように、この天川村洞川のこの文脈資産を今後天川テラコヤに反映できるように、このAIと僕自身の体を使って担っていきたいな」（00）— 薫ちゃん本人が00で語った動機。発信で使う場合はこの逐語の範囲で引き、言い換えた決意文を本人の言葉として書かない。</li>
+          <li><strong>薫ちゃんが次に喋る最初の問い（AI提案・話すかどうかは薫ちゃんが決める）</strong>：『前鬼と後鬼が夫婦なら末裔はなぜ分かれているのか、とトモニーさんに聞いた時、何て答えてくれていた？』（L28の答えは録音から欠落。受け口テンプレート問1と同じ問い）</li>
+        </ul>
+      </div>
+      <h3>証拠ファイル・台帳リンク一覧（コックピット接続）</h3>
+      <ul>
+        <li>一次情報（薫ちゃん背景説明）：<a href="../../../knowledge/primary-sources/2026-10-16_dorogawa_tomony/00_kaoru_context.md">00_kaoru_context.md</a></li>
+        <li>一次情報（ASR原文29行）：<a href="../../../knowledge/primary-sources/2026-10-16_dorogawa_tomony/01_raw_asr.txt">01_raw_asr.txt</a></li>
+        <li>次回一次情報 受け口テンプレート：<a href="../../../knowledge/primary-sources/2026-10-16_dorogawa_tomony/02_followup_intake_template.md">02_followup_intake_template.md</a></li>
+        <li>W1 統合正本台帳：<a href="W1_final_claude-code.md">W1_final_claude-code.md</a>（機械照合ログ：<a href="W1_quote_check_log.txt">W1_quote_check_log.txt</a>）</li>
+        <li>W2 SOP 18項目記録：<a href="session-record.json">session-record.json</a></li>
+        <li>チーム全体コックピット：<a href="../../../AIチームの今.html">AIチームの今.html</a>（※2026-10-16 18:3x時点で本ミッションの行は未掲載。資産化確認センターも未生成＝session-record 16は未了）</li>
+      </ul>
+    </section>
+
+    <footer class="book-footer">
+      天川寺子屋 語り部アーカイブプロジェクト｜CC Booster 3-AI Roundtable (W1: Claude Code / Codex / Antigravity → W2: Antigravity 初稿 → Claude Code 引継ぎ修正 / 確認役 Codex)
+    </footer>
+  </div>
+</body>
+</html>
