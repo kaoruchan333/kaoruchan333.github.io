@@ -384,7 +384,7 @@
         <li class="check-item">□ <strong>チェック5</strong>：手に入れたいのは「効率」か、それとも「命の自由」か？</li>
       </ul>
       <p style="font-size: 13px; color: var(--text-sub); text-align: center;">
-        ※ダウンロード後、すぐにスマホやPCでPDFとしてご覧いただけます。
+        ※スマホやPCでそのままご覧いただけます。PDF版も保存できます。
       </p>
     </div>
 
@@ -426,17 +426,45 @@
     <!-- Opt-in Form -->
     <div class="form-box">
       <h2>今すぐ無料チェックリストを受け取る</h2>
-      <p>ご登録いただいたメールアドレスへ、PDFのダウンロードリンクと、<br>相棒AIと生きるための限定メール講座（全14回）をお届けします。</p>
+      <p>ご登録のメールアドレスへ確認メールをお送りします。<br>確認ボタンを押すと、チェックリスト（PDF）のご案内メールが届きます。</p>
 
-      <form action="checklist.html" method="GET" onsubmit="return true;">
-        <input type="text" name="name" class="input-field" placeholder="お名前（名字のみでも可）" required>
+      <form id="optin" novalidate>
+        <input type="text" name="name" class="input-field" placeholder="お名前（名字のみでも可）" maxlength="80">
         <input type="email" name="email" class="input-field" placeholder="メールアドレス（PC・スマホ対応）" required>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+        <label style="display:block;font-size:13px;margin:4px 0 12px;text-align:left;">
+          <input type="checkbox" name="consent" required> <a href="privacy.html" target="_blank" rel="noopener" style="color:#e6af2e;">プライバシーポリシー</a>に同意して受け取る
+        </label>
         <button type="submit" class="submit-btn">無料でチェックリストを受け取る 👉</button>
       </form>
+      <p id="optin-msg" style="font-size:14px;margin-top:12px;"></p>
 
       <div class="privacy-note">
-        ※ご入力いただいた個人情報は厳重に管理し、迷惑メール等は一切送信いたしません。<br>いつでも配信解除いただけます。
+        ※お届けするのは確認メールとご案内メールの2通です。案内メールの中から、いつでも配信を止めて記録を削除できます。
       </div>
+      <script>
+        (function () {
+          var GAS_URL = 'https://script.google.com/macros/s/AKfycbyLxynNEBS8-EljFwn4_PzMlm7EkEeC8CEn_CJppkpckPZusCh-d-NMJXHzL5GzH1si/exec';
+          var f = document.getElementById('optin'), m = document.getElementById('optin-msg');
+          f.addEventListener('submit', function (ev) {
+            ev.preventDefault();
+            var email = f.email.value.trim();
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { m.textContent = 'メールアドレスをご確認ください。'; return; }
+            if (!f.consent.checked) { m.textContent = 'プライバシーポリシーへの同意をお願いします。'; return; }
+            var b = f.querySelector('button'); b.disabled = true; m.textContent = '送信しています…';
+            // text/plain で送り、CORSの事前確認を発生させない（Apps Scriptは事前確認に応答しない）。
+            fetch(GAS_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+              body: JSON.stringify({ name: f.name.value.trim(), email: email, consent: true, website: f.website.value }) })
+              .then(function (r) { return r.json(); })
+              .then(function (r) {
+                if (r.ok) { m.textContent = '確認メールをお送りしました。メール内のボタンを押すと、チェックリストのご案内が届きます（届かない時は迷惑メールフォルダもご確認ください）。'; f.style.display = 'none'; }
+                else if (r.error === 'busy') { m.textContent = 'ただいま混み合っています。少し時間をおいてお試しください。'; b.disabled = false; }
+                else { m.textContent = '受け付けられませんでした。入力内容をご確認のうえ、もう一度お試しください。'; b.disabled = false; }
+              })
+              .catch(function () { m.textContent = '通信がうまくいきませんでした。時間をおいてもう一度お試しください。'; b.disabled = false; });
+          });
+        })();
+      </script>
     </div>
 
     <!-- Profile -->
@@ -464,7 +492,6 @@
     <footer>
       <div style="display: flex; justify-content: center; gap: 16px; margin-bottom: 12px; flex-wrap: wrap;">
         <a href="tokushoho.html" style="color: var(--text-sub); text-decoration: underline; font-size: 11px;">特定商取引法に基づく表記</a>
-        <a href="terms.html" style="color: var(--text-sub); text-decoration: underline; font-size: 11px;">利用規約・受講契約</a>
         <a href="privacy.html" style="color: var(--text-sub); text-decoration: underline; font-size: 11px;">プライバシーポリシー</a>
       </div>
       <p>© 2026 株式会社なんぼでも / 天川寺子屋プロジェクト All Rights Reserved.</p>
