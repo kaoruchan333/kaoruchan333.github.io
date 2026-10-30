@@ -423,48 +423,13 @@
       </div>
     </div>
 
-    <!-- Opt-in Form -->
+    <!-- Opt-in Form (一時停止中) -->
     <div class="form-box">
-      <h2>今すぐ無料チェックリストを受け取る</h2>
-      <p>ご登録のメールアドレスへ確認メールをお送りします。<br>確認ボタンを押すと、チェックリスト（PDF）のご案内メールが届きます。</p>
-
-      <form id="optin" novalidate>
-        <input type="text" name="name" class="input-field" placeholder="お名前（名字のみでも可）" maxlength="80">
-        <input type="email" name="email" class="input-field" placeholder="メールアドレス（PC・スマホ対応）" required>
-        <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
-        <label style="display:block;font-size:13px;margin:4px 0 12px;text-align:left;">
-          <input type="checkbox" name="consent" required> <a href="privacy.html" target="_blank" rel="noopener" style="color:#e6af2e;">プライバシーポリシー</a>に同意して受け取る
-        </label>
-        <button type="submit" class="submit-btn">無料でチェックリストを受け取る 👉</button>
-      </form>
-      <p id="optin-msg" style="font-size:14px;margin-top:12px;"></p>
-
-      <div class="privacy-note">
-        ※お届けするのは確認メールとご案内メールの2通です。案内メールの中から、いつでも配信を止めて記録を削除できます。
+      <h2>相棒AIチーム構築 5つのチェックリスト</h2>
+      <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(230, 175, 46, 0.4); border-radius: 12px; padding: 24px 20px; margin: 20px 0; text-align: left; line-height: 1.9; font-size: 15px; color: #f0f0f0;">
+        <p style="margin: 0 0 12px; font-weight: bold; color: #e6af2e; font-size: 16px;">【受け口の整え直しについて】</p>
+        <p style="margin: 0;">この受け口は、いま整え直しをしています。申込は一時止めています。中途半端なものを渡して、がっかりさせたくないからです。作り直して、最後までちゃんと届くのを確かめてから、また開きます。</p>
       </div>
-      <script>
-        (function () {
-          var GAS_URL = 'https://script.google.com/macros/s/AKfycbyLxynNEBS8-EljFwn4_PzMlm7EkEeC8CEn_CJppkpckPZusCh-d-NMJXHzL5GzH1si/exec';
-          var f = document.getElementById('optin'), m = document.getElementById('optin-msg');
-          f.addEventListener('submit', function (ev) {
-            ev.preventDefault();
-            var email = f.email.value.trim();
-            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { m.textContent = 'メールアドレスをご確認ください。'; return; }
-            if (!f.consent.checked) { m.textContent = 'プライバシーポリシーへの同意をお願いします。'; return; }
-            var b = f.querySelector('button'); b.disabled = true; m.textContent = '送信しています…';
-            // text/plain で送り、CORSの事前確認を発生させない（Apps Scriptは事前確認に応答しない）。
-            fetch(GAS_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-              body: JSON.stringify({ name: f.name.value.trim(), email: email, consent: true, website: f.website.value }) })
-              .then(function (r) { return r.json(); })
-              .then(function (r) {
-                if (r.ok) { m.textContent = '確認メールをお送りしました。メール内のボタンを押すと、チェックリストのご案内が届きます（届かない時は迷惑メールフォルダもご確認ください）。'; f.style.display = 'none'; }
-                else if (r.error === 'busy') { m.textContent = 'ただいま混み合っています。少し時間をおいてお試しください。'; b.disabled = false; }
-                else { m.textContent = '受け付けられませんでした。入力内容をご確認のうえ、もう一度お試しください。'; b.disabled = false; }
-              })
-              .catch(function () { m.textContent = '通信がうまくいきませんでした。時間をおいてもう一度お試しください。'; b.disabled = false; });
-          });
-        })();
-      </script>
     </div>
 
     <!-- Profile -->
