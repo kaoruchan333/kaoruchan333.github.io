@@ -10,15 +10,23 @@ async function unlock(pw){
  document.open();document.write(html);document.close();
  const pending=new Map();const urls=[];
  function media(name){if(!pending.has(name))pending.set(name,(async()=>{
-   const r=await fetch(new URL(name,location.href),{cache:'no-store'});if(!r.ok)throw Error('音声の取得に失敗しました');
+   const r=await fetch(new URL(name==='audio.m4a'?'audio.enc':name,location.href),{cache:'no-store'});if(!r.ok)throw Error('音声の取得に失敗しました');
    const all=new Uint8Array(await r.arrayBuffer());
    if(new TextDecoder().decode(all.slice(0,8))!=='KJAGCM1\n')throw Error('暗号化音声の形式を確認できません');
    const raw=await crypto.subtle.decrypt({name:'AES-GCM',iv:all.slice(8,20)},key,all.slice(20));
    const url=URL.createObjectURL(new Blob([raw],{type:'audio/mp4'}));urls.push(url);return url;
  })().catch(error=>{pending.delete(name);throw error;}));return pending.get(name);}
  document.querySelectorAll('audio[data-kj-audio]').forEach(audio=>{
+   audio.hidden=true;
+   const status=document.createElement('p');status.setAttribute('role','status');audio.before(status);
    const button=document.createElement('button');button.textContent='音声を読み込む';button.type='button';audio.before(button);
-   button.onclick=async()=>{button.disabled=true;button.textContent='音声を復号しています…';try{audio.src=await media(audio.dataset.kjAudio);audio.load();button.remove();}catch(e){button.disabled=false;button.textContent='再試行：音声を読み込む';}};
+   async function load(){button.disabled=true;button.hidden=true;status.textContent='音声を準備しています。そのままお待ちください…';try{
+     audio.src=await media(audio.dataset.kjAudio);audio.load();
+     await new Promise((resolve,reject)=>{if(audio.readyState>=1)return resolve();audio.addEventListener('loadedmetadata',resolve,{once:true});audio.addEventListener('error',()=>reject(Error('音声を読み込めませんでした')),{once:true});});
+     audio.hidden=false;status.textContent='準備できました。▶を押すと聴けます。';button.remove();
+   }catch(e){status.textContent='音声を読み込めませんでした。もう一度お試しください。';button.hidden=false;button.disabled=false;button.textContent='音声をもう一度読み込む';}}
+   button.onclick=load;load();
+   if(new URLSearchParams(location.search).has('listen'))status.scrollIntoView({block:'center'});
  });
  document.querySelectorAll('a[data-kj-audio-link]').forEach(link=>{link.onclick=async e=>{e.preventDefault();const old=link.textContent;link.textContent='復号しています…';try{const url=await media(link.dataset.kjAudioLink);const a=document.createElement('a');a.href=url;a.download=link.dataset.kjAudioLink;a.click();}catch(e){alert('音声を読み込めませんでした。ページを開き直してお試しください。');}finally{link.textContent=old;}};});
  window.addEventListener('pagehide',event=>{if(!event.persisted)urls.forEach(url=>URL.revokeObjectURL(url));});
