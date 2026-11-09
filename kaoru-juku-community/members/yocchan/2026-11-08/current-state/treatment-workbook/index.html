@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="kj-encrypted-v1" content="1"><title>11月8日 本人専用の振り返り</title>
+<style>body{margin:0;background:#173c31;font:16px/1.8 system-ui,-apple-system,sans-serif;color:#25312c;min-height:100vh;display:grid;place-items:center;padding:16px;box-sizing:border-box}
+.card{width:min(420px,100%);background:#fff;padding:28px;border-radius:12px;box-sizing:border-box}h1{font-size:20px;margin:0 0 8px}
+input,button{width:100%;padding:12px;margin-top:10px;font-size:16px;box-sizing:border-box;border-radius:8px}button{background:#16736b;color:#fff;border:0}
+label{display:flex;gap:8px;align-items:center;font-size:14px;margin-top:10px}label input{width:auto;margin:0}#err{color:#a33;min-height:1.5em}</style></head>
+<body><div class="card"><h1>11月8日 本人専用の振り返り</h1><p>本人専用のページです。パスワードを入力してください。</p>
+<input id="pw" type="password" autocomplete="current-password"><label><input id="keep" type="checkbox" checked>この端末で次から入力を省く</label>
+<button id="go">開く</button><p id="err"></p></div>
+<script>(function(){const P={"salt": "4skNCHedsI2qTFYfQF34wg==", "iv": "+6i3dlXEzzVUHlCw", "data": "rO5IhLxPm+EZxEe3/HttBuggVBD5GZgG43WX6EvqjbN9WIY0CuI6NuWsoXjs1GTbt+rAoenbGmiaqWVZKNl88nwLoh9vN6MAzoEiHuowV2EaOcXRATIe6M9ptAiSAqllfcYtfkk+ndWCcMlDYlcA72kzIScCoBrnp6S8l7Y4aounSue+JQL0TtKJ0NAMammq1TI0ZfT77trppiip6WeOwGlVEXAD29ct90KOz9Q/NYWzySGGUn6/DcdLSQw7ULVHQFgWHTloVlAmo1kyvTtIvKCh4MiCtesR1FzSc34SBaCchnIuukByPQMj61dztgigxqwGLlxJYXKUhAl3B6cCRiLHEaev3qmVH6zSNTk/1AXs/9BxjuAj1pYAnyz5fFb4U5+RHeCBPQrrm4eP62aPSecVUsJwQbvVuqzs/VeplDLP7mDLRkIthJ8rFjs/jOaR95mEFX7r/mv2F/X/NAh2/zi/z2fq1HnQi+/iGBEKfTy7tqTTPAT3JyxbHTRmIrD0eaN1ukprlIFSN9zpTZ7aZQfKFy0GkMnRyEHOtjMSeqpMlJLVIQvvqENEAoBFz3X5sqt0onA970QBs1zRs1Wo46ZWi9j8lezgNh8j5oSwt95Fvo/aOKcQUlN4301I+oYiLq1R0Xkge5/e4RUEyCpQ94alK9hDVqlQMKxYPRWbe04x/81zckhppdSFhpZtjKGx78Bd3Kvm3qIejb7Pke+Js9mRMqcWc4qG/GnisQPT8rSWuCL/Ywi8zNUWNaRK/UdM/GNPOk2DzncuSGm9AsiBkjWuFU2Ax31eFQrsCmWZKzQ07zbLlnWcivkJdWvJzQxcU+sEALKx/WqPcOa/9vvAETz7PuP8DSzvtUbDcmeozsTVtlH6WzjIG2cMQt9Nj989MDTLTJAmCuf9dtd8owmkAquUhq7DHPR/lQ03So1mVoPfz2E62/IFaCQqumCMlYHGnHmvC6hkM1QPyv76ALn5pda0X1ipmqm31lzA3A4suvbgBkyu5+BPPGOMg6Ar1jmm/yAmni5i+09v6fJUoLxObud0u5MNNZXXdWZZjmd7a9ZJhJH6YMIhP0MVo6cJeJjmw4n870uG9HOHhPiLqGJVsZkpBFnFlA1C4GxwE++XRSBr19AglGfvCyfbMsHMIlnOs08momsU7+e1CdWhGn916yt4L17AL2npzsyq17v89P0KwCuu8s4hKX0JKHFTMzh3zkry7arLzhDj/TGMIuj1wqdIfe1hRcYTidQ+w1QySzb5eqSbaCYgeJ7iRGHRsnAZE1R908NZW0O3lNaWtm2XdVUeS+IZsKqVaEVGqV/lOwjsJz5tKm778tyjxdOIK3HmbLTi", "iter": 250000},K='kj_member_yocchan_pw';
+const u=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+async function open_(pw){const base=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:u(P.salt),iterations:P.iter,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['decrypt']);
+const plain=await crypto.subtle.decrypt({name:'AES-GCM',iv:u(P.iv)},key,u(P.data));
+const html=new TextDecoder().decode(plain);document.open();document.write(html);document.close();}
+async function tryOpen(pw,keep){try{await open_(pw);if(keep){try{localStorage.setItem(K,pw)}catch(e){}}return true}catch(e){return false}}
+document.getElementById('go').onclick=async()=>{const ok=await tryOpen(document.getElementById('pw').value,document.getElementById('keep').checked);if(!ok)document.getElementById('err').textContent='パスワードが違います。'};
+document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('go').click()});
+let saved=null;try{saved=localStorage.getItem(K)}catch(e){}if(saved){tryOpen(saved,false).then(ok=>{if(!ok){try{localStorage.removeItem(K)}catch(e){}}})}
+})();</script></body></html>
