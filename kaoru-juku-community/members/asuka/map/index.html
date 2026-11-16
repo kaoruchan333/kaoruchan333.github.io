@@ -21,18 +21,21 @@
 *{box-sizing:border-box}
 body{margin:0;font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;color:var(--ink);background:var(--paper);line-height:1.95;font-size:16px;letter-spacing:0}
 body.kj-auth-locked > *:not(#kj-auth-overlay){display:none!important}
-a{color:inherit}.wrap{width:min(900px,calc(100% - 36px));margin:0 auto}.narrow{width:min(760px,calc(100% - 36px));margin:0 auto}
+a{color:inherit}.wrap{width:min(900px,calc(100% - 36px));margin:0 auto}.narrow{width:min(780px,calc(100% - 36px));margin:0 auto}
 .hero{background:linear-gradient(135deg,#26312b 0%,#3d4439 55%,#7f623f 100%);color:#fff8e8;padding:46px 0 44px;border-bottom:1px solid rgba(255,255,255,.18)}
 .back{display:inline-flex;gap:8px;align-items:center;color:rgba(255,248,232,.75);text-decoration:none;font-size:13px;margin-bottom:34px}
 .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#d7bd8e;margin:0 0 12px}.hero h1{font-size:clamp(32px,7vw,62px);line-height:1.28;margin:0;font-weight:750}.lead{font-size:17px;color:rgba(255,248,232,.86);max-width:760px;margin:22px 0 0}
 main{padding:20px 0 76px}section{padding:42px 0;border-bottom:1px solid var(--line)}section:last-child{border-bottom:0}h2{font-size:clamp(25px,4vw,36px);line-height:1.42;margin:0 0 20px;color:var(--deep)}h3{font-size:20px;line-height:1.55;margin:30px 0 12px;color:#3d382f}p{margin:0 0 18px}strong{color:#241f1a}
-ul,ol{padding-left:1.25em;margin:14px 0 22px}li{margin:7px 0}.note-box{background:var(--soft);border:1px solid #ded5c7;border-radius:8px;padding:22px 24px;margin:24px 0}
-.key-box{background:var(--deep);color:#fff8e8;border-radius:8px;padding:28px;margin:28px 0}.key-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#d7bd8e;margin-bottom:8px}.key-text{font-size:clamp(24px,5vw,42px);line-height:1.36;font-weight:750}
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0}.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px;text-decoration:none;display:block}.card:hover{border-color:#b9935a}.card-date{font-size:12px;color:var(--accent);letter-spacing:.08em;margin-bottom:6px}.card-title{font-size:18px;font-weight:750;margin-bottom:8px;line-height:1.5}.card-desc{font-size:14px;color:var(--muted);line-height:1.8}.latest{border-color:#b9935a;background:#fffdf8}
+ul,ol{padding-left:1.25em;margin:14px 0 22px}li{margin:7px 0}.note-box{background:var(--soft);border:1px solid #ded5c7;border-radius:8px;padding:22px 24px;margin:24px 0}.note-box.latest-box{background:#fffdf8;border:1px solid #b9935a;border-left:5px solid var(--accent)}
+.key-box{background:var(--deep);color:#fff8e8;border-radius:8px;padding:28px;margin:28px 0}.key-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#d7bd8e;margin-bottom:8px}.key-text{font-size:clamp(22px,4.5vw,36px);line-height:1.4;font-weight:750}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0}.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px;text-decoration:none;display:block}.card:hover{border-color:#b9935a}.card-date{font-size:12px;color:var(--accent);letter-spacing:.08em;margin-bottom:6px;font-weight:700}.card-title{font-size:18px;font-weight:750;margin-bottom:8px;line-height:1.5}.card-desc{font-size:14px;color:var(--muted);line-height:1.8}.latest{border-color:#b9935a;background:#fffdf8;grid-column:1 / -1}
+.sub-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sub-link{display:inline-flex;align-items:center;padding:6px 12px;border-radius:6px;background:var(--soft);border:1px solid #d8cec0;font-size:13px;font-weight:700;text-decoration:none;color:var(--deep)}
+.sub-link:hover{border-color:var(--accent);background:#f7f2e8}
 .timeline{display:grid;gap:16px;margin:24px 0}.timeline-item{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px}.tag{display:inline-block;font-size:12px;color:var(--accent);letter-spacing:.08em;margin-bottom:8px}
 .map-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0}.map-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px}.map-card h3{margin-top:0}
 #kj-auth-overlay{position:fixed;inset:0;background:linear-gradient(135deg,#26312b,#5b513f);display:grid;place-items:center;padding:22px;z-index:9999}.kj-auth-card{width:min(420px,100%);background:#fbfaf6;color:#2f2b26;border-radius:10px;padding:30px;box-shadow:0 24px 80px rgba(0,0,0,.28)}.kj-auth-label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9a6a3b;margin-bottom:10px}.kj-auth-card h1{font-size:24px;line-height:1.45;margin:0 0 10px}.kj-auth-card p{font-size:14px;color:#70685f}.kj-auth-card input{width:100%;min-height:46px;border:1px solid #d4cabd;border-radius:8px;padding:10px 12px;font-size:16px;background:#fff;margin:8px 0 12px}.kj-auth-card button{width:100%;min-height:46px;border:0;border-radius:8px;background:#26312b;color:#fff8e8;font-size:15px;font-weight:700}.kj-auth-error{min-height:22px;color:#a33;font-size:13px;margin-top:8px}
-@media(max-width:640px){.hero{padding:34px 0 36px}.map-grid,.cards{grid-template-columns:1fr}section{padding:34px 0}}
+@media(max-width:640px){.hero{padding:34px 0 36px}.map-grid,.cards{grid-template-columns:1fr}.latest{grid-column:auto}section{padding:34px 0}}
 </style>
 </head>
 <body class="kj-auth-locked">
@@ -49,27 +52,34 @@ ul,ol{padding-left:1.25em;margin:14px 0 22px}li{margin:7px 0}.note-box{backgroun
       <h2>このページの使い方</h2>
       <p>ここは、毎回の認知構造分析シートを別々に増やす場所ではありません。</p>
       <p>参加するたびに、その回で見えた認知・問い・変化をここへ重ねていきます。自分が「何度も同じところで反応している」のか、「少しずつ見方が変わっている」のかを確認するための地図です。</p>
-      <p>現在は2回分です。今回確認できたこと、過去ページの記録、まだ確定しない更新候補を分けて積み上げています。</p>
+      <p style="margin-bottom:0">現在は<strong>3回分（2026年5月24日・8月5日・11月15日）</strong>です。今回確認できたこと、過去ページの記録、まだ確定しない更新候補を分けて積み上げています。</p>
     </section>
 
     <section>
       <h2>現在見えている大きなテーマ</h2>
-      <div class="key-box"><div class="key-label">Core Theme（2回を通して）</div><div class="key-text">外の反応で揺れた時、身体へ戻り、事実と予測を分けて選び直す。</div></div>
-      <p>5月には、相手の言葉で身体が「きゅっ」と反応し、同調や承認を求めていたことに気づきました。8月には、最初の目的と途中から求めた反応を分け、姿勢・呼吸・問いから選び直すところまで言葉になりました。</p>
-      <p>「外からの反応と自己評価が結びつきやすい」は、2回をつなぐ更新候補です。性格や本質として固定せず、次の出来事でも同じかを見ていきます。</p>
+      <div class="key-box">
+        <div class="key-label">Core Theme（3回を通して）</div>
+        <div class="key-text">外の反応や言葉で揺れた時、出来事と自分の前提を分け、すでに受け取っていた関わりと自分の選択へ戻る。</div>
+      </div>
+      <p><strong>5月（初参加）</strong>には、相手の「後付けやん」という言葉で身体が「きゅっ」と反応し、同調や承認を求めていた前提に気づきました。<strong>8月（個人セッション）</strong>には、「助けたい」という最初の目的と途中から求めた反応を分け、姿勢・呼吸・問いから選び直すところまで言葉になりました。</p>
+      <p>そして<strong>11月（3回目）</strong>には、予約時刻のずれと利用時間の一言（「俺の時間少ならへん」）を二つの反応として分け、「大事な時間を奪われた」と感じていた場面の中で、<strong>後ろのお客さんが時間変更を寛大に受け入れてくれたことや規定通りの施術・収益をすでに受け取っていたこと（「別に何も奪われてないです」「ちゃんとバランス取れてる」）</strong>へと視野が広がりました。</p>
+      <p style="margin-bottom:0">「相手の反応や配慮の有無と、自分の価値・我慢が結びつきやすい」という点は3回をつなぐ更新候補です。性格や本質として固定せず、次の出来事でも同じかを見ていきます。</p>
     </section>
 
     <section>
       <h2>積み上がってきた流れ</h2>
-      <div class="note-box">
-        <strong>2026.05.24（初参加）｜「後付けやん」に一瞬ムカッとした日</strong>
+      <div class="note-box latest-box">
+        <strong>2026.11.15（かおる塾グループコーチング・最新）｜出来事と言葉を分け、「何も奪われていない」バランスに気づいた日</strong>
         <ul>
-          <li>繰り返し出た言葉: キュッとなった、同調してほしかった、認めてほしかった、腑に落ちた</li>
-          <li>見えた認知: 共感・同調されることがいいことだというフレームワークを持っていた。気づきをシェアしたとき、相手も同じように受け取ってくれるはずと期待していた</li>
-          <li>育った力: 体の反応を先にキャッチできる（「きゅってなる」がわかる）。体を緩める方法を知っている。出来事から自分の認知を取り出す力がある</li>
-          <li>今回の核心: 同調が得られると、相手の本音が見えにくくなる。「後付けやん」からこそ、心理を学ぶ素材を受け取っていた</li>
+          <li><strong>本人が言葉にした感情と変化</strong>: 約束の遅れと「俺の時間少ならへん」の一言に対する二度の「イラッ」・怒り（T0478, T0513, T0643）→ 終盤「やっぱ軽くなりますね」「ほどけるみたいな感じになる」「怒りっていうものはちょっともう消えてきました」（T0949, T0951, T1054〜1055）</li>
+          <li><strong>分けられたこと</strong>: 「遅れたこと」と「その後の利用時間の一言」の二つの反応／相手の発言と「自分中心」という自分の意味づけ／実際の対応（後ろの方へ連絡して施術）と本音（「本当はもう来なくていいよと言いたくなった」T0725〜0728）</li>
+          <li><strong>見えた前提（候補）</strong>: F1「約束は守るべきみたいな」（T0629）／F2「相手のことも考えるべき（私と後ろのお客さんの有限な時間）」（T0661〜0685）／F3「まあもうお金の為なら我慢しようぐらいの感じ」（T0741）</li>
+          <li><strong>特性の鏡と受け取り</strong>: 自分にもやりたいことで忙しい時や、気を許し信頼しているパートナーに対して時間に遅れる特性があること（T0538〜0546, T0606〜0609, T0984〜1002）。後ろのお客さん（初めてのご夫婦）が30分の変更を寛大に了承してくれた感謝と、「別に何も奪われてないです」「ちゃんとバランス取れてるんだって思いました」という実感（T0831〜0836, T0911, T0941〜0944）</li>
+          <li><strong>本人が明示した価値観の方向</strong>: 「体と心を整えて、その人が本来あるべき状態に持っていくお手伝いをする」（T0759〜0761）、「ボディとマインドを整えてスピリットを出し、その人がその人らしく才能・天才性を発揮して生きてほしい」（T0355〜0359）</li>
+          <li><strong>次の実践</strong>: 次に似た場面が来たら「受け取っているものをちょっと見に行ってみよう」と視点を切り替え（T0959）、出来事や相手を無理に肯定せず、自分の権限で対応を選ぶ（T1063〜1079, T1105）</li>
         </ul>
       </div>
+
       <div class="note-box">
         <strong>2026.08.05（個人セッション）｜善意と期待を分けた日</strong>
         <ul>
@@ -80,30 +90,77 @@ ul,ol{padding-left:1.25em;margin:14px 0 22px}li{margin:7px 0}.note-box{backgroun
           <li>次の実践: 姿勢を整え、息を吐き切り、「本当にそうか」「自分はどうしたいか」を問う</li>
         </ul>
       </div>
+
+      <div class="note-box">
+        <strong>2026.05.24（初参加）｜「後付けやん」に一瞬ムカッとした日</strong>
+        <ul>
+          <li>繰り返し出た言葉: キュッとなった、同調してほしかった、認めてほしかった、腑に落ちた</li>
+          <li>見えた認知: 共感・同調されることがいいことだというフレームワークを持っていた。気づきをシェアしたとき、相手も同じように受け取ってくれるはずと期待していた</li>
+          <li>育った力: 体の反応を先にキャッチできる（「きゅってなる」がわかる）。体を緩める方法を知っている。出来事から自分の認知を取り出す力がある</li>
+          <li>今回の核心: 同調が得られると、相手の本音が見えにくくなる。「後付けやん」からこそ、心理を学ぶ素材を受け取っていた</li>
+        </ul>
+      </div>
     </section>
 
     <section>
-      <h2>確定情報と更新候補</h2>
+      <h2>確定情報と更新候補（3回統合）</h2>
       <div class="map-grid">
-        <div class="map-card"><h3>今回までに確認できた力</h3><ul><li>身体の反応を捉えられる</li><li>事実と予測を分けられる</li><li>最初の目的と求める反応を区別できる</li><li>呼吸から次の選択へ戻れる</li></ul></div>
-        <div class="map-card"><h3>更新候補</h3><ul><li>外の反応と自己評価が結びつく時、結果を動かしたくなる可能性</li><li>身体・心・精神を統合して人と関わりたい方向</li></ul><p>どちらも固定した才能・使命とはせず、本人の体感と次の記録で確かめます。</p></div>
+        <div class="map-card">
+          <h3>今回までに確認できた力</h3>
+          <ul>
+            <li>身体の反応や感情（ムカッ・イラッ・怒り）を素早く捉えられる</li>
+            <li>一つの出来事から「事実・言葉」と「自分の予測・意味づけ」を分けられる</li>
+            <li>「最初の目的」と「相手に求める反応・配慮の言葉」を区別できる</li>
+            <li>相手に反応した特性を、自分自身の日常（忙しい時やパートナーへの甘え）の鏡として見られる</li>
+            <li>「奪われた」と感じた場面から、実際に受け取っていた関わり（後ろのお客さんの寛大さ等）を見出し、心身の緩みを確かめられる</li>
+            <li>呼吸や「何を受け取っているか？」の問いから、次の選択へ戻れる</li>
+          </ul>
+        </div>
+        <div class="map-card">
+          <h3>更新候補（これから確かめる仮説）</h3>
+          <ul>
+            <li>外の反応や配慮の有無と自己評価・本音が結びつく時、結果を動かしたくなったり「お金のために我慢する」対応へ傾きやすい可能性</li>
+            <li>自分が「怒らない人・安心安全な人」と見られることで、相手が気を許して甘えやすい関係性の構造（T1016, T1040〜1046）</li>
+            <li><strong>一貫して語られている価値観の方向</strong>：身体（ボディ）・心（マインド）・精神（スピリット）の三つを整え、その人が本来あるべき状態・才能を発揮して生きるお手伝いをしたい方向（8/5・11/15共通）</li>
+          </ul>
+          <p style="margin-bottom:0;font-size:14px;color:var(--muted)">どれも固定した才能・使命ラベルとして縛るのではなく、本人の体感と次の記録で確かめていきます。</p>
+        </div>
       </div>
     </section>
 
     <section>
       <h2>次に見ていく問い</h2>
       <ol>
-        <li>次に体がキュッとなった時、今あるのは事実か、予測か。</li>
-        <li>最初の目的と、今相手に求めている反応はそれぞれ何か。</li>
-        <li>呼吸が戻った後も同じ行動を選ぶなら、伝え方はどう変わるか。</li>
+        <li>次に心がイラッとしたり体がキュッとなった時、今あるのは「事実・実際に聞いた言葉」か、それとも「自分の予測・意味づけ」か。</li>
+        <li>自分にとって「配慮」「約束を守る」「お金のために我慢する」とは、具体的にどんな言葉・行動を指し、どこが境界線か。</li>
+        <li>何かを「奪われた」と感じた場面で、同時に周囲から受け取っていた関わりや助けは何か。なぜその時、受け取っていたものが見えにくくなっていたのか。</li>
+        <li>受け取っていたものを確認したうえで、出来事を無理に肯定せず、自分の権限でどんな対応（または予約ルール）を選びたいか。</li>
       </ol>
     </section>
 
     <section>
       <h2>各回の振り返り</h2>
       <div class="cards">
-        <a class="card latest" href="../2026-08-05/"><div class="card-date">2026年8月5日（個人セッション）</div><div class="card-title">善意と期待を分け、呼吸から選び直す</div><div class="card-desc">事実・予測・目的・求める反応を分け、自分の選択へ戻る。</div></a>
-        <a class="card" href="../2026-05-24/"><div class="card-date">2026年5月24日（初参加）</div><div class="card-title">「後付けやん」に一瞬ムカッとした日</div><div class="card-desc">自己像が揺らされた時、体が先に反応する。</div></a>
+        <div class="card latest">
+          <div class="card-date">2026年11月15日（かおる塾グループコーチング）｜LATEST</div>
+          <div class="card-title"><a href="../2026-11-15/" style="text-decoration:none">奪われたと感じた時間から、すでに受け取っていた配慮とバランスへ</a></div>
+          <div class="card-desc">予約時刻のずれと利用時間の一言を分け、後ろのお客さんの寛大さと「何も奪われていない」バランスを確認し、自分の選択へ戻る。</div>
+          <div class="sub-links">
+            <a class="sub-link" href="../2026-11-15/">📄 11/15 振り返り本編</a>
+            <a class="sub-link" href="../2026-11-15/workbook/">📝 個別実践ワーク（6章）</a>
+            <a class="sub-link" href="../2026-11-15/current-state/">🧭 心の整体・現在地</a>
+          </div>
+        </div>
+        <a class="card" href="../2026-08-05/">
+          <div class="card-date">2026年8月5日（個人セッション）</div>
+          <div class="card-title">善意と期待を分け、呼吸から選び直す</div>
+          <div class="card-desc">事実・予測・目的・求める反応を分け、自分の選択へ戻る。</div>
+        </a>
+        <a class="card" href="../2026-05-24/">
+          <div class="card-date">2026年5月24日（初参加）</div>
+          <div class="card-title">「後付けやん」に一瞬ムカッとした日</div>
+          <div class="card-desc">自己像が揺らされた時、体が先に反応する。</div>
+        </a>
       </div>
     </section>
   </main>
