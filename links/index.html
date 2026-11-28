@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>天川の猫仙人 ひみ × 伴走者・前田 薫｜公式リンク</title>
+  <meta name="description" content="奈良・天川村から届ける、猫仙人ひみと伴走者・前田薫の歌・言葉・天川寺子屋への入口。" />
+  <style>
+    :root {
+      --bg: #f6f2ea;
+      --card: #ffffff;
+      --ink: #24201b;
+      --muted: #6e655a;
+      --accent: #2c5234;
+      --accent-soft: #e8f0ea;
+      --gold: #a67c3c;
+      --border: rgba(36, 32, 27, 0.10);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #f3ede2 0%, var(--bg) 100%);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 28px 16px 48px;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 460px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .profile {
+      text-align: center;
+      padding: 8px 8px 6px;
+    }
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+    .kicker {
+      margin-top: 12px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    h1 {
+      margin: 6px 0 6px;
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+    .bio {
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 15px 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      text-decoration: none;
+      color: var(--ink);
+      box-shadow: 0 4px 14px rgba(36, 32, 27, 0.05);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn.primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+      box-shadow: 0 10px 24px rgba(44, 82, 52, 0.22);
+    }
+    .btn.primary .sub { color: rgba(255, 255, 255, 0.85); }
+    .ico {
+      font-size: 22px;
+      width: 34px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .txt { flex: 1; min-width: 0; }
+    .title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+    .sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 3px;
+      line-height: 1.45;
+    }
+    .arrow { font-size: 14px; opacity: 0.55; }
+    footer {
+      text-align: center;
+      font-size: 11.5px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="profile">
+      <img class="avatar" src="../kaoru-music/icon-512.png" alt="天川の猫仙人ひみと前田薫" />
+      <div class="kicker">TENKAWA VILLAGE, NARA</div>
+      <h1>猫仙人ひみ × 伴走者・前田 薫</h1>
+      <p class="bio">
+        奈良・天川村から、自分らしく生きられない人をゼロにする「天川寺子屋」へ。<br />
+        歌とことばと、ひみの日常をお届けしています。
+      </p>
+    </header>
+
+    <section class="links" id="linkList"></section>
+
+    <footer>
+      すべての売上は「天川寺子屋」の資金になります。<br />
+      © 天川寺子屋 / 前田 薫
+    </footer>
+  </main>
+
+  <script>
+    const ITEMS = {
+      mail: {
+        href: "https://kaoruchan333.github.io/kokoro-5/",
+        ico: "✉️",
+        title: "無料5通の手紙『感情を消さずに、自分の中心へ戻る』",
+        sub: "登録無料・まずここから（音声＆記事プレゼント）"
+      },
+      music: {
+        href: "https://kaoruchan333.github.io/kaoru-music/",
+        ico: "🎵",
+        title: "かおるちゃんの歌（無料試聴アプリ）",
+        sub: "『らしさ』『そこに生まれるノーサイド』リピート再生"
+      },
+      shop: {
+        href: "https://suzuri.jp/himi_tenkawa/",
+        ico: "🐾",
+        title: "ひみショップ（点描画Tシャツ・マグ・グッズ）",
+        sub: "天川の猫仙人ひみ公式グッズ（売上は寺子屋資金へ）"
+      },
+      note: {
+        href: "https://note.com/nanbodemo",
+        ico: "📝",
+        title: "noteブログ（心の整体・歌とうた本）",
+        sub: "日々の気づき・オリジナル曲の物語"
+      },
+      consult: {
+        href: "https://kaoruchan333.github.io/consult/",
+        ico: "🌿",
+        title: "30分無料相談（個人コーチング・伴走）",
+        sub: "ひとりで抱えている気持ちを、静かにほどく時間"
+      },
+      hub: {
+        href: "https://kaoruchan333.github.io/hub/",
+        ico: "⛩️",
+        title: "天川寺子屋・坐禅会イベント案内",
+        sub: "天川村での体験・坐禅会スケジュール"
+      }
+    };
+
+    const ORDER_MAP = {
+      default: ["mail", "music", "shop", "note", "consult", "hub"],
+      yt_himi: ["shop", "music", "mail", "note", "hub", "consult"],
+      ig_terakoya: ["shop", "hub", "music", "mail", "note", "consult"],
+      yt_kaoru: ["mail", "music", "note", "consult", "shop", "hub"],
+      note: ["mail", "music", "consult", "shop", "hub", "note"],
+      music: ["music", "shop", "mail", "note", "consult", "hub"]
+    };
+
+    const from = new URLSearchParams(location.search).get("from") || "default";
+    const order = ORDER_MAP[from] || ORDER_MAP.default;
+
+    document.getElementById("linkList").innerHTML = order.map((key, idx) => {
+      const it = ITEMS[key];
+      return `
+        <a class="btn ${idx === 0 ? "primary" : ""}" href="${it.href}" target="_blank" rel="noopener">
+          <div class="ico">${it.ico}</div>
+          <div class="txt">
+            <div class="title">${it.title}</div>
+            <div class="sub">${it.sub}</div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+      `;
+    }).join("");
+  </script>
+</body>
+</html>
