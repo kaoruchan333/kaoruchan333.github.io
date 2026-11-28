@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="かおるの歌" />
+  <meta name="theme-color" content="#141210" />
+  <title>かおるちゃんの歌 | 前田薫</title>
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+  <style>
+    :root {
+      --bg: #141210;
+      --surface: #201d19;
+      --surface-active: #2c2721;
+      --text: #f7f3ec;
+      --muted: #a69c8e;
+      --accent: #e5a454;
+      --accent-soft: rgba(229, 164, 84, 0.16);
+      --border: rgba(255, 255, 255, 0.08);
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      background: radial-gradient(circle at top, #2a231b 0%, var(--bg) 55%);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: env(safe-area-inset-top, 16px) 16px calc(env(safe-area-inset-bottom, 20px) + 20px);
+    }
+    .app {
+      width: 100%;
+      max-width: 440px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding-top: 12px;
+    }
+    .header {
+      text-align: center;
+    }
+    .header .kicker {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .header h1 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: 0.04em;
+    }
+    .artwork-wrap {
+      width: 240px;
+      height: 240px;
+      margin: 4px auto 0;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55);
+      border: 1px solid var(--border);
+      transition: transform 0.35s ease;
+    }
+    .artwork-wrap.playing {
+      transform: scale(1.03);
+    }
+    .artwork-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .now-meta {
+      text-align: center;
+      margin-top: 2px;
+    }
+    .now-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 0 0 4px;
+    }
+    .now-artist {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+    }
+    .progress-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 5px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      outline: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--text);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      cursor: pointer;
+    }
+    .time-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 10px;
+    }
+    .icon-btn {
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 20px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .icon-btn:active { background: rgba(255,255,255,0.1); }
+    .icon-btn.active {
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+    .play-btn {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      border: none;
+      background: var(--text);
+      color: #141210;
+      font-size: 26px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+      transition: transform 0.15s ease;
+    }
+    .play-btn:active { transform: scale(0.94); }
+    .mode-badge {
+      text-align: center;
+      font-size: 12px;
+      color: var(--accent);
+      min-height: 18px;
+    }
+    .section-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 12px;
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--muted);
+      padding: 2px 6px 10px;
+    }
+    .track-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .track-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .track-item.active {
+      background: var(--surface-active);
+      border: 1px solid rgba(229, 164, 84, 0.35);
+    }
+    .track-num {
+      width: 22px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .track-item.active .track-num { color: var(--accent); }
+    .track-info { flex: 1; min-width: 0; }
+    .track-name {
+      font-size: 15px;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .track-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .lyrics-toggle {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 12px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .lyrics-box {
+      display: none;
+      margin-top: 10px;
+      white-space: pre-wrap;
+      line-height: 1.9;
+      font-size: 15px;
+      color: #ede6da;
+      padding: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+    .lyrics-box.open { display: block; }
+    .install-tip {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.6;
+      padding: 4px 8px;
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="kicker">KAORU MAEDA ORIGINAL</div>
+      <h1>かおるちゃんの歌</h1>
+    </header>
+
+    <div class="artwork-wrap" id="artworkWrap">
+      <img src="./icon-512.png" alt="かおるちゃんの歌 ジャケット" />
+    </div>
+
+    <div class="now-meta">
+      <h2 class="now-title" id="nowTitle">らしさ</h2>
+      <p class="now-artist" id="nowArtist">前田薫（ボーカル）</p>
+    </div>
+
+    <div class="progress-wrap">
+      <input type="range" id="seekBar" min="0" max="100" value="0" step="0.1" aria-label="再生位置" />
+      <div class="time-row">
+        <span id="curTime">0:00</span>
+        <span id="durTime">0:00</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="icon-btn active" id="repeatBtn" title="リピート切替" aria-label="リピート切替">🔁</button>
+      <button class="icon-btn" id="prevBtn" title="前の曲" aria-label="前の曲">⏮</button>
+      <button class="play-btn" id="playBtn" title="再生 / 一時停止" aria-label="再生">▶</button>
+      <button class="icon-btn" id="nextBtn" title="次の曲" aria-label="次の曲">⏭</button>
+      <button class="icon-btn" id="lyricsIconBtn" title="歌詞" aria-label="歌詞">♪</button>
+    </div>
+    <div class="mode-badge" id="modeBadge">全曲リピート ON（CD連続再生）</div>
+
+    <section class="section-card">
+      <div class="section-head">
+        <span>プレイリスト</span>
+        <span id="trackCount">2曲</span>
+      </div>
+      <div class="track-list" id="trackList"></div>
+    </section>
+
+    <div>
+      <button class="lyrics-toggle" id="lyricsToggle">歌詞を見る</button>
+      <div class="lyrics-box" id="lyricsBox"></div>
+    </div>
+
+    <p class="install-tip">
+      iPhoneのSafariで開いて「共有（□↑）→ ホーム画面に追加」を押すと、アプリのようにワンタップで聴けます。
+    </p>
+
+    <audio id="audio" preload="metadata" playsinline></audio>
+  </main>
+
+  <script>
+    const TRACKS = [
+      {
+        title: "らしさ",
+        artist: "前田薫",
+        subtitle: "2026・薫ちゃん声版",
+        src: "./audio/rashisa.mp3",
+        lyrics: `[1番]
+泣いていいよ、悲しいときは
+笑っていいよ、嬉しいときは
+我慢ばかりしてきたけれど
+もうそろそろ、いいんじゃない？
+
+[サビ]
+森を見れば緑だし
+空を見たら青だし
+私は私らしく
+私は私でいい
+感情も言葉も、想うがままに
+私の足で歩むもの
+
+[2番]
+叫んでいいよ、苦しいときは
+逃げてもいいよ、辛いときは
+無理ばかりしてきたけれど
+もうそろそろ、いいんじゃない？
+
+[サビ]
+森を見れば緑だし
+空を見たら青だし
+私は私らしく
+私は私でいい
+感情も言葉も、想うがままに
+私の足で歩むもの
+
+[橋]
+変えられない、大切なもの
+変わっていく、大切なものも
+正解も、答えも
+どこにある？
+決めるのは、誰？
+全ては流れ、変わりゆく
+
+[締め]
+私は私であればいい
+人は人であればいい
+想うがままに、ありのままに`
+      },
+      {
+        title: "そこに生まれるノーサイド",
+        artist: "前田薫",
+        subtitle: "2026・薫ちゃん声版",
+        src: "./audio/noside.mp3",
+        lyrics: `ただひたすらに
+ただ真っ直ぐに
+ただ栄光に向かって
+
+進みたい想いがあり
+進めない現実があり
+進めなくても進むしかなく
+数々の逆境を乗り越えて来た
+
+何か得られるわけでなく
+特別になれるわけでなく
+それでも気づけば今がある
+
+出会いの全てに救われて来た
+人間一人では生きていけないと
+出会いが全てを教えてくれたんだ
+
+なぜ人は出会うのか
+なぜ人は逆境に向かうのか
+向き合うことが出会いを生み
+出会いで向き合い、気づいていく
+
+ただひたすらに
+ただ真っ直ぐに
+ただ栄光に向かって
+
+今も逆境という出会いに
+向き合い歩む道
+ワンフォーオール
+オールフォアワン
+一人は全てのために
+全ては一人のために
+
+逆境と出会いが重なりあえば
+そこに生まれるノーサイド`
+      }
+    ];
+
+    const audio = document.getElementById("audio");
+    const playBtn = document.getElementById("playBtn");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const repeatBtn = document.getElementById("repeatBtn");
+    const seekBar = document.getElementById("seekBar");
+    const curTime = document.getElementById("curTime");
+    const durTime = document.getElementById("durTime");
+    const nowTitle = document.getElementById("nowTitle");
+    const nowArtist = document.getElementById("nowArtist");
+    const artworkWrap = document.getElementById("artworkWrap");
+    const trackListEl = document.getElementById("trackList");
+    const trackCountEl = document.getElementById("trackCount");
+    const modeBadge = document.getElementById("modeBadge");
+    const lyricsToggle = document.getElementById("lyricsToggle");
+    const lyricsIconBtn = document.getElementById("lyricsIconBtn");
+    const lyricsBox = document.getElementById("lyricsBox");
+
+    let currentIdx = 0;
+    // repeatMode: 'all' | 'one' | 'off'
+    let repeatMode = "all";
+    let isSeeking = false;
+
+    function fmt(sec) {
+      if (!isFinite(sec)) return "0:00";
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return `${m}:${String(s).padStart(2, "0")}`;
+    }
+
+    function updateMediaSession() {
+      if (!("mediaSession" in navigator)) return;
+      const t = TRACKS[currentIdx];
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: t.title,
+        artist: t.artist,
+        album: "かおるちゃんの歌",
+        artwork: [{ src: "./icon-512.png", sizes: "512x512", type: "image/png" }]
+      });
+      navigator.mediaSession.setActionHandler("play", () => playTrack());
+      navigator.mediaSession.setActionHandler("pause", () => pauseTrack());
+      navigator.mediaSession.setActionHandler("previoustrack", () => prevTrack());
+      navigator.mediaSession.setActionHandler("nexttrack", () => nextTrack());
+    }
+
+    function renderList() {
+      trackCountEl.textContent = `${TRACKS.length}曲`;
+      trackListEl.innerHTML = TRACKS.map((t, i) => `
+        <div class="track-item ${i === currentIdx ? "active" : ""}" data-idx="${i}">
+          <div class="track-num">${i === currentIdx ? "▶" : i + 1}</div>
+          <div class="track-info">
+            <div class="track-name">${t.title}</div>
+            <div class="track-sub">${t.subtitle}</div>
+          </div>
+        </div>
+      `).join("");
+      trackListEl.querySelectorAll(".track-item").forEach((el) => {
+        el.addEventListener("click", () => {
+          loadTrack(Number(el.dataset.idx), true);
+        });
+      });
+    }
+
+    function loadTrack(idx, autoplay = false) {
+      currentIdx = (idx + TRACKS.length) % TRACKS.length;
+      const t = TRACKS[currentIdx];
+      audio.src = t.src;
+      nowTitle.textContent = t.title;
+      nowArtist.textContent = `${t.artist} ・ ${t.subtitle}`;
+      lyricsBox.textContent = t.lyrics;
+      seekBar.value = 0;
+      curTime.textContent = "0:00";
+      durTime.textContent = "0:00";
+      renderList();
+      updateMediaSession();
+      if (autoplay) playTrack();
+    }
+
+    function playTrack() {
+      audio.play().then(() => {
+        playBtn.textContent = "⏸";
+        artworkWrap.classList.add("playing");
+      }).catch(() => {});
+    }
+
+    function pauseTrack() {
+      audio.pause();
+      playBtn.textContent = "▶";
+      artworkWrap.classList.remove("playing");
+    }
+
+    function prevTrack() {
+      if (audio.currentTime > 3) {
+        audio.currentTime = 0;
+      } else {
+        loadTrack(currentIdx - 1, true);
+      }
+    }
+
+    function nextTrack() {
+      loadTrack(currentIdx + 1, true);
+    }
+
+    playBtn.addEventListener("click", () => {
+      if (audio.paused) playTrack(); else pauseTrack();
+    });
+    prevBtn.addEventListener("click", prevTrack);
+    nextBtn.addEventListener("click", nextTrack);
+
+    repeatBtn.addEventListener("click", () => {
+      if (repeatMode === "all") {
+        repeatMode = "one";
+        repeatBtn.textContent = "🔂";
+        repeatBtn.classList.add("active");
+        modeBadge.textContent = "1曲リピート ON";
+      } else if (repeatMode === "one") {
+        repeatMode = "off";
+        repeatBtn.textContent = "🔁";
+        repeatBtn.classList.remove("active");
+        modeBadge.textContent = "リピート OFF（最後まで再生）";
+      } else {
+        repeatMode = "all";
+        repeatBtn.textContent = "🔁";
+        repeatBtn.classList.add("active");
+        modeBadge.textContent = "全曲リピート ON（CD連続再生）";
+      }
+    });
+
+    function toggleLyrics() {
+      const open = lyricsBox.classList.toggle("open");
+      lyricsToggle.textContent = open ? "歌詞を閉じる" : "歌詞を見る";
+      lyricsIconBtn.classList.toggle("active", open);
+    }
+    lyricsToggle.addEventListener("click", toggleLyrics);
+    lyricsIconBtn.addEventListener("click", toggleLyrics);
+
+    audio.addEventListener("loadedmetadata", () => {
+      durTime.textContent = fmt(audio.duration);
+    });
+    audio.addEventListener("timeupdate", () => {
+      if (isSeeking || !isFinite(audio.duration)) return;
+      seekBar.value = (audio.currentTime / audio.duration) * 100;
+      curTime.textContent = fmt(audio.currentTime);
+    });
+    audio.addEventListener("ended", () => {
+      if (repeatMode === "one") {
+        audio.currentTime = 0;
+        playTrack();
+      } else if (repeatMode === "all") {
+        nextTrack();
+      } else if (currentIdx < TRACKS.length - 1) {
+        nextTrack();
+      } else {
+        pauseTrack();
+      }
+    });
+
+    seekBar.addEventListener("input", () => { isSeeking = true; });
+    seekBar.addEventListener("change", () => {
+      if (isFinite(audio.duration)) {
+        audio.currentTime = (seekBar.value / 100) * audio.duration;
+      }
+      isSeeking = false;
+    });
+
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js").catch(() => {});
+    }
+
+    loadTrack(0, false);
+  </script>
+</body>
+</html>
