@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>30分 無料相談（オンライン対話）｜前田薫（かおるちゃん）</title>
-  <meta name="description" content="奈良・天川村での暮らし、水行・坐禅、大峯山の身体感覚を土台に、事実と認知を分け、迷いや葛藤の根本をほどく【心の整体】。まずは30分、心を開いて話してみませんか？">
+  <meta name="description" content="頭の中でぐるぐるしている一つを、30分で「見える形」にして持ち帰る。奈良・天川村で暮らす心の整体師・プロコーチ、前田薫（かおるちゃん）の30分無料相談。">
   <style>
+    * { box-sizing: border-box; }
     body {
       font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
       font-size: 16px;
-      line-height: 2;
+      line-height: 1.95;
       color: #2a2a28;
       background: #f8f7f4;
       margin: 0;
@@ -18,68 +19,121 @@
     .container {
       max-width: 640px;
       margin: 0 auto;
-      padding: 72px 24px 120px;
+      padding: 48px 22px 100px;
+    }
+    .hero {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .hero-portrait {
+      width: 132px;
+      height: 132px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #e6dfd0;
+      box-shadow: 0 8px 24px rgba(42,42,40,0.08);
+      margin-bottom: 20px;
     }
     .eyebrow {
       font-size: 11px;
       letter-spacing: 0.2em;
-      color: #c4a96e;
+      color: #9e7f3b;
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
+      font-weight: 600;
     }
     h1 {
-      font-size: 30px;
-      font-weight: bold;
+      font-size: 26px;
+      font-weight: 700;
       line-height: 1.5;
-      margin: 0 0 12px;
+      margin: 0 0 16px;
       color: #2a2a28;
     }
-    .sub {
+    .hero-lead {
       font-size: 15px;
-      color: #666;
-      margin-bottom: 40px;
-      line-height: 2;
+      color: #55544f;
+      margin: 0 0 28px;
+      line-height: 1.9;
     }
     .cta-btn {
       display: block;
       background: #2a2a28;
-      color: #c4a96e;
+      color: #e6cfa0;
       text-decoration: none;
       text-align: center;
       font-size: 16px;
       font-weight: bold;
-      letter-spacing: 0.08em;
-      padding: 20px 32px;
+      letter-spacing: 0.06em;
+      padding: 19px 28px;
       border-radius: 10px;
-      margin-bottom: 48px;
+      margin: 0 0 12px;
       transition: opacity 0.15s;
     }
-    .cta-btn:hover { opacity: 0.85; }
+    .cta-btn:hover { opacity: 0.88; }
     .cta-note {
       text-align: center;
-      font-size: 12px;
-      color: #888;
-      margin-top: -36px;
-      margin-bottom: 56px;
+      font-size: 12.5px;
+      color: #777;
+      margin: 0 0 44px;
     }
     hr {
       border: none;
-      border-top: 1px solid #e0ddd8;
-      margin: 48px 0;
+      border-top: 1px solid #e3dfd8;
+      margin: 44px 0;
     }
     h2 {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 16px;
+      font-size: 19px;
+      font-weight: 700;
+      margin: 0 0 18px;
       color: #2a2a28;
+      line-height: 1.5;
+    }
+    .takeaway-list {
+      display: grid;
+      gap: 16px;
+      margin: 0 0 20px;
+    }
+    .takeaway-card {
+      background: #fff;
+      border: 1px solid #e3dfd8;
+      border-radius: 12px;
+      padding: 20px 22px;
+    }
+    .takeaway-num {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #9e7f3b;
+      margin-bottom: 6px;
+    }
+    .takeaway-card h3 {
+      font-size: 16px;
+      margin: 0 0 8px;
+      color: #2a2a28;
+      line-height: 1.5;
+    }
+    .takeaway-card p {
+      font-size: 14px;
+      color: #555;
+      margin: 0;
+      line-height: 1.85;
+    }
+    .gentle-note {
+      font-size: 14.5px;
+      color: #555;
+      background: #f2efe9;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 20px 0 0;
     }
     .for-list {
       list-style: none;
       padding: 0;
-      margin: 0 0 48px;
+      margin: 0 0 36px;
     }
     .for-list li {
-      padding: 12px 0 12px 24px;
+      padding: 13px 0 13px 24px;
       position: relative;
       border-bottom: 1px solid #ece9e4;
       font-size: 15px;
@@ -92,22 +146,52 @@
       position: absolute;
       left: 0;
       color: #c4a96e;
+      font-weight: bold;
     }
-    /* お話ししたあとのこと */
-    .after-talk {
+    .steps {
+      padding-left: 20px;
+      margin: 0 0 18px;
+      font-size: 14.5px;
+      color: #3a3838;
+    }
+    .steps li {
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+    .small-note {
+      font-size: 13.5px;
+      color: #666;
+      line-height: 1.85;
+      margin: 0;
+    }
+    .small-note a { color: #8c6e2f; }
+    .profile-card, .after-talk {
       background: #fff;
-      border: 1px solid #e0ddd8;
+      border: 1px solid #e3dfd8;
       border-radius: 12px;
-      padding: 28px 24px;
-      margin: 36px 0;
+      padding: 26px 24px;
+      margin: 32px 0;
     }
-    .after-talk h2 {
-      font-size: 18px;
-      margin: 0 0 14px;
+    .profile-card h3 {
+      font-size: 17px;
+      margin: 0 0 4px;
       color: #2a2a28;
     }
+    .profile-role {
+      font-size: 13px;
+      color: #8c6e2f;
+      font-weight: 600;
+      margin: 0 0 16px;
+    }
+    .profile-card p {
+      font-size: 14.5px;
+      color: #444;
+      line-height: 1.85;
+      margin: 0 0 12px;
+    }
+    .profile-card p:last-child { margin: 0; }
     .after-talk p {
-      font-size: 14px;
+      font-size: 14.5px;
       color: #555;
       line-height: 1.85;
       margin: 0 0 12px;
@@ -115,97 +199,120 @@
     .after-talk ul {
       margin: 14px 0 16px 20px;
       padding: 0;
-      font-size: 14px;
+      font-size: 14.5px;
       color: #444;
-      line-height: 1.9;
+      line-height: 1.85;
     }
-    .after-talk ul li {
-      margin-bottom: 8px;
-    }
-    .after-talk .after-talk-note {
-      font-size: 13px;
+    .after-talk ul li { margin-bottom: 8px; }
+    .after-talk-note {
+      font-size: 12.5px;
       color: #777;
       margin: 16px 0 0;
       border-top: 1px solid #ece9e4;
       padding-top: 14px;
-      line-height: 1.7;
+      line-height: 1.75;
     }
     .footer-note {
-      font-size: 13px;
-      color: #888;
+      font-size: 13.5px;
+      color: #777;
       text-align: center;
-      margin-top: 48px;
+      margin: 28px 0 40px;
       line-height: 1.9;
     }
-    .profile-card {
-      background: #fff;
+    .worksheet-box {
+      background: #faf8f5;
       border: 1px solid #e0ddd8;
-      border-radius: 12px;
-      padding: 28px;
-      margin: 40px 0;
-    }
-    .profile-card h3 {
-      font-size: 17px;
-      margin: 0 0 8px;
-      color: #2a2a28;
-    }
-    .profile-card p {
-      font-size: 14px;
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-size: 13.5px;
       color: #555;
-      line-height: 1.8;
-      margin: 0 0 10px;
+      text-align: center;
     }
-    .profile-card p:last-child { margin: 0; }
+    .worksheet-box a {
+      color: #8c6e2f;
+      font-weight: bold;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
 <div class="container">
 
-  <div class="eyebrow">Free Consultation · 30min Online</div>
-  <h1>まず、静かに話してみませんか？</h1>
-  <p class="sub">
-    誰かと比べて苦しくなったとき。「頑張っているのに、何かズレている」と感じるとき。<br>
-    何かを教えたり、無理に前向きにさせたりしません。<br>
-    20年前、凍結した深夜のトラックで孤独にハンドルを握り、泥だらけのグラウンドで少年たちの話をただ横で聴いていたように。<br>
-    あなたが背負いすぎた「最高にならなきゃ」という荷物を、一緒に降ろす30分です。
-  </p>
-
-  <div style="background:#faf8f5; border:1px solid #e0ddd8; border-radius:8px; padding:14px 18px; margin-bottom:28px; font-size:14px; color:#555;">
-    💡 <strong>まずは自分の手元で整理してみたい方へ：</strong><br>
-    完全無料で今すぐ使える <a href="https://kaoruchan333.github.io/worksheet/" style="color:#9e7f3b; font-weight:bold; text-decoration:underline;">【「最適」発見セルフワークシート】</a> をご用意しています。
-  </div>
-
-  <a class="cta-btn" href="https://calendar.app.google/DZt9tMcMRLWD51XW7" target="_blank" rel="noopener">
-    30分 無料相談に申し込む（オンライン）
-  </a>
-  <p class="cta-note">完全無料（Google Meet）· 空いている日時から選ぶだけ · 無理な勧誘は一切ありません</p>
-
-  <hr>
-
-  <h2>こんな方におすすめです</h2>
-  <ul class="for-list">
-    <li>誰かと比べて「自分はまだ足りない」と自分を責めてしまう</li>
-    <li>「最高」を目指すことに疲れ、自分にとって自然に息ができる「最適」を見つけたい</li>
-    <li>正しさの白黒や他人の期待に疲れ、立ち止まって本音を整理したい</li>
-    <li>頭で考えた理屈だけでなく、身体がホッとする本来の感覚を取り戻したい</li>
-    <li>人生や仕事の転機を迎えており、誰にも言えない葛藤を静かに聴いてほしい</li>
-  </ul>
-
-  <hr>
-
-  <section aria-labelledby="booking-flow">
-    <h2 id="booking-flow">お申し込みから、当日まで</h2>
-    <ol>
-      <li>「30分 無料相談に申し込む」から、Googleカレンダーの予約ページを開きます。表示されるタイムゾーンと、ご都合のよい日時をご確認ください。</li>
-      <li>日時を選び、お名前とメールアドレスを確認して、予約画面の案内に沿ってお進みください。日時を選んだだけでは、まだ予約完了ではありません。</li>
-      <li>予約完了後の画面と、予約に関するご案内をご確認ください。予約ページでは、予約後にGoogle Meetの参加情報が追加される案内になっています。当日は、ご案内の参加情報からお入りください。</li>
-    </ol>
-    <p>うまく話そうとしなくても大丈夫です。「今、話してみたいこと」を一つ思い浮かべるだけで構いません。詳しい事情や話したくないことを、事前に書く必要はありません。</p>
-    <p>ご都合が変わったときは、予約のご案内に変更・キャンセルの方法があるかをご確認ください。ご案内が見当たらない場合は迷惑メールもご確認いただき、予約完了か分からないまま同じ予約を重ねないでください。</p>
-    <p>確認できないときは、すでにやり取りしている窓口、または<a href="https://www.instagram.com/terakoya_tenkawa/" target="_blank" rel="noopener">天川寺子屋のInstagram</a>のDMで「予約の確認をしたい」とお知らせください。公開コメントにメールアドレスやご相談内容を書かなくて大丈夫です。</p>
+  <section class="hero">
+    <img class="hero-portrait" src="kaoru-consult-portrait.jpg" alt="前田薫（かおるちゃん）">
+    <div class="eyebrow">Free Consultation · 30min Online</div>
+    <h1>頭の中でぐるぐるしている一つを、<br>30分で「見える形」にして持ち帰る。</h1>
+    <p class="hero-lead">
+      話を聴くのは、前田薫（かおるちゃん）。<br>
+      奈良・天川村で暮らす、心の整体師・プロコーチです。
+    </p>
+    <a class="cta-btn" href="https://calendar.app.google/DZt9tMcMRLWD51XW7" target="_blank" rel="noopener">
+      30分 無料相談の日時を選ぶ
+    </a>
+    <p class="cta-note">完全無料（Google Meet）· 録画なし · 無理な勧誘はしません</p>
   </section>
 
   <hr>
+
+  <section>
+    <h2>まず、静かに話してみませんか？<br>この30分で、手元に残るもの</h2>
+    <div class="takeaway-list">
+      <div class="takeaway-card">
+        <div class="takeaway-num">01</div>
+        <h3>「起きたこと」と「頭の中の予測」が分かれた、一枚の整理</h3>
+        <p>いま気になっている出来事を一つだけ選んで、確かめられる事実と、まだ起きていない予測を一緒に分けます。</p>
+      </div>
+      <div class="takeaway-card">
+        <div class="takeaway-num">02</div>
+        <h3>その不安が、本当は何を大切にしようとしているか</h3>
+        <p>不安を消すのではなく、不安の奥にある「大切にしたいもの」を言葉にします。</p>
+      </div>
+      <div class="takeaway-card">
+        <div class="takeaway-num">03</div>
+        <h3>明日からできる、小さな一歩をひとつ</h3>
+        <p>大きな決断ではなく、明日の自分が無理なく選べる一歩を一つだけ決めて終わります。</p>
+      </div>
+    </div>
+    <p class="gentle-note">
+      うまく話せなくて大丈夫です。<br>
+      「最近ひっかかっていること」を一つだけ思い浮かべてきてください。
+    </p>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>こんな時に</h2>
+    <ul class="for-list">
+      <li>誰かと比べて「自分はまだ足りない」と責めてしまう</li>
+      <li>頑張っているのに、何かがズレている気がする</li>
+      <li>人生や仕事の転機で、誰にも言えない葛藤を一度ちゃんと話したい</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>申込から当日まで</h2>
+    <ol class="steps">
+      <li>ボタンからGoogleカレンダーの予約ページを開き、空いている日時を選ぶ</li>
+      <li>お名前とメールアドレスを入れて、予約を確定する（日時を選んだだけでは、まだ確定していません）</li>
+      <li>届いたご案内のGoogle Meetから入る</li>
+    </ol>
+    <p class="small-note">
+      事前に詳しい事情を書く必要はありません。<br>
+      予約できたか分からない時は、同じ予約を重ねず、<a href="https://www.instagram.com/terakoya_tenkawa/" target="_blank" rel="noopener">天川寺子屋のInstagram</a>のDMで「予約の確認をしたい」とお知らせください。
+    </p>
+  </section>
+
+  <div class="profile-card">
+    <h3>話を聴く人：前田薫（かおるちゃん）</h3>
+    <div class="profile-role">心の整体師 ／ プロコーチ ／ 天川寺子屋 代表 ／ 株式会社なんぼでも 代表</div>
+    <p>20代で「完璧な父親にならねば」と自分を追い込み、10年間うつを経験しました。そこから「今のまま、そのままでいい」という自己受容にたどり着いたことが、いまの対話の土台です。</p>
+    <p>2016年にホンマルラジオ大阪局を立ち上げ、通算616本以上の番組を配信。2020〜2022年、深夜の大型トラックや引越しの仕事を掛け持ちした時期も、コーチングとかおる塾は一日もやめませんでした。（その時期の対話の記録は、YouTubeに633本残っています）</p>
+    <p>2023年には、プロサッカー選手を目指す高校生たちの全寮制アカデミーでメンタルコーチ・生活の伴走を担当。</p>
+    <p>2024年から奈良県天川村へ移住。毎朝の水行と坐禅、大峯の山での修行を暮らしの中心に置き、100年先へ続く「天川寺子屋」をつくっています。</p>
+  </div>
 
   <div class="after-talk">
     <h2>お話ししたあとのこと</h2>
@@ -219,30 +326,22 @@
     <p class="after-talk-note">金額や詳細はその場で丁寧にご説明し、持ち帰ってゆっくりご検討いただけます。※心の整体・コーチングは医療行為ではなく対話による自己調律です。録画は行わずプライバシーは厳守されます。</p>
   </div>
 
-  <div class="profile-card">
-    <h3>主宰：前田薫（かおるちゃん）</h3>
-    <p><strong>心の整体師 / プロコーチ / 天川寺子屋主宰</strong></p>
-    <p>奈良県天川村在住。「自分らしく生きられない人をゼロにする」をミッションに活動。20代からプロを目指す中高生サッカー選手のメンタルと私生活を伴走し、深夜トラック輸送の過酷な現場を経て「最高を目指すより最適が好い」の境地を確立。</p>
-    <div style="border-top:1px dashed #e0ddd8; padding-top:12px; margin-top:12px; font-size:13.5px; color:#444; line-height:1.8;">
-      <strong style="color:#2a2a28;">【対話の土台・静寂の源泉】</strong><br>
-      経営者・リーダーから若者まで、どれほど深い孤独や葛藤を抱えた方の前でも、一切ジャッジせず静かに横に座っていられる理由。それは、霊峰天川村での暮らし、毎朝の氷のような清流水行と坐禅、そして役行者以来1300年続く大峯山修験道の山先達（鬼）の身体感覚が、重心を「絶対の中庸」に据えさせているからです。天川村での100年寺子屋設立を推進中。
-    </div>
-  </div>
-
   <hr>
 
   <a class="cta-btn" href="https://calendar.app.google/DZt9tMcMRLWD51XW7" target="_blank" rel="noopener">
-    30分 無料相談に申し込む（オンライン）
+    30分 無料相談の日時を選ぶ
   </a>
-  <p class="cta-note">完全無料（Google Meet）· 空いている日時から選ぶだけ · 無理な勧誘は一切ありません</p>
+  <p class="cta-note">完全無料（Google Meet）· 録画なし · 無理な勧誘はしません</p>
 
   <div class="footer-note">
-    相談は完全無料・録画なしの個別対話です。<br>
-    話してみて「違うな」と感じたら、それで十分。<br>
-    まずは一度、静かに言葉を交わしてみましょう。
+    話してみて「違うな」と感じたら、それで十分です。
+  </div>
+
+  <div class="worksheet-box">
+    まずは自分の手元で静かに整理してみたい方へ：<br>
+    <a href="https://kaoruchan333.github.io/worksheet/" target="_blank" rel="noopener">【「最適」発見セルフワークシート】（完全無料）</a>
   </div>
 
 </div>
-
 </body>
 </html>
